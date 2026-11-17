@@ -36,15 +36,29 @@ jupyter lab
 
 Haftanın klasöründeki Jupyter defterini, örneğin `tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb` dosyasını açın ve önce Bölüm 0'ı çalıştırın. İlk hücre ders klasörünü bulur, ikinci hücre `vclinic` ders paketinin sürümünü yazar. **Kernel → Restart Kernel and Run All Cells** komutu defteri temiz bir durumdan başlayarak yeniden çalıştırır.
 
-## 6. İsteğe bağlı paketler
+## 6. Sonraki haftaların paketleri
 
-Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için Anaconda Prompt'ta ya da Terminal'de şu komutu çalıştırın:
+Defterler 3. haftadan itibaren eğitimin derin öğrenme paketi olan PyTorch'u kullanır. Anaconda bu paketi içermez; paket pip ile bir kez kurulur. Windows'ta Anaconda Prompt'ta, macOS'te Terminal'de şu komutu çalıştırın:
+
+```bash
+pip install torch torchvision
+```
+
+Linux'ta varsayılan paket NVIDIA ekran kartları için kütüphaneler de içerir ve büyüktür. Eğitimin defterleri ekran kartı gerektirmediği için işlemciye yönelik daha küçük sürüm yeterlidir:
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+```
+
+Başka sistemler için komutu [pytorch.org/get-started/locally](https://pytorch.org/get-started/locally/) adresindeki seçici verir. Kurulumdan sonra açık bir defterin çekirdeğini yeniden başlatın. Colab'da PyTorch hazır gelir.
+
+Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
 
 ```bash
 pip install wfdb neurokit2
 ```
 
-Eğitimin bütün paketlerini içeren ayrı bir ortam, ders klasöründeki `environment.yml` dosyasından oluşturulabilir:
+PyTorch dâhil eğitimin bütün paketlerini içeren ayrı bir ortam, ders klasöründeki `environment.yml` dosyasından oluşturulabilir:
 
 ```bash
 conda env create -f environment.yml
@@ -77,6 +91,7 @@ Gerçek hasta verisi hiçbir zaman Colab'a ya da başka bir bulut hizmetine yük
 | Sorun | Yapılacak |
 |---|---|
 | İnternet bağlantısı yokken `No module named 'vclinic'` hatası | Defteri ders klasörünün içinden açın. İlk hücre klasörü bulur ve indirme gerekmez. |
+| `No module named 'torch'` hatası | PyTorch'u 6. adımda anlatıldığı gibi kurun, ardından çekirdeği yeniden başlatın. |
 | Defter ders klasörünün dışında açıldı | İlk hücre ders paketini ve verileri defterin yanındaki `ai-cardiology-course` klasörüne indirir. Bunun için bir kez internet bağlantısı gerekir. |
 | Hücreler sırasız çalıştırıldıktan sonra hata | **Kernel → Restart Kernel and Run All Cells** seçeneğini seçin ya da bölümün başındaki *Telafi* hücresini çalıştırın. |
 | GitHub'daki defterde çıktı görünmüyor | GitHub defteri yalnızca görüntüler, çalıştırmaz. Defteri ders klasörüyle birlikte indirin ve Jupyter'de çalıştırın. |

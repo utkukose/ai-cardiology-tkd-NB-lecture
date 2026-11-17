@@ -42,9 +42,9 @@ Malzemeler: [Hafta sayfası](tr/hafta-02/README.md) · [Ders sayfası](https://u
 
 ### Hafta 3: Derin öğrenme ve evrişimli sinir ağları
 
-Oturumun ilk yarısında yapay sinir ağları ve evrişimli sinir ağları (CNN) anlatılır: nöronlar, katmanlar, aktivasyon fonksiyonları, evrişim, havuzlama, seyreltme (dropout) ve yığın normalizasyonu. İkinci yarıda yaygın mimariler karşılaştırılır, kardiyak görüntülerle veri çoğaltma yapılır, karışıklık matrisi ve F1 skoru aşırı öğrenmeye dikkat edilerek yorumlanır. **Oturumdaki mini proje:** Normal ve anormal ekokardiyogramların sınıflandırılması. **Haftalık proje:** Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması. **Veriler:** Sanal kliniğin ekokardiyogramları ve üyelik gerektiren açık görüntüleme veri setleri. **Sanal kliniğin aşaması:** Eko laboratuvarı.
+Oturumun ilk yarısında yapay sinir ağları ve evrişimli sinir ağları (CNN) anlatılır: nöronlar, katmanlar, aktivasyon fonksiyonları, evrişim, havuzlama, seyreltme (dropout) ve yığın normalizasyonu. İkinci yarıda yaygın mimariler karşılaştırılır, kardiyak görüntülerle veri çoğaltma yapılır, karışıklık matrisi ve F1 skoru aşırı öğrenmeye dikkat edilerek yorumlanır. **Oturumdaki mini proje:** Normal ve anormal ekokardiyogramların sınıflandırılması. **Haftalık proje:** Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması. **Veriler:** Sanal kliniğin ekokardiyografi kareleri ve kardiyak manyetik rezonans kısa eksen kesitleri. **Sanal kliniğin aşaması:** Eko laboratuvarı.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-03/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/lab.html) · [Jupyter defteri](tr/hafta-03/NB03_derin_ogrenme_ve_evrisimli_aglar.ipynb) · [Prompt kütüphanesi](tr/hafta-03/PROMPTLAR.md) · [PDF ders notu](tr/hafta-03/Hafta03_Ders_Notlari.pdf)
 
 ### Hafta 4: Transfer öğrenme
 

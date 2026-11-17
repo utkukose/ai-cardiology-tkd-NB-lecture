@@ -3,6 +3,7 @@ cohort.py
 datasets.py
 ecg.py
 followup.py
+imaging.py
 measure.py
 physionet.py
 teach.py

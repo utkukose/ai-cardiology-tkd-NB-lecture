@@ -16,3 +16,5 @@ dependencies:
   - pip:
       - wfdb
       - neurokit2
+      - torch
+      - torchvision

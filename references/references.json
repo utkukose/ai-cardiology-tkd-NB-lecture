@@ -1,5 +1,134 @@
 [
   {
+    "key": "arbelo2023",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Arbelo",
+        "given": "E."
+      },
+      {
+        "family": "Protonotarios",
+        "given": "A."
+      },
+      {
+        "family": "Gimeno",
+        "given": "J. R."
+      },
+      {
+        "family": "Arbustini",
+        "given": "E."
+      },
+      {
+        "family": "Barriales-Villa",
+        "given": "R."
+      },
+      {
+        "family": "Basso",
+        "given": "C."
+      },
+      {
+        "family": "Bezzina",
+        "given": "C. R."
+      },
+      {
+        "family": "Biagini",
+        "given": "E."
+      },
+      {
+        "family": "Blom",
+        "given": "N. A."
+      },
+      {
+        "family": "de Boer",
+        "given": "R. A."
+      },
+      {
+        "family": "De Winter",
+        "given": "T."
+      },
+      {
+        "family": "Elliott",
+        "given": "P. M."
+      },
+      {
+        "family": "Flather",
+        "given": "M."
+      },
+      {
+        "family": "Garcia-Pavia",
+        "given": "P."
+      },
+      {
+        "family": "Haugaa",
+        "given": "K. H."
+      },
+      {
+        "family": "Ingles",
+        "given": "J."
+      },
+      {
+        "family": "Jurcut",
+        "given": "R. O."
+      },
+      {
+        "family": "Klaassen",
+        "given": "S."
+      },
+      {
+        "family": "Limongelli",
+        "given": "G."
+      },
+      {
+        "family": "Loeys",
+        "given": "B."
+      },
+      {
+        "family": "Mogensen",
+        "given": "J."
+      },
+      {
+        "family": "Olivotto",
+        "given": "I."
+      },
+      {
+        "family": "Pantazis",
+        "given": "A."
+      },
+      {
+        "family": "Sharma",
+        "given": "S."
+      },
+      {
+        "family": "Van Tintelen",
+        "given": "J. P."
+      },
+      {
+        "family": "Ware",
+        "given": "J. S."
+      },
+      {
+        "family": "Kaski",
+        "given": "J. P."
+      },
+      {
+        "literal": "ESC Scientific Document Group"
+      }
+    ],
+    "year": "2023",
+    "title": "2023 ESC Guidelines for the management of cardiomyopathies",
+    "container": "European Heart Journal",
+    "volume": "44",
+    "issue": "37",
+    "pages": "3503–3626",
+    "doi": "10.1093/eurheartj/ehad194",
+    "url": "https://doi.org/10.1093/eurheartj/ehad194",
+    "apa": "Arbelo, E., Protonotarios, A., Gimeno, J. R., Arbustini, E., Barriales-Villa, R., Basso, C., Bezzina, C. R., Biagini, E., Blom, N. A., de Boer, R. A., De Winter, T., Elliott, P. M., Flather, M., Garcia-Pavia, P., Haugaa, K. H., Ingles, J., Jurcut, R. O., Klaassen, S., Limongelli, G., Loeys, B., Mogensen, J., Olivotto, I., Pantazis, A., Sharma, S., Van Tintelen, J. P., Ware, J. S., Kaski, J. P., & ESC Scientific Document Group. (2023). 2023 ESC Guidelines for the management of cardiomyopathies. *European Heart Journal, 44*(37), 3503–3626. https://doi.org/10.1093/eurheartj/ehad194",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "attia2019",
     "type": "article",
     "authors": [
@@ -85,6 +214,172 @@
     "apa": "Bazett, H. C. (1997). An analysis of the time-relations of electrocardiograms. *Annals of Noninvasive Electrocardiology, 2*(2), 177–194. (Original work published 1920) https://doi.org/10.1111/j.1542-474X.1997.tb00325.x",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "bernard2018",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Bernard",
+        "given": "O."
+      },
+      {
+        "family": "Lalande",
+        "given": "A."
+      },
+      {
+        "family": "Zotti",
+        "given": "C."
+      },
+      {
+        "family": "Cervenansky",
+        "given": "F."
+      },
+      {
+        "family": "Yang",
+        "given": "X."
+      },
+      {
+        "family": "Heng",
+        "given": "P.-A."
+      },
+      {
+        "family": "Cetin",
+        "given": "I."
+      },
+      {
+        "family": "Lekadir",
+        "given": "K."
+      },
+      {
+        "family": "Camara",
+        "given": "O."
+      },
+      {
+        "family": "Gonzalez Ballester",
+        "given": "M. A."
+      },
+      {
+        "family": "Sanroma",
+        "given": "G."
+      },
+      {
+        "family": "Napel",
+        "given": "S."
+      },
+      {
+        "family": "Petersen",
+        "given": "S."
+      },
+      {
+        "family": "Tziritas",
+        "given": "G."
+      },
+      {
+        "family": "Grinias",
+        "given": "E."
+      },
+      {
+        "family": "Khened",
+        "given": "M."
+      },
+      {
+        "family": "Kollerathu",
+        "given": "V. A."
+      },
+      {
+        "family": "Krishnamurthi",
+        "given": "G."
+      },
+      {
+        "family": "Rohe",
+        "given": "M.-M."
+      },
+      {
+        "family": "Pennec",
+        "given": "X."
+      },
+      {
+        "family": "Sermesant",
+        "given": "M."
+      },
+      {
+        "family": "Isensee",
+        "given": "F."
+      },
+      {
+        "family": "Jager",
+        "given": "P."
+      },
+      {
+        "family": "Maier-Hein",
+        "given": "K. H."
+      },
+      {
+        "family": "Full",
+        "given": "P. M."
+      },
+      {
+        "family": "Wolf",
+        "given": "I."
+      },
+      {
+        "family": "Engelhardt",
+        "given": "S."
+      },
+      {
+        "family": "Baumgartner",
+        "given": "C. F."
+      },
+      {
+        "family": "Koch",
+        "given": "L. M."
+      },
+      {
+        "family": "Wolterink",
+        "given": "J. M."
+      },
+      {
+        "family": "Isgum",
+        "given": "I."
+      },
+      {
+        "family": "Jang",
+        "given": "Y."
+      },
+      {
+        "family": "Hong",
+        "given": "Y."
+      },
+      {
+        "family": "Patravali",
+        "given": "J."
+      },
+      {
+        "family": "Jain",
+        "given": "S."
+      },
+      {
+        "family": "Humbert",
+        "given": "O."
+      },
+      {
+        "family": "Jodoin",
+        "given": "P.-M."
+      }
+    ],
+    "year": "2018",
+    "title": "Deep learning techniques for automatic MRI cardiac multi-structures segmentation and diagnosis: Is the problem solved?",
+    "container": "IEEE Transactions on Medical Imaging",
+    "volume": "37",
+    "issue": "11",
+    "pages": "2514–2525",
+    "doi": "10.1109/TMI.2018.2837502",
+    "url": "https://doi.org/10.1109/TMI.2018.2837502",
+    "apa": "Bernard, O., Lalande, A., Zotti, C., Cervenansky, F., Yang, X., Heng, P.-A., Cetin, I., Lekadir, K., Camara, O., Gonzalez Ballester, M. A., Sanroma, G., Napel, S., Petersen, S., Tziritas, G., Grinias, E., Khened, M., Kollerathu, V. A., Krishnamurthi, G., Rohe, M.-M., Pennec, X., Sermesant, M., Isensee, F., Jager, P., Maier-Hein, K. H., Full, P. M., Wolf, I., Engelhardt, S., Baumgartner, C. F., Koch, L. M., Wolterink, J. M., Isgum, I., Jang, Y., Hong, Y., Patravali, J., Jain, S., Humbert, O., & Jodoin, P.-M. (2018). Deep learning techniques for automatic MRI cardiac multi-structures segmentation and diagnosis: Is the problem solved? *IEEE Transactions on Medical Imaging, 37*(11), 2514–2525. https://doi.org/10.1109/TMI.2018.2837502",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -355,6 +650,36 @@
     "apa": "Goldberger, A. L., Amaral, L. A. N., Glass, L., Hausdorff, J. M., Ivanov, P. Ch., Mark, R. G., Mietus, J. E., Moody, G. B., Peng, C.-K., & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. *Circulation, 101*(23), e215–e220. https://doi.org/10.1161/01.CIR.101.23.e215",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "goodfellow2016",
+    "type": "book",
+    "authors": [
+      {
+        "family": "Goodfellow",
+        "given": "I."
+      },
+      {
+        "family": "Bengio",
+        "given": "Y."
+      },
+      {
+        "family": "Courville",
+        "given": "A."
+      }
+    ],
+    "year": "2016",
+    "title": "Deep learning",
+    "container": "MIT Press",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.deeplearningbook.org/",
+    "apa": "Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep learning*. MIT Press. https://www.deeplearningbook.org/",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -630,6 +955,40 @@
     ]
   },
   {
+    "key": "he2016",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "He",
+        "given": "K."
+      },
+      {
+        "family": "Zhang",
+        "given": "X."
+      },
+      {
+        "family": "Ren",
+        "given": "S."
+      },
+      {
+        "family": "Sun",
+        "given": "J."
+      }
+    ],
+    "year": "2016",
+    "title": "Deep residual learning for image recognition",
+    "container": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "volume": "",
+    "issue": "",
+    "pages": "770–778",
+    "doi": "10.1109/CVPR.2016.90",
+    "url": "https://doi.org/10.1109/CVPR.2016.90",
+    "apa": "He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)* (pp. 770–778). https://doi.org/10.1109/CVPR.2016.90",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "hunter2007",
     "type": "article",
     "authors": [
@@ -802,6 +1161,32 @@
     ]
   },
   {
+    "key": "ioffe2015",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Ioffe",
+        "given": "S."
+      },
+      {
+        "family": "Szegedy",
+        "given": "C."
+      }
+    ],
+    "year": "2015",
+    "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+    "container": "Proceedings of the 32nd International Conference on Machine Learning",
+    "volume": "",
+    "issue": "",
+    "pages": "448–456",
+    "doi": "",
+    "url": "https://proceedings.mlr.press/v37/ioffe15.html",
+    "apa": "Ioffe, S., & Szegedy, C. (2015). Batch normalization: Accelerating deep network training by reducing internal covariate shift. In *Proceedings of the 32nd International Conference on Machine Learning* (pp. 448–456). https://proceedings.mlr.press/v37/ioffe15.html",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "janosi1989",
     "type": "dataset",
     "authors": [
@@ -919,6 +1304,32 @@
     "apa": "Kaufman, S., Rosset, S., Perlich, C., & Stitelman, O. (2012). Leakage in data mining: Formulation, detection, and avoidance. *ACM Transactions on Knowledge Discovery from Data, 6*(4), Article 15. https://doi.org/10.1145/2382577.2382579",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "kingma2014",
+    "type": "preprint",
+    "authors": [
+      {
+        "family": "Kingma",
+        "given": "D. P."
+      },
+      {
+        "family": "Ba",
+        "given": "J."
+      }
+    ],
+    "year": "2014",
+    "title": "Adam: A method for stochastic optimization",
+    "container": "arXiv",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.48550/arXiv.1412.6980",
+    "url": "https://doi.org/10.48550/arXiv.1412.6980",
+    "apa": "Kingma, D. P., & Ba, J. (2014). *Adam: A method for stochastic optimization* (arXiv:1412.6980). arXiv. https://doi.org/10.48550/arXiv.1412.6980",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1090,6 +1501,36 @@
     ]
   },
   {
+    "key": "krizhevsky2017",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Krizhevsky",
+        "given": "A."
+      },
+      {
+        "family": "Sutskever",
+        "given": "I."
+      },
+      {
+        "family": "Hinton",
+        "given": "G. E."
+      }
+    ],
+    "year": "2017",
+    "title": "ImageNet classification with deep convolutional neural networks",
+    "container": "Communications of the ACM",
+    "volume": "60",
+    "issue": "6",
+    "pages": "84–90",
+    "doi": "10.1145/3065386",
+    "url": "https://doi.org/10.1145/3065386",
+    "apa": "Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2017). ImageNet classification with deep convolutional neural networks. *Communications of the ACM, 60*(6), 84–90. https://doi.org/10.1145/3065386",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "kusumoto2019",
     "type": "article",
     "authors": [
@@ -1184,6 +1625,160 @@
     ]
   },
   {
+    "key": "lang2015",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Lang",
+        "given": "R. M."
+      },
+      {
+        "family": "Badano",
+        "given": "L. P."
+      },
+      {
+        "family": "Mor-Avi",
+        "given": "V."
+      },
+      {
+        "family": "Afilalo",
+        "given": "J."
+      },
+      {
+        "family": "Armstrong",
+        "given": "A."
+      },
+      {
+        "family": "Ernande",
+        "given": "L."
+      },
+      {
+        "family": "Flachskampf",
+        "given": "F. A."
+      },
+      {
+        "family": "Foster",
+        "given": "E."
+      },
+      {
+        "family": "Goldstein",
+        "given": "S. A."
+      },
+      {
+        "family": "Kuznetsova",
+        "given": "T."
+      },
+      {
+        "family": "Lancellotti",
+        "given": "P."
+      },
+      {
+        "family": "Muraru",
+        "given": "D."
+      },
+      {
+        "family": "Picard",
+        "given": "M. H."
+      },
+      {
+        "family": "Rietzschel",
+        "given": "E. R."
+      },
+      {
+        "family": "Rudski",
+        "given": "L."
+      },
+      {
+        "family": "Spencer",
+        "given": "K. T."
+      },
+      {
+        "family": "Tsang",
+        "given": "W."
+      },
+      {
+        "family": "Voigt",
+        "given": "J.-U."
+      }
+    ],
+    "year": "2015",
+    "title": "Recommendations for cardiac chamber quantification by echocardiography in adults: An update from the American Society of Echocardiography and the European Association of Cardiovascular Imaging",
+    "container": "Journal of the American Society of Echocardiography",
+    "volume": "28",
+    "issue": "1",
+    "pages": "1–39.e14",
+    "doi": "10.1016/j.echo.2014.10.003",
+    "url": "https://doi.org/10.1016/j.echo.2014.10.003",
+    "apa": "Lang, R. M., Badano, L. P., Mor-Avi, V., Afilalo, J., Armstrong, A., Ernande, L., Flachskampf, F. A., Foster, E., Goldstein, S. A., Kuznetsova, T., Lancellotti, P., Muraru, D., Picard, M. H., Rietzschel, E. R., Rudski, L., Spencer, K. T., Tsang, W., & Voigt, J.-U. (2015). Recommendations for cardiac chamber quantification by echocardiography in adults: An update from the American Society of Echocardiography and the European Association of Cardiovascular Imaging. *Journal of the American Society of Echocardiography, 28*(1), 1–39.e14. https://doi.org/10.1016/j.echo.2014.10.003",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "lecun1998",
+    "type": "article",
+    "authors": [
+      {
+        "family": "LeCun",
+        "given": "Y."
+      },
+      {
+        "family": "Bottou",
+        "given": "L."
+      },
+      {
+        "family": "Bengio",
+        "given": "Y."
+      },
+      {
+        "family": "Haffner",
+        "given": "P."
+      }
+    ],
+    "year": "1998",
+    "title": "Gradient-based learning applied to document recognition",
+    "container": "Proceedings of the IEEE",
+    "volume": "86",
+    "issue": "11",
+    "pages": "2278–2324",
+    "doi": "10.1109/5.726791",
+    "url": "https://doi.org/10.1109/5.726791",
+    "apa": "LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998). Gradient-based learning applied to document recognition. *Proceedings of the IEEE, 86*(11), 2278–2324. https://doi.org/10.1109/5.726791",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "lecun2015",
+    "type": "article",
+    "authors": [
+      {
+        "family": "LeCun",
+        "given": "Y."
+      },
+      {
+        "family": "Bengio",
+        "given": "Y."
+      },
+      {
+        "family": "Hinton",
+        "given": "G."
+      }
+    ],
+    "year": "2015",
+    "title": "Deep learning",
+    "container": "Nature",
+    "volume": "521",
+    "issue": "7553",
+    "pages": "436–444",
+    "doi": "10.1038/nature14539",
+    "url": "https://doi.org/10.1038/nature14539",
+    "apa": "LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. *Nature, 521*(7553), 436–444. https://doi.org/10.1038/nature14539",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "lloyd1982",
     "type": "article",
     "authors": [
@@ -1203,6 +1798,40 @@
     "apa": "Lloyd, S. P. (1982). Least squares quantization in PCM. *IEEE Transactions on Information Theory, 28*(2), 129–137. https://doi.org/10.1109/TIT.1982.1056489",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "madani2018",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Madani",
+        "given": "A."
+      },
+      {
+        "family": "Arnaout",
+        "given": "R."
+      },
+      {
+        "family": "Mofrad",
+        "given": "M."
+      },
+      {
+        "family": "Arnaout",
+        "given": "R."
+      }
+    ],
+    "year": "2018",
+    "title": "Fast and accurate view classification of echocardiograms using deep learning",
+    "container": "npj Digital Medicine",
+    "volume": "1",
+    "issue": "",
+    "pages": "Article 6",
+    "doi": "10.1038/s41746-017-0013-1",
+    "url": "https://doi.org/10.1038/s41746-017-0013-1",
+    "apa": "Madani, A., Arnaout, R., Mofrad, M., & Arnaout, R. (2018). Fast and accurate view classification of echocardiograms using deep learning. *npj Digital Medicine, 1*, Article 6. https://doi.org/10.1038/s41746-017-0013-1",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1584,6 +2213,108 @@
     ]
   },
   {
+    "key": "paszke2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Paszke",
+        "given": "A."
+      },
+      {
+        "family": "Gross",
+        "given": "S."
+      },
+      {
+        "family": "Massa",
+        "given": "F."
+      },
+      {
+        "family": "Lerer",
+        "given": "A."
+      },
+      {
+        "family": "Bradbury",
+        "given": "J."
+      },
+      {
+        "family": "Chanan",
+        "given": "G."
+      },
+      {
+        "family": "Killeen",
+        "given": "T."
+      },
+      {
+        "family": "Lin",
+        "given": "Z."
+      },
+      {
+        "family": "Gimelshein",
+        "given": "N."
+      },
+      {
+        "family": "Antiga",
+        "given": "L."
+      },
+      {
+        "family": "Desmaison",
+        "given": "A."
+      },
+      {
+        "family": "Kopf",
+        "given": "A."
+      },
+      {
+        "family": "Yang",
+        "given": "E."
+      },
+      {
+        "family": "DeVito",
+        "given": "Z."
+      },
+      {
+        "family": "Raison",
+        "given": "M."
+      },
+      {
+        "family": "Tejani",
+        "given": "A."
+      },
+      {
+        "family": "Chilamkurthy",
+        "given": "S."
+      },
+      {
+        "family": "Steiner",
+        "given": "B."
+      },
+      {
+        "family": "Fang",
+        "given": "L."
+      },
+      {
+        "family": "Bai",
+        "given": "J."
+      },
+      {
+        "family": "Chintala",
+        "given": "S."
+      }
+    ],
+    "year": "2019",
+    "title": "PyTorch: An imperative style, high-performance deep learning library",
+    "container": "Advances in Neural Information Processing Systems 32",
+    "volume": "",
+    "issue": "",
+    "pages": "8024–8035",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper/2019/hash/bdbca288fee7f92f2bfa9f7012727740-Abstract.html",
+    "apa": "Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., & Chintala, S. (2019). PyTorch: An imperative style, high-performance deep learning library. In *Advances in Neural Information Processing Systems 32* (pp. 8024–8035). https://proceedings.neurips.cc/paper/2019/hash/bdbca288fee7f92f2bfa9f7012727740-Abstract.html",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "pedregosa2011",
     "type": "article",
     "authors": [
@@ -1718,6 +2449,36 @@
     ]
   },
   {
+    "key": "rumelhart1986",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Rumelhart",
+        "given": "D. E."
+      },
+      {
+        "family": "Hinton",
+        "given": "G. E."
+      },
+      {
+        "family": "Williams",
+        "given": "R. J."
+      }
+    ],
+    "year": "1986",
+    "title": "Learning representations by back-propagating errors",
+    "container": "Nature",
+    "volume": "323",
+    "issue": "6088",
+    "pages": "533–536",
+    "doi": "10.1038/323533a0",
+    "url": "https://doi.org/10.1038/323533a0",
+    "apa": "Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986). Learning representations by back-propagating errors. *Nature, 323*(6088), 533–536. https://doi.org/10.1038/323533a0",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "saito2015",
     "type": "article",
     "authors": [
@@ -1832,6 +2593,58 @@
     ]
   },
   {
+    "key": "shorten2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Shorten",
+        "given": "C."
+      },
+      {
+        "family": "Khoshgoftaar",
+        "given": "T. M."
+      }
+    ],
+    "year": "2019",
+    "title": "A survey on image data augmentation for deep learning",
+    "container": "Journal of Big Data",
+    "volume": "6",
+    "issue": "",
+    "pages": "Article 60",
+    "doi": "10.1186/s40537-019-0197-0",
+    "url": "https://doi.org/10.1186/s40537-019-0197-0",
+    "apa": "Shorten, C., & Khoshgoftaar, T. M. (2019). A survey on image data augmentation for deep learning. *Journal of Big Data, 6*, Article 60. https://doi.org/10.1186/s40537-019-0197-0",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "simonyan2014",
+    "type": "preprint",
+    "authors": [
+      {
+        "family": "Simonyan",
+        "given": "K."
+      },
+      {
+        "family": "Zisserman",
+        "given": "A."
+      }
+    ],
+    "year": "2014",
+    "title": "Very deep convolutional networks for large-scale image recognition",
+    "container": "arXiv",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.48550/arXiv.1409.1556",
+    "url": "https://doi.org/10.48550/arXiv.1409.1556",
+    "apa": "Simonyan, K., & Zisserman, A. (2014). *Very deep convolutional networks for large-scale image recognition* (arXiv:1409.1556). arXiv. https://doi.org/10.48550/arXiv.1409.1556",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "siontis2021",
     "type": "article",
     "authors": [
@@ -1863,6 +2676,44 @@
     "apa": "Siontis, K. C., Noseworthy, P. A., Attia, Z. I., & Friedman, P. A. (2021). Artificial intelligence-enhanced electrocardiography in cardiovascular disease management. *Nature Reviews Cardiology, 18*(7), 465–478. https://doi.org/10.1038/s41569-020-00503-2",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "srivastava2014",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Srivastava",
+        "given": "N."
+      },
+      {
+        "family": "Hinton",
+        "given": "G."
+      },
+      {
+        "family": "Krizhevsky",
+        "given": "A."
+      },
+      {
+        "family": "Sutskever",
+        "given": "I."
+      },
+      {
+        "family": "Salakhutdinov",
+        "given": "R."
+      }
+    ],
+    "year": "2014",
+    "title": "Dropout: A simple way to prevent neural networks from overfitting",
+    "container": "Journal of Machine Learning Research",
+    "volume": "15",
+    "issue": "56",
+    "pages": "1929–1958",
+    "doi": "",
+    "url": "https://jmlr.org/papers/v15/srivastava14a.html",
+    "apa": "Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., & Salakhutdinov, R. (2014). Dropout: A simple way to prevent neural networks from overfitting. *Journal of Machine Learning Research, 15*(56), 1929–1958. https://jmlr.org/papers/v15/srivastava14a.html",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
     ]
   },
   {

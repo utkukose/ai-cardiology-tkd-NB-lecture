@@ -42,9 +42,9 @@ Materials: [Week page](en/week-02/README.md) · [Lecture page](https://utkukose.
 
 ### Week 3: Deep learning and convolutional neural networks
 
-The first half explains artificial neural networks and convolutional neural networks (CNNs): neurons, layers, activation functions, convolution, pooling, dropout and batch normalisation. The second half compares known architectures, augments cardiac images and reads the confusion matrix and the F1 score, with attention to overfitting. **Mini project in the session:** Classification of normal and abnormal echocardiograms. **Weekly project:** Classification of dilated and hypertrophic cardiomyopathy on cardiac magnetic resonance images. **Data:** Echocardiograms of the virtual clinic and public imaging data sets that require registration. **Stage of the virtual clinic:** Echo laboratory.
+The first half explains artificial neural networks and convolutional neural networks (CNNs): neurons, layers, activation functions, convolution, pooling, dropout and batch normalisation. The second half compares known architectures, augments cardiac images and reads the confusion matrix and the F1 score, with attention to overfitting. **Mini project in the session:** Classification of normal and abnormal echocardiograms. **Weekly project:** Classification of dilated and hypertrophic cardiomyopathy on cardiac magnetic resonance images. **Data:** Echocardiographic frames and short-axis cardiac magnetic resonance slices of the virtual clinic. **Stage of the virtual clinic:** Echo laboratory.
 
-Materials: In preparation
+Materials: [Week page](en/week-03/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lab.html) · [Jupyter notebook](en/week-03/NB03_deep_learning_and_cnns.ipynb) · [Prompt library](en/week-03/PROMPTS.md) · [PDF notes](en/week-03/Week03_Lecture_Notes.pdf)
 
 ### Week 4: Transfer learning
 

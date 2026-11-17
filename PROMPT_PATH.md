@@ -50,7 +50,8 @@ Code written by an assistant is accepted only when its result passes a check aga
 |---|---|---|---|---|
 | 1 | [PROMPTS.md](en/week-01/PROMPTS.md) | 13, one below each exercise | 9, one at the end of each numbered section | Part F, prompt workshop |
 | 2 | [PROMPTS.md](en/week-02/PROMPTS.md) | 13, one below each exercise | 9, one at the end of each numbered section | Part F, prompt workshop |
-| 3 to 11 | In preparation | | | |
+| 3 | [PROMPTS.md](en/week-03/PROMPTS.md) | 13, one below each exercise | 9, one at the end of each numbered section | Part F, prompt workshop |
+| 4 to 11 | In preparation | | | |
 
 In the Jupyter notebook, a *prompt route* is a folded cell below an exercise. It holds the prompt card of the exercise, ready to copy. A *prompt challenge* closes each numbered section. It gives a prompt but no prepared code, and the checks below it tell whether the result is right. The prompt library of the week collects all prompts, four patterns for explaining, repairing and testing code, and the prompt route of the weekly project. Part F of the interactive lab trains the prompt card with a quality meter and a privacy check.
 

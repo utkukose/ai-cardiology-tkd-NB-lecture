@@ -36,15 +36,29 @@ Open `en/start-here/NB00_start_here.ipynb` and run all its cells with **Run → 
 
 Open the Jupyter notebook in the folder of the week, for example `en/week-01/NB01_python_and_ecg_basics.ipynb`, and run Section 0 first. The first cell finds the course folder, and the second prints the version of the course package `vclinic`. **Kernel → Restart Kernel and Run All Cells** starts the notebook again from a clean state.
 
-## 6. Optional packages
+## 6. Packages of later weeks
 
-The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run in Anaconda Prompt or Terminal:
+From Week 3, the notebooks use PyTorch, the deep learning package of the course. Anaconda does not include it, and it is installed once with pip. Run in Anaconda Prompt on Windows or in Terminal on macOS:
+
+```bash
+pip install torch torchvision
+```
+
+On Linux, the default package also holds libraries for NVIDIA graphics cards and is large. The notebooks of the course need no graphics card, so the smaller version for the processor is enough:
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+```
+
+For other systems, the selector at [pytorch.org/get-started/locally](https://pytorch.org/get-started/locally/) gives the command. Restart the kernel of an open notebook after the installation. Colab includes PyTorch.
+
+The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run:
 
 ```bash
 pip install wfdb neurokit2
 ```
 
-A separate environment with all packages of the course can be created from the file `environment.yml` in the course folder:
+A separate environment with all packages of the course, PyTorch included, can be created from the file `environment.yml` in the course folder:
 
 ```bash
 conda env create -f environment.yml
@@ -77,6 +91,7 @@ Real patient data never goes into Colab or any other cloud service. All data of 
 | Problem | What to do |
 |---|---|
 | `No module named 'vclinic'` without an internet connection | Open the notebook from inside the course folder. The first cell then finds the folder and needs no download. |
+| `No module named 'torch'` | Install PyTorch as step 6 describes, then restart the kernel. |
 | The notebook opened outside the course folder | The first cell downloads the course package and the data into a folder named `ai-cardiology-course` next to the notebook. This needs an internet connection once. |
 | An error after running cells out of order | Choose **Kernel → Restart Kernel and Run All Cells**, or run the *Catch-up* cell at the start of the section. |
 | A notebook on GitHub shows no output | GitHub only displays the notebook. Download it with the course folder and run it in Jupyter. |

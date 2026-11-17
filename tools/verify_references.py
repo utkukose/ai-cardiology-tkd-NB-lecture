@@ -5,7 +5,7 @@ Usage: python tools/verify_references.py references/references.json
 For every entry with a digital object identifier (DOI), the script looks up
 the DOI in Crossref (or in DataCite for data sets and software published with
 DataCite DOIs) and in OpenAlex. It compares the title, the year and the family
-name of the first author with the entry. An entry can record a year that the
+names of all authors with the entry. An entry can record a year that the
 registry is known to list instead of the print year (registry_year), with the
 reason (registry_note); the script then prints the reason as a note. Entries
 without a DOI are checked for a reachable web address. The script exits with
@@ -22,7 +22,7 @@ import urllib.parse
 import urllib.request
 
 HEADERS = {"User-Agent": "ai-cardiology-tkd-NB-lecture reference check (mailto:utkukose@sdu.edu.tr)"}
-DATACITE_PREFIXES = ("10.13026/", "10.24432/")
+DATACITE_PREFIXES = ("10.13026/", "10.24432/", "10.48550/")
 
 
 def fetch(url, tries=3):
@@ -90,6 +90,25 @@ def from_openalex(doi):
     return dict(title=w.get("title") or "", year=w.get("publication_year"), authors=authors)
 
 
+def author_problems(entry, primary):
+    """Authors of the record missing from the entry, and authors of the entry missing from the record."""
+    mine = [norm(a["family"]) for a in entry["authors"] if "family" in a]
+    groups = [norm(a["literal"]) for a in entry["authors"] if "literal" in a]
+    theirs = [norm(name) for name in primary["authors"] if norm(name)]
+    if not mine or not theirs:
+        return []
+    out = []
+    if mine[0] not in theirs[:3]:
+        out.append(f"first author differs: {primary['authors'][0]}")
+    missing = [name for name in theirs if name not in mine and name not in groups]
+    extra = [name for name in mine if name not in theirs]
+    if missing:
+        out.append("in the record but not in the entry: " + ", ".join(missing))
+    if extra:
+        out.append("in the entry but not in the record: " + ", ".join(extra))
+    return out
+
+
 def check(entry):
     problems = []
     doi = entry.get("doi")
@@ -112,10 +131,7 @@ def check(entry):
             print(f"[note] {entry['key']}: {entry['registry_note']}")
         else:
             problems.append(f"year differs: {primary['year']}")
-    first = entry["authors"][0]
-    if "family" in first and primary["authors"]:
-        if norm(first["family"]) not in norm(" ".join(primary["authors"][:3])):
-            problems.append(f"first author differs: {primary['authors'][0]}")
+    problems += author_problems(entry, primary)
     try:
         oa = from_openalex(doi)
         if oa and entry.get("title") and not similar(entry["title"], oa["title"]):

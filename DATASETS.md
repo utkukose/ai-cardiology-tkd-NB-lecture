@@ -20,7 +20,14 @@ The record of the PTB database comes from an 81-year-old woman admitted with an 
 
 ## The virtual clinic
 
-The course package `vclinic` creates the patients of the virtual clinic at run time. `vclinic.make_cohort(500)` returns a registry of 500 synthetic patients with demographic data, risk factors, laboratory values, the ejection fraction, the main diagnosis and the parameters of the electrocardiogram (ECG). `vclinic.patient_ecg` returns the 12-lead ECG of a patient together with the true values of its intervals and beat times. The same seed always gives the same patients, so every participant sees the same clinic. The relations between the variables follow broad clinical patterns, and their effect sizes are documented in `vclinic.TRUE_EFFECTS`. From Week 2, `vclinic.add_followup` adds echocardiographic variables, the phenogroup of heart failure and up to five years of follow-up, with death or hospitalisation for heart failure as the event. The data are teaching material and are not for clinical use.
+The course package `vclinic` creates the patients of the virtual clinic at run time. `vclinic.make_cohort(500)` returns a registry of 500 synthetic patients with demographic data, risk factors, laboratory values, the ejection fraction, the main diagnosis and the parameters of the electrocardiogram (ECG). `vclinic.patient_ecg` returns the 12-lead ECG of a patient together with the true values of its intervals and beat times. The same seed always gives the same patients, so every participant sees the same clinic. The relations between the variables follow broad clinical patterns, and their effect sizes are documented in `vclinic.TRUE_EFFECTS`. From Week 2, `vclinic.add_followup` adds echocardiographic variables, the phenogroup of heart failure and up to five years of follow-up, with death or hospitalisation for heart failure as the event. From Week 3, the module `vclinic.imaging` draws images: `echo_images` gives one end-diastolic frame of the parasternal short-axis view for each patient of a registry, drawn from the patient's own diameter and wall thickness, and `make_cmr_set` gives short-axis slices of cine cardiac magnetic resonance (CMR) for three classes, normal, dilated cardiomyopathy and hypertrophic cardiomyopathy. The data are teaching material and are not for clinical use.
+
+## Files of Week 3
+
+| File | Content | License | Used in |
+|---|---|---|---|
+| `data/examples/echo/VC-0821.png`, `VC-1873.png`, `VC-1212.png` | Three frames of the echo laboratory of the virtual clinic, 64 × 64 pixels in grey scale, one pixel = 2 mm: a normal ventricle, a dilated ventricle and a thick septum | Created for the course; CC BY 4.0 | Week 3, Python step 3 and Section 4 |
+| `models/week03/echo_cnn.pt`, `echo_cnn.json` | The weights of the network of the echo laboratory (a PyTorch state dictionary with 10,098 parameters), the mean and the standard deviation of its normalisation and the names of its classes | Trained for the course on the frames of the virtual clinic; CC BY 4.0 | Week 3, Section 9 |
 
 ## Data sets of later weeks
 
