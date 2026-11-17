@@ -5,9 +5,11 @@ Usage: python tools/verify_references.py references/references.json
 For every entry with a digital object identifier (DOI), the script looks up
 the DOI in Crossref (or in DataCite for data sets and software published with
 DataCite DOIs) and in OpenAlex. It compares the title, the year and the family
-name of the first author with the entry. Entries without a DOI are checked for
-a reachable web address. The script exits with code 1 if any entry does not
-match or cannot be checked.
+name of the first author with the entry. An entry can record a year that the
+registry is known to list instead of the print year (registry_year), with the
+reason (registry_note); the script then prints the reason as a note. Entries
+without a DOI are checked for a reachable web address. The script exits with
+code 1 if any entry does not match or cannot be checked.
 """
 import difflib
 import json
@@ -106,7 +108,10 @@ def check(entry):
     if entry.get("title") and not similar(entry["title"], primary["title"]):
         problems.append(f"title differs: '{primary['title']}'")
     if primary.get("year") and abs(int(primary["year"]) - int(entry["year"])) > 1:
-        problems.append(f"year differs: {primary['year']}")
+        if str(primary["year"]) == entry.get("registry_year"):
+            print(f"[note] {entry['key']}: {entry['registry_note']}")
+        else:
+            problems.append(f"year differs: {primary['year']}")
     first = entry["authors"][0]
     if "family" in first and primary["authors"]:
         if norm(first["family"]) not in norm(" ".join(primary["authors"][:3])):

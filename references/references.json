@@ -141,7 +141,9 @@
     "apa": "Bousseljot, R., Kreiseler, D., & Schnabel, A. (1995). Nutzung der EKG-Signaldatenbank CARDIODAT der PTB über das Internet. *Biomedizinische Technik / Biomedical Engineering, 40*(s1), 317–318. https://doi.org/10.1515/bmte.1995.40.s1.317",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
-    ]
+    ],
+    "registry_year": "2009",
+    "registry_note": "Crossref lists 2009 for this DOI; the supplement appeared in print in 1995, as the PTB Diagnostic ECG Database cites it."
   },
   {
     "key": "ptbdb2004",
