@@ -1,0 +1,18 @@
+# Conda environment of the course: conda env create -f environment.yml
+name: ai-cardiology
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - ipywidgets
+  - jupyterlab
+  - notebook
+  - pip
+  - pip:
+      - wfdb
+      - neurokit2

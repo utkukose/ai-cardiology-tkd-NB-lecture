@@ -1,0 +1,23 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Utku Kose
+
+The content of this repository is licensed under the Creative Commons
+Attribution 4.0 International License. The content comprises the texts, the
+figures, the screenshots, the lecture pages, the interactive labs, the
+Markdown documents and the lecture notes.
+
+Under this license, the content may be shared and adapted for any purpose,
+including commercial use, provided that appropriate credit is given, a link to
+the license is provided and any changes are indicated. The recommended credit
+is given in README.md under "Citing this course".
+
+Summary of the license: https://creativecommons.org/licenses/by/4.0/
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Exceptions:
+- The code of the repository, including the package vclinic and the code in
+  the Jupyter notebooks, is licensed under the MIT License (see LICENSE).
+- The data sets in the folder data keep their own licenses (see DATASETS.md).
+- The lecture pages and the interactive labs embed the Three.js library, which
+  is distributed under its MIT License (see assets/vendor/LICENSE-three.txt).

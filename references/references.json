@@ -1,0 +1,1548 @@
+[
+  {
+    "key": "attia2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Attia",
+        "given": "Z. I."
+      },
+      {
+        "family": "Noseworthy",
+        "given": "P. A."
+      },
+      {
+        "family": "Lopez-Jimenez",
+        "given": "F."
+      },
+      {
+        "family": "Asirvatham",
+        "given": "S. J."
+      },
+      {
+        "family": "Deshmukh",
+        "given": "A. J."
+      },
+      {
+        "family": "Gersh",
+        "given": "B. J."
+      },
+      {
+        "family": "Carter",
+        "given": "R. E."
+      },
+      {
+        "family": "Yao",
+        "given": "X."
+      },
+      {
+        "family": "Rabinstein",
+        "given": "A. A."
+      },
+      {
+        "family": "Erickson",
+        "given": "B. J."
+      },
+      {
+        "family": "Kapa",
+        "given": "S."
+      },
+      {
+        "family": "Friedman",
+        "given": "P. A."
+      }
+    ],
+    "year": "2019",
+    "title": "An artificial intelligence-enabled ECG algorithm for the identification of patients with atrial fibrillation during sinus rhythm: A retrospective analysis of outcome prediction",
+    "container": "The Lancet",
+    "volume": "394",
+    "issue": "10201",
+    "pages": "861–867",
+    "doi": "10.1016/S0140-6736(19)31721-0",
+    "url": "https://doi.org/10.1016/S0140-6736(19)31721-0",
+    "apa": "Attia, Z. I., Noseworthy, P. A., Lopez-Jimenez, F., Asirvatham, S. J., Deshmukh, A. J., Gersh, B. J., Carter, R. E., Yao, X., Rabinstein, A. A., Erickson, B. J., Kapa, S., & Friedman, P. A. (2019). An artificial intelligence-enabled ECG algorithm for the identification of patients with atrial fibrillation during sinus rhythm: A retrospective analysis of outcome prediction. *The Lancet, 394*(10201), 861–867. https://doi.org/10.1016/S0140-6736(19)31721-0",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "bazett1920",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Bazett",
+        "given": "H. C."
+      }
+    ],
+    "year": "1997",
+    "title": "An analysis of the time-relations of electrocardiograms",
+    "container": "Annals of Noninvasive Electrocardiology",
+    "volume": "2",
+    "issue": "2",
+    "pages": "177–194",
+    "doi": "10.1111/j.1542-474X.1997.tb00325.x",
+    "url": "https://doi.org/10.1111/j.1542-474X.1997.tb00325.x",
+    "apa": "Bazett, H. C. (1997). An analysis of the time-relations of electrocardiograms. *Annals of Noninvasive Electrocardiology, 2*(2), 177–194. (Original work published 1920) https://doi.org/10.1111/j.1542-474X.1997.tb00325.x",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "bland1986",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Bland",
+        "given": "J. M."
+      },
+      {
+        "family": "Altman",
+        "given": "D. G."
+      }
+    ],
+    "year": "1986",
+    "title": "Statistical methods for assessing agreement between two methods of clinical measurement",
+    "container": "The Lancet",
+    "volume": "327",
+    "issue": "8476",
+    "pages": "307–310",
+    "doi": "10.1016/S0140-6736(86)90837-8",
+    "url": "https://doi.org/10.1016/S0140-6736(86)90837-8",
+    "apa": "Bland, J. M., & Altman, D. G. (1986). Statistical methods for assessing agreement between two methods of clinical measurement. *The Lancet, 327*(8476), 307–310. https://doi.org/10.1016/S0140-6736(86)90837-8",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "bousseljot1995",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Bousseljot",
+        "given": "R."
+      },
+      {
+        "family": "Kreiseler",
+        "given": "D."
+      },
+      {
+        "family": "Schnabel",
+        "given": "A."
+      }
+    ],
+    "year": "1995",
+    "title": "Nutzung der EKG-Signaldatenbank CARDIODAT der PTB über das Internet",
+    "container": "Biomedizinische Technik / Biomedical Engineering",
+    "volume": "40",
+    "issue": "s1",
+    "pages": "317–318",
+    "doi": "10.1515/bmte.1995.40.s1.317",
+    "url": "https://doi.org/10.1515/bmte.1995.40.s1.317",
+    "apa": "Bousseljot, R., Kreiseler, D., & Schnabel, A. (1995). Nutzung der EKG-Signaldatenbank CARDIODAT der PTB über das Internet. *Biomedizinische Technik / Biomedical Engineering, 40*(s1), 317–318. https://doi.org/10.1515/bmte.1995.40.s1.317",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "ptbdb2004",
+    "type": "dataset",
+    "authors": [
+      {
+        "family": "Bousseljot",
+        "given": "R."
+      },
+      {
+        "family": "Kreiseler",
+        "given": "D."
+      },
+      {
+        "family": "Schnabel",
+        "given": "A."
+      }
+    ],
+    "year": "2004",
+    "title": "The PTB Diagnostic ECG Database (version 1.0.0)",
+    "container": "PhysioNet",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.13026/C28C71",
+    "url": "https://doi.org/10.13026/C28C71",
+    "apa": "Bousseljot, R., Kreiseler, D., & Schnabel, A. (2004). *The PTB Diagnostic ECG Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C28C71",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "detrano1989",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Detrano",
+        "given": "R."
+      },
+      {
+        "family": "Janosi",
+        "given": "A."
+      },
+      {
+        "family": "Steinbrunn",
+        "given": "W."
+      },
+      {
+        "family": "Pfisterer",
+        "given": "M."
+      },
+      {
+        "family": "Schmid",
+        "given": "J.-J."
+      },
+      {
+        "family": "Sandhu",
+        "given": "S."
+      },
+      {
+        "family": "Guppy",
+        "given": "K. H."
+      },
+      {
+        "family": "Lee",
+        "given": "S."
+      },
+      {
+        "family": "Froelicher",
+        "given": "V."
+      }
+    ],
+    "year": "1989",
+    "title": "International application of a new probability algorithm for the diagnosis of coronary artery disease",
+    "container": "The American Journal of Cardiology",
+    "volume": "64",
+    "issue": "5",
+    "pages": "304–310",
+    "doi": "10.1016/0002-9149(89)90524-9",
+    "url": "https://doi.org/10.1016/0002-9149(89)90524-9",
+    "apa": "Detrano, R., Janosi, A., Steinbrunn, W., Pfisterer, M., Schmid, J.-J., Sandhu, S., Guppy, K. H., Lee, S., & Froelicher, V. (1989). International application of a new probability algorithm for the diagnosis of coronary artery disease. *The American Journal of Cardiology, 64*(5), 304–310. https://doi.org/10.1016/0002-9149(89)90524-9",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "fridericia1920",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Fridericia",
+        "given": "L. S."
+      }
+    ],
+    "year": "1920",
+    "title": "Die Systolendauer im Elektrokardiogramm bei normalen Menschen und bei Herzkranken",
+    "container": "Acta Medica Scandinavica",
+    "volume": "53",
+    "issue": "1",
+    "pages": "469–486",
+    "doi": "10.1111/j.0954-6820.1920.tb18266.x",
+    "url": "https://doi.org/10.1111/j.0954-6820.1920.tb18266.x",
+    "apa": "Fridericia, L. S. (1920). Die Systolendauer im Elektrokardiogramm bei normalen Menschen und bei Herzkranken. *Acta Medica Scandinavica, 53*(1), 469–486. https://doi.org/10.1111/j.0954-6820.1920.tb18266.x",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "goldberger2000",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Goldberger",
+        "given": "A. L."
+      },
+      {
+        "family": "Amaral",
+        "given": "L. A. N."
+      },
+      {
+        "family": "Glass",
+        "given": "L."
+      },
+      {
+        "family": "Hausdorff",
+        "given": "J. M."
+      },
+      {
+        "family": "Ivanov",
+        "given": "P. Ch."
+      },
+      {
+        "family": "Mark",
+        "given": "R. G."
+      },
+      {
+        "family": "Mietus",
+        "given": "J. E."
+      },
+      {
+        "family": "Moody",
+        "given": "G. B."
+      },
+      {
+        "family": "Peng",
+        "given": "C.-K."
+      },
+      {
+        "family": "Stanley",
+        "given": "H. E."
+      }
+    ],
+    "year": "2000",
+    "title": "PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals",
+    "container": "Circulation",
+    "volume": "101",
+    "issue": "23",
+    "pages": "e215–e220",
+    "doi": "10.1161/01.CIR.101.23.e215",
+    "url": "https://doi.org/10.1161/01.CIR.101.23.e215",
+    "apa": "Goldberger, A. L., Amaral, L. A. N., Glass, L., Hausdorff, J. M., Ivanov, P. Ch., Mark, R. G., Mietus, J. E., Moody, G. B., Peng, C.-K., & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. *Circulation, 101*(23), e215–e220. https://doi.org/10.1161/01.CIR.101.23.e215",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "hannun2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Hannun",
+        "given": "A. Y."
+      },
+      {
+        "family": "Rajpurkar",
+        "given": "P."
+      },
+      {
+        "family": "Haghpanahi",
+        "given": "M."
+      },
+      {
+        "family": "Tison",
+        "given": "G. H."
+      },
+      {
+        "family": "Bourn",
+        "given": "C."
+      },
+      {
+        "family": "Turakhia",
+        "given": "M. P."
+      },
+      {
+        "family": "Ng",
+        "given": "A. Y."
+      }
+    ],
+    "year": "2019",
+    "title": "Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network",
+    "container": "Nature Medicine",
+    "volume": "25",
+    "issue": "1",
+    "pages": "65–69",
+    "doi": "10.1038/s41591-018-0268-3",
+    "url": "https://doi.org/10.1038/s41591-018-0268-3",
+    "apa": "Hannun, A. Y., Rajpurkar, P., Haghpanahi, M., Tison, G. H., Bourn, C., Turakhia, M. P., & Ng, A. Y. (2019). Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network. *Nature Medicine, 25*(1), 65–69. https://doi.org/10.1038/s41591-018-0268-3",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "harris2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Harris",
+        "given": "C. R."
+      },
+      {
+        "family": "Millman",
+        "given": "K. J."
+      },
+      {
+        "family": "van der Walt",
+        "given": "S. J."
+      },
+      {
+        "family": "Gommers",
+        "given": "R."
+      },
+      {
+        "family": "Virtanen",
+        "given": "P."
+      },
+      {
+        "family": "Cournapeau",
+        "given": "D."
+      },
+      {
+        "family": "Wieser",
+        "given": "E."
+      },
+      {
+        "family": "Taylor",
+        "given": "J."
+      },
+      {
+        "family": "Berg",
+        "given": "S."
+      },
+      {
+        "family": "Smith",
+        "given": "N. J."
+      },
+      {
+        "family": "Kern",
+        "given": "R."
+      },
+      {
+        "family": "Picus",
+        "given": "M."
+      },
+      {
+        "family": "Hoyer",
+        "given": "S."
+      },
+      {
+        "family": "van Kerkwijk",
+        "given": "M. H."
+      },
+      {
+        "family": "Brett",
+        "given": "M."
+      },
+      {
+        "family": "Haldane",
+        "given": "A."
+      },
+      {
+        "family": "Fernández del Río",
+        "given": "J."
+      },
+      {
+        "family": "Wiebe",
+        "given": "M."
+      },
+      {
+        "family": "Peterson",
+        "given": "P."
+      },
+      {
+        "family": "Gérard-Marchant",
+        "given": "P."
+      },
+      {
+        "family": "Sheppard",
+        "given": "K."
+      },
+      {
+        "family": "Reddy",
+        "given": "T."
+      },
+      {
+        "family": "Weckesser",
+        "given": "W."
+      },
+      {
+        "family": "Abbasi",
+        "given": "H."
+      },
+      {
+        "family": "Gohlke",
+        "given": "C."
+      },
+      {
+        "family": "Oliphant",
+        "given": "T. E."
+      }
+    ],
+    "year": "2020",
+    "title": "Array programming with NumPy",
+    "container": "Nature",
+    "volume": "585",
+    "issue": "7825",
+    "pages": "357–362",
+    "doi": "10.1038/s41586-020-2649-2",
+    "url": "https://doi.org/10.1038/s41586-020-2649-2",
+    "apa": "Harris, C. R., Millman, K. J., van der Walt, S. J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N. J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M. H., Brett, M., Haldane, A., Fernández del Río, J., Wiebe, M., Peterson, P., Gérard-Marchant, P., Sheppard, K., Reddy, T., Weckesser, W., Abbasi, H., Gohlke, C., & Oliphant, T. E. (2020). Array programming with NumPy. *Nature, 585*(7825), 357–362. https://doi.org/10.1038/s41586-020-2649-2",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "haynes2009",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Haynes",
+        "given": "A. B."
+      },
+      {
+        "family": "Weiser",
+        "given": "T. G."
+      },
+      {
+        "family": "Berry",
+        "given": "W. R."
+      },
+      {
+        "family": "Lipsitz",
+        "given": "S. R."
+      },
+      {
+        "family": "Breizat",
+        "given": "A.-H. S."
+      },
+      {
+        "family": "Dellinger",
+        "given": "E. P."
+      },
+      {
+        "family": "Herbosa",
+        "given": "T."
+      },
+      {
+        "family": "Joseph",
+        "given": "S."
+      },
+      {
+        "family": "Kibatala",
+        "given": "P. L."
+      },
+      {
+        "family": "Lapitan",
+        "given": "M. C. M."
+      },
+      {
+        "family": "Merry",
+        "given": "A. F."
+      },
+      {
+        "family": "Moorthy",
+        "given": "K."
+      },
+      {
+        "family": "Reznick",
+        "given": "R. K."
+      },
+      {
+        "family": "Taylor",
+        "given": "B."
+      },
+      {
+        "family": "Gawande",
+        "given": "A. A."
+      }
+    ],
+    "year": "2009",
+    "title": "A surgical safety checklist to reduce morbidity and mortality in a global population",
+    "container": "New England Journal of Medicine",
+    "volume": "360",
+    "issue": "5",
+    "pages": "491–499",
+    "doi": "10.1056/NEJMsa0810119",
+    "url": "https://doi.org/10.1056/NEJMsa0810119",
+    "apa": "Haynes, A. B., Weiser, T. G., Berry, W. R., Lipsitz, S. R., Breizat, A.-H. S., Dellinger, E. P., Herbosa, T., Joseph, S., Kibatala, P. L., Lapitan, M. C. M., Merry, A. F., Moorthy, K., Reznick, R. K., Taylor, B., & Gawande, A. A. (2009). A surgical safety checklist to reduce morbidity and mortality in a global population. *New England Journal of Medicine, 360*(5), 491–499. https://doi.org/10.1056/NEJMsa0810119",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "hunter2007",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Hunter",
+        "given": "J. D."
+      }
+    ],
+    "year": "2007",
+    "title": "Matplotlib: A 2D graphics environment",
+    "container": "Computing in Science & Engineering",
+    "volume": "9",
+    "issue": "3",
+    "pages": "90–95",
+    "doi": "10.1109/MCSE.2007.55",
+    "url": "https://doi.org/10.1109/MCSE.2007.55",
+    "apa": "Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. *Computing in Science & Engineering, 9*(3), 90–95. https://doi.org/10.1109/MCSE.2007.55",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "inker2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Inker",
+        "given": "L. A."
+      },
+      {
+        "family": "Eneanya",
+        "given": "N. D."
+      },
+      {
+        "family": "Coresh",
+        "given": "J."
+      },
+      {
+        "family": "Tighiouart",
+        "given": "H."
+      },
+      {
+        "family": "Wang",
+        "given": "D."
+      },
+      {
+        "family": "Sang",
+        "given": "Y."
+      },
+      {
+        "family": "Crews",
+        "given": "D. C."
+      },
+      {
+        "family": "Doria",
+        "given": "A."
+      },
+      {
+        "family": "Estrella",
+        "given": "M. M."
+      },
+      {
+        "family": "Froissart",
+        "given": "M."
+      },
+      {
+        "family": "Grams",
+        "given": "M. E."
+      },
+      {
+        "family": "Greene",
+        "given": "T."
+      },
+      {
+        "family": "Grubb",
+        "given": "A."
+      },
+      {
+        "family": "Gudnason",
+        "given": "V."
+      },
+      {
+        "family": "Gutiérrez",
+        "given": "O. M."
+      },
+      {
+        "family": "Kalil",
+        "given": "R."
+      },
+      {
+        "family": "Karger",
+        "given": "A. B."
+      },
+      {
+        "family": "Mauer",
+        "given": "M."
+      },
+      {
+        "family": "Navis",
+        "given": "G."
+      },
+      {
+        "family": "Nelson",
+        "given": "R. G."
+      },
+      {
+        "family": "Poggio",
+        "given": "E. D."
+      },
+      {
+        "family": "Rodby",
+        "given": "R."
+      },
+      {
+        "family": "Rossing",
+        "given": "P."
+      },
+      {
+        "family": "Rule",
+        "given": "A. D."
+      },
+      {
+        "family": "Selvin",
+        "given": "E."
+      },
+      {
+        "family": "Seegmiller",
+        "given": "J. C."
+      },
+      {
+        "family": "Shlipak",
+        "given": "M. G."
+      },
+      {
+        "family": "Torres",
+        "given": "V. E."
+      },
+      {
+        "family": "Yang",
+        "given": "W."
+      },
+      {
+        "family": "Ballew",
+        "given": "S. H."
+      },
+      {
+        "family": "Couture",
+        "given": "S. J."
+      },
+      {
+        "family": "Powe",
+        "given": "N. R."
+      },
+      {
+        "family": "Levey",
+        "given": "A. S."
+      }
+    ],
+    "year": "2021",
+    "title": "New creatinine- and cystatin C-based equations to estimate GFR without race",
+    "container": "New England Journal of Medicine",
+    "volume": "385",
+    "issue": "19",
+    "pages": "1737–1749",
+    "doi": "10.1056/NEJMoa2102953",
+    "url": "https://doi.org/10.1056/NEJMoa2102953",
+    "apa": "Inker, L. A., Eneanya, N. D., Coresh, J., Tighiouart, H., Wang, D., Sang, Y., Crews, D. C., Doria, A., Estrella, M. M., Froissart, M., Grams, M. E., Greene, T., Grubb, A., Gudnason, V., Gutiérrez, O. M., Kalil, R., Karger, A. B., Mauer, M., Navis, G., Nelson, R. G., Poggio, E. D., Rodby, R., Rossing, P., Rule, A. D., Selvin, E., Seegmiller, J. C., Shlipak, M. G., Torres, V. E., Yang, W., Ballew, S. H., Couture, S. J., Powe, N. R., & Levey, A. S. (2021). New creatinine- and cystatin C-based equations to estimate GFR without race. *New England Journal of Medicine, 385*(19), 1737–1749. https://doi.org/10.1056/NEJMoa2102953",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "janosi1989",
+    "type": "dataset",
+    "authors": [
+      {
+        "family": "Janosi",
+        "given": "A."
+      },
+      {
+        "family": "Steinbrunn",
+        "given": "W."
+      },
+      {
+        "family": "Pfisterer",
+        "given": "M."
+      },
+      {
+        "family": "Detrano",
+        "given": "R."
+      }
+    ],
+    "year": "1989",
+    "title": "Heart Disease",
+    "container": "UCI Machine Learning Repository",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.24432/C52P4X",
+    "url": "https://doi.org/10.24432/C52P4X",
+    "apa": "Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). *Heart Disease* [Data set]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "kvkk2016",
+    "type": "law",
+    "authors": [
+      {
+        "literal": "Kişisel Verilerin Korunması Kanunu [Law on the Protection of Personal Data], Law No. 6698"
+      }
+    ],
+    "year": "2016",
+    "title": "",
+    "container": "Resmî Gazete, 29677 (7 April 2016)",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5",
+    "apa": "Kişisel Verilerin Korunması Kanunu [Law on the Protection of Personal Data], Law No. 6698. (2016). *Resmî Gazete, 29677 (7 April 2016)*. https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "kligfield2007",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Kligfield",
+        "given": "P."
+      },
+      {
+        "family": "Gettes",
+        "given": "L. S."
+      },
+      {
+        "family": "Bailey",
+        "given": "J. J."
+      },
+      {
+        "family": "Childers",
+        "given": "R."
+      },
+      {
+        "family": "Deal",
+        "given": "B. J."
+      },
+      {
+        "family": "Hancock",
+        "given": "E. W."
+      },
+      {
+        "family": "van Herpen",
+        "given": "G."
+      },
+      {
+        "family": "Kors",
+        "given": "J. A."
+      },
+      {
+        "family": "Macfarlane",
+        "given": "P."
+      },
+      {
+        "family": "Mirvis",
+        "given": "D. M."
+      },
+      {
+        "family": "Pahlm",
+        "given": "O."
+      },
+      {
+        "family": "Rautaharju",
+        "given": "P."
+      },
+      {
+        "family": "Wagner",
+        "given": "G. S."
+      }
+    ],
+    "year": "2007",
+    "title": "Recommendations for the standardization and interpretation of the electrocardiogram: Part I: The electrocardiogram and its technology: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology",
+    "container": "Circulation",
+    "volume": "115",
+    "issue": "10",
+    "pages": "1306–1324",
+    "doi": "10.1161/CIRCULATIONAHA.106.180200",
+    "url": "https://doi.org/10.1161/CIRCULATIONAHA.106.180200",
+    "apa": "Kligfield, P., Gettes, L. S., Bailey, J. J., Childers, R., Deal, B. J., Hancock, E. W., van Herpen, G., Kors, J. A., Macfarlane, P., Mirvis, D. M., Pahlm, O., Rautaharju, P., & Wagner, G. S. (2007). Recommendations for the standardization and interpretation of the electrocardiogram: Part I: The electrocardiogram and its technology: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. *Circulation, 115*(10), 1306–1324. https://doi.org/10.1161/CIRCULATIONAHA.106.180200",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "kluyver2016",
+    "type": "chapter",
+    "authors": [
+      {
+        "family": "Kluyver",
+        "given": "T."
+      },
+      {
+        "family": "Ragan-Kelley",
+        "given": "B."
+      },
+      {
+        "family": "Pérez",
+        "given": "F."
+      },
+      {
+        "family": "Granger",
+        "given": "B."
+      },
+      {
+        "family": "Bussonnier",
+        "given": "M."
+      },
+      {
+        "family": "Frederic",
+        "given": "J."
+      },
+      {
+        "family": "Kelley",
+        "given": "K."
+      },
+      {
+        "family": "Hamrick",
+        "given": "J."
+      },
+      {
+        "family": "Grout",
+        "given": "J."
+      },
+      {
+        "family": "Corlay",
+        "given": "S."
+      },
+      {
+        "family": "Ivanov",
+        "given": "P."
+      },
+      {
+        "family": "Avila",
+        "given": "D."
+      },
+      {
+        "family": "Abdalla",
+        "given": "S."
+      },
+      {
+        "family": "Willing",
+        "given": "C."
+      },
+      {
+        "literal": "Jupyter Development Team"
+      }
+    ],
+    "year": "2016",
+    "title": "Jupyter Notebooks: A publishing format for reproducible computational workflows",
+    "container": "Positioning and power in academic publishing: Players, agents and agendas",
+    "volume": "",
+    "issue": "",
+    "pages": "87–90",
+    "doi": "10.3233/978-1-61499-649-1-87",
+    "url": "https://doi.org/10.3233/978-1-61499-649-1-87",
+    "apa": "Kluyver, T., Ragan-Kelley, B., Pérez, F., Granger, B., Bussonnier, M., Frederic, J., Kelley, K., Hamrick, J., Grout, J., Corlay, S., Ivanov, P., Avila, D., Abdalla, S., Willing, C., & Jupyter Development Team. (2016). Jupyter Notebooks: A publishing format for reproducible computational workflows. In F. Loizides & B. Schmidt (Eds.), *Positioning and power in academic publishing: Players, agents and agendas* (pp. 87–90). IOS Press. https://doi.org/10.3233/978-1-61499-649-1-87",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "kusumoto2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Kusumoto",
+        "given": "F. M."
+      },
+      {
+        "family": "Schoenfeld",
+        "given": "M. H."
+      },
+      {
+        "family": "Barrett",
+        "given": "C."
+      },
+      {
+        "family": "Edgerton",
+        "given": "J. R."
+      },
+      {
+        "family": "Ellenbogen",
+        "given": "K. A."
+      },
+      {
+        "family": "Gold",
+        "given": "M. R."
+      },
+      {
+        "family": "Goldschlager",
+        "given": "N. F."
+      },
+      {
+        "family": "Hamilton",
+        "given": "R. M."
+      },
+      {
+        "family": "Joglar",
+        "given": "J. A."
+      },
+      {
+        "family": "Kim",
+        "given": "R. J."
+      },
+      {
+        "family": "Lee",
+        "given": "R."
+      },
+      {
+        "family": "Marine",
+        "given": "J. E."
+      },
+      {
+        "family": "McLeod",
+        "given": "C. J."
+      },
+      {
+        "family": "Oken",
+        "given": "K. R."
+      },
+      {
+        "family": "Patton",
+        "given": "K. K."
+      },
+      {
+        "family": "Pellegrini",
+        "given": "C. N."
+      },
+      {
+        "family": "Selzman",
+        "given": "K. A."
+      },
+      {
+        "family": "Thompson",
+        "given": "A."
+      },
+      {
+        "family": "Varosy",
+        "given": "P. D."
+      }
+    ],
+    "year": "2019",
+    "title": "2018 ACC/AHA/HRS guideline on the evaluation and management of patients with bradycardia and cardiac conduction delay: A report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines and the Heart Rhythm Society",
+    "container": "Circulation",
+    "volume": "140",
+    "issue": "8",
+    "pages": "e382–e482",
+    "doi": "10.1161/CIR.0000000000000628",
+    "url": "https://doi.org/10.1161/CIR.0000000000000628",
+    "apa": "Kusumoto, F. M., Schoenfeld, M. H., Barrett, C., Edgerton, J. R., Ellenbogen, K. A., Gold, M. R., Goldschlager, N. F., Hamilton, R. M., Joglar, J. A., Kim, R. J., Lee, R., Marine, J. E., McLeod, C. J., Oken, K. R., Patton, K. K., Pellegrini, C. N., Selzman, K. A., Thompson, A., & Varosy, P. D. (2019). 2018 ACC/AHA/HRS guideline on the evaluation and management of patients with bradycardia and cardiac conduction delay: A report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines and the Heart Rhythm Society. *Circulation, 140*(8), e382–e482. https://doi.org/10.1161/CIR.0000000000000628",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "makowski2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Makowski",
+        "given": "D."
+      },
+      {
+        "family": "Pham",
+        "given": "T."
+      },
+      {
+        "family": "Lau",
+        "given": "Z. J."
+      },
+      {
+        "family": "Brammer",
+        "given": "J. C."
+      },
+      {
+        "family": "Lespinasse",
+        "given": "F."
+      },
+      {
+        "family": "Pham",
+        "given": "H."
+      },
+      {
+        "family": "Schölzel",
+        "given": "C."
+      },
+      {
+        "family": "Chen",
+        "given": "S. H. A."
+      }
+    ],
+    "year": "2021",
+    "title": "NeuroKit2: A Python toolbox for neurophysiological signal processing",
+    "container": "Behavior Research Methods",
+    "volume": "53",
+    "issue": "4",
+    "pages": "1689–1696",
+    "doi": "10.3758/s13428-020-01516-y",
+    "url": "https://doi.org/10.3758/s13428-020-01516-y",
+    "apa": "Makowski, D., Pham, T., Lau, Z. J., Brammer, J. C., Lespinasse, F., Pham, H., Schölzel, C., & Chen, S. H. A. (2021). NeuroKit2: A Python toolbox for neurophysiological signal processing. *Behavior Research Methods, 53*(4), 1689–1696. https://doi.org/10.3758/s13428-020-01516-y",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "malmivuo1995",
+    "type": "book",
+    "authors": [
+      {
+        "family": "Malmivuo",
+        "given": "J."
+      },
+      {
+        "family": "Plonsey",
+        "given": "R."
+      }
+    ],
+    "year": "1995",
+    "title": "Bioelectromagnetism: Principles and applications of bioelectric and biomagnetic fields",
+    "container": "Oxford University Press",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.1093/acprof:oso/9780195058239.001.0001",
+    "url": "https://doi.org/10.1093/acprof:oso/9780195058239.001.0001",
+    "apa": "Malmivuo, J., & Plonsey, R. (1995). *Bioelectromagnetism: Principles and applications of bioelectric and biomagnetic fields*. Oxford University Press. https://doi.org/10.1093/acprof:oso/9780195058239.001.0001",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents",
+      "Course package vclinic"
+    ]
+  },
+  {
+    "key": "mckinney2010",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "McKinney",
+        "given": "W."
+      }
+    ],
+    "year": "2010",
+    "title": "Data structures for statistical computing in Python",
+    "container": "Proceedings of the 9th Python in Science Conference",
+    "volume": "",
+    "issue": "",
+    "pages": "56–61",
+    "doi": "10.25080/Majora-92bf1922-00a",
+    "url": "https://doi.org/10.25080/Majora-92bf1922-00a",
+    "apa": "McKinney, W. (2010). Data structures for statistical computing in Python. In *Proceedings of the 9th Python in Science Conference* (pp. 56–61). https://doi.org/10.25080/Majora-92bf1922-00a",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "mcsharry2003",
+    "type": "article",
+    "authors": [
+      {
+        "family": "McSharry",
+        "given": "P. E."
+      },
+      {
+        "family": "Clifford",
+        "given": "G. D."
+      },
+      {
+        "family": "Tarassenko",
+        "given": "L."
+      },
+      {
+        "family": "Smith",
+        "given": "L. A."
+      }
+    ],
+    "year": "2003",
+    "title": "A dynamical model for generating synthetic electrocardiogram signals",
+    "container": "IEEE Transactions on Biomedical Engineering",
+    "volume": "50",
+    "issue": "3",
+    "pages": "289–294",
+    "doi": "10.1109/TBME.2003.808805",
+    "url": "https://doi.org/10.1109/TBME.2003.808805",
+    "apa": "McSharry, P. E., Clifford, G. D., Tarassenko, L., & Smith, L. A. (2003). A dynamical model for generating synthetic electrocardiogram signals. *IEEE Transactions on Biomedical Engineering, 50*(3), 289–294. https://doi.org/10.1109/TBME.2003.808805",
+    "used_in": [
+      "Course package vclinic"
+    ]
+  },
+  {
+    "key": "moody2001",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Moody",
+        "given": "G. B."
+      },
+      {
+        "family": "Mark",
+        "given": "R. G."
+      }
+    ],
+    "year": "2001",
+    "title": "The impact of the MIT-BIH Arrhythmia Database",
+    "container": "IEEE Engineering in Medicine and Biology Magazine",
+    "volume": "20",
+    "issue": "3",
+    "pages": "45–50",
+    "doi": "10.1109/51.932724",
+    "url": "https://doi.org/10.1109/51.932724",
+    "apa": "Moody, G. B., & Mark, R. G. (2001). The impact of the MIT-BIH Arrhythmia Database. *IEEE Engineering in Medicine and Biology Magazine, 20*(3), 45–50. https://doi.org/10.1109/51.932724",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "moody2002",
+    "type": "web",
+    "authors": [
+      {
+        "family": "Moody",
+        "given": "G. B."
+      }
+    ],
+    "year": "2002",
+    "title": "bxb: ANSI/AAMI-standard beat-by-beat annotation comparator",
+    "container": "WFDB applications guide",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://physionet.org/physiotools/wag/bxb-1.htm",
+    "apa": "Moody, G. B. (2002). bxb: ANSI/AAMI-standard beat-by-beat annotation comparator. In *WFDB applications guide*. PhysioNet. https://physionet.org/physiotools/wag/bxb-1.htm",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "mitdb2005",
+    "type": "dataset",
+    "authors": [
+      {
+        "family": "Moody",
+        "given": "G. B."
+      },
+      {
+        "family": "Mark",
+        "given": "R. G."
+      }
+    ],
+    "year": "2005",
+    "title": "MIT-BIH Arrhythmia Database (version 1.0.0)",
+    "container": "PhysioNet",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.13026/C2F305",
+    "url": "https://doi.org/10.13026/C2F305",
+    "apa": "Moody, G. B., & Mark, R. G. (2005). *MIT-BIH Arrhythmia Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C2F305",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "pan1985",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Pan",
+        "given": "J."
+      },
+      {
+        "family": "Tompkins",
+        "given": "W. J."
+      }
+    ],
+    "year": "1985",
+    "title": "A real-time QRS detection algorithm",
+    "container": "IEEE Transactions on Biomedical Engineering",
+    "volume": "BME-32",
+    "issue": "3",
+    "pages": "230–236",
+    "doi": "10.1109/TBME.1985.325532",
+    "url": "https://doi.org/10.1109/TBME.1985.325532",
+    "apa": "Pan, J., & Tompkins, W. J. (1985). A real-time QRS detection algorithm. *IEEE Transactions on Biomedical Engineering, BME-32*(3), 230–236. https://doi.org/10.1109/TBME.1985.325532",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "rautaharju2009",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Rautaharju",
+        "given": "P. M."
+      },
+      {
+        "family": "Surawicz",
+        "given": "B."
+      },
+      {
+        "family": "Gettes",
+        "given": "L. S."
+      }
+    ],
+    "year": "2009",
+    "title": "AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part IV: The ST segment, T and U waves, and the QT interval: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology",
+    "container": "Circulation",
+    "volume": "119",
+    "issue": "10",
+    "pages": "e241–e250",
+    "doi": "10.1161/CIRCULATIONAHA.108.191096",
+    "url": "https://doi.org/10.1161/CIRCULATIONAHA.108.191096",
+    "apa": "Rautaharju, P. M., Surawicz, B., & Gettes, L. S. (2009). AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part IV: The ST segment, T and U waves, and the QT interval: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. *Circulation, 119*(10), e241–e250. https://doi.org/10.1161/CIRCULATIONAHA.108.191096",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "sameni2007",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Sameni",
+        "given": "R."
+      },
+      {
+        "family": "Clifford",
+        "given": "G. D."
+      },
+      {
+        "family": "Jutten",
+        "given": "C."
+      },
+      {
+        "family": "Shamsollahi",
+        "given": "M. B."
+      }
+    ],
+    "year": "2007",
+    "title": "Multichannel ECG and noise modeling: Application to maternal and fetal ECG signals",
+    "container": "EURASIP Journal on Advances in Signal Processing",
+    "volume": "2007",
+    "issue": "",
+    "pages": "Article 043407",
+    "doi": "10.1155/2007/43407",
+    "url": "https://doi.org/10.1155/2007/43407",
+    "apa": "Sameni, R., Clifford, G. D., Jutten, C., & Shamsollahi, M. B. (2007). Multichannel ECG and noise modeling: Application to maternal and fetal ECG signals. *EURASIP Journal on Advances in Signal Processing, 2007*, Article 043407. https://doi.org/10.1155/2007/43407",
+    "used_in": [
+      "Course package vclinic"
+    ]
+  },
+  {
+    "key": "siontis2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Siontis",
+        "given": "K. C."
+      },
+      {
+        "family": "Noseworthy",
+        "given": "P. A."
+      },
+      {
+        "family": "Attia",
+        "given": "Z. I."
+      },
+      {
+        "family": "Friedman",
+        "given": "P. A."
+      }
+    ],
+    "year": "2021",
+    "title": "Artificial intelligence-enhanced electrocardiography in cardiovascular disease management",
+    "container": "Nature Reviews Cardiology",
+    "volume": "18",
+    "issue": "7",
+    "pages": "465–478",
+    "doi": "10.1038/s41569-020-00503-2",
+    "url": "https://doi.org/10.1038/s41569-020-00503-2",
+    "apa": "Siontis, K. C., Noseworthy, P. A., Attia, Z. I., & Friedman, P. A. (2021). Artificial intelligence-enhanced electrocardiography in cardiovascular disease management. *Nature Reviews Cardiology, 18*(7), 465–478. https://doi.org/10.1038/s41569-020-00503-2",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "surawicz2009",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Surawicz",
+        "given": "B."
+      },
+      {
+        "family": "Childers",
+        "given": "R."
+      },
+      {
+        "family": "Deal",
+        "given": "B. J."
+      },
+      {
+        "family": "Gettes",
+        "given": "L. S."
+      }
+    ],
+    "year": "2009",
+    "title": "AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part III: Intraventricular conduction disturbances: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology",
+    "container": "Circulation",
+    "volume": "119",
+    "issue": "10",
+    "pages": "e235–e240",
+    "doi": "10.1161/CIRCULATIONAHA.108.191095",
+    "url": "https://doi.org/10.1161/CIRCULATIONAHA.108.191095",
+    "apa": "Surawicz, B., Childers, R., Deal, B. J., & Gettes, L. S. (2009). AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part III: Intraventricular conduction disturbances: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. *Circulation, 119*(10), e235–e240. https://doi.org/10.1161/CIRCULATIONAHA.108.191095",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "taskforce1996",
+    "type": "article",
+    "authors": [
+      {
+        "literal": "Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology"
+      }
+    ],
+    "year": "1996",
+    "title": "Heart rate variability: Standards of measurement, physiological interpretation, and clinical use",
+    "container": "Circulation",
+    "volume": "93",
+    "issue": "5",
+    "pages": "1043–1065",
+    "doi": "10.1161/01.CIR.93.5.1043",
+    "url": "https://doi.org/10.1161/01.CIR.93.5.1043",
+    "apa": "Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology. (1996). Heart rate variability: Standards of measurement, physiological interpretation, and clinical use. *Circulation, 93*(5), 1043–1065. https://doi.org/10.1161/01.CIR.93.5.1043",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "vandenberk2016",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Vandenberk",
+        "given": "B."
+      },
+      {
+        "family": "Vandael",
+        "given": "E."
+      },
+      {
+        "family": "Robyns",
+        "given": "T."
+      },
+      {
+        "family": "Vandenberghe",
+        "given": "J."
+      },
+      {
+        "family": "Garweg",
+        "given": "C."
+      },
+      {
+        "family": "Foulon",
+        "given": "V."
+      },
+      {
+        "family": "Ector",
+        "given": "J."
+      },
+      {
+        "family": "Willems",
+        "given": "R."
+      }
+    ],
+    "year": "2016",
+    "title": "Which QT correction formulae to use for QT monitoring?",
+    "container": "Journal of the American Heart Association",
+    "volume": "5",
+    "issue": "6",
+    "pages": "Article e003264",
+    "doi": "10.1161/JAHA.116.003264",
+    "url": "https://doi.org/10.1161/JAHA.116.003264",
+    "apa": "Vandenberk, B., Vandael, E., Robyns, T., Vandenberghe, J., Garweg, C., Foulon, V., Ector, J., & Willems, R. (2016). Which QT correction formulae to use for QT monitoring? *Journal of the American Heart Association, 5*(6), Article e003264. https://doi.org/10.1161/JAHA.116.003264",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "wagner2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Wagner",
+        "given": "P."
+      },
+      {
+        "family": "Strodthoff",
+        "given": "N."
+      },
+      {
+        "family": "Bousseljot",
+        "given": "R.-D."
+      },
+      {
+        "family": "Kreiseler",
+        "given": "D."
+      },
+      {
+        "family": "Lunze",
+        "given": "F. I."
+      },
+      {
+        "family": "Samek",
+        "given": "W."
+      },
+      {
+        "family": "Schaeffter",
+        "given": "T."
+      }
+    ],
+    "year": "2020",
+    "title": "PTB-XL, a large publicly available electrocardiography dataset",
+    "container": "Scientific Data",
+    "volume": "7",
+    "issue": "1",
+    "pages": "Article 154",
+    "doi": "10.1038/s41597-020-0495-6",
+    "url": "https://doi.org/10.1038/s41597-020-0495-6",
+    "apa": "Wagner, P., Strodthoff, N., Bousseljot, R.-D., Kreiseler, D., Lunze, F. I., Samek, W., & Schaeffter, T. (2020). PTB-XL, a large publicly available electrocardiography dataset. *Scientific Data, 7*(1), Article 154. https://doi.org/10.1038/s41597-020-0495-6",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "xie2023",
+    "type": "software",
+    "authors": [
+      {
+        "family": "Xie",
+        "given": "C."
+      },
+      {
+        "family": "McCullum",
+        "given": "L."
+      },
+      {
+        "family": "Johnson",
+        "given": "A."
+      },
+      {
+        "family": "Pollard",
+        "given": "T."
+      },
+      {
+        "family": "Gow",
+        "given": "B."
+      },
+      {
+        "family": "Moody",
+        "given": "B."
+      }
+    ],
+    "year": "2023",
+    "title": "Waveform Database Software Package (WFDB) for Python (version 4.1.0)",
+    "container": "PhysioNet",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.13026/9njx-6322",
+    "url": "https://doi.org/10.13026/9njx-6322",
+    "apa": "Xie, C., McCullum, L., Johnson, A., Pollard, T., Gow, B., & Moody, B. (2023). *Waveform Database Software Package (WFDB) for Python (version 4.1.0)* [Computer software]. PhysioNet. https://doi.org/10.13026/9njx-6322",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  }
+]

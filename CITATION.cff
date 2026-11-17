@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite them as below."
+title: "Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists: Open course materials"
+type: software
+authors:
+  - family-names: Kose
+    given-names: Utku
+    orcid: "https://orcid.org/0000-0002-9652-6415"
+    affiliation: "Süleyman Demirel University"
+    email: utkukose@sdu.edu.tr
+version: 1.0.0
+date-released: "2026-11-17"
+url: "https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/"
+repository-code: "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture"
+license:
+  - CC-BY-4.0
+  - MIT
+abstract: >-
+  Open bilingual (English and Turkish) materials of an eleven-week training
+  program on artificial intelligence with Python for cardiologists and other
+  specialist physicians, prepared for the Turkish Society of Cardiology. Each
+  week combines a clinical case, a Python step, a lecture page, an interactive
+  lab, a Jupyter notebook and a weekly project, built around a virtual
+  cardiology clinic of synthetic patients and real public data.
+keywords:
+  - artificial intelligence
+  - machine learning
+  - deep learning
+  - cardiology
+  - electrocardiography
+  - ECG
+  - Python
+  - Jupyter
+  - medical education
+  - synthetic data
+  - virtual clinic
+  - AI-assisted programming

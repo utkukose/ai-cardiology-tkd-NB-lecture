@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Files created by the notebooks when they are opened outside the course folder
+ai-cardiology-course/
+
+# Exports of the interactive labs and personal work
+my_caliper_measurements.csv
+learning_log_week*.md
+ogrenme_gunlugu_hafta*.md
+
+# Operating systems
+.DS_Store
+Thumbs.db
+desktop.ini

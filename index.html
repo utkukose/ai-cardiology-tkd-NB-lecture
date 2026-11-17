@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI with Python for Cardiologists | Turkish Society of Cardiology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#231A1A;--paper:#FBF7F6;--panel:#FFFFFF;--steel:#5E5454;--line:#E7D9D7;--accent:#9B1B1B;--blue:#1F5F8B;--ok:#2E7D4F;--band:rgba(155,27,27,.07);
+--sans:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--head:'Barlow Semi Condensed','Atkinson Hyperlegible',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--ink:#EEE6E6;--paper:#141012;--panel:#1D1719;--steel:#B5A9A9;--line:#3A2E30;--accent:#E5797B;--blue:#7DB4DD;--ok:#6CC08F;--band:rgba(229,121,123,.12)}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans)}
+a{color:var(--blue);text-underline-offset:3px}.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 60px}
+header{border-bottom:3px solid var(--accent);padding-bottom:14px;margin-bottom:18px;position:relative}
+.org{font-size:.92rem;color:var(--steel);margin:0}h1{font-family:var(--head);font-weight:600;font-size:2.2rem;line-height:1.15;margin:.3rem 0}
+.sub{color:var(--steel);margin:.2rem 0 .6rem}.lang{position:absolute;right:0;top:0;display:flex;gap:6px}
+.lang button{font:inherit;font-size:.85rem;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.lang button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+h2{font-family:var(--head);font-weight:600;font-size:1.5rem;margin:1.8rem 0 .6rem}
+.start{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.start a{display:block;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 14px;text-decoration:none;color:var(--ink)}
+.start a b{color:var(--accent)}
+.weeks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.wk{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:12px 14px;position:relative}
+.wk.done{border-color:var(--ok);box-shadow:inset 4px 0 0 var(--ok)}
+.wk .n{font-family:var(--head);font-weight:600;color:var(--accent);font-size:.95rem}
+.wk h3{font-family:var(--head);font-weight:600;font-size:1.2rem;margin:.1rem 0 .3rem}
+.wk .st{font-size:.88rem;color:var(--steel);margin:0 0 .3rem}.wk .pr{font-size:.88rem;margin:0 0 .4rem}
+.wk .links{display:flex;flex-wrap:wrap;gap:6px}.wk .links a{font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:2px 9px;text-decoration:none;background:var(--paper)}
+.wk .soon{font-size:.85rem;color:var(--steel);font-style:italic}
+.wk label{position:absolute;top:10px;right:12px;font-size:.78rem;color:var(--steel);cursor:pointer}
+figure{margin:1rem 0}figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+figcaption{font-size:.88rem;color:var(--steel)}
+footer{margin-top:3rem;border-top:2px solid var(--line);padding-top:1rem;font-size:.86rem;color:var(--steel);text-align:center}
+footer p{margin:.25rem 0}html[lang=en] [data-l=tr],html[lang=tr] [data-l=en]{display:none !important}
+@media (max-width:560px){h1{font-size:1.7rem}.lang{position:static;margin-bottom:8px}}
+</style></head>
+<body><div class="wrap">
+<header>
+<div class="lang"><button data-set="en">English</button><button data-set="tr">Türkçe</button></div>
+<p class="org"><span data-l="en">Turkish Society of Cardiology · Training program</span><span data-l="tr">Türk Kardiyoloji Derneği · Eğitim programı</span></p>
+<h1><span data-l="en">Artificial Intelligence with Python</span><span data-l="tr">Python ile Yapay Zekâ Eğitimi</span></h1>
+<p class="sub"><span data-l="en">A Hands-on Training Program for Cardiologists · 11 weeks, 44 hours · Prof. Dr. Utku Kose</span><span data-l="tr">Kardiyologlar için Uygulamalı Eğitim Programı · 11 hafta, 44 saat · Prof. Dr. Utku Köse</span></p>
+</header>
+<p data-l="en">Eleven weeks of Python and artificial intelligence (AI) for cardiologists and other specialist physicians, with or without programming experience. Every week combines a clinical case, a Python step, a lecture page, an interactive lab, a Jupyter notebook and a weekly project. A virtual cardiology clinic of synthetic patients grows by one unit every week, and real public data accompany every topic. Participants also learn to write code with AI assistants under explicit safety rules, and every exercise can be solved on a prompt path.</p>
+<p data-l="tr">Programlama deneyimi olan ya da olmayan kardiyologlar ve diğer uzman hekimler için on bir haftada Python ve yapay zekâ (YZ). Her hafta bir klinik vakayı, bir Python adımını, bir ders sayfasını, bir etkileşimli labı, bir Jupyter defterini ve bir haftalık projeyi bir araya getirir. Sentetik hastalardan oluşan sanal bir kardiyoloji kliniği her hafta bir birim büyür ve her konuya gerçek, açık veriler eşlik eder. Katılımcılar ayrıca YZ asistanlarıyla açık güvenlik kuralları içinde kod yazmayı öğrenir ve her alıştırma, bir YZ asistanına prompt (istem) yazılarak da çözülebilir.</p>
+<h2><span data-l="en">Start here</span><span data-l="tr">Buradan başlayın</span></h2>
+<div class="start">
+<a data-l="en" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/SETUP.md"><b>1. Setup</b><br>Anaconda, the course folder and Jupyter, step by step</a>
+<a data-l="tr" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/SETUP.tr.md"><b>1. Kurulum</b><br>Anaconda, ders klasörü ve Jupyter, adım adım</a>
+<a data-l="en" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/start-here/NB00_start_here.ipynb"><b>2. Start-here notebook</b><br>Checks the computer and the first lines of Python</a>
+<a data-l="tr" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/baslangic/NB00_baslangic.ipynb"><b>2. Başlangıç defteri</b><br>Bilgisayarı denetler, ilk Python satırları</a>
+<a data-l="en" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/PROMPT_PATH.md"><b>3. Prompt path</b><br>Every exercise solved with a prompt to an AI assistant, then checked</a>
+<a data-l="tr" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/PROMPT_PATH.tr.md"><b>3. Prompt yolu</b><br>Her alıştırma bir YZ asistanına yöneltilen promptla çözülür ve denetlenir</a>
+<a data-l="en" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/SYLLABUS.md"><b>4. Syllabus</b><br>Weekly plan, assessment and the rules for AI use</a>
+<a data-l="tr" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/SYLLABUS.tr.md"><b>4. İzlence</b><br>Haftalık plan, değerlendirme ve YZ kullanım kuralları</a>
+<a data-l="en" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture"><b>5. Repository</b><br>All materials, data sets and references on GitHub</a>
+<a data-l="tr" href="https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/README.tr.md"><b>5. Depo</b><br>GitHub'da bütün malzemeler, veri setleri ve kaynaklar</a>
+</div>
+<h2><span data-l="en">The eleven weeks</span><span data-l="tr">On bir hafta</span></h2>
+<p class="sub"><span data-l="en">Tick a week when it is done; the page remembers it in this browser.</span><span data-l="tr">Tamamladığınız haftayı işaretleyin; sayfa bunu bu tarayıcıda hatırlar.</span></p>
+<div class="weeks" id="weeks"></div>
+<h2><span data-l="en">The virtual clinic</span><span data-l="tr">Sanal klinik</span></h2>
+<figure><img data-l="en" src="assets/clinic_stages_en.png" alt="The eleven stages of the virtual cardiology clinic"><img data-l="tr" src="assets/clinic_stages_tr.png" alt="Sanal kardiyoloji kliniğinin on bir aşaması">
+<figcaption><span data-l="en">One unit of the clinic per week, from the patient registry and the ECG laboratory to the final projects.</span><span data-l="tr">Her hafta kliniğin bir birimi: hasta kaydı ve EKG laboratuvarından final projelerine.</span></figcaption></figure>
+<footer><div data-l="en"><p><b>Prof. Dr. Utku Kose</b></p><p>Full Professor, Department of Computer Engineering, Süleyman Demirel University, Isparta, Türkiye<br>
+Founding Director, AI Application and Research Center (YAZEM), Süleyman Demirel University<br>
+Head of the Computer Science Division, Department of Computer Engineering, Süleyman Demirel University<br>
+Additional affiliations: University of North Dakota (USA), Universidad Panamericana (Mexico City, Mexico), Vel Tech University (Chennai, India)<br>
+IEEE Senior Member, ACM Professional Member</p><p><a href="https://orcid.org/0000-0002-9652-6415">ORCID 0000-0002-9652-6415</a> | <a href="https://www.utkukose.com">utkukose.com</a> | <a href="https://github.com/utkukose">github.com/utkukose</a></p><p><a href="mailto:utkukose@sdu.edu.tr">utkukose@sdu.edu.tr</a> | <a href="mailto:utku.kose@und.edu">utku.kose@und.edu</a> | <a href="mailto:ukose@up.edu.mx">ukose@up.edu.mx</a> | <a href="mailto:utkukose@gmail.com">utkukose@gmail.com</a></p><p><i>This course is updated in line with current developments in the field. First version: November 2026. Content CC BY 4.0, code MIT.</i></p><p>This course was developed through human-AI collaboration; the final version is presented after the course author's review and approval.</p></div>
+<div data-l="tr"><p><b>Prof. Dr. Utku Köse</b></p><p>Profesör, Bilgisayar Mühendisliği Bölümü, Süleyman Demirel Üniversitesi, Isparta, Türkiye<br>
+Kurucu Müdür, Yapay Zekâ Uygulama ve Araştırma Merkezi (YAZEM), Süleyman Demirel Üniversitesi<br>
+Bilgisayar Bilimleri Anabilim Dalı Başkanı, Bilgisayar Mühendisliği Bölümü, Süleyman Demirel Üniversitesi<br>
+Diğer kurumlar: University of North Dakota (ABD), Universidad Panamericana (Meksiko, Meksika), Vel Tech University (Chennai, Hindistan)<br>
+IEEE Kıdemli Üyesi, ACM Profesyonel Üyesi</p><p><a href="https://orcid.org/0000-0002-9652-6415">ORCID 0000-0002-9652-6415</a> | <a href="https://www.utkukose.com">utkukose.com</a> | <a href="https://github.com/utkukose">github.com/utkukose</a></p><p><a href="mailto:utkukose@sdu.edu.tr">utkukose@sdu.edu.tr</a> | <a href="mailto:utku.kose@und.edu">utku.kose@und.edu</a> | <a href="mailto:ukose@up.edu.mx">ukose@up.edu.mx</a> | <a href="mailto:utkukose@gmail.com">utkukose@gmail.com</a></p><p><i>Bu eğitim, alandaki güncel gelişmeler doğrultusunda güncellenmektedir. İlk sürüm: Kasım 2026. İçerik CC BY 4.0, kod MIT.</i></p><p>Bu eğitim insan-yapay zekâ işbirliğiyle geliştirilmiştir; nihai hâl, eğitimin yazarının incelemesi ve onayından sonra sunulmaktadır.</p></div></footer>
+</div>
+<script>
+const WEEKS = [{"n": 1, "t": {"en": "Python and cardiology data basics", "tr": "Python ve kardiyoloji veri temelleri"}, "s": {"en": "Patient registry and ECG laboratory", "tr": "Hasta kaydı ve EKG laboratuvarı"}, "p": {"en": "Automatic measurement of PR, QRS and QT, with the frontal axis and two QT corrections", "tr": "PR, QRS ve QT'nin otomatik ölçümü, frontal eksen ve iki QT düzeltmesiyle"}, "links": {"en": [["Week page", "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/tree/main/en/week-01"], ["Lecture page", "en/week-01/lecture.html"], ["Interactive lab", "en/week-01/lab.html"], ["Jupyter notebook", "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-01/NB01_python_and_ecg_basics.ipynb"], ["Colab (fallback)", "https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-01/NB01_python_and_ecg_basics.ipynb"], ["Prompt library", "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-01/PROMPTS.md"], ["PDF notes", "en/week-01/Week01_Lecture_Notes.pdf"]], "tr": [["Hafta sayfası", "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/tree/main/tr/hafta-01"], ["Ders sayfası", "tr/hafta-01/ders.html"], ["Etkileşimli lab", "tr/hafta-01/lab.html"], ["Jupyter defteri", "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb"], ["Colab (yedek yol)", "https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb"], ["Prompt kütüphanesi", "https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/PROMPTLAR.md"], ["PDF ders notu", "tr/hafta-01/Hafta01_Ders_Notlari.pdf"]]}}, {"n": 2, "t": {"en": "Machine learning fundamentals", "tr": "Makine öğrenmesi temelleri"}, "s": {"en": "Risk outpatient clinic", "tr": "Risk polikliniği"}, "p": {"en": "Clustering of heart failure with preserved and reduced ejection fraction, with Kaplan-Meier survival analysis", "tr": "Korunmuş ve düşük ejeksiyon fraksiyonlu kalp yetersizliğinin kümelenmesi ve Kaplan-Meier sağkalım analizi"}}, {"n": 3, "t": {"en": "Deep learning and convolutional neural networks", "tr": "Derin öğrenme ve evrişimli sinir ağları"}, "s": {"en": "Echo laboratory", "tr": "Eko laboratuvarı"}, "p": {"en": "Classification of dilated and hypertrophic cardiomyopathy on cardiac magnetic resonance images", "tr": "Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması"}}, {"n": 4, "t": {"en": "Transfer learning", "tr": "Transfer öğrenme"}, "s": {"en": "Echo measurement: automatic ejection fraction", "tr": "Eko ölçümü: otomatik ejeksiyon fraksiyonu"}, "p": {"en": "Segmentation of the left ventricle and automatic ejection fraction", "tr": "Sol ventrikül segmentasyonu ve otomatik ejeksiyon fraksiyonu"}}, {"n": 5, "t": {"en": "Time series analysis and ECG artificial intelligence", "tr": "Zaman serisi analizi ve EKG yapay zekâsı"}, "s": {"en": "Rhythm and STEMI alarm", "tr": "Ritim ve STEMI alarmı"}, "p": {"en": "A STEMI alarm: automatic detection of ST deviation on 12-lead ECGs", "tr": "Bir STEMI alarmı: 12 derivasyonlu EKG'lerde ST sapmasının otomatik tespiti"}}, {"n": 6, "t": {"en": "Natural language processing and clinical text mining", "tr": "Doğal dil işleme ve klinik metin madenciliği"}, "s": {"en": "Report archive: clinical text", "tr": "Rapor arşivi: klinik metin"}, "p": {"en": "A pipeline that extracts the degree of stenosis and the vessel from angiography reports", "tr": "Anjiyografi raporlarından darlık derecesini ve damarı çıkaran bir işlem hattı"}}, {"n": 7, "t": {"en": "Vision transformers", "tr": "Görü dönüştürücüleri (Vision Transformer)"}, "s": {"en": "Catheterisation laboratory", "tr": "Kateter laboratuvarı"}, "p": {"en": "Detection of stenosis on coronary angiograms: convolutional network, vision transformer and hybrid compared", "tr": "Koroner anjiyogramlarda darlık tespiti: evrişimli ağ, görü dönüştürücüsü ve melez modelin karşılaştırması"}}, {"n": 8, "t": {"en": "Multimodal artificial intelligence and data fusion", "tr": "Çok modlu yapay zekâ ve veri füzyonu"}, "s": {"en": "Heart team: data fusion", "tr": "Kalp ekibi: veri füzyonu"}, "p": {"en": "Prediction of major adverse cardiovascular events (MACE) in a simulated triage", "tr": "Simüle edilmiş bir triyajda majör olumsuz kardiyovasküler olayların (MACE) öngörüsü"}}, {"n": 9, "t": {"en": "Model reliability and explainable artificial intelligence", "tr": "Model güvenilirliği ve açıklanabilir yapay zekâ"}, "s": {"en": "Quality and safety committee: XAI", "tr": "Kalite ve güvenlik kurulu: XAI"}, "p": {"en": "Grad-CAM maps of the echo model compared with the reading of an expert", "tr": "Eko modelinin Grad-CAM haritalarının bir uzmanın değerlendirmesiyle karşılaştırılması"}}, {"n": 10, "t": {"en": "Clinical decision support systems", "tr": "Klinik karar destek sistemleri"}, "s": {"en": "Decision support at the bedside", "tr": "Yatak başında karar desteği"}, "p": {"en": "A user test of the decision support prototype and its improvement", "tr": "Karar destek prototipinin kullanıcı testi ve iyileştirilmesi"}}, {"n": 11, "t": {"en": "Final project and certificate", "tr": "Final projesi ve sertifika"}, "s": {"en": "Own units: final projects", "tr": "Katılımcıların birimleri: final projeleri"}, "p": {"en": "Final project: an end-to-end AI pipeline for a question of the participant's own clinic, and a personal action plan", "tr": "Final projesi: katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı"}}];
+const UI = {en:{week:'Week', stage:'Stage of the virtual clinic', proj:'Weekly project', soon:'In preparation', done:'done'},
+            tr:{week:'Hafta', stage:'Sanal kliniğin aşaması', proj:'Haftalık proje', soon:'Hazırlanıyor', done:'tamamlandı'}};
+const store = {get(k, d){ try { const v = localStorage.getItem('tkd-site-' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+               set(k, v){ try { localStorage.setItem('tkd-site-' + k, JSON.stringify(v)); } catch(e){} }};
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function render(){
+  const L = document.documentElement.lang, u = UI[L], done = store.get('done', {});
+  document.getElementById('weeks').innerHTML = WEEKS.map(w => {
+    const links = w.links ? '<div class="links">' + w.links[L].map(([t, h]) => `<a href="${esc(h)}">${esc(t)}</a>`).join('') + '</div>' : `<p class="soon">${u.soon}</p>`;
+    return `<div class="wk${done[w.n] ? ' done' : ''}"><label><input type="checkbox" data-n="${w.n}"${done[w.n] ? ' checked' : ''}> ${u.done}</label>
+      <div class="n">${u.week} ${w.n}</div><h3>${esc(w.t[L])}</h3><p class="st"><b>${u.stage}:</b> ${esc(w.s[L])}</p><p class="pr"><b>${u.proj}:</b> ${esc(w.p[L])}</p>${links}</div>`;
+  }).join('');
+  document.querySelectorAll('#weeks input').forEach(c => c.addEventListener('change', () => { const d = store.get('done', {}); d[c.dataset.n] = c.checked; store.set('done', d); render(); }));
+  document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.set === L));
+  document.title = L === 'tr' ? 'Kardiyologlar için Python ile Yapay Zekâ | Türk Kardiyoloji Derneği' : 'AI with Python for Cardiologists | Turkish Society of Cardiology';
+}
+function setLang(L){ document.documentElement.lang = L; store.set('lang', L); render(); }
+document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.set)));
+const q = new URLSearchParams(location.search).get('lang');
+setLang(q === 'tr' || q === 'en' ? q : store.get('lang', (navigator.language || 'en').toLowerCase().startsWith('tr') ? 'tr' : 'en'));
+</script>
+</body></html>
