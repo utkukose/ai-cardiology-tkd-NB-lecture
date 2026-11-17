@@ -38,7 +38,7 @@ Materials: [Week page](en/week-01/README.md) · [Lecture page](https://utkukose.
 
 The first half builds classification and regression models with scikit-learn: logistic regression for the risk of coronary artery disease, decision trees and random forests, cross-validation, the receiver operating characteristic (ROC) curve, sensitivity and specificity. The second half finds subgroups of patients with k-means, visualises them in two dimensions, introduces Kaplan-Meier survival analysis and treats imbalanced data. **Mini project in the session:** A model that predicts coronary artery disease on the Cleveland data, with the ROC curve and the area under it. **Weekly project:** Clustering of heart failure with preserved and reduced ejection fraction, with Kaplan-Meier survival analysis. **Data:** UCI Heart Disease (Cleveland) and the registry of the virtual clinic with follow-up. **Stage of the virtual clinic:** Risk outpatient clinic.
 
-Materials: In preparation
+Materials: [Week page](en/week-02/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lab.html) · [Jupyter notebook](en/week-02/NB02_machine_learning_fundamentals.ipynb) · [Prompt library](en/week-02/PROMPTS.md) · [PDF notes](en/week-02/Week02_Lecture_Notes.pdf)
 
 ### Week 3: Deep learning and convolutional neural networks
 

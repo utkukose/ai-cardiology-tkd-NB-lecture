@@ -38,7 +38,7 @@ Malzemeler: [Hafta sayfası](tr/hafta-01/README.md) · [Ders sayfası](https://u
 
 Oturumun ilk yarısında scikit-learn ile sınıflandırma ve regresyon modelleri kurulur: koroner arter hastalığı riski için lojistik regresyon, karar ağaçları ve rastgele ormanlar, çapraz doğrulama, alıcı işletim karakteristiği (ROC) eğrisi, duyarlılık ve özgüllük. İkinci yarıda k-ortalamalar yöntemiyle hasta alt grupları bulunur ve iki boyutta görselleştirilir; Kaplan-Meier sağkalım analizi tanıtılır ve dengesiz veriler ele alınır. **Oturumdaki mini proje:** Cleveland verisinde koroner arter hastalığını öngören bir model; ROC eğrisi ve eğri altındaki alanla birlikte. **Haftalık proje:** Korunmuş ve düşük ejeksiyon fraksiyonlu kalp yetersizliğinin kümelenmesi ve Kaplan-Meier sağkalım analizi. **Veriler:** UCI Heart Disease (Cleveland) ve sanal kliniğin izlem verilerini içeren hasta kaydı. **Sanal kliniğin aşaması:** Risk polikliniği.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-02/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/lab.html) · [Jupyter defteri](tr/hafta-02/NB02_makine_ogrenmesi_temelleri.ipynb) · [Prompt kütüphanesi](tr/hafta-02/PROMPTLAR.md) · [PDF ders notu](tr/hafta-02/Hafta02_Ders_Notlari.pdf)
 
 ### Hafta 3: Derin öğrenme ve evrişimli sinir ağları
 

@@ -11,7 +11,7 @@ Eğitimdeki her veri seti ya sentetiktir ya da açık veridir. 1. haftanın dosy
 
 | Veri seti | Depodaki dosyalar | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
-| UCI Heart Disease, Cleveland verisi [1, 2] | `data/uci-heart-disease/processed.cleveland.data`: 303 hasta, 14 değişken | UCI Machine Learning Repository, [doi:10.24432/C52P4X](https://doi.org/10.24432/C52P4X); Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0) | 1. hafta, 1. bölüm; 2. hafta |
+| UCI Heart Disease, Cleveland verisi [1, 2] | `data/uci-heart-disease/processed.cleveland.data`: 303 hasta, 14 değişken | UCI Machine Learning Repository, [doi:10.24432/C52P4X](https://doi.org/10.24432/C52P4X); Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0) | 1. hafta, 1. bölüm; 2. hafta, Python adımı 2 ve 1-4. bölümler |
 | MIT-BIH Arrhythmia Database, 100 numaralı kayıt [3, 4, 5] | `data/physionet/mitdb/100.hea`, `100.dat`, `100.atr`: atım etiketleriyle birlikte 360 Hz'de iki derivasyonun (MLII ve V5) 30 dakikası | PhysioNet, [doi:10.13026/C2F305](https://doi.org/10.13026/C2F305); Open Data Commons Attribution License v1.0 (ODC-By 1.0) | 1. hafta, 6. bölüm |
 | PTB Diagnostic ECG Database, 001 numaralı hasta, s0010_re kaydı [5, 6, 7] | `data/physionet/ptbdb/patient001/s0010_re.hea`, `.dat`, `.xyz`: 1000 Hz'de 12 standart derivasyonun ve 3 Frank derivasyonunun 38,4 saniyesi | PhysioNet, [doi:10.13026/C28C71](https://doi.org/10.13026/C28C71); ODC-By 1.0 | 1. hafta, 8. bölüm |
 | Örnek kumpas ölçümleri | `data/examples/example_caliper_measurements.csv`: sanal kliniğin beş hastasına ait 20 aralık ölçümü | Eğitim için oluşturulmuştur; CC BY 4.0 | 1. hafta, 5. bölüm |
@@ -20,7 +20,7 @@ PTB veri tabanındaki kayıt, başlık dosyasında belirtildiği gibi akut infer
 
 ## Sanal klinik
 
-`vclinic` ders paketi sanal kliniğin hastalarını çalışma anında oluşturur. `vclinic.make_cohort(500)` fonksiyonu 500 sentetik hastadan oluşan bir kayıt döndürür. Kayıtta her hastanın demografik verileri, risk faktörleri, laboratuvar değerleri, ejeksiyon fraksiyonu, ana tanısı ve elektrokardiyogram (EKG) parametreleri bulunur. `vclinic.patient_ecg` bir hastanın 12 derivasyonlu EKG'sini aralıklarının ve atım zamanlarının gerçek değerleriyle birlikte döndürür. Aynı tohum değeri her zaman aynı hastaları verir; böylece her katılımcı aynı kliniği görür. Değişkenler arasındaki ilişkiler genel klinik örüntüleri izler ve etki büyüklükleri `vclinic.TRUE_EFFECTS` içinde belgelenmiştir. Veriler öğretim malzemesidir ve klinik kullanım için değildir.
+`vclinic` ders paketi sanal kliniğin hastalarını çalışma anında oluşturur. `vclinic.make_cohort(500)` fonksiyonu 500 sentetik hastadan oluşan bir kayıt döndürür. Kayıtta her hastanın demografik verileri, risk faktörleri, laboratuvar değerleri, ejeksiyon fraksiyonu, ana tanısı ve elektrokardiyogram (EKG) parametreleri bulunur. `vclinic.patient_ecg` bir hastanın 12 derivasyonlu EKG'sini aralıklarının ve atım zamanlarının gerçek değerleriyle birlikte döndürür. Aynı tohum değeri her zaman aynı hastaları verir; böylece her katılımcı aynı kliniği görür. Değişkenler arasındaki ilişkiler genel klinik örüntüleri izler ve etki büyüklükleri `vclinic.TRUE_EFFECTS` içinde belgelenmiştir. 2. haftadan itibaren `vclinic.add_followup` fonksiyonu kayda ekokardiyografik değişkenleri, kalp yetersizliği fenogrubunu ve en fazla beş yıllık izlem verisini ekler; izlemde olay, ölüm ya da kalp yetersizliği nedeniyle hastaneye yatıştır. Veriler öğretim malzemesidir ve klinik kullanım için değildir.
 
 ## Sonraki haftaların veri setleri
 

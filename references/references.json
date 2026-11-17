@@ -114,6 +114,32 @@
     ]
   },
   {
+    "key": "bland2004",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Bland",
+        "given": "J. M."
+      },
+      {
+        "family": "Altman",
+        "given": "D. G."
+      }
+    ],
+    "year": "2004",
+    "title": "The logrank test",
+    "container": "BMJ",
+    "volume": "328",
+    "issue": "7447",
+    "pages": "1073",
+    "doi": "10.1136/bmj.328.7447.1073",
+    "url": "https://doi.org/10.1136/bmj.328.7447.1073",
+    "apa": "Bland, J. M., & Altman, D. G. (2004). The logrank test. *BMJ, 328*(7447), 1073. https://doi.org/10.1136/bmj.328.7447.1073",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "bousseljot1995",
     "type": "article",
     "authors": [
@@ -173,6 +199,28 @@
     "apa": "Bousseljot, R., Kreiseler, D., & Schnabel, A. (2004). *The PTB Diagnostic ECG Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C28C71",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "breiman2001",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Breiman",
+        "given": "L."
+      }
+    ],
+    "year": "2001",
+    "title": "Random forests",
+    "container": "Machine Learning",
+    "volume": "45",
+    "issue": "1",
+    "pages": "5–32",
+    "doi": "10.1023/A:1010933404324",
+    "url": "https://doi.org/10.1023/A:1010933404324",
+    "apa": "Breiman, L. (2001). Random forests. *Machine Learning, 45*(1), 5–32. https://doi.org/10.1023/A:1010933404324",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -307,6 +355,32 @@
     "apa": "Goldberger, A. L., Amaral, L. A. N., Glass, L., Hausdorff, J. M., Ivanov, P. Ch., Mark, R. G., Mietus, J. E., Moody, G. B., Peng, C.-K., & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. *Circulation, 101*(23), e215–e220. https://doi.org/10.1161/01.CIR.101.23.e215",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "hanley1982",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Hanley",
+        "given": "J. A."
+      },
+      {
+        "family": "McNeil",
+        "given": "B. J."
+      }
+    ],
+    "year": "1982",
+    "title": "The meaning and use of the area under a receiver operating characteristic (ROC) curve",
+    "container": "Radiology",
+    "volume": "143",
+    "issue": "1",
+    "pages": "29–36",
+    "doi": "10.1148/radiology.143.1.7063747",
+    "url": "https://doi.org/10.1148/radiology.143.1.7063747",
+    "apa": "Hanley, J. A., & McNeil, B. J. (1982). The meaning and use of the area under a receiver operating characteristic (ROC) curve. *Radiology, 143*(1), 29–36. https://doi.org/10.1148/radiology.143.1.7063747",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -724,7 +798,7 @@
     "url": "https://doi.org/10.1056/NEJMoa2102953",
     "apa": "Inker, L. A., Eneanya, N. D., Coresh, J., Tighiouart, H., Wang, D., Sang, Y., Crews, D. C., Doria, A., Estrella, M. M., Froissart, M., Grams, M. E., Greene, T., Grubb, A., Gudnason, V., Gutiérrez, O. M., Kalil, R., Karger, A. B., Mauer, M., Navis, G., Nelson, R. G., Poggio, E. D., Rodby, R., Rossing, P., Rule, A. D., Selvin, E., Seegmiller, J. C., Shlipak, M. G., Torres, V. E., Yang, W., Ballew, S. H., Couture, S. J., Powe, N. R., & Levey, A. S. (2021). New creatinine- and cystatin C-based equations to estimate GFR without race. *New England Journal of Medicine, 385*(19), 1737–1749. https://doi.org/10.1056/NEJMoa2102953",
     "used_in": [
-      "Week 1: lecture page, Jupyter notebook and course documents"
+      "Course package vclinic"
     ]
   },
   {
@@ -759,6 +833,92 @@
     "apa": "Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). *Heart Disease* [Data set]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "jolliffe2016",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Jolliffe",
+        "given": "I. T."
+      },
+      {
+        "family": "Cadima",
+        "given": "J."
+      }
+    ],
+    "year": "2016",
+    "title": "Principal component analysis: A review and recent developments",
+    "container": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+    "volume": "374",
+    "issue": "2065",
+    "pages": "20150202",
+    "doi": "10.1098/rsta.2015.0202",
+    "url": "https://doi.org/10.1098/rsta.2015.0202",
+    "apa": "Jolliffe, I. T., & Cadima, J. (2016). Principal component analysis: A review and recent developments. *Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 374*(2065), 20150202. https://doi.org/10.1098/rsta.2015.0202",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "kaplan1958",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Kaplan",
+        "given": "E. L."
+      },
+      {
+        "family": "Meier",
+        "given": "P."
+      }
+    ],
+    "year": "1958",
+    "title": "Nonparametric estimation from incomplete observations",
+    "container": "Journal of the American Statistical Association",
+    "volume": "53",
+    "issue": "282",
+    "pages": "457–481",
+    "doi": "10.1080/01621459.1958.10501452",
+    "url": "https://doi.org/10.1080/01621459.1958.10501452",
+    "apa": "Kaplan, E. L., & Meier, P. (1958). Nonparametric estimation from incomplete observations. *Journal of the American Statistical Association, 53*(282), 457–481. https://doi.org/10.1080/01621459.1958.10501452",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "kaufman2012",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Kaufman",
+        "given": "S."
+      },
+      {
+        "family": "Rosset",
+        "given": "S."
+      },
+      {
+        "family": "Perlich",
+        "given": "C."
+      },
+      {
+        "family": "Stitelman",
+        "given": "O."
+      }
+    ],
+    "year": "2012",
+    "title": "Leakage in data mining: Formulation, detection, and avoidance",
+    "container": "ACM Transactions on Knowledge Discovery from Data",
+    "volume": "6",
+    "issue": "4",
+    "pages": "Article 15",
+    "doi": "10.1145/2382577.2382579",
+    "url": "https://doi.org/10.1145/2382577.2382579",
+    "apa": "Kaufman, S., Rosset, S., Perlich, C., & Stitelman, O. (2012). Leakage in data mining: Formulation, detection, and avoidance. *ACM Transactions on Knowledge Discovery from Data, 6*(4), Article 15. https://doi.org/10.1145/2382577.2382579",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1024,6 +1184,28 @@
     ]
   },
   {
+    "key": "lloyd1982",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Lloyd",
+        "given": "S. P."
+      }
+    ],
+    "year": "1982",
+    "title": "Least squares quantization in PCM",
+    "container": "IEEE Transactions on Information Theory",
+    "volume": "28",
+    "issue": "2",
+    "pages": "129–137",
+    "doi": "10.1109/TIT.1982.1056489",
+    "url": "https://doi.org/10.1109/TIT.1982.1056489",
+    "apa": "Lloyd, S. P. (1982). Least squares quantization in PCM. *IEEE Transactions on Information Theory, 28*(2), 129–137. https://doi.org/10.1109/TIT.1982.1056489",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "makowski2021",
     "type": "article",
     "authors": [
@@ -1098,6 +1280,151 @@
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents",
       "Course package vclinic"
+    ]
+  },
+  {
+    "key": "mcdonagh2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "McDonagh",
+        "given": "T. A."
+      },
+      {
+        "family": "Metra",
+        "given": "M."
+      },
+      {
+        "family": "Adamo",
+        "given": "M."
+      },
+      {
+        "family": "Gardner",
+        "given": "R. S."
+      },
+      {
+        "family": "Baumbach",
+        "given": "A."
+      },
+      {
+        "family": "Böhm",
+        "given": "M."
+      },
+      {
+        "family": "Burri",
+        "given": "H."
+      },
+      {
+        "family": "Butler",
+        "given": "J."
+      },
+      {
+        "family": "Čelutkienė",
+        "given": "J."
+      },
+      {
+        "family": "Chioncel",
+        "given": "O."
+      },
+      {
+        "family": "Cleland",
+        "given": "J. G. F."
+      },
+      {
+        "family": "Coats",
+        "given": "A. J. S."
+      },
+      {
+        "family": "Crespo-Leiro",
+        "given": "M. G."
+      },
+      {
+        "family": "Farmakis",
+        "given": "D."
+      },
+      {
+        "family": "Gilard",
+        "given": "M."
+      },
+      {
+        "family": "Heymans",
+        "given": "S."
+      },
+      {
+        "family": "Hoes",
+        "given": "A. W."
+      },
+      {
+        "family": "Jaarsma",
+        "given": "T."
+      },
+      {
+        "family": "Jankowska",
+        "given": "E. A."
+      },
+      {
+        "family": "Lainscak",
+        "given": "M."
+      },
+      {
+        "family": "Lam",
+        "given": "C. S. P."
+      },
+      {
+        "family": "Lyon",
+        "given": "A. R."
+      },
+      {
+        "family": "McMurray",
+        "given": "J. J. V."
+      },
+      {
+        "family": "Mebazaa",
+        "given": "A."
+      },
+      {
+        "family": "Mindham",
+        "given": "R."
+      },
+      {
+        "family": "Muneretto",
+        "given": "C."
+      },
+      {
+        "family": "Piepoli",
+        "given": "M. F."
+      },
+      {
+        "family": "Price",
+        "given": "S."
+      },
+      {
+        "family": "Rosano",
+        "given": "G. M. C."
+      },
+      {
+        "family": "Ruschitzka",
+        "given": "F."
+      },
+      {
+        "family": "Skibelund",
+        "given": "A. K."
+      },
+      {
+        "literal": "ESC Scientific Document Group"
+      }
+    ],
+    "year": "2021",
+    "title": "2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure",
+    "container": "European Heart Journal",
+    "volume": "42",
+    "issue": "36",
+    "pages": "3599–3726",
+    "doi": "10.1093/eurheartj/ehab368",
+    "url": "https://doi.org/10.1093/eurheartj/ehab368",
+    "apa": "McDonagh, T. A., Metra, M., Adamo, M., Gardner, R. S., Baumbach, A., Böhm, M., Burri, H., Butler, J., Čelutkienė, J., Chioncel, O., Cleland, J. G. F., Coats, A. J. S., Crespo-Leiro, M. G., Farmakis, D., Gilard, M., Heymans, S., Hoes, A. W., Jaarsma, T., Jankowska, E. A., Lainscak, M., Lam, C. S. P., Lyon, A. R., McMurray, J. J. V., Mebazaa, A., Mindham, R., Muneretto, C., Piepoli, M. F., Price, S., Rosano, G. M. C., Ruschitzka, F., Skibelund, A. K., & ESC Scientific Document Group. (2021). 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. *European Heart Journal, 42*(36), 3599–3726. https://doi.org/10.1093/eurheartj/ehab368",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1257,6 +1584,88 @@
     ]
   },
   {
+    "key": "pedregosa2011",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Pedregosa",
+        "given": "F."
+      },
+      {
+        "family": "Varoquaux",
+        "given": "G."
+      },
+      {
+        "family": "Gramfort",
+        "given": "A."
+      },
+      {
+        "family": "Michel",
+        "given": "V."
+      },
+      {
+        "family": "Thirion",
+        "given": "B."
+      },
+      {
+        "family": "Grisel",
+        "given": "O."
+      },
+      {
+        "family": "Blondel",
+        "given": "M."
+      },
+      {
+        "family": "Prettenhofer",
+        "given": "P."
+      },
+      {
+        "family": "Weiss",
+        "given": "R."
+      },
+      {
+        "family": "Dubourg",
+        "given": "V."
+      },
+      {
+        "family": "Vanderplas",
+        "given": "J."
+      },
+      {
+        "family": "Passos",
+        "given": "A."
+      },
+      {
+        "family": "Cournapeau",
+        "given": "D."
+      },
+      {
+        "family": "Brucher",
+        "given": "M."
+      },
+      {
+        "family": "Perrot",
+        "given": "M."
+      },
+      {
+        "family": "Duchesnay",
+        "given": "É."
+      }
+    ],
+    "year": "2011",
+    "title": "Scikit-learn: Machine learning in Python",
+    "container": "Journal of Machine Learning Research",
+    "volume": "12",
+    "issue": "",
+    "pages": "2825–2830",
+    "doi": "",
+    "url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+    "apa": "Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M., & Duchesnay, É. (2011). Scikit-learn: Machine learning in Python. *Journal of Machine Learning Research, 12*, 2825–2830. https://jmlr.org/papers/v12/pedregosa11a.html",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "rautaharju2009",
     "type": "article",
     "authors": [
@@ -1284,6 +1693,54 @@
     "apa": "Rautaharju, P. M., Surawicz, B., & Gettes, L. S. (2009). AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part IV: The ST segment, T and U waves, and the QT interval: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. *Circulation, 119*(10), e241–e250. https://doi.org/10.1161/CIRCULATIONAHA.108.191096",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "rousseeuw1987",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Rousseeuw",
+        "given": "P. J."
+      }
+    ],
+    "year": "1987",
+    "title": "Silhouettes: A graphical aid to the interpretation and validation of cluster analysis",
+    "container": "Journal of Computational and Applied Mathematics",
+    "volume": "20",
+    "issue": "",
+    "pages": "53–65",
+    "doi": "10.1016/0377-0427(87)90125-7",
+    "url": "https://doi.org/10.1016/0377-0427(87)90125-7",
+    "apa": "Rousseeuw, P. J. (1987). Silhouettes: A graphical aid to the interpretation and validation of cluster analysis. *Journal of Computational and Applied Mathematics, 20*, 53–65. https://doi.org/10.1016/0377-0427(87)90125-7",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "saito2015",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Saito",
+        "given": "T."
+      },
+      {
+        "family": "Rehmsmeier",
+        "given": "M."
+      }
+    ],
+    "year": "2015",
+    "title": "The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets",
+    "container": "PLOS ONE",
+    "volume": "10",
+    "issue": "3",
+    "pages": "e0118432",
+    "doi": "10.1371/journal.pone.0118432",
+    "url": "https://doi.org/10.1371/journal.pone.0118432",
+    "apa": "Saito, T., & Rehmsmeier, M. (2015). The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. *PLOS ONE, 10*(3), e0118432. https://doi.org/10.1371/journal.pone.0118432",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1321,6 +1778,60 @@
     ]
   },
   {
+    "key": "shah2015",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Shah",
+        "given": "S. J."
+      },
+      {
+        "family": "Katz",
+        "given": "D. H."
+      },
+      {
+        "family": "Selvaraj",
+        "given": "S."
+      },
+      {
+        "family": "Burke",
+        "given": "M. A."
+      },
+      {
+        "family": "Yancy",
+        "given": "C. W."
+      },
+      {
+        "family": "Gheorghiade",
+        "given": "M."
+      },
+      {
+        "family": "Bonow",
+        "given": "R. O."
+      },
+      {
+        "family": "Huang",
+        "given": "C.-C."
+      },
+      {
+        "family": "Deo",
+        "given": "R. C."
+      }
+    ],
+    "year": "2015",
+    "title": "Phenomapping for novel classification of heart failure with preserved ejection fraction",
+    "container": "Circulation",
+    "volume": "131",
+    "issue": "3",
+    "pages": "269–279",
+    "doi": "10.1161/CIRCULATIONAHA.114.010637",
+    "url": "https://doi.org/10.1161/CIRCULATIONAHA.114.010637",
+    "apa": "Shah, S. J., Katz, D. H., Selvaraj, S., Burke, M. A., Yancy, C. W., Gheorghiade, M., Bonow, R. O., Huang, C.-C., & Deo, R. C. (2015). Phenomapping for novel classification of heart failure with preserved ejection fraction. *Circulation, 131*(3), 269–279. https://doi.org/10.1161/CIRCULATIONAHA.114.010637",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "siontis2021",
     "type": "article",
     "authors": [
@@ -1352,6 +1863,32 @@
     "apa": "Siontis, K. C., Noseworthy, P. A., Attia, Z. I., & Friedman, P. A. (2021). Artificial intelligence-enhanced electrocardiography in cardiovascular disease management. *Nature Reviews Cardiology, 18*(7), 465–478. https://doi.org/10.1038/s41569-020-00503-2",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "steyerberg2014",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Steyerberg",
+        "given": "E. W."
+      },
+      {
+        "family": "Vergouwe",
+        "given": "Y."
+      }
+    ],
+    "year": "2014",
+    "title": "Towards better clinical prediction models: Seven steps for development and an ABCD for validation",
+    "container": "European Heart Journal",
+    "volume": "35",
+    "issue": "29",
+    "pages": "1925–1931",
+    "doi": "10.1093/eurheartj/ehu207",
+    "url": "https://doi.org/10.1093/eurheartj/ehu207",
+    "apa": "Steyerberg, E. W., & Vergouwe, Y. (2014). Towards better clinical prediction models: Seven steps for development and an ABCD for validation. *European Heart Journal, 35*(29), 1925–1931. https://doi.org/10.1093/eurheartj/ehu207",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1545,6 +2082,28 @@
     "apa": "Xie, C., McCullum, L., Johnson, A., Pollard, T., Gow, B., & Moody, B. (2023). *Waveform Database Software Package (WFDB) for Python (version 4.1.0)* [Computer software]. PhysioNet. https://doi.org/10.13026/9njx-6322",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "youden1950",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Youden",
+        "given": "W. J."
+      }
+    ],
+    "year": "1950",
+    "title": "Index for rating diagnostic tests",
+    "container": "Cancer",
+    "volume": "3",
+    "issue": "1",
+    "pages": "32–35",
+    "doi": "10.1002/1097-0142(1950)3:1<32::AID-CNCR2820030106>3.0.CO;2-3",
+    "url": "https://doi.org/10.1002/1097-0142(1950)3:1<32::AID-CNCR2820030106>3.0.CO;2-3",
+    "apa": "Youden, W. J. (1950). Index for rating diagnostic tests. *Cancer, 3*(1), 32–35. https://doi.org/10.1002/1097-0142(1950)3:1<32::AID-CNCR2820030106>3.0.CO;2-3",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   }
 ]

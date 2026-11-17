@@ -14,7 +14,7 @@ Aynı alıştırmalar bir yapay zekâ (YZ) asistanına yazılan bir prompt (iste
 | Hafta | Python adımı | Konular | Defter |
 |---|---|---|---|
 | 1 | Python adımı 1: Değerler, listeler, sözlükler, koşullar, döngüler ve fonksiyonlar | Değişkenler ve türler, klinik değerlerle aritmetik işlemler, listeler ve indeksleme, sözlükler, if ve else, for döngüleri, argüman alan ve değer döndüren fonksiyonlar, NumPy dizileri, pandas DataFrame'leri ve Matplotlib grafikleri | [NB01_python_ve_ekg_temelleri.ipynb](tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb) |
-| 2 | Python adımı 2: Veriyi modele hazırlamak | Sütun ve satır seçme, eksik değerler, kukla değişkenler, veriyi hastaya göre bölme, scikit-learn'ün fit ve predict kalıbı, işlem hatları | Hazırlanıyor |
+| 2 | Python adımı 2: Veriyi modele hazırlamak | Sütun ve satır seçme, eksik değerler, kukla değişkenler, veriyi hastaya göre bölme, scikit-learn'ün fit ve predict kalıbı, işlem hatları | [NB02_makine_ogrenmesi_temelleri.ipynb](tr/hafta-02/NB02_makine_ogrenmesi_temelleri.ipynb) |
 | 3 | Python adımı 3: Görüntüleri dizi olarak işlemek | İki ve üç boyutlu diziler, dilimleme, normalizasyon, görüntü yükleme, bir sinir ağının eğitim döngüsü | Hazırlanıyor |
 | 4 | Python adımı 4: Eğitilmiş modelleri yeniden kullanmak | Önceden eğitilmiş ağırlıkları yükleme, katmanları dondurma, dizi olarak maskeler, alan ve hacim ölçen fonksiyonlar | Hazırlanıyor |
 | 5 | Python adımı 5: Sinyalleri toplu işlemek | Bir sinyalin pencereleri, çok sayıda kayıttan oluşan diziler, birden fazla sınıfı olan etiketler, büyük bir veri setini adım adım okuma | Hazırlanıyor |

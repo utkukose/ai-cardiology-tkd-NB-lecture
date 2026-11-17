@@ -14,7 +14,7 @@ The same exercises can also be solved on the [prompt path](PROMPT_PATH.md), with
 | Week | Python step | Topics | Notebook |
 |---|---|---|---|
 | 1 | Python step 1: Values, lists, dictionaries, decisions, loops and functions | Variables and types, arithmetic with clinical values, lists and indexing, dictionaries, if and else, for loops, functions with arguments and return values, NumPy arrays, pandas DataFrames and Matplotlib plots | [NB01_python_and_ecg_basics.ipynb](en/week-01/NB01_python_and_ecg_basics.ipynb) |
-| 2 | Python step 2: Data for models | Selecting columns and rows, missing values, dummy variables, splitting data by patient, the fit and predict pattern of scikit-learn, pipelines | In preparation |
+| 2 | Python step 2: Data for models | Selecting columns and rows, missing values, dummy variables, splitting data by patient, the fit and predict pattern of scikit-learn, pipelines | [NB02_machine_learning_fundamentals.ipynb](en/week-02/NB02_machine_learning_fundamentals.ipynb) |
 | 3 | Python step 3: Arrays as images | Arrays with two and three dimensions, slicing, normalisation, loading images, the training loop of a neural network | In preparation |
 | 4 | Python step 4: Reusing trained models | Loading pretrained weights, freezing layers, masks as arrays, functions that measure areas and volumes | In preparation |
 | 5 | Python step 5: Signals in batches | Windows of a signal, arrays of many recordings, labels with several classes, reading a large data set step by step | In preparation |

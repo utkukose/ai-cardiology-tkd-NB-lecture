@@ -49,7 +49,8 @@ Bir asistanın yazdığı kod, ancak sonucu bilinen bir cevapla karşılaştır�
 | Hafta | Prompt kütüphanesi | Prompt yolları | Prompt görevleri | Etkileşimli lab |
 |---|---|---|---|---|
 | 1 | [PROMPTLAR.md](tr/hafta-01/PROMPTLAR.md) | 13; her alıştırmanın altında bir tane | 9; her numaralı bölümün sonunda bir tane | F bölümü, prompt atölyesi |
-| 2-11 | Hazırlanıyor | | | |
+| 2 | [PROMPTLAR.md](tr/hafta-02/PROMPTLAR.md) | 13; her alıştırmanın altında bir tane | 9; her numaralı bölümün sonunda bir tane | F bölümü, prompt atölyesi |
+| 3-11 | Hazırlanıyor | | | |
 
 Jupyter defterinde *prompt yolu*, bir alıştırmanın hemen altındaki katlanmış hücredir; bu hücrede alıştırmanın prompt kartı kopyalanmaya hazır durur. Her numaralı bölüm bir *prompt göreviyle* biter. Prompt görevinde hazır kod yoktur; sonucun doğru olup olmadığını görevin altındaki beklenen sonuç gösterir. Haftanın prompt kütüphanesi bütün promptları, kodu açıklatmak, onarmak ve sınamak için dört hazır kalıbı ve haftalık projenin prompt yolunu bir araya getirir. Etkileşimli labın F bölümünde prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimi eşliğinde yazılır.
 
