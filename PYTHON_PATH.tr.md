@@ -5,11 +5,11 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](PYTHON_PATH.md)
 
-Python yolu, kodu kendisi yazmayı öğrenmek isteyen katılımcılar için her Jupyter defterinin 2. kısmıdır. Eğitim programlama deneyimi gerektirmez. 2. kısım, haftanın gerektirdiği dil bilgisini öğreten bir Python adımıyla başlar; *Python notu* hücreleri de her yeni yapıyı ilk geçtiği yerde açıklar. Numaralı bölümler, ders sayfasındaki uygulama duraklarının sonuçlarına cevabı hemen kontrol edilen alıştırmalarla ulaşır. Aşağıdaki tablo haftaların Python adımlarını göstermektedir; sonraki haftaların adımlarının bağlantıları her hafta yayımlandığında eklenir.
+Python yolu, her Jupyter defterinin kodu kendisi yazmayı öğrenmek isteyen katılımcılar için hazırlanmış 2. kısmıdır. Eğitim programlama deneyimi gerektirmez. 2. kısım, haftanın gerektirdiği dil bilgisini öğreten bir Python adımıyla başlar; *Python notu* hücreleri de her yeni yapıyı ilk geçtiği yerde açıklar. Numaralı bölümler, ders sayfasındaki uygulama duraklarının sonuçlarına cevabı hemen kontrol edilen alıştırmalarla ulaşır. Aşağıdaki tablo haftaların Python adımlarını göstermektedir; sonraki haftaların adımlarının bağlantıları her hafta yayımlandığında eklenir.
 
 1. haftadan önce [başlangıç defteri](tr/baslangic/NB00_baslangic.ipynb) bilgisayarı denetler; hücreleri, değerleri, yazdırmayı ve ilk grafiği tanıtır.
 
-Kod yazmak istemeyen katılımcılar için aynı defterin 1. kısmında kodu, hazır bir prompt (istem) ile bir yapay zekâ (YZ) asistanı yazar. Bu yolun adı [prompt yolu](PROMPT_PATH.tr.md)dur. İki yol da aynı sonuçlara varır ve yol her uygulama durağında değiştirilebilir.
+Kod yazmak istemeyen katılımcılar için aynı defterin 1. kısmında kodu, hazır bir prompt (istem) ile bir yapay zekâ (YZ) asistanı yazar. Bu yola [prompt yolu](PROMPT_PATH.tr.md) denir. İki yol da aynı sonuçlara varır ve yol her uygulama durağında değiştirilebilir.
 
 | Hafta | Python adımı | Konular | Defter |
 |---|---|---|---|

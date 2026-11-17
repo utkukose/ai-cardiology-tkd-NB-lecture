@@ -40,29 +40,32 @@ The Cleveland patients of the UCI Heart Disease data set had an exercise test an
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `heart` is a pandas DataFrame with the 303 patients of the Cleveland Clinic in the UCI Heart
-Disease data set. The columns used here: age (years), sex (1 man, 0 woman), cp (type of chest pain:
-1 typical angina, 2 atypical angina, 3 non-anginal pain, 4 asymptomatic), trestbps (resting blood
-pressure, mm Hg), chol (serum cholesterol, mg/dL), thalach (highest heart rate reached in the
-exercise test, beats per minute), exang (angina during exercise, 1 yes), oldpeak (ST depression
-during exercise relative to rest, mm) and disease (1 if at least one major coronary artery had a
-diameter narrowing of more than 50 percent at angiography, otherwise 0).
-Task: Make the table X from the columns age, sex, trestbps, chol, thalach, exang, oldpeak and cp,
-with cp turned into dummy variables by pd.get_dummies(..., columns=["cp"], drop_first=True,
-dtype=int). The outcome y is the column disease. Split with train_test_split(X, y, test_size=0.25,
-stratify=y, random_state=RANDOM_STATE) into X_train, X_test, y_train and y_test. Fit model =
-make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)) on the training set, then compute
-the AUC of the predicted probabilities of the test set with roc_auc_score.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The AUC of the test set, rounded to three decimals. Keep the names X, y, X_train, X_test,
-y_train, y_test and model, because the next steps use them. Save it in a variable named `auc_test`
-and print it with a short label. Return only the code, in one block, with a short comment above each
-step.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: `heart` is a table with the 303 patients of the Cleveland Clinic in the UCI Heart Disease data
+set, one row per patient. The columns used here are age (years); sex (1 for men, 0 for women); cp,
+the type of chest pain (1 typical angina, 2 atypical angina, 3 non-anginal pain, 4 asymptomatic);
+trestbps (resting blood pressure, mm Hg); chol (serum cholesterol, mg/dL); thalach (the highest
+heart rate reached in the exercise test, beats per minute); exang (angina during exercise, 1 for
+yes); oldpeak (ST depression during exercise compared with rest, mm); and disease, which is 1 when
+at least one major coronary artery was narrowed by more than 50 percent of its diameter at
+angiography, and 0 otherwise.
+Task: Build the table X of the model from the columns age, sex, trestbps, chol, thalach, exang,
+oldpeak and cp. The type of chest pain, cp, is a category: Turn it into yes/no columns, one for each
+type, and leave out the first type, typical angina, as the reference. The outcome y is the column
+disease. Split the patients at random into a training set of three quarters and a test set of one
+quarter, so that the share of patients with disease is the same in both, and use RANDOM_STATE for
+the random split. Standardise the variables with the means and standard deviations of the training
+patients only, fit a logistic regression on the training set, and compute the area under the ROC
+curve (AUC) of its predicted probabilities on the test set.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the AUC of the test set, rounded to three decimals. Keep the tables X, y, X_train,
+X_test, y_train and y_test and the fitted model under the name model, because the next steps use
+them. Keep the result under the name `auc_test` and print it with a short label. Return only the
+code, as one block, with a short comment above each step.
 Test: The test set must hold 76 patients, and the AUC must lie between 0.5 and 1.
 ```
 
@@ -75,22 +78,22 @@ Test: The test set must hold 76 patients, and the AUC must lie between 0.5 and 1
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: The fitted pipeline `model` and the test set `X_test` and `y_test` of step 1.1 (y_test: 1
-disease, 0 no disease).
-Task: Compute the probabilities of disease of the test patients with model.predict_proba(X_test)[:,
-1]. Call a patient positive when the probability is 0.5 or more. Count the true positives (TP) and
-the false negatives (FN) and compute the sensitivity TP / (TP + FN).
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The sensitivity, rounded to three decimals. Save it in a variable named `sensitivity` and
-print it with a short label. Return only the code, in one block, with a short comment above each
-step.
-Test: TP + FN must equal the number of patients with disease in the test set, y_test.sum(), which is
-35.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: The fitted model, model, and the test set X_test and y_test of step 1.1 (y_test: 1 for
+disease, 0 for none).
+Task: Compute the probability of disease that the model gives to each test patient, and call a
+patient positive when it is 0.5 or more. Count the true positives (TP), the patients with disease
+who are called positive, and the false negatives (FN), the patients with disease who are called
+negative. The sensitivity is TP / (TP + FN).
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the sensitivity, rounded to three decimals. Keep the result under the name
+`sensitivity` and print it with a short label. Return only the code, as one block, with a short
+comment above each step.
+Test: TP + FN must equal the number of patients with disease in the test set, which is 35.
 ```
 
 **Expected result:** `sensitivity` = 0.8
@@ -102,19 +105,19 @@ Test: TP + FN must equal the number of patients with disease in the test set, y_
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: The fitted pipeline `model` of step 1.1, a StandardScaler followed by a LogisticRegression,
-fitted on X_train. The names of the columns are in X.columns.
-Task: Take the coefficients of the logistic regression with
-model.named_steps["logisticregression"].coef_[0], pair them with X.columns and compute the odds
-ratio per standard deviation, exp(coefficient), of every column. Print them all.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The odds ratio of the column thalach, rounded to two decimals. Save it in a variable named
-`or_thalach` and print it with a short label. Return only the code, in one block, with a short
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: The fitted model, model, of step 1.1: a logistic regression on standardised variables, fitted
+on the training set. The names of the variables are the column names of X.
+Task: Take the coefficients of the logistic regression, pair each with the name of its variable, and
+turn every coefficient into an odds ratio per standard deviation: e raised to the power of the
+coefficient. Print all odds ratios.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the odds ratio of thalach, rounded to two decimals. Keep the result under the name
+`or_thalach` and print it with a short label. Return only the code, as one block, with a short
 comment above each step.
 Test: The odds ratio of oldpeak must be above 1.
 ```
@@ -134,20 +137,22 @@ A single test set of 76 patients gives an uncertain estimate, and some models lo
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `X` and `y` of the Cleveland patients: X holds age, sex, trestbps, chol, thalach, exang,
-oldpeak and the dummy variables of cp, and y holds disease (1 or 0).
-Task: Evaluate make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)) with
-cross_val_score(pipeline, X, y, cv=StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE),
-scoring="roc_auc"). Print the five AUC values and their mean.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The mean AUC of the five folds, rounded to three decimals. Save it in a variable named
-`auc_cv` and print it with a short label. Return only the code, in one block, with a short comment
-above each step.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: X and y of step 1.1: X holds the variables of the model for all 303 Cleveland patients, and y
+their outcome, 1 for disease and 0 for none.
+Task: Evaluate the same kind of model as in step 1.1, standardisation followed by a logistic
+regression, with a five-fold cross-validation. Shuffle the patients with RANDOM_STATE and divide
+them into five folds that keep the share of patients with disease. Train on four folds and compute
+the AUC on the fifth, five times over, so that every fold is the test set once. Print the five AUC
+values and their mean.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the mean AUC of the five folds, rounded to three decimals. Keep the result under the
+name `auc_cv` and print it with a short label. Return only the code, as one block, with a short
+comment above each step.
 Test: Five values must be printed, each between 0.5 and 1.
 ```
 
@@ -160,19 +165,19 @@ Test: Five values must be printed, each between 0.5 and 1.
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `X`, `y`, `X_train`, `X_test`, `y_train` and `y_test` of step 1.1: X holds age, sex, trestbps,
-chol, thalach, exang, oldpeak and the dummy variables of cp, y holds disease, and the test set holds
-76 of the 303 patients.
-Task: Fit RandomForestClassifier(n_estimators=300, random_state=RANDOM_STATE) on X_train and
-y_train, and compute the AUC of its predicted probabilities on X_test with roc_auc_score.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The test AUC of the forest, rounded to three decimals. Save it in a variable named
-`auc_forest` and print it with a short label. Return only the code, in one block, with a short
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: The tables of step 1.1: X holds the variables of the model, age, sex, trestbps, chol, thalach,
+exang, oldpeak and the yes/no columns of the types of chest pain, and y holds disease. X_train and
+y_train are the training set; X_test and y_test are the test set, 76 of the 303 patients.
+Task: Train a random forest of 300 trees on the training set, with RANDOM_STATE for its random
+choices, and compute the AUC of its predicted probabilities on the test set.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the test AUC of the forest, rounded to three decimals. Keep the result under the name
+`auc_forest` and print it with a short label. Return only the code, as one block, with a short
 comment above each step.
 Test: The AUC must lie between 0.5 and 1.
 ```
@@ -186,29 +191,31 @@ Test: The AUC must lie between 0.5 and 1.
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `registry` is a pandas DataFrame with the 2000 synthetic patients of the virtual clinic and
-their follow-up. The columns used here: age (years), egfr (estimated glomerular filtration rate,
-mL/min/1.73 m²), lvef (left ventricular ejection fraction, %), ntprobnp (N-terminal pro-B-type
-natriuretic peptide, pg/mL), af (atrial fibrillation, 1 yes), diabetes (1 yes), bmi (body mass
-index, kg/m²), sbp (systolic blood pressure, mm Hg) and event_12m (1 if the patient died or was
-admitted to hospital for heart failure within the first 12 months of follow-up, otherwise 0).
-Task: Make the table Xe from age, egfr, lvef, ntprobnp, af and diabetes, with ntprobnp replaced by
-its natural logarithm, and take ye = registry["event_12m"]. Split with train_test_split(Xe, ye,
-test_size=0.3, stratify=ye, random_state=RANDOM_STATE). Fit make_pipeline(StandardScaler(),
-LogisticRegression(class_weight="balanced", max_iter=1000)) on the training set. Call a test patient
-positive when the probability is 0.5 or more and compute the sensitivity TP / (TP + FN) on the test
-set.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The sensitivity, rounded to three decimals. Save it in a variable named `se_balanced` and
-print it with a short label. Return only the code, in one block, with a short comment above each
-step.
-Test: The test set must hold 600 patients, 20 of them with an event. The same model without
-class_weight finds none of them at 0.5.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: `registry` is a table with the 2000 synthetic patients of the virtual clinic and their
+follow-up, one row per patient. The columns used here are age (years), egfr (estimated glomerular
+filtration rate, mL/min/1.73 m²), lvef (left ventricular ejection fraction, %), ntprobnp (N-terminal
+pro-B-type natriuretic peptide, pg/mL), af (atrial fibrillation, 1 for yes), diabetes (1 for yes),
+bmi (body mass index, kg/m²), sbp (systolic blood pressure, mm Hg) and event_12m, which is 1 when
+the patient died or was admitted to hospital for heart failure within the first 12 months of
+follow-up, and 0 otherwise.
+Task: Build the table Xe from age, egfr, lvef, ntprobnp, af and diabetes, with ntprobnp replaced by
+its natural logarithm; the outcome ye is event_12m. Split the patients at random into a training set
+of 70 percent and a test set of 30 percent that keep the share of events, with RANDOM_STATE.
+Standardise the variables with the training patients and fit a logistic regression with balanced
+class weights, which give the few patients with an event as much weight in total as all the others.
+Call a test patient positive when the probability is 0.5 or more, and compute the sensitivity on the
+test set, TP / (TP + FN).
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the sensitivity, rounded to three decimals. Keep the result under the name
+`se_balanced` and print it with a short label. Return only the code, as one block, with a short
+comment above each step.
+Test: The test set must hold 600 patients, 20 of them with an event. The same model without class
+weights finds none of them at the threshold 0.5.
 ```
 
 **Expected result:** `se_balanced` = 0.65
@@ -226,25 +233,26 @@ Patients with heart failure differ in more than their ejection fraction. In this
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `hf` is a pandas DataFrame with the 407 patients of the virtual clinic who have heart failure
-(main_diagnosis HFrEF or HFpEF). `HF_FEATURES` lists nine of its columns: age, bmi, egfr, lvef,
-ntprobnp, lavi (left atrial volume index, mL/m²), e_e_prime (the E/e′ ratio), lv_mass_index (left
-ventricular mass index, g/m²) and tapse_mm (tricuspid annular plane systolic excursion, mm). The
-column hf_phenogroup holds the hidden phenogroup with which the clinic generated the data.
-Task: Take the nine columns of HF_FEATURES with ntprobnp replaced by its natural logarithm,
-standardise them with StandardScaler, fit KMeans(n_clusters=3, n_init=10, random_state=RANDOM_STATE)
-and compare its labels with hf["hf_phenogroup"] with adjusted_rand_score.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The adjusted Rand index, rounded to three decimals. Save it in a variable named `ari` and
-print it with a short label. Return only the code, in one block, with a short comment above each
-step.
-Test: The three clusters must hold 407 patients together. An index of 1 means perfect agreement and
-0 agreement by chance.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: `hf` is a table with the 407 patients of the virtual clinic who have heart failure, those
+whose main diagnosis is HFrEF or HFpEF. `HF_FEATURES` lists nine of its columns: age, bmi, egfr,
+lvef, ntprobnp, lavi (left atrial volume index, mL/m²), e_e_prime (the E/e′ ratio), lv_mass_index
+(left ventricular mass index, g/m²) and tapse_mm (tricuspid annular plane systolic excursion, mm).
+The column hf_phenogroup holds the hidden phenogroup with which the clinic generated the data.
+Task: Take the nine columns of HF_FEATURES, with ntprobnp replaced by its natural logarithm, and
+standardise them. Divide the patients into three clusters with k-means, which is started ten times
+from different random points, with RANDOM_STATE. Compare the clusters with the hidden phenogroups,
+hf_phenogroup, by the adjusted Rand index.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the adjusted Rand index, rounded to three decimals. Keep the result under the name
+`ari` and print it with a short label. Return only the code, as one block, with a short comment
+above each step.
+Test: The three clusters must hold the 407 patients together. An index of 1 means perfect agreement,
+and 0 agreement by chance.
 ```
 
 **Expected result:** `ari` = 0.706
@@ -256,27 +264,27 @@ Test: The three clusters must hold 407 patients together. An index of 1 means pe
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `hf` is a pandas DataFrame with the 407 patients of the virtual clinic who have heart failure
-(main_diagnosis HFrEF or HFpEF). `HF_FEATURES` lists nine of its columns: age, bmi, egfr, lvef,
-ntprobnp, lavi (left atrial volume index, mL/m²), e_e_prime (the E/e′ ratio), lv_mass_index (left
-ventricular mass index, g/m²) and tapse_mm (tricuspid annular plane systolic excursion, mm). The
-column hf_phenogroup holds the hidden phenogroup with which the clinic generated the data.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: `hf` is a table with the 407 patients of the virtual clinic who have heart failure, those
+whose main diagnosis is HFrEF or HFpEF. `HF_FEATURES` lists nine of its columns: age, bmi, egfr,
+lvef, ntprobnp, lavi (left atrial volume index, mL/m²), e_e_prime (the E/e′ ratio), lv_mass_index
+(left ventricular mass index, g/m²) and tapse_mm (tricuspid annular plane systolic excursion, mm).
+The column hf_phenogroup holds the hidden phenogroup with which the clinic generated the data.
 followup_months is the time from the start of follow-up to the first event or to the end of
-follow-up (months). event is 1 for death or a hospitalisation for heart failure and 0 for a patient
-who left follow-up without an event (censored).
-Task: For the patients with main_diagnosis HFrEF, compute the Kaplan-Meier estimate of event-free
-survival with NumPy: Start at 1, and at every time with at least one event multiply by 1 − d / n,
-where d is the number of events at that time and n the number of patients whose follow-up time is at
-least that time. The estimate at 24 months is the value after the last event time that is 24 months
-or less.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The estimate at 24 months, rounded to three decimals. Save it in a variable named
-`s24_hfref` and print it with a short label. Return only the code, in one block, with a short
+follow-up, in months. event is 1 for death or a hospitalisation for heart failure, and 0 for a
+patient who left follow-up without an event (censored).
+Task: For the patients whose main diagnosis is HFrEF, compute the Kaplan-Meier estimate of
+event-free survival step by step. Start at 1. At every time at which at least one event occurs,
+multiply the estimate by 1 − d/n, where d is the number of events at that time and n is the number
+of patients still followed at that time, those whose follow-up time is at least that long. The
+estimate at 24 months is the value after the last event time of 24 months or less.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the estimate at 24 months, rounded to three decimals. Keep the result under the name
+`s24_hfref` and print it with a short label. Return only the code, as one block, with a short
 comment above each step.
 Test: The same calculation for the patients with HFpEF must give a higher value at 24 months.
 ```
@@ -290,26 +298,28 @@ Test: The same calculation for the patients with HFpEF must give a higher value 
 ```text
 Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
 a cell of a Jupyter notebook and run there.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt. From scikit-learn, these are imported: train_test_split, StratifiedKFold, cross_val_score,
-make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
-confusion_matrix and adjusted_rand_score. RANDOM_STATE = 2026.
-Data: `registry` is a pandas DataFrame with the 2000 synthetic patients of the virtual clinic and
-their follow-up. The columns used here: age (years), egfr (estimated glomerular filtration rate,
-mL/min/1.73 m²), lvef (left ventricular ejection fraction, %), ntprobnp (N-terminal pro-B-type
-natriuretic peptide, pg/mL), af (atrial fibrillation, 1 yes), diabetes (1 yes), bmi (body mass
-index, kg/m²), sbp (systolic blood pressure, mm Hg) and event_12m (1 if the patient died or was
-admitted to hospital for heart failure within the first 12 months of follow-up, otherwise 0). The
-model of the assistant also used followup_months, which is known only after the follow-up, and
-measured its AUC on the same patients it was trained on.
-Task: Leave followup_months out. Evaluate RandomForestClassifier(n_estimators=200,
-min_samples_leaf=5, random_state=RANDOM_STATE) on the columns age, egfr, lvef, ntprobnp, af,
-diabetes, bmi and sbp with cross_val_score(..., cv=StratifiedKFold(5, shuffle=True,
-random_state=RANDOM_STATE), scoring="roc_auc") and take the mean AUC.
-Constraints: Use only the packages and the variables named here. Do not read files, do not download
-anything and do not install packages.
-Output: The mean AUC, rounded to three decimals. Save it in a variable named `auc_review` and print
-it with a short label. Return only the code, in one block, with a short comment above each step.
+Context: The code runs in the Jupyter notebook of Week 2, where the data below are already loaded.
+The usual packages for tables, calculations and plots (pandas, NumPy and Matplotlib) and the machine
+learning package scikit-learn are available. RANDOM_STATE holds the fixed value that the notebook
+uses wherever chance plays a part.
+Data: `registry` is a table with the 2000 synthetic patients of the virtual clinic and their
+follow-up, one row per patient. The columns used here are age (years), egfr (estimated glomerular
+filtration rate, mL/min/1.73 m²), lvef (left ventricular ejection fraction, %), ntprobnp (N-terminal
+pro-B-type natriuretic peptide, pg/mL), af (atrial fibrillation, 1 for yes), diabetes (1 for yes),
+bmi (body mass index, kg/m²), sbp (systolic blood pressure, mm Hg) and event_12m, which is 1 when
+the patient died or was admitted to hospital for heart failure within the first 12 months of
+follow-up, and 0 otherwise. The model of the assistant also used followup_months, which is known
+only after the follow-up, and measured its AUC on the same patients on which it was trained.
+Task: Leave followup_months out of the variables, because it is not known at the time of the
+decision. Predict event_12m from the columns age, egfr, lvef, ntprobnp, af, diabetes, bmi and sbp
+with a random forest of 200 trees whose leaves hold at least 5 patients, with RANDOM_STATE. Measure
+it with a five-fold cross-validation that shuffles the patients with RANDOM_STATE and keeps the
+share of events in every fold, and take the mean AUC of the five folds.
+Constraints: Use only the data and the tools named here. The code must not read files, download
+anything or install packages.
+Output: Give the mean AUC, rounded to three decimals. Keep the result under the name `auc_review`
+and print it with a short label. Return only the code, as one block, with a short comment above each
+step.
 Test: The AUC must be clearly below 1.000.
 ```
 
@@ -352,10 +362,10 @@ ways in which it could return a wrong result without an error message.
 ### Ask for a model review
 
 ```text
-Review the code below, which builds and evaluates a prediction model. Check four things: variables
-that would not be known at the time of the decision, any step that learns from all patients before
-the split, the patients on whom the performance is measured, and whether the outcome is rare. Answer
-with a short list, then return the corrected code.
+Review the code below, which builds and evaluates a prediction model. Check four points. Does the
+model use a variable that would not be known at the time of the decision? Does any step learn from
+all patients before the split? On which patients is the performance measured? Is the outcome rare?
+Answer with a short list, then return the corrected code.
 
 [paste the code here]
 ```
@@ -367,25 +377,25 @@ The [weekly project](README.md#weekly-project) can be built on the prompt path w
 ### Step 1: Choose the number of phenogroups
 
 ```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd, matplotlib.pyplot as plt
-and the module stats of SciPy as stats, and scikit-learn is installed. The course package vclinic
-with its module teach is available, and RANDOM_STATE = 2026.
-Data: `registry`, the 2000 patients of the virtual clinic with follow-up, from
-`vclinic.add_followup(vclinic.make_cohort(2000, seed=RANDOM_STATE))`. The patients with heart
-failure have main_diagnosis "HFrEF" or "HFpEF". Columns: age (years), sex, bmi (kg/m²), diabetes and
-af (0 or 1), egfr (mL/min/1.73 m²), lvef (%), ntprobnp (pg/mL), lavi (mL/m²), e_e_prime,
-lv_mass_index (g/m²), tapse_mm (mm), followup_months (months) and event (1 for death or
+Role: You are helping a cardiologist who is new to programming.
+Context: The code runs in the Jupyter notebook of Week 2. The usual packages for tables,
+calculations and plots (pandas, NumPy, Matplotlib and SciPy), the machine learning package
+scikit-learn and the course package vclinic are available. RANDOM_STATE holds the fixed value that
+the notebook uses wherever chance plays a part.
+Data: registry, the 2000 patients of the virtual clinic with their follow-up. The patients with
+heart failure have the main diagnosis "HFrEF" or "HFpEF". Columns: age (years), sex, bmi (kg/m²),
+diabetes and af (0 or 1), egfr (mL/min/1.73 m²), lvef (%), ntprobnp (pg/mL), lavi (mL/m²),
+e_e_prime, lv_mass_index (g/m²), tapse_mm (mm), followup_months (months) and event (1 for death or a
 hospitalisation for heart failure, 0 for censored).
-Task: Take the patients with heart failure, standardise the nine variables age, bmi, egfr, lvef, the
-logarithm of ntprobnp, lavi, e_e_prime, lv_mass_index and tapse_mm, and fit k-means with k from 2 to
-6 (n_init=10, random_state=RANDOM_STATE). Report the WCSS and the mean silhouette of each k, choose
-k and give the clinical reason for the choice.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: A table of k, WCSS and silhouette, and a column cluster added to the DataFrame of the
-patients with heart failure. Return only the code in one block, with a short comment above each
-step.
+Task: Take the patients with heart failure and standardise the nine variables age, bmi, egfr, lvef,
+the natural logarithm of ntprobnp, lavi, e_e_prime, lv_mass_index and tapse_mm. Divide them into
+clusters with k-means for each number of clusters k from 2 to 6, starting the method ten times from
+different random points, with RANDOM_STATE. Report for each k the within-cluster sum of squares
+(WCSS) and the mean silhouette, choose k and give the clinical reason for the choice.
+Constraints: Use only the data and the tools named here. The code must not read files or install
+packages.
+Output: A table of k, WCSS and silhouette, and a new column cluster in the table of the patients
+with heart failure. Return only the code, as one block, with a short comment above each step.
 Test: The number of patients with heart failure must be the same before and after the clustering,
 and every cluster must hold at least 30 patients.
 ```
@@ -393,58 +403,62 @@ and every cluster must hold at least 30 patients.
 ### Step 2: Describe and name the phenogroups
 
 ```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd, matplotlib.pyplot as plt
-and the module stats of SciPy as stats, and scikit-learn is installed. The course package vclinic
-with its module teach is available, and RANDOM_STATE = 2026.
-Data: The DataFrame of the patients with heart failure from step 1, with its column cluster and the
+Role: You are helping a cardiologist who is new to programming.
+Context: The code runs in the Jupyter notebook of Week 2. The usual packages for tables,
+calculations and plots (pandas, NumPy, Matplotlib and SciPy), the machine learning package
+scikit-learn and the course package vclinic are available. RANDOM_STATE holds the fixed value that
+the notebook uses wherever chance plays a part.
+Data: The table of the patients with heart failure from step 1, with its column cluster and the
 columns of the registry.
-Task: Build a table with the size of each cluster, the mean or the percentage of age, female sex,
-bmi, diabetes, af, egfr, lvef, ntprobnp (median), lavi, e_e_prime, lv_mass_index and tapse_mm, and
-the share of HFrEF. Propose a short clinical name for each cluster.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: A pandas DataFrame with one column per cluster. Return only the code in one block, with a
-short comment above each step.
+Task: Build a table with the size of each cluster and the mean or the percentage of age, female sex,
+bmi, diabetes, af, egfr, lvef, ntprobnp (as the median), lavi, e_e_prime, lv_mass_index and
+tapse_mm, and the share of HFrEF. Propose a short clinical name for each cluster.
+Constraints: Use only the data and the tools named here. The code must not read files or install
+packages.
+Output: A table with one column per cluster. Return only the code, as one block, with a short
+comment above each step.
 Test: The sizes in the table must add up to the number of patients with heart failure.
 ```
 
 ### Step 3: Prognosis by phenogroup
 
 ```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd, matplotlib.pyplot as plt
-and the module stats of SciPy as stats, and scikit-learn is installed. The course package vclinic
-with its module teach is available, and RANDOM_STATE = 2026.
-Data: The DataFrame of step 1 with the columns cluster, main_diagnosis, followup_months and event,
-and the functions `kaplan_meier(time, event)` and `logrank(time, event, group)` of Section 8 of the
-Jupyter notebook.
-Task: Draw the Kaplan-Meier curves of the clusters and, in a second panel, of HFrEF and HFpEF.
-Report S(24) for each group and the log-rank test of each grouping.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure with two panels, a table of S(24) and the two log-rank tests. Return only the
-code in one block, with a short comment above each step.
-Test: The curves must start at 1 and never rise; the log-rank test of HFrEF against HFpEF must give
-the p value of Section 8.
+Role: You are helping a cardiologist who is new to programming.
+Context: The code runs in the Jupyter notebook of Week 2. The usual packages for tables,
+calculations and plots (pandas, NumPy, Matplotlib and SciPy), the machine learning package
+scikit-learn and the course package vclinic are available. RANDOM_STATE holds the fixed value that
+the notebook uses wherever chance plays a part.
+Data: The table of step 1 with the columns cluster, main_diagnosis, followup_months and event, and
+the tools kaplan_meier and logrank of Section 8 of the Jupyter notebook, for the survival curves and
+the log-rank test.
+Task: Draw the Kaplan-Meier curves of the clusters and, in a second panel, those of HFrEF and HFpEF.
+Report the survival at 24 months of each group and the log-rank test of each of the two groupings.
+Constraints: Use only the data and the tools named here. The code must not read files or install
+packages.
+Output: One figure with two panels, a table of the survival at 24 months and the two log-rank tests.
+Return only the code, as one block, with a short comment above each step.
+Test: The curves must start at 1 and never rise, and the log-rank test of HFrEF against HFpEF must
+give the p value of Section 8.
 ```
 
 ### Step 4: Compare with the hidden truth
 
 ```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd, matplotlib.pyplot as plt
-and the module stats of SciPy as stats, and scikit-learn is installed. The course package vclinic
-with its module teach is available, and RANDOM_STATE = 2026.
-Data: The DataFrame of step 1 with the columns cluster and hf_phenogroup, the phenogroup that the
-course hid in each patient.
+Role: You are helping a cardiologist who is new to programming.
+Context: The code runs in the Jupyter notebook of Week 2. The usual packages for tables,
+calculations and plots (pandas, NumPy, Matplotlib and SciPy), the machine learning package
+scikit-learn and the course package vclinic are available. RANDOM_STATE holds the fixed value that
+the notebook uses wherever chance plays a part.
+Data: The table of step 1 with the columns cluster and hf_phenogroup, the phenogroup that the course
+hid in each patient.
 Task: Cross-tabulate the clusters with hf_phenogroup and compute the adjusted Rand index. Write
 three sentences on what the clustering found that the ejection fraction alone misses.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: The cross-table, the adjusted Rand index and the three sentences. Return only the code in
+Constraints: Use only the data and the tools named here. The code must not read files or install
+packages.
+Output: The cross-table, the adjusted Rand index and the three sentences. Return only the code, as
 one block, with a short comment above each step.
-Test: The adjusted Rand index must lie between −1 and 1; with k = 3 it should be clearly above 0.5.
+Test: The adjusted Rand index must lie between −1 and 1, and with three clusters it should be
+clearly above 0.5.
 ```
 
 ---

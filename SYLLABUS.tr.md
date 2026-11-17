@@ -12,11 +12,11 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 | Düzenleyen | Türk Kardiyoloji Derneği |
 | Eğitmen | Prof. Dr. Utku Köse, Süleyman Demirel Üniversitesi |
 | Katılımcılar | Programlama deneyimi olan ya da olmayan kardiyologlar ve diğer uzman hekimler |
-| Biçim | 11 hafta, haftada bir 4 saatlik oturum, toplam 44 saat; sürenin yaklaşık yüzde 80'i uygulama |
+| Biçim | 11 hafta, haftada bir 4 saatlik oturum, toplam 44 saat; sürenin yaklaşık yüzde 80'i uygulamaya ayrılır |
 | Malzemelerin dili | İngilizce ve Türkçe |
-| Ortam | Katılımcının tercihine göre kurulum gerektirmeyen Google Colab ya da kendi bilgisayarında Anaconda içinde Jupyter |
+| Ortam | Katılımcının tercihine göre kurulum gerektirmeyen Google Colab ya da katılımcının kendi bilgisayarında Anaconda içinde çalışan Jupyter |
 | Uygulamanın iki yolu | Kodu hazır prompt (istem) metinleriyle bir yapay zekâ (YZ) asistanının yazdığı prompt yolu ve kodu katılımcının yazdığı Python yolu; iki yol da aynı sonuçlara varır |
-| Ön koşullar | Programlama deneyimi ve YZ konusunda ön bilgi gerekmez. Colab için bir Google hesabı ya da 1. haftadan önce kurulmuş Anaconda ([SETUP.tr.md](SETUP.tr.md)) |
+| Ön koşullar | Programlama deneyimi ve YZ konusunda ön bilgi gerekmez. Colab için bir Google hesabı ya da 1. haftadan önce kurulmuş bir Anaconda yeterlidir ([SETUP.tr.md](SETUP.tr.md)) |
 | İletişim | utkukose@sdu.edu.tr, utkukose@gmail.com |
 
 ## Tanım
@@ -27,23 +27,23 @@ Eğitimin öğrenme çıktıları [eğitimin ana sayfasında](README.tr.md#eğit
 
 ## Haftalık plan
 
-Her oturum dört saat sürer ve yaklaşık ikişer saatlik iki yarıdan oluşur. Her haftada ayrıca oturum içinde bir mini proje ve ev çalışması olarak bir haftalık proje bulunur. Plan, Türk Kardiyoloji Derneği'nin programını izler ve her hafta yayımlandıkça ayrıntılandırılır.
+Her oturum dört saat sürer ve yaklaşık ikişer saatlik iki yarıdan oluşur. Her hafta ayrıca oturum içinde yapılan bir mini proje ve ev çalışması olarak verilen bir haftalık proje içerir. Plan, Türk Kardiyoloji Derneği'nin programını izler ve her hafta yayımlandıkça ayrıntılandırılır.
 
-### Hafta 1: Python ve kardiyoloji veri temelleri
+### Hafta 1: Python ve kardiyoloji verisinin temelleri
 
-Oturumun ilk yarısında Anaconda içinde Jupyter, klinik örneklerle Python, pandas ile hasta tabloları ve Matplotlib ile ilk grafikler tanıtılır. İkinci yarıda elektrokardiyogram (EKG) veri olarak ele alınır: PhysioNet kayıtları, on iki derivasyon, R tepesi tespiti, kalp hızı değişkenliği ve aralıkların otomatik ölçümü. **Oturumdaki mini proje:** UCI Heart Disease veri setinin Cleveland verisini yükleme, özetleme ve görselleştirme. **Haftalık proje:** PR, QRS ve QT'nin otomatik ölçümü, frontal eksen ve iki QT düzeltmesiyle. **Veriler:** UCI Heart Disease (Cleveland), MIT-BIH Arrhythmia Database, PTB Diagnostic ECG Database. **Sanal kliniğin aşaması:** Hasta kaydı ve EKG laboratuvarı.
+Oturumun ilk yarısında Anaconda içinde Jupyter, klinik örneklerle Python, pandas ile hasta tabloları ve Matplotlib ile ilk grafikler tanıtılır. İkinci yarıda elektrokardiyogram (EKG) veri olarak ele alınır; PhysioNet kayıtları, on iki derivasyon, R tepesi tespiti, kalp hızı değişkenliği ve aralıkların otomatik ölçümü işlenir. **Oturumdaki mini proje:** UCI Heart Disease veri setindeki Cleveland verisinin yüklenmesi, özetlenmesi ve görselleştirilmesi. **Haftalık proje:** PR, QRS ve QT aralıklarının otomatik ölçümü, frontal eksen ve iki QT düzeltmesi. **Veriler:** UCI Heart Disease (Cleveland), MIT-BIH Arrhythmia Database, PTB Diagnostic ECG Database. **Sanal kliniğin aşaması:** Hasta kaydı ve EKG laboratuvarı.
 
 Malzemeler: [Hafta sayfası](tr/hafta-01/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/lab.html) · [Jupyter defteri](tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb) · [Prompt kütüphanesi](tr/hafta-01/PROMPTLAR.md) · [PDF ders notu](tr/hafta-01/Hafta01_Ders_Notlari.pdf)
 
 ### Hafta 2: Makine öğrenmesi temelleri
 
-Oturumun ilk yarısında scikit-learn ile sınıflandırma ve regresyon modelleri kurulur: koroner arter hastalığı riski için lojistik regresyon, karar ağaçları ve rastgele ormanlar, çapraz doğrulama, alıcı işletim karakteristiği (ROC) eğrisi, duyarlılık ve özgüllük. İkinci yarıda k-ortalamalar yöntemiyle hasta alt grupları bulunur ve iki boyutta görselleştirilir; Kaplan-Meier sağkalım analizi tanıtılır ve dengesiz veriler ele alınır. **Oturumdaki mini proje:** Cleveland verisinde koroner arter hastalığını öngören bir model; ROC eğrisi ve eğri altındaki alanla birlikte. **Haftalık proje:** Korunmuş ve düşük ejeksiyon fraksiyonlu kalp yetersizliğinin kümelenmesi ve Kaplan-Meier sağkalım analizi. **Veriler:** UCI Heart Disease (Cleveland) ve sanal kliniğin izlem verilerini içeren hasta kaydı. **Sanal kliniğin aşaması:** Risk polikliniği.
+Oturumun ilk yarısında scikit-learn ile sınıflandırma ve regresyon modelleri kurulur. Koroner arter hastalığı riski için lojistik regresyon, karar ağaçları ve rastgele ormanlar kullanılır; çapraz doğrulama, alıcı işletim karakteristiği (ROC) eğrisi, duyarlılık ve özgüllük kavramları işlenir. İkinci yarıda k-ortalamalar yöntemiyle hasta alt grupları bulunur ve iki boyutta görselleştirilir; ardından Kaplan-Meier sağkalım analizi tanıtılır ve dengesiz veriler ele alınır. **Oturumdaki mini proje:** Cleveland verisinde koroner arter hastalığını öngören bir model ve bu modelin ROC eğrisi ile eğri altındaki alanı. **Haftalık proje:** Korunmuş ve düşük ejeksiyon fraksiyonlu kalp yetersizliğinin kümelenmesi ve Kaplan-Meier sağkalım analizi. **Veriler:** UCI Heart Disease (Cleveland) ve sanal kliniğin izlem verilerini içeren hasta kaydı. **Sanal kliniğin aşaması:** Risk polikliniği.
 
 Malzemeler: [Hafta sayfası](tr/hafta-02/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/lab.html) · [Jupyter defteri](tr/hafta-02/NB02_makine_ogrenmesi_temelleri.ipynb) · [Prompt kütüphanesi](tr/hafta-02/PROMPTLAR.md) · [PDF ders notu](tr/hafta-02/Hafta02_Ders_Notlari.pdf)
 
 ### Hafta 3: Derin öğrenme ve evrişimli sinir ağları
 
-Oturumun ilk yarısında yapay sinir ağları ve evrişimli sinir ağları (CNN) anlatılır: nöronlar, katmanlar, aktivasyon fonksiyonları, evrişim, havuzlama, seyreltme (dropout) ve yığın normalizasyonu. İkinci yarıda yaygın mimariler karşılaştırılır, kardiyak görüntülerle veri çoğaltma yapılır, karışıklık matrisi ve F1 skoru aşırı öğrenmeye dikkat edilerek yorumlanır. **Oturumdaki mini proje:** EchoNet-Dynamic üzerinde normal ve anormal ekokardiyogramların sınıflandırılması (anormal: ejeksiyon fraksiyonu yüzde 50'nin altında); kişisel kaydı olan katılımcılar için. **Haftalık proje:** Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması. **Veriler:** ACDC, açık kaynağından indirilen, kalbi normal olan ya da DCM veya HCM'si bulunan 90 hastanın sine kardiyak manyetik rezonans incelemeleri; EchoNet-Dynamic, kişisel kayıtla edinilen ekokardiyografi videoları. **Sanal kliniğin aşaması:** Görüntüleme laboratuvarı.
+Oturumun ilk yarısında yapay sinir ağları ve evrişimli sinir ağları (CNN) anlatılır: nöronlar, katmanlar, aktivasyon fonksiyonları, evrişim, havuzlama, seyreltme (dropout) ve yığın normalizasyonu. İkinci yarıda yaygın mimariler karşılaştırılır, kardiyak görüntülerle veri çoğaltma yapılır, karışıklık matrisi ve F1 skoru aşırı öğrenmeye dikkat edilerek yorumlanır. **Oturumdaki mini proje:** EchoNet-Dynamic'te normal ve anormal ekokardiyogramların sınıflandırılması (ejeksiyon fraksiyonu yüzde 50'nin altında olan videolar anormal sayılır). Bu proje, kişisel kaydı olan katılımcılar içindir. **Haftalık proje:** Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması. **Veriler:** ACDC, açık kaynağından indirilen ve kalbi normal olan ya da DCM veya HCM'si bulunan 90 hastanın sine kardiyak manyetik rezonans incelemelerini içerir. EchoNet-Dynamic ise kişisel kayıtla edinilen ekokardiyografi videolarından oluşur. **Sanal kliniğin aşaması:** Görüntüleme laboratuvarı.
 
 Malzemeler: [Hafta sayfası](tr/hafta-03/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/lab.html) · [Jupyter defteri](tr/hafta-03/NB03_derin_ogrenme_ve_evrisimli_aglar.ipynb) · [Prompt kütüphanesi](tr/hafta-03/PROMPTLAR.md) · [PDF ders notu](tr/hafta-03/Hafta03_Ders_Notlari.pdf)
 
@@ -85,13 +85,13 @@ Malzemeler: Hazırlanıyor
 
 ### Hafta 10: Klinik karar destek sistemleri
 
-Oturumun ilk yarısında klinik iş akışına uygun bir klinik karar destek sistemi (KKDS) tasarlanır, web arayüzü Streamlit ile kurulur ve HL7 FHIR ile tahmin servisleri tanıtılır. İkinci yarı sürüm yönetimini, insan gözetimini, tıbbi cihaz yazılımlarının düzenleyici süreçlerini ve hasta onamını kapsar. **Oturumdaki mini proje:** Atriyal fibrilasyon için bir karar destek prototipi: EKG yükleme, tahmin, açıklama ve rapor. **Haftalık proje:** Karar destek prototipinin kullanıcı testi ve iyileştirilmesi. **Veriler:** Sanal kliniğin EKG'leri ve MIT-BIH Atrial Fibrillation Database. **Sanal kliniğin aşaması:** Yatak başında karar desteği.
+Oturumun ilk yarısında klinik iş akışına uygun bir klinik karar destek sistemi (KKDS) tasarlanır, web arayüzü Streamlit ile kurulur ve HL7 FHIR ile tahmin servisleri tanıtılır. İkinci yarı sürüm yönetimini, insan gözetimini, tıbbi cihaz yazılımlarının düzenleyici süreçlerini ve hasta onamını kapsar. **Oturumdaki mini proje:** Atriyal fibrilasyon için bir karar destek prototipi: EKG yükleme, tahmin, açıklama ve rapor. **Haftalık proje:** Karar destek prototipinin kullanıcı testi ve iyileştirilmesi. **Veriler:** Sanal kliniğin EKG'leri ve MIT-BIH Atriyal Fibrilasyon Veri Tabanı. **Sanal kliniğin aşaması:** Yatak başında karar desteği.
 
 Malzemeler: Hazırlanıyor
 
 ### Hafta 11: Final projesi ve sertifika
 
-Oturumun ilk yarısı final projeleri üzerine bir atölyedir: soru, veri, model, modelin açıklaması ve klinik değerlendirmesinin tasarımı. İkinci yarıda final projeleri sunulur ve değerlendirilir, program sertifikalarla kapanır. **Oturumdaki mini proje:** Final projesi üzerinde çalışma. **Haftalık proje:** Final projesi: katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı. **Veriler:** Her katılımcı kendi verilerini seçer (final projesi sayfasına bakın). **Sanal kliniğin aşaması:** Katılımcıların birimleri: final projeleri.
+Oturumun ilk yarısı final projeleri üzerine bir atölyedir; bu atölyede sorunun, verinin, modelin, modelin açıklamasının ve klinik değerlendirmenin tasarımı üzerinde çalışılır. İkinci yarıda final projeleri sunulur ve değerlendirilir; program sertifikalarla kapanır. **Oturumdaki mini proje:** Final projesi üzerinde çalışma. **Haftalık proje:** Final projesi: katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı. **Veriler:** Her katılımcı kendi verilerini seçer (final projesi sayfasına bakın). **Sanal kliniğin aşaması:** Katılımcıların birimleri: final projeleri.
 
 Malzemeler: Hazırlanıyor
 
@@ -123,7 +123,7 @@ Sertifika için oturumların en az yüzde 80'ine, yani 11 oturumun en az 9'una k
 
 ## Malzemeler ve ortam
 
-Her hafta için ders sayfasına, etkileşimli laba, Jupyter defterine, prompt kütüphanesine ve PDF ders notuna bağlantı veren bir hafta sayfası vardır. [SETUP.tr.md](SETUP.tr.md) defterlerin çalıştığı iki yeri, Google Colab'ı ve kişinin kendi bilgisayarındaki Jupyter'i anlatır; [başlangıç defteri](tr/baslangic/NB00_baslangic.ipynb) 1. haftadan önce iki yolun ilk adımlarını hazırlar. [DATASETS.tr.md](DATASETS.tr.md) veri setlerini lisanslarıyla, [PYTHON_PATH.tr.md](PYTHON_PATH.tr.md) ise haftaların Python adımlarını listeler. [PROMPT_PATH.tr.md](PROMPT_PATH.tr.md) prompt yolunu ve bu yolda kullanılabilecek YZ asistanlarını, [OWN_DATA.tr.md](OWN_DATA.tr.md) ise eğitimin yöntemlerinin kişinin kendi kliniğinin verilerine nasıl uygulanacağını anlatmaktadır.
+Her hafta için ders sayfasına, etkileşimli laba, Jupyter defterine, prompt kütüphanesine ve PDF ders notuna bağlantı veren bir hafta sayfası vardır. [SETUP.tr.md](SETUP.tr.md) defterlerin çalıştığı iki ortamı, yani Google Colab'ı ve kişinin kendi bilgisayarındaki Jupyter'i anlatır; [başlangıç defteri](tr/baslangic/NB00_baslangic.ipynb) 1. haftadan önce iki yolun ilk adımlarını hazırlar. [DATASETS.tr.md](DATASETS.tr.md) veri setlerini lisanslarıyla, [PYTHON_PATH.tr.md](PYTHON_PATH.tr.md) ise haftaların Python adımlarını listeler. [PROMPT_PATH.tr.md](PROMPT_PATH.tr.md) prompt yolunu ve bu yolda kullanılabilecek YZ asistanlarını, [OWN_DATA.tr.md](OWN_DATA.tr.md) ise eğitimin yöntemlerinin kişinin kendi kliniğinin verilerine nasıl uygulanacağını anlatmaktadır.
 
 ## İletişim
 

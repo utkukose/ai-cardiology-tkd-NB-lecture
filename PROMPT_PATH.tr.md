@@ -5,11 +5,11 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [Python yolu](PYTHON_PATH.tr.md) · [Kendi verileriniz](OWN_DATA.tr.md) · [English](PROMPT_PATH.md)
 
-Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Haftanın Jupyter defterinde ise iki uygulama yolu bulunur. Kod yazmayan, belki de hiç yapay zekâ (YZ) asistanı kullanmamış katılımcılar için hazırlanan yolda kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir YZ asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. Bu yol, her defterin 1. kısmını oluşturan **prompt yolu**dur. Defterin 2. kısmı olan **Python yolu** aynı sonuçlara kodu yazarak ulaşır ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)). Yol, her uygulama durağında değiştirilebilir.
+Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Haftanın Jupyter defterinde ise iki uygulama yolu bulunur. Kod yazmayan, belki de hiç yapay zekâ (YZ) asistanı kullanmamış katılımcılar için hazırlanan yolda kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir YZ asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. Her defterin 1. kısmını oluşturan bu yola **prompt yolu** denir. Defterin 2. kısmı olan **Python yolunda** ise aynı sonuçlara kod yazılarak ulaşılır ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)). Yol, her uygulama durağında değiştirilebilir.
 
 ## Bir uygulama durağında ne olur?
 
-Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durakta **Prompt yolu** düğmesi, defterin 1. kısmını aynı durakta, Google Colab'da ya da kendi bilgisayarınızdaki Jupyter'de açar. Bir durak iki ila dört adımdan oluşur ve her adım aynı biçimde ilerler.
+Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın **Prompt yolu** düğmesi, defterin 1. kısmını aynı durağın başında, Google Colab'da ya da kendi bilgisayarınızdaki Jupyter'de açar. Bir durakta iki ile dört adım bulunur ve her adım aynı biçimde ilerler.
 
 | Adım | Ne yapılır? |
 |---|---|
@@ -20,7 +20,7 @@ Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durakta **P
 | 5. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 6. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-Her durak, o durağın verilerini yükleyen bir hazırlık hücresiyle başlar; böylece bir durağa başka bir gün de başlanabilir. Her adımın *Hazır kod* hücresi her zaman doğru sonucu verir: Kimse yolda kalmaz ve bir sonraki adım her zaman başlayabilir.
+Her durak, o durağın verilerini yükleyen bir hazırlık hücresiyle başlar; böylece bir durağa başka bir gün de başlanabilir. Her adımın *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı bir adımda takılıp kalmaz ve sonraki adıma her zaman geçilebilir.
 
 ## Hangi asistan?
 
@@ -28,7 +28,7 @@ Python kodu yazabilen her asistan kullanılabilir; eğitimin promptları hepsiyl
 
 | Asistan | Nerede çalışır? | Bilinmesi gerekenler |
 |---|---|---|
-| [Colab'da Gemini](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab | Colab'ın içinde bulunur ve pencerenin üstündeki düğmesiyle açılır. Bir tariften kod yazar ve hataları açıklar. Özellikler hesaba ve bölgeye göre farklılık gösterebilir. |
+| [Colab'da Gemini](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab | Colab'ın içinde bulunur ve pencerenin üstündeki düğmesiyle açılır. Bir açıklamadan yola çıkarak kod yazar ve hataları açıklar. Özellikler hesaba ve bölgeye göre farklılık gösterebilir. |
 | ChatGPT, Claude, Copilot ya da Gemini gibi bir sohbet asistanı | Web tarayıcısının ikinci bir sekmesi | Prompt sohbete yapıştırılır, kod da deftere geri kopyalanır. |
 | [Anaconda Assistant](https://docs.anaconda.com/anaconda-notebooks/local-assistant) | Anaconda Toolbox aracılığıyla Anaconda'daki JupyterLab (`conda install anaconda-toolbox`) | Bir Anaconda hesabı gerektirir. Ücretsiz hesapta istek sayısı sınırlıdır. |
 | [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) | Anaconda'daki JupyterLab | Sohbet paneli olan açık kaynaklı bir eklentidir. Bir model sağlayıcısının uygulama programlama arayüzü (API) anahtarını ya da yerel bir modeli gerektirir. Sağlayıcılar kullanım için ücret alabilir. |
@@ -41,12 +41,12 @@ Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asis
 
 | Alan | Ne belirtilir? |
 |---|---|
-| Rol | Asistanın kim olacağı: kod yazmayan bir kardiyoloğun yardımcısı |
-| Bağlam | Kodun nerede çalışacağı ve neyin hazır olduğu: Jupyter defteri, içe aktarılmış paketler ve `vclinic` ders paketi |
-| Veri | Değişkenlerin adları, birimleri ve sinyallerde örnekleme frekansı |
+| Rol | Asistanın kim olacağı: Kod yazmayan bir kardiyoloğun yardımcısı |
+| Bağlam | Kodun nerede çalışacağı ve neyin hazır olduğu: Jupyter defteri ve defterde hazır bekleyen veriler |
+| Veri | Verilerin adları, birimleri ve sinyallerde örnekleme frekansı |
 | Görev | Varsa formülüyle birlikte tek ve açık bir görev |
 | Kısıtlar | Kodun yapmaması gerekenler; örneğin dosya okumak ya da paket kurmak |
-| Çıktı | Sonucu tutan değişkenin adı ve yuvarlanması |
+| Çıktı | Sonucun hangi adla saklanacağı ve nasıl yuvarlanacağı |
 | Test | Sonucun denetlenebilmesi için cevabı bilinen bir durum |
 
 Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabilir. Bu yüzden prompt yolunun en önemli parçası her adımın kontrolüdür.
@@ -60,7 +60,7 @@ Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabil
 | 3 | [PROMPTLAR.md](tr/hafta-03/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
 | 4-11 | Hazırlanıyor | | |
 
-Haftanın prompt kütüphanesi, 1. kısmın bütün promptlarını GitHub'da birer kopyalama düğmesiyle, kodu onarmak için promptları ve haftalık projenin prompt yolunu içerir. Etkileşimli labın F bölümü, prompt kartını bir kalite göstergesi ve bir mahremiyet denetimiyle çalıştırır.
+Haftanın prompt kütüphanesi, 1. kısmın bütün promptlarını GitHub'da birer kopyalama düğmesiyle, kodu onarmak için promptları ve haftalık projenin prompt yolunu içerir. Etkileşimli labın F bölümünde prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimiyle çalışılır.
 
 ## Mahremiyet
 
@@ -68,7 +68,7 @@ Hiçbir prompta hasta verisi girmez. Buna adlar, doğum tarihleri, T.C. kimlik n
 
 ## YZ kullanım günlüğü ve değerlendirme
 
-Prompt yolundan gelen kod, elle yazılmış kodla aynı biçimde değerlendirilir. Haftalık proje [izlencede](SYLLABUS.tr.md#değerlendirme-ve-sertifika) anlatıldığı gibi sonuçları, yöntemleri ve açıklaması, tartışması ve kayıtları üzerinden puanlanır. Her haftalık projeye, bir asistanın her kullanımı için bir satır içeren bir YZ kullanım günlüğü eklenir: araç, prompt, neyin denetlendiği ve neyin değiştirildiği.
+Prompt yolundan gelen kod, elle yazılmış kodla aynı biçimde değerlendirilir. Haftalık proje, [izlencede](SYLLABUS.tr.md#değerlendirme-ve-sertifika) anlatıldığı gibi sonuçları, yöntemleri ve bunların açıklaması, tartışması ve kayıtları üzerinden puanlanır. Her haftalık projeye, bir asistanın her kullanımı için bir satır içeren bir YZ kullanım günlüğü eklenir. Her satırda araç, prompt, neyin denetlendiği ve neyin değiştirildiği yazılır.
 
 ## Kaynaklar
 

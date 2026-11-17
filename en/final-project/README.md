@@ -44,12 +44,12 @@ The jury scores the project out of 100 points with the rubric below. The partici
 
 | Criterion | Points |
 |---|---|
-| Clinical question: clear, relevant and answerable with the data | 15 |
-| Data: source, quality, preparation and protection | 15 |
-| Methods: correct use of the methods of the course and a sound validation | 25 |
-| Results: correct, with a measure of uncertainty and compared with a reference | 15 |
-| Explanation and limitations: what the model uses, where it fails and what a clinical evaluation would need | 15 |
-| Presentation and reproducibility: clear presentation, a notebook that reproduces the results and a complete AI usage log | 15 |
+| Clinical question: Clear, relevant and answerable with the data | 15 |
+| Data: Source, quality, preparation and protection | 15 |
+| Methods: Correct use of the methods of the course and a sound validation | 25 |
+| Results: Correct, with a measure of uncertainty and compared with a reference | 15 |
+| Explanation and limitations: What the model uses, where it fails and what a clinical evaluation would need | 15 |
+| Presentation and reproducibility: Clear presentation, a notebook that reproduces the results and a complete AI usage log | 15 |
 
 ## Starting code
 

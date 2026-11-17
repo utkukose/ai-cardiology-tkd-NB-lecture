@@ -41,12 +41,12 @@ Every prompt of the course has the same seven fields, and reading them teaches h
 
 | Field | What it states |
 |---|---|
-| Role | Who the assistant should be: a helper of a cardiologist who does not write code |
-| Context | Where the code runs and what is ready: the Jupyter notebook, the imported packages and the course package `vclinic` |
-| Data | The names of the variables, their units and, for signals, the sampling frequency |
+| Role | Who the assistant should be: A helper of a cardiologist who does not write code |
+| Context | Where the code runs and what is ready: The Jupyter notebook and the data already loaded in it |
+| Data | The names of the data, their units and, for signals, the sampling frequency |
 | Task | One clear task, with its formula if there is one |
 | Constraints | What the code may not do, such as reading files or installing packages |
-| Output | The name of the variable that holds the result and its rounding |
+| Output | The name under which the result is kept and its rounding |
 | Test | A case whose answer is known, so that the result can be checked |
 
 An assistant can write code that runs without an error and still gives a wrong number. The check of every step is therefore the most important part of the prompt path.

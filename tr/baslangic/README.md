@@ -5,7 +5,7 @@ Türk Kardiyoloji Derneği
 
 [Eğitimin ana sayfası](../../README.tr.md) · [Kurulum](../../SETUP.tr.md) · [English](../../en/start-here/README.md)
 
-[NB00_baslangic.ipynb](NB00_baslangic.ipynb) defteri sizi 1. haftadan önce yaklaşık 30 dakikada eğitime hazırlar. Hiçbir kurulum gerektirmeyen Google Colab'da da kendi bilgisayarınızdaki Jupyter'de de aynı biçimde çalışır. Defter, eğitimin iki yolunu da tanıtır: Kodu, hazır bir prompt (istem), yani yazılı bir talimatla bir yapay zekâ (YZ) asistanının yazdığı prompt yolunu ve kodu sizin yazdığınız Python yolunu.
+[NB00_baslangic.ipynb](NB00_baslangic.ipynb) defteri sizi 1. haftadan önce yaklaşık 30 dakikada eğitime hazırlar. Hiçbir kurulum gerektirmeyen Google Colab'da da kendi bilgisayarınızdaki Jupyter'de de aynı biçimde çalışır. Defter, eğitimin iki yolunu da tanıtır. Birinci yolda kodu, hazır bir prompt (istem), yani yazılı bir talimatla bir yapay zekâ (YZ) asistanı yazar; bu yola prompt yolu denir. İkinci yol olan Python yolunda ise kodu siz yazarsınız.
 
 | | Kimler için? | Ne yapılır? | Süre |
 |---|---|---|---|

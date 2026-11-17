@@ -5,7 +5,7 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](SETUP.md)
 
-Eğitimin her Jupyter defteri, aynı verilerle ve aynı sonuçlarla iki yerde çalışır. Hangisini tercih ederseniz onu kullanın; haftadan haftaya değiştirmek de mümkündür. Defterin 1. kısmında kodu, hazır bir prompt (istem) ile bir yapay zekâ (YZ) asistanı yazar; 2. kısmında ise kodu katılımcı Python ile yazar.
+Eğitimin her Jupyter defteri, aynı verilerle ve aynı sonuçlarla iki ortamda çalışır. Hangisini tercih ederseniz onu kullanın; haftadan haftaya değiştirmek de mümkündür. Defterin 1. kısmında kodu, hazır bir prompt (istem) ile bir yapay zekâ (YZ) asistanı yazar; 2. kısmında ise kodu katılımcı Python ile yazar.
 
 | | Google Colab | Kendi bilgisayarınızda Jupyter (Anaconda) |
 |---|---|---|
@@ -13,12 +13,12 @@ Eğitimin her Jupyter defteri, aynı verilerle ve aynı sonuçlarla iki yerde ç
 | Kurulum | Yok | 1. haftadan önce bir kez, yaklaşık 20 dakika |
 | Defter nasıl açılır? | Bir uygulama durağındaki, hafta sayfasındaki ya da eğitim sitesindeki **Colab'da aç** düğmesiyle | **Jupyter için indir** bağlantısıyla ya da ders klasörünün tamamıyla |
 | Prompt yolu için YZ asistanı | Gemini yerleşiktir | Tarayıcıdaki herhangi bir asistan; Jupyter içinde Anaconda Assistant ya da Jupyter AI |
-| Gerçek hasta verileri | Asla | Yalnızca kurumun bir bilgisayarında ve kurumun kurallarıyla |
+| Gerçek hasta verileri | Asla kullanılmaz | Yalnızca kurumun bir bilgisayarında ve kurumun kurallarına uygun olarak kullanılır |
 
 ## A seçeneği: Google Colab
 
 1. Haftanın ders sayfasında bir uygulama durağındaki **Colab'da aç** düğmesine basın. Hafta sayfasında ve eğitim sitesinde de aynı düğme bulunur.
-2. Bir Google hesabıyla giriş yapın ve değişikliklerinizin kaybolmaması için **File → Save a copy in Drive** ile kendi kopyanızı kaydedin.
+2. Bir Google hesabıyla giriş yapın ve değişikliklerinizin kaybolmaması için **Dosya → Drive'a kopya kaydet** (**File → Save a copy in Drive**) komutuyla kendi kopyanızı kaydedin.
 3. **0. bölümü** çalıştırın. İlk hücresi `vclinic` ders paketini ve haftanın veri dosyalarını birkaç saniyede GitHub'dan indirir.
 4. **Kısım 1, prompt yolu** ya da **Kısım 2, Python yolu** ile devam edin. Colab'ın YZ asistanı Gemini, pencerenin üstündeki düğmesiyle açılır.
 
@@ -26,7 +26,7 @@ Colab oturumları geçicidir: Bir oturumda oluşturulan dosyalar oturum bitince 
 
 ## B seçeneği: Kendi bilgisayarınızda Jupyter
 
-Aşağıdaki adımlar Python ve Jupyter'i getiren Anaconda'yı kurar ve ders klasörünü indirir. Adımlar yaklaşık 20 dakika sürer ve bir kez yapılır. Kendi kliniğinizin verileriyle daha sonra yapacağınız çalışmaların ortamı da budur.
+Aşağıdaki adımlarla, Python'u ve Jupyter'i birlikte getiren Anaconda kurulur ve ders klasörü indirilir. Adımlar yaklaşık 20 dakika sürer ve bir kez yapılır. Kendi kliniğinizin verileriyle daha sonra yapacağınız çalışmaların ortamı da budur.
 
 ### 1. Anaconda'yı kurun
 
@@ -55,7 +55,7 @@ jupyter lab
 
 ### 5. Haftanın defterini açın
 
-Haftanın klasöründeki Jupyter defterini, örneğin `tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb` dosyasını açın ve önce Bölüm 0'ı çalıştırın. İlk hücre ders klasörünü bulur, ikinci hücre `vclinic` ders paketinin sürümünü yazar. **Kernel → Restart Kernel and Run All Cells** komutu defteri temiz bir durumdan başlayarak yeniden çalıştırır.
+Haftanın klasöründeki Jupyter defterini, örneğin `tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb` dosyasını açın ve önce 0. bölümü çalıştırın. İlk hücre ders klasörünü bulur, ikinci hücre `vclinic` ders paketinin sürümünü yazar. **Kernel → Restart Kernel and Run All Cells** komutu defteri temiz bir durumdan başlayarak yeniden çalıştırır.
 
 ### 6. Sonraki haftaların paketleri
 
@@ -93,7 +93,7 @@ Eğitim süresince depoya yeni haftalar eklenmektedir. git kullanılıyorsa ders
 
 ## Yapay zekâ asistanı (isteğe bağlı)
 
-YZ asistanı yalnızca alıştırmaları asistana prompt yazarak çözenler, yani [prompt yolunu](PROMPT_PATH.tr.md) izleyenler için gereklidir; Python kodu yazabilen her asistan kullanılabilir. Anaconda'da Anaconda Assistant, Anaconda Toolbox ile birlikte gelir. Navigator'daki Anaconda Toolbox kutucuğundan ya da aşağıdaki komutla kurun. Ardından JupyterLab'de bir defter açın ve bir Anaconda hesabıyla oturum açın. Ücretsiz hesapta istek sayısı sınırlıdır.
+YZ asistanı yalnızca alıştırmaları asistana prompt yazarak çözenler, yani [prompt yolunu](PROMPT_PATH.tr.md) izleyenler için gereklidir; Python kodu yazabilen her asistan kullanılabilir. Anaconda'da Anaconda Assistant, Anaconda Toolbox ile birlikte gelir. Anaconda Toolbox'ı Navigator'daki kutucuğundan ya da aşağıdaki komutla kurun. Ardından JupyterLab'de bir defter açın ve bir Anaconda hesabıyla oturum açın. Ücretsiz hesapta istek sayısı sınırlıdır.
 
 ```bash
 conda install anaconda-toolbox
