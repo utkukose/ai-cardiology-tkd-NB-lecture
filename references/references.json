@@ -1218,7 +1218,8 @@
     "apa": "Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). *Heart Disease* [Data set]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
-    ]
+    ],
+    "registry_authors_note": "The DataCite record lists only the first creator; the UCI Machine Learning Repository lists all four."
   },
   {
     "key": "jolliffe2016",

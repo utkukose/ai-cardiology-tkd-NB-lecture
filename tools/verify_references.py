@@ -7,11 +7,15 @@ the DOI in Crossref (or in DataCite for data sets and software published with
 DataCite DOIs) and in OpenAlex. It compares the title, the year and the family
 names of all authors with the entry. An entry can record a year that the
 registry is known to list instead of the print year (registry_year), with the
-reason (registry_note); the script then prints the reason as a note. Entries
+reason (registry_note); the script then prints the reason as a note. In the same
+way, an entry can explain an author list that the registry is known to give
+differently (registry_authors_note). Members of a group author that the record
+lists one by one are reported as a note. Entries
 without a DOI are checked for a reachable web address. The script exits with
 code 1 if any entry does not match or cannot be checked.
 """
 import difflib
+import html
 import json
 import re
 import sys
@@ -42,7 +46,7 @@ def fetch(url, tries=3):
 
 
 def norm(text):
-    text = unicodedata.normalize("NFKD", text or "")
+    text = unicodedata.normalize("NFKD", html.unescape(text or ""))
     text = "".join(c for c in text if not unicodedata.combining(c))
     text = re.sub(r"<[^>]+>", " ", text)
     return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()
@@ -90,22 +94,38 @@ def from_openalex(doi):
     return dict(title=w.get("title") or "", year=w.get("publication_year"), authors=authors)
 
 
+def same_person(a, b):
+    """Two normalised family names match when the words of one begin or end the words of the other."""
+    wa, wb = a.split(), b.split()
+    if not wa or not wb:
+        return False
+    short, long_ = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+    return long_[:len(short)] == short or long_[-len(short):] == short
+
+
 def author_problems(entry, primary):
     """Authors of the record missing from the entry, and authors of the entry missing from the record."""
     mine = [norm(a["family"]) for a in entry["authors"] if "family" in a]
-    groups = [norm(a["literal"]) for a in entry["authors"] if "literal" in a]
+    groups = [a["literal"] for a in entry["authors"] if "literal" in a]
     theirs = [norm(name) for name in primary["authors"] if norm(name)]
     if not mine or not theirs:
         return []
+    found = lambda name, pool: any(same_person(name, other) for other in pool)
     out = []
-    if mine[0] not in theirs[:3]:
+    if not found(mine[0], theirs[:3]):
         out.append(f"first author differs: {primary['authors'][0]}")
-    missing = [name for name in theirs if name not in mine and name not in groups]
-    extra = [name for name in mine if name not in theirs]
+    extra = [name for name in mine if not found(name, theirs)]
+    missing = [name for name in theirs if not found(name, mine) and not found(name, [norm(g) for g in groups])]
+    if missing and groups and not extra and not out:
+        print(f"[note] {entry['key']}: the record also lists {len(missing)} members of the {groups[0]} as authors")
+        missing = []
     if missing:
         out.append("in the record but not in the entry: " + ", ".join(missing))
     if extra:
         out.append("in the entry but not in the record: " + ", ".join(extra))
+    if out and entry.get("registry_authors_note"):
+        print(f"[note] {entry['key']}: {entry['registry_authors_note']}")
+        return []
     return out
 
 
