@@ -10,6 +10,11 @@ __pycache__/
 # Files created by the notebooks when they are opened outside the course folder
 ai-cardiology-course/
 
+# Data sets that every participant downloads from their source (never part of the repository)
+data/acdc/
+data/camus/
+data/echonet/
+
 # Exports of the interactive labs and personal work
 my_caliper_measurements.csv
 learning_log_week*.md

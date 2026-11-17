@@ -5,472 +5,332 @@ Turkish Society of Cardiology · First version: November 2026
 
 [Week 1](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-01/PROMPTLAR.md)
 
-This library holds every prompt of Week 1, written on the prompt card of the course. Each prompt can be copied into an artificial intelligence (AI) assistant as it stands. The code that comes back goes into the Jupyter notebook, below the exercise or prompt challenge of the same name, and runs there. In the exercises, the line with `teach.check` tells at once whether the result is right. The [prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the prompt path of Week 1, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the cell below the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [The prompt cycle](#the-prompt-cycle)
-2. [Prompts of the exercises](#prompts-of-the-exercises)
-3. [Prompt challenges of the sections](#prompt-challenges-of-the-sections)
-4. [Patterns for explaining, repairing and testing code](#patterns-for-explaining-repairing-and-testing-code)
-5. [Prompt route of the weekly project](#prompt-route-of-the-weekly-project)
+1. [How a step works](#how-a-step-works)
+2. [Stop 1: Patient tables](#stop-1-patient-tables)
+3. [Stop 2: The ECG as data](#stop-2-the-ecg-as-data)
+4. [Stop 3: Real recordings and a function to check](#stop-3-real-recordings-and-a-function-to-check)
+5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
+6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
 
-## The prompt cycle
+## How a step works
 
 | Step | What to do |
 |---|---|
-| 1. Describe | Copy the prompt card of the exercise, or write it with the seven fields: role, context, data, task, constraints, output and test. |
-| 2. Generate | Send the prompt to an AI assistant. |
-| 3. Run | Paste the code into the empty cell below the exercise and run it. |
-| 4. Check | Read the result of `teach.check`, *correct* or *not yet*, and the test of the prompt. A result of *not yet* goes back to the assistant with the repair pattern. |
-| 5. Explain | Ask the assistant for a line-by-line explanation, then explain the code once more in your own words. |
-| 6. Log | Add the tool, the prompt, what was checked and what was changed to the AI usage log. |
+| 1. Read | Read the goal of the step in the notebook. |
+| 2. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
+| 3. Run | Paste the code of the assistant into the cell below the prompt and run it. |
+| 4. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result. |
+| 5. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
+| 6. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-## Prompts of the exercises
+## Stop 1: Patient tables
 
-Each exercise of the Jupyter notebook has its prompt route in a folded cell right below it. The prompts below are the same. Paste the code from the assistant into the empty answer cell of the exercise and run it.
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-1) · The same result on the Python path: Python step 1, Sections 1 and 2*
 
-### Exercise 1.1: The RR interval from the heart rate
+The registry of a clinic is a table: one row per patient and one column per variable. In this stop the 303 patients of the Cleveland data and the first 500 patients of the virtual clinic are summarised with an average, a share and a count, each with a clinical question behind it.
 
-*Jupyter notebook, "Python step 1: Values, lists, dictionaries, decisions, loops and functions"*
+### Step 1.1: The mean age of the patients with disease
 
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: A heart rate of 72 beats per minute (bpm).
-Task: Compute the RR interval in seconds with RR = 60 / HR.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the RR interval to three decimals. Store it in a variable named `answer` and end the
-code with the line `teach.check("Exercise 1.1", answer)`. Return only the code in one block, with a
-short comment above each step.
-Test: Print also the RR interval at 60 bpm, which must be exactly 1.0 s.
-```
-
-### Exercise 1.2: A function for Fridericia's correction
-
-*Jupyter notebook, "Python step 1: Values, lists, dictionaries, decisions, loops and functions"*
+**Goal.** Find out how old, on average, the Cleveland patients with coronary artery disease were.
 
 ```text
-Role: You are helping a cardiologist who is learning Python.
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
 Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The QT interval in milliseconds and the RR interval in seconds. The case of the week has a QT
-of 391 ms at a heart rate of 85 bpm, so RR = 60 / 85 s.
-Task: Write a function `qtc_fridericia(qt_ms, rr_s)` that returns the QT interval corrected with
-Fridericia's formula, QTc = QT / RR^(1/3). Use it for the case of the week.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the QTc of the case to one decimal. Store it in a variable named `answer` and end the
-code with the line `teach.check("Exercise 1.2", answer)`. Return only the code in one block, with a
-short comment above each step.
-Test: Check with assert statements that qtc_fridericia(400, 1.0) returns 400.0 and that
-qtc_fridericia(400, 0.729) returns 444.4 after rounding, because 0.729 is 0.9 cubed.
-```
-
-### Exercise 1.3: Counting with a loop
-
-*Jupyter notebook, "Python step 1: Values, lists, dictionaries, decisions, loops and functions"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: A list named `clinic` holds patients as dictionaries with the keys "id", "hr" (heart rate in
-bpm) and "qt" (QT interval in ms), for example {"id": "VC-0317", "hr": 85, "qt": 391}.
-Task: Count the patients whose heart rate is above 80 bpm.
-Constraints: Use a for loop and an if statement, without pandas. Use only these packages and the
-variables named here. Do not load files and do not install anything.
-Output: The number of patients. Store it in a variable named `answer` and end the code with the line
-`teach.check("Exercise 1.3", answer)`. Return only the code in one block, with a short comment above
-each step.
-Test: For a list with the heart rates 72, 85 and 81, the same loop must count 2.
-```
-
-### Exercise A: Mean age of the patients with disease
-
-*Jupyter notebook, Section 1, "The patient registry: The UCI Heart Disease data with pandas"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: A pandas DataFrame named `heart` holds the Cleveland data of the UCI Heart Disease data set,
-one row per patient. The column age is in years, and the column disease is 1 for coronary artery
-disease and 0 for none.
-Task: Compute the mean age of the patients with disease equal to 1.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the mean age to one decimal. Store it in a variable named `answer` and end the code
-with the line `teach.check("Exercise A", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: Print the number of patients in each disease group; the two numbers must add up to 303.
-```
-
-### Exercise B: Percentage of women
-
-*Jupyter notebook, Section 1, "The patient registry: The UCI Heart Disease data with pandas"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The DataFrame `heart`, with the column sex coded 1 for men and 0 for women.
-Task: Compute the percentage of women among all patients.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the percentage to one decimal. Store it in a variable named `answer` and end the code
-with the line `teach.check("Exercise B", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: Compute the percentage of men in the same way and print the sum of the two percentages, which
-must be 100.
-```
-
-### Exercise C: Counting a diagnosis in the virtual clinic
-
-*Jupyter notebook, Section 2, "The virtual clinic opens"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: A pandas DataFrame named `clinic` holds the 500 synthetic patients of the virtual clinic. Its
-column main_diagnosis holds one of the labels "none", "CCS", "HFpEF", "HFrEF" and "ACS".
-Task: Count the patients whose main diagnosis is exactly "HFrEF".
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: The number of patients as an integer. Store it in a variable named `answer` and end the code
-with the line `teach.check("Exercise C", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: Print the counts of all diagnoses with value_counts(); they must add up to 500.
-```
-
-### Exercise D: Samples in one large box
-
-*Jupyter notebook, Section 3, "The ECG as data: Samples, sampling frequency and units"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: An ECG sampled at 500 Hz. One large box of ECG paper lasts 0.2 s.
-Task: Compute how many samples one large box holds, N = duration × sampling frequency.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: The number of samples as an integer. Store it in a variable named `answer` and end the code
-with the line `teach.check("Exercise D", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: One small box of 0.04 s must hold 20 samples at the same sampling frequency.
-```
-
-### Exercise E: The voltage of lead aVL
-
-*Jupyter notebook, Section 4, "Twelve leads from one heart vector"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: `vclinic.LEAD_VECTORS` is a dictionary that maps each lead name, "I", "II", "III", "aVR",
-"aVL", "aVF" and "V1" to "V6", to a NumPy array of three numbers. The axes point to the left (x), to
-the feet (y) and to the front (z). The voltage of a lead in millivolts is the dot product of its
-lead vector with the heart vector H.
-Task: Compute the voltage of lead aVL for H = (0.6, 0.8, -0.2) mV.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the voltage to three decimals and convert it to a float. Store it in a variable named
-`answer` and end the code with the line `teach.check("Exercise E", answer)`. Return only the code in
-one block, with a short comment above each step.
-Test: Lead I has the vector (1, 0, 0), so the same code must give 0.6 mV for lead I.
-```
-
-### Exercise F: Fridericia's QTc from the registry
-
-*Jupyter notebook, Section 5, "Measuring PR, QRS and QT"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: A QT interval of 343 ms at a heart rate of 98 bpm.
-Task: Compute the QTc with Fridericia's formula, QTc = QT / RR^(1/3), with the RR interval in
-seconds, RR = 60 / HR.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the QTc to one decimal. Store it in a variable named `answer` and end the code with
-the line `teach.check("Exercise F", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: At 60 bpm the RR interval is 1 s, so the QTc must equal the QT.
-```
-
-### Exercise G: The PR interval of patient VC-0188
-
-*Jupyter notebook, Section 5, "Measuring PR, QRS and QT"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The notebook defines `measure_ecg(leads, fs)`. It takes a NumPy array of shape (samples, 12)
-with the twelve leads in millivolts, in the order I, II, III, aVR, aVL, aVF, V1 to V6, and the
-sampling frequency in Hz. It returns a dictionary with the keys "hr_bpm", "pr_ms", "qrs_ms",
-"qt_ms", "qtc_bazett_ms" and "qtc_fridericia_ms". `vclinic.patient_ecg(clinic, patient_id)` returns
-an ECG object, called `e` here. `e.leads` is a pandas DataFrame of the twelve leads, and `e.fs` is
-the sampling frequency in Hz.
-Task: Measure the PR interval of patient "VC-0188" and decide whether it meets the definition of a
-first-degree atrioventricular block, a PR interval above 200 ms.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the PR interval to the nearest millisecond and print the decision. Store it in a
-variable named `answer` and end the code with the line `teach.check("Exercise G", answer)`. Return
-only the code in one block, with a short comment above each step.
-Test: Run the same code for patient "VC-0317", whose PR interval in the registry is 190 ms; the
-measurement should lie within 10 ms of it.
-```
-
-### Exercise H: Atrial premature beats in MIT-BIH record 100
-
-*Jupyter notebook, Section 6, "Finding every beat in a real recording: MIT-BIH record 100"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: A Python list named `ann_symbols` holds the annotation symbols of MIT-BIH record 100, one per
-annotation: "N" for a normal beat, "A" for an atrial premature beat, "V" for a premature ventricular
-contraction and "+" for a rhythm change.
-Task: Count the atrial premature beats.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: The number of beats as an integer. Store it in a variable named `answer` and end the code
-with the line `teach.check("Exercise H", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: Count every symbol with collections.Counter and print the counts; their sum must equal
-len(ann_symbols).
-```
-
-### Exercise I: RMSSD of five RR intervals
-
-*Jupyter notebook, Section 7, "Heart rate variability"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The RR intervals 1000, 960, 1010, 990 and 1030 ms.
-Task: Compute the root mean square of successive differences (RMSSD): Take the differences between
-neighbouring intervals, square them, average the squares and take the square root.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the RMSSD to two decimals. Store it in a variable named `answer` and end the code with
-the line `teach.check("Exercise I", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: The intervals 800, 800 and 800 ms must give 0, and the intervals 800, 820 and 800 ms must give
-20.
-```
-
-### Exercise J: A safe QTc from samples
-
-*Jupyter notebook, Section 9, "AI pair programming: The code safety checklist"*
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: An ECG sampled at fs Hz; the QT interval and the RR interval are given as numbers of samples.
-Task: Write a function `qtc_from_samples_fixed(qt_samples, rr_samples, fs)` without a default value
-for fs. It converts the QT interval to milliseconds, qt_samples / fs × 1000, and the RR interval to
-seconds, rr_samples / fs, and returns Bazett's QTc = QT / √RR in milliseconds. Use it for 196 and
-353 samples at 500 Hz.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: Round the QTc to one decimal. Store it in a variable named `answer` and end the code with
-the line `teach.check("Exercise J", answer)`. Return only the code in one block, with a short
-comment above each step.
-Test: For 200 and 500 samples at 500 Hz the QT is 400 ms and the RR interval 1 s, so the function
-must return 400.0.
-```
-
-## Prompt challenges of the sections
-
-Each numbered section of the Jupyter notebook ends with a prompt challenge. It has a prompt but no prepared code and no `teach.check`. The checks below each prompt tell whether the result is right.
-
-### Section 1: Cholesterol by disease status
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The DataFrame `heart` with the columns chol, the serum cholesterol in mg/dL, and disease, 1
-for coronary artery disease and 0 for none.
-Task: Draw box plots of chol for the two disease groups side by side, with axis labels and units,
-and print the median cholesterol of each group.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure and the two medians. Return only the code in one block, with a short comment
-above each step.
-Test: Print the size of each group; the two sizes must add up to 303.
-```
-
-**What to check.** The medians are 234.5 mg/dL without disease and 249.0 mg/dL with disease.
-
-### Section 2: Diagnoses by sex
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The DataFrame `clinic` of the virtual clinic with the columns main_diagnosis and sex, coded
-"F" or "M".
-Task: Make a table of the number of patients for each main diagnosis by sex with pd.crosstab, with
-row and column totals.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: The table. Return only the code in one block, with a short comment above each step.
-Test: The grand total must be 500.
-```
-
-**What to check.** The clinic holds 221 women and 279 men. Of the 47 patients with HFrEF, 16 are women and 31 are men.
-
-### Section 3: One second of lead II, sample by sample
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: `case` is the ECG of the case of the week: case.time holds the times in seconds,
-case.lead("II") the voltages of lead II in millivolts and case.fs the sampling frequency in Hz.
-Task: Plot the first second of lead II with a small marker at every sample, with the time axis in
-milliseconds and the voltage axis in millivolts, and print the number of plotted samples.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure and one number. Return only the code in one block, with a short comment above
-each step.
-Test: At 500 Hz one second holds 500 samples.
-```
-
-**What to check.** The printed number is 500, or 501 if both ends were included, and the time axis runs from 0 to 1000 ms.
-
-### Section 4: The frontal axis of the whole clinic
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The DataFrame `clinic` with the column ecg_axis, the frontal QRS axis in degrees.
-Task: Draw a histogram of ecg_axis with vertical lines at -30° and +90°. Print the number and the
-percentage of patients with left axis deviation (axis below -30°) and with right axis deviation
-(axis above +90°).
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure and four numbers. Return only the code in one block, with a short comment above
-each step.
-Test: The counts of the three groups, left, normal and right, must add up to 500.
-```
-
-**What to check.** Six patients (1.2 percent) have left axis deviation and 25 patients (5.0 percent) right axis deviation.
-
-### Section 5: Bazett against Fridericia across heart rates
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The DataFrame `clinic` with the columns ecg_hr, the heart rate in bpm, and ecg_qt, the QT
-interval in ms.
-Task: For the first 50 patients, compute the QTc by Bazett, QT / √RR, and by Fridericia, QT /
-RR^(1/3), with RR = 60 / ecg_hr in seconds. Plot the difference Bazett minus Fridericia against the
-heart rate, with a horizontal line at zero, and print the largest difference.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure and one number. Return only the code in one block, with a short comment above
-each step.
-Test: At exactly 60 bpm both formulas give the same QTc, so the difference is zero.
-```
-
-**What to check.** The difference is positive in every patient above 60 bpm and negative in the three patients below 60 bpm. The largest difference is 48.6 ms.
-
-### Section 6: Heart rate over thirty minutes
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: `found` holds the detected R peaks of MIT-BIH record 100 as sample positions, and `fs_mit` its
-sampling frequency, 360 Hz.
-Task: Compute the heart rate of every beat, 60 / RR with the RR interval in seconds, and plot it
-against time in minutes. Print the mean heart rate.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure and one number. Return only the code in one block, with a short comment above
-each step.
-Test: An RR interval of 360 samples at 360 Hz lasts 1 s, that is, 60 bpm.
-```
-
-**What to check.** The mean heart rate is about 75.8 bpm, and the beat-to-beat rate ranges from about 53 to 115 bpm.
-
-### Section 7: A Poincaré plot
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: `rr5` holds the RR intervals in milliseconds of five minutes of lead II of the case of the
-week.
-Task: Draw a Poincaré plot, each RR interval against the next one, with equal axes and the identity
-line. Print SDNN, the standard deviation with ddof=1, and RMSSD.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure and two numbers. Return only the code in one block, with a short comment above
-each step.
-Test: For the intervals 800, 820 and 800 ms, the RMSSD is 20 ms.
-```
-
-**What to check.** SDNN and RMSSD equal the values printed earlier in Section 7, 17.7 ms and 17.4 ms.
-
-### Section 8: The chest leads of a real infarction
-
-```text
-Role: You are helping a cardiologist who is learning Python.
-Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: `ptb` is a pandas DataFrame with the PTB record s0010_re: The columns v1 to v6 hold the chest
-leads in millivolts, sampled at `fs_ptb`, 1000 Hz.
-Task: Plot the first 3 seconds of V1 to V6 one under the other, with a shared time axis in seconds
-and the voltage in millivolts.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: One figure with six rows. Return only the code in one block, with a short comment above each
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `heart` is a pandas DataFrame with the 303 patients of the Cleveland Clinic in the UCI Heart
+Disease data set, one row per patient. The columns used here: age (years), sex (1 man, 0 woman) and
+disease (1 if at least one major coronary artery had a diameter narrowing of more than 50 percent at
+angiography, otherwise 0).
+Task: Select the patients whose disease value is 1 and compute their mean age. Print how many
+patients were selected as well.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The mean age in years, rounded to one decimal. Save it in a variable named `mean_age` and
+print it with a short label. Return only the code, in one block, with a short comment above each
 step.
-Test: Three seconds at 1000 Hz hold 3000 samples per lead.
+Test: The mean age of all 303 patients is 54.4 years; the result for the patients with disease must
+differ from it.
 ```
 
-**What to check.** The figure has six rows of 3 s each. The header of the record states an acute inferolateral infarction: Which chest leads face the lateral wall?
+**Expected result:** `mean_age` = 56.6
 
-### Section 9: A second opinion on AI-written code
+### Step 1.2: The share of women
+
+**Goal.** Find out which percentage of the Cleveland patients were women.
 
 ```text
-Role: You are helping a cardiologist who is learning Python.
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
 Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
-plt, and the course package vclinic with its module teach is available.
-Data: The function `qtc_from_samples` of this section, which an AI assistant wrote from a short
-prompt: Paste its code below the prompt.
-Task: Review the function with three questions. Are the units right? Is the sampling frequency
-handled safely? Is the result physiological for a QT of 196 samples and an RR interval of 353
-samples at 500 Hz? Then return a corrected function.
-Constraints: Use only these packages and the variables named here. Do not load files and do not
-install anything.
-Output: A review in three short points and the corrected function. Return only the code in one
-block, with a short comment above each step.
-Test: The corrected function must return 400.0 ms for 200 and 500 samples at 500 Hz.
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `heart` is a pandas DataFrame with the 303 patients of the Cleveland Clinic in the UCI Heart
+Disease data set, one row per patient. The columns used here: age (years), sex (1 man, 0 woman) and
+disease (1 if at least one major coronary artery had a diameter narrowing of more than 50 percent at
+angiography, otherwise 0).
+Task: Count the patients with sex equal to 0 and divide by the number of all patients. Print the
+share of men as well.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The share of women in percent, rounded to one decimal. Save it in a variable named
+`pct_women` and print it with a short label. Return only the code, in one block, with a short
+comment above each step.
+Test: The shares of women and men must add up to 100.
 ```
 
-**What to check.** The review names two problems: the RR interval in milliseconds instead of seconds, and the default sampling frequency of 360 Hz.
+**Expected result:** `pct_women` = 32.0
 
-## Patterns for explaining, repairing and testing code
+### Step 1.3: Patients with HFrEF in the virtual clinic
 
-These four patterns work with the code of any exercise. The parts in square brackets are replaced before the prompt is sent.
+**Goal.** Count the patients of the virtual clinic who have heart failure with reduced ejection fraction, and see the ejection fraction of every diagnosis in one figure.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `clinic` is a pandas DataFrame with the first 500 synthetic patients of the virtual clinic,
+one row per patient. The columns used here: patient_id, main_diagnosis ("none", "CCS" chronic
+coronary syndrome, "ACS" acute coronary syndrome, "HFrEF" heart failure with reduced ejection
+fraction or "HFpEF" heart failure with preserved ejection fraction) and lvef (left ventricular
+ejection fraction, %).
+Task: Count the patients whose main_diagnosis is "HFrEF". Then draw a box plot of lvef for each main
+diagnosis, with the diagnosis on the x axis and the ejection fraction in percent on the y axis.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The number of patients with HFrEF, as an integer. Save it in a variable named `n_hfref` and
+print it with a short label. Return only the code, in one block, with a short comment above each
+step.
+Test: The counts of the five diagnoses must add up to 500.
+```
+
+**Expected result:** `n_hfref` = 47
+
+## Stop 2: The ECG as data
+
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-2) · The same result on the Python path: Sections 3 to 5*
+
+A digital ECG is a table of numbers: one column per lead and one row per sample. In this stop the 12-lead ECG of the case of the week, VC-0317, is drawn and measured, and the QT interval of another patient is corrected for the heart rate with two formulas.
+
+### Step 2.1: A strip of lead II
+
+**Goal.** Draw the first 2.5 seconds of lead II and see how many numbers such a strip holds.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `case` is the resting 12-lead ECG of patient VC-0317 of the virtual clinic, an object of the
+course package: `case.fs` is the sampling frequency (500 Hz), `case.leads` is a pandas DataFrame
+with one column per lead (I, II, III, aVR, aVL, aVF, V1 to V6) and one row per sample, in
+millivolts, and `case.lead("II")` returns lead II as a NumPy array. The recording lasts 10 seconds.
+Task: Take lead II with case.lead("II") and keep its first 2.5 seconds, that is case.fs × 2.5
+samples. Plot them with the time in seconds on the x axis and the amplitude in millivolts on the y
+axis.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The number of samples in the 2.5 seconds, as an integer. Save it in a variable named
+`n_samples` and print it with a short label. Return only the code, in one block, with a short
+comment above each step.
+Test: The time axis must end at 2.5 seconds.
+```
+
+**Expected result:** `n_samples` = 1250
+
+### Step 2.2: The heart rate from the R peaks
+
+**Goal.** Find the R peaks of lead II and compute the heart rate from the intervals between them.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `case` is the resting 12-lead ECG of patient VC-0317 of the virtual clinic, an object of the
+course package: `case.fs` is the sampling frequency (500 Hz), `case.leads` is a pandas DataFrame
+with one column per lead (I, II, III, aVR, aVL, aVF, V1 to V6) and one row per sample, in
+millivolts, and `case.lead("II")` returns lead II as a NumPy array. The recording lasts 10 seconds.
+`measure.detect_r_peaks(signal, fs)` of the course package takes one lead as a NumPy array and its
+sampling frequency in Hz, and returns the sample numbers of the R peaks as a NumPy array.
+Task: Find the R peaks of the whole lead II with measure.detect_r_peaks. Turn the differences
+between successive peaks into seconds by dividing by case.fs, and compute the heart rate as 60
+divided by the mean RR interval in seconds.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The heart rate in beats per minute, rounded to one decimal. Print the number of R peaks as
+well. Save it in a variable named `hr_bpm` and print it with a short label. Return only the code, in
+one block, with a short comment above each step.
+Test: The 10-second recording must hold about 14 R peaks.
+```
+
+**Expected result:** `hr_bpm` = 84.9
+
+### Step 2.3: The QTc by two formulas
+
+**Goal.** Correct the QT interval of patient VC-0254 for her fast heart rate with the formulas of Fridericia and Bazett, and compare the two.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: Patient VC-0254 of the virtual clinic has a QT interval of 343 ms at a heart rate of 98 beats
+per minute in the registry.
+Task: Compute the RR interval in seconds as 60 divided by the heart rate. Then compute the QTc with
+Fridericia's formula, QT divided by the cube root of RR, and with Bazett's formula, QT divided by
+the square root of RR.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The QTc by Fridericia's formula in milliseconds, rounded to one decimal. Print the QTc by
+Bazett's formula as well. Save it in a variable named `qtc_fridericia` and print it with a short
+label. Return only the code, in one block, with a short comment above each step.
+Test: At a heart rate of 60 beats per minute both formulas must return the QT itself.
+```
+
+**Expected result:** `qtc_fridericia` = 403.9
+
+## Stop 3: Real recordings and a function to check
+
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-3) · The same result on the Python path: Sections 6 to 9*
+
+Real recordings bring noise, annotations and units of their own. In this stop record 100 of the MIT-BIH Arrhythmia Database is read with the beat labels of its cardiologists, and heart rate variability is computed from its normal beats. Then a real 12-lead ECG of the PTB database is drawn, and a QTc function written by an AI assistant is checked and corrected.
+
+### Step 3.1: The beats of record 100
+
+**Goal.** Count the beats of a 30-minute recording by the labels that cardiologists gave them.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `ann_symbols` is the list of the labels of record 100 of the MIT-BIH Arrhythmia Database, one
+per annotation in the order of time: N normal beat, A atrial premature beat, V premature ventricular
+contraction and + a change of rhythm, which is not a beat. `ann_samples` holds the sample number of
+each label, and `fs_mit` is the sampling frequency, 360 Hz.
+Task: Count how often each label occurs in ann_symbols and print the counts.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The number of atrial premature beats (label A), as an integer. Save it in a variable named
+`n_apb` and print it with a short label. Return only the code, in one block, with a short comment
+above each step.
+Test: The labels N, A and V together must count 2273 beats.
+```
+
+**Expected result:** `n_apb` = 33
+
+### Step 3.2: Heart rate variability: SDNN
+
+**Goal.** Measure how much the intervals between normal beats vary over 30 minutes.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `ann_symbols` is the list of the labels of record 100 of the MIT-BIH Arrhythmia Database, one
+per annotation in the order of time: N normal beat, A atrial premature beat, V premature ventricular
+contraction and + a change of rhythm, which is not a beat. `ann_samples` holds the sample number of
+each label, and `fs_mit` is the sampling frequency, 360 Hz.
+Task: Keep the labels that are beats (all labels except +). Compute the RR intervals between
+successive beats in milliseconds from ann_samples and fs_mit. Keep only the intervals whose two
+beats are both labelled N, the normal-to-normal (NN) intervals. Compute the SDNN, the standard
+deviation of the NN intervals with ddof=1, and print the mean NN interval as well.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The SDNN in milliseconds, rounded to one decimal. Save it in a variable named `sdnn` and
+print it with a short label. Return only the code, in one block, with a short comment above each
+step.
+Test: The mean NN interval must lie between 700 and 900 ms.
+```
+
+**Expected result:** `sdnn` = 36.0
+
+### Step 3.3: A real 12-lead ECG
+
+**Goal.** Draw a real 12-lead ECG of a patient with an acute myocardial infarction as on ECG paper and measure its heart rate.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: `ptb` is a pandas DataFrame with record s0010_re of patient 1 of the PTB Diagnostic ECG
+Database: 38.4 seconds sampled at 1000 Hz (`fs_ptb`), one column per lead (i, ii, iii, avr, avl,
+avf, v1 to v6 and the three Frank leads vx, vy and vz), in millivolts. `header` is the list of the
+text lines of its header file. `measure.detect_r_peaks(signal, fs)` of the course package takes one
+lead as a NumPy array and its sampling frequency in Hz, and returns the sample numbers of the R
+peaks as a NumPy array.
+Task: Print the lines of header that start with "Reason for admission" or "Acute infarction". Plot
+the first 3 seconds of the twelve standard leads in a grid of three rows and four columns, with the
+name of the lead in each panel. Then find the R peaks of lead ii with measure.detect_r_peaks and
+compute the heart rate as 60 divided by the mean RR interval in seconds.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The heart rate in beats per minute, rounded to one decimal. Save it in a variable named
+`hr_ptb` and print it with a short label. Return only the code, in one block, with a short comment
+above each step.
+Test: The printed lines must name an infero-lateral infarction.
+```
+
+**Expected result:** `hr_ptb` = 81.8
+
+### Step 3.4: Correcting the function of an assistant
+
+**Goal.** An AI assistant wrote a QTc function from a short prompt and returned an impossible QTc of 17 ms. Find the two errors and correct them.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
+a cell of a Jupyter notebook and run there.
+Context: A Jupyter notebook in which NumPy is imported as np, pandas as pd and matplotlib.pyplot as
+plt. The course package vclinic is imported, together with its module measure. RANDOM_STATE = 2026.
+Data: The function of the assistant is def qtc(qt_samples, rr_samples, fs=360): qt_ms = qt_samples /
+fs * 1000; rr_ms = rr_samples / fs * 1000; return qt_ms / rr_ms ** 0.5. A QT of 196 samples and an
+RR interval of 353 samples were measured at 500 Hz.
+Task: Write a corrected function qtc_bazett(qt_samples, rr_samples, fs) that takes fs without a
+default value, converts the QT to milliseconds and the RR interval to seconds, and returns the QT in
+milliseconds divided by the square root of the RR interval in seconds. Compute the QTc of the
+measurement above with it.
+Constraints: Use only the packages and the variables named here. Do not read files, do not download
+anything and do not install packages.
+Output: The QTc in milliseconds, rounded to one decimal. Save it in a variable named `qtc_fixed` and
+print it with a short label. Return only the code, in one block, with a short comment above each
+step.
+Test: With qt_samples = 200, rr_samples = 500 and fs = 500 the result must be 400 ms, because the RR
+interval is then 1 s.
+```
+
+**Expected result:** `qtc_fixed` = 466.5
+
+## Prompts for repairing, explaining and reviewing code
+
+These prompts work with the code of any step. The parts in square brackets are replaced before the prompt is sent.
+
+### Repair code that runs but does not pass the check
+
+```text
+The code below was written for this task: [paste the Task line of the prompt]. It runs, but the
+check of the course prints "not yet". Find the error, explain it in two sentences and return the
+corrected code. Keep the name of the variable that holds the result.
+
+[paste the code here]
+```
+
+### Understand an error message
+
+```text
+Running the code below in a Jupyter notebook gives the error message that follows. Explain the cause
+in plain language and return the corrected code.
+
+[paste the code here]
+
+[paste the error message here]
+```
 
 ### Explain the code
 
@@ -479,27 +339,6 @@ Explain the following Python code line by line for a physician who is new to Pyt
 ways in which it could return a wrong result without an error message.
 
 [paste the code here]
-```
-
-### Repair code that does not pass the check
-
-```text
-The code below was written for this task: [paste the task of the prompt]. It runs, but the check of
-the course prints "not yet". Find the error, explain it in two sentences and return the corrected
-code. Keep the variable names and the line with teach.check.
-
-[paste the code here]
-```
-
-### Understand an error message
-
-```text
-Running the cell below in a Jupyter notebook gives the error message that follows. Explain the cause
-in plain language and return the corrected code.
-
-[paste the code here]
-
-[paste the error message here]
 ```
 
 ### Ask for tests
@@ -512,7 +351,7 @@ statements and explain what each test protects against.
 [paste the function here]
 ```
 
-## Prompt route of the weekly project
+## Prompt path of the weekly project
 
 The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. Each step builds on the one before it, so the test of a step must hold before the next prompt is sent. The report lists all four prompts in the AI usage log.
 

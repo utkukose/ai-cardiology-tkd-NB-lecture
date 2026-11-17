@@ -15,6 +15,10 @@ TEXT = {
         "expected_close": "the expected value is within {tol} of the answer",
         "missing": "write an answer in place of None first",
         "no_key": "no expected answer is registered for",
+        "no_var": "the notebook has no variable named `{name}`. The code of the assistant must save its result under this name. Ask the assistant to do so, or run the ready code below.",
+        "step_hint": "compare the code with the prompt, use the repair prompt of the prompt library or run the ready code below",
+        "reference": "the reference code gives",
+        "range": "plausible range {low} to {high}",
         "time": "Time (s)", "mv": "Amplitude (mV)",
         "bias": "Bias", "loa": "Limits of agreement",
         "mean_pair": "Mean of the two measurements (ms)",
@@ -26,6 +30,10 @@ TEXT = {
         "expected_close": "beklenen değer cevaba {tol} kadar yakın olmalı",
         "missing": "önce None yerine bir cevap yazın",
         "no_key": "şu alıştırma için kayıtlı bir beklenen cevap yok:",
+        "no_var": "defterde `{name}` adlı bir değişken yok. Asistanın kodu sonucunu bu adla kaydetmeli. Asistandan bunu isteyin ya da aşağıdaki hazır kodu çalıştırın.",
+        "step_hint": "kodu promptla karşılaştırın, prompt kütüphanesindeki onarım promptunu kullanın ya da aşağıdaki hazır kodu çalıştırın",
+        "reference": "hazır kodun sonucu:",
+        "range": "makul aralık {low} ile {high} arası",
         "time": "Zaman (s)", "mv": "Genlik (mV)",
         "bias": "Sapma", "loa": "Uyum sınırları",
         "mean_pair": "İki ölçümün ortalaması (ms)",
@@ -52,7 +60,7 @@ def _answer_key(name):
     """The registered name of an exercise, in either language of the course."""
     if name in _STATE["answers"]:
         return name
-    for a, b in (("Exercise ", "Alıştırma "), ("Alıştırma ", "Exercise ")):
+    for a, b in (("Exercise ", "Alıştırma "), ("Alıştırma ", "Exercise "), ("Step ", "Adım "), ("Adım ", "Step ")):
         if name.startswith(a) and b + name[len(a):] in _STATE["answers"]:
             return b + name[len(a):]
     return None
@@ -81,6 +89,76 @@ def check(name, answer):
         hint = t("expected_close").format(tol=tol) if not isinstance(
             expected, str) else ""
         print(f"{name}: {t('not_yet')} ✗ {hint}".rstrip())
+    return None
+
+
+def check_step(name, variable, scope):
+    """Check one step of the prompt path.
+
+    name is the step ("Step 1.2" or "Adım 1.2"), variable the name under which
+    the code of the assistant saves its result, and scope the namespace of the
+    notebook (pass globals()). Missing variables give a short hint instead of
+    an error message.
+    """
+    if variable not in scope:
+        print(f"{name}: {t('not_yet')} ✗ " + t("no_var").format(name=variable))
+        return None
+    key = _answer_key(name)
+    if key is None:
+        print(f"{name}: {t('no_key')} {name}")
+        return None
+    expected, tol = _STATE["answers"][key]
+    answer = scope[variable]
+    if isinstance(expected, str):
+        ok = str(answer).strip().lower() == expected.lower()
+    else:
+        try:
+            ok = abs(float(answer) - float(expected)) <= tol
+        except (TypeError, ValueError):
+            ok = False
+    if ok:
+        print(f"{name}: {t('correct')} ✓ ({variable} = {answer})")
+    else:
+        print(f"{name}: {t('not_yet')} ✗ ({variable} = {answer}). " + t("step_hint") + ".")
+    return None
+
+
+def check_value(name, variable, expected, tol, scope):
+    """Check a step against a value computed at run time.
+
+    For data that only the participant holds, such as a personal copy of a data
+    set, the expected value is computed in the same cell by the reference code.
+    """
+    if variable not in scope:
+        print(f"{name}: {t('not_yet')} ✗ " + t("no_var").format(name=variable))
+        return None
+    answer = scope[variable]
+    try:
+        ok = abs(float(answer) - float(expected)) <= tol
+    except (TypeError, ValueError):
+        ok = False
+    if ok:
+        print(f"{name}: {t('correct')} ✓ ({variable} = {answer})")
+    else:
+        print(f"{name}: {t('not_yet')} ✗ ({variable} = {answer}; {t('reference')} {expected}). " + t("step_hint") + ".")
+    return None
+
+
+def check_range(name, variable, low, high, scope):
+    """Check that a result whose exact value differs between computers lies in a plausible range."""
+    if variable not in scope:
+        print(f"{name}: {t('not_yet')} ✗ " + t("no_var").format(name=variable))
+        return None
+    answer = scope[variable]
+    try:
+        ok = low <= float(answer) <= high
+    except (TypeError, ValueError):
+        ok = False
+    rng = t("range").format(low=low, high=high)
+    if ok:
+        print(f"{name}: {t('correct')} ✓ ({variable} = {answer}; {rng})")
+    else:
+        print(f"{name}: {t('not_yet')} ✗ ({variable} = {answer}; {rng}). " + t("step_hint") + ".")
     return None
 
 

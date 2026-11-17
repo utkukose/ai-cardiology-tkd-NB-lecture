@@ -5,13 +5,34 @@ Turkish Society of Cardiology · First version: November 2026
 
 [Course home](README.md) · [Türkçe](SETUP.tr.md)
 
-The Jupyter notebooks of the course run in Jupyter on the participant's own computer, installed with Anaconda. The steps below take about 20 minutes and are done once, before Week 1. Google Colab is a fallback for computers on which Anaconda cannot be installed.
+Every Jupyter notebook of the course runs in two places, with the same data and the same results. Choose the one you prefer; switching from one week to the next is possible. In Part 1 of a notebook, an artificial intelligence (AI) assistant writes the code from a ready prompt; in Part 2, the participant writes the code in Python.
 
-## 1. Install Anaconda
+| | Google Colab | Jupyter on your own computer (Anaconda) |
+|---|---|---|
+| What you need | A Google account and a web browser | A computer with Windows, macOS or Linux and about 5 GB of free space |
+| Installation | None | About 20 minutes, once, before Week 1 |
+| Opening a notebook | The **Open in Colab** button of a practice stop, of the week page or of the course site | **Download for Jupyter**, or the whole course folder |
+| AI assistant for the prompt path | Gemini is built in | Any assistant in the browser; Anaconda Assistant or Jupyter AI inside Jupyter |
+| Data of real patients | Never | Only on a computer of the institution, under its rules |
+
+## Option A: Google Colab
+
+1. On the lecture page of the week, press **Open in Colab** at a practice stop. The week page and the course site have the same button.
+2. Sign in with a Google account and keep your own copy with **File → Save a copy in Drive**, so that your changes are not lost.
+3. Run **Section 0**. Its first cell downloads the course package `vclinic` and the data files of the week from GitHub in a few seconds.
+4. Continue in **Part 1, the prompt path**, or in **Part 2, the Python path**. Gemini, the AI assistant of Colab, opens with its button at the top of the window.
+
+Colab sessions are temporary: Files created in a session disappear when it ends, while the notebook saved in Drive stays. Colab already includes the packages of the course, PyTorch among them.
+
+## Option B: Jupyter on your own computer
+
+The steps below install Anaconda, which brings Python and Jupyter, and download the course folder. They take about 20 minutes and are done once. This is also the environment for later work with the data of your own clinic.
+
+### 1. Install Anaconda
 
 Download the Anaconda Distribution for the operating system of the computer from [anaconda.com/download](https://www.anaconda.com/download) and install it with the default options. Anaconda brings Python, Jupyter and the packages that Week 1 needs: NumPy, pandas, SciPy and Matplotlib.
 
-## 2. Download the course folder
+### 2. Download the course folder
 
 On the [GitHub page of the course](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture), choose **Code** and then **Download ZIP**, and unzip the file into a folder of your choice. A folder outside cloud synchronisation, for example `Documents/courses` rather than a OneDrive folder, avoids locked files. With git, the same folder is created with:
 
@@ -19,7 +40,7 @@ On the [GitHub page of the course](https://github.com/utkukose/ai-cardiology-tkd
 git clone https://github.com/utkukose/ai-cardiology-tkd-NB-lecture.git
 ```
 
-## 3. Start Jupyter
+### 3. Start Jupyter
 
 Open **Anaconda Navigator** and launch **JupyterLab** or **Jupyter Notebook**, then move to the course folder in the file browser on the left. Alternatively, open **Anaconda Prompt** on Windows or **Terminal** on macOS and Linux, go to the course folder and start JupyterLab:
 
@@ -28,15 +49,15 @@ cd path/to/ai-cardiology-tkd-NB-lecture
 jupyter lab
 ```
 
-## 4. Check the computer with the start-here notebook
+### 4. Check the computer with the start-here notebook
 
 Open `en/start-here/NB00_start_here.ipynb` and run all its cells with **Run → Run All Cells**. The notebook checks the packages, finds the course folder, draws a first ECG and prints **Ready for Week 1** when everything works.
 
-## 5. Open the notebook of the week
+### 5. Open the notebook of the week
 
 Open the Jupyter notebook in the folder of the week, for example `en/week-01/NB01_python_and_ecg_basics.ipynb`, and run Section 0 first. The first cell finds the course folder, and the second prints the version of the course package `vclinic`. **Kernel → Restart Kernel and Run All Cells** starts the notebook again from a clean state.
 
-## 6. Packages of later weeks
+### 6. Packages of later weeks
 
 From Week 3, the notebooks use PyTorch, the deep learning package of the course. Anaconda does not include it, and it is installed once with pip. Run in Anaconda Prompt on Windows or in Terminal on macOS:
 
@@ -66,25 +87,21 @@ conda activate ai-cardiology
 jupyter lab
 ```
 
-## 7. Update the course folder every week
+### 7. Update the course folder every week
 
 New weeks are added to the repository during the course. With git, `git pull` in the course folder brings the new files. Without git, download the ZIP file again. Keep your own copies of the notebooks in a separate folder, so that an update does not overwrite your work.
 
 ## An AI assistant for the prompt path
 
-An artificial intelligence (AI) assistant is optional. It is needed only on the [prompt path](PROMPT_PATH.md), and any assistant that writes Python can be used. In Anaconda, Anaconda Assistant comes with Anaconda Toolbox. Install it from the Anaconda Toolbox tile in Navigator or with the command below. Then open a notebook in JupyterLab and sign in with an Anaconda account. A free account has a limited number of requests.
+An AI assistant is optional. It is needed only on the [prompt path](PROMPT_PATH.md), and any assistant that writes Python can be used. In Anaconda, Anaconda Assistant comes with Anaconda Toolbox. Install it from the Anaconda Toolbox tile in Navigator or with the command below. Then open a notebook in JupyterLab and sign in with an Anaconda account. A free account has a limited number of requests.
 
 ```bash
 conda install anaconda-toolbox
 ```
 
-Jupyter AI is an open-source extension for JupyterLab that works with the application programming interface (API) key of a model provider or with a local model. In Google Colab, Gemini is built in. The section [AI assistants](PROMPT_PATH.md#ai-assistants) of the prompt path compares the options. No patient data enter any of them.
+Jupyter AI is an open-source extension for JupyterLab that works with the application programming interface (API) key of a model provider or with a local model. In Google Colab, Gemini is built in. The section [AI assistants](PROMPT_PATH.md#which-assistant) of the prompt path compares the options. No patient data enter any of them.
 
-## Google Colab as a fallback
-
-Each notebook has an **Open in Colab** badge. Colab needs a Google account and runs in the browser. Save a copy with **File → Save a copy in Drive** and run Section 0, which downloads the course package and the data files from GitHub. Colab sessions are temporary: Files created in a session disappear when it ends, unless they are saved to Drive or downloaded.
-
-Real patient data never goes into Colab or any other cloud service. All data of the course notebooks are synthetic or public.
+Real patient data never go into Colab or any other cloud service. All data of the course notebooks are synthetic or public.
 
 ## Common problems
 

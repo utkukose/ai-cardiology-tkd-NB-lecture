@@ -519,6 +519,160 @@
     ]
   },
   {
+    "key": "collins2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Collins",
+        "given": "G. S."
+      },
+      {
+        "family": "Moons",
+        "given": "K. G. M."
+      },
+      {
+        "family": "Dhiman",
+        "given": "P."
+      },
+      {
+        "family": "Riley",
+        "given": "R. D."
+      },
+      {
+        "family": "Beam",
+        "given": "A. L."
+      },
+      {
+        "family": "Van Calster",
+        "given": "B."
+      },
+      {
+        "family": "Ghassemi",
+        "given": "M."
+      },
+      {
+        "family": "Liu",
+        "given": "X."
+      },
+      {
+        "family": "Reitsma",
+        "given": "J. B."
+      },
+      {
+        "family": "van Smeden",
+        "given": "M."
+      },
+      {
+        "family": "Boulesteix",
+        "given": "A.-L."
+      },
+      {
+        "family": "Camaradou",
+        "given": "J. C."
+      },
+      {
+        "family": "Celi",
+        "given": "L. A."
+      },
+      {
+        "family": "Denaxas",
+        "given": "S."
+      },
+      {
+        "family": "Denniston",
+        "given": "A. K."
+      },
+      {
+        "family": "Glocker",
+        "given": "B."
+      },
+      {
+        "family": "Golub",
+        "given": "R. M."
+      },
+      {
+        "family": "Harvey",
+        "given": "H."
+      },
+      {
+        "family": "Heinze",
+        "given": "G."
+      },
+      {
+        "family": "Hoffman",
+        "given": "M. M."
+      },
+      {
+        "family": "Kengne",
+        "given": "A. P."
+      },
+      {
+        "family": "Lam",
+        "given": "E."
+      },
+      {
+        "family": "Lee",
+        "given": "N."
+      },
+      {
+        "family": "Loder",
+        "given": "E. W."
+      },
+      {
+        "family": "Maier-Hein",
+        "given": "L."
+      },
+      {
+        "family": "Mateen",
+        "given": "B. A."
+      },
+      {
+        "family": "McCradden",
+        "given": "M. D."
+      },
+      {
+        "family": "Oakden-Rayner",
+        "given": "L."
+      },
+      {
+        "family": "Ordish",
+        "given": "J."
+      },
+      {
+        "family": "Parnell",
+        "given": "R."
+      },
+      {
+        "family": "Rose",
+        "given": "S."
+      },
+      {
+        "family": "Singh",
+        "given": "K."
+      },
+      {
+        "family": "Wynants",
+        "given": "L."
+      },
+      {
+        "family": "Logullo",
+        "given": "P."
+      }
+    ],
+    "year": "2024",
+    "title": "TRIPOD+AI statement: Updated guidance for reporting clinical prediction models that use regression or machine learning methods",
+    "container": "BMJ",
+    "volume": "385",
+    "issue": "",
+    "pages": "e078378",
+    "doi": "10.1136/bmj-2023-078378",
+    "url": "https://doi.org/10.1136/bmj-2023-078378",
+    "apa": "Collins, G. S., Moons, K. G. M., Dhiman, P., Riley, R. D., Beam, A. L., Van Calster, B., Ghassemi, M., Liu, X., Reitsma, J. B., van Smeden, M., Boulesteix, A.-L., Camaradou, J. C., Celi, L. A., Denaxas, S., Denniston, A. K., Glocker, B., Golub, R. M., Harvey, H., Heinze, G., Hoffman, M. M., Kengne, A. P., Lam, E., Lee, N., Loder, E. W., Maier-Hein, L., Mateen, B. A., McCradden, M. D., Oakden-Rayner, L., Ordish, J., Parnell, R., Rose, S., Singh, K., Wynants, L., & Logullo, P. (2024). TRIPOD+AI statement: Updated guidance for reporting clinical prediction models that use regression or machine learning methods. *BMJ, 385*, e078378. https://doi.org/10.1136/bmj-2023-078378",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "detrano1989",
     "type": "article",
     "authors": [
@@ -2188,6 +2342,68 @@
     ]
   },
   {
+    "key": "ouyang2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Ouyang",
+        "given": "D."
+      },
+      {
+        "family": "He",
+        "given": "B."
+      },
+      {
+        "family": "Ghorbani",
+        "given": "A."
+      },
+      {
+        "family": "Yuan",
+        "given": "N."
+      },
+      {
+        "family": "Ebinger",
+        "given": "J."
+      },
+      {
+        "family": "Langlotz",
+        "given": "C. P."
+      },
+      {
+        "family": "Heidenreich",
+        "given": "P. A."
+      },
+      {
+        "family": "Harrington",
+        "given": "R. A."
+      },
+      {
+        "family": "Liang",
+        "given": "D. H."
+      },
+      {
+        "family": "Ashley",
+        "given": "E. A."
+      },
+      {
+        "family": "Zou",
+        "given": "J. Y."
+      }
+    ],
+    "year": "2020",
+    "title": "Video-based AI for beat-to-beat assessment of cardiac function",
+    "container": "Nature",
+    "volume": "580",
+    "issue": "7802",
+    "pages": "252–256",
+    "doi": "10.1038/s41586-020-2145-8",
+    "url": "https://doi.org/10.1038/s41586-020-2145-8",
+    "apa": "Ouyang, D., He, B., Ghorbani, A., Yuan, N., Ebinger, J., Langlotz, C. P., Heidenreich, P. A., Harrington, R. A., Liang, D. H., Ashley, E. A., & Zou, J. Y. (2020). Video-based AI for beat-to-beat assessment of cardiac function. *Nature, 580*(7802), 252–256. https://doi.org/10.1038/s41586-020-2145-8",
+    "used_in": [
+      "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "pan1985",
     "type": "article",
     "authors": [
@@ -2425,6 +2641,61 @@
     "apa": "Rautaharju, P. M., Surawicz, B., & Gettes, L. S. (2009). AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part IV: The ST segment, T and U waves, and the QT interval: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. *Circulation, 119*(10), e241–e250. https://doi.org/10.1161/CIRCULATIONAHA.108.191096",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "riley2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Riley",
+        "given": "R. D."
+      },
+      {
+        "family": "Ensor",
+        "given": "J."
+      },
+      {
+        "family": "Snell",
+        "given": "K. I. E."
+      },
+      {
+        "family": "Harrell",
+        "given": "F. E.",
+        "suffix": "Jr."
+      },
+      {
+        "family": "Martin",
+        "given": "G. P."
+      },
+      {
+        "family": "Reitsma",
+        "given": "J. B."
+      },
+      {
+        "family": "Moons",
+        "given": "K. G. M."
+      },
+      {
+        "family": "Collins",
+        "given": "G."
+      },
+      {
+        "family": "van Smeden",
+        "given": "M."
+      }
+    ],
+    "year": "2020",
+    "title": "Calculating the sample size required for developing a clinical prediction model",
+    "container": "BMJ",
+    "volume": "368",
+    "issue": "",
+    "pages": "m441",
+    "doi": "10.1136/bmj.m441",
+    "url": "https://doi.org/10.1136/bmj.m441",
+    "apa": "Riley, R. D., Ensor, J., Snell, K. I. E., Harrell, F. E., Jr., Martin, G. P., Reitsma, J. B., Moons, K. G. M., Collins, G., & van Smeden, M. (2020). Calculating the sample size required for developing a clinical prediction model. *BMJ, 368*, m441. https://doi.org/10.1136/bmj.m441",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2796,6 +3067,27 @@
     "apa": "Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology. (1996). Heart rate variability: Standards of measurement, physiological interpretation, and clinical use. *Circulation, 93*(5), 1043–1065. https://doi.org/10.1161/01.CIR.93.5.1043",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "tcy2021",
+    "type": "law",
+    "authors": [
+      {
+        "literal": "Tıbbi Cihaz Yönetmeliği [Medical Device Regulation], Türkiye İlaç ve Tıbbi Cihaz Kurumu [Turkish Medicines and Medical Devices Agency]"
+      }
+    ],
+    "year": "2021",
+    "title": "",
+    "container": "Resmî Gazete, 31499 (Mükerrer) (2 June 2021)",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://titck.gov.tr/storage/Archive/2021/contentFile/T%C4%B1bbi%20Cihaz%20Y%C3%B6netmeli%C4%9Fi_91969c4b-58b3-48cb-adfb-03c2cacd5632.pdf",
+    "apa": "Tıbbi Cihaz Yönetmeliği [Medical Device Regulation], Türkiye İlaç ve Tıbbi Cihaz Kurumu [Turkish Medicines and Medical Devices Agency]. (2021). *Resmî Gazete, 31499 (Mükerrer) (2 June 2021)*. https://titck.gov.tr/storage/Archive/2021/contentFile/T%C4%B1bbi%20Cihaz%20Y%C3%B6netmeli%C4%9Fi_91969c4b-58b3-48cb-adfb-03c2cacd5632.pdf",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {

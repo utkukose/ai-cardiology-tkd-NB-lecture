@@ -5,11 +5,11 @@ Turkish Society of Cardiology · First version: November 2026
 
 [Course home](README.md) · [Türkçe](PYTHON_PATH.tr.md)
 
-The course assumes no programming experience. Each Jupyter notebook starts with a Python step right after its setup, and *Python note* cells explain every new construct where it first appears. The table lists the Python steps of the weeks. The steps of later weeks are planned and are linked when each week is published.
+The Python path is Part 2 of every Jupyter notebook, for participants who want to learn to write the code themselves. The course assumes no programming experience. Part 2 starts with a Python step that teaches the language the week needs, and *Python note* cells explain every new construct where it first appears. The numbered sections reach the results of the practice stops of the lecture page, with exercises that check their answers at once. The table lists the Python steps of the weeks; the steps of later weeks are linked when each week is published.
 
 Before Week 1, the [start-here notebook](en/start-here/NB00_start_here.ipynb) checks the computer and introduces cells, values, printing and a first plot.
 
-The same exercises can also be solved on the [prompt path](PROMPT_PATH.md), with prompts to an artificial intelligence (AI) assistant. There the Python of each step is learned by reading, running and explaining the code that the assistant writes.
+Participants who do not want to write code follow the [prompt path](PROMPT_PATH.md) in Part 1 of the same notebook, where an artificial intelligence (AI) assistant writes the code from ready prompts. Both paths reach the same results, and the path can be changed at any practice stop.
 
 | Week | Python step | Topics | Notebook |
 |---|---|---|---|

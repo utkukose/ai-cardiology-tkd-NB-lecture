@@ -14,13 +14,14 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 | Katılımcılar | Programlama deneyimi olan ya da olmayan kardiyologlar ve diğer uzman hekimler |
 | Biçim | 11 hafta, haftada bir 4 saatlik oturum, toplam 44 saat; sürenin yaklaşık yüzde 80'i uygulama |
 | Malzemelerin dili | İngilizce ve Türkçe |
-| Ortam | Katılımcının kendi bilgisayarında Anaconda içinde Jupyter; yedek yol olarak Google Colab |
-| Ön koşullar | Programlama deneyimi gerekmez. Anaconda 1. haftadan önce kurulmalıdır ([SETUP.tr.md](SETUP.tr.md)) |
+| Ortam | Katılımcının tercihine göre kurulum gerektirmeyen Google Colab ya da kendi bilgisayarında Anaconda içinde Jupyter |
+| Uygulamanın iki yolu | Kodu hazır prompt (istem) metinleriyle bir yapay zekâ (YZ) asistanının yazdığı prompt yolu ve kodu katılımcının yazdığı Python yolu; iki yol da aynı sonuçlara varır |
+| Ön koşullar | Programlama deneyimi ve YZ konusunda ön bilgi gerekmez. Colab için bir Google hesabı ya da 1. haftadan önce kurulmuş Anaconda ([SETUP.tr.md](SETUP.tr.md)) |
 | İletişim | utkukose@sdu.edu.tr, utkukose@gmail.com |
 
 ## Tanım
 
-Program, kardiyologlara ve diğer uzman hekimlere kardiyoloji verilerini Python ile analiz etmeyi ve yapay zekâ (YZ) modelleri kurmayı, doğrulamayı ve açıklamayı öğretmektedir. Eğitim, ilk haftalardaki tablolar ve sinyallerden görüntülere, metinlere ve veri füzyonuna doğru ilerler; açıklanabilir modeller, bir klinik karar destek sistemi prototipi ve bir final projesiyle sona erer. Sentetik hastalardan oluşan sanal bir kardiyoloji kliniği bütün haftalar boyunca kullanılır; her konuya açık erişimli gerçek veri setleri de eşlik eder. YZ asistanlarıyla kod yazmak, ilk haftadan başlayarak açık güvenlik kurallarıyla öğretilmektedir. Her alıştırma, asistana bir prompt (istem) yazılarak da çözülebilir.
+Program, kardiyologlara ve diğer uzman hekimlere kardiyoloji verilerini Python ile analiz etmeyi ve YZ modelleri kurmayı, doğrulamayı ve açıklamayı öğretmektedir. Eğitim, ilk haftalardaki tablolar ve sinyallerden görüntülere, metinlere ve veri füzyonuna doğru ilerler; açıklanabilir modeller, bir klinik karar destek sistemi prototipi ve bir final projesiyle sona erer. Sentetik hastalardan oluşan sanal bir kardiyoloji kliniği bütün haftalar boyunca kullanılır; her konuya açık erişimli gerçek veri setleri de eşlik eder. YZ asistanlarıyla kod yazmak, ilk haftadan başlayarak açık güvenlik kurallarıyla öğretilmektedir. Her alıştırma, asistana bir prompt yazılarak da çözülebilir.
 
 Eğitimin öğrenme çıktıları [eğitimin ana sayfasında](README.tr.md#eğitimin-öğrenme-çıktıları) yer alır; her hafta sayfası da o haftanın çıktılarını listeler.
 
@@ -42,7 +43,7 @@ Malzemeler: [Hafta sayfası](tr/hafta-02/README.md) · [Ders sayfası](https://u
 
 ### Hafta 3: Derin öğrenme ve evrişimli sinir ağları
 
-Oturumun ilk yarısında yapay sinir ağları ve evrişimli sinir ağları (CNN) anlatılır: nöronlar, katmanlar, aktivasyon fonksiyonları, evrişim, havuzlama, seyreltme (dropout) ve yığın normalizasyonu. İkinci yarıda yaygın mimariler karşılaştırılır, kardiyak görüntülerle veri çoğaltma yapılır, karışıklık matrisi ve F1 skoru aşırı öğrenmeye dikkat edilerek yorumlanır. **Oturumdaki mini proje:** Normal ve anormal ekokardiyogramların sınıflandırılması. **Haftalık proje:** Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması. **Veriler:** Sanal kliniğin ekokardiyografi kareleri ve kardiyak manyetik rezonans kısa eksen kesitleri. **Sanal kliniğin aşaması:** Eko laboratuvarı.
+Oturumun ilk yarısında yapay sinir ağları ve evrişimli sinir ağları (CNN) anlatılır: nöronlar, katmanlar, aktivasyon fonksiyonları, evrişim, havuzlama, seyreltme (dropout) ve yığın normalizasyonu. İkinci yarıda yaygın mimariler karşılaştırılır, kardiyak görüntülerle veri çoğaltma yapılır, karışıklık matrisi ve F1 skoru aşırı öğrenmeye dikkat edilerek yorumlanır. **Oturumdaki mini proje:** EchoNet-Dynamic üzerinde normal ve anormal ekokardiyogramların sınıflandırılması (anormal: ejeksiyon fraksiyonu yüzde 50'nin altında); kişisel kaydı olan katılımcılar için. **Haftalık proje:** Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması. **Veriler:** ACDC, açık kaynağından indirilen, kalbi normal olan ya da DCM veya HCM'si bulunan 90 hastanın sine kardiyak manyetik rezonans incelemeleri; EchoNet-Dynamic, kişisel kayıtla edinilen ekokardiyografi videoları. **Sanal kliniğin aşaması:** Görüntüleme laboratuvarı.
 
 Malzemeler: [Hafta sayfası](tr/hafta-03/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/lab.html) · [Jupyter defteri](tr/hafta-03/NB03_derin_ogrenme_ve_evrisimli_aglar.ipynb) · [Prompt kütüphanesi](tr/hafta-03/PROMPTLAR.md) · [PDF ders notu](tr/hafta-03/Hafta03_Ders_Notlari.pdf)
 
@@ -122,7 +123,7 @@ Sertifika için oturumların en az yüzde 80'ine, yani 11 oturumun en az 9'una k
 
 ## Malzemeler ve ortam
 
-Her hafta için ders sayfasına, etkileşimli laba, Jupyter defterine, prompt kütüphanesine ve PDF ders notuna bağlantı veren bir hafta sayfası vardır. [SETUP.tr.md](SETUP.tr.md) Anaconda kurulumunu ve ilk çalıştırmayı anlatır; [başlangıç defteri](tr/baslangic/NB00_baslangic.ipynb) bilgisayarı 1. haftadan önce denetler. [DATASETS.tr.md](DATASETS.tr.md) veri setlerini lisanslarıyla, [PYTHON_PATH.tr.md](PYTHON_PATH.tr.md) ise haftaların Python adımlarını listeler. [PROMPT_PATH.tr.md](PROMPT_PATH.tr.md) prompt yolunu ve bu yolda kullanılabilecek YZ asistanlarını anlatmaktadır.
+Her hafta için ders sayfasına, etkileşimli laba, Jupyter defterine, prompt kütüphanesine ve PDF ders notuna bağlantı veren bir hafta sayfası vardır. [SETUP.tr.md](SETUP.tr.md) defterlerin çalıştığı iki yeri, Google Colab'ı ve kişinin kendi bilgisayarındaki Jupyter'i anlatır; [başlangıç defteri](tr/baslangic/NB00_baslangic.ipynb) 1. haftadan önce iki yolun ilk adımlarını hazırlar. [DATASETS.tr.md](DATASETS.tr.md) veri setlerini lisanslarıyla, [PYTHON_PATH.tr.md](PYTHON_PATH.tr.md) ise haftaların Python adımlarını listeler. [PROMPT_PATH.tr.md](PROMPT_PATH.tr.md) prompt yolunu ve bu yolda kullanılabilecek YZ asistanlarını, [OWN_DATA.tr.md](OWN_DATA.tr.md) ise eğitimin yöntemlerinin kişinin kendi kliniğinin verilerine nasıl uygulanacağını anlatmaktadır.
 
 ## İletişim
 

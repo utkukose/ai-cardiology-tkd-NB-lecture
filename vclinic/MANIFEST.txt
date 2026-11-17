@@ -1,9 +1,12 @@
 __init__.py
+acdc.py
 cohort.py
 datasets.py
 ecg.py
+echonet.py
 followup.py
 imaging.py
 measure.py
+nifti.py
 physionet.py
 teach.py

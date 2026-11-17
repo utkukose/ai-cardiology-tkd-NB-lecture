@@ -14,13 +14,14 @@ Turkish Society of Cardiology · First version: November 2026
 | Participants | Cardiologists and other specialist physicians, with or without programming experience |
 | Format | 11 weeks, one session of 4 hours per week, 44 hours in total; about 80 percent hands-on work |
 | Languages of the materials | English and Turkish |
-| Environment | Jupyter in Anaconda on the participant's own computer; Google Colab as a fallback |
-| Prerequisites | No programming experience. Anaconda installed before Week 1 ([SETUP.md](SETUP.md)) |
+| Environment | Google Colab, with nothing to install, or Jupyter in Anaconda on the participant's own computer, as the participant prefers |
+| Two paths of practice | The prompt path, on which an artificial intelligence (AI) assistant writes the code from ready prompts, and the Python path, on which the participant writes it; both reach the same results |
+| Prerequisites | No programming experience and no previous knowledge of AI. A Google account for Colab, or Anaconda installed before Week 1 ([SETUP.md](SETUP.md)) |
 | Contact | utkukose@sdu.edu.tr, utkukose@gmail.com |
 
 ## Description
 
-The program teaches cardiologists and other specialist physicians to analyse cardiology data with Python and to build, validate and explain artificial intelligence (AI) models. It moves from tables and signals in the first weeks to images, text and data fusion. It ends with explainable models, a prototype of a clinical decision support system and a final project. A virtual cardiology clinic of synthetic patients runs through all weeks, and real public data sets accompany every topic. Coding with AI assistants is taught from the first week under explicit safety rules.
+The program teaches cardiologists and other specialist physicians to analyse cardiology data with Python and to build, validate and explain AI models. It moves from tables and signals in the first weeks to images, text and data fusion. It ends with explainable models, a prototype of a clinical decision support system and a final project. A virtual cardiology clinic of synthetic patients runs through all weeks, and real public data sets accompany every topic. Coding with AI assistants is taught from the first week under explicit safety rules.
 
 The learning outcomes of the course are listed on the [course home page](README.md#course-learning-outcomes), and each week page lists the outcomes of its week.
 
@@ -42,7 +43,7 @@ Materials: [Week page](en/week-02/README.md) · [Lecture page](https://utkukose.
 
 ### Week 3: Deep learning and convolutional neural networks
 
-The first half explains artificial neural networks and convolutional neural networks (CNNs): neurons, layers, activation functions, convolution, pooling, dropout and batch normalisation. The second half compares known architectures, augments cardiac images and reads the confusion matrix and the F1 score, with attention to overfitting. **Mini project in the session:** Classification of normal and abnormal echocardiograms. **Weekly project:** Classification of dilated and hypertrophic cardiomyopathy on cardiac magnetic resonance images. **Data:** Echocardiographic frames and short-axis cardiac magnetic resonance slices of the virtual clinic. **Stage of the virtual clinic:** Echo laboratory.
+The first half explains artificial neural networks and convolutional neural networks (CNNs): neurons, layers, activation functions, convolution, pooling, dropout and batch normalisation. The second half compares known architectures, augments cardiac images and reads the confusion matrix and the F1 score, with attention to overfitting. **Mini project in the session:** Classification of normal and abnormal echocardiograms, with an abnormal ejection fraction below 50 percent, on EchoNet-Dynamic, for participants with a personal registration. **Weekly project:** Classification of dilated and hypertrophic cardiomyopathy on cardiac magnetic resonance images. **Data:** ACDC, cine cardiac magnetic resonance examinations of 90 patients with a normal heart, DCM or HCM, downloaded from their public source; EchoNet-Dynamic, echocardiography videos with a personal registration. **Stage of the virtual clinic:** Imaging laboratory.
 
 Materials: [Week page](en/week-03/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lab.html) · [Jupyter notebook](en/week-03/NB03_deep_learning_and_cnns.ipynb) · [Prompt library](en/week-03/PROMPTS.md) · [PDF notes](en/week-03/Week03_Lecture_Notes.pdf)
 
@@ -122,7 +123,7 @@ The certificate requires attendance of at least 80 percent of the sessions, that
 
 ## Materials and environment
 
-Each week has a week page with links to its lecture page, interactive lab, Jupyter notebook, prompt library and PDF notes. [SETUP.md](SETUP.md) explains the installation of Anaconda and the first run, and the [start-here notebook](en/start-here/NB00_start_here.ipynb) checks the computer before Week 1. [DATASETS.md](DATASETS.md) lists the data sets with their licenses, and [PYTHON_PATH.md](PYTHON_PATH.md) lists the Python steps of the weeks. [PROMPT_PATH.md](PROMPT_PATH.md) describes the prompt path and the AI assistants that work with it.
+Each week has a week page with links to its lecture page, interactive lab, Jupyter notebook, prompt library and PDF notes. [SETUP.md](SETUP.md) explains the two places where the notebooks run, Google Colab and Jupyter on one's own computer, and the [start-here notebook](en/start-here/NB00_start_here.ipynb) prepares the first steps on both paths before Week 1. [DATASETS.md](DATASETS.md) lists the data sets with their licenses, and [PYTHON_PATH.md](PYTHON_PATH.md) lists the Python steps of the weeks. [PROMPT_PATH.md](PROMPT_PATH.md) describes the prompt path and the AI assistants that work with it, and [OWN_DATA.md](OWN_DATA.md) explains how to apply the methods of the course to the data of one's own clinic.
 
 ## Communication
 

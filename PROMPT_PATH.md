@@ -3,78 +3,72 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Course home](README.md) · [Python path](PYTHON_PATH.md) · [Türkçe](PROMPT_PATH.tr.md)
+[Course home](README.md) · [Python path](PYTHON_PATH.md) · [Your own data](OWN_DATA.md) · [Türkçe](PROMPT_PATH.tr.md)
 
-The course can be followed on three paths. All three lead to the same results, and the check of the course tests them in the same way. A participant can change the path at any exercise.
+The course has one main route, the lecture page of each week, and two paths of practice in the Jupyter notebook of the week. The **prompt path** is Part 1 of every notebook. It is meant for participants who do not write code and who may never have used an artificial intelligence (AI) assistant. An AI assistant writes the code from a ready prompt, a written instruction; the participant runs the code and checks the result. The **Python path**, Part 2 of the notebook, reaches the same results by writing the code ([PYTHON_PATH.md](PYTHON_PATH.md)). The path can be changed at any practice stop.
 
-| Path | For whom | How an exercise is solved |
-|---|---|---|
-| Core path | Participants who are new to programming | The Python step and the exercises are typed by hand. Reference solutions sit in folded cells. |
-| Prompt path | Participants who prefer to describe a task in words | A prompt on the prompt card goes to an artificial intelligence (AI) assistant. The code that comes back is run and checked. |
-| Advanced path | Participants who already program | Cells marked *Advanced path* add optional extensions to the same notebook. |
+## What happens at a practice stop
 
-The prompt path does not skip Python. It changes the order of learning. The participant first states exactly what the code must do and how its result will be checked. Then the participant reads, runs and explains code written by an assistant. Reading and explaining code are part of every exercise, so the language is learned along the way.
-
-## The prompt card
-
-Every prompt of the course has the same seven fields.
-
-| Field | What it states |
-|---|---|
-| Role | Who the assistant should be, for example a helper of a cardiologist who is learning Python |
-| Context | Where the code runs and what is ready: the Jupyter notebook, the imported packages and the course package `vclinic` |
-| Data | Variable names, units and sampling frequency |
-| Task | One clear task, with its formula if there is one |
-| Constraints | Packages to use and things to avoid, such as loading files or installing packages |
-| Output | Variable name, rounding and form of the answer. The prompts of the exercises end with the line `teach.check`. |
-| Test | A case whose answer is known by hand |
-
-## The prompt cycle
-
-Each exercise on the prompt path follows six steps.
+The lecture page has two or three practice stops each week. At a stop, the button **Prompt path** opens Part 1 of the notebook at the same stop, in Google Colab or in Jupyter on your own computer. A stop has two to four steps, and every step looks the same.
 
 | Step | What to do |
 |---|---|
-| 1. Describe | Copy the prompt card of the exercise, or write it with the seven fields: role, context, data, task, constraints, output and test. |
-| 2. Generate | Send the prompt to an AI assistant. |
-| 3. Run | Paste the code into the empty cell below the exercise and run it. |
-| 4. Check | Read the result of `teach.check`, *correct* or *not yet*, and the test of the prompt. A result of *not yet* goes back to the assistant with the repair pattern. |
-| 5. Explain | Ask the assistant for a line-by-line explanation, then explain the code once more in your own words. |
-| 6. Log | Add the tool, the prompt, what was checked and what was changed to the AI usage log. |
+| 1. Read | Read the goal of the step in the notebook. |
+| 2. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
+| 3. Run | Paste the code of the assistant into the cell below the prompt and run it. |
+| 4. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result. |
+| 5. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
+| 6. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-Code written by an assistant is accepted only when its result passes a check against a known answer and every line can be explained.
+Every stop starts with a preparation cell that loads the data of the stop, so a stop can also be started on another day. The *Ready code* cell of each step always gives the correct result: Nobody gets stuck, and the next step can always start.
 
-## Where the prompts are
+## Which assistant?
 
-| Week | Prompt library | Prompt routes | Prompt challenges | Interactive lab |
-|---|---|---|---|---|
-| 1 | [PROMPTS.md](en/week-01/PROMPTS.md) | 13, one below each exercise | 9, one at the end of each numbered section | Part F, prompt workshop |
-| 2 | [PROMPTS.md](en/week-02/PROMPTS.md) | 13, one below each exercise | 9, one at the end of each numbered section | Part F, prompt workshop |
-| 3 | [PROMPTS.md](en/week-03/PROMPTS.md) | 13, one below each exercise | 9, one at the end of each numbered section | Part F, prompt workshop |
-| 4 to 11 | In preparation | | | |
-
-In the Jupyter notebook, a *prompt route* is a folded cell below an exercise. It holds the prompt card of the exercise, ready to copy. A *prompt challenge* closes each numbered section. It gives a prompt but no prepared code, and the checks below it tell whether the result is right. The prompt library of the week collects all prompts, four patterns for explaining, repairing and testing code, and the prompt route of the weekly project. Part F of the interactive lab trains the prompt card with a quality meter and a privacy check.
-
-## AI assistants
-
-Any assistant that writes Python can be used, and the prompts of the course work with all of them. Three assistants work inside the notebook environments of the course.
+Any assistant that writes Python can be used, and the prompts of the course work with all of them.
 
 | Assistant | Where it runs | What to know |
 |---|---|---|
-| [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) | JupyterLab in Anaconda | An open-source extension with a chat panel and the `%%ai` magic command. It needs the application programming interface (API) key of a model provider or a local model, for example through Ollama. Providers may charge for their use. |
+| [Gemini in Colab](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab | Built into Colab and opened with its button at the top of the window. It writes code from a description and explains errors. The features may differ by account and region. |
+| A chat assistant such as ChatGPT, Claude, Copilot or Gemini | A second tab of the web browser | The prompt is pasted into the chat, and the code is copied back into the notebook. |
 | [Anaconda Assistant](https://docs.anaconda.com/anaconda-notebooks/local-assistant) | JupyterLab in Anaconda, through Anaconda Toolbox (`conda install anaconda-toolbox`) | It needs an Anaconda account. A free account has a limited number of requests. |
-| [Gemini in Colab](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab, the fallback environment of the course | Built into Colab. It generates code from a description and explains errors. The features may differ by account and region. |
-| A general chat assistant | Web browser | The prompt is pasted into the chat, and the code is copied back into the notebook. |
+| [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) | JupyterLab in Anaconda | An open-source extension with a chat panel. It needs the application programming interface (API) key of a model provider or a local model. Providers may charge for their use. |
 
 The course does not depend on any one of these tools. Assistants change often, so the setup of each tool follows its own documentation.
 
+## The prompt card
+
+Every prompt of the course has the same seven fields, and reading them teaches how to write a good request to an assistant.
+
+| Field | What it states |
+|---|---|
+| Role | Who the assistant should be: a helper of a cardiologist who does not write code |
+| Context | Where the code runs and what is ready: the Jupyter notebook, the imported packages and the course package `vclinic` |
+| Data | The names of the variables, their units and, for signals, the sampling frequency |
+| Task | One clear task, with its formula if there is one |
+| Constraints | What the code may not do, such as reading files or installing packages |
+| Output | The name of the variable that holds the result and its rounding |
+| Test | A case whose answer is known, so that the result can be checked |
+
+An assistant can write code that runs without an error and still gives a wrong number. The check of every step is therefore the most important part of the prompt path.
+
+## Where the prompts are
+
+| Week | Prompt library | Prompt path | Interactive lab |
+|---|---|---|---|
+| 1 | [PROMPTS.md](en/week-01/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
+| 2 | [PROMPTS.md](en/week-02/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
+| 3 | [PROMPTS.md](en/week-03/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
+| 4 to 11 | In preparation | | |
+
+The prompt library of the week holds every prompt of Part 1 with a copy button on GitHub, the prompts for repairing code and the prompt path of the weekly project. Part F of the interactive lab trains the prompt card with a quality meter and a privacy check.
+
 ## Privacy
 
-No patient data enter a prompt. This includes names, dates of birth, national identity numbers, hospital and protocol numbers, dates of admission, free text from medical records and images that carry identifiers. The prompts of the course describe the structure of the data, such as column names, units and the sampling frequency, never a real patient. Real patient data stay on the participant's own computer, under the rules of the institution and of the Turkish Law on the Protection of Personal Data (KVKK) [1]. A local model keeps the text of a prompt on the computer, but the rule holds for every tool. The privacy check in Part F of the interactive lab warns about common identifiers, such as dates and long numbers. It sees only common patterns, and the responsibility stays with the participant.
+No patient data enter a prompt. This includes names, dates of birth, national identity numbers, hospital and protocol numbers, dates of admission, free text from medical records and images that carry identifiers. The prompts of the course describe the structure of the data, such as column names, units and the sampling frequency, never a real patient. Real patient data stay on a computer of the institution, under its rules and those of the Turkish Law on the Protection of Personal Data (KVKK) [1]. [OWN_DATA.md](OWN_DATA.md) explains how the prompt path is used with one's own data: The prompt describes the columns, and the data never leave the computer.
 
 ## The AI usage log and assessment
 
-Code from the prompt path counts like code typed by hand. A weekly project is scored on its results, its methods and their explanation, its discussion and its records, as the [syllabus](SYLLABUS.md#assessment-and-certificate) describes. The way the code was written does not change the score. Each weekly project adds an AI usage log with one row for each use of an assistant: the tool, the prompt, what was checked and what was changed. Prompts saved in the prompt workshop of the interactive lab go into the learning log of the week.
+Code from the prompt path counts like code typed by hand. A weekly project is scored on its results, its methods and their explanation, its discussion and its records, as the [syllabus](SYLLABUS.md#assessment-and-certificate) describes. Each weekly project adds an AI usage log with one row for each use of an assistant: the tool, the prompt, what was checked and what was changed.
 
 ## References
 

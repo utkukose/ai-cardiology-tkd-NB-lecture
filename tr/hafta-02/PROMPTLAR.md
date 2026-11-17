@@ -5,533 +5,340 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [2. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-02/PROMPTS.md)
 
-Bu kütüphanede 2. haftada kullanılan her prompt (istem), eğitimin prompt kartıyla yazılmış olarak yer almaktadır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir. Asistanın yazdığı kod, Jupyter defterinde aynı adı taşıyan alıştırmanın ya da prompt görevinin altına yapıştırılır ve orada çalıştırılır. Alıştırmalarda `teach.check` satırı sonucun doğru olup olmadığını hemen gösterir. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede 2. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki her prompt, eğitimin prompt kartıyla yazılmış olarak yer almaktadır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod defterde aynı numaralı adımın altındaki hücreye yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
 
-1. [Prompt döngüsü](#prompt-döngüsü)
-2. [Alıştırmaların promptları](#alıştırmaların-promptları)
-3. [Bölümlerin prompt görevleri](#bölümlerin-prompt-görevleri)
-4. [Kodu açıklatmak, onarmak ve denetlemek için kalıplar](#kodu-açıklatmak-onarmak-ve-denetlemek-için-kalıplar)
-5. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+2. [Durak 1: İlk risk modeli](#durak-1-ilk-risk-modeli)
+3. [Durak 2: Bir modeli dürüstçe sınamak](#durak-2-bir-modeli-dürüstçe-sınamak)
+4. [Durak 3: Alt gruplar, sağkalım ve denetlenecek bir model](#durak-3-alt-gruplar-sağkalım-ve-denetlenecek-bir-model)
+5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
+6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
 
-## Prompt döngüsü
+## Bir adım nasıl ilerler?
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Tarif et | Alıştırmanın prompt kartını kopyalayın ya da kartı yedi alanıyla kendiniz yazın: rol, bağlam, veri, görev, kısıtlar, çıktı ve test. |
-| 2. Gönder | Promptu bir YZ asistanına gönderin. |
-| 3. Çalıştır | Asistanın kodunu alıştırmanın altındaki boş hücreye yapıştırın ve çalıştırın. |
-| 4. Denetle | `teach.check` satırının yazdığı sonuca (*doğru* ya da *henüz değil*) ve promptun Test satırına bakın. Sonuç *henüz değil* ise kodu onarım promptuyla asistana geri gönderin. |
-| 5. Açıkla | Asistandan kodu satır satır açıklamasını isteyin, ardından kodu bir kez de kendi sözcüklerinizle açıklayın. |
-| 6. Kaydet | Aracı, promptu, neyin denetlendiğini ve neyin değiştirildiğini YZ kullanım günlüğüne yazın. |
+| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 2. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
+| 3. Çalıştırın | Asistanın kodunu promptun altındaki hücreye yapıştırın ve çalıştırın. |
+| 4. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve sonucun değerini gösterir. |
+| 5. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-## Alıştırmaların promptları
+## Durak 1: İlk risk modeli
 
-Jupyter defterindeki her alıştırmanın hemen altında, katlanmış bir hücrede o alıştırmanın prompt yolu bulunur; aşağıdaki promptlar bunlarla aynıdır. Asistanın kodunu alıştırmanın boş cevap hücresine yapıştırın ve çalıştırın.
+*[Ders sayfası: uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 2, 1. ve 2. bölümler*
 
-### Alıştırma 2.1: Tablodaki eksik hücreler
+UCI Heart Disease veri setindeki Cleveland hastalarına efor testi ve koroner anjiyografi yapılmıştır. Bu durakta öykünün ve efor testinin sekiz değişkeninden bir lojistik regresyon kurulur ve modelin, hiç görmediği hastalarda koroner arter hastalığını ne kadar iyi tanıdığı denetlenir.
 
-*Jupyter defteri, "Python adımı 2: Veriyi modele hazırlamak"*
+### Adım 1.1: Model ve test AUC değeri
 
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `heart` adlı pandas DataFrame'i UCI Heart Disease veri setinin Cleveland verisini tutar: 303
-hasta, her satırda bir hasta. disease sütunu 0 ya da 1'dir: Koroner arter hastalığı (KAH) varsa 1,
-yoksa 0. Eksik değerler NaN olarak durur.
-Görev: `heart` tablosundaki bütün satır ve sütunlarda eksik olan hücrelerin toplamını say.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Eksik hücre sayısı, tamsayı olarak. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma 2.1", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: Yöntemi önce `pd.DataFrame({"a": [1, None], "b": [None, 4]})` tablosunda dene; sonuç 2 olmalı.
-Ardından eksik değeri olan her sütunun eksik sayısını yazdır; listede yalnızca ca ve thal sütunları
-görünmeli.
-```
-
-### Alıştırma 2.2: Test kümesinin büyüklüğü
-
-*Jupyter defteri, "Python adımı 2: Veriyi modele hazırlamak"*
+**Amaç.** Modelin tablosunu kurmak, hastaları eğitim ve test kümelerine ayırmak, bir lojistik regresyon eğitmek ve modeli test kümesinde ROC eğrisinin altındaki alanla (AUC) ölçmek.
 
 ```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `X`, 303 satırlı ve 10 sayısal sütunlu bir DataFrame; `y` ise 0 ya da 1 olan 303 değerli bir
-Series.
-Görev: `X` ve `y` verilerini
-`train_test_split(X, y, test_size=0.25, stratify=y, random_state=RANDOM_STATE)` ile ayır ve test
-kümesindeki hastaları say.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Test kümesindeki hasta sayısı. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma 2.2", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: İki kümenin büyüklüğünü yazdır; toplamları 303 olmalı.
-```
-
-### Alıştırma 2.3: İlk işlem hattının doğruluğu
-
-*Jupyter defteri, "Python adımı 2: Veriyi modele hazırlamak"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `X_train`, `X_test`, `y_train` ve `y_test`,
-`train_test_split(X, y, test_size=0.25, stratify=y, random_state=RANDOM_STATE)` çağrısından gelir.
-`X` şu sütunları içerir: age (yıl), sex (1 erkek, 0 kadın), trestbps (istirahat sistolik kan
-basıncı, mmHg), chol (serum kolesterolü, mg/dL), thalach (en yüksek kalp hızı, bpm), exang
-(egzersizle angina, 0 ya da 1), oldpeak (ST çökmesi, mm) ve göğüs ağrısı tipinin üç kukla sütunu
-cp_2.0, cp_3.0 ve cp_4.0. `y`, disease sütunudur.
-Görev: `make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))` kur, eğitim kümesinde
-uydur ve test kümesindeki doğruluğunu `score` ile hesapla.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Test kümesindeki doğruluk, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir
-değişkende sakla ve kodu `teach.check("Alıştırma 2.3", answer)` satırıyla bitir. Yalnızca kodu, tek
-bir blok olarak ver; her adımın üstüne kısa bir yorum satırı ekle.
-Test: Eğitim kümesindeki doğruluğu da yazdır; benzer büyüklükte olmalı ve 1,0 olmamalı.
-```
-
-### Alıştırma A: Tipik angina ile vakanın olasılığı
-
-*Jupyter defteri, 1. bölüm, "İlk model: Koroner arter hastalığı için lojistik regresyon"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `model`, KAH için uydurulmuş bir StandardScaler ve LogisticRegression işlem hattı; `case` ise
-`X` ile aynı sütunlara sahip tek satırlık bir DataFrame: age 57 yıl, sex 1, trestbps 119 mmHg, chol
-230 mg/dL, thalach 132 bpm, exang 1, oldpeak 1,6 mm, cp_2.0 1, cp_3.0 0 ve cp_4.0 0.
-Görev: `case` tablosunu kopyala, cp_2.0 değerini 0 yaparak üç göğüs ağrısı sütununu da 0'a getir
-(tipik angina) ve KAH olasılığını `model.predict_proba` ile hesapla.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Olasılık, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma A", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: Değiştirilmemiş `case` için olasılığı da yazdır; iki olasılık farklı olmalı ve ikisi de 0 ile
-1 arasında kalmalı.
-```
-
-### Alıştırma B: Test kümesinde AUC
-
-*Jupyter defteri, 2. bölüm, "Bir modeli ölçmek: Karışıklık matrisi ve ROC eğrisi"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `model`, KAH için uydurulmuş bir işlem hattı; test kümesi `X_test`, `y_test` (76 hasta;
-`y_test` 0 ya da 1'dir, KAH için 1).
-Görev: `model` işlem hattının test kümesindeki olasılıklarının alıcı işletim karakteristiği eğrisi
-altındaki alanını (AUC) `roc_auc_score` ile hesapla.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: AUC, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma B", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: 1 eksi olasılıkların AUC değerini de hesapla; iki değerin toplamı 1 olmalı.
-```
-
-### Alıştırma C: 0,5 eşiğinde duyarlılık
-
-*Jupyter defteri, 2. bölüm, "Bir modeli ölçmek: Karışıklık matrisi ve ROC eğrisi"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `model`, KAH için uydurulmuş bir işlem hattı; test kümesi `X_test`, `y_test` (76 hasta,
-35'inde KAH var; `y_test` 0 ya da 1'dir).
-Görev: KAH olasılığı 0,5 ya da üstündeyse hastayı pozitif say; TP, FP, TN ve FN sayılarını
-`confusion_matrix(...).ravel()` ile bul ve duyarlılığı TP / (TP + FN) ile hesapla.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Duyarlılık, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma C", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: TP ve FN değerlerini yazdır; toplamları, test kümesinde KAH olan hasta sayısı olan 35 olmalı.
-```
-
-### Alıştırma D: Çapraz doğrulanmış AUC
-
-*Jupyter defteri, 3. bölüm, "Çapraz doğrulama ve veri sızıntısı"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `X` ve `y`, 303 Cleveland hastası (`y` 0 ya da 1'dir, KAH için 1); `pipe`, StandardScaler ve
-LogisticRegression(max_iter=1000) adımlarından oluşan uydurulmamış bir işlem hattı.
-Görev: `StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE)` ve
-`cross_val_score(..., scoring="roc_auc")` ile beş katlı çapraz doğrulama yap ve beş AUC değerinin
-ortalamasını al.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Ortalama AUC, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve
-kodu `teach.check("Alıştırma D", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver;
-her adımın üstüne kısa bir yorum satırı ekle.
-Test: Beş AUC değerini yazdır; her biri 0,5 ile 1 arasında olmalı.
-```
-
-### Alıştırma E: Kök düğümün Gini safsızlığı
-
-*Jupyter defteri, 4. bölüm, "Karar ağaçları ve rastgele ormanlar"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `y_train`, 227 eğitim hastasının 0 ya da 1 olan sonucu.
-Görev: p0 = n0 / (n0 + n1) ve p1 = n1 / (n0 + n1) olmak üzere 1 - (p0² + p1²) döndüren bir
-`gini(n0, n1)` fonksiyonu yaz ve `y_train` içindeki 0 ve 1 sayılarına uygula.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Gini safsızlığı, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve
-kodu `teach.check("Alıştırma E", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver;
-her adımın üstüne kısa bir yorum satırı ekle.
-Test: assert ifadeleriyle denetle: gini(50, 50) 0,5, gini(100, 0) ise 0,0 olmalı.
-```
-
-### Alıştırma F: Kayıtta sigaranın katsayısı
-
-*Jupyter defteri, 5. bölüm, "Risk polikliniği: Kayıttaki koroner arter hastalığı"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `registry` adlı pandas DataFrame'i sanal kliniğin 2000 sentetik hastasını, her satırda bir
-hasta olacak biçimde tutar; `vclinic.add_followup(vclinic.make_cohort(2000, seed=RANDOM_STATE))` ile
-oluşturulmuştur. Sütunları arasında age (yıl), sex ("M" ya da "F"), smoker, diabetes, hypertension,
-family_history ve cad (0 ya da 1), ldl ve hdl (mg/dL), egfr (mL/dk/1,73 m²), lvef (%), ntprobnp
-(pg/mL), af (0 ya da 1), bmi (kg/m²), sbp (mmHg), main_diagnosis, followup_months (ay) ve event
-(ölüm ya da kalp yetersizliği nedeniyle yatış için 1, sansürlenmiş için 0) bulunur.
-Görev: Değişkenleri `vclinic.TRUE_EFFECTS` ile aynı biçimde kodla: age_per_10y = (age - 60) / 10,
-sex "M" ise male = 1, smoker, diabetes, hypertension, ldl_per_40 = (ldl - 130) / 40, hdl_per_15 =
-(hdl - 50) / 15 ve family_history. cad sütununa `LogisticRegression(C=np.inf, max_iter=2000)` uydur
-ve smoker katsayısını oku.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: smoker katsayısı, iki ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla
-ve kodu `teach.check("Alıştırma F", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak
-ver; her adımın üstüne kısa bir yorum satırı ekle.
-Test: Öğrenilen bütün katsayıları `vclinic.TRUE_EFFECTS` değerlerinin yanına yazdır; her biri gerçek
-değerinin yaklaşık 0,2 yakınında olmalı.
-```
-
-### Alıştırma G: Prevalanstan PPV
-
-*Jupyter defteri, 6. bölüm, "Nadir sonuçlar: Dengesiz veri"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: Duyarlılığı 0,85 ve özgüllüğü 0,90 olan bir tarama modeli; prevalansın 0,05 (%5) olduğu bir
-toplulukta kullanılmaktadır.
-Görev: Bayes teoremiyle PPV = se × prev / (se × prev + (1 - sp) × (1 - prev)) döndüren bir
-`ppv(se, sp, prev)` fonksiyonu yaz ve uygula.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: PPV, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma G", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: assert ifadesiyle denetle: ppv(0.85, 0.85, 0.5) değeri 0,85 olmalı.
-```
-
-### Alıştırma H: Üç kümenin siluet değeri
-
-*Jupyter defteri, 7. bölüm, "Alt grupları bulmak: Kalp yetersizliği olan hastalarda k-ortalamalar"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `X_hf`, kalp yetersizliği olan her hasta için bir satırı olan bir NumPy dizisi; yaş (yıl),
-lvef (%) ve tapse_mm (mm) gibi dokuz sütunu z skoruna standartlaştırılmıştır.
-Görev: `X_hf` dizisine `KMeans(n_clusters=3, n_init=10, random_state=RANDOM_STATE)` uydur ve
-etiketlerinin ortalama siluet değerini `silhouette_score` ile hesapla.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Ortalama siluet değeri, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende
-sakla ve kodu `teach.check("Alıştırma H", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok
-olarak ver; her adımın üstüne kısa bir yorum satırı ekle.
-Test: Her kümedeki hasta sayısını yazdır; üç sayının toplamı `X_hf` dizisinin satır sayısı olan
-407'ye eşit olmalı.
-```
-
-### Alıştırma I: 24. ayda Kaplan-Meier
-
-*Jupyter defteri, 8. bölüm, "Sağkalım analizi: Kaplan-Meier ve log-rank testi"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `hf`, kalp yetersizliği olan hastaların DataFrame'i; main_diagnosis ("HFrEF" ya da "HFpEF"),
-followup_months (ay) ve event (ölüm ya da yatış için 1, sansürlenmiş için 0) sütunlarını içerir.
-Görev: Basamakların zamanlarını ve her basamaktan sonraki sağkalımı döndüren bir
-`kaplan_meier(time, event)` fonksiyonu yaz; S(t), t'ye kadarki olay zamanları üzerinden (1 - d_i /
-n_i) çarpımıdır. Fonksiyonu HFrEF hastalarına uygula ve 24. aydaki S değerini oku.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: S(24), üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir değişkende sakla ve kodu
-`teach.check("Alıştırma I", answer)` satırıyla bitir. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: 2, 3, 3, 5, 6, 8, 9, 11, 12, 12 aylık zamanlar ve 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 olayları için
-11. aydan sonraki sağkalım, dört ondalığa yuvarlandığında 0,3657 olmalı.
-```
-
-### Alıştırma J: Asistanın modelinin düzeltilmiş hâli
-
-*Jupyter defteri, 9. bölüm, "YZ ile eşli kodlama, bölüm 2: Bir asistanın kurduğu modeli denetlemek"*
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `registry` adlı pandas DataFrame'i sanal kliniğin 2000 sentetik hastasını, her satırda bir
-hasta olacak biçimde tutar; `vclinic.add_followup(vclinic.make_cohort(2000, seed=RANDOM_STATE))` ile
-oluşturulmuştur. Sütunları arasında age (yıl), sex ("M" ya da "F"), smoker, diabetes, hypertension,
-family_history ve cad (0 ya da 1), ldl ve hdl (mg/dL), egfr (mL/dk/1,73 m²), lvef (%), ntprobnp
-(pg/mL), af (0 ya da 1), bmi (kg/m²), sbp (mmHg), main_diagnosis, followup_months (ay) ve event
-(ölüm ya da kalp yetersizliği nedeniyle yatış için 1, sansürlenmiş için 0) bulunur. event_12m sütunu
-12 ay içinde olay varsa 1'dir. `features` listesi age, egfr, lvef, ntprobnp, af, diabetes, bmi, sbp
-ve followup_months sütunlarını tutar.
-Görev: followup_months değişkenini çıkar, çünkü karar anında bilinmez. Ardından
-`RandomForestClassifier(n_estimators=200, min_samples_leaf=5, random_state=RANDOM_STATE)` modelinin
-event_12m için ortalama AUC değerini beş katlı
-`StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE)` ile hesapla.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Ortalama çapraz doğrulanmış AUC, üç ondalığa yuvarlanmış olarak. Sonucu `answer` adlı bir
-değişkende sakla ve kodu `teach.check("Alıştırma J", answer)` satırıyla bitir. Yalnızca kodu, tek
-bir blok olarak ver; her adımın üstüne kısa bir yorum satırı ekle.
-Test: Aynı ormanın bütün hastalarda uydurulup yine onlarda puanlanan AUC değerini de yazdır; bu
-değer çapraz doğrulanmış değerden belirgin biçimde yüksek, 0,95'in üstünde olmalı.
-```
-
-## Bölümlerin prompt görevleri
-
-Jupyter defterindeki her numaralı bölüm bir prompt göreviyle biter. Prompt görevinde bir prompt vardır, ancak hazır kod ve `teach.check` satırı yoktur. Sonucun doğru olup olmadığını her promptun altındaki beklenen sonuç gösterir.
-
-### 1. bölüm: Odds oranlarının orman grafiği
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `model`, KAH için uydurulmuş bir StandardScaler ve LogisticRegression işlem hattı; `X`,
-sütunları modelin değişkenleri olan tablo.
-Görev: Her değişkenin standart sapma başına odds oranını logaritmik yatay eksende bir nokta olarak
-çiz; 1'de dikey bir çizgi koy ve değişken adlarını dikey eksene yaz.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Bir şekil. Yalnızca kodu, tek bir blok olarak ver; her adımın üstüne kısa bir yorum satırı
-ekle.
-Test: Odds oranlarını da yazdır; thalach 1'in altında, oldpeak 1'in üstünde olmalı.
-```
-
-**Beklenen sonuç.** SS başına odds oranı thalach için yaklaşık 0,58, oldpeak için yaklaşık 2,07'dir; sex ve cp_4.0 2'nin üstündedir.
-
-### 2. bölüm: Yan yana üç eşik
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `p_test`, 76 test hastasının KAH olasılıkları; `y_test`, sonuçları.
-Görev: 0,3, 0,5 ve 0,7 eşiklerinin her biri için bir satırı ve Se, Sp, PPV ve NPV sütunları olan bir
-tablo oluştur.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Üç ondalığa yuvarlanmış bir pandas DataFrame'i. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: 0,5 eşiğinde tablo, 2. bölümdeki gibi Se 0,800 ve Sp 0,902 göstermeli.
-```
-
-**Beklenen sonuç.** 0,3 ile 0,7 eşikleri arasında duyarlılık 0,857'den 0,571'e düşer, özgüllük 0,805'ten 0,951'e yükselir.
-
-### 3. bölüm: Lojistik regresyon mu, rastgele orman mı?
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `X` ve `y`, 303 Cleveland hastası; katmanlar
-`cv = StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE)`.
-Görev: StandardScaler ve LogisticRegression(max_iter=1000) işlem hattının ortalama çapraz
-doğrulanmış AUC değerini aynı katmanlarda
-`RandomForestClassifier(n_estimators=300, random_state=RANDOM_STATE)` ile karşılaştır.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: İki ortalama ve standart sapmaları. Yalnızca kodu, tek bir blok olarak ver; her adımın üstüne
-kısa bir yorum satırı ekle.
-Test: Lojistik regresyon, Alıştırma D'deki ortalama AUC değerini vermeli.
-```
-
-**Beklenen sonuç.** İki model de yaklaşık 0,87'lik bir ortalama AUC'ye ulaşır; bu 303 hastada rastgele orman daha iyi değildir.
-
-### 4. bölüm: Bir ağaç ne kadar derin olmalı?
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `X_train`, `X_test`, `y_train` ve `y_test`,
-`train_test_split(X, y, test_size=0.25, stratify=y, random_state=RANDOM_STATE)` çağrısından gelir.
-`X` şu sütunları içerir: age (yıl), sex (1 erkek, 0 kadın), trestbps (istirahat sistolik kan
-basıncı, mmHg), chol (serum kolesterolü, mg/dL), thalach (en yüksek kalp hızı, bpm), exang
-(egzersizle angina, 0 ya da 1), oldpeak (ST çökmesi, mm) ve göğüs ağrısı tipinin üç kukla sütunu
-cp_2.0, cp_3.0 ve cp_4.0. `y`, disease sütunudur.
-Görev: 1'den 8'e kadar her d için eğitim kümesinde
-`DecisionTreeClassifier(max_depth=d, random_state=RANDOM_STATE)` uydur ve test AUC değerini
-derinliğe karşı çiz.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Bir şekil ve sekiz AUC değeri. Yalnızca kodu, tek bir blok olarak ver; her adımın üstüne kısa
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: `heart`, UCI Heart Disease veri setindeki Cleveland Clinic'e ait 303 hastayı içeren bir pandas
+DataFrame'idir. Burada kullanılan sütunlar: age (yaş, yıl), sex (1 erkek, 0 kadın), cp (göğüs ağrısı
+tipi: 1 tipik angina, 2 atipik angina, 3 anjinal olmayan ağrı, 4 asemptomatik), trestbps (istirahat
+kan basıncı, mm Hg), chol (serum kolesterolü, mg/dL), thalach (efor testinde ulaşılan en yüksek kalp
+hızı, atım/dakika), exang (eforla gelen angina, 1 evet), oldpeak (eforda istirahate göre ST çökmesi,
+mm) ve disease (anjiyografide en az bir ana koroner arterde yüzde 50'den fazla çap daralması varsa
+1, yoksa 0).
+Görev: age, sex, trestbps, chol, thalach, exang, oldpeak ve cp sütunlarından X tablosunu kur; cp'yi
+pd.get_dummies(..., columns=["cp"], drop_first=True, dtype=int) ile kukla değişkenlere dönüştür.
+Sonuç değişkeni y, disease sütunudur. train_test_split(X, y, test_size=0.25, stratify=y,
+random_state=RANDOM_STATE) ile X_train, X_test, y_train ve y_test olarak ayır. model =
+make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)) modelini eğitim kümesinde eğit,
+ardından test kümesinin tahmin edilen olasılıklarından roc_auc_score ile AUC değerini hesapla.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Test kümesinin AUC değeri, üç ondalığa yuvarlanmış olarak. Sonraki adımlar kullanacağı için
+X, y, X_train, X_test, y_train, y_test ve model adlarını koru. Sonucu `auc_test` adlı bir değişkene
+kaydet ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın üstüne kısa
 bir yorum satırı ekle.
-Test: 3 derinliği, 4. bölümdeki ağacın test AUC değerini vermeli.
+Test: Test kümesinde 76 hasta bulunmalı ve AUC 0,5 ile 1 arasında olmalı.
 ```
 
-**Beklenen sonuç.** AUC yaklaşık 0,81 ile 3 derinliğinde en yüksek değerine ulaşır ve daha derin ağaçlarda 0,75'in altına düşer: aşırı öğrenmenin bir görüntüsü.
+**Beklenen sonuç:** `auc_test` = 0,931
 
-### 5. bölüm: Vakanın riski yaşlara göre
+### Adım 1.2: 0,5 eşiğinde duyarlılık
 
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `registry` adlı pandas DataFrame'i sanal kliniğin 2000 sentetik hastasını, her satırda bir
-hasta olacak biçimde tutar; `vclinic.add_followup(vclinic.make_cohort(2000, seed=RANDOM_STATE))` ile
-oluşturulmuştur. Sütunları arasında age (yıl), sex ("M" ya da "F"), smoker, diabetes, hypertension,
-family_history ve cad (0 ya da 1), ldl ve hdl (mg/dL), egfr (mL/dk/1,73 m²), lvef (%), ntprobnp
-(pg/mL), af (0 ya da 1), bmi (kg/m²), sbp (mmHg), main_diagnosis, followup_months (ay) ve event
-(ölüm ya da kalp yetersizliği nedeniyle yatış için 1, sansürlenmiş için 0) bulunur. `cad_model`,
-`risk_table(registry)` tablosuna uydurulmuş bir LogisticRegression modelidir; `risk_table(df)`
-fonksiyonu değişkenleri `vclinic.TRUE_EFFECTS` ile aynı biçimde kodlar.
-Görev: VC-0246 numaralı hastanın satırını al, yalnızca yaşı 40'tan 80'e birer yıl artırarak değiştir
-ve `cad_model` modelinin KAH olasılığını yaşa karşı çiz.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Bir şekil. Yalnızca kodu, tek bir blok olarak ver; her adımın üstüne kısa bir yorum satırı
-ekle.
-Test: Eğri, 57 yaşta 5. bölümün VC-0246 için yazdırdığı olasılıktan geçmeli.
-```
-
-**Beklenen sonuç.** Eğri 40 yaşta yaklaşık 0,55'ten 80 yaşta yaklaşık 0,9'a yükselir ve 57 yaşta yaklaşık 0,76'dan geçer.
-
-### 6. bölüm: İki kesinlik-duyarlılık eğrisi
+**Amaç.** Olasılıkları 0,5 eşiğinde karara dönüştürmek ve modelin hastalığı olanların ne kadarını tanıdığını bulmak.
 
 ```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `Xe_train`, `Xe_test`, `ye_train` ve `ye_test`, 12 ay içindeki olayın eğitim ve test kümeleri
-(prevalans yaklaşık 0,034); sütunlar age, egfr, lvef, ntprobnp'nin logaritması, af ve diabetes.
-Görev: StandardScaler ve LogisticRegression(max_iter=1000) işlem hattını bir kez sınıf ağırlığı
-olmadan, bir kez `class_weight="balanced"` ile uydur ve iki kesinlik-duyarlılık eğrisini prevalansta
-yatay bir çizgiyle birlikte tek bir şekilde çiz.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Bir şekil ve iki ortalama kesinlik değeri. Yalnızca kodu, tek bir blok olarak ver; her adımın
-üstüne kısa bir yorum satırı ekle.
-Test: İki ortalama kesinlik değeri 6. bölümdeki tablonun AP sütunuyla aynı olmalı.
-```
-
-**Beklenen sonuç.** İki eğri neredeyse üst üste biner ve ortalama kesinlik yaklaşık 0,10'dur: Sınıf ağırlıkları hastaların sıralamasını değil, eşiği kaydırır.
-
-### 7. bölüm: Kümelerin ısı haritası
-
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `hf`, kalp yetersizliği olan hastaların cluster sütunu (0, 1 ya da 2) içeren DataFrame'i;
-`HF_FEATURES`, dokuz kümeleme değişkeninin listesi.
-Görev: Her kümede her değişkenin ortalamasını hesapla, her değişkeni üç küme boyunca z skoruna çevir
-ve tabloyu hücrelere değerleri yazılmış bir ısı haritası olarak çiz.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Bir şekil. Yalnızca kodu, tek bir blok olarak ver; her adımın üstüne kısa bir yorum satırı
-ekle.
-Test: Ortalama lvef değeri en düşük olan küme, ortalama ntprobnp değeri en yüksek olan küme de
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: 1.1. adımda eğitilen `model` ile `X_test` ve `y_test` test kümesi (y_test: 1 hastalık var, 0
+yok).
+Görev: Test hastalarının hastalık olasılıklarını model.predict_proba(X_test)[:, 1] ile hesapla.
+Olasılığı 0,5 ya da daha yüksek olan hastayı pozitif say. Gerçek pozitifleri (TP) ve yanlış
+negatifleri (FN) say ve duyarlılığı TP / (TP + FN) ile hesapla.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Duyarlılık, üç ondalığa yuvarlanmış olarak. Sonucu `sensitivity` adlı bir değişkene kaydet ve
+kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın üstüne kısa bir yorum
+satırı ekle.
+Test: TP + FN, test kümesindeki hastalığı olanların sayısına, y_test.sum() değerine, yani 35'e eşit
 olmalı.
 ```
 
-**Beklenen sonuç.** Kümelerden birinde ejeksiyon fraksiyonu düşük ve NT-proBNP en yüksektir (HFrEF); biri en yaşlı, sol atriyumu büyük ve TAPSE değeri düşük olandır; biri de en genç, BKİ ve eGFR değeri en yüksek olandır.
+**Beklenen sonuç:** `sensitivity` = 0,8
 
-### 8. bölüm: Risk altındaki hasta sayıları
+### Adım 1.3: En yüksek kalp hızının odds oranı
 
-```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: `hf`, kalp yetersizliği olan hastaların cluster, followup_months ve event sütunlarını içeren
-DataFrame'i.
-Görev: Bir makalede Kaplan-Meier şeklinin altına yazılan biçimde, her küme için 0, 12, 24, 36 ve 48.
-aylarda risk altındaki, yani hâlâ izlenen ve olay yaşamamış hasta sayılarının tablosunu oluştur.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Her kümenin bir satır olduğu bir pandas DataFrame'i. Yalnızca kodu, tek bir blok olarak ver;
-her adımın üstüne kısa bir yorum satırı ekle.
-Test: 0. ayda sayılar kümelerin büyüklüklerine eşit olmalı.
-```
-
-**Beklenen sonuç.** Sayılar her kümede azalır; en hızlı azalma en yaşlı hastaların kümesindedir.
-
-### 9. bölüm: Asistanın modelinin denetimi
+**Amaç.** Efor testinde ulaşılan en yüksek kalp hızı bir standart sapma daha yüksek olduğunda koroner arter hastalığı odds değerinin nasıl değiştiğini modelden okumak.
 
 ```text
-Rol: Python öğrenen bir kardiyoloğa yardım ediyorsun.
-Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt, SciPy'nin stats modülü de
-stats adıyla içe aktarılmıştır; scikit-learn kuruludur. vclinic ders paketi ve teach modülü
-kullanılabilir; RANDOM_STATE = 2026'dır.
-Veri: 9. bölümdeki YZ asistanı kodu, prompta metin olarak yapıştırılmış hâlde.
-Görev: Kodu dört soruyla denetle: Hangi değişkenler karar anında bilinemez? Ayırmadan önce bütün
-hastalardan öğrenen bir adım var mı? AUC hangi hastalarda ölçülmektedir? Sonuç nadir mi? Ardından
-düzeltilmiş kodu ver.
-Kısıtlar: Yalnızca bu paketleri ve burada adı geçen değişkenleri kullan. Hiçbir dosya okuma, hiçbir
-paket kurma.
-Çıktı: Sorunların kısa bir listesi ve düzeltilmiş kod. Yalnızca kodu, tek bir blok olarak ver; her
-adımın üstüne kısa bir yorum satırı ekle.
-Test: Düzeltilmiş kod, eğitim hastalarındaki AUC değerini değil, çapraz doğrulanmış AUC değerini
-bildirmeli.
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: 1.1. adımdaki `model`: X_train üzerinde eğitilmiş, bir StandardScaler ve onu izleyen bir
+LogisticRegression'dan oluşan işlem hattı. Sütun adları X.columns içindedir.
+Görev: Lojistik regresyonun katsayılarını model.named_steps["logisticregression"].coef_[0] ile al,
+X.columns ile eşleştir ve her sütun için standart sapma başına odds oranını, exp(katsayı), hesapla.
+Hepsini yazdır.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: thalach sütununun odds oranı, iki ondalığa yuvarlanmış olarak. Sonucu `or_thalach` adlı bir
+değişkene kaydet ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın
+üstüne kısa bir yorum satırı ekle.
+Test: oldpeak sütununun odds oranı 1'in üstünde olmalı.
 ```
 
-**Beklenen sonuç.** Denetim, izlem süresini gelecekten gelen bir bilgi olarak ve AUC'nin eğitim hastalarında ölçülmesini sorun olarak adlandırır; düzeltilmiş AUC 1,0 yerine yaklaşık 0,85'tir.
+**Beklenen sonuç:** `or_thalach` = 0,58
 
-## Kodu açıklatmak, onarmak ve denetlemek için kalıplar
+## Durak 2: Bir modeli dürüstçe sınamak
 
-Bu dört kalıp her alıştırmanın koduyla kullanılabilir. Köşeli parantez içindeki yerler, prompt gönderilmeden önce doldurulur.
+*[Ders sayfası: uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-2) · Python yolunda aynı sonuç: 3-6. bölümler*
+
+76 hastalık tek bir test kümesi belirsiz bir tahmin verir ve bazı modeller olduklarından iyi görünür. Bu durakta test çapraz doğrulamayla tekrarlanır ve bir rastgele orman denenir. Ardından sanal kliniğin nadir bir sonucuna geçilir: 12 ay içinde ölüm ya da kalp yetersizliği nedeniyle hastaneye yatış.
+
+### Adım 2.1: Beş katlı çapraz doğrulama
+
+**Amaç.** 1. duraktaki lojistik regresyonu her seferinde hastaların başka bir beşte birinde olmak üzere beş kez sınamak ve ortalama AUC değerini almak.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: Cleveland hastalarının `X` ve `y` değişkenleri: X; age, sex, trestbps, chol, thalach, exang,
+oldpeak ve cp'nin kukla değişkenlerini, y ise disease sütununu (1 ya da 0) tutar.
+Görev: make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)) işlem hattını
+cross_val_score(pipeline, X, y, cv=StratifiedKFold(5, shuffle=True, random_state=RANDOM_STATE),
+scoring="roc_auc") ile değerlendir. Beş AUC değerini ve ortalamalarını yazdır.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Beş katın ortalama AUC değeri, üç ondalığa yuvarlanmış olarak. Sonucu `auc_cv` adlı bir
+değişkene kaydet ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın
+üstüne kısa bir yorum satırı ekle.
+Test: Her biri 0,5 ile 1 arasında beş değer yazdırılmalı.
+```
+
+**Beklenen sonuç:** `auc_cv` = 0,871
+
+### Adım 2.2: Bir rastgele orman
+
+**Amaç.** Aynı hastalarda daha esnek bir model eğitmek ve test AUC değerini lojistik regresyonunkiyle karşılaştırmak.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: 1.1. adımdaki `X`, `y`, `X_train`, `X_test`, `y_train` ve `y_test`: X; age, sex, trestbps,
+chol, thalach, exang, oldpeak ve cp'nin kukla değişkenlerini, y ise disease sütununu tutar; test
+kümesinde 303 hastanın 76'sı bulunur.
+Görev: RandomForestClassifier(n_estimators=300, random_state=RANDOM_STATE) modelini X_train ve
+y_train üzerinde eğit ve X_test üzerindeki tahmin olasılıklarının AUC değerini roc_auc_score ile
+hesapla.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Ormanın test AUC değeri, üç ondalığa yuvarlanmış olarak. Sonucu `auc_forest` adlı bir
+değişkene kaydet ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın
+üstüne kısa bir yorum satırı ekle.
+Test: AUC 0,5 ile 1 arasında olmalı.
+```
+
+**Beklenen sonuç:** `auc_forest` = 0,904
+
+### Adım 2.3: Nadir bir sonuç
+
+**Amaç.** Hastaların yalnızca yaklaşık 100'de 3'ünde görülen 12 ay içindeki olay için bir model eğitmek ve sınıf ağırlıklarının modelin bulduklarını nasıl değiştirdiğini görmek.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: `registry`, sanal kliniğin 2000 sentetik hastasını ve izlemlerini içeren bir pandas
+DataFrame'idir. Burada kullanılan sütunlar: age (yaş, yıl), egfr (tahmini glomerüler filtrasyon
+hızı, mL/dk/1,73 m²), lvef (sol ventrikül ejeksiyon fraksiyonu, %), ntprobnp (N-terminal pro-B-tipi
+natriüretik peptit, pg/mL), af (atriyal fibrilasyon, 1 evet), diabetes (1 evet), bmi (beden kitle
+indeksi, kg/m²), sbp (sistolik kan basıncı, mm Hg) ve event_12m (hasta izlemin ilk 12 ayında öldüyse
+ya da kalp yetersizliği nedeniyle hastaneye yattıysa 1, yoksa 0).
+Görev: age, egfr, lvef, ntprobnp, af ve diabetes sütunlarından Xe tablosunu kur; ntprobnp yerine
+doğal logaritmasını kullan; ye = registry["event_12m"] olsun. train_test_split(Xe, ye,
+test_size=0.3, stratify=ye, random_state=RANDOM_STATE) ile ayır. make_pipeline(StandardScaler(),
+LogisticRegression(class_weight="balanced", max_iter=1000)) modelini eğitim kümesinde eğit.
+Olasılığı 0,5 ya da daha yüksek olan test hastasını pozitif say ve test kümesinde duyarlılığı TP /
+(TP + FN) ile hesapla.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Duyarlılık, üç ondalığa yuvarlanmış olarak. Sonucu `se_balanced` adlı bir değişkene kaydet ve
+kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın üstüne kısa bir yorum
+satırı ekle.
+Test: Test kümesinde 600 hasta bulunmalı ve bunların 20'sinde olay olmalı. class_weight olmadan aynı
+model 0,5 eşiğinde bunların hiçbirini bulamaz.
+```
+
+**Beklenen sonuç:** `se_balanced` = 0,65
+
+## Durak 3: Alt gruplar, sağkalım ve denetlenecek bir model
+
+*[Ders sayfası: uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-3) · Python yolunda aynı sonuç: 7-9. bölümler*
+
+Kalp yetersizliği olan hastalar ejeksiyon fraksiyonundan daha fazlasıyla birbirinden ayrılır. Bu durakta yönteme cevap söylenmeden alt gruplar aranır ve izlem boyunca sağkalım tahmin edilir. Ardından bir YZ asistanının kusursuz sonuç bildirdiği bir model denetlenir.
+
+### Adım 3.1: Üç küme
+
+**Amaç.** k-ortalamalar yönteminin kalp yetersizliği olan hastalar arasında üç grup bulmasını sağlamak, ardından grupları gizli fenogruplarla karşılaştırmak.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: `hf`, sanal kliniğin kalp yetersizliği olan 407 hastasını (main_diagnosis HFrEF ya da HFpEF)
+içeren bir pandas DataFrame'idir. `HF_FEATURES`, tablonun dokuz sütununu listeler: age, bmi, egfr,
+lvef, ntprobnp, lavi (sol atriyum hacim indeksi, mL/m²), e_e_prime (E/e′ oranı), lv_mass_index (sol
+ventrikül kütle indeksi, g/m²) ve tapse_mm (triküspit anüler düzlem sistolik hareketi, mm).
+hf_phenogroup sütunu, kliniğin verileri üretirken kullandığı gizli fenogrubu tutar.
+Görev: HF_FEATURES'taki dokuz sütunu, ntprobnp yerine doğal logaritmasını koyarak al; StandardScaler
+ile standartlaştır; KMeans(n_clusters=3, n_init=10, random_state=RANDOM_STATE) modelini eğit ve
+etiketlerini hf["hf_phenogroup"] ile adjusted_rand_score kullanarak karşılaştır.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Düzeltilmiş Rand indeksi, üç ondalığa yuvarlanmış olarak. Sonucu `ari` adlı bir değişkene
+kaydet ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın üstüne kısa
+bir yorum satırı ekle.
+Test: Üç küme toplam 407 hasta tutmalı. İndeksin 1 olması tam uyum, 0 olması rastlantısal uyum
+demektir.
+```
+
+**Beklenen sonuç:** `ari` = 0,706
+
+### Adım 3.2: 24. ayda Kaplan-Meier
+
+**Amaç.** HFrEF hastalarının izlemin başlangıcından iki yıl sonra hangi oranda hayatta ve kalp yetersizliği nedeniyle yatış olmadan kaldığını tahmin etmek.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: `hf`, sanal kliniğin kalp yetersizliği olan 407 hastasını (main_diagnosis HFrEF ya da HFpEF)
+içeren bir pandas DataFrame'idir. `HF_FEATURES`, tablonun dokuz sütununu listeler: age, bmi, egfr,
+lvef, ntprobnp, lavi (sol atriyum hacim indeksi, mL/m²), e_e_prime (E/e′ oranı), lv_mass_index (sol
+ventrikül kütle indeksi, g/m²) ve tapse_mm (triküspit anüler düzlem sistolik hareketi, mm).
+hf_phenogroup sütunu, kliniğin verileri üretirken kullandığı gizli fenogrubu tutar. followup_months,
+izlemin başlangıcından ilk olaya ya da izlemin sonuna kadar geçen süredir (ay). event, ölüm ya da
+kalp yetersizliği nedeniyle yatış için 1, izlemden olaysız ayrılan (sansürlenen) hasta için 0'dır.
+Görev: main_diagnosis değeri HFrEF olan hastalar için olaysız sağkalımın Kaplan-Meier tahminini
+NumPy ile hesapla: 1'den başla ve en az bir olayın olduğu her zamanda 1 − d / n ile çarp; d o
+zamandaki olay sayısı, n ise izlem süresi en az o zaman kadar olan hasta sayısıdır. 24. aydaki
+tahmin, 24 ay ya da daha kısa olan son olay zamanından sonraki değerdir.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: 24. aydaki tahmin, üç ondalığa yuvarlanmış olarak. Sonucu `s24_hfref` adlı bir değişkene
+kaydet ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın üstüne kısa
+bir yorum satırı ekle.
+Test: Aynı hesap HFpEF hastaları için 24. ayda daha yüksek bir değer vermeli.
+```
+
+**Beklenen sonuç:** `s24_hfref` = 0,733
+
+### Adım 3.3: Bir asistanın modelini denetlemek
+
+**Amaç.** Bir asistan 12 ay içindeki olay için 1,000 AUC bildirdi. Aynı türden bir modelin dürüst bir değerlendirmede ne verdiğini bulmak.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazdığın kod bir Jupyter defterindeki hücreye
+yapıştırılıp orada çalıştırılacak.
+Bağlam: Bir Jupyter defteri. NumPy np, pandas pd, matplotlib.pyplot plt adıyla içe aktarılmıştır.
+scikit-learn'den şunlar içe aktarılmıştır: train_test_split, StratifiedKFold, cross_val_score,
+make_pipeline, StandardScaler, LogisticRegression, RandomForestClassifier, KMeans, roc_auc_score,
+confusion_matrix ve adjusted_rand_score. RANDOM_STATE = 2026'dır.
+Veri: `registry`, sanal kliniğin 2000 sentetik hastasını ve izlemlerini içeren bir pandas
+DataFrame'idir. Burada kullanılan sütunlar: age (yaş, yıl), egfr (tahmini glomerüler filtrasyon
+hızı, mL/dk/1,73 m²), lvef (sol ventrikül ejeksiyon fraksiyonu, %), ntprobnp (N-terminal pro-B-tipi
+natriüretik peptit, pg/mL), af (atriyal fibrilasyon, 1 evet), diabetes (1 evet), bmi (beden kitle
+indeksi, kg/m²), sbp (sistolik kan basıncı, mm Hg) ve event_12m (hasta izlemin ilk 12 ayında öldüyse
+ya da kalp yetersizliği nedeniyle hastaneye yattıysa 1, yoksa 0). Asistanın modeli, yalnızca
+izlemden sonra bilinen followup_months değişkenini de kullanmış ve AUC değerini eğitildiği
+hastaların kendisinde ölçmüştür.
+Görev: followup_months değişkenini çıkar. RandomForestClassifier(n_estimators=200,
+min_samples_leaf=5, random_state=RANDOM_STATE) modelini age, egfr, lvef, ntprobnp, af, diabetes, bmi
+ve sbp sütunlarında cross_val_score(..., cv=StratifiedKFold(5, shuffle=True,
+random_state=RANDOM_STATE), scoring="roc_auc") ile değerlendir ve ortalama AUC değerini al.
+Kısıtlar: Yalnızca burada adı geçen paketleri ve değişkenleri kullan. Dosya okuma, bir şey indirme
+ve paket kurma.
+Çıktı: Ortalama AUC, üç ondalığa yuvarlanmış olarak. Sonucu `auc_review` adlı bir değişkene kaydet
+ve kısa bir etiketle yazdır. Yalnızca kodu, tek bir blok hâlinde ver; her adımın üstüne kısa bir
+yorum satırı ekle.
+Test: AUC, 1,000'in belirgin biçimde altında olmalı.
+```
+
+**Beklenen sonuç:** `auc_review` = 0,849
+
+## Kodu onarmak, açıklatmak ve denetlemek için promptlar
+
+Bu promptlar her adımın koduyla kullanılabilir. Köşeli parantez içindeki yerler, prompt gönderilmeden önce doldurulur.
+
+### Çalışan ama kontrolden geçmeyen kodu onarmak
+
+```text
+Aşağıdaki kod şu görev için yazıldı: [promptun Görev satırını yapıştırın]. Kod çalışıyor, ancak
+dersin kontrolü "henüz değil" yazıyor. Hatayı bul, iki cümleyle açıkla ve düzeltilmiş kodu ver.
+Sonucu tutan değişkenin adını koru.
+
+[kodu buraya yapıştırın]
+```
+
+### Bir hata mesajını anlamak
+
+```text
+Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
+
+[kodu buraya yapıştırın]
+
+[hata mesajını buraya yapıştırın]
+```
 
 ### Kodu açıklatmak
 
@@ -540,27 +347,6 @@ Aşağıdaki Python kodunu, Python'a yeni başlayan bir hekim için satır satı
 hata mesajı vermeden yanlış sonuç döndürebileceği iki durumu belirt.
 
 [kodu buraya yapıştırın]
-```
-
-### Denetimden geçmeyen kodu onarmak
-
-```text
-Aşağıdaki kod şu görev için yazıldı: [promptun Görev satırını yapıştırın]. Kod çalışıyor, ancak
-teach.check satırı "henüz değil" yazıyor. Hatayı bul, iki cümleyle açıkla ve düzeltilmiş kodu ver.
-Değişken adlarını ve teach.check satırını koru.
-
-[kodu buraya yapıştırın]
-```
-
-### Bir hata mesajını anlamak
-
-```text
-Aşağıdaki hücre bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor.
-Hatanın nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
-
-[kodu buraya yapıştırın]
-
-[hata mesajını buraya yapıştırın]
 ```
 
 ### Model denetimi istemek

@@ -17,21 +17,32 @@ Sıfırdan Python, pandas ile hasta tabloları, veri olarak elektrokardiyogram (
 
 Oturumda 4 saat, haftalık proje için yaklaşık 3 saat.
 
+## Haftanın rotası
+
+Ders sayfası haftanın ana rotasıdır. Kod ya da prompt (istem) içermez ve etkileşimli labla birlikte yukarıdan aşağıya okunur. Her uygulama durağında her katılımcı Jupyter defterindeki iki yoldan birini seçer: Kodu hazır promptlarla bir yapay zekâ (YZ) asistanının yazdığı, katılımcının ise çalıştırıp denetlediği **prompt yolu** (Kısım 1) ya da kodu katılımcının yazdığı **Python yolu** (Kısım 2). İki yol da aynı sonuçlara varır. Defter, kurulum gerektirmeyen Google Colab'da da kendi bilgisayarınızdaki Jupyter'de de çalışır ([kurulum](../../SETUP.tr.md)).
+
+|  | Ana rota: ders sayfası ve etkileşimli lab | Uygulama durağı: yolunuzu seçin |
+|---|---|---|
+| 1 | [Uygulamanın iki yolu: Prompt ve Python](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#two-paths-of-practice), [Sanal kardiyoloji kliniği, eğitimin projesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#the-virtual-cardiology-clinic-the-project-of-the-course), [pandas ile hasta tabloları](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#patient-tables-with-pandas) | **[Durak 1: Hasta tabloları](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-1)**<br>Prompt yolu: Kısım 1, Durak 1<br>Python yolu: Kısım 2, Python adımı 1, 1. ve 2. bölümler |
+| 2 | [Veri olarak EKG](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#the-ecg-as-data), [Bir vektör olarak kalp: On iki derivasyon, tek kaynak](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#the-heart-as-a-vector-twelve-leads-one-source), [Aralıklar: PR, QRS ve QT](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#intervals-pr-qrs-and-qt), [QT'nin kalp hızına göre düzeltilmesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#correcting-the-qt-for-heart-rate) | **[Durak 2: Veri olarak EKG](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-2)**<br>Prompt yolu: Kısım 1, Durak 2<br>Python yolu: Kısım 2, 3-5. bölümler |
+| 3 | [Her atımı bulmak: R tepesi tespiti](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#finding-every-beat-r-peak-detection), [Kalp hızı değişkenliği](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#heart-rate-variability), [Gerçek veri: PhysioNet kayıtları](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#real-data-physionet-records), [YZ asistanıyla çalışmak, 1. bölüm: Kod güvenlik kontrol listesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#ai-pair-programming-part-1-the-code-safety-checklist) | **[Durak 3: Gerçek kayıtlar ve denetlenecek bir fonksiyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-3)**<br>Prompt yolu: Kısım 1, Durak 3<br>Python yolu: Kısım 2, 6-9. bölümler |
+|  | [Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#the-paper-of-the-week), [Sanal klinik, 1. aşama: Klinik açılıyor](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#the-virtual-clinic-stage-1-the-clinic-opens) | Kendi verinizle bölümü, haftanın makalesi ve sanal klinik |
+
 ## Malzemeler
 
 | Malzeme | Aç | İçeriği |
 |---|---|---|
-| **Ders sayfası** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html) | Kavramlar, çözümlü örnekleriyle formüller, kalp döngüsünün üç boyutlu (3B) sahnesi, iki animasyon, bilgi kontrolleri, tekrar kartları ve kaynaklar |
-| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/lab.html) | A-F bölümleri, öz değerlendirme, yansıtma ve dışa aktarılan öğrenme günlüğü. F bölümü, YZ asistanına prompt (istem) yazma atölyesidir. |
-| **Jupyter defteri** | [NB01_python_ve_ekg_temelleri.ipynb](NB01_python_ve_ekg_temelleri.ipynb)<br>[![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb) (yedek yol) | Python adımı 1, A-J alıştırmalarıyla 0-10. bölümler, her alıştırmanın altında bir prompt yolu, her bölümün sonunda bir prompt görevi, uygulama anahtarı ve dört alanın görevleri |
-| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Haftanın prompt kartıyla yazılmış bütün promptları: 13 alıştırma, 9 prompt görevi, kodu açıklatmak ve onarmak için 4 kalıp ve haftalık projenin prompt yolu |
-| **PDF ders notu** | [Hafta01_Ders_Notlari.pdf](Hafta01_Ders_Notlari.pdf) | Python adımı 1 ve dersin tamamı, yazdırmaya hazır |
+| **Ders sayfası (ana rota)** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html) | Vaka, uygulamanın iki yolu, çözümlü örnekleriyle kavramlar, kalp döngüsünün üç boyutlu (3B) sahnesi, iki animasyon, bilgi kontrolleri, üç uygulama durağı, kendi verinizle bölümü, tekrar kartları ve kaynaklar. Kod ve prompt içermez. |
+| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/lab.html) | F bölümündeki prompt atölyesi dâhil kod gerektirmeyen A-F bölümleri, öz değerlendirme, yansıtma ve dışa aktarılabilen öğrenme günlüğü |
+| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb)<br>[Jupyter için indir](NB01_python_ve_ekg_temelleri.ipynb) | Kısım 1, prompt yolu: her biri hazır bir prompt, YZ asistanının kodu için bir hücre, otomatik bir kontrol ve hazır kod içeren on adımlı üç durak. Kısım 2, Python yolu: Python adımı 1, A-J alıştırmalarıyla 1-10. bölümler, bir uygulama anahtarı ve dört alanın uygulama görevleri. |
+| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun bütün promptları (GitHub'da her birinin yanında kopyalama düğmesi bulunur), kodu onarmak için promptlar ve haftalık projenin prompt yolu |
+| **PDF ders notu** | [Hafta01_Ders_Notlari.pdf](Hafta01_Ders_Notlari.pdf) | Uygulama duraklarıyla ve kendi verinizle bölümüyle birlikte ders sayfasının yazdırılabilir biçimi |
 
 <table>
-<tr><td width="50%"><img src="ekran-goruntuleri/lab_b_bolumu_kalp_vektoru.png" alt="Etkileşimli lab, B bölümü: VC-0317'nin kalp vektörü 3B bir gövdenin içinde ve on iki derivasyondaki izdüşümleri." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_12_derivasyonlu_ekg.png" alt="Jupyter defteri, 4. bölüm: VC-0317'nin teach.plot_12lead ile çizilen 12 derivasyonlu EKG'si." width="100%"></td></tr>
-<tr><td>Etkileşimli lab, B bölümü: VC-0317'nin kalp vektörü 3B bir gövdenin içinde ve on iki derivasyondaki izdüşümleri.</td><td>Jupyter defteri, 4. bölüm: VC-0317'nin teach.plot_12lead ile çizilen 12 derivasyonlu EKG'si.</td></tr>
-<tr><td width="50%"><img src="ekran-goruntuleri/lab_f_bolumu_prompt_atolyesi.png" alt="Etkileşimli lab, F bölümü: prompt kartının yedi alanı, bir nitelik göstergesi ve bir mahremiyet denetimiyle prompt atölyesi." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_prompt_yolu.png" alt="Jupyter defteri, prompt yolunda Alıştırma G: prompt yolu, bir YZ asistanının kodu ve eğitimin denetimi." width="100%"></td></tr>
-<tr><td>Etkileşimli lab, F bölümü: prompt kartının yedi alanı, bir nitelik göstergesi ve bir mahremiyet denetimiyle prompt atölyesi.</td><td>Jupyter defteri, prompt yolunda Alıştırma G: prompt yolu, bir YZ asistanının kodu ve eğitimin denetimi.</td></tr>
+<tr><td width="50%"><img src="ekran-goruntuleri/lab_b_bolumu_kalp_vektoru.png" alt="Etkileşimli lab, B bölümü: VC-0317'nin kalp vektörü 3B bir gövdenin içinde ve on iki derivasyondaki izdüşümleri." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_12_derivasyonlu_ekg.png" alt="Jupyter defteri, Python yolu, 4. bölüm: VC-0317'nin 12 derivasyonlu EKG'si." width="100%"></td></tr>
+<tr><td>Etkileşimli lab, B bölümü: VC-0317'nin kalp vektörü 3B bir gövdenin içinde ve on iki derivasyondaki izdüşümleri.</td><td>Jupyter defteri, Python yolu, 4. bölüm: VC-0317'nin 12 derivasyonlu EKG'si.</td></tr>
+<tr><td width="50%"><img src="ekran-goruntuleri/lab_f_bolumu_prompt_atolyesi.png" alt="Etkileşimli lab, F bölümü: prompt kartının yedi alanı, bir nitelik göstergesi ve bir mahremiyet denetimiyle prompt atölyesi." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_prompt_yolu.png" alt="Jupyter defteri, prompt yolu, 2. durak: hazır bir prompt, bir YZ asistanının kodu ve eğitimin kontrolü." width="100%"></td></tr>
+<tr><td>Etkileşimli lab, F bölümü: prompt kartının yedi alanı, bir nitelik göstergesi ve bir mahremiyet denetimiyle prompt atölyesi.</td><td>Jupyter defteri, prompt yolu, 2. durak: hazır bir prompt, bir YZ asistanının kodu ve eğitimin kontrolü.</td></tr>
 </table>
 
 ## Haftanın vakası
@@ -44,18 +55,20 @@ Hafta sonunda katılımcıların bir klinik tabloyu pandas ile yükleyip ortalam
 
 ## Çalışma yolu
 
-Oturuma katılanlar 1-5. adımları oturumda tamamlar. Haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar, aşağıdaki sürelerle plan yapabilir: 1-7. adımlar için yaklaşık 6 saat 35 dakika, haftalık proje için yaklaşık 3 saat. [Prompt yolunu](../../PROMPT_PATH.tr.md) izleyenler 2. ve 4. adımlarda alıştırmaların altındaki prompt yollarını ve bölümlerin prompt görevlerini kullanır; haftanın bütün promptları [prompt kütüphanesindedir](PROMPTLAR.md). Süreler bu yolda da yaklaşık olarak aynıdır.
+Oturuma katılanlar ana rotayı ve uygulama duraklarını oturumda tamamlar. Haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar, aşağıdaki sürelerle plan yapabilir.
 
-| Adım | Etkinlik | Süre |
-|---|---|---|
-| 1 | Haftanın vakasını ve ders sayfasını okuyun, bilgi kontrollerini cevaplayın | 1 saat 15 dakika |
-| 2 | Jupyter defterinde Bölüm 0'ın hemen ardından gelen Python adımı 1'i çalıştırın | 45 dakika |
-| 3 | Etkileşimli labın A-F bölümlerini tamamlayın | 1 saat 15 dakika |
-| 4 | Jupyter defterinin 1-9. bölümlerini tamamlayın ve alıştırmaları çözün | 2 saat |
-| 5 | 10. bölümdeki uygulama anahtarını kullanın ve kendi alanınızın görevini çözün | 30 dakika |
-| 6 | Haftanın makalesini üç soruyla birlikte okuyun | 30 dakika |
-| 7 | Etkileşimli labda öz değerlendirmeyi yapın (sekme: Kendini sına), yansıtmayı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika |
-| 8 | Haftalık projeyi tamamlayın | 3 saat |
+| Adım | Etkinlik | Prompt yolu | Python yolu |
+|---|---|---|---|
+| 1 | Haftanın vakasını ve ders sayfasını, uygulamanın iki yolu ve sanal klinik dâhil, 1. uygulama durağına kadar okuyun | 40 dakika | 40 dakika |
+| 2 | 1. uygulama durağı: Prompt yolunda Kısım 1, Durak 1; Python yolunda Python adımı 1 ile 1. ve 2. bölümler | 30 dakika | 1 saat 15 dakika |
+| 3 | 2. uygulama durağına kadar okumayı sürdürün; etkileşimli labın A-C bölümlerini ve bilgi kontrollerini yapın | 1 saat | 1 saat |
+| 4 | 2. uygulama durağı: Kısım 1, Durak 2 ya da 3-5. bölümler | 30 dakika | 1 saat |
+| 5 | 3. uygulama durağına kadar okumayı sürdürün; etkileşimli labın D-F bölümlerini yapın | 45 dakika | 45 dakika |
+| 6 | 3. uygulama durağı: Kısım 1, Durak 3 ya da 6-9. bölümler | 35 dakika | 1 saat |
+| 7 | Haftanın makalesini, sanal kliniğin aşamasını ve kendi verinizle bölümünü okuyun | 30 dakika | 30 dakika |
+| 8 | Etkileşimli labdaki öz değerlendirmeyi yapın (sekme: Kendini sına), yansıtmayı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
+| | **Haftalık proje dışında toplam** | **4 saat 50 dakika** | **6 saat 30 dakika** |
+| 9 | Haftalık projeyi iki yoldan biriyle tamamlayın | 3 saat | 3 saat |
 
 ## Oturumun eğitim akışı
 
@@ -63,13 +76,13 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 
 | Süre | Etkinlik |
 |---|---|
-| 0:00-0:15 | Haftanın vakası. Katılımcılar Jupyter defterini açar ve Bölüm 0'ı çalıştırır. |
-| 0:15-1:00 | Eşli çalışmayla Python adımı 1: kod yazan ve yazmayan birer katılımcı. İkinci katılımcı alıştırmaları prompt yolundan çözebilir. |
-| 1:00-1:45 | Mini proje: pandas ile hasta tabloları (Bölüm 1) ve sanal kliniğin açılışı (Bölüm 2). |
-| 1:45-2:00 | Ara. |
-| 2:00-2:45 | Veri olarak EKG ve kalp vektörü: ders, 3B sahne, etkileşimli labın A ve B bölümleri, Bölüm 3 ve 4. |
-| 2:45-3:30 | Dijital kumpasla aralıklar ve QT düzeltmesi (C bölümü) ve Bölüm 5; atım tespiti ve kalp hızı değişkenliği (Bölüm 6 ve 7). |
-| 3:30-4:00 | Gerçek bir 12 derivasyonlu EKG (Bölüm 8), YZ ile eşli kodlama ve prompt atölyesi (Bölüm 9, E ve F bölümleri), haftanın makalesi ve haftalık proje. |
+| 0:00-0:20 | Haftanın vakası VC-0317 ve eğitimin rotası: ana rota olarak ders sayfası, uygulamanın iki yolu ve sanal klinik. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. |
+| 0:20-1:00 | Ana rota: hasta tabloları. İki grupta 1. uygulama durağı: prompt yolu ve Python yolu; Python grubu Python adımı 1 ile başlar. |
+| 1:00-1:50 | Ana rota: veri olarak EKG, etkileşimli labın A ve B bölümleriyle tek kalp vektöründen on iki derivasyon, C bölümüyle aralıklar ve QT düzeltmesi. 2. uygulama durağı. |
+| 1:50-2:05 | Ara. |
+| 2:05-3:05 | Ana rota: her atımı bulmak, D bölümüyle kalp hızı değişkenliği, gerçek PhysioNet kayıtları ve E ile F bölümleriyle kod güvenlik kontrol listesi. 3. uygulama durağı. |
+| 3:05-3:40 | Haftanın makalesi, sanal kliniğin ilk aşaması ve kendi verinizle bölümü. |
+| 3:40-4:00 | Haftalık proje ve sorular. |
 
 ## Haftalık proje
 
@@ -84,6 +97,10 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 **Ne teslim edilecek?** [Rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılmış, bir-iki sayfalık bir rapor: on hastanızın tablosu, iki gerçek kaydın sonuçları ve iki QT düzeltmesinin tartışması. Rapora YZ kullanım günlüğünü (araç, prompt, neyin denetlendiği, neyin değiştirildiği) ve 1. hafta alıştırmaları tamamlanmış Jupyter defterini ekleyin.
 
 **Teslim.** Haftalık proje, 2. haftanın oturumundan önce utkukose@sdu.edu.tr ya da utkukose@gmail.com adresine e-postayla gönderilir. E-postaya "Ne teslim edilecek?" başlığında sayılan öğeler ve etkileşimli labdan dışa aktarılan öğrenme günlüğü eklenir. Haftalık projeler değerlendirmenin yüzde 40'ını oluşturur ve sertifika için her birinden en az yüzde 70 almak gerekir (izlenceye bakın).
+
+## Kendi verinizle
+
+Ders sayfası, haftanın yöntemlerini kendi verinize uygulamayı anlatan bir bölümle biter: hangi sorunun hangi yönteme uyduğu, önce neyin denetleneceği, etik kurul onayı, Kişisel Verilerin Korunması Kanunu (KVKK) ve hesabın nerede yapılacağı. [Ders sayfasında okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#with-your-own-data).
 
 ## İsteğe bağlı araştırma ödevi
 
