@@ -36,7 +36,7 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 |---|---|---|
 | **Lecture page (main route)** | [Open the lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html) | The case, the concepts with worked examples, a three-dimensional (3D) scene inside the network, two animations, knowledge checks, three practice stops, the section on your own data, review cards and references. No code and no prompts. |
 | **Interactive lab** | [Open the interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lab.html) | Parts A to F without code, including the prompt workshop of Part F, a self-assessment, a reflection and the learning log to export |
-| **Jupyter notebook** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/NB03_deep_learning_and_cnns.ipynb)<br>[Download for Jupyter](NB03_deep_learning_and_cnns.ipynb) | Part 1, the prompt path: three stops with ten steps, each with a ready prompt, a cell for the code of the AI assistant, an automatic check and ready code. Part 2, the Python path: Python step 3, Sections 1 to 10 with Exercises A to J and the challenges of seven fields. |
+| **Jupyter notebook** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/NB03_deep_learning_and_cnns.ipynb)<br>[Download for Jupyter](NB03_deep_learning_and_cnns.ipynb) | Part 1, the prompt path: three stops with ten steps, each with a ready prompt, a data cell for its table, a cell for the code of the AI assistant, an automatic check and ready code, and the weekly project in four prompts. Part 2, the Python path: Python step 3, Sections 1 to 10 with Exercises A to J and the challenges of seven fields. |
 | **Prompt library** | [PROMPTS.md](PROMPTS.md) | All prompts of the prompt path with a copy button on GitHub, the prompts for repairing code and the prompt path of the weekly project |
 | **PDF notes** | [Week03_Lecture_Notes.pdf](Week03_Lecture_Notes.pdf) | The lecture page in print form, with its practice stops and the section on your own data |
 
@@ -93,7 +93,7 @@ The four-hour session of the week follows the plan below. It is shared to show h
 
 **Where to look.** Lecture: sections "Images as arrays: Cine cardiac MR of ACDC", "A convolutional network for cine MR", "Overfitting: Dropout, batch normalisation and augmentation" and "Reading the result: Precision, recall and F1". Interactive lab: Parts C, D and F. Jupyter notebook: Part 1, Stops 1 and 2, or Part 2, Sections 3, 5, 6 and 7.
 
-**Prompt path.** The project can also be built with four prompts, one for each step, from the [prompt library](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/PROMPTS.md#prompt-path-of-the-weekly-project). The test of each prompt must hold before the next prompt is used.
+**Prompt path.** The project can also be built with four prompts, one for each step, from the [prompt library](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/PROMPTS.md#prompt-path-of-the-weekly-project). The section "Weekly project on the prompt path" at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The test of each prompt must hold before the next prompt is used.
 
 **Example.** Suppose the network calls 12 test patients normal, 10 of them rightly, and misses 2 of the 10 patients with HCM: For the class normal, $TP = 10$, $FP = 2$, $FN = 0$. Its precision is $10/12 = 0.833$ and its recall $10/10 = 1.000$. Its F1 is $2TP/(2TP + FP + FN)$, here $20/22 = 0.909$. The macro F1 is the plain mean of the F1 of the three classes.
 
@@ -115,7 +115,7 @@ In Week 3 the virtual clinic opens its imaging laboratory, which reads public im
 
 ## Next week
 
-**Week 4: Transfer learning.** The imaging laboratory starts to measure: a network pretrained on ImageNet, EfficientNet-B0, is adapted to cardiac images from few labelled examples, a U-Net outlines the left ventricle on the echocardiograms of CAMUS, and the ejection fraction is computed from the outlines with the method of discs. See the [plan of the course](../../README.md#the-eleven-weeks).
+**Week 4: Transfer learning.** The imaging laboratory starts to measure: A network pretrained on ImageNet, EfficientNet-B0, is adapted to cardiac images from few labelled examples, a U-Net outlines the left ventricle on the echocardiograms of CAMUS, and the ejection fraction is computed from the outlines with the method of discs. See the [plan of the course](../../README.md#the-eleven-weeks).
 
 ---
 
