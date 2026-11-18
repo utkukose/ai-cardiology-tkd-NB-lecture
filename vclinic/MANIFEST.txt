@@ -6,7 +6,6 @@ datasets.py
 ecg.py
 echonet.py
 followup.py
-imaging.py
 measure.py
 nifti.py
 physionet.py

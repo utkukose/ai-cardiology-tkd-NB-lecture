@@ -11,6 +11,5 @@ from .ecg import (LEADS, LEAD_VECTORS, LEAD_MATRIX, ECG, simulate, project,
                   direction, frontal_axis)
 from .cohort import make_cohort, patient_ecg, ecg_params, TRUE_EFFECTS
 from .followup import add_followup, PHENOGROUPS
-from .imaging import echo_images, make_cmr_set, ECHO_CLASSES, CMR_CLASSES
 
-__version__ = "1.5.0"
+__version__ = "1.5.1"
