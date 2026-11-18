@@ -1,5 +1,99 @@
 [
   {
+    "key": "alzaiti2023",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Al-Zaiti",
+        "given": "S. S."
+      },
+      {
+        "family": "Martin-Gill",
+        "given": "C."
+      },
+      {
+        "family": "Zègre-Hemsey",
+        "given": "J. K."
+      },
+      {
+        "family": "Bouzid",
+        "given": "Z."
+      },
+      {
+        "family": "Faramand",
+        "given": "Z."
+      },
+      {
+        "family": "Alrawashdeh",
+        "given": "M. O."
+      },
+      {
+        "family": "Gregg",
+        "given": "R. E."
+      },
+      {
+        "family": "Helman",
+        "given": "S."
+      },
+      {
+        "family": "Riek",
+        "given": "N. T."
+      },
+      {
+        "family": "Kraevsky-Phillips",
+        "given": "K."
+      },
+      {
+        "family": "Clermont",
+        "given": "G."
+      },
+      {
+        "family": "Akcakaya",
+        "given": "M."
+      },
+      {
+        "family": "Sereika",
+        "given": "S. M."
+      },
+      {
+        "family": "Van Dam",
+        "given": "P."
+      },
+      {
+        "family": "Smith",
+        "given": "S. W."
+      },
+      {
+        "family": "Birnbaum",
+        "given": "Y."
+      },
+      {
+        "family": "Saba",
+        "given": "S."
+      },
+      {
+        "family": "Sejdic",
+        "given": "E."
+      },
+      {
+        "family": "Callaway",
+        "given": "C. W."
+      }
+    ],
+    "year": "2023",
+    "title": "Machine learning for ECG diagnosis and risk stratification of occlusion myocardial infarction",
+    "container": "Nature Medicine",
+    "volume": "29",
+    "issue": "7",
+    "pages": "1804–1813",
+    "doi": "10.1038/s41591-023-02396-3",
+    "url": "https://doi.org/10.1038/s41591-023-02396-3",
+    "apa": "Al-Zaiti, S. S., Martin-Gill, C., Zègre-Hemsey, J. K., Bouzid, Z., Faramand, Z., Alrawashdeh, M. O., Gregg, R. E., Helman, S., Riek, N. T., Kraevsky-Phillips, K., Clermont, G., Akcakaya, M., Sereika, S. M., Van Dam, P., Smith, S. W., Birnbaum, Y., Saba, S., Sejdic, E., & Callaway, C. W. (2023). Machine learning for ECG diagnosis and risk stratification of occlusion myocardial infarction. *Nature Medicine, 29*(7), 1804–1813. https://doi.org/10.1038/s41591-023-02396-3",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "arbelo2023",
     "type": "article",
     "authors": [
@@ -519,6 +613,52 @@
     ]
   },
   {
+    "key": "cho2014",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Cho",
+        "given": "K."
+      },
+      {
+        "family": "van Merriënboer",
+        "given": "B."
+      },
+      {
+        "family": "Gulcehre",
+        "given": "C."
+      },
+      {
+        "family": "Bahdanau",
+        "given": "D."
+      },
+      {
+        "family": "Bougares",
+        "given": "F."
+      },
+      {
+        "family": "Schwenk",
+        "given": "H."
+      },
+      {
+        "family": "Bengio",
+        "given": "Y."
+      }
+    ],
+    "year": "2014",
+    "title": "Learning phrase representations using RNN encoder–decoder for statistical machine translation",
+    "container": "Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    "volume": "",
+    "issue": "",
+    "pages": "1724–1734",
+    "doi": "10.3115/v1/D14-1179",
+    "url": "https://doi.org/10.3115/v1/D14-1179",
+    "apa": "Cho, K., van Merriënboer, B., Gulcehre, C., Bahdanau, D., Bougares, F., Schwenk, H., & Bengio, Y. (2014). Learning phrase representations using RNN encoder–decoder for statistical machine translation. In *Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)* (pp. 1724–1734). https://doi.org/10.3115/v1/D14-1179",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "collins2024",
     "type": "article",
     "authors": [
@@ -769,6 +909,60 @@
     ]
   },
   {
+    "key": "drew2010",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Drew",
+        "given": "B. J."
+      },
+      {
+        "family": "Ackerman",
+        "given": "M. J."
+      },
+      {
+        "family": "Funk",
+        "given": "M."
+      },
+      {
+        "family": "Gibler",
+        "given": "W. B."
+      },
+      {
+        "family": "Kligfield",
+        "given": "P."
+      },
+      {
+        "family": "Menon",
+        "given": "V."
+      },
+      {
+        "family": "Philippides",
+        "given": "G. J."
+      },
+      {
+        "family": "Roden",
+        "given": "D. M."
+      },
+      {
+        "family": "Zareba",
+        "given": "W."
+      }
+    ],
+    "year": "2010",
+    "title": "Prevention of torsade de pointes in hospital settings: A scientific statement from the American Heart Association and the American College of Cardiology Foundation",
+    "container": "Circulation",
+    "volume": "121",
+    "issue": "8",
+    "pages": "1047–1060",
+    "doi": "10.1161/CIRCULATIONAHA.109.192704",
+    "url": "https://doi.org/10.1161/CIRCULATIONAHA.109.192704",
+    "apa": "Drew, B. J., Ackerman, M. J., Funk, M., Gibler, W. B., Kligfield, P., Menon, V., Philippides, G. J., Roden, D. M., & Zareba, W. (2010). Prevention of torsade de pointes in hospital settings: A scientific statement from the American Heart Association and the American College of Cardiology Foundation. *Circulation, 121*(8), 1047–1060. https://doi.org/10.1161/CIRCULATIONAHA.109.192704",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "fridericia1920",
     "type": "article",
     "authors": [
@@ -788,6 +982,80 @@
     "apa": "Fridericia, L. S. (1920). Die Systolendauer im Elektrokardiogramm bei normalen Menschen und bei Herzkranken. *Acta Medica Scandinavica, 53*(1), 469–486. https://doi.org/10.1111/j.0954-6820.1920.tb18266.x",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "giudicessi2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Giudicessi",
+        "given": "J. R."
+      },
+      {
+        "family": "Schram",
+        "given": "M."
+      },
+      {
+        "family": "Bos",
+        "given": "J. M."
+      },
+      {
+        "family": "Galloway",
+        "given": "C. D."
+      },
+      {
+        "family": "Shreibati",
+        "given": "J. B."
+      },
+      {
+        "family": "Johnson",
+        "given": "P. W."
+      },
+      {
+        "family": "Carter",
+        "given": "R. E."
+      },
+      {
+        "family": "Disrud",
+        "given": "L. W."
+      },
+      {
+        "family": "Kleiman",
+        "given": "R."
+      },
+      {
+        "family": "Attia",
+        "given": "Z. I."
+      },
+      {
+        "family": "Noseworthy",
+        "given": "P. A."
+      },
+      {
+        "family": "Friedman",
+        "given": "P. A."
+      },
+      {
+        "family": "Albert",
+        "given": "D. E."
+      },
+      {
+        "family": "Ackerman",
+        "given": "M. J."
+      }
+    ],
+    "year": "2021",
+    "title": "Artificial intelligence-enabled assessment of the heart rate corrected QT interval using a mobile electrocardiogram device",
+    "container": "Circulation",
+    "volume": "143",
+    "issue": "13",
+    "pages": "1274–1286",
+    "doi": "10.1161/CIRCULATIONAHA.120.050231",
+    "url": "https://doi.org/10.1161/CIRCULATIONAHA.120.050231",
+    "apa": "Giudicessi, J. R., Schram, M., Bos, J. M., Galloway, C. D., Shreibati, J. B., Johnson, P. W., Carter, R. E., Disrud, L. W., Kleiman, R., Attia, Z. I., Noseworthy, P. A., Friedman, P. A., Albert, D. E., & Ackerman, M. J. (2021). Artificial intelligence-enabled assessment of the heart rate corrected QT interval using a mobile electrocardiogram device. *Circulation, 143*(13), 1274–1286. https://doi.org/10.1161/CIRCULATIONAHA.120.050231",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1182,6 +1450,32 @@
     "apa": "He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)* (pp. 770–778). https://doi.org/10.1109/CVPR.2016.90",
     "used_in": [
       "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "hochreiter1997",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Hochreiter",
+        "given": "S."
+      },
+      {
+        "family": "Schmidhuber",
+        "given": "J."
+      }
+    ],
+    "year": "1997",
+    "title": "Long short-term memory",
+    "container": "Neural Computation",
+    "volume": "9",
+    "issue": "8",
+    "pages": "1735–1780",
+    "doi": "10.1162/neco.1997.9.8.1735",
+    "url": "https://doi.org/10.1162/neco.1997.9.8.1735",
+    "apa": "Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. *Neural Computation, 9*(8), 1735–1780. https://doi.org/10.1162/neco.1997.9.8.1735",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2488,6 +2782,36 @@
     ]
   },
   {
+    "key": "muehlematter2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Muehlematter",
+        "given": "U. J."
+      },
+      {
+        "family": "Daniore",
+        "given": "P."
+      },
+      {
+        "family": "Vokinger",
+        "given": "K. N."
+      }
+    ],
+    "year": "2021",
+    "title": "Approval of artificial intelligence and machine learning-based medical devices in the USA and Europe (2015–20): A comparative analysis",
+    "container": "The Lancet Digital Health",
+    "volume": "3",
+    "issue": "3",
+    "pages": "e195–e203",
+    "doi": "10.1016/S2589-7500(20)30292-2",
+    "url": "https://doi.org/10.1016/S2589-7500(20)30292-2",
+    "apa": "Muehlematter, U. J., Daniore, P., & Vokinger, K. N. (2021). Approval of artificial intelligence and machine learning-based medical devices in the USA and Europe (2015–20): A comparative analysis. *The Lancet Digital Health, 3*(3), e195–e203. https://doi.org/10.1016/S2589-7500(20)30292-2",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "ouyang2020",
     "type": "article",
     "authors": [
@@ -2760,6 +3084,115 @@
     ]
   },
   {
+    "key": "perez2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Perez",
+        "given": "M. V."
+      },
+      {
+        "family": "Mahaffey",
+        "given": "K. W."
+      },
+      {
+        "family": "Hedlin",
+        "given": "H."
+      },
+      {
+        "family": "Rumsfeld",
+        "given": "J. S."
+      },
+      {
+        "family": "Garcia",
+        "given": "A."
+      },
+      {
+        "family": "Ferris",
+        "given": "T."
+      },
+      {
+        "family": "Balasubramanian",
+        "given": "V."
+      },
+      {
+        "family": "Russo",
+        "given": "A. M."
+      },
+      {
+        "family": "Rajmane",
+        "given": "A."
+      },
+      {
+        "family": "Cheung",
+        "given": "L."
+      },
+      {
+        "family": "Hung",
+        "given": "G."
+      },
+      {
+        "family": "Lee",
+        "given": "J."
+      },
+      {
+        "family": "Kowey",
+        "given": "P."
+      },
+      {
+        "family": "Talati",
+        "given": "N."
+      },
+      {
+        "family": "Nag",
+        "given": "D."
+      },
+      {
+        "family": "Gummidipundi",
+        "given": "S. E."
+      },
+      {
+        "family": "Beatty",
+        "given": "A."
+      },
+      {
+        "family": "Hills",
+        "given": "M. T."
+      },
+      {
+        "family": "Desai",
+        "given": "S."
+      },
+      {
+        "family": "Granger",
+        "given": "C. B."
+      },
+      {
+        "family": "Desai",
+        "given": "M."
+      },
+      {
+        "family": "Turakhia",
+        "given": "M. P."
+      },
+      {
+        "literal": "Apple Heart Study Investigators"
+      }
+    ],
+    "year": "2019",
+    "title": "Large-scale assessment of a smartwatch to identify atrial fibrillation",
+    "container": "New England Journal of Medicine",
+    "volume": "381",
+    "issue": "20",
+    "pages": "1909–1917",
+    "doi": "10.1056/NEJMoa1901183",
+    "url": "https://doi.org/10.1056/NEJMoa1901183",
+    "apa": "Perez, M. V., Mahaffey, K. W., Hedlin, H., Rumsfeld, J. S., Garcia, A., Ferris, T., Balasubramanian, V., Russo, A. M., Rajmane, A., Cheung, L., Hung, G., Lee, J., Kowey, P., Talati, N., Nag, D., Gummidipundi, S. E., Beatty, A., Hills, M. T., Desai, S., Granger, C. B., Desai, M., Turakhia, M. P., & Apple Heart Study Investigators. (2019). Large-scale assessment of a smartwatch to identify atrial fibrillation. *New England Journal of Medicine, 381*(20), 1909–1917. https://doi.org/10.1056/NEJMoa1901183",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "raghu2019",
     "type": "proceedings",
     "authors": [
@@ -2821,6 +3254,95 @@
     "apa": "Rautaharju, P. M., Surawicz, B., & Gettes, L. S. (2009). AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: Part IV: The ST segment, T and U waves, and the QT interval: A scientific statement from the American Heart Association Electrocardiography and Arrhythmias Committee, Council on Clinical Cardiology; the American College of Cardiology Foundation; and the Heart Rhythm Society. Endorsed by the International Society for Computerized Electrocardiology. *Circulation, 119*(10), e241–e250. https://doi.org/10.1161/CIRCULATIONAHA.108.191096",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "eu2017mdr",
+    "type": "law",
+    "authors": [
+      {
+        "literal": "Regulation (EU) 2017/745 of the European Parliament and of the Council of 5 April 2017 on medical devices"
+      }
+    ],
+    "year": "2017",
+    "title": "",
+    "container": "Official Journal of the European Union, L 117 (5 May 2017), 1–175",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://eur-lex.europa.eu/eli/reg/2017/745/oj",
+    "apa": "Regulation (EU) 2017/745 of the European Parliament and of the Council of 5 April 2017 on medical devices. (2017). *Official Journal of the European Union, L 117 (5 May 2017), 1–175*. https://eur-lex.europa.eu/eli/reg/2017/745/oj",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "ribeiro2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Ribeiro",
+        "given": "A. H."
+      },
+      {
+        "family": "Ribeiro",
+        "given": "M. H."
+      },
+      {
+        "family": "Paixão",
+        "given": "G. M. M."
+      },
+      {
+        "family": "Oliveira",
+        "given": "D. M."
+      },
+      {
+        "family": "Gomes",
+        "given": "P. R."
+      },
+      {
+        "family": "Canazart",
+        "given": "J. A."
+      },
+      {
+        "family": "Ferreira",
+        "given": "M. P. S."
+      },
+      {
+        "family": "Andersson",
+        "given": "C. R."
+      },
+      {
+        "family": "Macfarlane",
+        "given": "P. W."
+      },
+      {
+        "literal": "Meira Jr."
+      },
+      {
+        "literal": "W."
+      },
+      {
+        "family": "Schön",
+        "given": "T. B."
+      },
+      {
+        "family": "Ribeiro",
+        "given": "A. L. P."
+      }
+    ],
+    "year": "2020",
+    "title": "Automatic diagnosis of the 12-lead ECG using a deep neural network",
+    "container": "Nature Communications",
+    "volume": "11",
+    "issue": "",
+    "pages": "Article 1760",
+    "doi": "10.1038/s41467-020-15432-4",
+    "url": "https://doi.org/10.1038/s41467-020-15432-4",
+    "apa": "Ribeiro, A. H., Ribeiro, M. H., Paixão, G. M. M., Oliveira, D. M., Gomes, P. R., Canazart, J. A., Ferreira, M. P. S., Andersson, C. R., Macfarlane, P. W., Meira Jr., W., Schön, T. B., & Ribeiro, A. L. P. (2020). Automatic diagnosis of the 12-lead ECG using a deep neural network. *Nature Communications, 11*, Article 1760. https://doi.org/10.1038/s41467-020-15432-4",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3087,6 +3609,56 @@
     ]
   },
   {
+    "key": "sgarbossa1996",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Sgarbossa",
+        "given": "E. B."
+      },
+      {
+        "family": "Pinski",
+        "given": "S. L."
+      },
+      {
+        "family": "Barbagelata",
+        "given": "A."
+      },
+      {
+        "family": "Underwood",
+        "given": "D. A."
+      },
+      {
+        "family": "Gates",
+        "given": "K. B."
+      },
+      {
+        "family": "Topol",
+        "given": "E. J."
+      },
+      {
+        "family": "Califf",
+        "given": "R. M."
+      },
+      {
+        "family": "Wagner",
+        "given": "G. S."
+      }
+    ],
+    "year": "1996",
+    "title": "Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block",
+    "container": "New England Journal of Medicine",
+    "volume": "334",
+    "issue": "8",
+    "pages": "481–487",
+    "doi": "10.1056/NEJM199602223340801",
+    "url": "https://doi.org/10.1056/NEJM199602223340801",
+    "apa": "Sgarbossa, E. B., Pinski, S. L., Barbagelata, A., Underwood, D. A., Gates, K. B., Topol, E. J., Califf, R. M., & Wagner, G. S. (1996). Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. *New England Journal of Medicine, 334*(8), 481–487. https://doi.org/10.1056/NEJM199602223340801",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "shah2015",
     "type": "article",
     "authors": [
@@ -3227,6 +3799,44 @@
     ]
   },
   {
+    "key": "smith2012",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Smith",
+        "given": "S. W."
+      },
+      {
+        "family": "Dodd",
+        "given": "K. W."
+      },
+      {
+        "family": "Henry",
+        "given": "T. D."
+      },
+      {
+        "family": "Dvorak",
+        "given": "D. M."
+      },
+      {
+        "family": "Pearce",
+        "given": "L. A."
+      }
+    ],
+    "year": "2012",
+    "title": "Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule",
+    "container": "Annals of Emergency Medicine",
+    "volume": "60",
+    "issue": "6",
+    "pages": "766–776",
+    "doi": "10.1016/j.annemergmed.2012.07.119",
+    "url": "https://doi.org/10.1016/j.annemergmed.2012.07.119",
+    "apa": "Smith, S. W., Dodd, K. W., Henry, T. D., Dvorak, D. M., & Pearce, L. A. (2012). Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. *Annals of Emergency Medicine, 60*(6), 766–776. https://doi.org/10.1016/j.annemergmed.2012.07.119",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "srivastava2014",
     "type": "article",
     "authors": [
@@ -3288,6 +3898,40 @@
     "apa": "Steyerberg, E. W., & Vergouwe, Y. (2014). Towards better clinical prediction models: Seven steps for development and an ABCD for validation. *European Heart Journal, 35*(29), 1925–1931. https://doi.org/10.1093/eurheartj/ehu207",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "strodthoff2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Strodthoff",
+        "given": "N."
+      },
+      {
+        "family": "Wagner",
+        "given": "P."
+      },
+      {
+        "family": "Schaeffter",
+        "given": "T."
+      },
+      {
+        "family": "Samek",
+        "given": "W."
+      }
+    ],
+    "year": "2021",
+    "title": "Deep learning for ECG analysis: Benchmarks and insights from PTB-XL",
+    "container": "IEEE Journal of Biomedical and Health Informatics",
+    "volume": "25",
+    "issue": "5",
+    "pages": "1519–1528",
+    "doi": "10.1109/JBHI.2020.3022989",
+    "url": "https://doi.org/10.1109/JBHI.2020.3022989",
+    "apa": "Strodthoff, N., Wagner, P., Schaeffter, T., & Samek, W. (2021). Deep learning for ECG analysis: Benchmarks and insights from PTB-XL. *IEEE Journal of Biomedical and Health Informatics, 25*(5), 1519–1528. https://doi.org/10.1109/JBHI.2020.3022989",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3372,6 +4016,55 @@
     ]
   },
   {
+    "key": "thygesen2018",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Thygesen",
+        "given": "K."
+      },
+      {
+        "family": "Alpert",
+        "given": "J. S."
+      },
+      {
+        "family": "Jaffe",
+        "given": "A. S."
+      },
+      {
+        "family": "Chaitman",
+        "given": "B. R."
+      },
+      {
+        "family": "Bax",
+        "given": "J. J."
+      },
+      {
+        "family": "Morrow",
+        "given": "D. A."
+      },
+      {
+        "family": "White",
+        "given": "H. D."
+      },
+      {
+        "literal": "Executive Group on behalf of the Joint European Society of Cardiology (ESC)/American College of Cardiology (ACC)/American Heart Association (AHA)/World Heart Federation (WHF) Task Force for the Universal Definition of Myocardial Infarction"
+      }
+    ],
+    "year": "2018",
+    "title": "Fourth universal definition of myocardial infarction (2018)",
+    "container": "Circulation",
+    "volume": "138",
+    "issue": "20",
+    "pages": "e618–e651",
+    "doi": "10.1161/CIR.0000000000000617",
+    "url": "https://doi.org/10.1161/CIR.0000000000000617",
+    "apa": "Thygesen, K., Alpert, J. S., Jaffe, A. S., Chaitman, B. R., Bax, J. J., Morrow, D. A., White, H. D., & Executive Group on behalf of the Joint European Society of Cardiology (ESC)/American College of Cardiology (ACC)/American Heart Association (AHA)/World Heart Federation (WHF) Task Force for the Universal Definition of Myocardial Infarction. (2018). Fourth universal definition of myocardial infarction (2018). *Circulation, 138*(20), e618–e651. https://doi.org/10.1161/CIR.0000000000000617",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "tcy2021",
     "type": "law",
     "authors": [
@@ -3390,6 +4083,173 @@
     "apa": "Tıbbi Cihaz Yönetmeliği [Medical Device Regulation], Türkiye İlaç ve Tıbbi Cihaz Kurumu [Turkish Medicines and Medical Devices Agency]. (2021). *Resmî Gazete, 31499 (Mükerrer) (2 June 2021)*. https://titck.gov.tr/storage/Archive/2021/contentFile/T%C4%B1bbi%20Cihaz%20Y%C3%B6netmeli%C4%9Fi_91969c4b-58b3-48cb-adfb-03c2cacd5632.pdf",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "fda2018ecgapp",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "U.S. Food and Drug Administration"
+      }
+    ],
+    "year": "2018",
+    "title": "De Novo classification request for ECG App (DEN180044)",
+    "container": "De Novo decision summaries",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN180044.pdf",
+    "apa": "U.S. Food and Drug Administration. (2018). De Novo classification request for ECG App (DEN180044). In *De Novo decision summaries*. U.S. Department of Health and Human Services. https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN180044.pdf",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "fda2023lowef",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "U.S. Food and Drug Administration"
+      }
+    ],
+    "year": "2023",
+    "title": "Low Ejection Fraction AI-ECG Algorithm (K232699)",
+    "container": "510(k) premarket notification database",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K232699",
+    "apa": "U.S. Food and Drug Administration. (2023). Low Ejection Fraction AI-ECG Algorithm (K232699). In *510(k) premarket notification database*. U.S. Department of Health and Human Services. https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K232699",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "vangelder2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Van Gelder",
+        "given": "I. C."
+      },
+      {
+        "family": "Rienstra",
+        "given": "M."
+      },
+      {
+        "family": "Bunting",
+        "given": "K. V."
+      },
+      {
+        "family": "Casado-Arroyo",
+        "given": "R."
+      },
+      {
+        "family": "Caso",
+        "given": "V."
+      },
+      {
+        "family": "Crijns",
+        "given": "H. J. G. M."
+      },
+      {
+        "family": "De Potter",
+        "given": "T. J. R."
+      },
+      {
+        "family": "Dwight",
+        "given": "J."
+      },
+      {
+        "family": "Guasti",
+        "given": "L."
+      },
+      {
+        "family": "Hanke",
+        "given": "T."
+      },
+      {
+        "family": "Jaarsma",
+        "given": "T."
+      },
+      {
+        "family": "Lettino",
+        "given": "M."
+      },
+      {
+        "family": "Løchen",
+        "given": "M.-L."
+      },
+      {
+        "family": "Lumbers",
+        "given": "R. T."
+      },
+      {
+        "family": "Maesen",
+        "given": "B."
+      },
+      {
+        "family": "Mølgaard",
+        "given": "I."
+      },
+      {
+        "family": "Rosano",
+        "given": "G. M. C."
+      },
+      {
+        "family": "Sanders",
+        "given": "P."
+      },
+      {
+        "family": "Schnabel",
+        "given": "R. B."
+      },
+      {
+        "family": "Suwalski",
+        "given": "P."
+      },
+      {
+        "family": "Svennberg",
+        "given": "E."
+      },
+      {
+        "family": "Tamargo",
+        "given": "J."
+      },
+      {
+        "family": "Tica",
+        "given": "O."
+      },
+      {
+        "family": "Traykov",
+        "given": "V."
+      },
+      {
+        "family": "Tzeis",
+        "given": "S."
+      },
+      {
+        "family": "Kotecha",
+        "given": "D."
+      },
+      {
+        "literal": "ESC Scientific Document Group"
+      }
+    ],
+    "year": "2024",
+    "title": "2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS)",
+    "container": "European Heart Journal",
+    "volume": "45",
+    "issue": "36",
+    "pages": "3314–3414",
+    "doi": "10.1093/eurheartj/ehae176",
+    "url": "https://doi.org/10.1093/eurheartj/ehae176",
+    "apa": "Van Gelder, I. C., Rienstra, M., Bunting, K. V., Casado-Arroyo, R., Caso, V., Crijns, H. J. G. M., De Potter, T. J. R., Dwight, J., Guasti, L., Hanke, T., Jaarsma, T., Lettino, M., Løchen, M.-L., Lumbers, R. T., Maesen, B., Mølgaard, I., Rosano, G. M. C., Sanders, P., Schnabel, R. B., Suwalski, P., Svennberg, E., Tamargo, J., Tica, O., Traykov, V., Tzeis, S., Kotecha, D., & ESC Scientific Document Group. (2024). 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS). *European Heart Journal, 45*(36), 3314–3414. https://doi.org/10.1093/eurheartj/ehae176",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3486,6 +4346,44 @@
     "apa": "Wagner, P., Strodthoff, N., Bousseljot, R.-D., Kreiseler, D., Lunze, F. I., Samek, W., & Schaeffter, T. (2020). PTB-XL, a large publicly available electrocardiography dataset. *Scientific Data, 7*(1), Article 154. https://doi.org/10.1038/s41597-020-0495-6",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "ptbxl2022",
+    "type": "dataset",
+    "authors": [
+      {
+        "family": "Wagner",
+        "given": "P."
+      },
+      {
+        "family": "Strodthoff",
+        "given": "N."
+      },
+      {
+        "family": "Bousseljot",
+        "given": "R."
+      },
+      {
+        "family": "Samek",
+        "given": "W."
+      },
+      {
+        "family": "Schaeffter",
+        "given": "T."
+      }
+    ],
+    "year": "2022",
+    "title": "PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3)",
+    "container": "PhysioNet",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.13026/kfzx-aw45",
+    "url": "https://doi.org/10.13026/kfzx-aw45",
+    "apa": "Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T. (2022). *PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3)* [Data set]. PhysioNet. https://doi.org/10.13026/kfzx-aw45",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {

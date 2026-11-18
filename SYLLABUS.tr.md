@@ -55,9 +55,9 @@ Malzemeler: [Hafta sayfası](tr/hafta-04/README.md) · [Ders sayfası](https://u
 
 ### Hafta 5: Zaman serisi analizi ve EKG yapay zekâsı
 
-Oturumun ilk yarısında EKG, tek boyutlu evrişimli ağlar ve tekrarlayan ağlarla bir zaman serisi olarak modellenir; ritimlerin çok etiketli sınıflandırması ele alınır. İkinci yarıda ST yükselmesi ve çökmesi tespit edilir, QT uzaması riski kestirilir, uzun süreli izlem tartışılır ve düzenleyici onay almış EKG algoritmaları gözden geçirilir. **Oturumdaki mini proje:** 12 derivasyonlu EKG'lerde ritim bozukluklarının tespiti. **Haftalık proje:** Bir STEMI alarmı: 12 derivasyonlu EKG'lerde ST sapmasının otomatik tespiti. **Veriler:** Sanal kliniğin EKG'leri, PhysioNet/Computing in Cardiology Challenge 2020 ve PTB-XL. **Sanal kliniğin aşaması:** Ritim ve STEMI alarmı.
+Oturumun ilk yarısında EKG bir zaman serisi olarak modellenir: RR aralıklarına dayanan bir AF kuralı, tek boyutlu evrişimli ağlar, tekrarlayan ağlar ve PTB-XL'de altı ritim etiketinin çok etiketli sınıflandırması çalışılır. İkinci yarıda medyan atımda J noktasındaki ST sapması evrensel tanımın ölçütleriyle ölçülür, QT aralığı ölçülür, sanal kliniğin 24 saatlik bir Holter kaydı okunur ve düzenleyici onay almış EKG algoritmaları gözden geçirilir. **Oturumdaki mini proje:** PTB-XL'de altı ritim etiketi için tek boyutlu bir evrişimli ağ; eşikleri 9. katta seçilir ve ağ 10. katta RR aralıklarına dayanan bir kuralla karşılaştırılır. **Haftalık proje:** Bir STEMI alarmı: 12 derivasyonlu EKG'lerde ST sapmasının otomatik tespiti. **Veriler:** PhysioNet'ten indirilen dört kattaki 8.737 12 derivasyonlu EKG'siyle PTB-XL; sanal kliniğin sentetik 24 saatlik Holter kaydı ve EKG'leri. **Sanal kliniğin aşaması:** Ritim ve STEMI alarmı.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-05/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/lab.html) · [Jupyter defteri](tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb) · [Prompt kütüphanesi](tr/hafta-05/PROMPTLAR.md) · [PDF ders notu](tr/hafta-05/Hafta05_Ders_Notlari.pdf)
 
 ### Hafta 6: Doğal dil işleme ve klinik metin madenciliği
 

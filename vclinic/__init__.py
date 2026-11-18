@@ -5,11 +5,15 @@ across the weeks of the course. The synthetic data are teaching material and
 are not for clinical use. The modules acdc, camus and echonet read public data
 sets that every participant downloads from their source: ACDC (cine cardiac
 magnetic resonance), CAMUS (apical echocardiograms with expert outlines) and
-EchoNet-Dynamic (echocardiography, with personal registration).
+EchoNet-Dynamic (echocardiography, with personal registration). The module
+ptbxl reads the 12-lead ECGs of PTB-XL, downloaded from PhysioNet, the module
+beats finds their R peaks and measures the median beat, the ST deviation and
+the QT interval, and the module holter makes a synthetic 24-hour recording of
+the virtual clinic.
 """
 from .ecg import (LEADS, LEAD_VECTORS, LEAD_MATRIX, ECG, simulate, project,
                   direction, frontal_axis)
 from .cohort import make_cohort, patient_ecg, ecg_params, TRUE_EFFECTS
 from .followup import add_followup, PHENOGROUPS
 
-__version__ = "1.5.1"
+__version__ = "1.6.0"

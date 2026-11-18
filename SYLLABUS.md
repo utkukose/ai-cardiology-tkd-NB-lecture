@@ -55,9 +55,9 @@ Materials: [Week page](en/week-04/README.md) · [Lecture page](https://utkukose.
 
 ### Week 5: Time series analysis and ECG artificial intelligence
 
-The first half models the ECG as a time series with one-dimensional CNNs and recurrent networks, and treats the multi-label classification of rhythms. The second half detects ST elevation and depression, estimates the risk of QT prolongation, discusses long-term monitoring and reviews ECG algorithms that have regulatory approval. **Mini project in the session:** Detection of rhythm disorders on 12-lead ECGs. **Weekly project:** A STEMI alarm: Automatic detection of ST deviation on 12-lead ECGs. **Data:** ECGs of the virtual clinic, PhysioNet/Computing in Cardiology Challenge 2020 and PTB-XL. **Stage of the virtual clinic:** Rhythm and STEMI alarm.
+The first half models the ECG as a time series: a rule for AF from the RR intervals, one-dimensional convolutional networks, recurrent networks and the multi-label classification of six labels of rhythm on PTB-XL. The second half measures the ST deviation at the J point of the median beat with the criteria of the universal definition, measures the QT interval, reads a 24-hour Holter recording of the virtual clinic and reviews ECG algorithms that have regulatory approval. **Mini project in the session:** A one-dimensional convolutional network for six labels of rhythm on PTB-XL, with thresholds chosen on fold 9, compared on fold 10 with a rule from the RR intervals. **Weekly project:** A STEMI alarm: Automatic detection of ST deviation on 12-lead ECGs. **Data:** PTB-XL, 8,737 12-lead ECGs of four folds downloaded from PhysioNet; a synthetic 24-hour Holter recording and the ECGs of the virtual clinic. **Stage of the virtual clinic:** Rhythm and STEMI alarm.
 
-Materials: In preparation
+Materials: [Week page](en/week-05/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lab.html) · [Jupyter notebook](en/week-05/NB05_time_series_and_ecg_ai.ipynb) · [Prompt library](en/week-05/PROMPTS.md) · [PDF notes](en/week-05/Week05_Lecture_Notes.pdf)
 
 ### Week 6: Natural language processing and clinical text mining
 

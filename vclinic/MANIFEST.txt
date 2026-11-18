@@ -1,12 +1,15 @@
 __init__.py
 acdc.py
+beats.py
 camus.py
 cohort.py
 datasets.py
 ecg.py
 echonet.py
 followup.py
+holter.py
 measure.py
 nifti.py
 physionet.py
+ptbxl.py
 teach.py
