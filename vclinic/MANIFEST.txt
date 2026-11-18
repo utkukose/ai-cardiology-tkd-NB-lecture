@@ -1,5 +1,6 @@
 __init__.py
 acdc.py
+camus.py
 cohort.py
 datasets.py
 ecg.py

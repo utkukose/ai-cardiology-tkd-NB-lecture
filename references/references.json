@@ -673,6 +673,48 @@
     ]
   },
   {
+    "key": "deng2009",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Deng",
+        "given": "J."
+      },
+      {
+        "family": "Dong",
+        "given": "W."
+      },
+      {
+        "family": "Socher",
+        "given": "R."
+      },
+      {
+        "family": "Li",
+        "given": "L.-J."
+      },
+      {
+        "family": "Li",
+        "given": "K."
+      },
+      {
+        "family": "Fei-Fei",
+        "given": "L."
+      }
+    ],
+    "year": "2009",
+    "title": "ImageNet: A large-scale hierarchical image database",
+    "container": "2009 IEEE Conference on Computer Vision and Pattern Recognition",
+    "volume": "",
+    "issue": "",
+    "pages": "248–255",
+    "doi": "10.1109/CVPR.2009.5206848",
+    "url": "https://doi.org/10.1109/CVPR.2009.5206848",
+    "apa": "Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., & Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. In *2009 IEEE Conference on Computer Vision and Pattern Recognition* (pp. 248–255). https://doi.org/10.1109/CVPR.2009.5206848",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "detrano1989",
     "type": "article",
     "authors": [
@@ -1870,6 +1912,80 @@
     ]
   },
   {
+    "key": "leclerc2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Leclerc",
+        "given": "S."
+      },
+      {
+        "family": "Smistad",
+        "given": "E."
+      },
+      {
+        "family": "Pedrosa",
+        "given": "J."
+      },
+      {
+        "family": "Østvik",
+        "given": "A."
+      },
+      {
+        "family": "Cervenansky",
+        "given": "F."
+      },
+      {
+        "family": "Espinosa",
+        "given": "F."
+      },
+      {
+        "family": "Espeland",
+        "given": "T."
+      },
+      {
+        "family": "Berg",
+        "given": "E. A. R."
+      },
+      {
+        "family": "Jodoin",
+        "given": "P.-M."
+      },
+      {
+        "family": "Grenier",
+        "given": "T."
+      },
+      {
+        "family": "Lartizien",
+        "given": "C."
+      },
+      {
+        "family": "D'hooge",
+        "given": "J."
+      },
+      {
+        "family": "Lovstakken",
+        "given": "L."
+      },
+      {
+        "family": "Bernard",
+        "given": "O."
+      }
+    ],
+    "year": "2019",
+    "title": "Deep learning for segmentation using an open large-scale dataset in 2D echocardiography",
+    "container": "IEEE Transactions on Medical Imaging",
+    "volume": "38",
+    "issue": "9",
+    "pages": "2198–2210",
+    "doi": "10.1109/TMI.2019.2900516",
+    "url": "https://doi.org/10.1109/TMI.2019.2900516",
+    "apa": "Leclerc, S., Smistad, E., Pedrosa, J., Østvik, A., Cervenansky, F., Espinosa, F., Espeland, T., Berg, E. A. R., Jodoin, P.-M., Grenier, T., Lartizien, C., D'hooge, J., Lovstakken, L., & Bernard, O. (2019). Deep learning for segmentation using an open large-scale dataset in 2D echocardiography. *IEEE Transactions on Medical Imaging, 38*(9), 2198–2210. https://doi.org/10.1109/TMI.2019.2900516",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "lecun1998",
     "type": "article",
     "authors": [
@@ -2268,6 +2384,36 @@
     ]
   },
   {
+    "key": "milletari2016",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Milletari",
+        "given": "F."
+      },
+      {
+        "family": "Navab",
+        "given": "N."
+      },
+      {
+        "family": "Ahmadi",
+        "given": "S.-A."
+      }
+    ],
+    "year": "2016",
+    "title": "V-Net: Fully convolutional neural networks for volumetric medical image segmentation",
+    "container": "2016 Fourth International Conference on 3D Vision (3DV)",
+    "volume": "",
+    "issue": "",
+    "pages": "565–571",
+    "doi": "10.1109/3DV.2016.79",
+    "url": "https://doi.org/10.1109/3DV.2016.79",
+    "apa": "Milletari, F., Navab, N., & Ahmadi, S.-A. (2016). V-Net: Fully convolutional neural networks for volumetric medical image segmentation. In *2016 Fourth International Conference on 3D Vision (3DV)* (pp. 565–571). https://doi.org/10.1109/3DV.2016.79",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "moody2001",
     "type": "article",
     "authors": [
@@ -2614,6 +2760,40 @@
     ]
   },
   {
+    "key": "raghu2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Raghu",
+        "given": "M."
+      },
+      {
+        "family": "Zhang",
+        "given": "C."
+      },
+      {
+        "family": "Kleinberg",
+        "given": "J."
+      },
+      {
+        "family": "Bengio",
+        "given": "S."
+      }
+    ],
+    "year": "2019",
+    "title": "Transfusion: Understanding transfer learning for medical imaging",
+    "container": "Advances in Neural Information Processing Systems 32",
+    "volume": "",
+    "issue": "",
+    "pages": "3347–3357",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper/2019/hash/eb1e78328c46506b46a4ac4a1e378b91-Abstract.html",
+    "apa": "Raghu, M., Zhang, C., Kleinberg, J., & Bengio, S. (2019). Transfusion: Understanding transfer learning for medical imaging. In *Advances in Neural Information Processing Systems 32* (pp. 3347–3357). https://proceedings.neurips.cc/paper/2019/hash/eb1e78328c46506b46a4ac4a1e378b91-Abstract.html",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "rautaharju2009",
     "type": "article",
     "authors": [
@@ -2699,6 +2879,36 @@
     ]
   },
   {
+    "key": "ronneberger2015",
+    "type": "chapter",
+    "authors": [
+      {
+        "family": "Ronneberger",
+        "given": "O."
+      },
+      {
+        "family": "Fischer",
+        "given": "P."
+      },
+      {
+        "family": "Brox",
+        "given": "T."
+      }
+    ],
+    "year": "2015",
+    "title": "U-Net: Convolutional networks for biomedical image segmentation",
+    "container": "Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015",
+    "volume": "",
+    "issue": "",
+    "pages": "234–241",
+    "doi": "10.1007/978-3-319-24574-4_28",
+    "url": "https://doi.org/10.1007/978-3-319-24574-4_28",
+    "apa": "Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional networks for biomedical image segmentation. In N. Navab, J. Hornegger, W. M. Wells, & A. F. Frangi (Eds.), *Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015* (pp. 234–241). Springer. https://doi.org/10.1007/978-3-319-24574-4_28",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "rousseeuw1987",
     "type": "article",
     "authors": [
@@ -2748,6 +2958,72 @@
     "apa": "Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986). Learning representations by back-propagating errors. *Nature, 323*(6088), 533–536. https://doi.org/10.1038/323533a0",
     "used_in": [
       "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "russakovsky2015",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Russakovsky",
+        "given": "O."
+      },
+      {
+        "family": "Deng",
+        "given": "J."
+      },
+      {
+        "family": "Su",
+        "given": "H."
+      },
+      {
+        "family": "Krause",
+        "given": "J."
+      },
+      {
+        "family": "Satheesh",
+        "given": "S."
+      },
+      {
+        "family": "Ma",
+        "given": "S."
+      },
+      {
+        "family": "Huang",
+        "given": "Z."
+      },
+      {
+        "family": "Karpathy",
+        "given": "A."
+      },
+      {
+        "family": "Khosla",
+        "given": "A."
+      },
+      {
+        "family": "Bernstein",
+        "given": "M."
+      },
+      {
+        "family": "Berg",
+        "given": "A. C."
+      },
+      {
+        "family": "Fei-Fei",
+        "given": "L."
+      }
+    ],
+    "year": "2015",
+    "title": "ImageNet large scale visual recognition challenge",
+    "container": "International Journal of Computer Vision",
+    "volume": "115",
+    "issue": "3",
+    "pages": "211–252",
+    "doi": "10.1007/s11263-015-0816-y",
+    "url": "https://doi.org/10.1007/s11263-015-0816-y",
+    "apa": "Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., Berg, A. C., & Fei-Fei, L. (2015). ImageNet large scale visual recognition challenge. *International Journal of Computer Vision, 115*(3), 211–252. https://doi.org/10.1007/s11263-015-0816-y",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3049,6 +3325,32 @@
     ]
   },
   {
+    "key": "tan2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Tan",
+        "given": "M."
+      },
+      {
+        "family": "Le",
+        "given": "Q."
+      }
+    ],
+    "year": "2019",
+    "title": "EfficientNet: Rethinking model scaling for convolutional neural networks",
+    "container": "Proceedings of the 36th International Conference on Machine Learning, PMLR 97",
+    "volume": "",
+    "issue": "",
+    "pages": "6105–6114",
+    "doi": "",
+    "url": "https://proceedings.mlr.press/v97/tan19a.html",
+    "apa": "Tan, M., & Le, Q. (2019). EfficientNet: Rethinking model scaling for convolutional neural networks. In *Proceedings of the 36th International Conference on Machine Learning, PMLR 97* (pp. 6105–6114). https://proceedings.mlr.press/v97/tan19a.html",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "taskforce1996",
     "type": "article",
     "authors": [
@@ -3226,6 +3528,40 @@
     "apa": "Xie, C., McCullum, L., Johnson, A., Pollard, T., Gow, B., & Moody, B. (2023). *Waveform Database Software Package (WFDB) for Python (version 4.1.0)* [Computer software]. PhysioNet. https://doi.org/10.13026/9njx-6322",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "yosinski2014",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Yosinski",
+        "given": "J."
+      },
+      {
+        "family": "Clune",
+        "given": "J."
+      },
+      {
+        "family": "Bengio",
+        "given": "Y."
+      },
+      {
+        "family": "Lipson",
+        "given": "H."
+      }
+    ],
+    "year": "2014",
+    "title": "How transferable are features in deep neural networks?",
+    "container": "Advances in Neural Information Processing Systems 27",
+    "volume": "",
+    "issue": "",
+    "pages": "3320–3328",
+    "doi": "",
+    "url": "https://proceedings.nips.cc/paper_files/paper/2014/file/375c71349b295fbe2dcdca9206f20a06-Paper.pdf",
+    "apa": "Yosinski, J., Clune, J., Bengio, Y., & Lipson, H. (2014). How transferable are features in deep neural networks? In *Advances in Neural Information Processing Systems 27* (pp. 3320–3328). https://proceedings.nips.cc/paper_files/paper/2014/file/375c71349b295fbe2dcdca9206f20a06-Paper.pdf",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
     ]
   },
   {

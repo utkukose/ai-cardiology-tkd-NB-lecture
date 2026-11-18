@@ -59,7 +59,8 @@ An assistant can write code that runs without an error and still gives a wrong n
 | 1 | [PROMPTS.md](en/week-01/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
 | 2 | [PROMPTS.md](en/week-02/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
 | 3 | [PROMPTS.md](en/week-03/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
-| 4 to 11 | In preparation | | |
+| 4 | [PROMPTS.md](en/week-04/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
+| 5 to 11 | In preparation | | |
 
 The prompt library of the week holds every prompt of Part 1 with a copy button on GitHub, the prompts for repairing code and the prompt path of the weekly project. Part F of the interactive lab trains the prompt card with a quality meter and a privacy check.
 

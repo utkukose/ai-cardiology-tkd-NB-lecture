@@ -45,8 +45,13 @@ def fetch(url, tries=3):
     raise RuntimeError(f"{url}: {err}")
 
 
+LETTERS = str.maketrans({"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "ß": "ss", "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "ı": "i"})
+
+
 def norm(text):
-    text = unicodedata.normalize("NFKD", html.unescape(text or ""))
+    text = html.unescape(text or "").translate(LETTERS)
+    text = re.sub("['\u2019\u02bc`\u00b4]", "", text)
+    text = unicodedata.normalize("NFKD", text)
     text = "".join(c for c in text if not unicodedata.combining(c))
     text = re.sub(r"<[^>]+>", " ", text)
     return re.sub(r"[^a-z0-9]+", " ", text.lower()).strip()

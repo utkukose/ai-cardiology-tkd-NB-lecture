@@ -62,7 +62,7 @@ The prompt path works with one's own data as well, with one rule: The prompt des
 
 ## 6. Reporting, and the step towards the clinic
 
-A study that develops or tests a prediction model reports it with the TRIPOD+AI checklist [3]. A model that is to be used in patient care is a different matter from a study. Software intended for the diagnosis or treatment of patients can be a medical device under the Medical Device Regulation of Türkiye, which is aligned with the regulation of the European Union [4]. A model of the course, or of a study, is therefore never used for decisions on patients without this process.
+A study that develops or tests a prediction model reports it with the TRIPOD+AI checklist [3]. A model that is to be used in patient care is a different matter from a study. Software intended for the diagnosis or treatment of patients can be a medical device under the Medical Device Regulation of Türkiye, which is aligned with the regulation of the European Union [4]. Such software must pass the conformity assessment of the regulation before it is put into use. A model of the course, or of a study, is therefore never used for decisions on patients without this process.
 
 ## 7. Who can help
 

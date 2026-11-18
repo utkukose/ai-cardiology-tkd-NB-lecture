@@ -49,9 +49,9 @@ Malzemeler: [Hafta sayfası](tr/hafta-03/README.md) · [Ders sayfası](https://u
 
 ### Hafta 4: Transfer öğrenme
 
-Oturumun ilk yarısında milyonlarca görüntüyle eğitilmiş ağlar kardiyak görevlere uyarlanır: öznitelik çıkarımı, ince ayar (fine-tuning) ve az sayıda etiketli görüntüyle öğrenme. İkinci yarıda sol ventrikülün U-Net ile segmentasyonu yapılır, ejeksiyon fraksiyonu disk yöntemiyle hesaplanır ve otomatik bir ölçümün klinik doğrulaması planlanır. **Oturumdaki mini proje:** Önceden eğitilmiş bir ağla az sayıda etiketli ekokardiyogramdan kardiyomiyopati sınıflandırması. **Haftalık proje:** Sol ventrikül segmentasyonu ve otomatik ejeksiyon fraksiyonu. **Veriler:** Sanal kliniğin ekokardiyogramları ve üyelik gerektiren açık görüntüleme veri setleri. **Sanal kliniğin aşaması:** Eko ölçümü: otomatik ejeksiyon fraksiyonu.
+Oturumun ilk yarısında milyonlarca fotoğrafla eğitilmiş ağlar kalp görüntülerine uyarlanır: EfficientNet-B0 ve ACDC'nin sine kardiyak manyetik rezonans incelemeleriyle öznitelik çıkarımı, ince ayar (fine-tuning) ve az sayıda etiketli hastayla öğrenme çalışılır. İkinci yarıda CAMUS ekokardiyogramlarında sol ventrikülün sınırları bir U-Net ile çizilir, hacimler ve ejeksiyon fraksiyonu biplan disk yöntemiyle hesaplanır, ölçümün uzmanla uyumu Bland-Altman analiziyle değerlendirilir ve otomatik bir ölçümün klinik doğrulaması planlanır. **Oturumdaki mini proje:** ImageNet üzerinde önceden eğitilmiş EfficientNet-B0 ile ACDC'nin kardiyomiyopati gruplarının, her gruptan 15 etiketli hastayla, öznitelik çıkarımı ve ince ayar yoluyla sınıflandırılması. **Haftalık proje:** Sol ventrikül segmentasyonu ve otomatik ejeksiyon fraksiyonu. **Veriler:** 3. haftadan tanıdık ACDC kullanılır. CAMUS, 500 hastanın apikal iki boşluk ve dört boşluk ekokardiyogramlarını uzman sınırlarıyla birlikte içerir; eğitim bu hastaların 300'ünü açık kaynağından indirir. EfficientNet-B0'ın ImageNet ağırlıkları da indirilir. **Sanal kliniğin aşaması:** Eko ölçümü: Otomatik ejeksiyon fraksiyonu.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-04/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/lab.html) · [Jupyter defteri](tr/hafta-04/NB04_transfer_ogrenme.ipynb) · [Prompt kütüphanesi](tr/hafta-04/PROMPTLAR.md) · [PDF ders notu](tr/hafta-04/Hafta04_Ders_Notlari.pdf)
 
 ### Hafta 5: Zaman serisi analizi ve EKG yapay zekâsı
 
@@ -61,19 +61,19 @@ Malzemeler: Hazırlanıyor
 
 ### Hafta 6: Doğal dil işleme ve klinik metin madenciliği
 
-Oturumun ilk yarısı metni belirteçlere ayırmayı (tokenization), kelime temsillerini ve Türkçe modeller dâhil Hugging Face Hub'daki önceden eğitilmiş dil modellerini kapsar. İkinci yarıda ilaç, tanı ve işlem gibi adlandırılmış varlıklar metinden çıkarılır, raporlar özetlenir ve büyük dil modellerinin klinik asistan olarak kullanımı tartışılır. **Oturumdaki mini proje:** Sentetik Türkçe epikrizlerden tanıların çıkarılması. **Haftalık proje:** Anjiyografi raporlarından darlık derecesini ve damarı çıkaran bir işlem hattı. **Veriler:** Sanal kliniğin Türkçe ve İngilizce sentetik raporları. **Sanal kliniğin aşaması:** Rapor arşivi: klinik metin.
+Oturumun ilk yarısı metni belirteçlere ayırmayı (tokenization), kelime temsillerini ve Türkçe modeller dâhil Hugging Face Hub'daki önceden eğitilmiş dil modellerini kapsar. İkinci yarıda ilaç, tanı ve işlem gibi adlandırılmış varlıklar metinden çıkarılır, raporlar özetlenir ve büyük dil modellerinin klinik asistan olarak kullanımı tartışılır. **Oturumdaki mini proje:** Sentetik Türkçe epikrizlerden tanıların çıkarılması. **Haftalık proje:** Anjiyografi raporlarından darlık derecesini ve damarı çıkaran bir işlem hattı. **Veriler:** Sanal kliniğin Türkçe ve İngilizce sentetik raporları. **Sanal kliniğin aşaması:** Rapor arşivi: Klinik metin.
 
 Malzemeler: Hazırlanıyor
 
 ### Hafta 7: Görü dönüştürücüleri (Vision Transformer)
 
-Oturumun ilk yarısında dikkat mekanizması, öz dikkat ve görüntüyü küçük parçalara (patch) bölen görü dönüştürücüsü anlatılır. İkinci yarıda evrişimli bir omurga bir dönüştürücü katmanıyla birleştirilir, koroner darlıklar tespit edilir ve dikkat haritaları klinik açıdan yorumlanır. **Oturumdaki mini proje:** Doğal görüntülerde eğitilip ekokardiyografiye aktarılan küçük bir görü dönüştürücüsü. **Haftalık proje:** Koroner anjiyogramlarda darlık tespiti: evrişimli ağ, görü dönüştürücüsü ve melez modelin karşılaştırması. **Veriler:** Sanal kliniğin anjiyogramları ve açık bir koroner anjiyografi veri seti. **Sanal kliniğin aşaması:** Kateter laboratuvarı.
+Oturumun ilk yarısında dikkat mekanizması, öz dikkat ve görüntüyü küçük parçalara (patch) bölen görü dönüştürücüsü anlatılır. İkinci yarıda evrişimli bir omurga bir dönüştürücü katmanıyla birleştirilir, koroner darlıklar tespit edilir ve dikkat haritaları klinik açıdan yorumlanır. **Oturumdaki mini proje:** Doğal görüntülerde eğitilip ekokardiyografiye aktarılan küçük bir görü dönüştürücüsü. **Haftalık proje:** Koroner anjiyogramlarda darlık tespiti: Evrişimli ağ, görü dönüştürücüsü ve melez modelin karşılaştırması. **Veriler:** Sanal kliniğin anjiyogramları ve açık bir koroner anjiyografi veri seti. **Sanal kliniğin aşaması:** Kateter laboratuvarı.
 
 Malzemeler: Hazırlanıyor
 
 ### Hafta 8: Çok modlu yapay zekâ ve veri füzyonu
 
-Oturumun ilk yarısında farklı veri türlerinin erken, geç ve melez füzyonu, dikkat tabanlı füzyon ve eksik verinin yönetimi karşılaştırılır. İkinci yarıda biyobelirteçleri, klinik değişkenleri ve görüntülemeyi birleştiren bir kardiyovasküler risk modeli tasarlanır; kalibrasyon ve güven aralıkları üzerinde durulur. **Oturumdaki mini proje:** Kalp yetersizliği riskini sınıflandırmak için EKG, ekokardiyogram ve laboratuvar değerlerini birleştiren bir model. **Haftalık proje:** Simüle edilmiş bir triyajda majör olumsuz kardiyovasküler olayların (MACE) öngörüsü. **Veriler:** Sanal kliniğin aynı hastalarına ait bütün veriler. **Sanal kliniğin aşaması:** Kalp ekibi: veri füzyonu.
+Oturumun ilk yarısında farklı veri türlerinin erken, geç ve melez füzyonu, dikkat tabanlı füzyon ve eksik verinin yönetimi karşılaştırılır. İkinci yarıda biyobelirteçleri, klinik değişkenleri ve görüntülemeyi birleştiren bir kardiyovasküler risk modeli tasarlanır; kalibrasyon ve güven aralıkları üzerinde durulur. **Oturumdaki mini proje:** Kalp yetersizliği riskini sınıflandırmak için EKG, ekokardiyogram ve laboratuvar değerlerini birleştiren bir model. **Haftalık proje:** Simüle edilmiş bir triyajda majör olumsuz kardiyovasküler olayların (MACE) öngörüsü. **Veriler:** Sanal kliniğin aynı hastalarına ait bütün veriler. **Sanal kliniğin aşaması:** Kalp ekibi: Veri füzyonu.
 
 Malzemeler: Hazırlanıyor
 
@@ -91,7 +91,7 @@ Malzemeler: Hazırlanıyor
 
 ### Hafta 11: Final projesi ve sertifika
 
-Oturumun ilk yarısı final projeleri üzerine bir atölyedir; bu atölyede sorunun, verinin, modelin, modelin açıklamasının ve klinik değerlendirmenin tasarımı üzerinde çalışılır. İkinci yarıda final projeleri sunulur ve değerlendirilir; program sertifikalarla kapanır. **Oturumdaki mini proje:** Final projesi üzerinde çalışma. **Haftalık proje:** Final projesi: katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı. **Veriler:** Her katılımcı kendi verilerini seçer (final projesi sayfasına bakın). **Sanal kliniğin aşaması:** Katılımcıların birimleri: final projeleri.
+Oturumun ilk yarısı final projeleri üzerine bir atölyedir; bu atölyede sorunun, verinin, modelin, modelin açıklamasının ve klinik değerlendirmenin tasarımı üzerinde çalışılır. İkinci yarıda final projeleri sunulur ve değerlendirilir; program sertifikalarla kapanır. **Oturumdaki mini proje:** Final projesi üzerinde çalışma. **Haftalık proje:** Final projesi: Katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı. **Veriler:** Her katılımcı kendi verilerini seçer (final projesi sayfasına bakın). **Sanal kliniğin aşaması:** Katılımcıların birimleri: Final projeleri.
 
 Malzemeler: Hazırlanıyor
 

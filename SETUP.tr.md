@@ -73,6 +73,8 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 Başka sistemler için komutu [pytorch.org/get-started/locally](https://pytorch.org/get-started/locally/) adresindeki seçici verir. Kurulumdan sonra açık bir defterin çekirdeğini yeniden başlatın. Colab'da PyTorch hazır gelir.
 
+Defterler 4. haftadan itibaren ekokardiyogramlardaki sınırlar için scikit-image paketini de kullanır. Anaconda ve Colab bu paketi içerir; başka bir Python ortamında `pip install scikit-image` komutuyla kurulur.
+
 Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
 
 ```bash
@@ -109,6 +111,7 @@ Gerçek hasta verisi hiçbir zaman Colab'a ya da başka bir bulut hizmetine yük
 |---|---|
 | İnternet bağlantısı yokken `No module named 'vclinic'` hatası | Defteri ders klasörünün içinden açın. İlk hücre klasörü bulur ve indirme gerekmez. |
 | `No module named 'torch'` hatası | PyTorch'u 6. adımda anlatıldığı gibi kurun, ardından çekirdeği yeniden başlatın. |
+| `No module named 'skimage'` hatası | scikit-image paketini `pip install scikit-image` komutuyla kurun, ardından çekirdeği yeniden başlatın. |
 | Defter ders klasörünün dışında açıldı | İlk hücre ders paketini ve verileri defterin yanındaki `ai-cardiology-course` klasörüne indirir. Bunun için bir kez internet bağlantısı gerekir. |
 | Hücreler sırasız çalıştırıldıktan sonra hata | **Kernel → Restart Kernel and Run All Cells** seçeneğini seçin ya da bölümün başındaki *Telafi* hücresini çalıştırın. |
 | GitHub'daki defterde çıktı görünmüyor | GitHub defteri yalnızca görüntüler, çalıştırmaz. Defteri ders klasörüyle birlikte indirin ve Jupyter'de çalıştırın. |
