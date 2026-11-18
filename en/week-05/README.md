@@ -78,7 +78,7 @@ The four-hour session of the week follows the plan below. It is shared to show h
 
 | Time | Activity |
 |---|---|
-| 0:00 to 0:15 | The case of the week and the route of the week. Every participant opens the notebook in Google Colab or in Jupyter and runs Section 0. It downloads the 12-lead ECGs of four folds of PTB-XL at 100 Hz, about 220 MB, from PhysioNet. |
+| 0:00 to 0:15 | The case of the week and the route of the week. Every participant opens the notebook in Google Colab or in Jupyter and runs Section 0. It downloads the 12-lead ECGs of four folds of PTB-XL at 100 Hz, about 216 MB, from PhysioNet. |
 | 0:15 to 0:55 | Main route: the ECG as a time series, a rule for atrial fibrillation from RR intervals with Part B, one-dimensional convolution with Part A, recurrent networks, and multi-label classification with Part C of the interactive lab. |
 | 0:55 to 1:35 | Mini project of the session, Practice stop 1, in two groups, the prompt path and the Python path: A one-dimensional network learns the rhythm labels of PTB-XL in about two minutes, its thresholds are chosen on fold 9, and it is compared with the rule on fold 10. |
 | 1:35 to 1:50 | Break. |

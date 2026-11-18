@@ -76,7 +76,7 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 
 | Süre | Etkinlik |
 |---|---|
-| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm, PTB-XL'in dört katındaki 100 Hz'lik 12 derivasyonlu EKG'leri (yaklaşık 220 MB) PhysioNet'ten indirir. |
+| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm, PTB-XL'in dört katındaki 100 Hz'lik 12 derivasyonlu EKG'leri (yaklaşık 216 MB) PhysioNet'ten indirir. |
 | 0:15-0:55 | Ana rotada EKG bir zaman serisi olarak ele alınır. B bölümüyle RR aralıklarına dayanan bir atriyal fibrilasyon kuralı, A bölümüyle tek boyutlu evrişim çalışılır; ardından tekrarlayan ağlar ve etkileşimli labın C bölümüyle çok etiketli sınıflandırma anlatılır. |
 | 0:55-1:35 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar iki gruba ayrılır: Prompt yolunu izleyenler ve Python yolunu izleyenler. Tek boyutlu bir ağ PTB-XL'in ritim etiketlerini yaklaşık iki dakikada öğrenir; eşikleri 9. katta seçilir ve ağ, 10. katta kuralla karşılaştırılır. |
 | 1:35-1:50 | Ara. |
