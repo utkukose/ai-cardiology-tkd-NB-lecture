@@ -14,13 +14,14 @@ Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın *
 | Adım | Ne yapılır? |
 |---|---|
 | 1. Okuyun | Defterde adımın amacını okuyun. |
-| 2. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
-| 3. Çalıştırın | Asistanın kodunu promptun altındaki hücreye yapıştırın ve çalıştırın. |
-| 4. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve sonucun değerini gösterir. |
-| 5. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
-| 6. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
+| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
+| 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
+| 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-Her durak, o durağın verilerini yükleyen bir hazırlık hücresiyle başlar; böylece bir durağa başka bir gün de başlanabilir. Her adımın *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı bir adımda takılıp kalmaz ve sonraki adıma her zaman geçilebilir.
+Her durak, o durağın verilerini yükleyen bir hazırlık hücresiyle başlar; böylece bir durağa başka bir gün de başlanabilir. Her adımın da, promptun tarif ettiği "veri" tablosunu hazırlayıp gösteren kendi veri hücresi vardır. Her adımın *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı bir adımda takılıp kalmaz ve sonraki adıma her zaman geçilebilir.
 
 ## Hangi asistan?
 
@@ -37,17 +38,17 @@ Eğitim bu araçların hiçbirine bağlı değildir. Asistanlar sık değiştiğ
 
 ## Prompt kartı
 
-Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asistana iyi bir istek yazmayı öğretir.
+Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asistana iyi bir istek yazmayı öğretir. Promptlar klinik bir dille yazılır. Bir promptta koddan yalnızca iki ad geçer: Her adımın veri hücresinin hazırlayıp gösterdiği "veri" tablosu ve sonucun kontrol için saklandığı "cevap" adı. Kodun hiçbir paketinin, fonksiyonunun ya da ayarının adı geçmez.
 
 | Alan | Ne belirtilir? |
 |---|---|
-| Rol | Asistanın kim olacağı: Kod yazmayan bir kardiyoloğun yardımcısı |
-| Bağlam | Kodun nerede çalışacağı ve neyin hazır olduğu: Jupyter defteri ve defterde hazır bekleyen veriler |
-| Veri | Verilerin adları, birimleri ve sinyallerde örnekleme frekansı |
-| Görev | Varsa formülüyle birlikte tek ve açık bir görev |
-| Kısıtlar | Kodun yapmaması gerekenler; örneğin dosya okumak ya da paket kurmak |
-| Çıktı | Sonucun hangi adla saklanacağı ve nasıl yuvarlanacağı |
-| Test | Sonucun denetlenebilmesi için cevabı bilinen bir durum |
+| Rol | Asistanın kime yardım ettiği ve kodunun nerede çalışacağı: Kod yazmayan bir kardiyolog ve bir Jupyter defteri |
+| Bağlam | Adımın klinik sorusu |
+| Veri | "veri" tablosu: Satırları, sütunları ve birimleri; sinyallerde saniyedeki örnek sayısı |
+| Görev | Formülü ya da kuralıyla birlikte tek ve açık bir görev |
+| Kısıtlar | Kodun yapmaması gerekenler: Başka veri kullanmak, dosya okumak, bir şey indirmek ya da program kurmak |
+| Çıktı | Neyin yazdırılacağı ya da çizileceği; sonucun "cevap" adıyla saklanması |
+| Test | Sonucun denetlenebilmesi için cevabı bilinen bir durum ya da makul bir aralık |
 
 Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabilir. Bu yüzden prompt yolunun en önemli parçası her adımın kontrolüdür.
 

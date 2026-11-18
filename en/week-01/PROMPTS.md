@@ -5,14 +5,14 @@ Turkish Society of Cardiology · First version: November 2026
 
 [Week 1](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-01/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 1, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the cell below the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the prompt path of Week 1, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
 1. [How a step works](#how-a-step-works)
 2. [Stop 1: Patient tables](#stop-1-patient-tables)
 3. [Stop 2: The ECG as data](#stop-2-the-ecg-as-data)
-4. [Stop 3: Real recordings and a function to check](#stop-3-real-recordings-and-a-function-to-check)
+4. [Stop 3: Real recordings and a careless prompt](#stop-3-real-recordings-and-a-careless-prompt)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
 6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
 
@@ -21,11 +21,12 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | Step | What to do |
 |---|---|
 | 1. Read | Read the goal of the step in the notebook. |
-| 2. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
-| 3. Run | Paste the code of the assistant into the cell below the prompt and run it. |
-| 4. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result. |
-| 5. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
-| 6. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
+| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
+| 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
+| 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
+| 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
+| 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
 ## Stop 1: Patient tables
 
@@ -38,288 +39,258 @@ The registry of a clinic is a table: one row per patient, one column per variabl
 **Goal.** Find out how old, on average, the Cleveland patients with coronary artery disease were.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `heart` is a table with the 303 patients of the Cleveland Clinic in the UCI Heart Disease data
-set, one row per patient. The columns used here are age (years), sex (1 for men, 0 for women) and
-disease, which is 1 when at least one major coronary artery was narrowed by more than 50 percent of
-its diameter at angiography, and 0 otherwise.
-Task: Select the patients with coronary artery disease, that is, those whose value in the column
-disease is 1, and compute their mean age. Also print how many patients were selected.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the mean age in years, rounded to one decimal. Keep the result under the name
-`mean_age` and print it with a short label. Return only the code, as one block, with a short comment
-above each step.
-Test: For comparison, also print the mean age of all 303 patients, which is 54.4 years; the mean of
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to know the mean age of the patients with coronary artery disease
+among 303 patients who underwent coronary angiography at the Cleveland Clinic.
+Data: The notebook holds a table named "data". Each row is a patient: The column "age" gives the age
+in years. The column "CAD" says "yes" when at least one major coronary artery was narrowed by more
+than 50 percent of its diameter at angiography, and "no" otherwise.
+Task: Select the patients with coronary artery disease and compute their mean age. Also print how
+many patients were selected.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the mean age in years with one decimal and keep it under the name "answer".
+Test: For comparison, also print the mean age of all patients, which must be 54.4 years. The mean of
 the patients with disease must differ from it.
 ```
 
-**Expected result:** `mean_age` = 56.6
+**Expected result:** "answer" = 56.6
 
 ### Step 1.2: The share of women
 
 **Goal.** Find out which percentage of the Cleveland patients were women.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `heart` is a table with the 303 patients of the Cleveland Clinic in the UCI Heart Disease data
-set, one row per patient. The columns used here are age (years), sex (1 for men, 0 for women) and
-disease, which is 1 when at least one major coronary artery was narrowed by more than 50 percent of
-its diameter at angiography, and 0 otherwise.
-Task: Count the women, the patients whose value in the column sex is 0, and divide their number by
-the number of all patients. Also print the share of men.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the share of women in percent, rounded to one decimal. Keep the result under the name
-`pct_women` and print it with a short label. Return only the code, as one block, with a short
-comment above each step.
-Test: The shares of women and men must add up to 100 percent.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to know which percentage of the 303 patients who underwent coronary
+angiography at the Cleveland Clinic were women.
+Data: The notebook holds a table named "data". Each row is a patient: The column "age" gives the age
+in years, and the column "sex" says "female" or "male".
+Task: Divide the number of women by the number of all patients and express the share in percent.
+Compute the percentage of men in the same way.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the percentage of women with one decimal and keep it under the name "answer". Also
+print the percentage of men.
+Test: The two percentages must add up to 100.
 ```
 
-**Expected result:** `pct_women` = 32.0
+**Expected result:** "answer" = 32.0
 
 ### Step 1.3: Patients with HFrEF in the virtual clinic
 
 **Goal.** Count the patients of the virtual clinic who have heart failure with reduced ejection fraction, and see the ejection fraction of every diagnosis in one figure.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `clinic` is a table with the first 500 synthetic patients of the virtual clinic, one row per
-patient. The columns used here are patient_id; main_diagnosis, which is "none", "CCS" (chronic
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to count the patients with heart failure with reduced ejection
+fraction (HFrEF) among the 500 synthetic patients of the virtual clinic, and to see how the ejection
+fraction differs between the diagnoses.
+Data: The notebook holds a table named "data". Each row is a patient: The column "patient" gives the
+number of the patient, the column "main diagnosis" the main diagnosis and the column "LVEF" the left
+ventricular ejection fraction in percent. The main diagnosis is one of "none", "CCS" (chronic
 coronary syndrome), "ACS" (acute coronary syndrome), "HFrEF" (heart failure with reduced ejection
-fraction) or "HFpEF" (heart failure with preserved ejection fraction); and lvef, the left
-ventricular ejection fraction in percent.
-Task: Count the patients whose main diagnosis is "HFrEF". Then draw a box plot of the ejection
-fraction (lvef) for each main diagnosis, with the diagnoses on the horizontal axis and the ejection
+fraction) and "HFpEF" (heart failure with preserved ejection fraction).
+Task: Count the patients whose main diagnosis is HFrEF. Then draw a box plot of the ejection
+fraction for each main diagnosis, with the diagnoses on the horizontal axis and the ejection
 fraction in percent on the vertical axis.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the number of patients with HFrEF as a whole number. Keep the result under the name
-`n_hfref` and print it with a short label. Return only the code, as one block, with a short comment
-above each step.
-Test: Also print the number of patients of every diagnosis; the five numbers must add up to 500.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the number of patients with HFrEF and keep it under the name "answer". Show the plot
+as well.
+Test: Also print the number of patients of every diagnosis; the five numbers must add up to 500. No
+patient with HFrEF may have an ejection fraction above 40 percent.
 ```
 
-**Expected result:** `n_hfref` = 47
+**Expected result:** "answer" = 47
 
 ## Stop 2: The ECG as data
 
 *[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-2) · The same result on the Python path: Sections 3 to 5*
 
-A digital ECG is a table of numbers: one column per lead, one row per sample. In this stop, the 12-lead ECG of the case of the week, VC-0317, is drawn and measured, and the QT interval of another patient is corrected for the heart rate by two formulas.
+A digital ECG is a table of numbers: one column per lead, one row per sample. In this stop, lead II of the ECG of the case of the week, VC-0317, is drawn and measured, and the QT interval of another patient is corrected for the heart rate by two formulas.
 
 ### Step 2.1: A strip of lead II
 
 **Goal.** Draw the first 2.5 seconds of lead II and see how many numbers such a strip holds.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `case` holds the resting 12-lead ECG of patient VC-0317 of the virtual clinic, 10 seconds
-long. `case.fs` is its sampling frequency, 500 samples per second. `case.leads` is a table with one
-column per lead (I, II, III, aVR, aVL, aVF, V1 to V6) and one row per sample, in millivolts.
-Task: Take lead II of the case and keep its first 2.5 seconds; the number of samples in them is the
-sampling frequency times 2.5. Plot them with the time in seconds on the horizontal axis and the
-voltage in millivolts on the vertical axis.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the number of samples in the 2.5 seconds as a whole number. Keep the result under the
-name `n_samples` and print it with a short label. Return only the code, as one block, with a short
-comment above each step.
-Test: The time axis of the plot must end at 2.5 seconds.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to see the first 2.5 seconds of lead II from the 10-second resting
+ECG of a 67-year-old woman, and to know how many samples this strip holds.
+Data: The notebook holds a table named "data". Each row is one moment of the recording: The column
+"time" gives the time in seconds, and the column "II" the voltage of lead II in millivolts. The
+recording was sampled 500 times per second.
+Task: Keep the rows whose time is less than 2.5 seconds and count them. Draw this part with the time
+in seconds on the horizontal axis and the voltage in millivolts on the vertical axis.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the number of samples in these 2.5 seconds and keep it under the name "answer". Show
+the plot as well.
+Test: The time axis of the plot must start at 0 and end at 2.5 seconds.
 ```
 
-**Expected result:** `n_samples` = 1250
+**Expected result:** "answer" = 1250
 
 ### Step 2.2: The heart rate from the R peaks
 
 **Goal.** Find the R peaks of lead II and compute the heart rate from the intervals between them.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `case` holds the resting 12-lead ECG of patient VC-0317 of the virtual clinic, 10 seconds
-long. `case.fs` is its sampling frequency, 500 samples per second. `case.leads` is a table with one
-column per lead (I, II, III, aVR, aVL, aVF, V1 to V6) and one row per sample, in millivolts. The
-course package has a ready R-peak detector, `measure.detect_r_peaks`. It receives one lead and its
-sampling frequency and returns the positions of the R peaks as sample numbers.
-Task: Find the R peaks of the whole lead II with the R-peak detector of the course package. Turn the
-distances between successive peaks into seconds by dividing them by the sampling frequency. The
-heart rate is 60 divided by the mean RR interval in seconds.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the heart rate in beats per minute, rounded to one decimal, and also print the number
-of R peaks. Keep the result under the name `hr_bpm` and print it with a short label. Return only the
-code, as one block, with a short comment above each step.
-Test: The 10-second recording must hold about 14 R peaks.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to measure the heart rate of a 67-year-old woman from her 10-second
+resting ECG.
+Data: The notebook holds a table named "data". Each row is one moment of the recording: The column
+"time" gives the time in seconds, and the column "II" the voltage of lead II in millivolts. The
+recording was sampled 500 times per second.
+Task: Find the R peaks. Accept as R peaks the peaks that exceed half of the highest value and lie at
+least 0.3 seconds apart. Compute the heart rate in beats per minute from the mean time between
+successive R peaks.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the heart rate with one decimal and keep it under the name "answer". Draw lead II with
+the R peaks marked.
+Test: About 14 R peaks must be found in the 10 seconds, and the heart rate must lie between 40 and
+150 beats per minute.
 ```
 
-**Expected result:** `hr_bpm` = 84.9
+**Expected result:** "answer" = 84.9
 
 ### Step 2.3: The QTc by two formulas
 
-**Goal.** Correct the QT interval of patient VC-0254 for her fast heart rate with the formulas of Fridericia and Bazett, and compare the two.
+**Goal.** Correct the QT interval of patient VC-0254 for his fast heart rate with the formulas of Fridericia and Bazett, and compare the two.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: In the registry of the virtual clinic, patient VC-0254 has a QT interval of 343 ms at a heart
-rate of 98 beats per minute.
-Task: Compute the RR interval in seconds as 60 divided by the heart rate. Then compute the corrected
-QT interval (QTc) with two formulas: Fridericia's formula divides the QT by the cube root of RR, and
-Bazett's formula divides it by the square root of RR.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the QTc by Fridericia's formula in milliseconds, rounded to one decimal, and also print
-the QTc by Bazett's formula. Keep the result under the name `qtc_fridericia` and print it with a
-short label. Return only the code, as one block, with a short comment above each step.
-Test: At a heart rate of 60 beats per minute, both formulas must return the QT itself.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to correct the QT interval of a 58-year-old man with a fast heart
+rate by two formulas and to compare the results.
+Data: The notebook holds a table named "data" with one row: The column "patient" gives the number of
+the patient, the column "heart rate" the heart rate in beats per minute and the column "QT" the QT
+interval in milliseconds.
+Task: Compute the RR interval in seconds as 60 divided by the heart rate. Then correct the QT
+interval with two formulas: Fridericia's formula divides the QT by the cube root of RR, and Bazett's
+formula divides it by the square root of RR.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the QTc of Fridericia in milliseconds with one decimal and keep it under the name
+"answer". Also print the QTc of Bazett.
+Test: At a heart rate of 60 beats per minute, both formulas must give the QT itself.
 ```
 
-**Expected result:** `qtc_fridericia` = 403.9
+**Expected result:** "answer" = 403.9
 
-## Stop 3: Real recordings and a function to check
+## Stop 3: Real recordings and a careless prompt
 
 *[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-3) · The same result on the Python path: Sections 6 to 9*
 
-Real recordings bring their own noise, annotations and units. In this stop, record 100 of the MIT-BIH Arrhythmia Database is read with the beat labels of its cardiologists, and the heart rate variability is computed from its normal beats. Then a real 12-lead ECG of the PTB database is drawn, and a QTc function written by an AI assistant is checked and corrected.
+Real recordings bring their own noise, annotations and units. In this stop, record 100 of the MIT-BIH Arrhythmia Database is read with the beat labels of its cardiologists, and the heart rate variability is computed from its normal beats. Then a real 12-lead ECG of the PTB database is drawn. Finally, a QTc calculation that an AI assistant wrote from a short and careless prompt is requested again with the prompt card, and its result is checked.
 
 ### Step 3.1: The beats of record 100
 
 **Goal.** Count the beats of a 30-minute recording by the labels that cardiologists gave them.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `ann_symbols` is the list of the labels that cardiologists gave to record 100 of the MIT-BIH
-Arrhythmia Database, one label per annotation in the order of time: N for a normal beat, A for an
-atrial premature beat, V for a premature ventricular contraction and + for a change of rhythm, which
-is not a beat. `ann_samples` holds the position of each label as a sample number, and `fs_mit` is
-the sampling frequency, 360 samples per second.
-Task: Count how often each label occurs in ann_symbols and print the counts.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the number of atrial premature beats, the label A, as a whole number. Keep the result
-under the name `n_apb` and print it with a short label. Return only the code, as one block, with a
-short comment above each step.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: Record 100 of the MIT-BIH Arrhythmia Database is a 30-minute ambulatory ECG of a
+69-year-old man. The cardiologist wants to count the beats of this recording by the labels that
+cardiologists gave them.
+Data: The notebook holds a table named "data". Each row is a mark that the cardiologists placed on
+the recording: The column "time" gives its place in seconds, and the column "label" its kind. "N"
+marks a normal beat, "A" an atrial premature beat and "V" a premature ventricular contraction; "+"
+marks a change of rhythm and is not a beat.
+Task: Count how often each label occurs and print the counts.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the number of atrial premature beats and keep it under the name "answer".
 Test: The labels N, A and V together must count 2273 beats.
 ```
 
-**Expected result:** `n_apb` = 33
+**Expected result:** "answer" = 33
 
 ### Step 3.2: Heart rate variability: SDNN
 
 **Goal.** Measure how much the intervals between normal beats vary over 30 minutes.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `ann_symbols` is the list of the labels that cardiologists gave to record 100 of the MIT-BIH
-Arrhythmia Database, one label per annotation in the order of time: N for a normal beat, A for an
-atrial premature beat, V for a premature ventricular contraction and + for a change of rhythm, which
-is not a beat. `ann_samples` holds the position of each label as a sample number, and `fs_mit` is
-the sampling frequency, 360 samples per second.
-Task: Keep only the labels that are beats, that is, all labels except +. From the positions of the
-beats and the sampling frequency, compute the RR intervals between successive beats in milliseconds.
-Keep only the intervals between two normal beats, both labelled N: these are the NN intervals. The
-SDNN is their standard deviation, computed as for a sample, with the number of intervals minus one
-in the denominator. Also print the mean NN interval.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the SDNN in milliseconds, rounded to one decimal. Keep the result under the name `sdnn`
-and print it with a short label. Return only the code, as one block, with a short comment above each
-step.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to measure the heart rate variability of record 100 of the MIT-BIH
+Arrhythmia Database, a 30-minute ambulatory ECG of a 69-year-old man, by the SDNN.
+Data: The notebook holds a table named "data". Each row is a mark that the cardiologists placed on
+the recording: The column "time" gives its place in seconds, and the column "label" its kind. "N"
+marks a normal beat, "A" an atrial premature beat and "V" a premature ventricular contraction; "+"
+marks a change of rhythm and is not a beat.
+Task: Keep only the beats, that is, all labels except "+". Compute the RR intervals between
+successive beats in milliseconds. Keep only the intervals between two normal beats, both labelled
+"N": These are the NN intervals. The SDNN is their standard deviation; compute it as for a sample,
+with the number of intervals minus one in the denominator. Also print the mean NN interval.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the SDNN in milliseconds with one decimal and keep it under the name "answer".
 Test: The mean NN interval must lie between 700 and 900 ms.
 ```
 
-**Expected result:** `sdnn` = 36.0
+**Expected result:** "answer" = 36.0
 
 ### Step 3.3: A real 12-lead ECG
 
 **Goal.** Draw a real 12-lead ECG of a patient with an acute myocardial infarction as on ECG paper, and measure its heart rate.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: `ptb` is a table with record s0010_re of patient 1 of the PTB Diagnostic ECG Database: 38.4
-seconds recorded with 1000 samples per second (`fs_ptb`), one column per lead (i, ii, iii, avr, avl,
-avf, v1 to v6 and the three Frank leads vx, vy and vz), in millivolts. `header` is the list of the
-text lines of the header file of the record. The course package has a ready R-peak detector,
-`measure.detect_r_peaks`. It receives one lead and its sampling frequency and returns the positions
-of the R peaks as sample numbers.
-Task: First print the lines of header that begin with "Reason for admission" or "Acute infarction".
-Then draw the first 3 seconds of the twelve standard leads in a grid of three rows and four columns,
-with the name of the lead above each panel. Finally, find the R peaks of lead ii with the R-peak
-detector of the course package and compute the heart rate as 60 divided by the mean RR interval in
-seconds.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the heart rate in beats per minute, rounded to one decimal. Keep the result under the
-name `hr_ptb` and print it with a short label. Return only the code, as one block, with a short
-comment above each step.
-Test: The printed lines must name an infero-lateral infarction.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to see the real 12-lead ECG of an 81-year-old woman admitted with an
+acute infero-lateral myocardial infarction in the layout of ECG paper, and to measure her heart
+rate.
+Data: The notebook holds a table named "data". Each row is one moment of the recording: The column
+"time" gives the time in seconds, and the columns "I", "II", "III", "aVR", "aVL", "aVF" and "V1" to
+"V6" give the voltage of the twelve standard leads in millivolts. The recording lasts 38.4 seconds
+and was sampled 1000 times per second.
+Task: Draw the first 3 seconds of the twelve leads in three rows and four columns, as on ECG paper:
+I, II and III in the first column, aVR, aVL and aVF in the second, V1 to V3 in the third and V4 to
+V6 in the fourth, with the name of the lead above each panel. Then find the R peaks of lead I.
+Accept as R peaks the peaks that exceed half of the highest value and lie at least 0.3 seconds
+apart. Compute the heart rate in beats per minute from the mean time between successive R peaks.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the heart rate with one decimal and keep it under the name "answer". Show the figure
+as well.
+Test: The heart rate must lie between 40 and 150 beats per minute, and the number of R peaks must
+fit it: At 80 beats per minute, 38.4 seconds hold about 51 beats.
 ```
 
-**Expected result:** `hr_ptb` = 81.8
+**Expected result:** "answer" = 81.8
 
-### Step 3.4: Correcting the function of an assistant
+### Step 3.4: From a careless prompt to the prompt card
 
-**Goal.** An AI assistant wrote a function for the QTc from a short prompt and returned an impossible QTc of 17 ms. Find the two errors and correct them.
+**Goal.** From the short prompt "write a python function that gives the qtc from qt and rr in samples", an AI assistant wrote code that returned an impossible QTc of 17 ms. The data cell of this step shows this result. In this step, the same calculation is requested again with the seven fields of the prompt card, and the result is checked.
 
 ```text
-Role: You are helping a cardiologist who does not write code. The code you write will be pasted into
-a cell of a Jupyter notebook and run there.
-Context: The code runs in the Jupyter notebook of Week 1, where the data below and the course
-package vclinic, with its module measure, are already loaded. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) are available.
-Data: The function of the assistant: def qtc(qt_samples, rr_samples, fs=360): qt_ms = qt_samples /
-fs * 1000; rr_ms = rr_samples / fs * 1000; return qt_ms / rr_ms ** 0.5. On an ECG recorded with 500
-samples per second, a QT of 196 samples and an RR interval of 353 samples were measured.
-Task: Write a corrected function named qtc_bazett. It receives the QT and the RR interval as numbers
-of samples, and the sampling frequency, which must always be given and never assumed. It turns the
-QT into milliseconds and the RR interval into seconds, and returns Bazett's QTc: the QT in
-milliseconds divided by the square root of the RR interval in seconds. Then compute the QTc of the
-measurement above with it.
-Constraints: Use only the data and the tools named here. The code must not read files, download
-anything or install packages.
-Output: Give the QTc in milliseconds, rounded to one decimal. Keep the result under the name
-`qtc_fixed` and print it with a short label. Return only the code, as one block, with a short
-comment above each step.
-Test: With a QT of 200 samples and an RR interval of 500 samples at 500 samples per second, the
-function must return 400 ms, because the RR interval is then exactly 1 second.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: On an ECG sampled 500 times per second, the QT interval and the RR interval were measured
+as numbers of samples. The cardiologist wants the QT interval corrected by Bazett's method, in
+milliseconds.
+Data: The notebook holds a table named "data" with one row: The column "QT" gives the QT interval
+and the column "RR" the RR interval, both as numbers of samples. The recording was sampled 500 times
+per second.
+Task: Turn the QT interval into milliseconds and the RR interval into seconds. Correct the QT by
+Bazett's method: Divide the QT in milliseconds by the square root of the RR interval in seconds.
+Constraints: Use only this table. Do not assume the number of samples per second; use the 500 given
+here. The code must not read files, download anything from the internet or install programs.
+Output: Print the corrected QT in milliseconds with one decimal and keep it under the name "answer".
+Test: The same calculation must give exactly 400 ms for a QT of 200 samples and an RR interval of
+500 samples, because the RR interval is then exactly 1 second.
 ```
 
-**Expected result:** `qtc_fixed` = 466.5
+**Expected result:** "answer" = 466.5
 
 ## Prompts for repairing, explaining and reviewing code
 
@@ -330,7 +301,7 @@ These prompts work with the code of any step. The parts in square brackets are r
 ```text
 The code below was written for this task: [paste the Task line of the prompt]. It runs, but the
 check of the course prints "not yet". Find the error, explain it in two sentences and return the
-corrected code. Keep the name of the variable that holds the result.
+corrected code. The result must still be kept under the name "answer".
 
 [paste the code here]
 ```
@@ -349,8 +320,8 @@ in plain language and return the corrected code.
 ### Explain the code
 
 ```text
-Explain the following Python code line by line for a physician who is new to Python. Then name two
-ways in which it could return a wrong result without an error message.
+Explain the code below line by line for a physician who does not write code. Then name two ways in
+which it could give a wrong result without an error message.
 
 [paste the code here]
 ```
@@ -358,98 +329,110 @@ ways in which it could return a wrong result without an error message.
 ### Ask for tests
 
 ```text
-Write three short tests for the function below, with inputs whose correct result is known by hand,
-for example a heart rate of 60 beats per minute, where the RR interval is exactly 1 second. Each
-test should stop the code with a clear message when the result is wrong. Explain in one sentence
-what each test protects against.
+Write three short tests for the code below, with inputs whose correct result is known by hand, for
+example a heart rate of 60 beats per minute, where the RR interval is exactly 1 second. Each test
+should stop the code with a clear message when the result is wrong. Explain in one sentence what
+each test protects against.
 
-[paste the function here]
+[paste the code here]
 ```
 
 ## Prompt path of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. Each step builds on the one before it, so the test of a step must hold before the next prompt is sent. The report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Extend measure_ecg with the frontal axis
+### Step 1: The frontal axis of the case
 
 ```text
-Role: You are helping a cardiologist who is new to programming.
-Context: The code runs in the Jupyter notebook of Week 1. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) and the course package vclinic are available.
-Data: The measuring tool measure_ecg of Section 5 with its helper tools for the R peaks and the
-boundaries of the QRS complex. The course package has a tool, vclinic.frontal_axis, that gives the
-frontal QRS axis in degrees from the net QRS voltages of leads I and aVF.
-Task: Write a new measuring tool named measure_ecg_axis that returns everything measure_ecg returns
-and, in addition, the frontal axis in degrees under the name axis_deg. For each beat, take the net
-QRS voltage of leads I and aVF: the largest positive plus the largest negative value between the
-onset and the end of the QRS complex, measured from the median voltage of the 30 ms before the
-onset. Give the medians over all beats to vclinic.frontal_axis.
-Constraints: Use only the data and the tools named here. The code must not read files or install
-packages.
-Output: The new tool and its result for patient VC-0317. Return only the code, as one block, with a
-short comment above each step.
-Test: The registry gives an axis of 21 degrees for VC-0317. The measured axis should lie within
-about 10 degrees of it, because the net voltages also contain the small septal and terminal forces.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to measure the frontal QRS axis of a 67-year-old woman from her
+resting ECG, beat by beat.
+Data: The notebook holds a table named "data". Each row is a beat: The column "beat" gives its
+number, and the columns "I" and "aVF" give the net QRS voltage of these leads in millivolts. The net
+voltage is the largest positive plus the largest negative deflection of the QRS complex.
+Task: For every beat, build the vector whose horizontal component is the voltage of lead I and whose
+vertical component is the voltage of lead aVF divided by 0.866. The frontal axis is the angle of
+this vector in degrees, measured from the direction of lead I, with positive angles towards the
+feet. Then take the median axis of all beats and print whether it lies in the normal range of −30 to
++90 degrees.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the median axis in degrees with one decimal and keep it under the name "answer".
+Test: A beat with 0.9 mV in lead I and −0.3 mV in lead aVF must give an axis of about −21 degrees.
+The registry gives an axis of 21 degrees for this patient, and the result should lie within about 10
+degrees of it, because the net voltages also hold the small septal and terminal forces.
 ```
 
 ### Step 2: Ten patients against the truth
 
 ```text
-Role: You are helping a cardiologist who is new to programming.
-Context: The code runs in the Jupyter notebook of Week 1. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) and the course package vclinic are available.
-Data: The table clinic with the columns patient_id, ecg_rhythm ("sinus" or "AF") and ecg_conduction
-("normal", "LBBB" or "RBBB"). The ECG of a patient comes from the tool patient_ecg of the course
-package vclinic, which receives the table clinic and the number of the patient. The part truth of
-the ECG holds the true heart rate, PR interval, QRS duration, QT interval and axis.
-Task: Choose ten patients, at least two of them with atrial fibrillation or a bundle branch block.
-Measure each with measure_ecg_axis, telling the tool that the rhythm is not sinus for the patients
-with atrial fibrillation. Build a table with the measured value, the true value and their difference
-for the heart rate, the PR interval, the QRS duration, the QT interval and the axis.
-Constraints: Use only the data and the tools named here. The code must not read files or install
-packages.
-Output: A table with one row per patient. Return only the code, as one block, with a short comment
-above each step.
-Test: The table has ten rows, and for VC-0317 the differences in PR, QRS and QT are only a few
-milliseconds.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to know how well an automatic ECG measurement agrees with the true
+values in ten patients of the virtual clinic, among them patients with atrial fibrillation or left
+bundle branch block.
+Data: The notebook holds a table named "data". Each row is one measurement of one patient: The
+column "patient" gives the number of the patient, "rhythm" says "sinus" or "AF", and "conduction"
+says "normal" or "LBBB" (left bundle branch block). The column "measure" names the measurement
+("heart rate", "PR", "QRS", "QT" or "axis"), "measured" gives the value of the automatic measurement
+and "true" the true value. Heart rates are in beats per minute, intervals in milliseconds and axes
+in degrees. There is no PR interval in atrial fibrillation, so these cells are empty.
+Task: Compute the difference, measured minus true, for every row. For each measurement, print the
+mean absolute difference and the largest absolute difference with the patient in whom it occurs.
+Then show all differences in one table, with one row per patient and one column per measurement.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the two summaries and the table, and keep the mean absolute difference of the QT
+interval in milliseconds under the name "answer".
+Test: The table must have ten rows. For patient VC-0317, the differences of the PR, QRS and QT
+intervals must be only a few milliseconds.
 ```
 
-### Step 3: The two real records
+### Step 3: The heart rate of record 100 over thirty minutes
 
 ```text
-Role: You are helping a cardiologist who is new to programming.
-Context: The code runs in the Jupyter notebook of Week 1. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) and the course package vclinic are available.
-Data: leads_ptb, the twelve leads of the PTB record, and fs_ptb, 1000 samples per second, from
-Section 8. found, the detected R peaks of MIT-BIH record 100 as sample positions, and fs_mit, 360
-samples per second, from Section 6.
-Task: Measure the PTB record with measure_ecg_axis, and compute the mean heart rate of MIT-BIH
-record 100 from its detected beats.
-Constraints: Use only the data and the tools named here. The code must not read files or install
-packages.
-Output: The measurements of the PTB record and the mean heart rate of record 100. Return only the
-code, as one block, with a short comment above each step.
-Test: For the PTB record, Section 8 reports a heart rate of 81.8 beats per minute, a PR interval of
-225 ms, a QRS duration of 137 ms and a QT of 436.7 ms.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to see how the heart rate of a 69-year-old man changes over his
+30-minute ambulatory ECG, record 100 of the MIT-BIH Arrhythmia Database.
+Data: The notebook holds a table named "data". Each row is a mark that the cardiologists placed on
+the recording: The column "time" gives its place in seconds, and the column "label" its kind. "N"
+marks a normal beat, "A" an atrial premature beat and "V" a premature ventricular contraction; "+"
+marks a change of rhythm and is not a beat.
+Task: Keep only the beats, that is, all labels except "+". For every beat after the first, compute
+the heart rate as 60 divided by the RR interval in seconds. Plot this heart rate against the time in
+minutes. Then compute the mean heart rate of the whole recording as 60 divided by the mean RR
+interval.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the mean heart rate in beats per minute with one decimal and keep it under the name
+"answer". Show the plot as well.
+Test: An RR interval of exactly 1 second must give 60 beats per minute, and the mean heart rate must
+lie between 60 and 90 beats per minute.
 ```
 
 ### Step 4: Bazett or Fridericia for each patient
 
 ```text
-Role: You are helping a cardiologist who is new to programming.
-Context: The code runs in the Jupyter notebook of Week 1. The usual packages for tables,
-calculations and plots (pandas, NumPy and Matplotlib) and the course package vclinic are available.
-Data: The table of step 2 with the measured QT and heart rate of each patient, and the sex of each
-patient from clinic.
-Task: For each patient, compute the QTc by Bazett's and by Fridericia's formula, and decide whether
-it is prolonged, with the limits of 460 ms for women and 450 ms for men. List the patients for whom
-the two formulas disagree.
-Constraints: Use only the data and the tools named here. The code must not read files or install
-packages.
-Output: The table with two new columns and the list of the disagreements. Return only the code, as
-one block, with a short comment above each step.
-Test: VC-0317, a woman at 85 beats per minute, is prolonged by Bazett's formula and not by
-Fridericia's.
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: For ten patients of the virtual clinic, the cardiologist wants to know whether the choice
+between Bazett's and Fridericia's correction changes the decision that the QT interval is prolonged.
+Data: The notebook holds a table named "data". Each row is a patient: The column "patient" gives the
+number of the patient, and "sex" says "female" or "male". The column "heart rate" gives the measured
+heart rate in beats per minute, and "QT" the measured QT interval in milliseconds.
+Task: For every patient, compute the RR interval in seconds as 60 divided by the heart rate. Compute
+the QTc by Bazett's formula, the QT divided by the square root of RR, and by Fridericia's formula,
+the QT divided by the cube root of RR. Call a QTc prolonged when it is 460 ms or longer in a woman,
+or 450 ms or longer in a man. List the patients for whom the two formulas lead to different
+decisions.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print a table with the two corrections and the two decisions, and the list of the
+disagreements. Keep the number of patients with different decisions under the name "answer".
+Test: Patient VC-0317, a woman at about 85 beats per minute, must be prolonged by Bazett's formula
+and not by Fridericia's.
 ```
 
 ---

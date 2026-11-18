@@ -14,13 +14,14 @@ The lecture page has two or three practice stops each week. At a stop, the butto
 | Step | What to do |
 |---|---|
 | 1. Read | Read the goal of the step in the notebook. |
-| 2. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
-| 3. Run | Paste the code of the assistant into the cell below the prompt and run it. |
-| 4. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result. |
-| 5. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
-| 6. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
+| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
+| 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
+| 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
+| 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
+| 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-Every stop starts with a preparation cell that loads the data of the stop, so a stop can also be started on another day. The *Ready code* cell of each step always gives the correct result: Nobody gets stuck, and the next step can always start.
+Every stop starts with a preparation cell that loads the data of the stop, so a stop can also be started on another day. Each step then has its own data cell, which prepares and shows the table "data" that the prompt describes. The *Ready code* cell of each step always gives the correct result: Nobody gets stuck, and the next step can always start.
 
 ## Which assistant?
 
@@ -37,17 +38,17 @@ The course does not depend on any one of these tools. Assistants change often, s
 
 ## The prompt card
 
-Every prompt of the course has the same seven fields, and reading them teaches how to write a good request to an assistant.
+Every prompt of the course has the same seven fields, and reading them teaches how to write a good request to an assistant. A prompt is written in clinical language. Only two names from the code appear in it: "data", the table that the data cell of each step prepares and shows, and "answer", the name under which the result is kept for the check. No package, function or setting of the code is named.
 
 | Field | What it states |
 |---|---|
-| Role | Who the assistant should be: A helper of a cardiologist who does not write code |
-| Context | Where the code runs and what is ready: The Jupyter notebook and the data already loaded in it |
-| Data | The names of the data, their units and, for signals, the sampling frequency |
-| Task | One clear task, with its formula if there is one |
-| Constraints | What the code may not do, such as reading files or installing packages |
-| Output | The name under which the result is kept and its rounding |
-| Test | A case whose answer is known, so that the result can be checked |
+| Role | Who the assistant helps, and where its code will run: A cardiologist who does not write code, and a Jupyter notebook |
+| Context | The clinical question of the step |
+| Data | The table "data": its rows, its columns and their units, and for signals the number of samples per second |
+| Task | One clear task, with its formula or its rule |
+| Constraints | What the code must not do: use other data, read files, download anything or install programs |
+| Output | What is printed or drawn, and the result kept under the name "answer" |
+| Test | A case whose answer is known, or a plausible range, so that the result can be checked |
 
 An assistant can write code that runs without an error and still gives a wrong number. The check of every step is therefore the most important part of the prompt path.
 
