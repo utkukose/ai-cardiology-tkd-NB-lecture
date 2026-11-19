@@ -81,6 +81,8 @@ Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging 
 
 8. hafta yeni bir paket gerektirmez ve hiçbir şey indirmez: Ders paketi haftanın bütün verilerini bilgisayarda oluşturur.
 
+9. hafta yeni bir paket gerektirmez. Haftanın defteri 4. haftanın 300 CAMUS hastasını kullanır ve yaklaşık 250 MB tutan bu verileri yalnızca bilgisayarda bulunmadıklarında yeniden indirir. İsteğe bağlı shap paketi (`pip install shap` komutuyla kurulur) lojistik regresyonun Shapley değerlerini ikinci bir yolla hesaplar; paket kurulu değilse defter kapalı formu kullanır.
+
 Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
 
 ```bash

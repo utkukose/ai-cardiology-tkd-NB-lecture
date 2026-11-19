@@ -21,7 +21,7 @@ Participants who do not want to write code follow the [prompt path](PROMPT_PATH.
 | 6 | Python step 6: Working with text | Strings and their methods, regular expressions, tokens, calling a pretrained model from the Hugging Face Hub | In preparation |
 | 7 | Python step 7: Classes and modules | Reading and writing a small class, importing code from modules, building a model from parts | [NB07_vision_transformers.ipynb](en/week-07/NB07_vision_transformers.ipynb) |
 | 8 | Python step 8: Joining data | Merging tables, aligning signals and images of one patient, dealing with missing parts | [NB08_multimodal_ai_and_data_fusion.ipynb](en/week-08/NB08_multimodal_ai_and_data_fusion.ipynb) |
-| 9 | Python step 9: Explaining a model in code | Calling explanation libraries, plotting attributions, comparing groups of patients | In preparation |
+| 9 | Python step 9: Explaining a model in code | Groups and orders of variables with itertools, dictionaries with tuples as keys, the factorials of the Shapley formula, functions handed to other functions, charts of contributions | [NB09_reliability_and_explainable_ai.ipynb](en/week-09/NB09_reliability_and_explainable_ai.ipynb) |
 | 10 | Python step 10: From notebook to application | Scripts, a small web interface with Streamlit, saving and loading a model | In preparation |
 | 11 | Python step 11: A project of one's own | Organising a project folder, documenting code, making results reproducible | In preparation |
 

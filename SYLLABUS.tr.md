@@ -79,9 +79,9 @@ Malzemeler: [Hafta sayfası](tr/hafta-08/README.md) · [Ders sayfası](https://u
 
 ### Hafta 9: Model güvenilirliği ve açıklanabilir yapay zekâ
 
-Oturumun ilk yarısında modellerin kararları, açıklanabilir YZ (XAI) yöntemlerinden SHAP, LIME ve Grad-CAM ile açıklanır. İkinci yarıda veri kayması, kalibrasyon, cinsiyete ve yaşa bağlı yanlılık ve Kişisel Verilerin Korunması Kanunu (KVKK) dâhil klinik yapay zekânın hukuki ve etik çerçevesi incelenir. **Oturumdaki mini proje:** Koroner arter hastalığı modelinde en çok ağırlık taşıyan klinik etkenlerin SHAP ile açıklanması. **Haftalık proje:** Eko modelinin Grad-CAM haritalarının bir uzmanın değerlendirmesiyle karşılaştırılması. **Veriler:** Önceki haftaların modelleri. **Sanal kliniğin aşaması:** Kalite ve güvenlik kurulu: XAI.
+Oturumun ilk yarısında modellerin kararları, açıklanabilir YZ (XAI) yöntemlerinden SHAP, LIME ve Grad-CAM ile açıklanır. İkinci yarıda veri kayması, kalibrasyon, cinsiyete ve yaşa bağlı yanlılık ve Kişisel Verilerin Korunması Kanunu (KVKK) dâhil klinik yapay zekânın hukuki ve etik çerçevesi incelenir. **Oturumdaki mini proje:** Koroner arter hastalığı modelinde en çok ağırlık taşıyan klinik etkenlerin SHAP ile açıklanması. **Haftalık proje:** Eko modelinin Grad-CAM haritalarının bir uzmanın değerlendirmesiyle karşılaştırılması. **Veriler:** 2. haftanın Cleveland verisi, 4. haftanın 300 CAMUS hastası ve sanal kliniğin iki hastanedeki göğüs ağrısı ünitesi. **Sanal kliniğin aşaması:** Kalite ve güvenlik kurulu: XAI.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-09/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/lab.html) · [Jupyter defteri](tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb) · [Prompt kütüphanesi](tr/hafta-09/PROMPTLAR.md) · [PDF ders notu](tr/hafta-09/Hafta09_Ders_Notlari.pdf)
 
 ### Hafta 10: Klinik karar destek sistemleri
 

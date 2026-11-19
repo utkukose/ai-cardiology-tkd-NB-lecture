@@ -63,7 +63,8 @@ Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabil
 | 5 | [PROMPTLAR.md](tr/hafta-05/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
 | 7 | [PROMPTLAR.md](tr/hafta-07/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
 | 8 | [PROMPTLAR.md](tr/hafta-08/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |
-| 9-11 | Hazırlanıyor | | |
+| 9 | [PROMPTLAR.md](tr/hafta-09/PROMPTLAR.md) | 3 durak, 12 adım | F bölümü, prompt atölyesi |
+| 10-11 | Hazırlanıyor | | |
 
 Haftanın prompt kütüphanesi, 1. kısmın bütün promptlarını GitHub'da birer kopyalama düğmesiyle, kodu onarmak için promptları ve haftalık projenin prompt yolunu içerir. Etkileşimli labın F bölümünde prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimiyle çalışılır.
 

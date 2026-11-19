@@ -21,7 +21,7 @@ Kod yazmak istemeyen katılımcılar için aynı defterin 1. kısmında kodu, ha
 | 6 | Python adımı 6: Metinle çalışmak | Karakter dizileri (string) ve metotları, düzenli ifadeler, belirteçler (token), Hugging Face Hub'dan önceden eğitilmiş bir modeli çağırma | Hazırlanıyor |
 | 7 | Python adımı 7: Sınıflar ve modüller | Küçük bir sınıfı okuma ve yazma, modüllerden kod içe aktarma, bir modeli parçalardan kurma | [NB07_goru_donusturuculeri.ipynb](tr/hafta-07/NB07_goru_donusturuculeri.ipynb) |
 | 8 | Python adımı 8: Verileri birleştirmek | Tabloları birleştirme, bir hastanın sinyallerini ve görüntülerini hizalama, eksik parçalarla başa çıkma | [NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb](tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb) |
-| 9 | Python adımı 9: Bir modeli kodla açıklamak | Açıklama kütüphanelerini çağırma, öznitelik katkılarını grafikle gösterme, hasta gruplarını karşılaştırma | Hazırlanıyor |
+| 9 | Python adımı 9: Bir modeli kodla açıklamak | itertools ile değişken grupları ve sıraları, anahtarları demet olan sözlükler, Shapley formülünün faktöriyelleri, başka fonksiyonlara verilen fonksiyonlar, katkı grafikleri | [NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb](tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb) |
 | 10 | Python adımı 10: Defterden uygulamaya | Betikler, Streamlit ile küçük bir web arayüzü, bir modeli kaydetme ve yükleme | Hazırlanıyor |
 | 11 | Python adımı 11: Katılımcının kendi projesi | Bir proje klasörünü düzenleme, kodu belgeleme, sonuçları yeniden üretilebilir kılma | Hazırlanıyor |
 

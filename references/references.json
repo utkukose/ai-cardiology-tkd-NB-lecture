@@ -26,6 +26,48 @@
     ]
   },
   {
+    "key": "adebayo2018",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Adebayo",
+        "given": "J."
+      },
+      {
+        "family": "Gilmer",
+        "given": "J."
+      },
+      {
+        "family": "Muelly",
+        "given": "M."
+      },
+      {
+        "family": "Goodfellow",
+        "given": "I."
+      },
+      {
+        "family": "Hardt",
+        "given": "M."
+      },
+      {
+        "family": "Kim",
+        "given": "B."
+      }
+    ],
+    "year": "2018",
+    "title": "Sanity checks for saliency maps",
+    "container": "Advances in Neural Information Processing Systems 31",
+    "volume": "",
+    "issue": "",
+    "pages": "9505–9515",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html",
+    "apa": "Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M., & Kim, B. (2018). Sanity checks for saliency maps. In *Advances in Neural Information Processing Systems 31* (pp. 9505–9515). https://proceedings.neurips.cc/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "alzaiti2023",
     "type": "article",
     "authors": [
@@ -884,6 +926,27 @@
     ]
   },
   {
+    "key": "kvkk7499",
+    "type": "law",
+    "authors": [
+      {
+        "literal": "Ceza Muhakemesi Kanunu ile Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanun [Law amending the Code of Criminal Procedure and certain laws], Law No. 7499"
+      }
+    ],
+    "year": "2024",
+    "title": "",
+    "container": "Resmî Gazete, 32487 (12 March 2024)",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=7499&MevzuatTur=1&MevzuatTertip=5",
+    "apa": "Ceza Muhakemesi Kanunu ile Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanun [Law amending the Code of Criminal Procedure and certain laws], Law No. 7499. (2024). *Resmî Gazete, 32487 (12 March 2024)*. https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=7499&MevzuatTur=1&MevzuatTertip=5",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "cho2014",
     "type": "proceedings",
     "authors": [
@@ -1413,6 +1476,56 @@
     ]
   },
   {
+    "key": "finlayson2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Finlayson",
+        "given": "S. G."
+      },
+      {
+        "family": "Subbaswamy",
+        "given": "A."
+      },
+      {
+        "family": "Singh",
+        "given": "K."
+      },
+      {
+        "family": "Bowers",
+        "given": "J."
+      },
+      {
+        "family": "Kupke",
+        "given": "A."
+      },
+      {
+        "family": "Zittrain",
+        "given": "J."
+      },
+      {
+        "family": "Kohane",
+        "given": "I. S."
+      },
+      {
+        "family": "Saria",
+        "given": "S."
+      }
+    ],
+    "year": "2021",
+    "title": "The clinician and dataset shift in artificial intelligence",
+    "container": "New England Journal of Medicine",
+    "volume": "385",
+    "issue": "3",
+    "pages": "283–286",
+    "doi": "10.1056/NEJMc2104626",
+    "url": "https://doi.org/10.1056/NEJMc2104626",
+    "apa": "Finlayson, S. G., Subbaswamy, A., Singh, K., Bowers, J., Kupke, A., Zittrain, J., Kohane, I. S., & Saria, S. (2021). The clinician and dataset shift in artificial intelligence. *New England Journal of Medicine, 385*(3), 283–286. https://doi.org/10.1056/NEJMc2104626",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "fridericia1920",
     "type": "article",
     "authors": [
@@ -1432,6 +1545,36 @@
     "apa": "Fridericia, L. S. (1920). Die Systolendauer im Elektrokardiogramm bei normalen Menschen und bei Herzkranken. *Acta Medica Scandinavica, 53*(1), 469–486. https://doi.org/10.1111/j.0954-6820.1920.tb18266.x",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "ghassemi2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Ghassemi",
+        "given": "M."
+      },
+      {
+        "family": "Oakden-Rayner",
+        "given": "L."
+      },
+      {
+        "family": "Beam",
+        "given": "A. L."
+      }
+    ],
+    "year": "2021",
+    "title": "The false hope of current approaches to explainable artificial intelligence in health care",
+    "container": "The Lancet Digital Health",
+    "volume": "3",
+    "issue": "11",
+    "pages": "e745–e750",
+    "doi": "10.1016/S2589-7500(21)00208-9",
+    "url": "https://doi.org/10.1016/S2589-7500(21)00208-9",
+    "apa": "Ghassemi, M., Oakden-Rayner, L., & Beam, A. L. (2021). The false hope of current approaches to explainable artificial intelligence in health care. *The Lancet Digital Health, 3*(11), e745–e750. https://doi.org/10.1016/S2589-7500(21)00208-9",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1967,6 +2110,68 @@
     ]
   },
   {
+    "key": "hughes2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Hughes",
+        "given": "J. W."
+      },
+      {
+        "family": "Olgin",
+        "given": "J. E."
+      },
+      {
+        "family": "Avram",
+        "given": "R."
+      },
+      {
+        "family": "Abreau",
+        "given": "S. A."
+      },
+      {
+        "family": "Sittler",
+        "given": "T."
+      },
+      {
+        "family": "Radia",
+        "given": "K."
+      },
+      {
+        "family": "Hsia",
+        "given": "H."
+      },
+      {
+        "family": "Walters",
+        "given": "T."
+      },
+      {
+        "family": "Lee",
+        "given": "B."
+      },
+      {
+        "family": "Gonzalez",
+        "given": "J. E."
+      },
+      {
+        "family": "Tison",
+        "given": "G. H."
+      }
+    ],
+    "year": "2021",
+    "title": "Performance of a convolutional neural network and explainability technique for 12-lead electrocardiogram interpretation",
+    "container": "JAMA Cardiology",
+    "volume": "6",
+    "issue": "11",
+    "pages": "1285–1295",
+    "doi": "10.1001/jamacardio.2021.2746",
+    "url": "https://doi.org/10.1001/jamacardio.2021.2746",
+    "apa": "Hughes, J. W., Olgin, J. E., Avram, R., Abreau, S. A., Sittler, T., Radia, K., Hsia, H., Walters, T., Lee, B., Gonzalez, J. E., & Tison, G. H. (2021). Performance of a convolutional neural network and explainability technique for 12-lead electrocardiogram interpretation. *JAMA Cardiology, 6*(11), 1285–1295. https://doi.org/10.1001/jamacardio.2021.2746",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "hunter2007",
     "type": "article",
     "authors": [
@@ -2394,6 +2599,36 @@
     "apa": "Kişisel Verilerin Korunması Kanunu [Law on the Protection of Personal Data], Law No. 6698. (2016). *Resmî Gazete, 29677 (7 April 2016)*. https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "kleinberg2017",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Kleinberg",
+        "given": "J."
+      },
+      {
+        "family": "Mullainathan",
+        "given": "S."
+      },
+      {
+        "family": "Raghavan",
+        "given": "M."
+      }
+    ],
+    "year": "2017",
+    "title": "Inherent trade-offs in the fair determination of risk scores",
+    "container": "8th Innovations in Theoretical Computer Science Conference (ITCS 2017), Leibniz International Proceedings in Informatics 67",
+    "volume": "",
+    "issue": "",
+    "pages": "43:1–43:23",
+    "doi": "10.4230/LIPIcs.ITCS.2017.43",
+    "url": "https://doi.org/10.4230/LIPIcs.ITCS.2017.43",
+    "apa": "Kleinberg, J., Mullainathan, S., & Raghavan, M. (2017). Inherent trade-offs in the fair determination of risk scores. In *8th Innovations in Theoretical Computer Science Conference (ITCS 2017), Leibniz International Proceedings in Informatics 67* (pp. 43:1–43:23). https://doi.org/10.4230/LIPIcs.ITCS.2017.43",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2996,6 +3231,32 @@
     ]
   },
   {
+    "key": "lundberg2017",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Lundberg",
+        "given": "S. M."
+      },
+      {
+        "family": "Lee",
+        "given": "S.-I."
+      }
+    ],
+    "year": "2017",
+    "title": "A unified approach to interpreting model predictions",
+    "container": "Advances in Neural Information Processing Systems 30",
+    "volume": "",
+    "issue": "",
+    "pages": "4765–4774",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html",
+    "apa": "Lundberg, S. M., & Lee, S.-I. (2017). A unified approach to interpreting model predictions. In *Advances in Neural Information Processing Systems 30* (pp. 4765–4774). https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "madani2018",
     "type": "article",
     "authors": [
@@ -3439,6 +3700,40 @@
     "apa": "Muehlematter, U. J., Daniore, P., & Vokinger, K. N. (2021). Approval of artificial intelligence and machine learning-based medical devices in the USA and Europe (2015–20): A comparative analysis. *The Lancet Digital Health, 3*(3), e195–e203. https://doi.org/10.1016/S2589-7500(20)30292-2",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "obermeyer2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Obermeyer",
+        "given": "Z."
+      },
+      {
+        "family": "Powers",
+        "given": "B."
+      },
+      {
+        "family": "Vogeli",
+        "given": "C."
+      },
+      {
+        "family": "Mullainathan",
+        "given": "S."
+      }
+    ],
+    "year": "2019",
+    "title": "Dissecting racial bias in an algorithm used to manage the health of populations",
+    "container": "Science",
+    "volume": "366",
+    "issue": "6464",
+    "pages": "447–453",
+    "doi": "10.1126/science.aax2342",
+    "url": "https://doi.org/10.1126/science.aax2342",
+    "apa": "Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. *Science, 366*(6464), 447–453. https://doi.org/10.1126/science.aax2342",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3901,6 +4196,36 @@
     ]
   },
   {
+    "key": "rabanser2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Rabanser",
+        "given": "S."
+      },
+      {
+        "family": "Günnemann",
+        "given": "S."
+      },
+      {
+        "family": "Lipton",
+        "given": "Z."
+      }
+    ],
+    "year": "2019",
+    "title": "Failing loudly: An empirical study of methods for detecting dataset shift",
+    "container": "Advances in Neural Information Processing Systems 32",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper/2019/hash/846c260d715e5b854ffad5f70a516c88-Abstract.html",
+    "apa": "Rabanser, S., Günnemann, S., & Lipton, Z. (2019). Failing loudly: An empirical study of methods for detecting dataset shift. In *Advances in Neural Information Processing Systems 32*. https://proceedings.neurips.cc/paper/2019/hash/846c260d715e5b854ffad5f70a516c88-Abstract.html",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "raghu2019",
     "type": "proceedings",
     "authors": [
@@ -3983,6 +4308,78 @@
     "apa": "Regulation (EU) 2017/745 of the European Parliament and of the Council of 5 April 2017 on medical devices. (2017). *Official Journal of the European Union, L 117 (5 May 2017), 1–175*. https://eur-lex.europa.eu/eli/reg/2017/745/oj",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "eu2024aiact",
+    "type": "law",
+    "authors": [
+      {
+        "literal": "Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)"
+      }
+    ],
+    "year": "2024",
+    "title": "",
+    "container": "Official Journal of the European Union, L, 2024/1689 (12 July 2024)",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+    "apa": "Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). (2024). *Official Journal of the European Union, L, 2024/1689 (12 July 2024)*. https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "eu2026omnibus",
+    "type": "law",
+    "authors": [
+      {
+        "literal": "Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence (Digital Omnibus on AI)"
+      }
+    ],
+    "year": "2026",
+    "title": "",
+    "container": "Official Journal of the European Union, L, 2026/1744 (24 July 2026)",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+    "apa": "Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence (Digital Omnibus on AI). (2026). *Official Journal of the European Union, L, 2026/1744 (24 July 2026)*. https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "ribeiro2016",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Ribeiro",
+        "given": "M. T."
+      },
+      {
+        "family": "Singh",
+        "given": "S."
+      },
+      {
+        "family": "Guestrin",
+        "given": "C."
+      }
+    ],
+    "year": "2016",
+    "title": "\"Why should I trust you?\": Explaining the predictions of any classifier",
+    "container": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+    "volume": "",
+    "issue": "",
+    "pages": "1135–1144",
+    "doi": "10.1145/2939672.2939778",
+    "url": "https://doi.org/10.1145/2939672.2939778",
+    "apa": "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). \"Why should I trust you?\": Explaining the predictions of any classifier. In *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining* (pp. 1135–1144). https://doi.org/10.1145/2939672.2939778",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4161,6 +4558,28 @@
     ]
   },
   {
+    "key": "rudin2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Rudin",
+        "given": "C."
+      }
+    ],
+    "year": "2019",
+    "title": "Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead",
+    "container": "Nature Machine Intelligence",
+    "volume": "1",
+    "issue": "5",
+    "pages": "206–215",
+    "doi": "10.1038/s42256-019-0048-x",
+    "url": "https://doi.org/10.1038/s42256-019-0048-x",
+    "apa": "Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. *Nature Machine Intelligence, 1*(5), 206–215. https://doi.org/10.1038/s42256-019-0048-x",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "rumelhart1986",
     "type": "article",
     "authors": [
@@ -4317,6 +4736,48 @@
     ]
   },
   {
+    "key": "selvaraju2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Selvaraju",
+        "given": "R. R."
+      },
+      {
+        "family": "Cogswell",
+        "given": "M."
+      },
+      {
+        "family": "Das",
+        "given": "A."
+      },
+      {
+        "family": "Vedantam",
+        "given": "R."
+      },
+      {
+        "family": "Parikh",
+        "given": "D."
+      },
+      {
+        "family": "Batra",
+        "given": "D."
+      }
+    ],
+    "year": "2020",
+    "title": "Grad-CAM: Visual explanations from deep networks via gradient-based localization",
+    "container": "International Journal of Computer Vision",
+    "volume": "128",
+    "issue": "2",
+    "pages": "336–359",
+    "doi": "10.1007/s11263-019-01228-7",
+    "url": "https://doi.org/10.1007/s11263-019-01228-7",
+    "apa": "Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2020). Grad-CAM: Visual explanations from deep networks via gradient-based localization. *International Journal of Computer Vision, 128*(2), 336–359. https://doi.org/10.1007/s11263-019-01228-7",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "sgarbossa1996",
     "type": "article",
     "authors": [
@@ -4418,6 +4879,28 @@
     "apa": "Shah, S. J., Katz, D. H., Selvaraj, S., Burke, M. A., Yancy, C. W., Gheorghiade, M., Bonow, R. O., Huang, C.-C., & Deo, R. C. (2015). Phenomapping for novel classification of heart failure with preserved ejection fraction. *Circulation, 131*(3), 269–279. https://doi.org/10.1161/CIRCULATIONAHA.114.010637",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "shapley1953",
+    "type": "chapter",
+    "authors": [
+      {
+        "family": "Shapley",
+        "given": "L. S."
+      }
+    ],
+    "year": "1953",
+    "title": "A value for n-person games",
+    "container": "Contributions to the Theory of Games, Volume II (Annals of Mathematics Studies 28)",
+    "volume": "",
+    "issue": "",
+    "pages": "307–317",
+    "doi": "10.1515/9781400881970-018",
+    "url": "https://doi.org/10.1515/9781400881970-018",
+    "apa": "Shapley, L. S. (1953). A value for n-person games. In H. W. Kuhn & A. W. Tucker (Eds.), *Contributions to the Theory of Games, Volume II (Annals of Mathematics Studies 28)* (pp. 307–317). Princeton University Press. https://doi.org/10.1515/9781400881970-018",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -5259,6 +5742,27 @@
     "doi": "10.1080/01621459.1927.10502953",
     "url": "https://doi.org/10.1080/01621459.1927.10502953",
     "apa": "Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association, 22*(158), 209–212. https://doi.org/10.1080/01621459.1927.10502953",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "who2021",
+    "type": "book",
+    "authors": [
+      {
+        "literal": "World Health Organization"
+      }
+    ],
+    "year": "2021",
+    "title": "Ethics and governance of artificial intelligence for health: WHO guidance",
+    "container": "World Health Organization",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.who.int/publications/i/item/9789240029200",
+    "apa": "World Health Organization. (2021). *Ethics and governance of artificial intelligence for health: WHO guidance*. World Health Organization. https://www.who.int/publications/i/item/9789240029200",
     "used_in": [
       "Week 8: lecture page and Jupyter notebook"
     ]

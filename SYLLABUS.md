@@ -79,9 +79,9 @@ Materials: [Week page](en/week-08/README.md) · [Lecture page](https://utkukose.
 
 ### Week 9: Model reliability and explainable artificial intelligence
 
-The first half explains the decisions of models with the explainable AI (XAI) methods SHAP, LIME and Grad-CAM. The second half examines dataset shift, calibration, bias by sex and age, and the legal and ethical frame of clinical AI, including the Turkish Law on the Protection of Personal Data (KVKK). **Mini project in the session:** The clinical factors that weigh most in the model for coronary artery disease, explained with SHAP. **Weekly project:** Grad-CAM maps of the echo model compared with the reading of an expert. **Data:** Models of the earlier weeks. **Stage of the virtual clinic:** Quality and safety committee: XAI.
+The first half explains the decisions of models with the explainable AI (XAI) methods SHAP, LIME and Grad-CAM. The second half examines dataset shift, calibration, bias by sex and age, and the legal and ethical frame of clinical AI, including the Turkish Law on the Protection of Personal Data (KVKK). **Mini project in the session:** The clinical factors that weigh most in the model for coronary artery disease, explained with SHAP. **Weekly project:** Grad-CAM maps of the echo model compared with the reading of an expert. **Data:** The Cleveland data of Week 2, the 300 patients of CAMUS of Week 4 and the chest pain unit of the virtual clinic at two hospitals. **Stage of the virtual clinic:** Quality and safety committee: XAI.
 
-Materials: In preparation
+Materials: [Week page](en/week-09/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lab.html) · [Jupyter notebook](en/week-09/NB09_reliability_and_explainable_ai.ipynb) · [Prompt library](en/week-09/PROMPTS.md) · [PDF notes](en/week-09/Week09_Lecture_Notes.pdf)
 
 ### Week 10: Clinical decision support systems
 

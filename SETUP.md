@@ -81,6 +81,8 @@ Week 7 needs no new package. On first use, its notebook downloads the ImageNet w
 
 Week 8 needs no new package and downloads nothing: The course package draws all its data on the computer.
 
+Week 9 needs no new package. Its notebook uses the 300 patients of CAMUS of Week 4 and downloads them again, about 250 MB, only when they are missing. The optional package shap, installed with `pip install shap`, computes the Shapley values of the logistic regression a second way; without it, the notebook uses the closed form.
+
 The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run:
 
 ```bash
