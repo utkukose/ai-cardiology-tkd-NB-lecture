@@ -11,8 +11,12 @@ reason (registry_note); the script then prints the reason as a note. In the same
 way, an entry can explain an author list that the registry is known to give
 differently (registry_authors_note). Members of a group author that the record
 lists one by one are reported as a note. Entries
-without a DOI are checked for a reachable web address. The script exits with
-code 1 if any entry does not match or cannot be checked.
+without a DOI are checked for a reachable web address. An address that returns
+404 or 410, or whose host cannot be found, is a problem. A site that refuses or
+does not answer an automated request (for example HTTP 401, 403, 429 or a
+server error, or a timeout) is reported as a note, because such refusals are
+often temporary; the page is then checked by hand. The script exits with code 1
+if any entry does not match or if a DOI cannot be checked.
 """
 import difflib
 import html
@@ -134,18 +138,30 @@ def author_problems(entry, primary):
     return out
 
 
+GONE = re.compile(r"HTTP Error 410")
+NO_HOST = re.compile(r"Name or service not known|nodename nor servname|getaddrinfo failed|No address associated")
+
+
+def check_page(entry):
+    """A web page without a DOI: a missing page or host is a problem, a refused or unanswered request is a note."""
+    try:
+        status, _ = fetch(entry["url"])
+    except RuntimeError as err:
+        if GONE.search(str(err)):
+            return ["web address returns 410"]
+        if NO_HOST.search(str(err)):
+            return ["the host of the web address cannot be found"]
+        reason = str(err).split(": ", 1)[-1]
+        print(f"[note] {entry['key']}: the site refused or did not answer the automated request ({reason}); check the page by hand")
+        return []
+    return [] if status < 400 else [f"web address returns {status}"]
+
+
 def check(entry):
     problems = []
     doi = entry.get("doi")
     if not doi:
-        try:
-            status, _ = fetch(entry["url"])
-        except RuntimeError as err:
-            if "403" in str(err) or "429" in str(err):
-                print(f"[note] {entry['key']}: the site refuses automated requests; check it by hand")
-                return []
-            raise
-        return [] if status < 400 else [f"web address returns {status}"]
+        return check_page(entry)
     primary = from_datacite(doi) if doi.startswith(DATACITE_PREFIXES) else from_crossref(doi)
     if primary is None:
         return ["DOI not found"]

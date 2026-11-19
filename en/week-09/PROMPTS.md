@@ -147,7 +147,7 @@ Test: The eight values must add up to the log-odds of the patient minus the mean
 training patients.
 ```
 
-**Expected result:** "answer" = -1.175
+**Expected result:** "answer" = −1.175
 
 ### Step 1.4: From one patient to all patients
 

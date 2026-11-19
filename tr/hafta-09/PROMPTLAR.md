@@ -32,7 +32,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 9, 1-3. bölümler*
 
-Bu durak oturumun mini projesidir. 2. haftanın koroner arter hastalığı için kurduğu iki model, yani bir rastgele orman ve bir lojistik regresyon, Cleveland verisinin eğitim hastalarıyla öğrenir. Modellerin 59 yaşındaki bir kadın olan 172 numaralı hasta için verdiği tahminler, kesin Shapley değerleriyle hastanın sekiz klinik değişkeni arasında paylaştırılır; lojistik regresyon için kapalı bir form, log-olabilirlik ölçeğinde aynı değerleri verir. Son adım her test hastasının değerlerini genel bir açıklamaya dönüştürür.
+Bu durak oturumun mini projesidir. 2. haftanın koroner arter hastalığı için kurduğu iki model, yani bir rastgele orman ve bir lojistik regresyon, Cleveland verisinin eğitim hastalarıyla öğrenir. Modellerin 59 yaşındaki bir kadın olan 172 numaralı hasta için verdiği tahminler, kesin Shapley değerleriyle hastanın sekiz klinik değişkeni arasında paylaştırılır; lojistik regresyon için kapalı bir form, log-odds ölçeğinde aynı değerleri verir. Son adım her test hastasının değerlerini genel bir açıklamaya dönüştürür.
 
 ### Adım 1.1: 2. haftanın iki modeli
 
@@ -114,7 +114,7 @@ olmalı.
 
 ### Adım 1.3: Lojistik regresyonun kapalı formu
 
-**Amaç.** Bu adımda lojistik regresyonun 172 numaralı hasta için log-olabilirlik ölçeğindeki Shapley değerleri kapalı bir formla hesaplanır.
+**Amaç.** Bu adımda lojistik regresyonun 172 numaralı hasta için log-odds ölçeğindeki Shapley değerleri kapalı bir formla hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
@@ -134,21 +134,20 @@ Görev: Tabloyu bu sırayla bir modelin sütunlarına dönüştür: Yaş, erkek 
 cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz anjinası, ST çökmesi ve
 tipik anjinayı referans alan, atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç
 sütun. Satırları tablonun sırasında tut. Eğitim hastalarında, sütunları eğitim hastalarıyla
-standartlaştırılmış ve en fazla 1.000 yinelemeli bir lojistik regresyon kur. Log-olabilirlik
-ölçeğinde bir değişkenin bir hasta için Shapley değeri, özgün sütunun birimi başına katsayısı ile
-hastanın değeri eksi eğitim hastalarının ortalamasının çarpımıdır; göğüs ağrısı tipi için
-sütunlarının üç terimini topla. 172 numaralı hasta için sekiz değeri hesapla ve toplamlarının
-hastanın log-olabilirliği eksi eğitim hastalarının ortalama log-olabilirliğine eşit olduğunu kontrol
-et.
+standartlaştırılmış ve en fazla 1.000 yinelemeli bir lojistik regresyon kur. Log-odds ölçeğinde bir
+değişkenin bir hasta için Shapley değeri, özgün sütunun birimi başına katsayısı ile hastanın değeri
+eksi eğitim hastalarının ortalamasının çarpımıdır; göğüs ağrısı tipi için sütunlarının üç terimini
+topla. 172 numaralı hasta için sekiz değeri hesapla ve toplamlarının hastanın log-odds değeri eksi
+eğitim hastalarının ortalama log-odds değerine eşit olduğunu kontrol et.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Sekiz değeri değişkenleriyle birlikte göster; cinsiyetin değerini üç ondalık basamakla
 "cevap" adıyla sakla.
-Test: Sekiz değerin toplamı, hastanın log-olabilirliği eksi eğitim hastalarının ortalama
-log-olabilirliğine eşit olmalı.
+Test: Sekiz değerin toplamı, hastanın log-odds değeri eksi eğitim hastalarının ortalama log-odds
+değerine eşit olmalı.
 ```
 
-**Beklenen sonuç:** "cevap" = -1,175
+**Beklenen sonuç:** "cevap" = −1,175
 
 ### Adım 1.4: Tek bir hastadan bütün hastalara
 
