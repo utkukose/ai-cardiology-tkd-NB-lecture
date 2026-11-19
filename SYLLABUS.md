@@ -87,7 +87,7 @@ Materials: [Week page](en/week-09/README.md) · [Lecture page](https://utkukose.
 
 The first half designs a clinical decision support system (CDSS) for the clinical workflow, builds its web interface with Streamlit and introduces HL7 FHIR and prediction services. The second half covers versioning, human oversight, the regulatory routes for medical device software and patient consent. **Mini project in the session:** A decision support prototype for atrial fibrillation: ECG upload, prediction, explanation and report. **Weekly project:** A user test of the decision support prototype and its improvement. **Data:** ECGs of the virtual clinic and the MIT-BIH Atrial Fibrillation Database. **Stage of the virtual clinic:** Decision support at the bedside.
 
-Materials: In preparation
+Materials: [Week page](en/week-10/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lab.html) · [Jupyter notebook](en/week-10/NB10_clinical_decision_support.ipynb) · [Prompt library](en/week-10/PROMPTS.md) · [PDF notes](en/week-10/Week10_Lecture_Notes.pdf)
 
 ### Week 11: Final project and certificate
 

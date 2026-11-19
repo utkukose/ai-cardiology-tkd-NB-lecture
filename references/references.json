@@ -64,7 +64,7 @@
     "url": "https://proceedings.neurips.cc/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html",
     "apa": "Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M., & Kim, B. (2018). Sanity checks for saliency maps. In *Advances in Neural Information Processing Systems 31* (pp. 9505–9515). https://proceedings.neurips.cc/paper/2018/hash/294a8ed24b1ad22ec2e7efea049b8737-Abstract.html",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -474,6 +474,64 @@
     "apa": "Baltrušaitis, T., Ahuja, C., & Morency, L.-P. (2019). Multimodal machine learning: A survey and taxonomy. *IEEE Transactions on Pattern Analysis and Machine Intelligence, 41*(2), 423–443. https://doi.org/10.1109/TPAMI.2018.2798607",
     "used_in": [
       "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "bates2003",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Bates",
+        "given": "D. W."
+      },
+      {
+        "family": "Kuperman",
+        "given": "G. J."
+      },
+      {
+        "family": "Wang",
+        "given": "S."
+      },
+      {
+        "family": "Gandhi",
+        "given": "T."
+      },
+      {
+        "family": "Kittler",
+        "given": "A."
+      },
+      {
+        "family": "Volk",
+        "given": "L."
+      },
+      {
+        "family": "Spurr",
+        "given": "C."
+      },
+      {
+        "family": "Khorasani",
+        "given": "R."
+      },
+      {
+        "family": "Tanasijevic",
+        "given": "M."
+      },
+      {
+        "family": "Middleton",
+        "given": "B."
+      }
+    ],
+    "year": "2003",
+    "title": "Ten commandments for effective clinical decision support: Making the practice of evidence-based medicine a reality",
+    "container": "Journal of the American Medical Informatics Association",
+    "volume": "10",
+    "issue": "6",
+    "pages": "523–530",
+    "doi": "10.1197/jamia.M1370",
+    "url": "https://doi.org/10.1197/jamia.M1370",
+    "apa": "Bates, D. W., Kuperman, G. J., Wang, S., Gandhi, T., Kittler, A., Volk, L., Spurr, C., Khorasani, R., Tanasijevic, M., & Middleton, B. (2003). Ten commandments for effective clinical decision support: Making the practice of evidence-based medicine a reality. *Journal of the American Medical Informatics Association, 10*(6), 523–530. https://doi.org/10.1197/jamia.M1370",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -943,7 +1001,7 @@
     "url": "https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=7499&MevzuatTur=1&MevzuatTertip=5",
     "apa": "Ceza Muhakemesi Kanunu ile Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanun [Law amending the Code of Criminal Procedure and certain laws], Law No. 7499. (2024). *Resmî Gazete, 32487 (12 March 2024)*. https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=7499&MevzuatTur=1&MevzuatTertip=5",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1594,7 +1652,7 @@
     "url": "https://doi.org/10.1056/NEJMc2104626",
     "apa": "Finlayson, S. G., Subbaswamy, A., Singh, K., Bowers, J., Kupke, A., Zittrain, J., Kohane, I. S., & Saria, S. (2021). The clinician and dataset shift in artificial intelligence. *New England Journal of Medicine, 385*(3), 283–286. https://doi.org/10.1056/NEJMc2104626",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1646,7 +1704,7 @@
     "url": "https://doi.org/10.1016/S2589-7500(21)00208-9",
     "apa": "Ghassemi, M., Oakden-Rayner, L., & Beam, A. L. (2021). The false hope of current approaches to explainable artificial intelligence in health care. *The Lancet Digital Health, 3*(11), e745–e750. https://doi.org/10.1016/S2589-7500(21)00208-9",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1721,6 +1779,36 @@
     "apa": "Giudicessi, J. R., Schram, M., Bos, J. M., Galloway, C. D., Shreibati, J. B., Johnson, P. W., Carter, R. E., Disrud, L. W., Kleiman, R., Attia, Z. I., Noseworthy, P. A., Friedman, P. A., Albert, D. E., & Ackerman, M. J. (2021). Artificial intelligence-enabled assessment of the heart rate corrected QT interval using a mobile electrocardiogram device. *Circulation, 143*(13), 1274–1286. https://doi.org/10.1161/CIRCULATIONAHA.120.050231",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "goddard2012",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Goddard",
+        "given": "K."
+      },
+      {
+        "family": "Roudsari",
+        "given": "A."
+      },
+      {
+        "family": "Wyatt",
+        "given": "J. C."
+      }
+    ],
+    "year": "2012",
+    "title": "Automation bias: A systematic review of frequency, effect mediators, and mitigators",
+    "container": "Journal of the American Medical Informatics Association",
+    "volume": "19",
+    "issue": "1",
+    "pages": "121–127",
+    "doi": "10.1136/amiajnl-2011-000089",
+    "url": "https://doi.org/10.1136/amiajnl-2011-000089",
+    "apa": "Goddard, K., Roudsari, A., & Wyatt, J. C. (2012). Automation bias: A systematic review of frequency, effect mediators, and mitigators. *Journal of the American Medical Informatics Association, 19*(1), 121–127. https://doi.org/10.1136/amiajnl-2011-000089",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2152,6 +2240,27 @@
     ]
   },
   {
+    "key": "hl7fhir2019",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "HL7 International"
+      }
+    ],
+    "year": "2019",
+    "title": "HL7 FHIR Release 4 (version 4.0.1)",
+    "container": "Fast Healthcare Interoperability Resources",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://hl7.org/fhir/R4/",
+    "apa": "HL7 International. (2019). HL7 FHIR Release 4 (version 4.0.1). In *Fast Healthcare Interoperability Resources*. Health Level Seven International. https://hl7.org/fhir/R4/",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "hochreiter1997",
     "type": "article",
     "authors": [
@@ -2274,7 +2383,7 @@
     "url": "https://doi.org/10.1001/jamacardio.2021.2746",
     "apa": "Hughes, J. W., Olgin, J. E., Avram, R., Abreau, S. A., Sittler, T., Radia, K., Hsia, H., Walters, T., Lee, B., Gonzalez, J. E., & Tison, G. H. (2021). Performance of a convolutional neural network and explainability technique for 12-lead electrocardiogram interpretation. *JAMA Cardiology, 6*(11), 1285–1295. https://doi.org/10.1001/jamacardio.2021.2746",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2764,7 +2873,7 @@
     "url": "https://doi.org/10.4230/LIPIcs.ITCS.2017.43",
     "apa": "Kleinberg, J., Mullainathan, S., & Raghavan, M. (2017). Inherent trade-offs in the fair determination of risk scores. In *8th Innovations in Theoretical Computer Science Conference (ITCS 2017), Leibniz International Proceedings in Informatics 67* (pp. 43:1–43:23). https://doi.org/10.4230/LIPIcs.ITCS.2017.43",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3117,6 +3226,32 @@
     ]
   },
   {
+    "key": "lake2011",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Lake",
+        "given": "D. E."
+      },
+      {
+        "family": "Moorman",
+        "given": "J. R."
+      }
+    ],
+    "year": "2011",
+    "title": "Accurate estimation of entropy in very short physiological time series: The problem of atrial fibrillation detection in implanted ventricular devices",
+    "container": "American Journal of Physiology. Heart and Circulatory Physiology",
+    "volume": "300",
+    "issue": "1",
+    "pages": "H319–H325",
+    "doi": "10.1152/ajpheart.00561.2010",
+    "url": "https://doi.org/10.1152/ajpheart.00561.2010",
+    "apa": "Lake, D. E., & Moorman, J. R. (2011). Accurate estimation of entropy in very short physiological time series: The problem of atrial fibrillation detection in implanted ventricular devices. *American Journal of Physiology. Heart and Circulatory Physiology, 300*(1), H319–H325. https://doi.org/10.1152/ajpheart.00561.2010",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "lang2015",
     "type": "article",
     "authors": [
@@ -3389,7 +3524,7 @@
     "url": "https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html",
     "apa": "Lundberg, S. M., & Lee, S.-I. (2017). A unified approach to interpreting model predictions. In *Advances in Neural Information Processing Systems 30* (pp. 4765–4774). https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3501,6 +3636,44 @@
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents",
       "Course package vclinic"
+    ]
+  },
+  {
+    "key": "mandel2016",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Mandel",
+        "given": "J. C."
+      },
+      {
+        "family": "Kreda",
+        "given": "D. A."
+      },
+      {
+        "family": "Mandl",
+        "given": "K. D."
+      },
+      {
+        "family": "Kohane",
+        "given": "I. S."
+      },
+      {
+        "family": "Ramoni",
+        "given": "R. B."
+      }
+    ],
+    "year": "2016",
+    "title": "SMART on FHIR: A standards-based, interoperable apps platform for electronic health records",
+    "container": "Journal of the American Medical Informatics Association",
+    "volume": "23",
+    "issue": "5",
+    "pages": "899–908",
+    "doi": "10.1093/jamia/ocv189",
+    "url": "https://doi.org/10.1093/jamia/ocv189",
+    "apa": "Mandel, J. C., Kreda, D. A., Mandl, K. D., Kohane, I. S., & Ramoni, R. B. (2016). SMART on FHIR: A standards-based, interoperable apps platform for electronic health records. *Journal of the American Medical Informatics Association, 23*(5), 899–908. https://doi.org/10.1093/jamia/ocv189",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3705,6 +3878,27 @@
     ]
   },
   {
+    "key": "mdcg2025software",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "Medical Device Coordination Group"
+      }
+    ],
+    "year": "2025",
+    "title": "MDCG 2019-11 rev.1: Guidance on qualification and classification of software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR",
+    "container": "Medical Device Coordination Group documents",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://health.ec.europa.eu/latest-updates/update-mdcg-2019-11-rev1-qualification-and-classification-software-regulation-eu-2017745-and-2025-06-17_en",
+    "apa": "Medical Device Coordination Group. (2025). MDCG 2019-11 rev.1: Guidance on qualification and classification of software in Regulation (EU) 2017/745 – MDR and Regulation (EU) 2017/746 – IVDR. In *Medical Device Coordination Group documents*. European Commission. https://health.ec.europa.eu/latest-updates/update-mdcg-2019-11-rev1-qualification-and-classification-software-regulation-eu-2017745-and-2025-06-17_en",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "mikolov2013",
     "type": "preprint",
     "authors": [
@@ -3766,6 +3960,112 @@
     "apa": "Milletari, F., Navab, N., & Ahmadi, S.-A. (2016). V-Net: Fully convolutional neural networks for volumetric medical image segmentation. In *2016 Fourth International Conference on 3D Vision (3DV)* (pp. 565–571). https://doi.org/10.1109/3DV.2016.79",
     "used_in": [
       "Week 4: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "mitchell2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Mitchell",
+        "given": "M."
+      },
+      {
+        "family": "Wu",
+        "given": "S."
+      },
+      {
+        "family": "Zaldivar",
+        "given": "A."
+      },
+      {
+        "family": "Barnes",
+        "given": "P."
+      },
+      {
+        "family": "Vasserman",
+        "given": "L."
+      },
+      {
+        "family": "Hutchinson",
+        "given": "B."
+      },
+      {
+        "family": "Spitzer",
+        "given": "E."
+      },
+      {
+        "family": "Raji",
+        "given": "I. D."
+      },
+      {
+        "family": "Gebru",
+        "given": "T."
+      }
+    ],
+    "year": "2019",
+    "title": "Model cards for model reporting",
+    "container": "Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* '19)",
+    "volume": "",
+    "issue": "",
+    "pages": "220–229",
+    "doi": "10.1145/3287560.3287596",
+    "url": "https://doi.org/10.1145/3287560.3287596",
+    "apa": "Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., & Gebru, T. (2019). Model cards for model reporting. In *Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* '19)* (pp. 220–229). https://doi.org/10.1145/3287560.3287596",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "moody1983",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Moody",
+        "given": "G. B."
+      },
+      {
+        "family": "Mark",
+        "given": "R. G."
+      }
+    ],
+    "year": "1983",
+    "title": "A new method for detecting atrial fibrillation using R-R intervals",
+    "container": "Computers in Cardiology",
+    "volume": "10",
+    "issue": "",
+    "pages": "227–230",
+    "doi": "",
+    "url": "https://physionet.org/content/afdb/1.0.0/",
+    "apa": "Moody, G. B., & Mark, R. G. (1983). A new method for detecting atrial fibrillation using R-R intervals. *Computers in Cardiology, 10*, 227–230. https://physionet.org/content/afdb/1.0.0/",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "afdb2000",
+    "type": "dataset",
+    "authors": [
+      {
+        "family": "Moody",
+        "given": "G. B."
+      },
+      {
+        "family": "Mark",
+        "given": "R. G."
+      }
+    ],
+    "year": "2000",
+    "title": "MIT-BIH Atrial Fibrillation Database (version 1.0.0)",
+    "container": "PhysioNet",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.13026/C2MW2D",
+    "url": "https://doi.org/10.13026/C2MW2D",
+    "apa": "Moody, G. B., & Mark, R. G. (2000). *MIT-BIH Atrial Fibrillation Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C2MW2D",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3903,7 +4203,7 @@
     "url": "https://doi.org/10.1126/science.aax2342",
     "apa": "Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. *Science, 366*(6464), 447–453. https://doi.org/10.1126/science.aax2342",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4392,7 +4692,7 @@
     "url": "https://proceedings.neurips.cc/paper/2019/hash/846c260d715e5b854ffad5f70a516c88-Abstract.html",
     "apa": "Rabanser, S., Günnemann, S., & Lipton, Z. (2019). Failing loudly: An empirical study of methods for detecting dataset shift. In *Advances in Neural Information Processing Systems 32*. https://proceedings.neurips.cc/paper/2019/hash/846c260d715e5b854ffad5f70a516c88-Abstract.html",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4498,7 +4798,7 @@
     "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
     "apa": "Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). (2024). *Official Journal of the European Union, L, 2024/1689 (12 July 2024)*. https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4519,7 +4819,7 @@
     "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
     "apa": "Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence (Digital Omnibus on AI). (2026). *Official Journal of the European Union, L, 2026/1744 (24 July 2026)*. https://eur-lex.europa.eu/eli/reg/2026/1744/oj",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4549,7 +4849,7 @@
     "url": "https://doi.org/10.1145/2939672.2939778",
     "apa": "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). \"Why should I trust you?\": Explaining the predictions of any classifier. In *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining* (pp. 1135–1144). https://doi.org/10.1145/2939672.2939778",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4618,6 +4918,32 @@
     "apa": "Ribeiro, A. H., Ribeiro, M. H., Paixão, G. M. M., Oliveira, D. M., Gomes, P. R., Canazart, J. A., Ferreira, M. P. S., Andersson, C. R., Macfarlane, P. W., Meira Jr., W., Schön, T. B., & Ribeiro, A. L. P. (2020). Automatic diagnosis of the 12-lead ECG using a deep neural network. *Nature Communications, 11*, Article 1760. https://doi.org/10.1038/s41467-020-15432-4",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "richman2000",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Richman",
+        "given": "J. S."
+      },
+      {
+        "family": "Moorman",
+        "given": "J. R."
+      }
+    ],
+    "year": "2000",
+    "title": "Physiological time-series analysis using approximate entropy and sample entropy",
+    "container": "American Journal of Physiology. Heart and Circulatory Physiology",
+    "volume": "278",
+    "issue": "6",
+    "pages": "H2039–H2049",
+    "doi": "10.1152/ajpheart.2000.278.6.H2039",
+    "url": "https://doi.org/10.1152/ajpheart.2000.278.6.H2039",
+    "apa": "Richman, J. S., & Moorman, J. R. (2000). Physiological time-series analysis using approximate entropy and sample entropy. *American Journal of Physiology. Heart and Circulatory Physiology, 278*(6), H2039–H2049. https://doi.org/10.1152/ajpheart.2000.278.6.H2039",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4746,7 +5072,7 @@
     "url": "https://doi.org/10.1038/s42256-019-0048-x",
     "apa": "Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. *Nature Machine Intelligence, 1*(5), 206–215. https://doi.org/10.1038/s42256-019-0048-x",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4966,7 +5292,7 @@
     "url": "https://doi.org/10.1007/s11263-019-01228-7",
     "apa": "Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2020). Grad-CAM: Visual explanations from deep networks via gradient-based localization. *International Journal of Computer Vision, 128*(2), 336–359. https://doi.org/10.1007/s11263-019-01228-7",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -5122,7 +5448,7 @@
     "url": "https://doi.org/10.1515/9781400881970-018",
     "apa": "Shapley, L. S. (1953). A value for n-person games. In H. W. Kuhn & A. W. Tucker (Eds.), *Contributions to the Theory of Games, Volume II (Annals of Mathematics Studies 28)* (pp. 307–317). Princeton University Press. https://doi.org/10.1515/9781400881970-018",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -5434,6 +5760,48 @@
     ]
   },
   {
+    "key": "sutton2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Sutton",
+        "given": "R. T."
+      },
+      {
+        "family": "Pincock",
+        "given": "D."
+      },
+      {
+        "family": "Baumgart",
+        "given": "D. C."
+      },
+      {
+        "family": "Sadowski",
+        "given": "D. C."
+      },
+      {
+        "family": "Fedorak",
+        "given": "R. N."
+      },
+      {
+        "family": "Kroeker",
+        "given": "K. I."
+      }
+    ],
+    "year": "2020",
+    "title": "An overview of clinical decision support systems: Benefits, risks, and strategies for success",
+    "container": "npj Digital Medicine",
+    "volume": "3",
+    "issue": "",
+    "pages": "17",
+    "doi": "10.1038/s41746-020-0221-y",
+    "url": "https://doi.org/10.1038/s41746-020-0221-y",
+    "apa": "Sutton, R. T., Pincock, D., Baumgart, D. C., Sadowski, D. C., Fedorak, R. N., & Kroeker, K. I. (2020). An overview of clinical decision support systems: Benefits, risks, and strategies for success. *npj Digital Medicine, 3*, 17. https://doi.org/10.1038/s41746-020-0221-y",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "tan2019",
     "type": "proceedings",
     "authors": [
@@ -5654,6 +6022,48 @@
     "apa": "U.S. Food and Drug Administration. (2023). Low Ejection Fraction AI-ECG Algorithm (K232699). In *510(k) premarket notification database*. U.S. Department of Health and Human Services. https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K232699",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "fda2024pccp",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "U.S. Food and Drug Administration"
+      }
+    ],
+    "year": "2024",
+    "title": "Marketing submission recommendations for a predetermined change control plan for artificial intelligence-enabled device software functions",
+    "container": "Guidance documents",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial",
+    "apa": "U.S. Food and Drug Administration. (2024). Marketing submission recommendations for a predetermined change control plan for artificial intelligence-enabled device software functions. In *Guidance documents*. U.S. Department of Health and Human Services. https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "fda2026cds",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "U.S. Food and Drug Administration"
+      }
+    ],
+    "year": "2026",
+    "title": "Clinical decision support software: Guidance for industry and Food and Drug Administration staff (issued on 29 January 2026)",
+    "container": "Guidance documents",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.fda.gov/media/109618/download",
+    "apa": "U.S. Food and Drug Administration. (2026). Clinical decision support software: Guidance for industry and Food and Drug Administration staff (issued on 29 January 2026). In *Guidance documents*. U.S. Department of Health and Human Services. https://www.fda.gov/media/109618/download",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -6447,7 +6857,7 @@
     "url": "https://www.who.int/publications/i/item/9789240029200",
     "apa": "World Health Organization. (2021). *Ethics and governance of artificial intelligence for health: WHO guidance*. World Health Organization. https://www.who.int/publications/i/item/9789240029200",
     "used_in": [
-      "Week 8: lecture page and Jupyter notebook"
+      "Week 9: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -6490,6 +6900,112 @@
     "apa": "Xie, C., McCullum, L., Johnson, A., Pollard, T., Gow, B., & Moody, B. (2023). *Waveform Database Software Package (WFDB) for Python (version 4.1.0)* [Computer software]. PhysioNet. https://doi.org/10.13026/9njx-6322",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "yao2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Yao",
+        "given": "X."
+      },
+      {
+        "family": "Rushlow",
+        "given": "D. R."
+      },
+      {
+        "family": "Inselman",
+        "given": "J. W."
+      },
+      {
+        "family": "McCoy",
+        "given": "R. G."
+      },
+      {
+        "family": "Thacher",
+        "given": "T. D."
+      },
+      {
+        "family": "Behnken",
+        "given": "E. M."
+      },
+      {
+        "family": "Bernard",
+        "given": "M. E."
+      },
+      {
+        "family": "Rosas",
+        "given": "S. L."
+      },
+      {
+        "family": "Akfaly",
+        "given": "A."
+      },
+      {
+        "family": "Misra",
+        "given": "A."
+      },
+      {
+        "family": "Molling",
+        "given": "P. E."
+      },
+      {
+        "family": "Krien",
+        "given": "J. S."
+      },
+      {
+        "family": "Foss",
+        "given": "R. M."
+      },
+      {
+        "family": "Barry",
+        "given": "B. A."
+      },
+      {
+        "family": "Siontis",
+        "given": "K. C."
+      },
+      {
+        "family": "Kapa",
+        "given": "S."
+      },
+      {
+        "family": "Pellikka",
+        "given": "P. A."
+      },
+      {
+        "family": "Lopez-Jimenez",
+        "given": "F."
+      },
+      {
+        "family": "Attia",
+        "given": "Z. I."
+      },
+      {
+        "family": "Shah",
+        "given": "N. D."
+      },
+      {
+        "family": "Friedman",
+        "given": "P. A."
+      },
+      {
+        "family": "Noseworthy",
+        "given": "P. A."
+      }
+    ],
+    "year": "2021",
+    "title": "Artificial intelligence–enabled electrocardiograms for identification of patients with low ejection fraction: A pragmatic, randomized clinical trial",
+    "container": "Nature Medicine",
+    "volume": "27",
+    "issue": "5",
+    "pages": "815–819",
+    "doi": "10.1038/s41591-021-01335-4",
+    "url": "https://doi.org/10.1038/s41591-021-01335-4",
+    "apa": "Yao, X., Rushlow, D. R., Inselman, J. W., McCoy, R. G., Thacher, T. D., Behnken, E. M., Bernard, M. E., Rosas, S. L., Akfaly, A., Misra, A., Molling, P. E., Krien, J. S., Foss, R. M., Barry, B. A., Siontis, K. C., Kapa, S., Pellikka, P. A., Lopez-Jimenez, F., Attia, Z. I., Shah, N. D., Friedman, P. A., & Noseworthy, P. A. (2021). Artificial intelligence–enabled electrocardiograms for identification of patients with low ejection fraction: A pragmatic, randomized clinical trial. *Nature Medicine, 27*(5), 815–819. https://doi.org/10.1038/s41591-021-01335-4",
+    "used_in": [
+      "Week 10: lecture page and Jupyter notebook"
     ]
   },
   {

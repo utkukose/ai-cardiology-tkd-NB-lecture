@@ -87,7 +87,7 @@ Malzemeler: [Hafta sayfası](tr/hafta-09/README.md) · [Ders sayfası](https://u
 
 Oturumun ilk yarısında klinik iş akışına uygun bir klinik karar destek sistemi (KKDS) tasarlanır, web arayüzü Streamlit ile kurulur ve HL7 FHIR ile tahmin servisleri tanıtılır. İkinci yarı sürüm yönetimini, insan gözetimini, tıbbi cihaz yazılımlarının düzenleyici süreçlerini ve hasta onamını kapsar. **Oturumdaki mini proje:** Atriyal fibrilasyon için bir karar destek prototipi: EKG yükleme, tahmin, açıklama ve rapor. **Haftalık proje:** Karar destek prototipinin kullanıcı testi ve iyileştirilmesi. **Veriler:** Sanal kliniğin EKG'leri ve MIT-BIH Atriyal Fibrilasyon Veri Tabanı. **Sanal kliniğin aşaması:** Yatak başında karar desteği.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-10/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-10/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-10/lab.html) · [Jupyter defteri](tr/hafta-10/NB10_klinik_karar_destegi.ipynb) · [Prompt kütüphanesi](tr/hafta-10/PROMPTLAR.md) · [PDF ders notu](tr/hafta-10/Hafta10_Ders_Notlari.pdf)
 
 ### Hafta 11: Final projesi ve sertifika
 

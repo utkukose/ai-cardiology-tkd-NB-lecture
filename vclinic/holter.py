@@ -7,7 +7,8 @@ walking raises it, premature atrial beats come and go, and episodes of
 paroxysmal atrial fibrillation (AF) start and stop at known times. Because
 the truth is known, an AF detector that reads the RR intervals in windows
 can be judged beat by beat and minute by minute. strip() draws a short
-segment of the recording as one ECG lead (lead II).
+segment of the recording as one ECG lead (lead II). WARD and ward() add the
+other patients of the telemetry ward of Week 10, made with the same generator.
 
 The data are synthetic teaching material and are not for clinical use.
 """
@@ -39,29 +40,34 @@ def _clock(t_s, start_clock):
     return (start_clock + t_s / 3600.0) % 24.0
 
 
-def _heart_rate(clock_h):
+def _heart_rate(clock_h, walk=WALK, shift=0.0):
     """Sinus heart rate (beats per minute) at a clock time.
 
     About 55 per minute at 4 a.m. and about 73 at 4 p.m., with 30 more
-    during the hour of walking.
+    during the hour of walking; shift moves the whole curve.
     """
-    hr = 64.0 + 9.0 * np.cos(2 * np.pi * (clock_h - 16.0) / 24.0)
-    w0, w1 = WALK
+    hr = 64.0 + shift + 9.0 * np.cos(2 * np.pi * (clock_h - 16.0) / 24.0)
+    w0, w1 = walk
     ramp = np.clip((clock_h - w0) * 12, 0, 1) * np.clip((w1 - clock_h) * 12, 0, 1)
     return hr + 30.0 * ramp
 
 
-def _in_episode(clock_h):
+def _in_episode(clock_h, episodes=EPISODES):
     """Index of the AF episode at a clock time, or -1."""
-    for k, (c0, minutes, _, _) in enumerate(EPISODES):
+    for k, (c0, minutes, _, _) in enumerate(episodes):
         c1 = c0 + minutes / 60.0
         if c0 <= clock_h < c1:
             return k
     return -1
 
 
-def recording(hours=PATIENT["hours"], start_clock=PATIENT["start_clock"], seed=2026):
+def recording(hours=PATIENT["hours"], start_clock=PATIENT["start_clock"], seed=2026, episodes=EPISODES,
+              pac_per_hour=PAC_PER_HOUR, pac_busy=PAC_BUSY, noise_periods=NOISY, walk=WALK, hr_shift=0.0,
+              miss=MISS, extra=EXTRA):
     """Beats of the 24-hour recording.
+
+    The keyword arguments after seed describe another patient of the ward
+    (see WARD); their defaults give the recording of VC-0128.
 
     Returns a dictionary:
         beat_s: time of each beat from the start of the recording (s)
@@ -83,15 +89,15 @@ def recording(hours=PATIENT["hours"], start_clock=PATIENT["start_clock"], seed=2
     pending_pause = 0.0
     while t < total:
         clock = _clock(t, start_clock)
-        ep = _in_episode(clock)
+        ep = _in_episode(clock, episodes)
         if ep >= 0:
-            mean_rr = 60.0 / EPISODES[ep][2]
-            shape = 1.0 / EPISODES[ep][3] ** 2
+            mean_rr = 60.0 / episodes[ep][2]
+            shape = 1.0 / episodes[ep][3] ** 2
             rr = float(np.clip(rng.gamma(shape, mean_rr / shape), 0.30, 1.6))
             kind = "F"
             pending_pause = 0.0
         else:
-            rr0 = 60.0 / _heart_rate(clock)
+            rr0 = 60.0 / _heart_rate(clock, walk, hr_shift)
             rr = rr0 * (1.0 + 0.030 * np.sin(2 * np.pi * 0.25 * t + phase1)
                         + 0.020 * np.sin(2 * np.pi * 0.10 * t + phase2)
                         + 0.008 * rng.standard_normal())
@@ -100,8 +106,8 @@ def recording(hours=PATIENT["hours"], start_clock=PATIENT["start_clock"], seed=2
                 rr = pending_pause
                 pending_pause = 0.0
             else:
-                busy = PAC_BUSY[0][0] <= clock < PAC_BUSY[0][1]
-                per_hour = PAC_BUSY[1] if busy else PAC_PER_HOUR
+                busy = pac_busy[0][0] <= clock < pac_busy[0][1]
+                per_hour = pac_busy[1] if busy else pac_per_hour
                 if rng.uniform() < per_hour * rr0 / 3600.0:
                     rr = rr0 * rng.uniform(0.60, 0.75)
                     kind = "A"
@@ -121,15 +127,15 @@ def recording(hours=PATIENT["hours"], start_clock=PATIENT["start_clock"], seed=2
     for a, b in zip(edges[::2], edges[1::2]):
         episodes.append((float(beat_s[a] - rr_arr[a]), float(beat_s[b - 1])))
     noisy = []
-    for c0, c1 in NOISY:
+    for c0, c1 in noise_periods:
         a = ((c0 - start_clock) % 24.0) * 3600.0
         noisy.append((a, a + (c1 - c0) * 3600.0))
     in_noise = np.zeros(len(beat_s), dtype=bool)
     for a, b in noisy:
         in_noise |= (beat_s >= a) & (beat_s < b)
-    keep = ~(in_noise & (rng.uniform(size=len(beat_s)) < MISS))
-    extra = in_noise & (rng.uniform(size=len(beat_s)) < EXTRA)
-    false_beats = beat_s[extra] - rr_arr[extra] * rng.uniform(0.3, 0.7, size=int(extra.sum()))
+    keep = ~(in_noise & (rng.uniform(size=len(beat_s)) < miss))
+    added = in_noise & (rng.uniform(size=len(beat_s)) < extra)
+    false_beats = beat_s[added] - rr_arr[added] * rng.uniform(0.3, 0.7, size=int(added.sum()))
     detected = np.sort(np.r_[beat_s[keep], false_beats])
     return dict(beat_s=beat_s, rr_s=rr_arr, kind=kind, episodes=episodes,
                 detected_s=detected, noisy=noisy,
@@ -206,3 +212,21 @@ def strip(rec, start_s, duration_s=10.0, fs=250, noise="low", seed=0):
             steps = np.cumsum(rng.standard_normal(n) * 0.03)
             lead = lead + inside * (burst + steps - steps[inside].mean())
     return tt, lead
+
+
+# Patients of the telemetry ward of Week 10: (description, settings of recording()).
+# VC-0128 is the patient of Week 5; the others meet the traps of an RR-only AF detector.
+WARD = {
+    "VC-0128": ("Paroxysmal AF: three episodes, premature atrial beats and two periods of electrode noise", {}),
+    "VC-0347": ("Sinus rhythm with premature atrial beats, 120 per hour and 1,800 per hour from 14:00 to 22:00; no AF",
+                dict(episodes=(), pac_per_hour=120, pac_busy=((14.0, 22.0), 1800), noise_periods=(), seed=347)),
+    "VC-0519": ("Persistent AF over the whole day, rate controlled",
+                dict(episodes=((0.0, 8 * 60, 84, 0.17), (8.0, 16 * 60, 84, 0.17)), pac_per_hour=0, noise_periods=(), seed=519)),
+    "VC-0733": ("Sinus rhythm with long periods of electrode noise, in which the recorder misses and adds beats; no AF",
+                dict(episodes=(), noise_periods=((9.0, 9.5), (13.0, 13.7), (17.0, 17.3), (22.0, 22.6)), miss=0.3, extra=0.3, seed=733)),
+}
+
+
+def ward():
+    """The 24-hour recordings of the four patients of the telemetry ward: {patient_id: recording}."""
+    return {pid: recording(**settings) for pid, (_, settings) in WARD.items()}

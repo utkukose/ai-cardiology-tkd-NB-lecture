@@ -87,9 +87,18 @@ Week 9 stores no new data in the repository. It returns to three data sets descr
 | CAMUS [10]: the 300 patients of Week 4, with 600 apical two-chamber and four-chamber views, their expert outlines and the ejection fraction | Section 0 of the notebook downloads them again, about 250 MB, only when they are missing | CC BY-NC-SA 4.0, as in Week 4; figures carry the credit "CAMUS, CC BY-NC-SA 4.0" | Week 9, practice stop 2, Sections 5 to 7 and the weekly project |
 | Chest pain unit of the virtual clinic: 4,000 synthetic presentations with chest pain at hospital A and 1,000 at hospital B, as in Week 8 | `vclinic.triage` draws them on the computer; nothing is downloaded | Synthetic data of the course package (MIT License) | Week 9, practice stop 3 and Sections 8 to 10 |
 
+## Data sets of Week 10
+
+Week 10 stores no recording in the repository. Each participant downloads the files of the MIT-BIH Atrial Fibrillation Database from PhysioNet, and the course package draws the telemetry ward of the virtual clinic on the computer.
+
+| Data set | Access | Source and license | Used in |
+|---|---|---|---|
+| MIT-BIH Atrial Fibrillation Database (AFDB) [18, 19]: 25 Holter recordings of about 10 hours of people with atrial fibrillation, mostly paroxysmal, made at Beth Israel Hospital in Boston, with two ECG signals at 250 samples per second, rhythm annotations prepared by hand and beat annotations from an automatic detector; records 00735 and 03665 have no signals. Split by record, the course uses 15 records for training, 5 for validation and the user test and 5 for the test, cut into 14,883 windows of one minute | `vclinic.afdb.download()` saves the 75 header and annotation files of the 25 records and the signal files of records 04936, 06426 and 08219, about 86 MB, from PhysioNet to the folder `data/afdb` of the course folder and checks every file against the SHA-256 sums that PhysioNet publishes; no registration is needed. | [MIT-BIH AFDB 1.0.0](https://doi.org/10.13026/C2MW2D) on PhysioNet; Open Data Commons Attribution License v1.0 (ODC-By 1.0), with a citation of the paper and of the database in every use. Figures of the course that show these recordings carry the credit "MIT-BIH AFDB, PhysioNet, ODC-By 1.0". | Week 10, Sections 1 to 6 and 10, practice stops 1 to 3 and the weekly project |
+| Telemetry ward of the virtual clinic: 24-hour recordings of four synthetic patients, VC-0128 (paroxysmal AF, premature atrial beats and two periods of electrode noise), VC-0347 (sinus rhythm with frequent premature atrial beats), VC-0519 (persistent AF) and VC-0733 (sinus rhythm with long periods of electrode noise). Each recording holds the beat times that a monitor would find and a lead II ECG of any ten seconds | `vclinic.holter.ward()` draws them in a few seconds; nothing is downloaded. | Synthetic, part of the course package (MIT License). | Week 10, Sections 7 to 9, practice stops 2 and 3 and the interactive lab |
+
 ## Data sets of later weeks
 
-The data sets of later weeks are documented here when each week is published. The program plans the data of the PhysioNet/Computing in Cardiology Challenge 2020, the MIT-BIH Atrial Fibrillation Database and public data sets of echocardiography and cardiac magnetic resonance. Where a data set requires a personal registration, as EchoNet-Dynamic does, the notebook marks the cells that need it, and participants without a registration follow the run of the instructor.
+The data sets of later weeks are documented here when each week is published. The program plans the data of the PhysioNet/Computing in Cardiology Challenge 2020 and public data sets of echocardiography and cardiac magnetic resonance. Where a data set requires a personal registration, as EchoNet-Dynamic does, the notebook marks the cells that need it, and participants without a registration follow the run of the instructor.
 
 ## References
 
@@ -110,6 +119,8 @@ The data sets of later weeks are documented here when each week is published. Th
 15. Kesgin, H. T., Yüce, M. K., & Amasyali, M. F. (2023). *Developing and evaluating tiny to medium-sized Turkish BERT models* (arXiv:2307.14134). arXiv. https://doi.org/10.48550/arXiv.2307.14134
 16. Popov, M., Amanturdieva, A., Zhaksylyk, N., Alkanov, A., Saniyazbekov, A., Aimyshev, T., Ismailov, E., Bulegenov, A., Kuzhukeyev, A., Kulanbayeva, A., Kalzhanov, A., Temenov, N., Kolesnikov, A., Sakhov, O., & Fazli, S. (2024). Dataset for automatic region-based coronary artery disease diagnostics using X-ray angiography images. *Scientific Data, 11*, Article 20. https://doi.org/10.1038/s41597-023-02871-z
 17. Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In *9th International Conference on Learning Representations (ICLR 2021)*. https://openreview.net/forum?id=YicbFdNTTy
+18. Moody, G. B., & Mark, R. G. (1983). A new method for detecting atrial fibrillation using R-R intervals. *Computers in Cardiology, 10*, 227–230. https://physionet.org/content/afdb/1.0.0/
+19. Moody, G. B., & Mark, R. G. (2000). *MIT-BIH Atrial Fibrillation Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C2MW2D
 
 ---
 

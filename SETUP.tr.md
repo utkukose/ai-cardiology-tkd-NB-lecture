@@ -83,6 +83,8 @@ Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging 
 
 9. hafta yeni bir paket gerektirmez. Haftanın defteri 4. haftanın 300 CAMUS hastasını kullanır ve yaklaşık 250 MB tutan bu verileri yalnızca bilgisayarda bulunmadıklarında yeniden indirir. İsteğe bağlı shap paketi (`pip install shap` komutuyla kurulur) lojistik regresyonun Shapley değerlerini ikinci bir yolla hesaplar; paket kurulu değilse defter kapalı formu kullanır.
 
+10. hafta tek bir yeni paket gerektirir: Prototipin web arayüzü için Streamlit. Paket `pip install streamlit` komutuyla kurulur. Defterin 8. bölümü arayüzü haftanın klasörüne `app_af.py` dosyası olarak yazar. Bu klasörde açılan Anaconda Prompt arayüzü `streamlit run app_af.py` komutuyla başlatır; tarayıcı da arayüzü http://localhost:8501 adresinde gösterir. Defter ilk kullanımda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 25 kaydının başlık ve işaretleme dosyalarını ve bunlardan üçünün sinyal dosyalarını, yaklaşık 86 MB'lık bir indirmeyle PhysioNet'ten alır; üyelik gerekmez. Defter Colab'da da çalışır, ancak web arayüzü için katılımcının kendi bilgisayarı gerekir.
+
 Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
 
 ```bash

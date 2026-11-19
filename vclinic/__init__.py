@@ -18,10 +18,12 @@ public data set of coronary angiograms with expert outlines of stenoses,
 downloaded from Zenodo. The module triage holds the chest pain unit of two
 hospitals: presentations with a clinical table, a triage note, a 12-lead ECG,
 two troponins, a bedside echocardiogram and the events of the next 30 days.
+The module afdb reads the MIT-BIH Atrial Fibrillation Database, Holter
+recordings with rhythm annotations, downloaded from PhysioNet.
 """
 from .ecg import (LEADS, LEAD_VECTORS, LEAD_MATRIX, ECG, simulate, project,
                   direction, frontal_axis)
 from .cohort import make_cohort, patient_ecg, ecg_params, TRUE_EFFECTS
 from .followup import add_followup, PHENOGROUPS
 
-__version__ = "1.9.0"
+__version__ = "1.10.0"

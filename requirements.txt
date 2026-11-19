@@ -15,3 +15,5 @@ torchvision>=0.17
 scikit-image>=0.22
 # Week 6 and later: pretrained language models of Hugging Face
 transformers>=4.40
+# Week 10: the web interface of the prototype
+streamlit>=1.30

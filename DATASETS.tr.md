@@ -87,9 +87,18 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 | CAMUS [10]: 4. haftanın 300 hastası; uzman sınırları ve ejeksiyon fraksiyonuyla birlikte 600 apikal iki boşluk ve dört boşluk görüntüsü | Defterin 0. bölümü yaklaşık 250 MB tutan bu verileri yalnızca bilgisayarda bulunmadıklarında yeniden indirir | 4. haftadaki gibi CC BY-NC-SA 4.0; şekiller "CAMUS, CC BY-NC-SA 4.0" kaynak bilgisini taşır | 9. hafta, 2. uygulama durağı, 5-7. bölümler ve haftalık proje |
 | Sanal kliniğin göğüs ağrısı ünitesi: 8. haftadaki gibi A hastanesinde göğüs ağrısıyla yapılmış 4.000, B hastanesinde 1.000 sentetik başvuru | `vclinic.triage` bunları bilgisayarda oluşturur; hiçbir şey indirilmez | Ders paketinin sentetik verisi (MIT Lisansı) | 9. hafta, 3. uygulama durağı ve 8-10. bölümler |
 
+## 10. haftanın veri setleri
+
+10. hafta depoda hiçbir kayıt saklamaz. Her katılımcı MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın dosyalarını PhysioNet'ten indirir; sanal kliniğin telemetri servisini ise ders paketi bilgisayarda oluşturur.
+
+| Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
+|---|---|---|---|
+| MIT-BIH Atriyal Fibrilasyon Veri Tabanı (AFDB) [18, 19]: Çoğu paroksismal AF'li kişilerden Boston'daki Beth Israel Hastanesi'nde kaydedilmiş, yaklaşık 10 saatlik 25 Holter kaydı. Her kayıtta saniyede 250 örnekle alınmış iki EKG sinyali, elle hazırlanmış ritim işaretlemeleri ve otomatik bir bulucunun vuru işaretlemeleri vardır; 00735 ve 03665 kayıtlarında sinyal bulunmaz. Kayıtlar kişi düzeyinde ayrılır: 15 kayıt eğitim, 5 kayıt doğrulama ve kullanıcı testi, 5 kayıt da test için kullanılır. Bir dakikalık pencerelere bölünen kayıtlar 14.883 pencere verir | `vclinic.afdb.download()`, 25 kaydın 75 başlık ve işaretleme dosyasını ve 04936, 06426 ve 08219 kayıtlarının sinyal dosyalarını, yaklaşık 86 MB'lık bir indirmeyle PhysioNet'ten ders klasöründeki `data/afdb` klasörüne kaydeder ve her dosyayı PhysioNet'in yayımladığı SHA-256 değerleriyle denetler; üyelik gerekmez. | PhysioNet üzerinde [MIT-BIH AFDB 1.0.0](https://doi.org/10.13026/C2MW2D); Open Data Commons Atıf Lisansı v1.0 (ODC-By 1.0), her kullanımda makaleye ve veri tabanına atıf yapılması koşuluyla. Eğitimde bu kayıtları gösteren şekiller "MIT-BIH AFDB, PhysioNet, ODC-By 1.0" kaynak bilgisini taşır. | 10. hafta, 1-6. ve 10. bölümler, 1-3. uygulama durakları ve haftalık proje |
+| Sanal kliniğin telemetri servisi: Dört sentetik hastanın 24 saatlik kayıtları: VC-0128 (paroksismal AF, atriyal erken vurular ve iki elektrot gürültüsü dönemi), VC-0347 (sık atriyal erken vurulu sinüs ritmi), VC-0519 (kalıcı AF) ve VC-0733 (uzun elektrot gürültüsü dönemleri olan sinüs ritmi). Her kayıt bir monitörün bulacağı vuru zamanlarını ve istenen herhangi bir on saniyenin DII EKG'sini içerir | `vclinic.holter.ward()` kayıtları birkaç saniyede oluşturur; hiçbir şey indirilmez. | Sentetiktir, ders paketinin bir parçasıdır (MIT Lisansı). | 10. hafta, 7-9. bölümler, 2. ve 3. uygulama durakları ve etkileşimli lab |
+
 ## Sonraki haftaların veri setleri
 
-Sonraki haftaların veri setleri, her hafta yayımlandığında burada belgelenir. Programda PhysioNet/Computing in Cardiology Challenge 2020 verileri, MIT-BIH Atriyal Fibrilasyon Veri Tabanı ve ekokardiyografi ve kardiyak manyetik rezonans alanlarındaki açık veri setleri yer almaktadır. Bir veri seti EchoNet-Dynamic gibi kişisel kayıt gerektirdiğinde defter bu kaydı gerektiren hücreleri işaretler; kaydı olmayan katılımcılar eğitmenin çalıştırmasını izler.
+Sonraki haftaların veri setleri, her hafta yayımlandığında burada belgelenir. Programda PhysioNet/Computing in Cardiology Challenge 2020 verileri ve ekokardiyografi ve kardiyak manyetik rezonans alanlarındaki açık veri setleri yer almaktadır. Bir veri seti EchoNet-Dynamic gibi kişisel kayıt gerektirdiğinde defter bu kaydı gerektiren hücreleri işaretler; kaydı olmayan katılımcılar eğitmenin çalıştırmasını izler.
 
 ## Kaynaklar
 
@@ -110,6 +119,8 @@ Sonraki haftaların veri setleri, her hafta yayımlandığında burada belgeleni
 15. Kesgin, H. T., Yüce, M. K., & Amasyali, M. F. (2023). *Developing and evaluating tiny to medium-sized Turkish BERT models* (arXiv:2307.14134). arXiv. https://doi.org/10.48550/arXiv.2307.14134
 16. Popov, M., Amanturdieva, A., Zhaksylyk, N., Alkanov, A., Saniyazbekov, A., Aimyshev, T., Ismailov, E., Bulegenov, A., Kuzhukeyev, A., Kulanbayeva, A., Kalzhanov, A., Temenov, N., Kolesnikov, A., Sakhov, O., & Fazli, S. (2024). Dataset for automatic region-based coronary artery disease diagnostics using X-ray angiography images. *Scientific Data, 11*, Article 20. https://doi.org/10.1038/s41597-023-02871-z
 17. Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In *9th International Conference on Learning Representations (ICLR 2021)*. https://openreview.net/forum?id=YicbFdNTTy
+18. Moody, G. B., & Mark, R. G. (1983). A new method for detecting atrial fibrillation using R-R intervals. *Computers in Cardiology, 10*, 227–230. https://physionet.org/content/afdb/1.0.0/
+19. Moody, G. B., & Mark, R. G. (2000). *MIT-BIH Atrial Fibrillation Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C2MW2D
 
 ---
 
