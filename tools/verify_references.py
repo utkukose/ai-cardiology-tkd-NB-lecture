@@ -160,7 +160,11 @@ def check(entry):
     try:
         oa = from_openalex(doi)
         if oa and entry.get("title") and not similar(entry["title"], oa["title"]):
-            problems.append(f"OpenAlex title differs: '{oa['title']}'")
+            if doi.startswith(DATACITE_PREFIXES):
+                # OpenAlex joins the versions of a record (Zenodo); the DataCite record of the DOI decides
+                print(f"[note] {entry['key']}: OpenAlex gives the title '{oa['title']}', DataCite the title of the reference")
+            else:
+                problems.append(f"OpenAlex title differs: '{oa['title']}'")
     except RuntimeError as e:
         problems.append(f"OpenAlex not reachable ({e})")
     return problems
