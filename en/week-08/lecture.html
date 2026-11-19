@@ -4319,13 +4319,13 @@ IEEE Senior Member, ACM Professional Member</p>
       tr:{steps:{early:['Hastanın beş modalitesi', 'Sayıları tek bir satırda yan yana: 12 + 4 + 3 + 64 + 20 = 103', 'Satır üzerinde tek bir lojistik regresyon', 'MACE olasılığı'],
                  late:['Hastanın beş modalitesi', 'Her modalite için bir model ve olasılığı', 'Logit olarak her olasılık', 'Birleştirilen logitler: Ortalamayla ve istiflemeyle'],
                  hybrid:['Hastanın beş modalitesi', 'Her modalite için bir kodlayıcı: Her biri 32 sayı', 'Ortak karar katmanıyla birlikte eğitilen kodlayıcıların yan yana çıktıları', 'MACE olasılığı'],
-                 attention:['Hastanın beş modalitesi', 'Her modalite için bir belirteç ve bir sınıf belirteci', 'Sınıf belirteci belirteçlere dikkat eder', 'MACE olasılığı']},
-          left:'dışarıda', masked:'maskelendi', zero:'çıktı × 0', mean:'eğitim ortalaması', enc:'kodlayıcı', head:'ortak karar katmanı', cls:'sınıf belirteci', avg:'logitlerin ortalaması', stack:'istifleme', p:'olasılık',
+                 attention:['Hastanın beş modalitesi', 'Her modalite için bir token ve bir sınıf token\'ı', 'Sınıf token\'ı token\'lara dikkat eder', 'MACE olasılığı']},
+          left:'dışarıda', masked:'maskelendi', zero:'çıktı × 0', mean:'eğitim ortalaması', enc:'kodlayıcı', head:'ortak karar katmanı', cls:'sınıf token\'ı', avg:'logitlerin ortalaması', stack:'istifleme', p:'olasılık',
           note:{early:'Erken füzyon her sayıya ihtiyaç duyar: Eksik bir modalitenin sayılarının yerine eğitim hastalarındaki ortalamaları konur.',
                 late:'Geç füzyon eksik bir modalitenin modelini dışarıda bırakır: Ortalama ötekilerin ortalamasını alır, istifleme ise onun yerine test hastalarının ortalama logitini koyar.',
-                hybrid:'Melez ağ, eksik bir modalitenin kodlayıcısının çıktısını 0 ile çarpar.',
-                attention:'Maske, eksik bir modalitenin belirtecini softmax\'tan çıkarır ve öteki ağırlıklar orantılı olarak büyür.'},
-          one:'En az bir modalite gereklidir.', att:'modalitelerin sınıf belirtecinin dikkatindeki payları (son blok, başların ortalaması)'}
+                hybrid:'Hibrit ağ, eksik bir modalitenin kodlayıcısının çıktısını 0 ile çarpar.',
+                attention:'Maske, eksik bir modalitenin token\'ını softmax\'tan çıkarır ve öteki ağırlıklar orantılı olarak büyür.'},
+          one:'En az bir modalite gereklidir.', att:'modalitelerin sınıf token\'ının dikkatindeki payları (son blok, başların ortalaması)'}
     }[L];
     function draw(k){
       const W = cv.clientWidth, H = 330, c = fit(cv, H), kd = kind.value, use = mods.map(m => m.checked), steps = T.steps[kd];

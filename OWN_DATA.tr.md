@@ -42,7 +42,7 @@ Rehber yol gösterir; hukuki görüş değildir. Her çalışmada son söz kurum
 | EKG sinyali | Ritim ve tanı, ST sapması | Tek boyutlu evrişimli ağlar ve tekrarlayan ağlar, aynı anda birden çok sınıf taşıyan etiketler | 5 |
 | Ekokardiyografi, kardiyak manyetik rezonans | Görüntülerin sınıflandırılması | Evrişimli ağlar, önceden eğitilmiş ağlardan transfer öğrenme | 3, 4 |
 | Ekokardiyografi, kardiyak manyetik rezonans | Hacimler ve ejeksiyon fraksiyonu gibi ölçümler | U-Net ile segmentasyon ve disk yöntemi | 4 |
-| Koroner anjiyografi | Darlıkların saptanması | Evrişimli ağlar ve görü dönüştürücüleri | 7 |
+| Koroner anjiyografi | Darlıkların saptanması | Evrişimli ağlar ve Vision Transformer modelleri | 7 |
 | Yazılı raporlar | Bulguların çıkarılması | Doğal dil işleme | 6 |
 | Birkaç veri türü birlikte | Birleşik bir risk | Veri füzyonu, eksik veri ve kalibrasyon | 8 |
 | Her model | Model güvenilir ve açıklanabilir mi? | Açıklanabilir yapay zekâ (YZ), dağılım kayması ve yanlılık | 9 |

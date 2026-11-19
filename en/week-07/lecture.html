@@ -4193,7 +4193,7 @@ IEEE Senior Member, ACM Professional Member</p>
     en:{cls:'Query: the class token.', patch:(r, c) => `Query: the patch in row ${r} and column ${c}.`, layer:{'1':'Layer 1', '6':'Layer 6', '12':'Layer 12', rollout:'Rollout through the 12 layers'},
         top:'Patches with the largest attention (relative to the largest):', rc:(r, c) => `row ${String(r).padStart(2)}, column ${String(c).padStart(2)}`,
         sten:s => `  ← stenosis of the ${s}`, nogl:'This browser does not support WebGL.', hint:'Click a patch of the angiogram to make it the query.'},
-    tr:{cls:'Sorgu: Sınıf belirteci.', patch:(r, c) => `Sorgu: ${r}. satır, ${c}. sütundaki yama.`, layer:{'1':'1. katman', '6':'6. katman', '12':'12. katman', rollout:'12 katman boyunca dikkat aktarımı'},
+    tr:{cls:'Sorgu: Sınıf token\'ı.', patch:(r, c) => `Sorgu: ${r}. satır, ${c}. sütundaki yama.`, layer:{'1':'1. katman', '6':'6. katman', '12':'12. katman', rollout:'12 katman boyunca dikkat aktarımı'},
         top:'Dikkatin en büyük olduğu yamalar (en büyüğe göre):', rc:(r, c) => `${String(r).padStart(2)}. satır, ${String(c).padStart(2)}. sütun`,
         sten:s => `  ← ${s} darlığı`, nogl:'Bu tarayıcı WebGL desteklemiyor.', hint:'Bir yamayı sorgu yapmak için anjiyograma tıklayın.'}
   }[L];
@@ -4314,7 +4314,7 @@ IEEE Senior Member, ACM Professional Member</p>
     const T = {en:{q:'query', dot:'dot product', sc:'divided by √2', w:'weight', out:'output', steps:['The query and the keys of four tokens',
                   'Dot products of the query with every key', 'Scores divided by the square root of the length of the keys, √2 = 1.414', 'Softmax: weights that are positive and add up to 1',
                   'Output: the weighted mean of the values'], noscale:'Scores are not divided: the softmax becomes sharper.'},
-               tr:{q:'sorgu', dot:'iç çarpım', sc:'√2 değerine bölünmüş', w:'ağırlık', out:'çıktı', steps:['Sorgu ve dört belirtecin anahtarları',
+               tr:{q:'sorgu', dot:'iç çarpım', sc:'√2 değerine bölünmüş', w:'ağırlık', out:'çıktı', steps:['Sorgu ve dört token\'ın anahtarları',
                   'Sorgunun her anahtarla iç çarpımı', 'Anahtar uzunluğunun kareköküne (√2 = 1,414) bölünen puanlar', 'Softmax: Pozitif olan ve toplamı 1 eden ağırlıklar',
                   'Çıktı: Değerlerin ağırlıklı ortalaması'], noscale:'Puanlar bölünmez: Softmax daha keskin olur.'}}[L];
     function compute(){
@@ -4374,8 +4374,8 @@ IEEE Senior Member, ACM Professional Member</p>
                   'The class token, the tokens of all patches and their positions'], n:(p, N) => `Patches of ${p} × ${p} pixels: ${num(N)} tokens and the class token.`,
                   nums:p => `One patch of a colour image: ${p} × ${p} × 3 = ${num(p * p * 3)} numbers.`, emb:p => `Patch embedding: ${num(p * p * 3)} × 768 + 768 = ${num(p * p * 3 * 768 + 768)} weights.`,
                   att:N => `Attention weights per head and layer: ${num(N + 1)} × ${num(N + 1)} = ${num((N + 1) * (N + 1))}.`, cls:'class', pos:'+ positions'},
-               tr:{steps:['224 × 224 piksellik bir anjiyogram', 'Satır satır yamalara bölünür', 'Bir yama bir sayı satırına dönüşür', 'Doğrusal bir dönüşüm satırı 768 sayılık bir belirtece dönüştürür',
-                  'Sınıf belirteci, bütün yamaların belirteçleri ve konumları'], n:(p, N) => `${p} × ${p} piksellik yamalar: ${num(N)} belirteç ve sınıf belirteci.`,
+               tr:{steps:['224 × 224 piksellik bir anjiyogram', 'Satır satır yamalara bölünür', 'Bir yama bir sayı satırına dönüşür', 'Doğrusal bir dönüşüm satırı 768 sayılık bir token\'a dönüştürür',
+                  'Sınıf token\'ı, bütün yamaların token\'ları ve konumları'], n:(p, N) => `${p} × ${p} piksellik yamalar: ${num(N)} token ve sınıf token'ı.`,
                   nums:p => `Renkli bir görüntünün bir yaması: ${p} × ${p} × 3 = ${num(p * p * 3)} sayı.`, emb:p => `Yama gömme: ${num(p * p * 3)} × 768 + 768 = ${num(p * p * 3 * 768 + 768)} ağırlık.`,
                   att:N => `Baş ve katman başına dikkat ağırlığı: ${num(N + 1)} × ${num(N + 1)} = ${num((N + 1) * (N + 1))}.`, cls:'sınıf', pos:'+ konumlar'}}[L];
     function draw(k){

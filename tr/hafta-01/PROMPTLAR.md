@@ -344,11 +344,11 @@ Veri: Defterde "veri" adında bir tablo var. Her satır bir atımdır: "atım" s
 gerilim, QRS kompleksindeki en büyük pozitif ve en büyük negatif sapmanın toplamıdır.
 Görev: Her atım için yatay bileşeni D1 gerilimi, dikey bileşeni aVF geriliminin 0,866'ya bölümü olan
 vektörü kur. Frontal eksen, bu vektörün derece cinsinden açısıdır; açı D1 yönünden ölçülür ve
-ayaklara doğru artı değer alır. Ardından bütün atımların ortanca eksenini bul ve −30 ile +90 derece
+ayaklara doğru artı değer alır. Ardından bütün atımların medyan eksenini bul ve −30 ile +90 derece
 arasındaki normal aralıkta olup olmadığını yazdır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Ortanca ekseni derece olarak, bir ondalık basamakla yazdır ve "cevap" adıyla sakla.
+Çıktı: Medyan ekseni derece olarak, bir ondalık basamakla yazdır ve "cevap" adıyla sakla.
 Test: D1'de 0,9 mV, aVF'de −0,3 mV olan bir atım yaklaşık −21 derecelik bir eksen vermeli. Kayıtta
 bu hastanın ekseni 21 derecedir; sonuç bu değerin yaklaşık 10 derece yakınında olmalı, çünkü net
 gerilimler küçük septal ve terminal kuvvetleri de içerir.

@@ -200,11 +200,11 @@ test epikrizlerindeki makro F1 değeri 0,9'un üstünde olmalı.
 
 *[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-2) · Python yolunda aynı sonuç: 6-8. bölümler*
 
-Burada epikrizleri Hugging Face Hub'dan alınan, önceden eğitilmiş Türkçe bir dil modeli okur. Modelin belirteçleyicisi önce B hastanesinin büyük harflerinin bir modele ne yaptığını gösterir. Model ardından tanıları, ilaçları ve işlemleri bulmak için ince ayarla eğitilir; bulduğu varlıklar, 1. duraktaki durum kuralı ve ilaçlarla birlikte B hastanesinin epikrizlerindeki altı tanıyı verir.
+Burada epikrizleri Hugging Face Hub'dan alınan, önceden eğitilmiş Türkçe bir dil modeli okur. Modelin tokenizer'ı önce B hastanesinin büyük harflerinin bir modele ne yaptığını gösterir. Model ardından tanıları, ilaçları ve işlemleri bulmak için ince ayarla eğitilir; bulduğu varlıklar, 1. duraktaki durum kuralı ve ilaçlarla birlikte B hastanesinin epikrizlerindeki altı tanıyı verir.
 
-### Adım 2.1: Önceden eğitilmiş Türkçe bir modelin belirteçleri
+### Adım 2.1: Önceden eğitilmiş Türkçe bir modelin token'ları
 
-**Amaç.** Bu adımda önceden eğitilmiş Türkçe bir modelin B hastanesinin epikrizlerini nasıl belirteçlere böldüğü ve harflerin büyük ya da küçük olmasının neyi değiştirdiği görülür.
+**Amaç.** Bu adımda önceden eğitilmiş Türkçe bir modelin B hastanesinin epikrizlerini nasıl token'lara böldüğü ve harflerin büyük ya da küçük olmasının neyi değiştirdiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
@@ -214,18 +214,17 @@ kullanmak ve modelin bu epikrizlerin kelimelerini bilip bilmediğini öğrenmek 
 Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin B
 hastanesine ait, büyük harfli kısaltmalar içeren kısa bir üslupla Türkçe yazılmış 600 epikrizi
 tutar. Her satır bir hastadır ve "epikriz" sütunu epikrizi tutar.
-Görev: "ytu-ce-cosmos/turkish-tiny-bert-uncased" modelinin belirteçleyicisini Hugging Face Hub'dan
-yükle. Her epikrizi üç kez belirteçlere böl: Yazıldığı gibi, programlama dilinin olağan küçük harf
-işleminden sonra ve Türkçe küçük harf işleminden sonra (önce I, ı; İ, i olur, ardından öteki harfler
-küçülür). Üçünün her biri için baştaki ve sondaki özel belirteçler hariç belirteçleri say ve
-bunların yüzde kaçının bilinmeyen belirteç olduğunu hesapla. İlk epikrizin belirteçlerini de üç
-biçimde göster.
+Görev: "ytu-ce-cosmos/turkish-tiny-bert-uncased" modelinin tokenizer'ını Hugging Face Hub'dan yükle.
+Her epikrizi üç kez token'lara böl: Yazıldığı gibi, programlama dilinin olağan küçük harf işleminden
+sonra ve Türkçe küçük harf işleminden sonra (önce I, ı; İ, i olur, ardından öteki harfler küçülür).
+Üçünün her biri için baştaki ve sondaki özel token'lar hariç token'ları say ve bunların yüzde
+kaçının bilinmeyen token olduğunu hesapla. İlk epikrizin token'larını da üç biçimde göster.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Üç biçim için belirteç sayısını ve bilinmeyen belirteçlerin yüzdesini yazdır; yazıldığı gibi
+Çıktı: Üç biçim için token sayısını ve bilinmeyen token'ların yüzdesini yazdır; yazıldığı gibi
 verilen metindeki yüzdeyi bir ondalık basamakla "cevap" adıyla sakla.
-Test: Türkçe küçük harf işleminden sonra hiç bilinmeyen belirteç kalmamalı; ilk epikriz olağan küçük
-harf işleminden sonra Türkçe işlemden sonrakinden daha çok ya da aynı sayıda belirteç vermeli.
+Test: Türkçe küçük harf işleminden sonra hiç bilinmeyen token kalmamalı; ilk epikriz olağan küçük
+harf işleminden sonra Türkçe işlemden sonrakinden daha çok ya da aynı sayıda token vermeli.
 ```
 
 **Beklenen sonuç:** "cevap" = 19,5
@@ -249,23 +248,23 @@ işlem için "PROC" olarak yazılmıştır; "KY", "AF", "KAH", "HT", "DM" ve "KB
 1 değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter
 hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse
 0 olur.
-Görev: "ytu-ce-cosmos/turkish-tiny-bert-uncased" modelini Hugging Face Hub'dan, her belirtece yedi
+Görev: "ytu-ce-cosmos/turkish-tiny-bert-uncased" modelini Hugging Face Hub'dan, her token'a yedi
 etiketten birini veren bir katmanla kullan: Varlığın dışında ya da bir tanının, bir ilacın veya bir
 işlemin başlangıcı ya da içi. Her epikrizi Türkçe küçük harfe çevir (önce I, ı; İ, i olur); bu işlem
-karakterlerin konumlarını korur. Epikrizi en fazla 384 belirtece böl. Bir belirteç, ilk karakterinin
+karakterlerin konumlarını korur. Epikrizi en fazla 384 token'a böl. Bir token, ilk karakterinin
 içinde bulunduğu varlığın etiketini alır: Varlığı başlatıyorsa başlangıç etiketini, başlatmıyorsa iç
-etiketini. Modele eğitim epikrizleriyle 4 dönem boyunca, karıştırılmış 16 epikrizlik gruplar
-hâlinde, AdamW eniyileyicisi ve 0,0003 öğrenme hızıyla ince ayar yap. Ardından test ve dış
-epikrizleri etiketle, her varlığın belirteçlerini yeniden bir karakter parçasına birleştir ve
+etiketini. Modele eğitim epikrizleriyle 4 epoch boyunca, karıştırılmış 16 epikrizlik gruplar
+hâlinde, AdamW optimizasyon algoritması ve 0,0003 öğrenme hızıyla ince ayar yap. Ardından test ve
+dış epikrizleri etiketle, her varlığın token'larını yeniden bir karakter parçasına birleştir ve
 varlıkların kesinliğini, duyarlılığını ve F1 değerini hesapla; tahmin edilen bir varlık ancak türü,
 ilk karakteri ve son karakteri açıklanmış bir varlıkla eşleştiğinde sayılır. Sonucun
-tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle.
+tekrarlanabilmesi için seed değerini 2026 olarak sabitle.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Her dönemin kaybını ve test ile dış epikrizlerde bütün varlıklar ve her tür için kesinliği,
+Çıktı: Her epoch'un kaybını ve test ile dış epikrizlerde bütün varlıklar ve her tür için kesinliği,
 duyarlılığı ve F1 değerini gösteren bir tablo yazdır; test epikrizlerinde bütün varlıkların F1
 değerini üç ondalık basamakla "cevap" adıyla sakla.
-Test: Kayıp ilk dönemden son döneme düşmeli ve F1 değeri 0 ile 1 arasında olmalı.
+Test: Kayıp ilk epoch'tan son epoch'a düşmeli ve F1 değeri 0 ile 1 arasında olmalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,981

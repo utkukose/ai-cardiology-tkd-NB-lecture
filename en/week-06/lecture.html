@@ -4448,7 +4448,7 @@ window.TEXTKIT = (function(){
     const T = {en:{tried:'tried', found:'in the vocabulary', notfound:'not in the vocabulary', unk:'no piece covers the rest: the whole word becomes [UNK]',
                    tokens:'Tokens', step:'Step', of:'of', text:'Text after the lower case', words:'Words of the basic tokenizer', play:'Play', stop:'Stop'},
                tr:{tried:'denendi', found:'sözlükte var', notfound:'sözlükte yok', unk:'kalan kısmı hiçbir parça karşılamıyor: Bütün kelime [UNK] olur',
-                   tokens:'Belirteçler', step:'Adım', of:'/', text:'Küçük harf işleminden sonraki metin', words:'Temel belirteçleyicinin kelimeleri', play:'Oynat', stop:'Durdur'}}[L];
+                   tokens:'Token\'lar', step:'Adım', of:'/', text:'Küçük harf işleminden sonraki metin', words:'Temel tokenizer\'ın kelimeleri', play:'Oynat', stop:'Durdur'}}[L];
     let steps = [], shown = 0, timer = null, words = [], results = [];
     const form = t => lower.value === 'turkish' ? K.trLower(t) : lower.value === 'python' ? K.pyLower(t) : t;
     function build(){

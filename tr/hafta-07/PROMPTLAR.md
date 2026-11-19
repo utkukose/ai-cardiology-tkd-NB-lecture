@@ -10,9 +10,9 @@ Bu kütüphanede, 7. haftanın prompt (istem) yolundaki, yani Jupyter defterinin
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
-2. [Durak 1: Önceden eğitilmiş bir görü dönüştürücüsüyle ekokardiyografi için bir kalite kapısı](#durak-1-önceden-eğitilmiş-bir-görü-dönüştürücüsüyle-ekokardiyografi-için-bir-kalite-kapısı)
+2. [Durak 1: Önceden eğitilmiş bir Vision Transformer ile ekokardiyografi için bir kalite kapısı](#durak-1-önceden-eğitilmiş-bir-vision-transformer-ile-ekokardiyografi-için-bir-kalite-kapısı)
 3. [Durak 2: Sentetik ve gerçek anjiyogramlarda darlıklar](#durak-2-sentetik-ve-gerçek-anjiyogramlarda-darlıklar)
-4. [Durak 3: Evrişimli ağ, görü dönüştürücüsü ve melez model](#durak-3-evrişimli-ağ-görü-dönüştürücüsü-ve-melez-model)
+4. [Durak 3: Evrişimli ağ, Vision Transformer ve hibrit model](#durak-3-evrişimli-ağ-vision-transformer-ve-hibrit-model)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
 6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
 
@@ -28,11 +28,11 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 | 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-## Durak 1: Önceden eğitilmiş bir görü dönüştürücüsüyle ekokardiyografi için bir kalite kapısı
+## Durak 1: Önceden eğitilmiş bir Vision Transformer ile ekokardiyografi için bir kalite kapısı
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 7, 1-4. bölümler*
 
-Bu durak oturumun mini projesidir. Fotoğraflarla önceden eğitilmiş bir görü dönüştürücüsü olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur. Son adım, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar.
+Bu durak oturumun mini projesidir. Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur. Son adım, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar.
 
 ### Adım 1.1: Dört görüntü istatistiğinden bir kapı
 
@@ -65,14 +65,14 @@ Test: AUC 0 ile 1 arasında olmalı ve test kareleri son adımdan önce kullanı
 
 **Beklenen sonuç:** "cevap" = 0,704
 
-### Adım 1.2: Bir görü dönüştürücüsünün sınıf belirteci
+### Adım 1.2: Bir Vision Transformer'ın sınıf token'ı
 
-**Amaç.** Bu adımda her kare, ImageNet ile önceden eğitilmiş ViT-B/16'nın sınıf belirtecindeki 768 sayıyla tarif edilir ve kapı bu sayılarla kurulur.
+**Amaç.** Bu adımda her kare, ImageNet ile önceden eğitilmiş ViT-B/16'nın sınıf token'ındaki 768 sayıyla tarif edilir ve kapı bu sayılarla kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
 çalıştıracağım.
-Bağlam: Milyonlarca fotoğraftan öğrenmiş ve hiç ekokardiyogram görmemiş bir görü dönüştürücüsünün,
+Bağlam: Milyonlarca fotoğraftan öğrenmiş ve hiç ekokardiyogram görmemiş bir Vision Transformer'ın,
 kalitesi kötü kareleri işaretleyecek kadar iyi tarif edip edemediğini öğrenmek istiyorum.
 Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
 ekokardiyografi karesini, yani 300 hastanın apikal iki boşluk ve dört boşluk görüntülerinin diyastol
@@ -81,8 +81,8 @@ sonu karelerini tutar. Her satır bir karedir: "küme" sütunu hastanın kümesi
 "kalite" ise CAMUS uzmanlarının verdiği görüntü kalitesini ("iyi", "orta" ya da "kötü") verir.
 "kare" sütununun her hücresi kareyi gri değerleri 0 ile 1 arasında olan 224 × 224 piksellik bir
 görüntü olarak tutar.
-Görev: ImageNet ağırlıklarıyla görü dönüştürücüsü ViT-B/16'yı son katmanı olmadan kullan; böylece ağ
-her kare için son katmanındaki sınıf belirtecini, yani 768 sayıyı döndürür. Her kareyi ağa, üç renk
+Görev: ImageNet ağırlıklarıyla Vision Transformer ViT-B/16'yı son katmanı olmadan kullan; böylece ağ
+her kare için son katmanındaki sınıf token'ını, yani 768 sayıyı döndürür. Her kareyi ağa, üç renk
 kanalında aynı gri değerleri taşıyan 224 × 224 piksellik bir görüntü olarak ve ImageNet'in
 ortalaması ve standart sapmasıyla ölçeklenmiş biçimde ver: Üç kanaldan 0,485, 0,456 ve 0,406
 değerlerini çıkar, kanalları 0,229, 0,224 ve 0,225 değerlerine böl. Kareleri ağdan 16'şarlık gruplar
@@ -108,8 +108,8 @@ Test: Her kare 768 sayı vermeli ve AUC 0 ile 1 arasında olmalı.
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
 çalıştıracağım.
-Bağlam: Ekokardiyografi kareleri için bir kalite kapısında öznitelik kaynağı olarak bir görü
-dönüştürücüsünü 4. haftada kullanılan evrişimli ağla karşılaştırmak istiyorum.
+Bağlam: Ekokardiyografi kareleri için bir kalite kapısında öznitelik kaynağı olarak bir Vision
+Transformer'ı 4. haftada kullanılan evrişimli ağla karşılaştırmak istiyorum.
 Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
 ekokardiyografi karesini, yani 300 hastanın apikal iki boşluk ve dört boşluk görüntülerinin diyastol
 sonu karelerini tutar. Her satır bir karedir: "küme" sütunu hastanın kümesini ("eğitim", 200 hasta;
@@ -139,7 +139,7 @@ Test: Her kare 1.280 sayı vermeli ve AUC 0 ile 1 arasında olmalı.
 
 ### Adım 1.4: Farktan ne kadar emin olabiliriz?
 
-**Amaç.** Bu adımda 50 test hastası yerine koyarak tekrar tekrar çekilir ve görü dönüştürücüsünün ne sıklıkla daha iyi olduğu görülür.
+**Amaç.** Bu adımda 50 test hastası yerine koyarak tekrar tekrar çekilir ve Vision Transformer'ın ne sıklıkla daha iyi olduğu görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
@@ -155,8 +155,8 @@ iki kalite kapısının verdiği kötü kalite olasılığını tutar; bu kapıl
 eğitilmiş iki ağın öznitelikleri üzerinde kurulmuş lojistik regresyonlardır.
 Görev: İki olasılık sütununun "kötü" sütununa göre AUC değerini hesapla. Ardından 2.000 bootstrap
 örneği çek: Her örnek 50 test hastası arasından yerine koyarak 50 hasta çeker ve çekilen her
-hastanın iki karesini de tutar. Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak
-sabitle. İki tür kareyi de içeren her örnekte iki kapının AUC değerini ve farkı (ViT-B/16 eksi
+hastanın iki karesini de tutar. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle.
+İki tür kareyi de içeren her örnekte iki kapının AUC değerini ve farkı (ViT-B/16 eksi
 EfficientNet-B0) hesapla. Ortalama farkı, 2,5. ve 97,5. yüzdelikler arasındaki yüzde 95 aralığını ve
 farkın 0'ın üstünde olduğu örneklerin oranını bildir.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -194,19 +194,19 @@ da daha fazla) 6 pikselden yakınsa 1, yama her darlıktan en az 48 piksel uzakt
 Görev: Her yamayı kendi içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart
 sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için küçük bir evrişimli ağ
 kur: Her biri 3 × 3 piksellik filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32, 64 ve 64
-filtre), yığın normalleştirme, ReLU ve 2 × 2 en büyük havuzlamadan oluşan dört blok; ardından her
+filtre), batch normalizasyonu, ReLU ve 2 × 2 en büyük havuzlamadan oluşan dört blok; ardından her
 kanalın konumları üzerinden ortalaması ve tek çıktılı, yani darlığın logitini veren bir doğrusal
-katman. Ağı eğitim yamalarıyla 8 dönem boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit
-üzerinde ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam eniyileyicisiyle eğit. Veri
-çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her
-dönemin sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda
-doğrulama AUC değeri en büyük olan dönemin ağırlıklarını sakla. Sonucun tekrarlanabilmesi için
-rastgelelik tohumunu 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların
+katman. Ağı eğitim yamalarıyla 8 epoch boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit
+üzerinde ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam optimizasyon algoritmasıyla
+eğit. Veri çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa
+aynala. Her epoch'un sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin
+sonunda doğrulama AUC değeri en büyük olan epoch'un ağırlıklarını sakla. Sonucun tekrarlanabilmesi
+için seed değerini 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların
 "darlık" sütununa göre AUC değerini hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Eğitilebilir ağırlık sayısını ve her dönemin doğrulama AUC değerini yazdır; test AUC değerini
-üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: Eğitilebilir ağırlık sayısını ve her epoch'un doğrulama AUC değerini yazdır; test AUC
+değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Ağın 60.641 eğitilebilir ağırlığı olmalı ve test yamaları son adımdan önce kullanılmamalı.
 ```
 
@@ -259,40 +259,40 @@ damarın üzerindeyse 0 değerini alır.
 Görev: Her yamayı kendi içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart
 sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için küçük bir evrişimli ağ
 kur: Her biri 3 × 3 piksellik filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32, 64 ve 64
-filtre), yığın normalleştirme, ReLU ve 2 × 2 en büyük havuzlamadan oluşan dört blok; ardından her
+filtre), batch normalizasyonu, ReLU ve 2 × 2 en büyük havuzlamadan oluşan dört blok; ardından her
 kanalın konumları üzerinden ortalaması ve tek çıktılı, yani darlığın logitini veren bir doğrusal
-katman. Ağı eğitim yamalarıyla 8 dönem boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit
-üzerinde ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam eniyileyicisiyle eğit. Veri
-çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her
-dönemin sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda
-doğrulama AUC değeri en büyük olan dönemin ağırlıklarını sakla. Sonucun tekrarlanabilmesi için
-rastgelelik tohumunu 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların
+katman. Ağı eğitim yamalarıyla 8 epoch boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit
+üzerinde ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam optimizasyon algoritmasıyla
+eğit. Veri çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa
+aynala. Her epoch'un sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin
+sonunda doğrulama AUC değeri en büyük olan epoch'un ağırlıklarını sakla. Sonucun tekrarlanabilmesi
+için seed değerini 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların
 "darlık" sütununa göre AUC değerini hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Eğitilebilir ağırlık sayısını ve her dönemin doğrulama AUC değerini yazdır; test AUC değerini
-üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: Eğitilebilir ağırlık sayısını ve her epoch'un doğrulama AUC değerini yazdır; test AUC
+değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Ağın 60.641 eğitilebilir ağırlığı olmalı ve hiçbir test anjiyogramının yaması eğitimde
 kullanılmamalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,81
 
-## Durak 3: Evrişimli ağ, görü dönüştürücüsü ve melez model
+## Durak 3: Evrişimli ağ, Vision Transformer ve hibrit model
 
 *[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-3) · Python yolunda aynı sonuç: 7-9. bölümler*
 
-Küçük bir görü dönüştürücüsü ve evrişimle dikkati birleştiren melez bir model, ARCADE'in yamalarını 2. duraktaki evrişimli ağla aynı biçimde öğrenir; böylece üç model aynı test anjiyogramlarında karşılaştırılabilir. Son adım görü dönüştürücüsünün nereye baktığını sorar: Sınıf belirtecinin dikkatinin ne kadarı, darlığın bulunduğu yama merkezine düşmektedir?
+Küçük bir Vision Transformer ve evrişimle dikkati birleştiren hibrit bir model, ARCADE'in yamalarını 2. duraktaki evrişimli ağla aynı biçimde öğrenir; böylece üç model aynı test anjiyogramlarında karşılaştırılabilir. Son adım Vision Transformer'ın nereye baktığını sorar: Sınıf token'ının dikkatinin ne kadarı, darlığın bulunduğu yama merkezine düşmektedir?
 
-### Adım 3.1: Küçük bir görü dönüştürücüsü
+### Adım 3.1: Küçük bir Vision Transformer
 
-**Amaç.** Bu adımda her yamayı 64 kareye bölen ve bu karelerin birbirine dikkat etmesini sağlayan küçük bir görü dönüştürücüsü ARCADE'in yamalarıyla eğitilir.
+**Amaç.** Bu adımda her yamayı 64 kareye bölen ve bu karelerin birbirine dikkat etmesini sağlayan küçük bir Vision Transformer ARCADE'in yamalarıyla eğitilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
 çalıştıracağım.
-Bağlam: Gerçek koroner anjiyogramlarda darlık bulmak için aynı biçimde eğitilmiş küçük bir görü
-dönüştürücüsünü küçük bir evrişimli ağla karşılaştırmak istiyorum.
+Bağlam: Gerçek koroner anjiyogramlarda darlık bulmak için aynı biçimde eğitilmiş küçük bir Vision
+Transformer'ı küçük bir evrişimli ağla karşılaştırmak istiyorum.
 Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
 1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300) kesilmiş 64
 × 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("eğitim",
@@ -302,35 +302,35 @@ hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir g�
 yakınsa 1, yama sınırı çizilmiş her darlıktan ve görüntünün kenarından en az 48 piksel uzakta bir
 damarın üzerindeyse 0 değerini alır.
 Görev: Her yamayı kendi içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart
-sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için küçük bir görü
-dönüştürücüsü kur. Yamayı 8 × 8 piksellik 64 kareye böl ve her kareyi öğrenilen aynı doğrusal
-dönüşümle 64 sayıya dönüştür. 64 belirtecin önüne 64 sayıdan oluşan öğrenilen bir sınıf belirteci
-koy ve öğrenilen konumları ekle: 65 yerin her biri için, standart sapması 0,02 olan küçük rastgele
-sayılarla başlayan 64 sayılık bir vektör. Belirteçleri dört dönüştürücü bloğundan geçir. Her blokta
+sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için küçük bir Vision
+Transformer kur. Yamayı 8 × 8 piksellik 64 kareye böl ve her kareyi öğrenilen aynı doğrusal
+dönüşümle 64 sayıya dönüştür. 64 token'ın önüne 64 sayıdan oluşan öğrenilen bir sınıf token'ı koy ve
+öğrenilen konumları ekle: 65 yerin her biri için, standart sapması 0,02 olan küçük rastgele
+sayılarla başlayan 64 sayılık bir vektör. Token'ları dört Transformer bloğundan geçir. Her blokta
 katman normalleştirmesini dört başlı öz dikkat izler ve öz dikkatin çıktısı bloğun girdisine
 eklenir; ikinci bir katman normalleştirmesini 128 birimlik bir gizli katman ve GELU etkinleştirmesi
-içeren ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf belirtecini
+içeren ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf token'ını
 al, katman normalleştirmesi ve tek çıktılı, yani darlığın logitini veren bir doğrusal katman uygula.
-Ağı eğitim yamalarıyla 8 dönem boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde
-ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam eniyileyicisiyle eğit. Veri çoğaltma
-için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her dönemin
-sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda doğrulama AUC
-değeri en büyük olan dönemin ağırlıklarını sakla. Sonucun tekrarlanabilmesi için rastgelelik
-tohumunu 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların "darlık" sütununa
+Ağı eğitim yamalarıyla 8 epoch boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde
+ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam optimizasyon algoritmasıyla eğit. Veri
+çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her
+epoch'un sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda
+doğrulama AUC değeri en büyük olan epoch'un ağırlıklarını sakla. Sonucun tekrarlanabilmesi için seed
+değerini 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların "darlık" sütununa
 göre AUC değerini hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Eğitilebilir ağırlık sayısını ve her dönemin doğrulama AUC değerini yazdır; test AUC değerini
-üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: Eğitilebilir ağırlık sayısını ve her epoch'un doğrulama AUC değerini yazdır; test AUC
+değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Ağın 142.465 eğitilebilir ağırlığı olmalı ve hiçbir test anjiyogramının yaması eğitimde
 kullanılmamalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,93
 
-### Adım 3.2: Evrişim ve dikkatten oluşan melez bir model
+### Adım 3.2: Evrişim ve dikkatten oluşan hibrit bir model
 
-**Amaç.** Bu adımda melez bir model eğitilir: Önce üç evrişim bloğu, ardından bunların çıktısındaki konumlar üzerinde iki dönüştürücü bloğu.
+**Amaç.** Bu adımda hibrit bir model eğitilir: Önce üç evrişim bloğu, ardından bunların çıktısındaki konumlar üzerinde iki Transformer bloğu.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
@@ -347,49 +347,49 @@ hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir g�
 yakınsa 1, yama sınırı çizilmiş her darlıktan ve görüntünün kenarından en az 48 piksel uzakta bir
 damarın üzerindeyse 0 değerini alır.
 Görev: Her yamayı kendi içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart
-sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için melez bir ağ kur. Her
+sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için hibrit bir ağ kur. Her
 biri 3 × 3 piksellik filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32 ve 64 filtre),
-yığın normalleştirme, ReLU ve 2 × 2 en büyük havuzlamadan oluşan üç evrişim bloğu, yamayı 64 sayılık
-8 × 8 konuma dönüştürür. Bu 64 konum küçük bir dönüştürücünün belirteçleridir: Önlerine 64 sayıdan
-oluşan öğrenilen bir sınıf belirteci koy, 65 yer için standart sapması 0,02 olan küçük rastgele
-sayılarla başlayan öğrenilen konumları ekle ve belirteçleri iki dönüştürücü bloğundan geçir. Her
-blokta katman normalleştirmesini dört başlı öz dikkat izler ve öz dikkatin çıktısı bloğun girdisine
-eklenir; ikinci bir katman normalleştirmesini 128 birimlik bir gizli katman ve GELU etkinleştirmesi
-içeren ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf belirtecini
-al, katman normalleştirmesi ve tek çıktılı, yani darlığın logitini veren bir doğrusal katman uygula.
-Ağı eğitim yamalarıyla 8 dönem boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde
-ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam eniyileyicisiyle eğit. Veri çoğaltma
-için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her dönemin
-sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda doğrulama AUC
-değeri en büyük olan dönemin ağırlıklarını sakla. Sonucun tekrarlanabilmesi için rastgelelik
-tohumunu 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların "darlık" sütununa
-göre AUC değerini hesapla.
+batch normalizasyonu, ReLU ve 2 × 2 en büyük havuzlamadan oluşan üç evrişim bloğu, yamayı 64 sayılık
+8 × 8 konuma dönüştürür. Bu 64 konum küçük bir Transformer modelinin token'larıdır: Önlerine 64
+sayıdan oluşan öğrenilen bir sınıf token'ı koy, 65 yer için standart sapması 0,02 olan küçük
+rastgele sayılarla başlayan öğrenilen konumları ekle ve token'ları iki Transformer bloğundan geçir.
+Her blokta katman normalleştirmesini dört başlı öz dikkat izler ve öz dikkatin çıktısı bloğun
+girdisine eklenir; ikinci bir katman normalleştirmesini 128 birimlik bir gizli katman ve GELU
+etkinleştirmesi içeren ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda
+sınıf token'ını al, katman normalleştirmesi ve tek çıktılı, yani darlığın logitini veren bir
+doğrusal katman uygula. Ağı eğitim yamalarıyla 8 epoch boyunca, karıştırılmış 64 yamalık gruplar
+hâlinde, logit üzerinde ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam optimizasyon
+algoritmasıyla eğit. Veri çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla
+soldan sağa aynala. Her epoch'un sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla;
+eğitimin sonunda doğrulama AUC değeri en büyük olan epoch'un ağırlıklarını sakla. Sonucun
+tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Ardından test yamalarının olasılıklarını
+ve bunların "darlık" sütununa göre AUC değerini hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Eğitilebilir ağırlık sayısını ve her dönemin doğrulama AUC değerini yazdır; test AUC değerini
-üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: Eğitilebilir ağırlık sayısını ve her epoch'un doğrulama AUC değerini yazdır; test AUC
+değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Ağın 94.881 eğitilebilir ağırlığı olmalı ve hiçbir test anjiyogramının yaması eğitimde
 kullanılmamalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,934
 
-### Adım 3.3: Görü dönüştürücüsü nereye bakıyor?
+### Adım 3.3: Vision Transformer nereye bakıyor?
 
-**Amaç.** Bu adımda görü dönüştürücüsünün sınıf belirtecinin dikkatinin ne kadarının, darlığın bulunduğu yama merkezine düştüğü ölçülür.
+**Amaç.** Bu adımda Vision Transformer'ın sınıf token'ının dikkatinin ne kadarının, darlığın bulunduğu yama merkezine düştüğü ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
 çalıştıracağım.
-Bağlam: Anjiyogramlarda darlık bulan bir görü dönüştürücüsünün dikkat haritalarını bir açıklama
+Bağlam: Anjiyogramlarda darlık bulan bir Vision Transformer'ın dikkat haritalarını bir açıklama
 olarak okumadan önce, dikkatinin darlığın bulunduğu yere düşüp düşmediğini öğrenmek istiyorum.
 Veri: Defterde "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri seti olan
 ARCADE'in 64 × 64 piksellik 3.088 test yamasını tutar. Her satır bir yamadır: "anjiyogram" sütunu
 yamanın anjiyogramının numarasını verir; "darlık" sütunu, merkezi uzmanların sınırını çizdiği bir
 darlıkta olan yama için 1, her darlıktan uzakta bir damarın üzerindeki yama için 0 değerini alır.
-"dikkat" sütununun her hücresi toplamı 1 olan 8 × 8 sayılık bir tablo tutar: Dersin küçük görü
-dönüştürücüsünün sınıf belirtecinin, yamanın 8 × 8 piksellik 64 karesinin her birine gösterdiği ve
-dört katmanı boyunca izlenen dikkat (dikkat aktarımı). Ortadaki dört kare, yamanın ortadaki 16 × 16
+"dikkat" sütununun her hücresi toplamı 1 olan 8 × 8 sayılık bir tablo tutar: Dersin küçük Vision
+Transformer'ın sınıf token'ının, yamanın 8 × 8 piksellik 64 karesinin her birine gösterdiği ve dört
+katmanı boyunca izlenen dikkat (dikkat aktarımı). Ortadaki dört kare, yamanın ortadaki 16 × 16
 pikselini kaplar; 1'den başlayarak sayıldığında bunlar 4. ve 5. satır ve sütunlardır.
 Görev: Her yama için ortadaki dört karenin dikkatini topla. Bu payın darlık içeren yamalar ve öteki
 yamalar üzerindeki ortalamasını hesapla ve iki ortalamayı, dikkat eşit dağılsaydı dört karenin
@@ -463,7 +463,7 @@ ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
 çalıştıracağım.
 Bağlam: Gerçek koroner anjiyogramlarda darlık bulmak için aynı biçimde eğitilmiş ve aynı
-anjiyogramlarda sınanmış evrişimli bir ağı, bir görü dönüştürücüsünü ve melez bir modeli
+anjiyogramlarda sınanmış evrişimli bir ağı, bir Vision Transformer'ı ve hibrit bir modeli
 karşılaştırmak istiyorum.
 Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
 1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300) kesilmiş 64
@@ -476,38 +476,38 @@ damarın üzerindeyse 0 değerini alır.
 Görev: Her yamayı kendi içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart
 sapmalarının 0,02 fazlasına böl. Üç ağ kur. Birincisi: Tek kanallı, 64 × 64 piksellik bir yama için
 küçük bir evrişimli ağ kur: Her biri 3 × 3 piksellik filtreler ve bir piksellik dolgu içeren bir
-evrişim (16, 32, 64 ve 64 filtre), yığın normalleştirme, ReLU ve 2 × 2 en büyük havuzlamadan oluşan
+evrişim (16, 32, 64 ve 64 filtre), batch normalizasyonu, ReLU ve 2 × 2 en büyük havuzlamadan oluşan
 dört blok; ardından her kanalın konumları üzerinden ortalaması ve tek çıktılı, yani darlığın
 logitini veren bir doğrusal katman. İkincisi: Tek kanallı, 64 × 64 piksellik bir yama için küçük bir
-görü dönüştürücüsü kur. Yamayı 8 × 8 piksellik 64 kareye böl ve her kareyi öğrenilen aynı doğrusal
-dönüşümle 64 sayıya dönüştür. 64 belirtecin önüne 64 sayıdan oluşan öğrenilen bir sınıf belirteci
-koy ve öğrenilen konumları ekle: 65 yerin her biri için, standart sapması 0,02 olan küçük rastgele
-sayılarla başlayan 64 sayılık bir vektör. Belirteçleri dört dönüştürücü bloğundan geçir. Her blokta
+Vision Transformer kur. Yamayı 8 × 8 piksellik 64 kareye böl ve her kareyi öğrenilen aynı doğrusal
+dönüşümle 64 sayıya dönüştür. 64 token'ın önüne 64 sayıdan oluşan öğrenilen bir sınıf token'ı koy ve
+öğrenilen konumları ekle: 65 yerin her biri için, standart sapması 0,02 olan küçük rastgele
+sayılarla başlayan 64 sayılık bir vektör. Token'ları dört Transformer bloğundan geçir. Her blokta
 katman normalleştirmesini dört başlı öz dikkat izler ve öz dikkatin çıktısı bloğun girdisine
 eklenir; ikinci bir katman normalleştirmesini 128 birimlik bir gizli katman ve GELU etkinleştirmesi
-içeren ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf belirtecini
+içeren ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf token'ını
 al, katman normalleştirmesi ve tek çıktılı, yani darlığın logitini veren bir doğrusal katman uygula.
-Üçüncüsü: Tek kanallı, 64 × 64 piksellik bir yama için melez bir ağ kur. Her biri 3 × 3 piksellik
-filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32 ve 64 filtre), yığın normalleştirme,
+Üçüncüsü: Tek kanallı, 64 × 64 piksellik bir yama için hibrit bir ağ kur. Her biri 3 × 3 piksellik
+filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32 ve 64 filtre), batch normalizasyonu,
 ReLU ve 2 × 2 en büyük havuzlamadan oluşan üç evrişim bloğu, yamayı 64 sayılık 8 × 8 konuma
-dönüştürür. Bu 64 konum küçük bir dönüştürücünün belirteçleridir: Önlerine 64 sayıdan oluşan
-öğrenilen bir sınıf belirteci koy, 65 yer için standart sapması 0,02 olan küçük rastgele sayılarla
-başlayan öğrenilen konumları ekle ve belirteçleri iki dönüştürücü bloğundan geçir. Her blokta katman
+dönüştürür. Bu 64 konum küçük bir Transformer modelinin token'larıdır: Önlerine 64 sayıdan oluşan
+öğrenilen bir sınıf token'ı koy, 65 yer için standart sapması 0,02 olan küçük rastgele sayılarla
+başlayan öğrenilen konumları ekle ve token'ları iki Transformer bloğundan geçir. Her blokta katman
 normalleştirmesini dört başlı öz dikkat izler ve öz dikkatin çıktısı bloğun girdisine eklenir;
 ikinci bir katman normalleştirmesini 128 birimlik bir gizli katman ve GELU etkinleştirmesi içeren
-ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf belirtecini al,
+ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf token'ını al,
 katman normalleştirmesi ve tek çıktılı, yani darlığın logitini veren bir doğrusal katman uygula. Her
-ağı eğitim yamalarıyla 8 dönem boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde
-ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam eniyileyicisiyle eğit. Veri çoğaltma
-için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her dönemin
-sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda doğrulama AUC
-değeri en büyük olan dönemin ağırlıklarını sakla. Sonucun tekrarlanabilmesi için rastgelelik
-tohumunu 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların "darlık" sütununa
+ağı eğitim yamalarıyla 8 epoch boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde
+ikili çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam optimizasyon algoritmasıyla eğit. Veri
+çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her
+epoch'un sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda
+doğrulama AUC değeri en büyük olan epoch'un ağırlıklarını sakla. Sonucun tekrarlanabilmesi için seed
+değerini 2026 olarak sabitle. Ardından test yamalarının olasılıklarını ve bunların "darlık" sütununa
 göre AUC değerini hesapla. 300 test anjiyogramından yerine koyarak 2.000 bootstrap örneği çek,
 çekilen her anjiyogramın bütün yamalarını tut ve her AUC değerine 2,5. ve 97,5. yüzdelikler
-arasındaki yüzde 95 aralığını ver. Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak
-sabitle. Aynı örneklerde görü dönüştürücüsünün ve melez modelin AUC değerinin evrişimli ağınkine
-göre farkını hesapla.
+arasındaki yüzde 95 aralığını ver. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle.
+Aynı örneklerde Vision Transformer'ın ve hibrit modelin AUC değerinin evrişimli ağınkine göre
+farkını hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Her ağ için eğitilebilir ağırlıklarını, eğitim süresini ve aralığıyla birlikte test AUC
@@ -530,8 +530,8 @@ ARCADE'in 64 × 64 piksellik 6.336 doğrulama ve test yamasını (doğrulama 200
 tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("doğrulama" ya da "test"),
 "anjiyogram" anjiyogramının numarasını verir; "darlık" sütunu merkezi uzmanların sınırını çizdiği
 bir darlıkta olan yama için 1, her darlıktan uzaktaki bir damarın üzerindeki yama için 0 değerini
-alır. "evrişimli ağ", "görü dönüştürücüsü" ve "melez model" adlı üç sütun, dersin eğitim yamalarıyla
-eğitilmiş üç küçük ağının verdiği darlık olasılığını tutar.
+alır. "evrişimli ağ", "Vision Transformer" ve "hibrit model" adlı üç sütun, dersin eğitim
+yamalarıyla eğitilmiş üç küçük ağının verdiği darlık olasılığını tutar.
 Görev: Üç ağın her biri için "doğrulama" kümesinin yamalarında, darlık içeren yamaların yüzde
 90'ının ulaştığı eşiği seç. Bu eşiği "test" kümesinin yamalarına uygula; duyarlılığı, özgüllüğü ve
 pozitif öngörü değerini hesapla. Ardından aynı duyarlılık ve özgüllüğün yüzde 2 prevalansta vereceği
@@ -539,8 +539,8 @@ pozitif öngörü değerini hesapla: Duyarlılık ile 0,02'nin çarpımı, kendi
 0,98 ile çarpımının toplamına bölünür.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Her ağ için eşiğini ve dört değeri içeren bir satırdan oluşan bir tablo göster; melez modelin
-yüzde 2 prevalanstaki pozitif öngörü değerini üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: Her ağ için eşiğini ve dört değeri içeren bir satırdan oluşan bir tablo göster; hibrit
+modelin yüzde 2 prevalanstaki pozitif öngörü değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Eşikler yalnızca doğrulama yamalarında seçilmeli ve her değer 0 ile 1 arasında olmalı.
 ```
 
@@ -564,28 +564,28 @@ ince ve koyu yapıları ortalayan altı pencere (bu yapılar, yarıçapı 6 olan
 şapka dönüşümünde değeri en büyük yüzde 3 içinde kalan piksellerdir) ve rastgele yerlerde altı
 pencere; bunların hepsi her darlıktan en az 48 piksel uzakta olmalı (etiket 0). Her yamayı kendi
 içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart sapmalarının 0,02 fazlasına
-böl. Tek kanallı, 64 × 64 piksellik bir yama için melez bir ağ kur. Her biri 3 × 3 piksellik
-filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32 ve 64 filtre), yığın normalleştirme,
+böl. Tek kanallı, 64 × 64 piksellik bir yama için hibrit bir ağ kur. Her biri 3 × 3 piksellik
+filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32 ve 64 filtre), batch normalizasyonu,
 ReLU ve 2 × 2 en büyük havuzlamadan oluşan üç evrişim bloğu, yamayı 64 sayılık 8 × 8 konuma
-dönüştürür. Bu 64 konum küçük bir dönüştürücünün belirteçleridir: Önlerine 64 sayıdan oluşan
-öğrenilen bir sınıf belirteci koy, 65 yer için standart sapması 0,02 olan küçük rastgele sayılarla
-başlayan öğrenilen konumları ekle ve belirteçleri iki dönüştürücü bloğundan geçir. Her blokta katman
+dönüştürür. Bu 64 konum küçük bir Transformer modelinin token'larıdır: Önlerine 64 sayıdan oluşan
+öğrenilen bir sınıf token'ı koy, 65 yer için standart sapması 0,02 olan küçük rastgele sayılarla
+başlayan öğrenilen konumları ekle ve token'ları iki Transformer bloğundan geçir. Her blokta katman
 normalleştirmesini dört başlı öz dikkat izler ve öz dikkatin çıktısı bloğun girdisine eklenir;
 ikinci bir katman normalleştirmesini 128 birimlik bir gizli katman ve GELU etkinleştirmesi içeren
-ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf belirtecini al,
+ileri beslemeli bir ağ izler ve bu ağın çıktısı da yeniden eklenir. Sonunda sınıf token'ını al,
 katman normalleştirmesi ve tek çıktılı, yani darlığın logitini veren bir doğrusal katman uygula. Ağı
-eğitim yamalarıyla 8 dönem boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde ikili
-çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam eniyileyicisiyle eğit. Veri çoğaltma için
-her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her dönemin sonunda
-doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda doğrulama AUC değeri en
-büyük olan dönemin ağırlıklarını sakla. Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026
-olarak sabitle. Ardından her doğrulama ve test anjiyogramını, merkezleri 8'den başlayarak her 16
-pikselde bir bulunan 64 × 64 piksellik pencerelerle tara; görüntü kenarlarında yansıtılarak
-genişletilir. Her pencerenin olasılığını hesapla. Tespit, olasılığı eşiğe eşit ya da eşikten büyük
-olan ve 5 × 5 merkezlik komşuluğundaki pencereler arasında en büyük olasılığa sahip penceredir. Bir
-tespit bir darlığa 32 pikselden yakınsa darlık bulunmuş sayılır; öteki her tespit yanlıştır.
-Doğrulama anjiyogramlarında anjiyogram başına en fazla bir yanlış tespit veren, 0,50 ile 0,99
-arasında 0,01 adımlarla seçilmiş en küçük eşiği bul ve bu eşiği test anjiyogramlarına uygula.
+eğitim yamalarıyla 8 epoch boyunca, karıştırılmış 64 yamalık gruplar hâlinde, logit üzerinde ikili
+çapraz entropi kaybıyla ve öğrenme hızı 0,001 olan Adam optimizasyon algoritmasıyla eğit. Veri
+çoğaltma için her grubu rastgele bir çeyrek tur döndür ve yarı olasılıkla soldan sağa aynala. Her
+epoch'un sonunda doğrulama yamalarının olasılıklarının AUC değerini hesapla; eğitimin sonunda
+doğrulama AUC değeri en büyük olan epoch'un ağırlıklarını sakla. Sonucun tekrarlanabilmesi için seed
+değerini 2026 olarak sabitle. Ardından her doğrulama ve test anjiyogramını, merkezleri 8'den
+başlayarak her 16 pikselde bir bulunan 64 × 64 piksellik pencerelerle tara; görüntü kenarlarında
+yansıtılarak genişletilir. Her pencerenin olasılığını hesapla. Tespit, olasılığı eşiğe eşit ya da
+eşikten büyük olan ve 5 × 5 merkezlik komşuluğundaki pencereler arasında en büyük olasılığa sahip
+penceredir. Bir tespit bir darlığa 32 pikselden yakınsa darlık bulunmuş sayılır; öteki her tespit
+yanlıştır. Doğrulama anjiyogramlarında anjiyogram başına en fazla bir yanlış tespit veren, 0,50 ile
+0,99 arasında 0,01 adımlarla seçilmiş en küçük eşiği bul ve bu eşiği test anjiyogramlarına uygula.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Seçilen eşiği yazdır. Ardından 0,50, 0,70, 0,90 eşiklerinin ve seçilen eşiğin her biri için

@@ -84,19 +84,19 @@ gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "g�
 hücresi, kesiti fotoğraflarla eğitilmiş bir ağa uygun biçimde tutar: 128 × 128 piksellik üç renk
 kanalı (diyastol sonu karesi, sistol sonu karesi ve ikisinin ortalaması), ImageNet'in ortalamaları
 ve standart sapmalarıyla normalleştirilmiştir.
-Görev: EfficientNet-B0'ı ImageNet ağırlıklarıyla kur ve son katmanını, 0,3 oranında seyreltmenin
+Görev: EfficientNet-B0'ı ImageNet ağırlıklarıyla kur ve son katmanını, 0,3 oranında dropout'un
 ardından gelen ve her grup için bir çıktı veren üç çıktılı yeni bir doğrusal katmanla değiştir. Ağın
-tamamını eğitim kesitlerinde 15 dönem boyunca, 16 kesitlik karıştırılmış gruplarla, 0,001 öğrenme
+tamamını eğitim kesitlerinde 15 epoch boyunca, 16 kesitlik karıştırılmış gruplarla, 0,001 öğrenme
 hızıyla ve çapraz entropi kaybıyla eğit. Veri çoğaltma için her kesit grubunu rastgele bir çeyrek
-tur döndür. Her dönemin sonunda, onlardan öğrenmeden doğrulama kesitlerindeki kaybı ölç ve bu kaybın
-en düşük olduğu dönemin ağırlıklarını sakla. Rastgele seçimler her çalıştırmada aynı olsun; bunun
-için başlangıç değeri olarak 2026 sayısını kullan. Ardından her test hastası için bir kliniğin
+tur döndür. Her epoch'un sonunda, onlardan öğrenmeden doğrulama kesitlerindeki kaybı ölç ve bu
+kaybın en düşük olduğu epoch'un ağırlıklarını sakla. Rastgele seçimler her çalıştırmada aynı olsun;
+bunun için başlangıç değeri olarak 2026 sayısını kullan. Ardından her test hastası için bir kliniğin
 yapacağı gibi karar ver: Üç grubun olasılıklarının hastanın üç kesiti üzerinden ortalamasını al ve
 ortalaması en büyük grubu seç.
 Kısıtlar: Yalnızca bu tabloyu kullan. Ağ için yalnızca bu bilgisayarda hazır bulunan EfficientNet-B0
 ImageNet ağırlıklarını kullan; yeni bir indirme gerekmez. Kod dosya okumamalı, internetten bir şey
 indirmemeli ve program kurmamalıdır.
-Çıktı: Doğrulama kaybının en düşük olduğu dönemi ve 30 test hastasından kararı kendi grubuyla aynı
+Çıktı: Doğrulama kaybının en düşük olduğu epoch'u ve 30 test hastasından kararı kendi grubuyla aynı
 olanların oranını üç ondalık basamakla yazdır; oranı "cevap" adıyla sakla.
 Test: Saklanan ağırlıklar yüklendikten sonra doğrulama kaybı yine en düşük değerini vermeli.
 ```
@@ -181,18 +181,18 @@ boyutta tutar: Kavitenin içindeki pikseller 1, dışındakiler 0'dır.
 Görev: Her piksele, biri kavite, biri kavite dışı için olmak üzere iki skor veren küçük bir U-Net
 kur. Ağda atlama bağlantılarıyla üç düzey aşağı, bir dar boğaz ve üç düzey yukarı bulunur. Her
 düzeyde görüntünün boyutunu koruyan 3 × 3 çekirdekli iki evrişim vardır ve her evrişimin ardından
-yığın normalizasyonu ile ReLU gelir. Aşağı inerken 2 × 2 maksimum havuzlama görüntüyü yarıya
+batch normalizasyonu ile ReLU gelir. Aşağı inerken 2 × 2 maksimum havuzlama görüntüyü yarıya
 indirir; yukarı çıkarken 2 × 2'lik ters evrişim görüntüyü iki kat büyütür ve sonuç, aşağı inerken
 aynı düzeyde elde edilen çıktıyla birleştirilir. İlk düzeyde 8 kanal vardır ve kanal sayısı aşağı
 inilen her düzeyde iki katına çıkarak dar boğazda 64'e ulaşır. Son bir 1 × 1 evrişim iki skoru
-verir. Ağı eğitim karelerinde 15 dönem boyunca, 16 karelik karıştırılmış gruplarla eğit. Kayıp,
+verir. Ağı eğitim karelerinde 15 epoch boyunca, 16 karelik karıştırılmış gruplarla eğit. Kayıp,
 çapraz entropi ile yumuşak Dice kaybının toplamıdır; yumuşak Dice kaybı, kavite olasılıklarından
 hesaplanan Dice katsayısının 1'den çıkarılmasıyla bulunur. En yüksek değeri 0,003 olan tek döngülü
-bir öğrenme hızı kullan. Her dönemin sonunda doğrulama karelerinin ortalama Dice katsayısını hesapla
-ve bu değerin en yüksek olduğu dönemin ağırlıklarını sakla. Rastgele seçimler her çalıştırmada aynı
-olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Ardından test karelerinin her
-pikselinde kavite olasılığını hesapla, olasılığı 0,5'te eşikle ve her test karesinin Dice
-katsayısını uzmanın çizdiği kaviteye göre hesapla.
+bir öğrenme hızı kullan. Her epoch'un sonunda doğrulama karelerinin ortalama Dice katsayısını
+hesapla ve bu değerin en yüksek olduğu epoch'un ağırlıklarını sakla. Rastgele seçimler her
+çalıştırmada aynı olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Ardından test
+karelerinin her pikselinde kavite olasılığını hesapla, olasılığı 0,5'te eşikle ve her test karesinin
+Dice katsayısını uzmanın çizdiği kaviteye göre hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Eğitilebilir parametre sayısını yazdır; 200 test karesinin ortalama Dice katsayısını üç
@@ -295,7 +295,7 @@ basamakla "cevap" adıyla sakla.
 Test: 50 hasta bulunmalı ve patient0201 hastasının uzman EF'si yüzde 42,1 olmalı.
 ```
 
-**Beklenen sonuç:** "cevap" = -4,24
+**Beklenen sonuç:** "cevap" = −4,24
 
 ### Adım 3.3: Disklerin kalınlığı için başka bir kural
 
@@ -401,18 +401,19 @@ boyutta tutar: Kavitenin içindeki pikseller 1, dışındakiler 0'dır.
 Görev: Her piksele, biri kavite, biri kavite dışı için olmak üzere iki skor veren küçük bir U-Net
 kur. Ağda atlama bağlantılarıyla üç düzey aşağı, bir dar boğaz ve üç düzey yukarı bulunur. Her
 düzeyde görüntünün boyutunu koruyan 3 × 3 çekirdekli iki evrişim vardır ve her evrişimin ardından
-yığın normalizasyonu ile ReLU gelir. Aşağı inerken 2 × 2 maksimum havuzlama görüntüyü yarıya
+batch normalizasyonu ile ReLU gelir. Aşağı inerken 2 × 2 maksimum havuzlama görüntüyü yarıya
 indirir; yukarı çıkarken 2 × 2'lik ters evrişim görüntüyü iki kat büyütür ve sonuç, aşağı inerken
 aynı düzeyde elde edilen çıktıyla birleştirilir. İlk düzeyde 8 kanal vardır ve kanal sayısı aşağı
 inilen her düzeyde iki katına çıkarak dar boğazda 64'e ulaşır. Son bir 1 × 1 evrişim iki skoru
-verir. Ağı eğitim karelerinde 15 dönem boyunca, 16 karelik karıştırılmış gruplarla eğit. Kayıp,
+verir. Ağı eğitim karelerinde 15 epoch boyunca, 16 karelik karıştırılmış gruplarla eğit. Kayıp,
 çapraz entropi ile yumuşak Dice kaybının toplamıdır; yumuşak Dice kaybı, kavite olasılıklarından
 hesaplanan Dice katsayısının 1'den çıkarılmasıyla bulunur. En yüksek değeri 0,003 olan tek döngülü
-bir öğrenme hızı kullan. Her dönemin sonunda doğrulama karelerinin ortalama Dice katsayısını hesapla
-ve bu değerin en yüksek olduğu dönemin ağırlıklarını sakla. Rastgele seçimler her çalıştırmada aynı
-olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Ardından test karelerindeki kavite
-olasılığını 0,5'te eşikle ve her test karesinin Dice katsayısını uzmanın çizdiği kaviteye göre
-hesapla. Ortalama Dice katsayısını görüntüye ve faza göre ve görüntü kalitesine göre bildir.
+bir öğrenme hızı kullan. Her epoch'un sonunda doğrulama karelerinin ortalama Dice katsayısını
+hesapla ve bu değerin en yüksek olduğu epoch'un ağırlıklarını sakla. Rastgele seçimler her
+çalıştırmada aynı olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Ardından test
+karelerindeki kavite olasılığını 0,5'te eşikle ve her test karesinin Dice katsayısını uzmanın
+çizdiği kaviteye göre hesapla. Ortalama Dice katsayısını görüntüye ve faza göre ve görüntü
+kalitesine göre bildir.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Görüntü ve faza göre ortalama Dice katsayısını gösteren bir tablo ile görüntü kalitesine göre

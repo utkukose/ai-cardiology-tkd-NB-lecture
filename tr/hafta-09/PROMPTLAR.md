@@ -57,9 +57,9 @@ cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz 
 tipik anjinayı referans alan, atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç
 sütun. Satırları tablonun sırasında tut. Eğitim hastalarında iki model kur: Sütunları eğitim
 hastalarıyla standartlaştırılmış ve en fazla 1.000 yinelemeli bir lojistik regresyon ile 300 ağaçlı
-bir rastgele orman. Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle. İki
-modelin test hastalarındaki ROC eğrisi altındaki alanını (AUC) ve her birinin 172 numaralı hastaya
-verdiği olasılığı hesapla.
+bir rastgele orman. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. İki modelin
+test hastalarındaki ROC eğrisi altındaki alanını (AUC) ve her birinin 172 numaralı hastaya verdiği
+olasılığı hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: İki test AUC değerini ve 172 numaralı hastanın iki olasılığını yazdır; ormanın test AUC
@@ -93,8 +93,8 @@ Görev: Tabloyu bu sırayla bir modelin sütunlarına dönüştür: Yaş, erkek 
 cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz anjinası, ST çökmesi ve
 tipik anjinayı referans alan, atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç
 sütun. Satırları tablonun sırasında tut. Eğitim hastalarında 300 ağaçlı bir rastgele orman kur.
-Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle. Sekiz klinik değişkeni
-sekiz oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
+Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Sekiz klinik değişkeni sekiz
+oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
 hareket etsin. 172 numaralı hasta için ormanın verdiği olasılığın kesin Shapley değerlerini hesapla:
 256 oyuncu grubunun her biri için gruptaki oyunculara hastanın değerlerini, öteki oyunculara sırayla
 her eğitim hastasının değerlerini ver, tahmin et ve eğitim hastaları üzerinden ortalama al; bu,
@@ -172,8 +172,8 @@ Görev: Tabloyu bu sırayla bir modelin sütunlarına dönüştür: Yaş, erkek 
 cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz anjinası, ST çökmesi ve
 tipik anjinayı referans alan, atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç
 sütun. Satırları tablonun sırasında tut. Eğitim hastalarında 300 ağaçlı bir rastgele orman kur.
-Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle. Sekiz klinik değişkeni
-sekiz oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
+Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Sekiz klinik değişkeni sekiz
+oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
 hareket etsin. Her test hastası için ormanın verdiği olasılığın kesin Shapley değerlerini hesapla:
 256 oyuncu grubunun her biri için gruptaki oyunculara hastanın değerlerini, öteki oyunculara sırayla
 her eğitim hastasının değerlerini ver, tahmin et ve eğitim hastaları üzerinden ortalama al; bu,
@@ -196,7 +196,7 @@ Test: Sayıların toplamı test hastalarının sayısına eşit olmalı.
 
 *[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-2) · Python yolunda aynı sonuç: 4-7. bölümler*
 
-Bu durak tahminleri iki yolla daha açıklar. LIME, 1. duraktaki ormanı 172 numaralı hastanın çevresinde ağırlıklı doğrusal bir modelle taklit eder; yirmi tohumla yapılan bir tekrar da cevabının ne kadar kararlı olduğunu gösterir. Ardından küçük bir evrişimli ağ, CAMUS ekokardiyogramlarında yüzde 45'in altındaki ejeksiyon fraksiyonunu işaretlemeyi öğrenir ve ağın Grad-CAM haritaları sol ventrikülün uzman sınırlarıyla karşılaştırılır.
+Bu durak tahminleri iki yolla daha açıklar. LIME, 1. duraktaki ormanı 172 numaralı hastanın çevresinde ağırlıklı doğrusal bir modelle taklit eder; yirmi seed değeriyle yapılan bir tekrar da cevabının ne kadar kararlı olduğunu gösterir. Ardından küçük bir evrişimli ağ, CAMUS ekokardiyogramlarında yüzde 45'in altındaki ejeksiyon fraksiyonunu işaretlemeyi öğrenir ve ağın Grad-CAM haritaları sol ventrikülün uzman sınırlarıyla karşılaştırılır.
 
 ### Adım 2.1: 172 numaralı hasta için LIME
 
@@ -220,8 +220,8 @@ Görev: Tabloyu bu sırayla bir modelin sütunlarına dönüştür: Yaş, erkek 
 cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz anjinası, ST çökmesi ve
 tipik anjinayı referans alan, atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç
 sütun. Satırları tablonun sırasında tut. Eğitim hastalarında 300 ağaçlı bir rastgele orman kur.
-Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle. Sekiz klinik değişkeni
-sekiz oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
+Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Sekiz klinik değişkeni sekiz
+oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
 hareket etsin. Ormanın 172 numaralı hastaya verdiği olasılığı LIME ile açıkla. Hastanın komşularını
 çek: Her komşu için rastgele bir eğitim hastası çek; sekiz oyuncunun her biri yarı olasılıkla 172
 numaralı hastanın değerini korusun, aksi hâlde çekilen eğitim hastasının değerini alsın. Her komşu
@@ -230,7 +230,7 @@ Her komşuyu exp(−d²/w²) ile ağırlıklandır; burada d değiştirilen oyun
 × √8 olsun. Komşular için ormanın verdiği olasılıkları sekiz adet 0-1 sütunu üzerine bu
 ağırlıklarla, cezası 1 olan bir ridge regresyonuyla modelle; sekiz katsayı açıklamadır. Tek bir
 rastgele sayı üreteciyle önce bütün komşuların 0 ve 1 değerlerini, ardından eğitim hastalarını çek.
-2.000 komşu ve 2026 tohumunu kullan.
+2.000 komşu ve 2026 seed değerini kullan.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Sekiz katsayıyı mutlak değeri en büyükten en küçüğe göster; göğüs ağrısı tipinin katsayısını
@@ -242,7 +242,7 @@ Test: Hastanın sekiz değerinin hepsini koruyan bir komşunun ağırlığı 1 o
 
 ### Adım 2.2: LIME ne kadar kararlı?
 
-**Amaç.** Bu adımda LIME az sayıda komşu ve yirmi tohumla tekrarlanır ve başı çeken değişkenin ne sıklıkla değiştiği görülür.
+**Amaç.** Bu adımda LIME az sayıda komşu ve yirmi seed değeriyle tekrarlanır ve başı çeken değişkenin ne sıklıkla değiştiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
@@ -262,8 +262,8 @@ Görev: Tabloyu bu sırayla bir modelin sütunlarına dönüştür: Yaş, erkek 
 cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz anjinası, ST çökmesi ve
 tipik anjinayı referans alan, atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç
 sütun. Satırları tablonun sırasında tut. Eğitim hastalarında 300 ağaçlı bir rastgele orman kur.
-Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle. Sekiz klinik değişkeni
-sekiz oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
+Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Sekiz klinik değişkeni sekiz
+oyuncu olarak ele al; göğüs ağrısı tipinin üç sütunu her zaman tek bir oyuncu olarak birlikte
 hareket etsin. Ormanın 172 numaralı hastaya verdiği olasılığı LIME ile açıkla. Hastanın komşularını
 çek: Her komşu için rastgele bir eğitim hastası çek; sekiz oyuncunun her biri yarı olasılıkla 172
 numaralı hastanın değerini korusun, aksi hâlde çekilen eğitim hastasının değerini alsın. Her komşu
@@ -272,13 +272,13 @@ Her komşuyu exp(−d²/w²) ile ağırlıklandır; burada d değiştirilen oyun
 × √8 olsun. Komşular için ormanın verdiği olasılıkları sekiz adet 0-1 sütunu üzerine bu
 ağırlıklarla, cezası 1 olan bir ridge regresyonuyla modelle; sekiz katsayı açıklamadır. Tek bir
 rastgele sayı üreteciyle önce bütün komşuların 0 ve 1 değerlerini, ardından eğitim hastalarını çek.
-Yalnızca 100 komşu kullan ve 1'den 20'ye kadar tohumlarla tekrarla. Her tohum için mutlak katsayısı
-en büyük olan oyuncuyu bul.
+Yalnızca 100 komşu kullan ve 1'den 20'ye kadar seed değerleriyle tekrarla. Her seed değeri için
+mutlak katsayısı en büyük olan oyuncuyu bul.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Her oyuncunun kaç kez ilk sıraya geldiğini ve göğüs ağrısı tipinin en küçük ve en büyük
-katsayısını göster; göğüs ağrısı tipinin ilk sıraya geldiği tohumların payını iki ondalık basamakla
-"cevap" adıyla sakla.
+katsayısını göster; göğüs ağrısı tipinin ilk sıraya geldiği seed değerlerinin payını iki ondalık
+basamakla "cevap" adıyla sakla.
 Test: Oyuncuların sayılarının toplamı 20 olmalı.
 ```
 
@@ -305,19 +305,19 @@ sonu ya da sistol sonundaki uzman sınırı aynı boyutta yer alır: İçeride 1
 ejeksiyon fraksiyonu" hastanın ejeksiyon fraksiyonu yüzde 45'in altındaysa 1, aksi hâlde 0 olur.
 Görev: Tek bir görüntü için diyastol sonu ve sistol sonu karelerini 96 × 96 piksellik iki kanal
 olarak alan küçük bir evrişimli ağ kur. Ağda dört blok bulunsun; her blok, boyutu koruyan 3 × 3
-çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), yığın normalleştirmesinden, ReLU'dan
-ve 2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
-ortalamasını alsın ve 0,3 oranında seyreltme uygulasın; tek çıktılı bir doğrusal katman da düşük
+çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), batch normalizasyonundan, ReLU'dan ve
+2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
+ortalamasını alsın ve 0,3 oranında dropout uygulasın; tek çıktılı bir doğrusal katman da düşük
 ejeksiyon fraksiyonunun logitini versin. Ağı eğitim görüntülerinde Adam (öğrenme hızı 0,001, ağırlık
-azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 dönem eğit. Her
+azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 epoch eğit. Her
 grubu her yönde en fazla 4 piksel rastgele kaydır ve doğrulama görüntülerinde AUC değeri en iyi olan
-dönemin ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
+epoch'un ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
 eğitimden önce yeniden 2026 ile başlat. Test görüntülerindeki AUC değerini hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: En iyi doğrulama AUC değerini ve test AUC değerini yazdır; test AUC değerini üç ondalık
 basamakla "cevap" adıyla sakla.
-Test: Dönemi seçmek için hiçbir test görüntüsü kullanılmamalı ve bir hastanın görüntüleri tek bir
+Test: Epoch'u seçmek için hiçbir test görüntüsü kullanılmamalı ve bir hastanın görüntüleri tek bir
 kümede kalmalı.
 ```
 
@@ -343,18 +343,18 @@ sonu ya da sistol sonundaki uzman sınırı aynı boyutta yer alır: İçeride 1
 ejeksiyon fraksiyonu" hastanın ejeksiyon fraksiyonu yüzde 45'in altındaysa 1, aksi hâlde 0 olur.
 Görev: Tek bir görüntü için diyastol sonu ve sistol sonu karelerini 96 × 96 piksellik iki kanal
 olarak alan küçük bir evrişimli ağ kur. Ağda dört blok bulunsun; her blok, boyutu koruyan 3 × 3
-çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), yığın normalleştirmesinden, ReLU'dan
-ve 2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
-ortalamasını alsın ve 0,3 oranında seyreltme uygulasın; tek çıktılı bir doğrusal katman da düşük
+çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), batch normalizasyonundan, ReLU'dan ve
+2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
+ortalamasını alsın ve 0,3 oranında dropout uygulasın; tek çıktılı bir doğrusal katman da düşük
 ejeksiyon fraksiyonunun logitini versin. Ağı eğitim görüntülerinde Adam (öğrenme hızı 0,001, ağırlık
-azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 dönem eğit. Her
+azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 epoch eğit. Her
 grubu her yönde en fazla 4 piksel rastgele kaydır ve doğrulama görüntülerinde AUC değeri en iyi olan
-dönemin ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
+epoch'un ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
 eğitimden önce yeniden 2026 ile başlat. Her test görüntüsü için çıktının Grad-CAM haritasını son
 bloğun ReLU katmanında, havuzlamadan önce hesapla. Bunun için çıktının bu katmandaki 12 × 12 boyutlu
 64 öznitelik haritasına göre gradyanını al, her kanalın ortalama gradyanını o kanalın ağırlığı
 olarak kullan ve 64 haritanın ağırlıklı toplamını oluştur. Toplamın yalnızca pozitif kısmını tut ve
-çift doğrusal aradeğerlemeyle 96 × 96 boyutuna büyüt. Her görüntü için haritanın toplamının sınırın
+çift doğrusal interpolasyonla 96 × 96 boyutuna büyüt. Her görüntü için haritanın toplamının sınırın
 içine düşen payını hesapla. Test görüntüleri üzerinden payların ortalamasını ve karşılaştırma için
 sınırın kapladığı görüntü payının ortalamasını bildir.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -401,10 +401,10 @@ ile bir saatteki değişim ve ikinci troponin ölçüldüyse 1); ekokardiyogram 
 yapılmadıysa 60 ile ejeksiyon fraksiyonu, yapılmadıysa 0 ile duvar hareket bozukluğu); ve 20 sayı
 olarak not (en az 3 notta geçen kelimelerin ve kelime çiftlerinin alt doğrusal terim sıklıklı TF-IDF
 değerleri; A'nın eğitim notlarında öğrenilir ve aynı notlarda öğrenilen bir tekil değer ayrışımıyla
-2026 tohumuyla 20 bileşene indirilir). Ardından B hastanesini (1) A hastanesinden (0) ayıran,
+2026 seed değeriyle 20 bileşene indirilir). Ardından B hastanesini (1) A hastanesinden (0) ayıran,
 sütunları standartlaştırılmış ve en fazla 5.000 yinelemeli bir lojistik regresyon kur; tahminleri
-5.000 başvurunun tamamında, 2026 tohumuyla karıştırılmış beş katlı tabakalı çapraz doğrulamadan al
-ve AUC değerini hesapla. Her girdi grubunun sütunlarıyla tek başına tekrarla.
+5.000 başvurunun tamamında, 2026 seed değeriyle karıştırılmış beş katlı tabakalı çapraz doğrulamadan
+al ve AUC değerini hesapla. Her girdi grubunun sütunlarıyla tek başına tekrarla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Bütün girdiler ve her grup için AUC değerini göster; bütün girdilerle elde edilen AUC
@@ -494,7 +494,7 @@ Görev: Tabloyu bu sırayla bir modelin sütunlarına dönüştür: Yaş, erkek 
 cinsiyet, istirahat kan basıncı, kolesterol, en yüksek kalp hızı, egzersiz anjinası, ST çökmesi ve
 atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ve 1 değerli üç sütun. Satırları tablonun
 sırasında tut ve 303 hastanın tamamını kullan. Sütunları standartlaştırılmış ve en fazla 1.000
-yinelemeli bir lojistik regresyonun 2026 tohumuyla karıştırılmış beş katlı tabakalı çapraz
+yinelemeli bir lojistik regresyonun 2026 seed değeriyle karıştırılmış beş katlı tabakalı çapraz
 doğrulamasıyla her hasta için bir tahmin al; bunu bir kez cinsiyetle, bir kez de cinsiyet sütunu
 olmadan yap. Kadınlar ve erkekler için ortalama tahmin edilen riski gözlenen hastalık oranıyla
 karşılaştır; 0,5 olasılıkta duyarlılığı ve özgüllüğü hesapla.
@@ -547,12 +547,13 @@ yanlış sonuç verebileceği iki durumu belirt.
 Aşağıdaki kodu denetle; kod bir modelin hastalar için verdiği tahminleri açıklıyor ve sonucu
 çiziyor. Yedi noktayı kontrol et. Her hasta kimlerle karşılaştırılıyor; arka plan tek bir yapay
 satırdan değil de gerçek eğitim hastalarından mı oluşuyor? Kategorik bir değişkenin kukla sütunları
-gibi tek bir değişkene ait sütunlar birlikte mi açıklanıyor? Tohum ya da örnek sayısı değiştiğinde
-açıklama aynı kalıyor mu? Her belirginlik haritası, ağırlıkları rastgele hâle getirilmiş bir ağla
-yapılan bir sağlamlık testinden geçmiş mi? Herhangi bir cümle bir katkıyı bir neden ya da bir hasta
-için öneri olarak mı okuyor? Sonuçlar kadınlar, erkekler ve yaş grupları için ayrıca bildiriliyor
-mu? Gerçek bir hastanın herhangi bir görüntüsü ya da kaydı kurum dışına çıkabilir mi? Her nokta için
-ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse düzeltilmiş kodu ver.
+gibi tek bir değişkene ait sütunlar birlikte mi açıklanıyor? Seed değeri ya da örnek sayısı
+değiştiğinde açıklama aynı kalıyor mu? Her belirginlik haritası, ağırlıkları rastgele hâle
+getirilmiş bir ağla yapılan bir sağlamlık testinden geçmiş mi? Herhangi bir cümle bir katkıyı bir
+neden ya da bir hasta için öneri olarak mı okuyor? Sonuçlar kadınlar, erkekler ve yaş grupları için
+ayrıca bildiriliyor mu? Gerçek bir hastanın herhangi bir görüntüsü ya da kaydı kurum dışına
+çıkabilir mi? Her nokta için ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse
+düzeltilmiş kodu ver.
 ```
 
 ## Haftalık projenin prompt yolu
@@ -578,23 +579,23 @@ sonu ya da sistol sonundaki uzman sınırı aynı boyutta yer alır: İçeride 1
 ejeksiyon fraksiyonu" hastanın ejeksiyon fraksiyonu yüzde 45'in altındaysa 1, aksi hâlde 0 olur.
 Görev: Tek bir görüntü için diyastol sonu ve sistol sonu karelerini 96 × 96 piksellik iki kanal
 olarak alan küçük bir evrişimli ağ kur. Ağda dört blok bulunsun; her blok, boyutu koruyan 3 × 3
-çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), yığın normalleştirmesinden, ReLU'dan
-ve 2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
-ortalamasını alsın ve 0,3 oranında seyreltme uygulasın; tek çıktılı bir doğrusal katman da düşük
+çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), batch normalizasyonundan, ReLU'dan ve
+2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
+ortalamasını alsın ve 0,3 oranında dropout uygulasın; tek çıktılı bir doğrusal katman da düşük
 ejeksiyon fraksiyonunun logitini versin. Ağı eğitim görüntülerinde Adam (öğrenme hızı 0,001, ağırlık
-azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 dönem eğit. Her
+azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 epoch eğit. Her
 grubu her yönde en fazla 4 piksel rastgele kaydır ve doğrulama görüntülerinde AUC değeri en iyi olan
-dönemin ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
+epoch'un ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
 eğitimden önce yeniden 2026 ile başlat. AUC değerini test görüntülerinde ve her hastanın iki
 görüntüsünün olasılıklarının ortalamasıyla test hastalarında hesapla. Her AUC değerine test
 görüntülerinden ya da test hastalarından çekilen 2.000 bootstrap örneğinden, 2,5. ve 97,5.
-yüzdelikler arasında bir yüzde 95 aralığı ver. Sonucun tekrarlanabilmesi için rastgelelik tohumunu
-2026 olarak sabitle.
+yüzdelikler arasında bir yüzde 95 aralığı ver. Sonucun tekrarlanabilmesi için seed değerini 2026
+olarak sabitle.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: İki AUC değerini aralıklarıyla birlikte bir tabloda göster; görüntü düzeyindeki test AUC
 değerini üç ondalık basamakla "cevap" adıyla sakla.
-Test: Dönemi seçmek için hiçbir test görüntüsü kullanılmamalı ve hastaların bootstrap örnekleri
+Test: Epoch'u seçmek için hiçbir test görüntüsü kullanılmamalı ve hastaların bootstrap örnekleri
 görüntüleri değil, hastaları çekmeli.
 ```
 
@@ -649,33 +650,34 @@ sonu ya da sistol sonundaki uzman sınırı aynı boyutta yer alır: İçeride 1
 ejeksiyon fraksiyonu" hastanın ejeksiyon fraksiyonu yüzde 45'in altındaysa 1, aksi hâlde 0 olur.
 Görev: Tek bir görüntü için diyastol sonu ve sistol sonu karelerini 96 × 96 piksellik iki kanal
 olarak alan küçük bir evrişimli ağ kur. Ağda dört blok bulunsun; her blok, boyutu koruyan 3 × 3
-çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), yığın normalleştirmesinden, ReLU'dan
-ve 2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
-ortalamasını alsın ve 0,3 oranında seyreltme uygulasın; tek çıktılı bir doğrusal katman da düşük
+çekirdekli bir evrişimden (sırasıyla 16, 32, 64 ve 64 kanal), batch normalizasyonundan, ReLU'dan ve
+2 × 2 en büyük değer havuzlamasından oluşsun. Bloklardan sonra ağ her kanalın görüntü üzerindeki
+ortalamasını alsın ve 0,3 oranında dropout uygulasın; tek çıktılı bir doğrusal katman da düşük
 ejeksiyon fraksiyonunun logitini versin. Ağı eğitim görüntülerinde Adam (öğrenme hızı 0,001, ağırlık
-azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 dönem eğit. Her
+azaltma 0,0001) ve ikili çapraz entropiyle, 32 görüntülük karıştırılmış gruplarla 30 epoch eğit. Her
 grubu her yönde en fazla 4 piksel rastgele kaydır ve doğrulama görüntülerinde AUC değeri en iyi olan
-dönemin ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
+epoch'un ağırlıklarını sakla. Ağ kütüphanesinin rastgele sayı üretecini ağı kurmadan önce ve
 eğitimden önce yeniden 2026 ile başlat. Her test görüntüsü için çıktının Grad-CAM haritasını son
 bloğun ReLU katmanında, havuzlamadan önce hesapla. Bunun için çıktının bu katmandaki 12 × 12 boyutlu
 64 öznitelik haritasına göre gradyanını al, her kanalın ortalama gradyanını o kanalın ağırlığı
 olarak kullan ve 64 haritanın ağırlıklı toplamını oluştur. Toplamın yalnızca pozitif kısmını tut ve
-çift doğrusal aradeğerlemeyle 96 × 96 boyutuna büyüt. Her görüntü için haritanın toplamının sınırın
-içine düşen payını hesapla. Ardından 1'den 20'ye kadar her tohum için şunu iki kez tekrarla: Bir kez
-son bloğuna ve çıktı katmanına yeni rastgele ağırlıklar verilen bir kopya için, bir kez de bütün
-katmanlarına yeni rastgele ağırlıklar verilen bir kopya için. Yeni ağırlıklar çekilmeden hemen önce
-ağ kütüphanesinin rastgele sayı üretecini o tohumla başlat ve eğitilmiş ağı değiştirmeden tut. Kopya
-için aynı haritaları hesapla; her görüntü için eğitilmiş ağın haritasının 9.216 pikseli ile kopyanın
-haritasının pikselleri arasındaki Spearman sıra korelasyonunu ve kopyanın haritasının sınır içindeki
-payını hesapla. İki haritadan biri her pikselde aynı değeri alıyorsa o görüntüyü korelasyonun
-dışında bırak. Her kopya için ortalama sıra korelasyonunu, sınırın içindeki ortalama payı ve boş
-harita sayısını kaydet. Her kopya türü için ortalama sıra korelasyonunun ve sınırın içindeki
-ortalama payın 20 tohum üzerindeki ortancasını ve aralığını, haritaların yarısından fazlasının boş
-kaldığı tohum sayısını ve bunların yanında eğitilmiş ağın sınır içindeki ortalama payını bildir.
+çift doğrusal interpolasyonla 96 × 96 boyutuna büyüt. Her görüntü için haritanın toplamının sınırın
+içine düşen payını hesapla. Ardından 1'den 20'ye kadar her seed değeri için şunu iki kez tekrarla:
+Bir kez son bloğuna ve çıktı katmanına yeni rastgele ağırlıklar verilen bir kopya için, bir kez de
+bütün katmanlarına yeni rastgele ağırlıklar verilen bir kopya için. Yeni ağırlıklar çekilmeden hemen
+önce ağ kütüphanesinin rastgele sayı üretecini o seed değeriyle başlat ve eğitilmiş ağı
+değiştirmeden tut. Kopya için aynı haritaları hesapla; her görüntü için eğitilmiş ağın haritasının
+9.216 pikseli ile kopyanın haritasının pikselleri arasındaki Spearman sıra korelasyonunu ve kopyanın
+haritasının sınır içindeki payını hesapla. İki haritadan biri her pikselde aynı değeri alıyorsa o
+görüntüyü korelasyonun dışında bırak. Her kopya için ortalama sıra korelasyonunu, sınırın içindeki
+ortalama payı ve boş harita sayısını kaydet. Her kopya türü için ortalama sıra korelasyonunun ve
+sınırın içindeki ortalama payın 20 seed değeri üzerindeki medyanını ve aralığını, haritaların
+yarısından fazlasının boş kaldığı seed değeri sayısını ve bunların yanında eğitilmiş ağın sınır
+içindeki ortalama payını bildir.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Sonuçları küçük bir tabloda göster; son bloğu rastgele olan kopyalar için ortalama sıra
-korelasyonunun ortancasını üç ondalık basamakla "cevap" adıyla sakla.
+korelasyonunun medyanını üç ondalık basamakla "cevap" adıyla sakla.
 Test: Her sıra korelasyonu −1 ile 1 arasında olmalı ve eğitilmiş ağ, kopyalar alınmadan önce ve
 sonra aynı haritaları vermeli.
 ```

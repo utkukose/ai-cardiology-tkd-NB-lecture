@@ -81,20 +81,20 @@ kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu ifadeler sırası
 atriyal fibrilasyon, sinüs taşikardisi, sinüs bradikardisi, sinüs aritmisi ve ventriküler erken
 vurulardır.
 Görev: Altı etiketin her birine bir skor veren tek boyutlu bir evrişimli ağ kur. Ağda zaman boyunca
-dört evrişim katmanı bulunur; her katmanın adımı 2'dir ve her katmanı yığın normalleştirmesi ile
-ReLU izler. Katmanlar sırasıyla 12 derivasyon üzerinde 7 örneklik 32 çekirdek, ardından 5 örneklik
-64 çekirdek, 5 örneklik 64 çekirdek ve 3 örneklik 128 çekirdekten oluşur. 128 kanalın her birinin
-zaman boyunca ortalaması, altı çıktısı olan son bir doğrusal katmana verilir. Eğitimden önce
-sinyallerin değerlerini −5 ile 5 mV aralığıyla sınırla. Ağı eğitim kayıtlarıyla, karıştırılmış 64
-kayıtlık gruplar hâlinde 15 dönem boyunca eğit; kayıp olarak altı etiketin ikili çapraz entropisini,
-eniyileyici olarak Adam'ı kullan. Tek döngülü (one-cycle) bir öğrenme hızı kullan ve en yüksek
-değerini 0,003 yap. Her dönemden sonra doğrulama kayıtlarında her etiketin ROC eğrisi altındaki
-alanını (AUC) ve bunların ortalamasını hesapla; ortalamanın en yüksek olduğu dönemin ağırlıklarını
-sakla. Rastgele seçimler her çalıştırmada aynı olsun; bunun için başlangıç değeri olarak 2026
-sayısını kullan.
+dört evrişim katmanı bulunur; her katmanın adımı 2'dir ve her katmanı batch normalizasyonu ile ReLU
+izler. Katmanlar sırasıyla 12 derivasyon üzerinde 7 örneklik 32 çekirdek, ardından 5 örneklik 64
+çekirdek, 5 örneklik 64 çekirdek ve 3 örneklik 128 çekirdekten oluşur. 128 kanalın her birinin zaman
+boyunca ortalaması, altı çıktısı olan son bir doğrusal katmana verilir. Eğitimden önce sinyallerin
+değerlerini −5 ile 5 mV aralığıyla sınırla. Ağı eğitim kayıtlarıyla, karıştırılmış 64 kayıtlık
+gruplar hâlinde 15 epoch boyunca eğit; kayıp olarak altı etiketin ikili çapraz entropisini,
+optimizasyon algoritması olarak Adam'ı kullan. Tek döngülü (one-cycle) bir öğrenme hızı kullan ve en
+yüksek değerini 0,003 yap. Her epoch'tan sonra doğrulama kayıtlarında her etiketin ROC eğrisi
+altındaki alanını (AUC) ve bunların ortalamasını hesapla; ortalamanın en yüksek olduğu epoch'un
+ağırlıklarını sakla. Rastgele seçimler her çalıştırmada aynı olsun; bunun için başlangıç değeri
+olarak 2026 sayısını kullan.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Parametre sayısını, her dönemin ortalama AUC değerini ve en iyi dönemi yazdır; en iyi
+Çıktı: Parametre sayısını, her epoch'un ortalama AUC değerini ve en iyi epoch'u yazdır; en iyi
 ortalama AUC değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Ağın 59.622 parametresi olmalı ve ortalama AUC 0,5 ile 1 arasında olmalı.
 ```

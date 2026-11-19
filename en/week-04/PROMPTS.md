@@ -296,7 +296,7 @@ in percentage points with two decimals, under the name "answer".
 Test: There must be 50 patients, and the expert EF of patient0201 must be 42.1 percent.
 ```
 
-**Expected result:** "answer" = -4.24
+**Expected result:** "answer" = −4.24
 
 ### Step 3.3: Another convention for the thickness of the discs
 

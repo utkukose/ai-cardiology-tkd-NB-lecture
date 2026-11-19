@@ -171,7 +171,7 @@ verdiği koroner arter hastalığı olasılığını, "olasılık, model" ise de
 istirahat kan basıncı, kolesterol ve egzersiz testinin üç sonucu eklenmiş hâli) verdiği olasılığı
 gösterir. İki model de yalnızca 227 eğitim hastasında kurulmuştur. "hastalık", anjiyogramda en az
 bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
-Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 tohumuyla
+Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 seed değeriyle
 başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar hastayı yerine koyarak çeker.
 Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla. Her yeniden örneklemde aynı
 hastalarda referansın ve modelin ROC eğrisi altındaki alanını (AUC) ve farklarını (model eksi
@@ -205,7 +205,7 @@ verdiği koroner arter hastalığı olasılığını, "olasılık, model" ise de
 istirahat kan basıncı, kolesterol ve egzersiz testinin üç sonucu eklenmiş hâli) verdiği olasılığı
 gösterir. İki model de yalnızca 227 eğitim hastasında kurulmuştur. "hastalık", anjiyogramda en az
 bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
-Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 tohumuyla
+Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 seed değeriyle
 başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar hastayı yerine koyarak çeker.
 Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla. Her yeniden örneklemde aynı
 hastalarda referansın ve modelin ROC eğrisi altındaki alanını (AUC) ve farklarını (model eksi
@@ -432,8 +432,8 @@ anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralm
 hâlde 0 olur.
 Görev: Hasta sayısını, hastalığı olanların sayısını ve oranını ve her sütunun eksik değerlerini ver.
 Ardından hastaları, bir hastanın bütün satırları aynı kümede kalacak biçimde bir kez ayır: Dörtte
-biri test için ayrılsın, iki kümede hastalık oranı aynı olsun ve rastgele sayılar için 2026 tohumu
-kullanılsın. Her kümedeki hasta sayısını ve hastalığı olan hasta sayısını ver.
+biri test için ayrılsın, iki kümede hastalık oranı aynı olsun ve rastgele sayılar için 2026 seed
+değeri kullanılsın. Her kümedeki hasta sayısını ve hastalığı olan hasta sayısını ver.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Eksik değerlerin tablosunu ve iki kümenin tablosunu göster; hastalığı olan test hastalarının
@@ -466,7 +466,7 @@ ve en fazla 1.000 yinelemeyle, yalnızca eğitim hastalarında kur. Tam model ay
 ve bunlara istirahat kan basıncını, kolesterolü, en yüksek kalp hızını, egzersiz anjinasını ve ST
 çökmesini ekler; aynı yolla kurulur. Her test hastası için iki modelin hastalık olasılığını ve test
 hastalarındaki AUC değerlerini hesapla. Test hastalarından 2.000 yeniden örneklem çek: Her yeniden
-örneklem, 2026 tohumuyla başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar
+örneklem, 2026 seed değeriyle başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar
 hastayı yerine koyarak çeker. Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla.
 Her yeniden örneklemde aynı hastalarda referansın ve modelin ROC eğrisi altındaki alanını (AUC) ve
 farklarını (model eksi referans) hesapla. Bir sonucun yüzde 95'lik aralığı, değerlerinin yeniden
@@ -497,12 +497,12 @@ yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakik
 çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla
 daralma görüldüyse 1, aksi hâlde 0 olur.
 Görev: 2. adımdaki tam modeli eğitim hastalarında beş katlı çapraz doğrulamayla kur; katlar aynı
-hastalık oranıyla ve 2026 tohumuyla çekilsin; böylece her eğitim hastası onu görmemiş bir modelin
-olasılığını alsın. Bu olasılıklarda kalibrasyon sabitini ve eğimini 2. duraktaki gibi hesapla; 0,01,
-0,02 ve bu biçimde 0,50'ye kadar giden eşikler arasından, hastalığı olan eğitim hastalarının en az
-yüzde 95'inin olasılığının ona eşit ya da ondan büyük olduğu en yüksek eşiği seç. Ardından tam
-modeli bütün eğitim hastalarında kur, eşiği test hastalarına bir kez uygula ve dışlanan hastaları
-hastalığı olan ve olmayan olarak say.
+hastalık oranıyla ve 2026 seed değeriyle çekilsin; böylece her eğitim hastası onu görmemiş bir
+modelin olasılığını alsın. Bu olasılıklarda kalibrasyon sabitini ve eğimini 2. duraktaki gibi
+hesapla; 0,01, 0,02 ve bu biçimde 0,50'ye kadar giden eşikler arasından, hastalığı olan eğitim
+hastalarının en az yüzde 95'inin olasılığının ona eşit ya da ondan büyük olduğu en yüksek eşiği seç.
+Ardından tam modeli bütün eğitim hastalarında kur, eşiği test hastalarına bir kez uygula ve dışlanan
+hastaları hastalığı olan ve olmayan olarak say.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Çapraz doğrulama olasılıklarının kalibrasyonunu, eşiği ve test hastalarındaki sayıları
@@ -528,7 +528,7 @@ testinin üç sonucu eklenmiş hâli) verdiği olasılığı gösterir. İki mod
 hastasında kurulmuştur. "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden
 fazla daralma görüldüyse 1, aksi hâlde 0 olur. Projenin eğitim hastalarında seçilen dışlama eşiği
 0,18 değerindedir.
-Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 tohumuyla
+Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 seed değeriyle
 başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar hastayı yerine koyarak çeker.
 Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla. Her yeniden örneklemde aynı
 hastalarda referansın ve modelin ROC eğrisi altındaki alanını (AUC) ve farklarını (model eksi

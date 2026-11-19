@@ -389,7 +389,7 @@ sütunu, proje adımı 1'de seçilen küme sayısıyla bulunan fenogrubu verir. 
 kütle indeksi" (g/m²), "TAPSE" (mm), "kadın" (kadınlarda 1), "diyabet" ve "AF" (varsa 1) ile "ana
 tanı" ("HFrEF" ya da "HFpEF") değerlerini tutar.
 Görev: Her küme için bir sütun içeren bir tablo kur: hasta sayısı; yaş, BKİ, eGFR, LVEF, LAVI, E/e',
-LV kütle indeksi ve TAPSE ortalamaları; NT-proBNP ortancası; kadınların, diyabetin, AF'nin ve
+LV kütle indeksi ve TAPSE ortalamaları; NT-proBNP medyanı; kadınların, diyabetin, AF'nin ve
 HFrEF'nin yüzdesi. Ardından her küme için kısa bir klinik ad öner.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.

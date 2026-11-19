@@ -59,8 +59,8 @@ ortalamasının kareköküdür); ve pNN50, yani 0,05 saniyeden büyük ardışı
 eğitim kayıtlarında AF olan ve olmayan dakikaların dört sayısını karşılaştır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Eğitim dakikalarında her sayının AF olan ve olmayan dakikalardaki ortancasını yazdır; AF olan
-eğitim dakikalarının ortanca CV değerini üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: Eğitim dakikalarında her sayının AF olan ve olmayan dakikalardaki medyanını yazdır; AF olan
+eğitim dakikalarının medyan CV değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: Her dakikanın kalp hızı dakikada 20 ile 250 arasında, pNN50 değeri ise 0 ile 1 arasında
 olmalı.
 ```
@@ -311,7 +311,7 @@ dakikaları bul ve içinde AF olan hiçbir dakika bulunmayan yanlış alarm atak
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Doğrulama AUC değerini, eşiği, yanlış alarm ataklarının sayısını ve AF olan ve olmayan eğitim
-dakikalarının ortanca örneklem entropisini yazdır; yanlış alarm ataklarının sayısını "cevap" adıyla
+dakikalarının medyan örneklem entropisini yazdır; yanlış alarm ataklarının sayısını "cevap" adıyla
 sakla.
 Test: Hiçbir test dakikası kullanılmamalı ve her dakikanın örneklem entropisi 0 ya da daha büyük
 olmalı.

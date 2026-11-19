@@ -160,9 +160,9 @@ hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini ve
 hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır; bir piksel 2
 mm'dir.
 Görev: Bir kesitin iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan
-oluşur; her blokta görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, yığın normalizasyonu,
+oluşur; her blokta görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu,
 ReLU ve 2 × 2 maksimum havuzlama bulunur. Bloklarda sırasıyla 8, 16 ve 32 çekirdek vardır. Blokların
-ardından düzleştirme, 0,3 oranında seyreltme ve üç grubun her birine bir skor veren tek bir doğrusal
+ardından düzleştirme, 0,3 oranında dropout ve üç grubun her birine bir skor veren tek bir doğrusal
 katman gelir. Ağın öğrendiği ağırlıkları, yani eğitilebilir parametrelerini say.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
@@ -189,18 +189,18 @@ hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü
 mm'dir.
 Görev: Pikselleri eğitim kesitlerinin ortalaması ve standart sapmasıyla normalleştir. Bir kesitin
 iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan oluşur; her blokta
-görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, yığın normalizasyonu, ReLU ve 2 × 2
+görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu, ReLU ve 2 × 2
 maksimum havuzlama bulunur. Bloklarda sırasıyla 8, 16 ve 32 çekirdek vardır. Blokların ardından
-düzleştirme, 0,3 oranında seyreltme ve üç grubun her birine bir skor veren tek bir doğrusal katman
-gelir. Ağı eğitim kesitlerinde çapraz entropi kaybıyla eğit. Her dönemin sonunda, onlardan
-öğrenmeden doğrulama kesitlerindeki kaybı ölç ve bu kaybın en düşük olduğu dönemin ağırlıklarını
+düzleştirme, 0,3 oranında dropout ve üç grubun her birine bir skor veren tek bir doğrusal katman
+gelir. Ağı eğitim kesitlerinde çapraz entropi kaybıyla eğit. Her epoch'un sonunda, onlardan
+öğrenmeden doğrulama kesitlerindeki kaybı ölç ve bu kaybın en düşük olduğu epoch'un ağırlıklarını
 sakla (erken durdurma). Rastgele seçimler her çalıştırmada aynı olsun; bunun için başlangıç değeri
 olarak 2026 sayısını kullan. Ardından her test kesiti için üç grubun olasılıklarını hesapla, bu
 olasılıkların her test hastasının üç kesiti üzerinden ortalamasını al ve ortalaması en büyük grubu
 hastanın kararı olarak seç.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: Doğrulama kaybının en düşük olduğu dönemi ve 30 test hastasından kararı kendi grubuyla aynı
+Çıktı: Doğrulama kaybının en düşük olduğu epoch'u ve 30 test hastasından kararı kendi grubuyla aynı
 olanların oranını üç ondalık basamakla yazdır; oranı "cevap" adıyla sakla.
 Test: 30 test hastası olmalı ve her hastanın üç ortalama olasılığının toplamı 1 etmeli.
 ```
@@ -298,10 +298,10 @@ o fazın çizilmiş karesini değerleri 0 ile 1 arasında olan 64 × 64 pikselli
 tutar.
 Görev: Pikselleri eğitim videolarının ortalaması ve standart sapmasıyla normalleştir. Bir videonun
 iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan oluşur; her blokta
-görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, yığın normalizasyonu, ReLU ve 2 × 2
+görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu, ReLU ve 2 × 2
 maksimum havuzlama bulunur. Bloklarda sırasıyla 8, 16 ve 32 çekirdek vardır. Blokların ardından
-düzleştirme, 0,3 oranında seyreltme ve normal EF ile anormal EF için birer skor veren tek bir
-doğrusal katman gelir. Ağı eğitim videolarında çapraz entropi kaybıyla eğit. Rastgele seçimler her
+düzleştirme, 0,3 oranında dropout ve normal EF ile anormal EF için birer skor veren tek bir doğrusal
+katman gelir. Ağı eğitim videolarında çapraz entropi kaybıyla eğit. Rastgele seçimler her
 çalıştırmada aynı olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Ardından her test
 videosu için anormal EF olasılığını ve ROC eğrisinin altındaki alanı (AUC) hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -380,16 +380,16 @@ hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü
 mm'dir.
 Görev: Pikselleri eğitim kesitlerinin ortalaması ve standart sapmasıyla normalleştir. Bir kesitin
 iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan oluşur; her blokta
-görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, yığın normalizasyonu, ReLU ve 2 × 2
+görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu, ReLU ve 2 × 2
 maksimum havuzlama bulunur. Bloklarda sırasıyla 8, 16 ve 32 çekirdek vardır. Blokların ardından
-düzleştirme, 0,3 oranında seyreltme ve üç grubun her birine bir skor veren tek bir doğrusal katman
+düzleştirme, 0,3 oranında dropout ve üç grubun her birine bir skor veren tek bir doğrusal katman
 gelir. Ağı eğitim kesitlerinde çapraz entropi kaybıyla eğit. Rastgele seçimler her çalıştırmada aynı
-olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Her dönemin sonunda, onlardan
-öğrenmeden doğrulama kesitlerindeki kaybı ölç ve bu kaybın en düşük olduğu dönemin ağırlıklarını
-sakla. Eğitim ve doğrulama kaybını dönemlere karşı çiz.
+olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Her epoch'un sonunda, onlardan
+öğrenmeden doğrulama kesitlerindeki kaybı ölç ve bu kaybın en düşük olduğu epoch'un ağırlıklarını
+sakla. Eğitim ve doğrulama kaybını epoch'lara karşı çiz.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: İki kaybın şeklini göster; doğrulama kaybının en düşük olduğu dönemi "cevap" adıyla sakla.
+Çıktı: İki kaybın şeklini göster; doğrulama kaybının en düşük olduğu epoch'u "cevap" adıyla sakla.
 Test: Saklanan ağırlıklar yüklendikten sonra doğrulama kaybı yine en düşük değerini vermeli.
 ```
 

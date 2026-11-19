@@ -75,9 +75,9 @@ Başka sistemler için komutu [pytorch.org/get-started/locally](https://pytorch.
 
 Defterler 4. haftadan itibaren ekokardiyogramlardaki sınırlar için scikit-image paketini de kullanır. Anaconda ve Colab bu paketi içerir; başka bir Python ortamında `pip install scikit-image` komutuyla kurulur.
 
-Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging Face'in transformers paketini de kullanır. Paket ilk kullanımda eğitimin küçük Türkçe modelinin belirteçleyicisini ve ağırlıklarını (yaklaşık 19 MB) Hugging Face Hub'dan indirir. Colab bu paketi içerir; başka ortamlarda `pip install transformers` komutuyla kurulur.
+Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging Face'in transformers paketini de kullanır. Paket ilk kullanımda eğitimin küçük Türkçe modelinin tokenizer'ını ve ağırlıklarını (yaklaşık 19 MB) Hugging Face Hub'dan indirir. Colab bu paketi içerir; başka ortamlarda `pip install transformers` komutuyla kurulur.
 
-7. hafta yeni bir paket gerektirmez. Haftanın defteri ilk kullanımda görü dönüştürücüsü ViT-B/16'nın ImageNet ağırlıklarını (yaklaşık 330 MB) torchvision aracılığıyla, ARCADE anjiyogramlarının darlık kümesini (yaklaşık 452 MB) ise Zenodo'dan indirir; ikisi de sonraki çalıştırmalar için bilgisayarda saklanır.
+7. hafta yeni bir paket gerektirmez. Haftanın defteri ilk kullanımda Vision Transformer ViT-B/16'nın ImageNet ağırlıklarını (yaklaşık 330 MB) torchvision aracılığıyla, ARCADE anjiyogramlarının darlık kümesini (yaklaşık 452 MB) ise Zenodo'dan indirir; ikisi de sonraki çalıştırmalar için bilgisayarda saklanır.
 
 8. hafta yeni bir paket gerektirmez ve hiçbir şey indirmez: Ders paketi haftanın bütün verilerini bilgisayarda oluşturur.
 

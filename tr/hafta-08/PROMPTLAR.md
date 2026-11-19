@@ -167,10 +167,10 @@ bir lojistik regresyon kur. Düzenlileştirmenin miktarını doğrulama hastalar
 altındaki alana (AUC) göre seç; gücünün tersi için 0,01, 0,1, 1 ve 10 değerlerini dene ve seçilen
 modelin test hastalarındaki AUC değerini hesapla. Ardından 2.000 bootstrap örneği çek; her örnek
 test hastaları arasından yerine koyarak test hastası sayısı kadar hasta çeksin. Sonucun
-tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle. Olay görülen ve görülmeyen
-hastaları içeren her örnekte iki modelin AUC değerini ve farkı (erken füzyon eksi laboratuvar)
-hesapla. Ortalama farkı, 2,5. ve 97,5. yüzdelikler arasındaki yüzde 95 aralığını ve farkın 0'ın
-üstünde olduğu örneklerin oranını bildir.
+tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Olay görülen ve görülmeyen hastaları
+içeren her örnekte iki modelin AUC değerini ve farkı (erken füzyon eksi laboratuvar) hesapla.
+Ortalama farkı, 2,5. ve 97,5. yüzdelikler arasındaki yüzde 95 aralığını ve farkın 0'ın üstünde
+olduğu örneklerin oranını bildir.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Ortalama farkı ve aralığını yazdır; oranı üç ondalık basamakla "cevap" adıyla sakla.
@@ -271,12 +271,12 @@ olumsuz kardiyak olay için verdiği olasılıkları içerir: "olasılık, klini
 1, aksi hâlde 0 olur.
 Görev: Her başvurunun beş olasılığını logite, log(p / (1 − p)), dönüştür. Yalnızca doğrulama
 başvurularında, varsayılan düzenlileştirmeyle, MACE'in beş logit üzerine bir lojistik regresyonunu
-kur. Beş ağırlığını ve kesişimini bildir ve olasılıklarının test başvurularındaki AUC değerini
+kur. Beş ağırlığını ve sabit terimini bildir ve olasılıklarının test başvurularındaki AUC değerini
 hesapla. Sonucu beş logitin ortalamasıyla karşılaştır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: İstiflemenin ağırlıklarını, kesişimini ve test AUC değerini ve ortalamanın test AUC değerini
-yazdır; istiflemenin test AUC değerini üç ondalık basamakla "cevap" adıyla sakla.
+Çıktı: İstiflemenin ağırlıklarını, sabit terimini ve test AUC değerini ve ortalamanın test AUC
+değerini yazdır; istiflemenin test AUC değerini üç ondalık basamakla "cevap" adıyla sakla.
 Test: İstifleme yalnızca doğrulama başvurularında öğrenmeli ve her ağırlık yazdırılmalı.
 ```
 
@@ -299,15 +299,15 @@ kardiyak olay için verdiği olasılık; "olasılık, logitlerin ortalaması", b
 logitlerinin ortalamasından gelen olasılıktır. "MACE" böyle bir olay görüldüyse 1, aksi hâlde 0
 olur.
 Görev: İki olasılık sütununun her biri için AUC değerini ve ortalama tahmin edilen riski MACE
-oranının yanında hesapla. Kalibrasyon kesişimini (eğim 1'e sabitlenmişken ortalama tahmin edilen
-riski gözlenen orana eşitleyen logit kayması), kalibrasyon eğimini (MACE'in olasılığın logiti
-üzerine düzenlileştirmesiz bir lojistik regresyonu) ve Brier skorunu hesapla. Ardından her biri için
-bir güvenilirlik eğrisi çiz: Başvuruları olasılığa göre sırala, eşit büyüklükte on gruba böl ve her
+oranının yanında hesapla. Kalibrasyon sabitini (eğim 1'e sabitlenmişken ortalama tahmin edilen riski
+gözlenen orana eşitleyen logit kayması), kalibrasyon eğimini (MACE'in olasılığın logiti üzerine
+düzenlileştirmesiz bir lojistik regresyonu) ve Brier skorunu hesapla. Ardından her biri için bir
+güvenilirlik eğrisi çiz: Başvuruları olasılığa göre sırala, eşit büyüklükte on gruba böl ve her
 grubun ortalama olasılığını MACE oranına karşı, köşegenle birlikte çiz.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
-Çıktı: İki modelin AUC değerini, ortalama tahmin edilen riskini, kesişimini, eğimini ve Brier
-skorunu yazdır, iki eğriyi göster; logitlerin ortalamasının kalibrasyon eğimini iki ondalık
+Çıktı: İki modelin AUC değerini, ortalama tahmin edilen riskini, kalibrasyon sabitini, eğimini ve
+Brier skorunu yazdır, iki eğriyi göster; logitlerin ortalamasının kalibrasyon eğimini iki ondalık
 basamakla "cevap" adıyla sakla.
 Test: İki eğrinin her biri on noktadan oluşmalı ve Brier skorları 0 ile 1 arasında olmalı.
 ```
@@ -450,11 +450,12 @@ doğruluğunu bildiriyor. Yedi noktayı kontrol et. Her girdi karar anında var 
 bir değer var mı? Herhangi bir girdi, örneğin kesin tanı, olay türü ya da yatış süresi, sonucu ele
 veriyor mu? Ölçekleme, eksik değerlerin doldurulması, metin modelleri ve her küçültme yalnızca
 eğitim verisinde mi öğrenilmiş? Eşikler ve öteki bütün seçimler test verisinden değil, doğrulama
-verisinden mi alınmış? Ayırt etme gücünün yanında kalibrasyon da kesişim, eğim ve Brier skoruyla
-bildiriliyor mu? Her laboratuvar değerinin birimi ve testi hastaneler arasında aynı mı ya da
-dönüştürülmüş mü; örneğin troponin kendi testinin üst referans sınırının katları olarak mı verilmiş?
-Gerçek bir hastanın herhangi bir kaydı ya da serbest metni kurum dışına çıkabilir mi? Her nokta için
-ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse düzeltilmiş kodu ver.
+verisinden mi alınmış? Ayırt etme gücünün yanında kalibrasyon sabiti, kalibrasyon eğimi ve Brier
+skoru da bildiriliyor mu? Her laboratuvar değerinin birimi ve testi hastaneler arasında aynı mı ya
+da dönüştürülmüş mü; örneğin troponin kendi testinin üst referans sınırının katları olarak mı
+verilmiş? Gerçek bir hastanın herhangi bir kaydı ya da serbest metni kurum dışına çıkabilir mi? Her
+nokta için ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse düzeltilmiş kodu
+ver.
 ```
 
 ## Haftalık projenin prompt yolu
@@ -494,7 +495,7 @@ Düzenlileştirmenin miktarını doğrulama başvurularındaki ROC eğrisi altı
 gücünün tersi için 0,01, 0,1, 1 ve 10 değerlerini dene ve seçilen modelin test başvurularındaki AUC
 değerini hesapla. Her AUC değerine test başvurularından çekilen 2.000 bootstrap örneğinden, 2,5. ve
 97,5. yüzdelikler arasında bir yüzde 95 aralığı ver; her modelin HEART skoruna göre farkını aynı
-örneklerde hesapla. Sonucun tekrarlanabilmesi için rastgelelik tohumunu 2026 olarak sabitle.
+örneklerde hesapla. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Her model ve HEART için bir satırdan oluşan bir tablo göster: Aralığıyla birlikte test AUC
@@ -520,9 +521,9 @@ test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur:
 30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir; "MACE" böyle bir olay
 görüldüyse 1, aksi hâlde 0 olur.
 Görev: A'nın test başvuruları için ortalama tahmin edilen riski MACE oranının yanında hesapla.
-Kalibrasyon kesişimini (eğim 1'e sabitlenmişken ortalama tahmin edilen riski gözlenen orana
-eşitleyen logit kayması), kalibrasyon eğimini (MACE'in olasılığın logiti üzerine düzenlileştirmesiz
-bir lojistik regresyonu) ve Brier skorunu hesapla. Köşegenle birlikte, eşit büyüklükte on gruplu bir
+Kalibrasyon sabitini (eğim 1'e sabitlenmişken ortalama tahmin edilen riski gözlenen orana eşitleyen
+logit kayması), kalibrasyon eğimini (MACE'in olasılığın logiti üzerine düzenlileştirmesiz bir
+lojistik regresyonu) ve Brier skorunu hesapla. Köşegenle birlikte, eşit büyüklükte on gruplu bir
 güvenilirlik eğrisi çiz. B hastanesi için sırası 1-300 olan başvurularda, ortalama tahmin edilen
 risklerini MACE oranlarına eşitleyen logit kaymasını bul, bunu B'nin bütün başvurularının
 logitlerine ekle ve ölçütleri ve eğriyi, sırası 301-1.000 olan başvurular için güncellemeden önce ve
@@ -530,7 +531,7 @@ sonra tekrarla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
 Çıktı: Ölçütleri üç satırlık bir tabloda (A test, B önce, B sonra) ve üç eğriyi göster;
-güncellemeden sonra B'deki kalibrasyon kesişimini iki ondalık basamakla "cevap" adıyla sakla.
+güncellemeden sonra B'deki kalibrasyon sabitini iki ondalık basamakla "cevap" adıyla sakla.
 Test: Kaymayı bulmak için B'nin yalnızca sırası 1-300 olan başvuruları kullanılmalı.
 ```
 
