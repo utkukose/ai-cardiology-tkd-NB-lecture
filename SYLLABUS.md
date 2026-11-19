@@ -63,7 +63,7 @@ Materials: [Week page](en/week-05/README.md) · [Lecture page](https://utkukose.
 
 The first half covers tokenisation, word representations and pretrained language models from the Hugging Face Hub, including models for Turkish. The second half extracts named entities such as drugs, diagnoses and procedures, summarises reports and discusses large language models as clinical assistants. **Mini project in the session:** Extraction of diagnoses from synthetic Turkish discharge summaries. **Weekly project:** A pipeline that extracts the degree of stenosis and the vessel from angiography reports. **Data:** Synthetic reports of the virtual clinic in Turkish and English. **Stage of the virtual clinic:** Report archive: Clinical text.
 
-Materials: In preparation
+Materials: [Week page](en/week-06/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lab.html) · [Jupyter notebook](en/week-06/NB06_clinical_text_mining.ipynb) · [Prompt library](en/week-06/PROMPTS.md) · [PDF notes](en/week-06/Week06_Lecture_Notes.pdf)
 
 ### Week 7: Vision transformers
 

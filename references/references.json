@@ -947,6 +947,44 @@
     ]
   },
   {
+    "key": "chapman2001",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Chapman",
+        "given": "W. W."
+      },
+      {
+        "family": "Bridewell",
+        "given": "W."
+      },
+      {
+        "family": "Hanbury",
+        "given": "P."
+      },
+      {
+        "family": "Cooper",
+        "given": "G. F."
+      },
+      {
+        "family": "Buchanan",
+        "given": "B. G."
+      }
+    ],
+    "year": "2001",
+    "title": "A simple algorithm for identifying negated findings and diseases in discharge summaries",
+    "container": "Journal of Biomedical Informatics",
+    "volume": "34",
+    "issue": "5",
+    "pages": "301–310",
+    "doi": "10.1006/jbin.2001.1029",
+    "url": "https://doi.org/10.1006/jbin.2001.1029",
+    "apa": "Chapman, W. W., Bridewell, W., Hanbury, P., Cooper, G. F., & Buchanan, B. G. (2001). A simple algorithm for identifying negated findings and diseases in discharge summaries. *Journal of Biomedical Informatics, 34*(5), 301–310. https://doi.org/10.1006/jbin.2001.1029",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "cho2014",
     "type": "proceedings",
     "authors": [
@@ -1240,6 +1278,40 @@
     "apa": "Detrano, R., Janosi, A., Steinbrunn, W., Pfisterer, M., Schmid, J.-J., Sandhu, S., Guppy, K. H., Lee, S., & Froelicher, V. (1989). International application of a new probability algorithm for the diagnosis of coronary artery disease. *The American Journal of Cardiology, 64*(5), 304–310. https://doi.org/10.1016/0002-9149(89)90524-9",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "devlin2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Devlin",
+        "given": "J."
+      },
+      {
+        "family": "Chang",
+        "given": "M.-W."
+      },
+      {
+        "family": "Lee",
+        "given": "K."
+      },
+      {
+        "family": "Toutanova",
+        "given": "K."
+      }
+    ],
+    "year": "2019",
+    "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+    "container": "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+    "volume": "",
+    "issue": "",
+    "pages": "4171–4186",
+    "doi": "10.18653/v1/N19-1423",
+    "url": "https://doi.org/10.18653/v1/N19-1423",
+    "apa": "Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In *Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)* (pp. 4171–4186). https://doi.org/10.18653/v1/N19-1423",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1809,6 +1881,40 @@
     "apa": "Hannun, A. Y., Rajpurkar, P., Haghpanahi, M., Tison, G. H., Bourn, C., Turakhia, M. P., & Ng, A. Y. (2019). Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network. *Nature Medicine, 25*(1), 65–69. https://doi.org/10.1038/s41591-018-0268-3",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "harkema2009",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Harkema",
+        "given": "H."
+      },
+      {
+        "family": "Dowling",
+        "given": "J. N."
+      },
+      {
+        "family": "Thornblade",
+        "given": "T."
+      },
+      {
+        "family": "Chapman",
+        "given": "W. W."
+      }
+    ],
+    "year": "2009",
+    "title": "ConText: An algorithm for determining negation, experiencer, and temporal status from clinical reports",
+    "container": "Journal of Biomedical Informatics",
+    "volume": "42",
+    "issue": "5",
+    "pages": "839–851",
+    "doi": "10.1016/j.jbi.2009.05.002",
+    "url": "https://doi.org/10.1016/j.jbi.2009.05.002",
+    "apa": "Harkema, H., Dowling, J. N., Thornblade, T., & Chapman, W. W. (2009). ConText: An algorithm for determining negation, experiencer, and temporal status from clinical reports. *Journal of Biomedical Informatics, 42*(5), 839–851. https://doi.org/10.1016/j.jbi.2009.05.002",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2552,6 +2658,36 @@
     "apa": "Kaufman, S., Rosset, S., Perlich, C., & Stitelman, O. (2012). Leakage in data mining: Formulation, detection, and avoidance. *ACM Transactions on Knowledge Discovery from Data, 6*(4), Article 15. https://doi.org/10.1145/2382577.2382579",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "kesgin2023",
+    "type": "preprint",
+    "authors": [
+      {
+        "family": "Kesgin",
+        "given": "H. T."
+      },
+      {
+        "family": "Yüce",
+        "given": "M. K."
+      },
+      {
+        "family": "Amasyali",
+        "given": "M. F."
+      }
+    ],
+    "year": "2023",
+    "title": "Developing and evaluating tiny to medium-sized Turkish BERT models",
+    "container": "arXiv",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.48550/arXiv.2307.14134",
+    "url": "https://doi.org/10.48550/arXiv.2307.14134",
+    "apa": "Kesgin, H. T., Yüce, M. K., & Amasyali, M. F. (2023). *Developing and evaluating tiny to medium-sized Turkish BERT models* (arXiv:2307.14134). arXiv. https://doi.org/10.48550/arXiv.2307.14134",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3566,6 +3702,40 @@
     "apa": "McSharry, P. E., Clifford, G. D., Tarassenko, L., & Smith, L. A. (2003). A dynamical model for generating synthetic electrocardiogram signals. *IEEE Transactions on Biomedical Engineering, 50*(3), 289–294. https://doi.org/10.1109/TBME.2003.808805",
     "used_in": [
       "Course package vclinic"
+    ]
+  },
+  {
+    "key": "mikolov2013",
+    "type": "preprint",
+    "authors": [
+      {
+        "family": "Mikolov",
+        "given": "T."
+      },
+      {
+        "family": "Chen",
+        "given": "K."
+      },
+      {
+        "family": "Corrado",
+        "given": "G."
+      },
+      {
+        "family": "Dean",
+        "given": "J."
+      }
+    ],
+    "year": "2013",
+    "title": "Efficient estimation of word representations in vector space",
+    "container": "arXiv",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.48550/arXiv.1301.3781",
+    "url": "https://doi.org/10.48550/arXiv.1301.3781",
+    "apa": "Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013). *Efficient estimation of word representations in vector space* (arXiv:1301.3781). arXiv. https://doi.org/10.48550/arXiv.1301.3781",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4736,6 +4906,28 @@
     ]
   },
   {
+    "key": "schweter2020",
+    "type": "software",
+    "authors": [
+      {
+        "family": "Schweter",
+        "given": "S."
+      }
+    ],
+    "year": "2020",
+    "title": "BERTurk - BERT models for Turkish (version 1.0.0)",
+    "container": "Zenodo",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "10.5281/zenodo.3770924",
+    "url": "https://doi.org/10.5281/zenodo.3770924",
+    "apa": "Schweter, S. (2020). *BERTurk - BERT models for Turkish (version 1.0.0)* [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.3770924",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "selvaraju2020",
     "type": "article",
     "authors": [
@@ -4775,6 +4967,36 @@
     "apa": "Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2020). Grad-CAM: Visual explanations from deep networks via gradient-based localization. *International Journal of Computer Vision, 128*(2), 336–359. https://doi.org/10.1007/s11263-019-01228-7",
     "used_in": [
       "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "sennrich2016",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Sennrich",
+        "given": "R."
+      },
+      {
+        "family": "Haddow",
+        "given": "B."
+      },
+      {
+        "family": "Birch",
+        "given": "A."
+      }
+    ],
+    "year": "2016",
+    "title": "Neural machine translation of rare words with subword units",
+    "container": "Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "volume": "",
+    "issue": "",
+    "pages": "1715–1725",
+    "doi": "10.18653/v1/P16-1162",
+    "url": "https://doi.org/10.18653/v1/P16-1162",
+    "apa": "Sennrich, R., Haddow, B., & Birch, A. (2016). Neural machine translation of rare words with subword units. In *Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)* (pp. 1715–1725). https://doi.org/10.18653/v1/P16-1162",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -5058,6 +5280,28 @@
     ]
   },
   {
+    "key": "sparckjones1972",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Sparck Jones",
+        "given": "K."
+      }
+    ],
+    "year": "1972",
+    "title": "A statistical interpretation of term specificity and its application in retrieval",
+    "container": "Journal of Documentation",
+    "volume": "28",
+    "issue": "1",
+    "pages": "11–21",
+    "doi": "10.1108/eb026526",
+    "url": "https://doi.org/10.1108/eb026526",
+    "apa": "Sparck Jones, K. (1972). A statistical interpretation of term specificity and its application in retrieval. *Journal of Documentation, 28*(1), 11–21. https://doi.org/10.1108/eb026526",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "srivastava2014",
     "type": "article",
     "authors": [
@@ -5286,6 +5530,70 @@
     ]
   },
   {
+    "key": "turney2010",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Turney",
+        "given": "P. D."
+      },
+      {
+        "family": "Pantel",
+        "given": "P."
+      }
+    ],
+    "year": "2010",
+    "title": "From frequency to meaning: Vector space models of semantics",
+    "container": "Journal of Artificial Intelligence Research",
+    "volume": "37",
+    "issue": "",
+    "pages": "141–188",
+    "doi": "10.1613/jair.2934",
+    "url": "https://doi.org/10.1613/jair.2934",
+    "apa": "Turney, P. D., & Pantel, P. (2010). From frequency to meaning: Vector space models of semantics. *Journal of Artificial Intelligence Research, 37*, 141–188. https://doi.org/10.1613/jair.2934",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "turkmen2023",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Türkmen",
+        "given": "H."
+      },
+      {
+        "family": "Dikenelli",
+        "given": "O."
+      },
+      {
+        "family": "Eraslan",
+        "given": "C."
+      },
+      {
+        "family": "Çallı",
+        "given": "M. C."
+      },
+      {
+        "family": "Özbek",
+        "given": "S. S."
+      }
+    ],
+    "year": "2023",
+    "title": "BioBERTurk: Exploring Turkish biomedical language model development strategies in low-resource setting",
+    "container": "Journal of Healthcare Informatics Research",
+    "volume": "7",
+    "issue": "4",
+    "pages": "433–446",
+    "doi": "10.1007/s41666-023-00140-7",
+    "url": "https://doi.org/10.1007/s41666-023-00140-7",
+    "apa": "Türkmen, H., Dikenelli, O., Eraslan, C., Çallı, M. C., & Özbek, S. S. (2023). BioBERTurk: Exploring Turkish biomedical language model development strategies in low-resource setting. *Journal of Healthcare Informatics Research, 7*(4), 433–446. https://doi.org/10.1007/s41666-023-00140-7",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "tcy2021",
     "type": "law",
     "authors": [
@@ -5387,6 +5695,48 @@
     "apa": "Van Calster, B., McLernon, D. J., van Smeden, M., Wynants, L., Steyerberg, E. W., & Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative. (2019). Calibration: The Achilles heel of predictive analytics. *BMC Medicine, 17*, Article 230. https://doi.org/10.1186/s12916-019-1466-7",
     "used_in": [
       "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "vanderloo2026",
+    "type": "article",
+    "authors": [
+      {
+        "family": "van der Loo",
+        "given": "W."
+      },
+      {
+        "family": "van der Valk",
+        "given": "V."
+      },
+      {
+        "family": "van den Broek",
+        "given": "T."
+      },
+      {
+        "family": "Atsma",
+        "given": "D."
+      },
+      {
+        "family": "Staring",
+        "given": "M."
+      },
+      {
+        "family": "Scherptong",
+        "given": "R."
+      }
+    ],
+    "year": "2026",
+    "title": "Large language models for structured cardiovascular data extraction: A foundation for scalable research and clinical applications",
+    "container": "European Heart Journal - Digital Health",
+    "volume": "7",
+    "issue": "",
+    "pages": "ztaf127",
+    "doi": "10.1093/ehjdh/ztaf127",
+    "url": "https://doi.org/10.1093/ehjdh/ztaf127",
+    "apa": "van der Loo, W., van der Valk, V., van den Broek, T., Atsma, D., Staring, M., & Scherptong, R. (2026). Large language models for structured cardiovascular data extraction: A foundation for scalable research and clinical applications. *European Heart Journal - Digital Health, 7*, ztaf127. https://doi.org/10.1093/ehjdh/ztaf127",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -5512,6 +5862,100 @@
     "apa": "Van Gelder, I. C., Rienstra, M., Bunting, K. V., Casado-Arroyo, R., Caso, V., Crijns, H. J. G. M., De Potter, T. J. R., Dwight, J., Guasti, L., Hanke, T., Jaarsma, T., Lettino, M., Løchen, M.-L., Lumbers, R. T., Maesen, B., Mølgaard, I., Rosano, G. M. C., Sanders, P., Schnabel, R. B., Suwalski, P., Svennberg, E., Tamargo, J., Tica, O., Traykov, V., Tzeis, S., Kotecha, D., & ESC Scientific Document Group. (2024). 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS). *European Heart Journal, 45*(36), 3314–3414. https://doi.org/10.1093/eurheartj/ehae176",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "vanveen2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Van Veen",
+        "given": "D."
+      },
+      {
+        "family": "Van Uden",
+        "given": "C."
+      },
+      {
+        "family": "Blankemeier",
+        "given": "L."
+      },
+      {
+        "family": "Delbrouck",
+        "given": "J.-B."
+      },
+      {
+        "family": "Aali",
+        "given": "A."
+      },
+      {
+        "family": "Bluethgen",
+        "given": "C."
+      },
+      {
+        "family": "Pareek",
+        "given": "A."
+      },
+      {
+        "family": "Polacin",
+        "given": "M."
+      },
+      {
+        "family": "Reis",
+        "given": "E. P."
+      },
+      {
+        "family": "Seehofnerová",
+        "given": "A."
+      },
+      {
+        "family": "Rohatgi",
+        "given": "N."
+      },
+      {
+        "family": "Hosamani",
+        "given": "P."
+      },
+      {
+        "family": "Collins",
+        "given": "W."
+      },
+      {
+        "family": "Ahuja",
+        "given": "N."
+      },
+      {
+        "family": "Langlotz",
+        "given": "C. P."
+      },
+      {
+        "family": "Hom",
+        "given": "J."
+      },
+      {
+        "family": "Gatidis",
+        "given": "S."
+      },
+      {
+        "family": "Pauly",
+        "given": "J."
+      },
+      {
+        "family": "Chaudhari",
+        "given": "A. S."
+      }
+    ],
+    "year": "2024",
+    "title": "Adapted large language models can outperform medical experts in clinical text summarization",
+    "container": "Nature Medicine",
+    "volume": "30",
+    "issue": "4",
+    "pages": "1134–1142",
+    "doi": "10.1038/s41591-024-02855-5",
+    "url": "https://doi.org/10.1038/s41591-024-02855-5",
+    "apa": "Van Veen, D., Van Uden, C., Blankemeier, L., Delbrouck, J.-B., Aali, A., Bluethgen, C., Pareek, A., Polacin, M., Reis, E. P., Seehofnerová, A., Rohatgi, N., Hosamani, P., Collins, W., Ahuja, N., Langlotz, C. P., Hom, J., Gatidis, S., Pauly, J., & Chaudhari, A. S. (2024). Adapted large language models can outperform medical experts in clinical text summarization. *Nature Medicine, 30*(4), 1134–1142. https://doi.org/10.1038/s41591-024-02855-5",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -5641,6 +6085,139 @@
     ]
   },
   {
+    "key": "vrints2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Vrints",
+        "given": "C."
+      },
+      {
+        "family": "Andreotti",
+        "given": "F."
+      },
+      {
+        "family": "Koskinas",
+        "given": "K. C."
+      },
+      {
+        "family": "Rossello",
+        "given": "X."
+      },
+      {
+        "family": "Adamo",
+        "given": "M."
+      },
+      {
+        "family": "Ainslie",
+        "given": "J."
+      },
+      {
+        "family": "Banning",
+        "given": "A. P."
+      },
+      {
+        "family": "Budaj",
+        "given": "A."
+      },
+      {
+        "family": "Buechel",
+        "given": "R. R."
+      },
+      {
+        "family": "Chiariello",
+        "given": "G. A."
+      },
+      {
+        "family": "Chieffo",
+        "given": "A."
+      },
+      {
+        "family": "Christodorescu",
+        "given": "R. M."
+      },
+      {
+        "family": "Deaton",
+        "given": "C."
+      },
+      {
+        "family": "Doenst",
+        "given": "T."
+      },
+      {
+        "family": "Jones",
+        "given": "H. W."
+      },
+      {
+        "family": "Kunadian",
+        "given": "V."
+      },
+      {
+        "family": "Mehilli",
+        "given": "J."
+      },
+      {
+        "family": "Milojevic",
+        "given": "M."
+      },
+      {
+        "family": "Piek",
+        "given": "J. J."
+      },
+      {
+        "family": "Pugliese",
+        "given": "F."
+      },
+      {
+        "family": "Rubboli",
+        "given": "A."
+      },
+      {
+        "family": "Semb",
+        "given": "A. G."
+      },
+      {
+        "family": "Senior",
+        "given": "R."
+      },
+      {
+        "family": "ten Berg",
+        "given": "J. M."
+      },
+      {
+        "family": "Van Belle",
+        "given": "E."
+      },
+      {
+        "family": "Van Craenenbroeck",
+        "given": "E. M."
+      },
+      {
+        "family": "Vidal-Perez",
+        "given": "R."
+      },
+      {
+        "family": "Winther",
+        "given": "S."
+      },
+      {
+        "literal": "ESC Scientific Document Group"
+      }
+    ],
+    "year": "2024",
+    "title": "2024 ESC Guidelines for the management of chronic coronary syndromes",
+    "container": "European Heart Journal",
+    "volume": "45",
+    "issue": "36",
+    "pages": "3415–3537",
+    "doi": "10.1093/eurheartj/ehae177",
+    "url": "https://doi.org/10.1093/eurheartj/ehae177",
+    "apa": "Vrints, C., Andreotti, F., Koskinas, K. C., Rossello, X., Adamo, M., Ainslie, J., Banning, A. P., Budaj, A., Buechel, R. R., Chiariello, G. A., Chieffo, A., Christodorescu, R. M., Deaton, C., Doenst, T., Jones, H. W., Kunadian, V., Mehilli, J., Milojevic, M., Piek, J. J., Pugliese, F., Rubboli, A., Semb, A. G., Senior, R., ten Berg, J. M., Van Belle, E., Van Craenenbroeck, E. M., Vidal-Perez, R., Winther, S., & ESC Scientific Document Group. (2024). 2024 ESC Guidelines for the management of chronic coronary syndromes. *European Heart Journal, 45*(36), 3415–3537. https://doi.org/10.1093/eurheartj/ehae177",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "wagner2020",
     "type": "article",
     "authors": [
@@ -5744,6 +6321,112 @@
     "apa": "Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association, 22*(158), 209–212. https://doi.org/10.1080/01621459.1927.10502953",
     "used_in": [
       "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "wolf2020",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Wolf",
+        "given": "T."
+      },
+      {
+        "family": "Debut",
+        "given": "L."
+      },
+      {
+        "family": "Sanh",
+        "given": "V."
+      },
+      {
+        "family": "Chaumond",
+        "given": "J."
+      },
+      {
+        "family": "Delangue",
+        "given": "C."
+      },
+      {
+        "family": "Moi",
+        "given": "A."
+      },
+      {
+        "family": "Cistac",
+        "given": "P."
+      },
+      {
+        "family": "Rault",
+        "given": "T."
+      },
+      {
+        "family": "Louf",
+        "given": "R."
+      },
+      {
+        "family": "Funtowicz",
+        "given": "M."
+      },
+      {
+        "family": "Davison",
+        "given": "J."
+      },
+      {
+        "family": "Shleifer",
+        "given": "S."
+      },
+      {
+        "family": "von Platen",
+        "given": "P."
+      },
+      {
+        "family": "Ma",
+        "given": "C."
+      },
+      {
+        "family": "Jernite",
+        "given": "Y."
+      },
+      {
+        "family": "Plu",
+        "given": "J."
+      },
+      {
+        "family": "Xu",
+        "given": "C."
+      },
+      {
+        "family": "Le Scao",
+        "given": "T."
+      },
+      {
+        "family": "Gugger",
+        "given": "S."
+      },
+      {
+        "family": "Drame",
+        "given": "M."
+      },
+      {
+        "family": "Lhoest",
+        "given": "Q."
+      },
+      {
+        "family": "Rush",
+        "given": "A. M."
+      }
+    ],
+    "year": "2020",
+    "title": "Transformers: State-of-the-art natural language processing",
+    "container": "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+    "volume": "",
+    "issue": "",
+    "pages": "38–45",
+    "doi": "10.18653/v1/2020.emnlp-demos.6",
+    "url": "https://doi.org/10.18653/v1/2020.emnlp-demos.6",
+    "apa": "Wolf, T., Debut, L., Sanh, V., Chaumond, J., Delangue, C., Moi, A., Cistac, P., Rault, T., Louf, R., Funtowicz, M., Davison, J., Shleifer, S., von Platen, P., Ma, C., Jernite, Y., Plu, J., Xu, C., Le Scao, T., Gugger, S., Drame, M., Lhoest, Q., & Rush, A. M. (2020). Transformers: State-of-the-art natural language processing. In *Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations* (pp. 38–45). https://doi.org/10.18653/v1/2020.emnlp-demos.6",
+    "used_in": [
+      "Week 6: lecture page and Jupyter notebook"
     ]
   },
   {

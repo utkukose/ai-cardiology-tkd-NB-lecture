@@ -63,7 +63,7 @@ Malzemeler: [Hafta sayfası](tr/hafta-05/README.md) · [Ders sayfası](https://u
 
 Oturumun ilk yarısı metni belirteçlere ayırmayı (tokenization), kelime temsillerini ve Türkçe modeller dâhil Hugging Face Hub'daki önceden eğitilmiş dil modellerini kapsar. İkinci yarıda ilaç, tanı ve işlem gibi adlandırılmış varlıklar metinden çıkarılır, raporlar özetlenir ve büyük dil modellerinin klinik asistan olarak kullanımı tartışılır. **Oturumdaki mini proje:** Sentetik Türkçe epikrizlerden tanıların çıkarılması. **Haftalık proje:** Anjiyografi raporlarından darlık derecesini ve damarı çıkaran bir işlem hattı. **Veriler:** Sanal kliniğin Türkçe ve İngilizce sentetik raporları. **Sanal kliniğin aşaması:** Rapor arşivi: Klinik metin.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-06/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/lab.html) · [Jupyter defteri](tr/hafta-06/NB06_klinik_metin_madenciligi.ipynb) · [Prompt kütüphanesi](tr/hafta-06/PROMPTLAR.md) · [PDF ders notu](tr/hafta-06/Hafta06_Ders_Notlari.pdf)
 
 ### Hafta 7: Görü dönüştürücüleri (Vision Transformer)
 
