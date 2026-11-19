@@ -23,7 +23,7 @@ Kod yazmak istemeyen katılımcılar için aynı defterin 1. kısmında kodu, ha
 | 8 | Python adımı 8: Verileri birleştirmek | Tabloları birleştirme, bir hastanın sinyallerini ve görüntülerini hizalama, eksik parçalarla başa çıkma | [NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb](tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb) |
 | 9 | Python adımı 9: Bir modeli kodla açıklamak | itertools ile değişken grupları ve sıraları, anahtarları demet olan sözlükler, Shapley formülünün faktöriyelleri, başka fonksiyonlara verilen fonksiyonlar, katkı grafikleri | [NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb](tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb) |
 | 10 | Python adımı 10: Defterden uygulamaya | Betikler, Streamlit ile küçük bir web arayüzü, bir modeli kaydetme ve yükleme | [NB10_klinik_karar_destegi.ipynb](tr/hafta-10/NB10_klinik_karar_destegi.ipynb) |
-| 11 | Python adımı 11: Katılımcının kendi projesi | Bir proje klasörünü düzenleme, kodu belgeleme, sonuçları yeniden üretilebilir kılma | Hazırlanıyor |
+| 11 | Python adımı 11: Katılımcının kendi projesi | Bir proje klasörünü düzenleme, kodu belgeleme, sonuçları yeniden üretilebilir kılma | [NB11_final_projesi_atolyesi.ipynb](tr/hafta-11/NB11_final_projesi_atolyesi.ipynb) |
 
 ---
 

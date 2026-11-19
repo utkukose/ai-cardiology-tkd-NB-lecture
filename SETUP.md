@@ -85,6 +85,8 @@ Week 9 needs no new package. Its notebook uses the 300 patients of CAMUS of Week
 
 Week 10 needs one new package, Streamlit, for the web interface of the prototype; `pip install streamlit` installs it. Section 8 of the notebook writes the interface as the file `app_af.py` in the folder of the week. The Anaconda Prompt, opened in that folder, starts it with `streamlit run app_af.py`, and the browser shows it at http://localhost:8501. On first use, the notebook downloads the header and annotation files of the 25 records of the MIT-BIH Atrial Fibrillation Database and the signal files of three of them, about 86 MB, from PhysioNet; no registration is needed. The notebook also runs in Colab, but the web interface needs a computer of one's own.
 
+Week 11 needs no new package and downloads nothing: The Cleveland data of its worked final project come with the course folder. The notebook writes the folder `final_project` next to itself, with the results, a figure and the toolbox of the final project, `final_project/code/project_tools.py`.
+
 The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run:
 
 ```bash

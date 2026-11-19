@@ -93,7 +93,7 @@ Materials: [Week page](en/week-10/README.md) · [Lecture page](https://utkukose.
 
 The first half is a workshop on the final projects: the question, the data, the model, its explanation and the design of its clinical evaluation. The second half holds the presentations of the final projects, their evaluation and the closing of the program with the certificates. **Mini project in the session:** Final project work in the session. **Weekly project:** Final project: An end-to-end AI pipeline for a question of the participant's own clinic, and a personal action plan. **Data:** Chosen by each participant (see the final project page). **Stage of the virtual clinic:** Own units: Final projects.
 
-Materials: In preparation
+Materials: [Week page](en/week-11/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lab.html) · [Jupyter notebook](en/week-11/NB11_final_project_workshop.ipynb) · [Prompt library](en/week-11/PROMPTS.md) · [PDF notes](en/week-11/Week11_Lecture_Notes.pdf)
 
 ## Assessment and certificate
 

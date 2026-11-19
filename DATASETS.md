@@ -96,9 +96,17 @@ Week 10 stores no recording in the repository. Each participant downloads the fi
 | MIT-BIH Atrial Fibrillation Database (AFDB) [18, 19]: 25 Holter recordings of about 10 hours of people with atrial fibrillation, mostly paroxysmal, made at Beth Israel Hospital in Boston, with two ECG signals at 250 samples per second, rhythm annotations prepared by hand and beat annotations from an automatic detector; records 00735 and 03665 have no signals. Split by record, the course uses 15 records for training, 5 for validation and the user test and 5 for the test, cut into 14,883 windows of one minute | `vclinic.afdb.download()` saves the 75 header and annotation files of the 25 records and the signal files of records 04936, 06426 and 08219, about 86 MB, from PhysioNet to the folder `data/afdb` of the course folder and checks every file against the SHA-256 sums that PhysioNet publishes; no registration is needed. | [MIT-BIH AFDB 1.0.0](https://doi.org/10.13026/C2MW2D) on PhysioNet; Open Data Commons Attribution License v1.0 (ODC-By 1.0), with a citation of the paper and of the database in every use. Figures of the course that show these recordings carry the credit "MIT-BIH AFDB, PhysioNet, ODC-By 1.0". | Week 10, Sections 1 to 6 and 10, practice stops 1 to 3 and the weekly project |
 | Telemetry ward of the virtual clinic: 24-hour recordings of four synthetic patients, VC-0128 (paroxysmal AF, premature atrial beats and two periods of electrode noise), VC-0347 (sinus rhythm with frequent premature atrial beats), VC-0519 (persistent AF) and VC-0733 (sinus rhythm with long periods of electrode noise). Each recording holds the beat times that a monitor would find and a lead II ECG of any ten seconds | `vclinic.holter.ward()` draws them in a few seconds; nothing is downloaded. | Synthetic, part of the course package (MIT License). | Week 10, Sections 7 to 9, practice stops 2 and 3 and the interactive lab |
 
-## Data sets of later weeks
+## Data sets of Week 11
 
-The data sets of later weeks are documented here when each week is published. The program plans the data of the PhysioNet/Computing in Cardiology Challenge 2020 and public data sets of echocardiography and cardiac magnetic resonance. Where a data set requires a personal registration, as EchoNet-Dynamic does, the notebook marks the cells that need it, and participants without a registration follow the run of the instructor.
+Week 11 adds no data to the repository. Its worked final project returns to the Cleveland data, and the data of the final projects of the participants never enter the repository.
+
+| Data set | Access | Source and license | Used in |
+|---|---|---|---|
+| UCI Heart Disease, Cleveland data [1, 2]: 303 patients referred for coronary angiography after an exercise test, with the split of Week 2 into 227 training and 76 test patients | In the repository, as in Week 1 | UCI Machine Learning Repository; CC BY 4.0 | Week 11, Python step 11, practice stops 1 to 3, Sections 1 to 10 and the toolbox of the final project |
+
+## Data sets of the final projects
+
+The final projects may use further public data sets, for example the data of the PhysioNet/Computing in Cardiology Challenge 2020 for Option A or public data sets of echocardiography and cardiac magnetic resonance for Option C. They are not part of the repository: Each participant downloads them from their source and follows their license. Where a data set requires a personal registration, as EchoNet-Dynamic does, the registration is the participant's own. Data of one's own institution, Option G, are analysed only on a computer of the institution, with its permission and, for a study, the approval of an ethics committee.
 
 ## References
 

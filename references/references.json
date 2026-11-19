@@ -1373,6 +1373,32 @@
     ]
   },
   {
+    "key": "diamond1979",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Diamond",
+        "given": "G. A."
+      },
+      {
+        "family": "Forrester",
+        "given": "J. S."
+      }
+    ],
+    "year": "1979",
+    "title": "Analysis of probability as an aid in the clinical diagnosis of coronary-artery disease",
+    "container": "New England Journal of Medicine",
+    "volume": "300",
+    "issue": "24",
+    "pages": "1350–1358",
+    "doi": "10.1056/NEJM197906143002402",
+    "url": "https://doi.org/10.1056/NEJM197906143002402",
+    "apa": "Diamond, G. A., & Forrester, J. S. (1979). Analysis of probability as an aid in the clinical diagnosis of coronary-artery disease. *New England Journal of Medicine, 300*(24), 1350–1358. https://doi.org/10.1056/NEJM197906143002402",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "dosovitskiy2021",
     "type": "proceedings",
     "authors": [
@@ -1603,6 +1629,28 @@
     "apa": "Drew, B. J., Ackerman, M. J., Funk, M., Gibler, W. B., Kligfield, P., Menon, V., Philippides, G. J., Roden, D. M., & Zareba, W. (2010). Prevention of torsade de pointes in hospital settings: A scientific statement from the American Heart Association and the American College of Cardiology Foundation. *Circulation, 121*(8), 1047–1060. https://doi.org/10.1161/CIRCULATIONAHA.109.192704",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "efron1979",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Efron",
+        "given": "B."
+      }
+    ],
+    "year": "1979",
+    "title": "Bootstrap methods: Another look at the jackknife",
+    "container": "The Annals of Statistics",
+    "volume": "7",
+    "issue": "1",
+    "pages": "1–26",
+    "doi": "10.1214/aos/1176344552",
+    "url": "https://doi.org/10.1214/aos/1176344552",
+    "apa": "Efron, B. (1979). Bootstrap methods: Another look at the jackknife. *The Annals of Statistics, 7*(1), 1–26. https://doi.org/10.1214/aos/1176344552",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3480,6 +3528,47 @@
     ]
   },
   {
+    "key": "liu2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Liu",
+        "given": "X."
+      },
+      {
+        "family": "Cruz Rivera",
+        "given": "S."
+      },
+      {
+        "family": "Moher",
+        "given": "D."
+      },
+      {
+        "family": "Calvert",
+        "given": "M. J."
+      },
+      {
+        "family": "Denniston",
+        "given": "A. K."
+      },
+      {
+        "literal": "SPIRIT-AI and CONSORT-AI Working Group"
+      }
+    ],
+    "year": "2020",
+    "title": "Reporting guidelines for clinical trial reports for interventions involving artificial intelligence: The CONSORT-AI extension",
+    "container": "Nature Medicine",
+    "volume": "26",
+    "issue": "9",
+    "pages": "1364–1374",
+    "doi": "10.1038/s41591-020-1034-x",
+    "url": "https://doi.org/10.1038/s41591-020-1034-x",
+    "apa": "Liu, X., Cruz Rivera, S., Moher, D., Calvert, M. J., Denniston, A. K., & SPIRIT-AI and CONSORT-AI Working Group. (2020). Reporting guidelines for clinical trial reports for interventions involving artificial intelligence: The CONSORT-AI extension. *Nature Medicine, 26*(9), 1364–1374. https://doi.org/10.1038/s41591-020-1034-x",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "lloyd1982",
     "type": "article",
     "authors": [
@@ -4170,6 +4259,88 @@
     "apa": "Muehlematter, U. J., Daniore, P., & Vokinger, K. N. (2021). Approval of artificial intelligence and machine learning-based medical devices in the USA and Europe (2015–20): A comparative analysis. *The Lancet Digital Health, 3*(3), e195–e203. https://doi.org/10.1016/S2589-7500(20)30292-2",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "noseworthy2022",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Noseworthy",
+        "given": "P. A."
+      },
+      {
+        "family": "Attia",
+        "given": "Z. I."
+      },
+      {
+        "family": "Behnken",
+        "given": "E. M."
+      },
+      {
+        "family": "Giblon",
+        "given": "R. E."
+      },
+      {
+        "family": "Bews",
+        "given": "K. A."
+      },
+      {
+        "family": "Liu",
+        "given": "S."
+      },
+      {
+        "family": "Gosse",
+        "given": "T. A."
+      },
+      {
+        "family": "Linn",
+        "given": "Z. D."
+      },
+      {
+        "family": "Deng",
+        "given": "Y."
+      },
+      {
+        "family": "Yin",
+        "given": "J."
+      },
+      {
+        "family": "Gersh",
+        "given": "B. J."
+      },
+      {
+        "family": "Graff-Radford",
+        "given": "J."
+      },
+      {
+        "family": "Rabinstein",
+        "given": "A. A."
+      },
+      {
+        "family": "Siontis",
+        "given": "K. C."
+      },
+      {
+        "family": "Friedman",
+        "given": "P. A."
+      },
+      {
+        "family": "Yao",
+        "given": "X."
+      }
+    ],
+    "year": "2022",
+    "title": "Artificial intelligence-guided screening for atrial fibrillation using electrocardiogram during sinus rhythm: A prospective non-randomised interventional trial",
+    "container": "The Lancet",
+    "volume": "400",
+    "issue": "10359",
+    "pages": "1206–1212",
+    "doi": "10.1016/S0140-6736(22)01637-3",
+    "url": "https://doi.org/10.1016/S0140-6736(22)01637-3",
+    "apa": "Noseworthy, P. A., Attia, Z. I., Behnken, E. M., Giblon, R. E., Bews, K. A., Liu, S., Gosse, T. A., Linn, Z. D., Deng, Y., Yin, J., Gersh, B. J., Graff-Radford, J., Rabinstein, A. A., Siontis, K. C., Friedman, P. A., & Yao, X. (2022). Artificial intelligence-guided screening for atrial fibrillation using electrocardiogram during sinus rhythm: A prospective non-randomised interventional trial. *The Lancet, 400*(10359), 1206–1212. https://doi.org/10.1016/S0140-6736(22)01637-3",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -6416,6 +6587,119 @@
     "apa": "Vandenberk, B., Vandael, E., Robyns, T., Vandenberghe, J., Garweg, C., Foulon, V., Ector, J., & Willems, R. (2016). Which QT correction formulae to use for QT monitoring? *Journal of the American Heart Association, 5*(6), Article e003264. https://doi.org/10.1161/JAHA.116.003264",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "vasey2022",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Vasey",
+        "given": "B."
+      },
+      {
+        "family": "Nagendran",
+        "given": "M."
+      },
+      {
+        "family": "Campbell",
+        "given": "B."
+      },
+      {
+        "family": "Clifton",
+        "given": "D. A."
+      },
+      {
+        "family": "Collins",
+        "given": "G. S."
+      },
+      {
+        "family": "Denaxas",
+        "given": "S."
+      },
+      {
+        "family": "Denniston",
+        "given": "A. K."
+      },
+      {
+        "family": "Faes",
+        "given": "L."
+      },
+      {
+        "family": "Geerts",
+        "given": "B."
+      },
+      {
+        "family": "Ibrahim",
+        "given": "M."
+      },
+      {
+        "family": "Liu",
+        "given": "X."
+      },
+      {
+        "family": "Mateen",
+        "given": "B. A."
+      },
+      {
+        "family": "Mathur",
+        "given": "P."
+      },
+      {
+        "family": "McCradden",
+        "given": "M. D."
+      },
+      {
+        "family": "Morgan",
+        "given": "L."
+      },
+      {
+        "family": "Ordish",
+        "given": "J."
+      },
+      {
+        "family": "Rogers",
+        "given": "C."
+      },
+      {
+        "family": "Saria",
+        "given": "S."
+      },
+      {
+        "family": "Ting",
+        "given": "D. S. W."
+      },
+      {
+        "family": "Watkinson",
+        "given": "P."
+      },
+      {
+        "family": "Weber",
+        "given": "W."
+      },
+      {
+        "family": "Wheatstone",
+        "given": "P."
+      },
+      {
+        "family": "McCulloch",
+        "given": "P."
+      },
+      {
+        "literal": "DECIDE-AI expert group"
+      }
+    ],
+    "year": "2022",
+    "title": "Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI",
+    "container": "Nature Medicine",
+    "volume": "28",
+    "issue": "5",
+    "pages": "924–933",
+    "doi": "10.1038/s41591-022-01772-9",
+    "url": "https://doi.org/10.1038/s41591-022-01772-9",
+    "apa": "Vasey, B., Nagendran, M., Campbell, B., Clifton, D. A., Collins, G. S., Denaxas, S., Denniston, A. K., Faes, L., Geerts, B., Ibrahim, M., Liu, X., Mateen, B. A., Mathur, P., McCradden, M. D., Morgan, L., Ordish, J., Rogers, C., Saria, S., Ting, D. S. W., Watkinson, P., Weber, W., Wheatstone, P., McCulloch, P., & DECIDE-AI expert group. (2022). Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI. *Nature Medicine, 28*(5), 924–933. https://doi.org/10.1038/s41591-022-01772-9",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
     ]
   },
   {

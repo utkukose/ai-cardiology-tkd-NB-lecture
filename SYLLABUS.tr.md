@@ -93,7 +93,7 @@ Malzemeler: [Hafta sayfası](tr/hafta-10/README.md) · [Ders sayfası](https://u
 
 Oturumun ilk yarısı final projeleri üzerine bir atölyedir; bu atölyede sorunun, verinin, modelin, modelin açıklamasının ve klinik değerlendirmenin tasarımı üzerinde çalışılır. İkinci yarıda final projeleri sunulur ve değerlendirilir; program sertifikalarla kapanır. **Oturumdaki mini proje:** Final projesi üzerinde çalışma. **Haftalık proje:** Final projesi: Katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı. **Veriler:** Her katılımcı kendi verilerini seçer (final projesi sayfasına bakın). **Sanal kliniğin aşaması:** Katılımcıların birimleri: Final projeleri.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-11/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/lab.html) · [Jupyter defteri](tr/hafta-11/NB11_final_projesi_atolyesi.ipynb) · [Prompt kütüphanesi](tr/hafta-11/PROMPTLAR.md) · [PDF ders notu](tr/hafta-11/Hafta11_Ders_Notlari.pdf)
 
 ## Değerlendirme ve sertifika
 

@@ -53,7 +53,7 @@ The jury scores the project out of 100 points with the rubric below. The partici
 
 ## Starting code
 
-Each option builds on the Jupyter notebooks of the weeks named in the table of options. A starting notebook for each option is added to this page with the week that teaches its methods.
+Each option builds on the Jupyter notebooks of the weeks named in the table of options. The [Jupyter notebook of Week 11](../week-11/NB11_final_project_workshop.ipynb) takes one final project of Option B from the audit of its data to the table of its report, on the Cleveland data. Its last section writes the toolbox of the final project, `final_project/code/project_tools.py`, with the checks of Week 11 for the model of any option: the bootstrap interval of the gain over a reference, the calibration, a rule-out threshold chosen on the training data and the Wilson intervals, overall and in groups. The table of that section names, for each option, the notebooks to start from, the outcome, the reference and the model. The [lecture page of Week 11](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html) follows the same project step by step, and its interactive lab holds the canvas of the question, the planner of the clinical evaluation and the rubric with a timer for the presentation.
 
 ---
 

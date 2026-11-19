@@ -96,9 +96,17 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 | MIT-BIH Atriyal Fibrilasyon Veri Tabanı (AFDB) [18, 19]: Çoğu paroksismal AF'li kişilerden Boston'daki Beth Israel Hastanesi'nde kaydedilmiş, yaklaşık 10 saatlik 25 Holter kaydı. Her kayıtta saniyede 250 örnekle alınmış iki EKG sinyali, elle hazırlanmış ritim işaretlemeleri ve otomatik bir bulucunun vuru işaretlemeleri vardır; 00735 ve 03665 kayıtlarında sinyal bulunmaz. Kayıtlar kişi düzeyinde ayrılır: 15 kayıt eğitim, 5 kayıt doğrulama ve kullanıcı testi, 5 kayıt da test için kullanılır. Bir dakikalık pencerelere bölünen kayıtlar 14.883 pencere verir | `vclinic.afdb.download()`, 25 kaydın 75 başlık ve işaretleme dosyasını ve 04936, 06426 ve 08219 kayıtlarının sinyal dosyalarını, yaklaşık 86 MB'lık bir indirmeyle PhysioNet'ten ders klasöründeki `data/afdb` klasörüne kaydeder ve her dosyayı PhysioNet'in yayımladığı SHA-256 değerleriyle denetler; üyelik gerekmez. | PhysioNet üzerinde [MIT-BIH AFDB 1.0.0](https://doi.org/10.13026/C2MW2D); Open Data Commons Atıf Lisansı v1.0 (ODC-By 1.0), her kullanımda makaleye ve veri tabanına atıf yapılması koşuluyla. Eğitimde bu kayıtları gösteren şekiller "MIT-BIH AFDB, PhysioNet, ODC-By 1.0" kaynak bilgisini taşır. | 10. hafta, 1-6. ve 10. bölümler, 1-3. uygulama durakları ve haftalık proje |
 | Sanal kliniğin telemetri servisi: Dört sentetik hastanın 24 saatlik kayıtları: VC-0128 (paroksismal AF, atriyal erken vurular ve iki elektrot gürültüsü dönemi), VC-0347 (sık atriyal erken vurulu sinüs ritmi), VC-0519 (kalıcı AF) ve VC-0733 (uzun elektrot gürültüsü dönemleri olan sinüs ritmi). Her kayıt bir monitörün bulacağı vuru zamanlarını ve istenen herhangi bir on saniyenin DII EKG'sini içerir | `vclinic.holter.ward()` kayıtları birkaç saniyede oluşturur; hiçbir şey indirilmez. | Sentetiktir, ders paketinin bir parçasıdır (MIT Lisansı). | 10. hafta, 7-9. bölümler, 2. ve 3. uygulama durakları ve etkileşimli lab |
 
-## Sonraki haftaların veri setleri
+## 11. haftanın veri setleri
 
-Sonraki haftaların veri setleri, her hafta yayımlandığında burada belgelenir. Programda PhysioNet/Computing in Cardiology Challenge 2020 verileri ve ekokardiyografi ve kardiyak manyetik rezonans alanlarındaki açık veri setleri yer almaktadır. Bir veri seti EchoNet-Dynamic gibi kişisel kayıt gerektirdiğinde defter bu kaydı gerektiren hücreleri işaretler; kaydı olmayan katılımcılar eğitmenin çalıştırmasını izler.
+11. hafta depoya yeni bir veri eklemez. Haftanın çözümlü final projesi Cleveland verisine döner; katılımcıların final projelerinin verileri ise hiçbir zaman depoya girmez.
+
+| Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
+|---|---|---|---|
+| UCI Heart Disease, Cleveland verisi [1, 2]: Bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş 303 hasta; 2. haftadaki ayırmayla 227 eğitim ve 76 test hastası | 1. haftadaki gibi depoda | UCI Machine Learning Repository; CC BY 4.0 | 11. hafta, Python adımı 11, 1-3. uygulama durakları, 1-10. bölümler ve final projesinin araç takımı |
+
+## Final projelerinin veri setleri
+
+Final projeleri başka açık veri setlerini de kullanabilir; örneğin A seçeneği için PhysioNet/Computing in Cardiology Challenge 2020 verileri ya da C seçeneği için ekokardiyografi ve kardiyak manyetik rezonans alanlarındaki açık veri setleri. Bu veriler depoda yer almaz: Her katılımcı onları kaynağından indirir ve lisanslarına uyar. EchoNet-Dynamic gibi kişisel kayıt gerektiren bir veri setinde kayıt katılımcının kendisine aittir. Kişinin kendi kurumunun verileri (G seçeneği) yalnızca kurumun bir bilgisayarında, kurumun izniyle ve bir çalışma söz konusuysa etik kurul onayıyla analiz edilir.
 
 ## Kaynaklar
 

@@ -85,6 +85,8 @@ Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging 
 
 10. hafta tek bir yeni paket gerektirir: Prototipin web arayüzü için Streamlit. Paket `pip install streamlit` komutuyla kurulur. Defterin 8. bölümü arayüzü haftanın klasörüne `app_af.py` dosyası olarak yazar. Bu klasörde açılan Anaconda Prompt arayüzü `streamlit run app_af.py` komutuyla başlatır; tarayıcı da arayüzü http://localhost:8501 adresinde gösterir. Defter ilk kullanımda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 25 kaydının başlık ve işaretleme dosyalarını ve bunlardan üçünün sinyal dosyalarını, yaklaşık 86 MB'lık bir indirmeyle PhysioNet'ten alır; üyelik gerekmez. Defter Colab'da da çalışır, ancak web arayüzü için katılımcının kendi bilgisayarı gerekir.
 
+11. hafta yeni bir paket gerektirmez ve hiçbir şey indirmez: Haftanın çözümlü final projesinin Cleveland verisi ders klasörüyle birlikte gelir. Defter kendi yanına sonuçları, bir grafiği ve final projesinin araç takımını (`final_project/code/project_tools.py`) içeren `final_project` klasörünü yazar.
+
 Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
 
 ```bash

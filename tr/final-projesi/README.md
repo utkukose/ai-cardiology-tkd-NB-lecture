@@ -53,7 +53,7 @@ Jüri projeyi aşağıdaki ölçütlerle 100 puan üzerinden değerlendirir. Kat
 
 ## Başlangıç kodu
 
-Her seçenek, seçenekler tablosunda adı geçen haftaların Jupyter defterleri üzerine kurulur. Her seçeneğin başlangıç defteri, yöntemlerini öğreten haftayla birlikte bu sayfaya eklenir.
+Her seçenek, seçenekler tablosunda adı geçen haftaların Jupyter defterleri üzerine kurulur. [11. haftanın Jupyter defteri](../hafta-11/NB11_final_projesi_atolyesi.ipynb), B seçeneğine ait bir final projesini Cleveland verisi üzerinde verilerin denetiminden raporun sonuç tablosuna kadar götürür. Defterin son bölümü final projesinin araç takımını, yani `final_project/code/project_tools.py` modülünü yazar. Bu modül 11. haftanın denetimlerini her seçeneğin modeli için yapar: Bir referansa göre kazancın bootstrap aralığı, kalibrasyon, eğitim verilerinde seçilen bir dışlama eşiği ve bütün hastalarda ve gruplarda Wilson aralıkları. Aynı bölümdeki tablo her seçenek için başlanacak defterleri, sonucu, referansı ve modeli adlandırır. [11. haftanın ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html) aynı projeyi adım adım izler; etkileşimli labında da sorunun tuvali, klinik değerlendirmenin planlayıcısı ve sunum için süre ölçerli değerlendirme ölçütleri yer alır.
 
 ---
 
