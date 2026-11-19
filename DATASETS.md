@@ -120,7 +120,7 @@ The data sets of later weeks are documented here when each week is published. Th
 16. Popov, M., Amanturdieva, A., Zhaksylyk, N., Alkanov, A., Saniyazbekov, A., Aimyshev, T., Ismailov, E., Bulegenov, A., Kuzhukeyev, A., Kulanbayeva, A., Kalzhanov, A., Temenov, N., Kolesnikov, A., Sakhov, O., & Fazli, S. (2024). Dataset for automatic region-based coronary artery disease diagnostics using X-ray angiography images. *Scientific Data, 11*, Article 20. https://doi.org/10.1038/s41597-023-02871-z
 17. Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In *9th International Conference on Learning Representations (ICLR 2021)*. https://openreview.net/forum?id=YicbFdNTTy
 18. Moody, G. B., & Mark, R. G. (1983). A new method for detecting atrial fibrillation using R-R intervals. *Computers in Cardiology, 10*, 227–230. https://physionet.org/content/afdb/1.0.0/
-19. Moody, G. B., & Mark, R. G. (2000). *MIT-BIH Atrial Fibrillation Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C2MW2D
+19. Moody, G. B., & Mark, R. G. (1992). *MIT-BIH Atrial Fibrillation Database (version 1.0.0)* [Data set]. PhysioNet. https://doi.org/10.13026/C2MW2D
 
 ---
 
