@@ -26,7 +26,7 @@ import urllib.parse
 import urllib.request
 
 HEADERS = {"User-Agent": "ai-cardiology-tkd-NB-lecture reference check (mailto:utkukose@sdu.edu.tr)"}
-DATACITE_PREFIXES = ("10.13026/", "10.24432/", "10.48550/", "10.5281/")
+DATACITE_PREFIXES = ("10.13026/", "10.24432/", "10.4230/", "10.48550/", "10.5281/")
 
 
 def fetch(url, tries=3):
