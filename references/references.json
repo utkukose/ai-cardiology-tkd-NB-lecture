@@ -315,6 +315,126 @@
     ]
   },
   {
+    "key": "backus2013",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Backus",
+        "given": "B. E."
+      },
+      {
+        "family": "Six",
+        "given": "A. J."
+      },
+      {
+        "family": "Kelder",
+        "given": "J. C."
+      },
+      {
+        "family": "Bosschaert",
+        "given": "M. A. R."
+      },
+      {
+        "family": "Mast",
+        "given": "E. G."
+      },
+      {
+        "family": "Mosterd",
+        "given": "A."
+      },
+      {
+        "family": "Veldkamp",
+        "given": "R. F."
+      },
+      {
+        "family": "Wardeh",
+        "given": "A. J."
+      },
+      {
+        "family": "Tio",
+        "given": "R."
+      },
+      {
+        "family": "Braam",
+        "given": "R."
+      },
+      {
+        "family": "Monnink",
+        "given": "S. H. J."
+      },
+      {
+        "family": "van Tooren",
+        "given": "R."
+      },
+      {
+        "family": "Mast",
+        "given": "T. P."
+      },
+      {
+        "family": "van den Akker",
+        "given": "F."
+      },
+      {
+        "family": "Cramer",
+        "given": "M. J. M."
+      },
+      {
+        "family": "Poldervaart",
+        "given": "J. M."
+      },
+      {
+        "family": "Hoes",
+        "given": "A. W."
+      },
+      {
+        "family": "Doevendans",
+        "given": "P. A."
+      }
+    ],
+    "year": "2013",
+    "title": "A prospective validation of the HEART score for chest pain patients at the emergency department",
+    "container": "International Journal of Cardiology",
+    "volume": "168",
+    "issue": "3",
+    "pages": "2153–2158",
+    "doi": "10.1016/j.ijcard.2013.01.255",
+    "url": "https://doi.org/10.1016/j.ijcard.2013.01.255",
+    "apa": "Backus, B. E., Six, A. J., Kelder, J. C., Bosschaert, M. A. R., Mast, E. G., Mosterd, A., Veldkamp, R. F., Wardeh, A. J., Tio, R., Braam, R., Monnink, S. H. J., van Tooren, R., Mast, T. P., van den Akker, F., Cramer, M. J. M., Poldervaart, J. M., Hoes, A. W., & Doevendans, P. A. (2013). A prospective validation of the HEART score for chest pain patients at the emergency department. *International Journal of Cardiology, 168*(3), 2153–2158. https://doi.org/10.1016/j.ijcard.2013.01.255",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "baltrusaitis2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Baltrušaitis",
+        "given": "T."
+      },
+      {
+        "family": "Ahuja",
+        "given": "C."
+      },
+      {
+        "family": "Morency",
+        "given": "L.-P."
+      }
+    ],
+    "year": "2019",
+    "title": "Multimodal machine learning: A survey and taxonomy",
+    "container": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "volume": "41",
+    "issue": "2",
+    "pages": "423–443",
+    "doi": "10.1109/TPAMI.2018.2798607",
+    "url": "https://doi.org/10.1109/TPAMI.2018.2798607",
+    "apa": "Baltrušaitis, T., Ahuja, C., & Morency, L.-P. (2019). Multimodal machine learning: A survey and taxonomy. *IEEE Transactions on Pattern Analysis and Machine Intelligence, 41*(2), 423–443. https://doi.org/10.1109/TPAMI.2018.2798607",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "bazett1920",
     "type": "article",
     "authors": [
@@ -636,6 +756,131 @@
     "apa": "Breiman, L. (2001). Random forests. *Machine Learning, 45*(1), 5–32. https://doi.org/10.1023/A:1010933404324",
     "used_in": [
       "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "byrne2023",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Byrne",
+        "given": "R. A."
+      },
+      {
+        "family": "Rossello",
+        "given": "X."
+      },
+      {
+        "family": "Coughlan",
+        "given": "J. J."
+      },
+      {
+        "family": "Barbato",
+        "given": "E."
+      },
+      {
+        "family": "Berry",
+        "given": "C."
+      },
+      {
+        "family": "Chieffo",
+        "given": "A."
+      },
+      {
+        "family": "Claeys",
+        "given": "M. J."
+      },
+      {
+        "family": "Dan",
+        "given": "G.-A."
+      },
+      {
+        "family": "Dweck",
+        "given": "M. R."
+      },
+      {
+        "family": "Galbraith",
+        "given": "M."
+      },
+      {
+        "family": "Gilard",
+        "given": "M."
+      },
+      {
+        "family": "Hinterbuchner",
+        "given": "L."
+      },
+      {
+        "family": "Jankowska",
+        "given": "E. A."
+      },
+      {
+        "family": "Jüni",
+        "given": "P."
+      },
+      {
+        "family": "Kimura",
+        "given": "T."
+      },
+      {
+        "family": "Kunadian",
+        "given": "V."
+      },
+      {
+        "family": "Leosdottir",
+        "given": "M."
+      },
+      {
+        "family": "Lorusso",
+        "given": "R."
+      },
+      {
+        "family": "Pedretti",
+        "given": "R. F. E."
+      },
+      {
+        "family": "Rigopoulos",
+        "given": "A. G."
+      },
+      {
+        "family": "Rubini Gimenez",
+        "given": "M."
+      },
+      {
+        "family": "Thiele",
+        "given": "H."
+      },
+      {
+        "family": "Vranckx",
+        "given": "P."
+      },
+      {
+        "family": "Wassmann",
+        "given": "S."
+      },
+      {
+        "family": "Wenger",
+        "given": "N. K."
+      },
+      {
+        "family": "Ibanez",
+        "given": "B."
+      },
+      {
+        "literal": "ESC Scientific Document Group"
+      }
+    ],
+    "year": "2023",
+    "title": "2023 ESC Guidelines for the management of acute coronary syndromes",
+    "container": "European Heart Journal",
+    "volume": "44",
+    "issue": "38",
+    "pages": "3720–3826",
+    "doi": "10.1093/eurheartj/ehad191",
+    "url": "https://doi.org/10.1093/eurheartj/ehad191",
+    "apa": "Byrne, R. A., Rossello, X., Coughlan, J. J., Barbato, E., Berry, C., Chieffo, A., Claeys, M. J., Dan, G.-A., Dweck, M. R., Galbraith, M., Gilard, M., Hinterbuchner, L., Jankowska, E. A., Jüni, P., Kimura, T., Kunadian, V., Leosdottir, M., Lorusso, R., Pedretti, R. F. E., Rigopoulos, A. G., Rubini Gimenez, M., Thiele, H., Vranckx, P., Wassmann, S., Wenger, N. K., Ibanez, B., & ESC Scientific Document Group. (2023). 2023 ESC Guidelines for the management of acute coronary syndromes. *European Heart Journal, 44*(38), 3720–3826. https://doi.org/10.1093/eurheartj/ehad191",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -998,6 +1243,119 @@
     "apa": "Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In *9th International Conference on Learning Representations (ICLR 2021)*. https://openreview.net/forum?id=YicbFdNTTy",
     "used_in": [
       "Week 7: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "doudesis2023",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Doudesis",
+        "given": "D."
+      },
+      {
+        "family": "Lee",
+        "given": "K. K."
+      },
+      {
+        "family": "Boeddinghaus",
+        "given": "J."
+      },
+      {
+        "family": "Bularga",
+        "given": "A."
+      },
+      {
+        "family": "Ferry",
+        "given": "A. V."
+      },
+      {
+        "family": "Tuck",
+        "given": "C."
+      },
+      {
+        "family": "Lowry",
+        "given": "M. T. H."
+      },
+      {
+        "family": "Lopez-Ayala",
+        "given": "P."
+      },
+      {
+        "family": "Nestelberger",
+        "given": "T."
+      },
+      {
+        "family": "Koechlin",
+        "given": "L."
+      },
+      {
+        "family": "Bernabeu",
+        "given": "M. O."
+      },
+      {
+        "family": "Neubeck",
+        "given": "L."
+      },
+      {
+        "family": "Anand",
+        "given": "A."
+      },
+      {
+        "family": "Schulz",
+        "given": "K."
+      },
+      {
+        "family": "Apple",
+        "given": "F. S."
+      },
+      {
+        "family": "Parsonage",
+        "given": "W."
+      },
+      {
+        "family": "Greenslade",
+        "given": "J. H."
+      },
+      {
+        "family": "Cullen",
+        "given": "L."
+      },
+      {
+        "family": "Pickering",
+        "given": "J. W."
+      },
+      {
+        "family": "Than",
+        "given": "M. P."
+      },
+      {
+        "family": "Gray",
+        "given": "A."
+      },
+      {
+        "family": "Mueller",
+        "given": "C."
+      },
+      {
+        "family": "Mills",
+        "given": "N. L."
+      },
+      {
+        "literal": "CoDE-ACS Investigators"
+      }
+    ],
+    "year": "2023",
+    "title": "Machine learning for diagnosis of myocardial infarction using cardiac troponin concentrations",
+    "container": "Nature Medicine",
+    "volume": "29",
+    "issue": "5",
+    "pages": "1201–1210",
+    "doi": "10.1038/s41591-023-02325-4",
+    "url": "https://doi.org/10.1038/s41591-023-02325-4",
+    "apa": "Doudesis, D., Lee, K. K., Boeddinghaus, J., Bularga, A., Ferry, A. V., Tuck, C., Lowry, M. T. H., Lopez-Ayala, P., Nestelberger, T., Koechlin, L., Bernabeu, M. O., Neubeck, L., Anand, A., Schulz, K., Apple, F. S., Parsonage, W., Greenslade, J. H., Cullen, L., Pickering, J. W., Than, M. P., Gray, A., Mueller, C., Mills, N. L., & CoDE-ACS Investigators. (2023). Machine learning for diagnosis of myocardial infarction using cardiac troponin concentrations. *Nature Medicine, 29*(5), 1201–1210. https://doi.org/10.1038/s41591-023-02325-4",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -1571,6 +1929,44 @@
     ]
   },
   {
+    "key": "huang2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Huang",
+        "given": "S.-C."
+      },
+      {
+        "family": "Pareek",
+        "given": "A."
+      },
+      {
+        "family": "Seyyedi",
+        "given": "S."
+      },
+      {
+        "family": "Banerjee",
+        "given": "I."
+      },
+      {
+        "family": "Lungren",
+        "given": "M. P."
+      }
+    ],
+    "year": "2020",
+    "title": "Fusion of medical imaging and electronic health records using deep learning: A systematic review and implementation guidelines",
+    "container": "npj Digital Medicine",
+    "volume": "3",
+    "issue": "",
+    "pages": "Article 136",
+    "doi": "10.1038/s41746-020-00341-z",
+    "url": "https://doi.org/10.1038/s41746-020-00341-z",
+    "apa": "Huang, S.-C., Pareek, A., Seyyedi, S., Banerjee, I., & Lungren, M. P. (2020). Fusion of medical imaging and electronic health records using deep learning: A systematic review and implementation guidelines. *npj Digital Medicine, 3*, Article 136. https://doi.org/10.1038/s41746-020-00341-z",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "hunter2007",
     "type": "article",
     "authors": [
@@ -1828,6 +2224,44 @@
       "Week 1: lecture page, Jupyter notebook and course documents"
     ],
     "registry_authors_note": "The DataCite record lists only the first creator; the UCI Machine Learning Repository lists all four."
+  },
+  {
+    "key": "janssen2008",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Janssen",
+        "given": "K. J. M."
+      },
+      {
+        "family": "Moons",
+        "given": "K. G. M."
+      },
+      {
+        "family": "Kalkman",
+        "given": "C. J."
+      },
+      {
+        "family": "Grobbee",
+        "given": "D. E."
+      },
+      {
+        "family": "Vergouwe",
+        "given": "Y."
+      }
+    ],
+    "year": "2008",
+    "title": "Updating methods improved the performance of a clinical prediction model in new patients",
+    "container": "Journal of Clinical Epidemiology",
+    "volume": "61",
+    "issue": "1",
+    "pages": "76–86",
+    "doi": "10.1016/j.jclinepi.2007.04.018",
+    "url": "https://doi.org/10.1016/j.jclinepi.2007.04.018",
+    "apa": "Janssen, K. J. M., Moons, K. G. M., Kalkman, C. J., Grobbee, D. E., & Vergouwe, Y. (2008). Updating methods improved the performance of a clinical prediction model in new patients. *Journal of Clinical Epidemiology, 61*(1), 76–86. https://doi.org/10.1016/j.jclinepi.2007.04.018",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
   },
   {
     "key": "jolliffe2016",
@@ -4073,6 +4507,36 @@
     ]
   },
   {
+    "key": "six2008",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Six",
+        "given": "A. J."
+      },
+      {
+        "family": "Backus",
+        "given": "B. E."
+      },
+      {
+        "family": "Kelder",
+        "given": "J. C."
+      }
+    ],
+    "year": "2008",
+    "title": "Chest pain in the emergency room: Value of the HEART score",
+    "container": "Netherlands Heart Journal",
+    "volume": "16",
+    "issue": "6",
+    "pages": "191–196",
+    "doi": "10.1007/BF03086144",
+    "url": "https://doi.org/10.1007/BF03086144",
+    "apa": "Six, A. J., Backus, B. E., & Kelder, J. C. (2008). Chest pain in the emergency room: Value of the HEART score. *Netherlands Heart Journal, 16*(6), 191–196. https://doi.org/10.1007/BF03086144",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "smith2012",
     "type": "article",
     "authors": [
@@ -4402,6 +4866,47 @@
     ]
   },
   {
+    "key": "vancalster2019",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Van Calster",
+        "given": "B."
+      },
+      {
+        "family": "McLernon",
+        "given": "D. J."
+      },
+      {
+        "family": "van Smeden",
+        "given": "M."
+      },
+      {
+        "family": "Wynants",
+        "given": "L."
+      },
+      {
+        "family": "Steyerberg",
+        "given": "E. W."
+      },
+      {
+        "literal": "Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative"
+      }
+    ],
+    "year": "2019",
+    "title": "Calibration: The Achilles heel of predictive analytics",
+    "container": "BMC Medicine",
+    "volume": "17",
+    "issue": "",
+    "pages": "Article 230",
+    "doi": "10.1186/s12916-019-1466-7",
+    "url": "https://doi.org/10.1186/s12916-019-1466-7",
+    "apa": "Van Calster, B., McLernon, D. J., van Smeden, M., Wynants, L., Steyerberg, E. W., & Topic Group ‘Evaluating diagnostic tests and prediction models’ of the STRATOS initiative. (2019). Calibration: The Achilles heel of predictive analytics. *BMC Medicine, 17*, Article 230. https://doi.org/10.1186/s12916-019-1466-7",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "vangelder2024",
     "type": "article",
     "authors": [
@@ -4627,6 +5132,32 @@
     ]
   },
   {
+    "key": "vickers2006",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Vickers",
+        "given": "A. J."
+      },
+      {
+        "family": "Elkin",
+        "given": "E. B."
+      }
+    ],
+    "year": "2006",
+    "title": "Decision curve analysis: A novel method for evaluating prediction models",
+    "container": "Medical Decision Making",
+    "volume": "26",
+    "issue": "6",
+    "pages": "565–574",
+    "doi": "10.1177/0272989X06295361",
+    "url": "https://doi.org/10.1177/0272989X06295361",
+    "apa": "Vickers, A. J., & Elkin, E. B. (2006). Decision curve analysis: A novel method for evaluating prediction models. *Medical Decision Making, 26*(6), 565–574. https://doi.org/10.1177/0272989X06295361",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "wagner2020",
     "type": "article",
     "authors": [
@@ -4708,6 +5239,28 @@
     "apa": "Wagner, P., Strodthoff, N., Bousseljot, R., Samek, W., & Schaeffter, T. (2022). *PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3)* [Data set]. PhysioNet. https://doi.org/10.13026/kfzx-aw45",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "wilson1927",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Wilson",
+        "given": "E. B."
+      }
+    ],
+    "year": "1927",
+    "title": "Probable inference, the law of succession, and statistical inference",
+    "container": "Journal of the American Statistical Association",
+    "volume": "22",
+    "issue": "158",
+    "pages": "209–212",
+    "doi": "10.1080/01621459.1927.10502953",
+    "url": "https://doi.org/10.1080/01621459.1927.10502953",
+    "apa": "Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. *Journal of the American Statistical Association, 22*(158), 209–212. https://doi.org/10.1080/01621459.1927.10502953",
+    "used_in": [
+      "Week 8: lecture page and Jupyter notebook"
     ]
   },
   {

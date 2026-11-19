@@ -75,7 +75,7 @@ Malzemeler: [Hafta sayfası](tr/hafta-07/README.md) · [Ders sayfası](https://u
 
 Oturumun ilk yarısında aynı hastalara ait tabloların, sinyallerin, görüntülerin ve metinlerin erken, geç ve melez füzyonu, dikkat tabanlı füzyon ve eksik modalitelerin yönetimi karşılaştırılır. İkinci yarıda bir göğüs ağrısı ünitesi için troponini, klinik değişkenleri, ekokardiyogramı, EKG'yi ve triyaj notunu birleştiren bir risk modeli tasarlanır. Model HEART skoruyla karşılaştırılır; kalibrasyonu, güven aralıkları, ikinci bir hastaneye aktarımı ve taburculuk eşiği değerlendirilir. **Oturumdaki mini proje:** Kalp yetersizliği olayları için EKG, ekokardiyogram ve laboratuvar değerlerini birleştiren bir model ile kalibrasyonu iki hastanede, taburculuk eşiği ise HEART 0-3 ile karşılaştırılarak değerlendirilen bir göğüs ağrısı ünitesi risk modeli. **Haftalık proje:** Simüle edilmiş bir triyajda majör olumsuz kardiyovasküler olayların (MACE) öngörüsü. **Veriler:** Sanal kliniğin izlem verilerini içeren hasta kaydı ve iki hastanedeki göğüs ağrısı ünitesi: Aynı sentetik başvurulara ait klinik tablolar, triyaj notları, 12 derivasyonlu EKG'ler, troponin değerleri ve ekokardiyogramlar. **Sanal kliniğin aşaması:** Kalp ekibi: Veri füzyonu.
 
-Malzemeler: Hazırlanıyor
+Malzemeler: [Hafta sayfası](tr/hafta-08/README.md) · [Ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html) · [Etkileşimli lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/lab.html) · [Jupyter defteri](tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb) · [Prompt kütüphanesi](tr/hafta-08/PROMPTLAR.md) · [PDF ders notu](tr/hafta-08/Hafta08_Ders_Notlari.pdf)
 
 ### Hafta 9: Model güvenilirliği ve açıklanabilir yapay zekâ
 

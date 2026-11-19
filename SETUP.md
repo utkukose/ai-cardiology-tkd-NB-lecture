@@ -79,6 +79,8 @@ From Week 6, the notebooks also use transformers, the package of Hugging Face fo
 
 Week 7 needs no new package. On first use, its notebook downloads the ImageNet weights of the vision transformer ViT-B/16, about 330 MB, through torchvision and the stenosis set of the ARCADE angiograms, about 452 MB, from Zenodo; both are kept on the computer for later runs.
 
+Week 8 needs no new package and downloads nothing: The course package draws all its data on the computer.
+
 The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run:
 
 ```bash

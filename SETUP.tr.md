@@ -79,6 +79,8 @@ Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging 
 
 7. hafta yeni bir paket gerektirmez. Haftanın defteri ilk kullanımda görü dönüştürücüsü ViT-B/16'nın ImageNet ağırlıklarını (yaklaşık 330 MB) torchvision aracılığıyla, ARCADE anjiyogramlarının darlık kümesini (yaklaşık 452 MB) ise Zenodo'dan indirir; ikisi de sonraki çalıştırmalar için bilgisayarda saklanır.
 
+8. hafta yeni bir paket gerektirmez ve hiçbir şey indirmez: Ders paketi haftanın bütün verilerini bilgisayarda oluşturur.
+
 Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
 
 ```bash

@@ -75,7 +75,7 @@ Materials: [Week page](en/week-07/README.md) · [Lecture page](https://utkukose.
 
 The first half compares early, late and hybrid fusion of the tables, signals, images and texts of the same patients, attention-based fusion and the handling of missing modalities. The second half designs a risk model for a chest pain unit that combines troponin, clinical variables, the echocardiogram, the ECG and the triage note. The model is compared with the HEART score and judged by its calibration, its confidence intervals, its transfer to a second hospital and its threshold for discharge. **Mini project in the session:** A model that fuses the ECG, the echocardiogram and laboratory values for heart failure events, and a risk model for a chest pain unit that is judged by its calibration at two hospitals and by a threshold for discharge against HEART 0 to 3. **Weekly project:** Prediction of major adverse cardiovascular events (MACE) in a simulated triage. **Data:** The registry of the virtual clinic with follow-up, and its chest pain unit at two hospitals: clinical tables, triage notes, 12-lead ECGs, troponins and echocardiograms of the same synthetic presentations. **Stage of the virtual clinic:** Heart team: Data fusion.
 
-Materials: In preparation
+Materials: [Week page](en/week-08/README.md) · [Lecture page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html) · [Interactive lab](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lab.html) · [Jupyter notebook](en/week-08/NB08_multimodal_ai_and_data_fusion.ipynb) · [Prompt library](en/week-08/PROMPTS.md) · [PDF notes](en/week-08/Week08_Lecture_Notes.pdf)
 
 ### Week 9: Model reliability and explainable artificial intelligence
 
