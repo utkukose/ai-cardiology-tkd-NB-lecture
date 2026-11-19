@@ -47,6 +47,9 @@ TERRITORY_ANGLES = {
     "anterior": (-40, 55),   # left anterior descending artery (LAD)
     "inferior": (100, -10),  # right coronary artery (RCA)
     "lateral": (-10, -40),   # left circumflex artery (LCx)
+    # diffuse subendocardial ischaemia: with a negative st_mv the ST segment is
+    # depressed in the leads that face the apex and raised in aVR
+    "subendocardial": (45, 20),
 }
 
 

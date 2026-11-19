@@ -12,6 +12,7 @@ ai-cardiology-course/
 
 # Data sets that every participant downloads from their source (never part of the repository)
 data/acdc/
+data/arcade/
 data/camus/
 data/echonet/
 data/ptbxl/

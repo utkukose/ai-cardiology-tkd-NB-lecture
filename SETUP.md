@@ -75,6 +75,10 @@ For other systems, the selector at [pytorch.org/get-started/locally](https://pyt
 
 From Week 4, the notebooks also use scikit-image for the outlines of the echocardiograms. Anaconda and Colab include it; in another Python environment, `pip install scikit-image` installs it.
 
+From Week 6, the notebooks also use transformers, the package of Hugging Face for pretrained language models. On first use, it downloads the tokenizer and the weights of the tiny Turkish model of the course, about 19 MB, from the Hugging Face Hub. Colab includes the package; elsewhere, `pip install transformers` installs it.
+
+Week 7 needs no new package. On first use, its notebook downloads the ImageNet weights of the vision transformer ViT-B/16, about 330 MB, through torchvision and the stenosis set of the ARCADE angiograms, about 452 MB, from Zenodo; both are kept on the computer for later runs.
+
 The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run:
 
 ```bash
@@ -112,6 +116,7 @@ Real patient data never go into Colab or any other cloud service. All data of th
 | `No module named 'vclinic'` without an internet connection | Open the notebook from inside the course folder. The first cell then finds the folder and needs no download. |
 | `No module named 'torch'` | Install PyTorch as step 6 describes, then restart the kernel. |
 | `No module named 'skimage'` | Install scikit-image with `pip install scikit-image`, then restart the kernel. |
+| `No module named 'transformers'` | Install it with `pip install transformers`, then restart the kernel. |
 | The notebook opened outside the course folder | The first cell downloads the course package and the data into a folder named `ai-cardiology-course` next to the notebook. This needs an internet connection once. |
 | An error after running cells out of order | Choose **Kernel → Restart Kernel and Run All Cells**, or run the *Catch-up* cell at the start of the section. |
 | A notebook on GitHub shows no output | GitHub only displays the notebook. Download it with the course folder and run it in Jupyter. |

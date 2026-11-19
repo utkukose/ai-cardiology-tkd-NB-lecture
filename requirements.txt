@@ -13,3 +13,5 @@ neurokit2>=0.2
 torch>=2.2
 torchvision>=0.17
 scikit-image>=0.22
+# Week 6 and later: pretrained language models of Hugging Face
+transformers>=4.40

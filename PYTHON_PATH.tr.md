@@ -19,7 +19,7 @@ Kod yazmak istemeyen katılımcılar için aynı defterin 1. kısmında kodu, ha
 | 4 | Python adımı 4: Eğitilmiş modelleri yeniden kullanmak | Önceden eğitilmiş ağırlıkları yükleme, katmanları dondurma, dizi olarak maskeler, alan ve hacim ölçen fonksiyonlar | [NB04_transfer_ogrenme.ipynb](tr/hafta-04/NB04_transfer_ogrenme.ipynb) |
 | 5 | Python adımı 5: Sinyalleri toplu işlemek | Bir sinyalin pencereleri, çok sayıda kayıttan oluşan diziler, birden fazla sınıfı olan etiketler, büyük bir veri setini adım adım okuma | [NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb](tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb) |
 | 6 | Python adımı 6: Metinle çalışmak | Karakter dizileri (string) ve metotları, düzenli ifadeler, belirteçler (token), Hugging Face Hub'dan önceden eğitilmiş bir modeli çağırma | Hazırlanıyor |
-| 7 | Python adımı 7: Sınıflar ve modüller | Küçük bir sınıfı okuma ve yazma, modüllerden kod içe aktarma, bir modeli parçalardan kurma | Hazırlanıyor |
+| 7 | Python adımı 7: Sınıflar ve modüller | Küçük bir sınıfı okuma ve yazma, modüllerden kod içe aktarma, bir modeli parçalardan kurma | [NB07_goru_donusturuculeri.ipynb](tr/hafta-07/NB07_goru_donusturuculeri.ipynb) |
 | 8 | Python adımı 8: Verileri birleştirmek | Tabloları birleştirme, bir hastanın sinyallerini ve görüntülerini hizalama, eksik parçalarla başa çıkma | Hazırlanıyor |
 | 9 | Python adımı 9: Bir modeli kodla açıklamak | Açıklama kütüphanelerini çağırma, öznitelik katkılarını grafikle gösterme, hasta gruplarını karşılaştırma | Hazırlanıyor |
 | 10 | Python adımı 10: Defterden uygulamaya | Betikler, Streamlit ile küçük bir web arayüzü, bir modeli kaydetme ve yükleme | Hazırlanıyor |

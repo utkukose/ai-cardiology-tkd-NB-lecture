@@ -9,11 +9,19 @@ EchoNet-Dynamic (echocardiography, with personal registration). The module
 ptbxl reads the 12-lead ECGs of PTB-XL, downloaded from PhysioNet, the module
 beats finds their R peaks and measures the median beat, the ST deviation and
 the QT interval, and the module holter makes a synthetic 24-hour recording of
-the virtual clinic.
+the virtual clinic. The module reports writes the discharge summaries and the
+coronary angiography reports of the report archive, in Turkish and English,
+and the module coronary holds the coronary lesions of the patients, which the
+angiography reports describe. The module angiogram draws these lesions as
+synthetic X-ray coronary angiograms, and the module arcade reads ARCADE, a
+public data set of coronary angiograms with expert outlines of stenoses,
+downloaded from Zenodo. The module triage holds the chest pain unit of two
+hospitals: presentations with a clinical table, a triage note, a 12-lead ECG,
+two troponins, a bedside echocardiogram and the events of the next 30 days.
 """
 from .ecg import (LEADS, LEAD_VECTORS, LEAD_MATRIX, ECG, simulate, project,
                   direction, frontal_axis)
 from .cohort import make_cohort, patient_ecg, ecg_params, TRUE_EFFECTS
 from .followup import add_followup, PHENOGROUPS
 
-__version__ = "1.6.0"
+__version__ = "1.9.0"

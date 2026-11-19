@@ -19,3 +19,4 @@ dependencies:
       - neurokit2
       - torch
       - torchvision
+      - transformers

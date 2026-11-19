@@ -1,5 +1,31 @@
 [
   {
+    "key": "abnar2020",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Abnar",
+        "given": "S."
+      },
+      {
+        "family": "Zuidema",
+        "given": "W."
+      }
+    ],
+    "year": "2020",
+    "title": "Quantifying attention flow in transformers",
+    "container": "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    "volume": "",
+    "issue": "",
+    "pages": "4190–4197",
+    "doi": "10.18653/v1/2020.acl-main.385",
+    "url": "https://doi.org/10.18653/v1/2020.acl-main.385",
+    "apa": "Abnar, S., & Zuidema, W. (2020). Quantifying attention flow in transformers. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 4190–4197). https://doi.org/10.18653/v1/2020.acl-main.385",
+    "used_in": [
+      "Week 7: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "alzaiti2023",
     "type": "article",
     "authors": [
@@ -909,6 +935,72 @@
     ]
   },
   {
+    "key": "dosovitskiy2021",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Dosovitskiy",
+        "given": "A."
+      },
+      {
+        "family": "Beyer",
+        "given": "L."
+      },
+      {
+        "family": "Kolesnikov",
+        "given": "A."
+      },
+      {
+        "family": "Weissenborn",
+        "given": "D."
+      },
+      {
+        "family": "Zhai",
+        "given": "X."
+      },
+      {
+        "family": "Unterthiner",
+        "given": "T."
+      },
+      {
+        "family": "Dehghani",
+        "given": "M."
+      },
+      {
+        "family": "Minderer",
+        "given": "M."
+      },
+      {
+        "family": "Heigold",
+        "given": "G."
+      },
+      {
+        "family": "Gelly",
+        "given": "S."
+      },
+      {
+        "family": "Uszkoreit",
+        "given": "J."
+      },
+      {
+        "family": "Houlsby",
+        "given": "N."
+      }
+    ],
+    "year": "2021",
+    "title": "An image is worth 16x16 words: Transformers for image recognition at scale",
+    "container": "9th International Conference on Learning Representations (ICLR 2021)",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://openreview.net/forum?id=YicbFdNTTy",
+    "apa": "Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In *9th International Conference on Learning Representations (ICLR 2021)*. https://openreview.net/forum?id=YicbFdNTTy",
+    "used_in": [
+      "Week 7: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "drew2010",
     "type": "article",
     "authors": [
@@ -1677,6 +1769,32 @@
     ]
   },
   {
+    "key": "jain2019",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Jain",
+        "given": "S."
+      },
+      {
+        "family": "Wallace",
+        "given": "B. C."
+      }
+    ],
+    "year": "2019",
+    "title": "Attention is not explanation",
+    "container": "Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+    "volume": "",
+    "issue": "",
+    "pages": "3543–3556",
+    "doi": "10.18653/v1/N19-1357",
+    "url": "https://doi.org/10.18653/v1/N19-1357",
+    "apa": "Jain, S., & Wallace, B. C. (2019). Attention is not explanation. In *Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)* (pp. 3543–3556). https://doi.org/10.18653/v1/N19-1357",
+    "used_in": [
+      "Week 7: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "janosi1989",
     "type": "dataset",
     "authors": [
@@ -2113,6 +2231,84 @@
     "apa": "Kusumoto, F. M., Schoenfeld, M. H., Barrett, C., Edgerton, J. R., Ellenbogen, K. A., Gold, M. R., Goldschlager, N. F., Hamilton, R. M., Joglar, J. A., Kim, R. J., Lee, R., Marine, J. E., McLeod, C. J., Oken, K. R., Patton, K. K., Pellegrini, C. N., Selzman, K. A., Thompson, A., & Varosy, P. D. (2019). 2018 ACC/AHA/HRS guideline on the evaluation and management of patients with bradycardia and cardiac conduction delay: A report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines and the Heart Rhythm Society. *Circulation, 140*(8), e382–e482. https://doi.org/10.1161/CIR.0000000000000628",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "labrecque2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Labrecque Langlais",
+        "given": "É."
+      },
+      {
+        "family": "Corbin",
+        "given": "D."
+      },
+      {
+        "family": "Tastet",
+        "given": "O."
+      },
+      {
+        "family": "Hayek",
+        "given": "A."
+      },
+      {
+        "family": "Doolub",
+        "given": "G."
+      },
+      {
+        "family": "Mrad",
+        "given": "S."
+      },
+      {
+        "family": "Tardif",
+        "given": "J.-C."
+      },
+      {
+        "family": "Tanguay",
+        "given": "J.-F."
+      },
+      {
+        "family": "Marquis-Gravel",
+        "given": "G."
+      },
+      {
+        "family": "Tison",
+        "given": "G. H."
+      },
+      {
+        "family": "Kadoury",
+        "given": "S."
+      },
+      {
+        "family": "Le",
+        "given": "W."
+      },
+      {
+        "family": "Gallo",
+        "given": "R."
+      },
+      {
+        "family": "Lesage",
+        "given": "F."
+      },
+      {
+        "family": "Avram",
+        "given": "R."
+      }
+    ],
+    "year": "2024",
+    "title": "Evaluation of stenoses using AI video models applied to coronary angiography",
+    "container": "npj Digital Medicine",
+    "volume": "7",
+    "issue": "",
+    "pages": "Article 138",
+    "doi": "10.1038/s41746-024-01134-4",
+    "url": "https://doi.org/10.1038/s41746-024-01134-4",
+    "apa": "Labrecque Langlais, É., Corbin, D., Tastet, O., Hayek, A., Doolub, G., Mrad, S., Tardif, J.-C., Tanguay, J.-F., Marquis-Gravel, G., Tison, G. H., Kadoury, S., Le, W., Gallo, R., Lesage, F., & Avram, R. (2024). Evaluation of stenoses using AI video models applied to coronary angiography. *npj Digital Medicine, 7*, Article 138. https://doi.org/10.1038/s41746-024-01134-4",
+    "used_in": [
+      "Week 7: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3190,6 +3386,84 @@
     "apa": "Perez, M. V., Mahaffey, K. W., Hedlin, H., Rumsfeld, J. S., Garcia, A., Ferris, T., Balasubramanian, V., Russo, A. M., Rajmane, A., Cheung, L., Hung, G., Lee, J., Kowey, P., Talati, N., Nag, D., Gummidipundi, S. E., Beatty, A., Hills, M. T., Desai, S., Granger, C. B., Desai, M., Turakhia, M. P., & Apple Heart Study Investigators. (2019). Large-scale assessment of a smartwatch to identify atrial fibrillation. *New England Journal of Medicine, 381*(20), 1909–1917. https://doi.org/10.1056/NEJMoa1901183",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "popov2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Popov",
+        "given": "M."
+      },
+      {
+        "family": "Amanturdieva",
+        "given": "A."
+      },
+      {
+        "family": "Zhaksylyk",
+        "given": "N."
+      },
+      {
+        "family": "Alkanov",
+        "given": "A."
+      },
+      {
+        "family": "Saniyazbekov",
+        "given": "A."
+      },
+      {
+        "family": "Aimyshev",
+        "given": "T."
+      },
+      {
+        "family": "Ismailov",
+        "given": "E."
+      },
+      {
+        "family": "Bulegenov",
+        "given": "A."
+      },
+      {
+        "family": "Kuzhukeyev",
+        "given": "A."
+      },
+      {
+        "family": "Kulanbayeva",
+        "given": "A."
+      },
+      {
+        "family": "Kalzhanov",
+        "given": "A."
+      },
+      {
+        "family": "Temenov",
+        "given": "N."
+      },
+      {
+        "family": "Kolesnikov",
+        "given": "A."
+      },
+      {
+        "family": "Sakhov",
+        "given": "O."
+      },
+      {
+        "family": "Fazli",
+        "given": "S."
+      }
+    ],
+    "year": "2024",
+    "title": "Dataset for automatic region-based coronary artery disease diagnostics using X-ray angiography images",
+    "container": "Scientific Data",
+    "volume": "11",
+    "issue": "",
+    "pages": "Article 20",
+    "doi": "10.1038/s41597-023-02871-z",
+    "url": "https://doi.org/10.1038/s41597-023-02871-z",
+    "apa": "Popov, M., Amanturdieva, A., Zhaksylyk, N., Alkanov, A., Saniyazbekov, A., Aimyshev, T., Ismailov, E., Bulegenov, A., Kuzhukeyev, A., Kulanbayeva, A., Kalzhanov, A., Temenov, N., Kolesnikov, A., Sakhov, O., & Fazli, S. (2024). Dataset for automatic region-based coronary artery disease diagnostics using X-ray angiography images. *Scientific Data, 11*, Article 20. https://doi.org/10.1038/s41597-023-02871-z",
+    "used_in": [
+      "Week 7: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4300,6 +4574,56 @@
     "apa": "Vandenberk, B., Vandael, E., Robyns, T., Vandenberghe, J., Garweg, C., Foulon, V., Ector, J., & Willems, R. (2016). Which QT correction formulae to use for QT monitoring? *Journal of the American Heart Association, 5*(6), Article e003264. https://doi.org/10.1161/JAHA.116.003264",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "vaswani2017",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Vaswani",
+        "given": "A."
+      },
+      {
+        "family": "Shazeer",
+        "given": "N."
+      },
+      {
+        "family": "Parmar",
+        "given": "N."
+      },
+      {
+        "family": "Uszkoreit",
+        "given": "J."
+      },
+      {
+        "family": "Jones",
+        "given": "L."
+      },
+      {
+        "family": "Gomez",
+        "given": "A. N."
+      },
+      {
+        "family": "Kaiser",
+        "given": "Ł."
+      },
+      {
+        "family": "Polosukhin",
+        "given": "I."
+      }
+    ],
+    "year": "2017",
+    "title": "Attention is all you need",
+    "container": "Advances in Neural Information Processing Systems 30",
+    "volume": "",
+    "issue": "",
+    "pages": "5998–6008",
+    "doi": "",
+    "url": "https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html",
+    "apa": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. In *Advances in Neural Information Processing Systems 30* (pp. 5998–6008). https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html",
+    "used_in": [
+      "Week 7: lecture page and Jupyter notebook"
     ]
   },
   {

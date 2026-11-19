@@ -1,8 +1,11 @@
 __init__.py
 acdc.py
+angiogram.py
+arcade.py
 beats.py
 camus.py
 cohort.py
+coronary.py
 datasets.py
 ecg.py
 echonet.py
@@ -12,4 +15,6 @@ measure.py
 nifti.py
 physionet.py
 ptbxl.py
+reports.py
 teach.py
+triage.py
