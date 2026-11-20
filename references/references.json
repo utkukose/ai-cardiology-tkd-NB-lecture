@@ -1966,27 +1966,6 @@
     ]
   },
   {
-    "key": "esc2026digital",
-    "type": "web",
-    "authors": [
-      {
-        "literal": "European Society of Cardiology"
-      }
-    ],
-    "year": "2026",
-    "title": "Digital health & AI: Essential resources in digital health and artificial intelligence",
-    "container": "ESC topics",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "doi": "",
-    "url": "https://www.escardio.org/topics/digital-health-ai/",
-    "apa": "European Society of Cardiology. (2026). Digital health & AI: Essential resources in digital health and artificial intelligence. In *ESC topics*. European Society of Cardiology. https://www.escardio.org/topics/digital-health-ai/",
-    "used_in": [
-      "Week 11: lecture page and Jupyter notebook"
-    ]
-  },
-  {
     "key": "esc2026summit",
     "type": "web",
     "authors": [
@@ -2003,6 +1982,27 @@
     "doi": "",
     "url": "https://www.escardio.org/news/press/press-releases/esc-digital--ai-summit-2026-where-human-insight-and-intelligent-technology-shape-the-future-of-cardiovascular-care/",
     "apa": "European Society of Cardiology. (2026). ESC Digital & AI Summit 2026: Where human insight and intelligent technology shape the future of cardiovascular care (press release, 3 November 2026). In *ESC press releases*. European Society of Cardiology. https://www.escardio.org/news/press/press-releases/esc-digital--ai-summit-2026-where-human-insight-and-intelligent-technology-shape-the-future-of-cardiovascular-care/",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "esc2026digital",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "European Society of Cardiology"
+      }
+    ],
+    "year": "2026",
+    "title": "Digital health & AI: Essential resources in digital health and artificial intelligence",
+    "container": "ESC topics",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.escardio.org/topics/digital-health-ai/",
+    "apa": "European Society of Cardiology. (2026). Digital health & AI: Essential resources in digital health and artificial intelligence. In *ESC topics*. European Society of Cardiology. https://www.escardio.org/topics/digital-health-ai/",
     "used_in": [
       "Week 11: lecture page and Jupyter notebook"
     ]
@@ -4234,7 +4234,8 @@
     "apa": "Liu, F., Liu, C., Zhao, L., Zhang, X., Wu, X., Xu, X., Liu, Y., Ma, C., Wei, S., He, Z., Li, J., & Ng, E. Y. K. (2018). An open access database for evaluating the algorithms of electrocardiogram rhythm and morphology abnormality detection. *Journal of Medical Imaging and Health Informatics, 8*(7), 1368–1373. https://doi.org/10.1166/jmihi.2018.2442",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
-    ]
+    ],
+    "registry_authors_note": "the Crossref record gives the last author, Eddie Yin Kwee Ng, the family name Yin Kwee; the entry follows the usual form, Ng, E. Y. K."
   },
   {
     "key": "liu2020",
