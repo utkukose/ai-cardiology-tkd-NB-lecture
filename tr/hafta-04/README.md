@@ -1,11 +1,11 @@
 <div align="center">
 
-# Hafta 4: Transfer öğrenme
+# Hafta 4: Transfer learning: Hazır gücü kardiyolojiye uyarla
 
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği
 
-*Fotoğraflarla eğitilmiş ağlardan otomatik ejeksiyon fraksiyonu ölçümüne geçilir.*
+*Milyonlarca görüntüyle öğrenilmiş bilgiyi kliniğinize taşıyın*
 
 [Eğitimin ana sayfası](../../README.tr.md) · [İzlence](../../SYLLABUS.tr.md) · [Kurulum](../../SETUP.tr.md) · [English](../../en/week-04/README.md)
 
@@ -13,7 +13,7 @@ Türk Kardiyoloji Derneği
 
 ## Hafta hakkında
 
-Hafta, milyonlarca gündelik fotoğrafla eğitilmiş ağların kalp görüntülerine uyarlanmasıyla başlar. ImageNet üzerinde önceden eğitilmiş EfficientNet-B0 ve 3. haftadan tanıdık ACDC sine kardiyak manyetik rezonans incelemeleriyle öznitelik çıkarımı, ince ayar ve az sayıda etiketli hastayla öğrenme çalışılır. İkinci yarıda herkese açık CAMUS veri setinin apikal iki boşluk ve dört boşluk ekokardiyogramlarında sol ventrikülün sınırları bir U-Net ile çizilir. Sınırların doğruluğu Dice katsayısıyla ölçülmektedir; hacimler ve ejeksiyon fraksiyonu ise biplan disk yöntemiyle (modifiye Simpson yöntemi) hesaplanır. Haftanın son bölümünde otomatik ölçüm Bland-Altman analiziyle uzmanın ölçümüyle karşılaştırılır, ölçümün klinik doğrulaması planlanır ve bir YZ asistanının yazdığı bir ölçüm hattı denetlenir.
+İlk iki saatte milyonlarca fotoğrafla eğitilmiş ağlar kalp görüntülerine uyarlanır: ImageNet üzerinde önceden eğitilmiş EfficientNet ve DenseNet modelleri, öznitelik çıkarımı ile ince ayar arasındaki seçim, son katmanların kardiyak hedefler için değiştirilmesi ve az veriyle yüksek başarıya ulaşmanın yolları ele alınır. Mini proje, EfficientNet-B0 ile az sayıda etiketli görüntüden kardiyomiyopati sınıflandırması yapar; bunu ACDC'nin sine kardiyak manyetik rezonans görüntülerinde ve CAMUS ekokardiyogramlarında uygular. Son iki saatte görüntüler ölçümlere dönüştürülür: Kardiyak segmentasyon için U-Net mimarisi, Dice katsayısıyla piksel düzeyinde segmentasyon eğitimi, sol ventrikül ejeksiyon fraksiyonunun Simpson disk yöntemiyle otomatik ölçümü ve Bland-Altman analiziyle klinik validasyon metodolojisi işlenir. Sanal klinik otomatik bir ejeksiyon fraksiyonu ölçümü kazanır.
 
 Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
@@ -23,10 +23,10 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 
 | Ana rota: Ders sayfası ve etkileşimli lab | Uygulama durağı | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
 |---|---|---|---|
-| [Transfer öğrenme: Bir ağın fotoğraflardan öğrendikleri](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#transfer-learning-what-a-network-learned-from-photographs)<br>[Az sayıda etiketli hastayla öğrenmek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#learning-from-few-labelled-patients) | **[Durak 1: Fotoğraflarla eğitilmiş bir ağla az hastadan öğrenmek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-1)** | Durak 1 | Python adımı 4 ve 1-4. bölümler |
-| [Segmentasyon: Her piksel için bir etiket](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#segmentation-a-label-for-every-pixel)<br>[CAMUS ekokardiyogramlarında bir U-Net](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#a-u-net-on-the-echocardiograms-of-camus) | **[Durak 2: CAMUS ekokardiyogramlarında bir U-Net](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-2)** | Durak 2 | 5-7. bölümler |
-| [Disk yöntemiyle ejeksiyon fraksiyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#the-ejection-fraction-by-the-method-of-discs)<br>[Uzmanla uyum: Bland-Altman](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#agreement-with-the-expert-bland-altman) | **[Durak 3: Disk yöntemiyle ejeksiyon fraksiyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-3)** | Durak 3 | 8. ve 9. bölümler |
-| [Otomatik bir ölçümün klinik doğrulamasını planlamak](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#planning-the-clinical-validation-of-an-automatic-measurement)<br>[YZ asistanıyla çalışmak, 4. bölüm: Bir ölçüm hattını denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#ai-pair-programming-part-4-reviewing-a-measurement-pipeline)<br>[Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#the-paper-of-the-week)<br>[Sanal klinik, 4. aşama: Otomatik ejeksiyon fraksiyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#the-virtual-clinic-stage-4-automatic-ejection-fraction) | "Kendi verinizle" bölümü, haftanın makalesi ve sanal klinik | – | – |
+| [İlk 2 saat: Transfer learning prensipleri](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#first-two-hours-principles-of-transfer-learning)<br>[ImageNet ön eğitimli modeller (EfficientNet, DenseNet)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#transfer-learning-what-a-network-learned-from-photographs)<br>[Feature extraction vs fine-tuning ne zaman?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#feature-extraction-or-fine-tuning-when)<br>[Son katmanları kardiyak hedefler için değiştirme](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#replacing-the-last-layers-for-cardiac-targets)<br>[Az veriyle yüksek başarı nasıl sağlanır?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#learning-from-few-labelled-patients)<br>[Mini proje: EfficientNet-B0 ile az sayıda etiketli ekokardiyografi görüntüsünden KMP sınıflandırma](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#mini-project-classifying-cardiomyopathy-from-few-labelled-echocardiography-images-with-efficientnet-b0) | **[Durak 1: Mini proje: EfficientNet-B0 ile az sayıda etiketli görüntüden KMP sınıflandırma](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-1)** | Durak 1 | Python adımı 4 ve 1-4. bölümler |
+| [Son 2 saat: Segmentasyon ve ölçüm otomasyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#last-two-hours-segmentation-and-measurement-automation)<br>[U-Net mimarisi: Kardiyak segmentasyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#segmentation-a-label-for-every-pixel)<br>[Pixel-wise segmentasyon eğitimi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#pixel-wise-segmentation-training)<br>– [CAMUS ekokardiyogramlarında bir U-Net](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#a-u-net-on-the-echocardiograms-of-camus) | **[Durak 2: Pixel-wise segmentasyon eğitimi: CAMUS'ta bir U-Net](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-2)** | Durak 2 | 5-7. bölümler |
+| [Sol ventrikül EF otomatik ölçümü (Simpson)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#the-ejection-fraction-by-the-method-of-discs)<br>[Klinik validasyon metodolojisi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#clinical-validation-methodology)<br>– [Uzmanla uyum: Bland-Altman](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#agreement-with-the-expert-bland-altman) | **[Durak 3: Simpson yöntemiyle otomatik EF ve uzmanla uyum](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-3)** | Durak 3 | 8. ve 9. bölümler |
+| – [Otomatik bir ölçümün klinik doğrulamasını planlamak](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#planning-the-clinical-validation-of-an-automatic-measurement)<br>[YZ asistanıyla çalışmak, 4. bölüm: Bir ölçüm hattını denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#ai-pair-programming-part-4-reviewing-a-measurement-pipeline)<br>[Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#the-paper-of-the-week)<br>[Sanal klinik, 4. aşama: Otomatik ejeksiyon fraksiyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#the-virtual-clinic-stage-4-automatic-ejection-fraction) | "Kendi verinizle" bölümü, haftanın makalesi ve sanal klinik | – | – |
 
 ## Malzemeler
 
@@ -51,7 +51,7 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 
 ## Öğrenme çıktıları
 
-Haftanın sonunda katılımcıların, bir ağın büyük bir fotoğraf koleksiyonundan neler öğrendiğini ve bu özniteliklerin kalp görüntülerinde öznitelik çıkarımıyla ya da ince ayarla nasıl yeniden kullanıldığını açıklayabilmeleri beklenmektedir. Önceden eğitilmiş bir ağı az sayıda etiketli hastaya uyarlayabilmeli ve bu ağı rastgele ağırlıklarla eğitilen ağlarla adil biçimde karşılaştırabilmelidirler. Segmentasyonu her piksele bir etiket verilmesi olarak tanımlayabilmeli, ekokardiyogramlarda küçük bir U-Net eğitebilmeli ve ağın çizdiği sınırları görüntüye ve faza göre Dice katsayısıyla değerlendirebilmelidirler. Son olarak hacimleri ve ejeksiyon fraksiyonunu biplan disk yöntemiyle hesaplayabilmeli, otomatik bir ölçümün uzmanla uyumunu Bland-Altman analiziyle değerlendirebilmeli ve bu ölçümün klinik doğrulamasını planlayabilmelidirler.
+Haftanın sonunda katılımcıların, bir ağın büyük bir fotoğraf koleksiyonundan neler öğrendiğini açıklayabilmeleri, ImageNet üzerinde önceden eğitilmiş EfficientNet, DenseNet ve ResNet modellerini karşılaştırabilmeleri ve belirli bir hasta sayısı için öznitelik çıkarımı ile ince ayar arasında seçim yapabilmeleri beklenmektedir. Önceden eğitilmiş bir ağın son katmanlarını kardiyak bir hedef için değiştirebilmeli, girdisini gri tonlu görüntülere uyarlayabilmeli ve yöntemleri az sayıda etiketli hastadan yapılan birkaç çekilişle adil biçimde karşılaştırabilmelidirler. U-Net mimarisini açıklayabilmeli, bir segmentasyon ağını çapraz entropi ve Dice kaybıyla piksel düzeyinde eğitebilmeli ve ağın çizdiği sınırları Dice katsayısıyla ölçebilmelidirler. Son olarak hacimleri ve ejeksiyon fraksiyonunu Simpson disk yöntemiyle hesaplayabilmeli, otomatik bir ölçümü Bland-Altman analiziyle değerlendirebilmeli ve klinik validasyonunu planlayabilmelidirler.
 
 ## Çalışma yolu
 
@@ -59,15 +59,15 @@ Oturuma katılanlar ana rotayı ve uygulama duraklarını oturumda tamamlar. Haf
 
 | Adım | Etkinlik | Prompt yolu | Python yolu |
 |---|---|---|---|
-| 1 | Haftanın vakasını ve ders sayfasını 1. uygulama durağına kadar okuyun; etkileşimli labın A bölümünü yapın ve bilgi kontrolü sorularını cevaplayın | 45 dakika | 45 dakika |
-| 2 | 1. uygulama durağı (oturumun mini projesi): Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 4'ü ve 1-4. bölümleri çalışın | 30 dakika | 1 saat 20 dakika |
-| 3 | 2. uygulama durağına kadar okumayı sürdürün (segmentasyon, Dice katsayısı ve CAMUS ekokardiyogramlarında U-Net); etkileşimli labın B bölümünü yapın | 40 dakika | 40 dakika |
+| 1 | Haftanın vakasını ve ders sayfasının ilk iki saatini 1. uygulama durağına kadar okuyun (ImageNet ön eğitimli modeller, öznitelik çıkarımı ya da ince ayar, yeni son katmanlar, az veri ve mini proje); etkileşimli labın A bölümünü yapın ve bilgi kontrolü sorularını cevaplayın | 1 saat | 1 saat |
+| 2 | 1. uygulama durağı (oturumun mini projesi): Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 4'ü ve 4. bölümün ekokardiyografi kısmıyla birlikte 1-4. bölümleri çalışın | 30 dakika | 1 saat 30 dakika |
+| 3 | 2. uygulama durağına kadar okumayı sürdürün (U-Net mimarisi ve CAMUS'ta piksel düzeyinde segmentasyon eğitimi); etkileşimli labın B bölümünü yapın | 40 dakika | 40 dakika |
 | 4 | 2. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 2'yi, Python yolunda 5, 6 ve 7. bölümleri çalışın | 30 dakika | 1 saat |
-| 5 | 3. uygulama durağına kadar okumayı sürdürün (3B sahneyle disk yöntemi ve uzmanla uyum); etkileşimli labın C ve D bölümlerini yapın | 45 dakika | 45 dakika |
+| 5 | 3. uygulama durağına kadar okumayı sürdürün (3B sahneyle Simpson yöntemiyle otomatik EF ve uzmanla uyum); etkileşimli labın C ve D bölümlerini yapın | 45 dakika | 45 dakika |
 | 6 | 3. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 3'ü, Python yolunda 8. ve 9. bölümleri çalışın | 25 dakika | 50 dakika |
-| 7 | Klinik doğrulama planını, ölçüm hattı denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü okuyun; etkileşimli labın E ve F bölümlerini yapın. Python yolunu izliyorsanız 10. bölümü de çalışın | 45 dakika | 1 saat |
+| 7 | Klinik validasyon planını, ölçüm hattı denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü okuyun; etkileşimli labın E ve F bölümlerini yapın. Python yolunu izliyorsanız 10. bölümü de çalışın | 45 dakika | 1 saat |
 | 8 | Etkileşimli labın "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
-| | **Haftalık proje dışında toplam** | **4 saat 40 dakika** | **6 saat 40 dakika** |
+| | **Haftalık proje dışında toplam** | **4 saat 55 dakika** | **7 saat 5 dakika** |
 | 9 | Haftalık projeyi iki yoldan biriyle tamamlayın | 3 saat | 3 saat |
 
 ## Oturumun eğitim akışı
@@ -77,19 +77,21 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 | Süre | Etkinlik |
 |---|---|
 | 0:00-0:15 | Haftanın vakası olan CAMUS'un 201 numaralı hastası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm, eksikse 3. haftanın ACDC dosyalarını, Human Heart Project'in açık veri tabanından CAMUS'un 300 hastasını (yaklaşık 227 MB) ve EfficientNet-B0'ın ImageNet ağırlıklarını (yaklaşık 21 MB) indirir. |
-| 0:15-0:50 | Ana rotada transfer öğrenme anlatılır: Bir ağın fotoğraflardan neler öğrendiği, öznitelik çıkarımı ve ince ayar ele alınır. Ardından etkileşimli labın A bölümüyle az sayıda etiketli hastayla öğrenme çalışılır. |
-| 0:50-1:30 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar iki gruba ayrılır: Prompt yolunu izleyenler ve Python yolunu izleyenler. İki grup da ACDC'nin kardiyomiyopati gruplarını, her gruptan 15 etiketli hastayla önce öznitelik çıkarımıyla, sonra ince ayarla öğrenir. Ardından her gruptan yalnızca beş hasta bırakılır ve sonucun seçilen hastalara ne kadar bağlı olduğu görülür. |
-| 1:30-1:45 | Ara. |
-| 1:45-2:20 | Ana rotada segmentasyon, yani her piksele bir etiket verilmesi anlatılır. B bölümüyle Dice katsayısı çalışılır ve CAMUS ekokardiyogramlarında U-Net tanıtılır. |
-| 2:20-2:50 | 2. uygulama durağı: U-Net yaklaşık üç dakikada eğitilir ve ağın çizdiği sınırlar 50 test hastasında görüntüye ve faza göre değerlendirilir. |
-| 2:50-3:35 | Ana rotada disk yöntemi 3B sahneyle ve C bölümüyle, uzmanla uyum ise D bölümüyle çalışılır. Ardından 3. uygulama durağında 201 numaralı hastanın ve 50 test hastasının ejeksiyon fraksiyonu ölçülür. |
-| 3:35-4:00 | Otomatik bir ölçümün klinik doğrulamasının nasıl planlanacağı anlatılır; etkileşimli labın E ve F bölümleriyle bir ölçüm hattının denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin eko ölçümü, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
+| 0:15-0:55 | İlk iki saat, transfer learning prensipleri: ImageNet ön eğitimli EfficientNet ve DenseNet modelleri, öznitelik çıkarımı ya da ince ayar, son katmanların kardiyak hedefler için değiştirilmesi ve etkileşimli labın A bölümüyle az veriyle yüksek başarıya ulaşmanın yolları çalışılır. |
+| 0:55-1:50 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır ve EfficientNet-B0 ile az sayıda etiketli görüntüden kardiyomiyopati sınıflandırması yapar. ACDC'nin grupları her gruptan 15 etiketli hastayla öznitelik çıkarımı ve ince ayarla, ardından yalnızca beş hastayla öğrenilir; Python yolunda 4. bölüm yöntemi CAMUS ekokardiyogramlarında tekrarlar. |
+| 1:50-2:00 | Ara. |
+| 2:00-2:35 | Son iki saat, segmentasyon ve ölçüm otomasyonu: Kardiyak segmentasyon için U-Net mimarisi anlatılır; B bölümüyle Dice katsayısı kullanılarak piksel düzeyinde segmentasyon eğitimi çalışılır. |
+| 2:35-3:05 | 2. uygulama durağı: U-Net yaklaşık üç dakikada eğitilir ve ağın çizdiği sınırlar 50 test hastasında görüntüye ve faza göre değerlendirilir. |
+| 3:05-3:40 | Simpson yöntemiyle sol ventrikül EF'sinin otomatik ölçümü 3B sahneyle ve C bölümüyle, klinik validasyon metodolojisi ise D bölümündeki uzmanla uyum üzerinden çalışılır. Ardından 3. uygulama durağında 201 numaralı hastanın ve 50 test hastasının EF'si ölçülür. |
+| 3:40-4:00 | Klinik validasyon planı anlatılır; etkileşimli labın E ve F bölümleriyle bir ölçüm hattının denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin eko ölçümü, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Haftalık proje
 
+**Proje.** CAMUS veri seti ile sol ventrikül segmentasyonu + EF otomatik hesaplama.
+
 **Ne yapılacak?** CAMUS ekokardiyogramlarında sol ventrikülün sınırlarını çizin, ejeksiyon fraksiyonunu otomatik olarak ölçün ve bu ölçümü bir ekokardiyografi laboratuvarının yapacağı gibi değerlendirin. Önce dersin U-Net'ini 200 eğitim hastasıyla eğitin; en iyi epoch'u seçmek için 50 doğrulama hastasını kullanın. Ardından 200 test karesinin Dice katsayısını görüntüye, faza ve görüntü kalitesine göre bildirin. İkinci adımda 50 test hastasının diyastol sonu hacmini (EDV), sistol sonu hacmini (ESV) ve ejeksiyon fraksiyonunu (EF) ağın sınırlarından biplan disk yöntemiyle hesaplayın; üç ölçümün her birini Bland-Altman analiziyle uzmanın ölçümüyle karşılaştırın. Üçüncü adımda ağın ve uzmanın EF değerlerini üç aralığa ayırarak bir çapraz tabloda karşılaştırın; bu aralıklar yüzde 40 ve altı, yüzde 41-49 ile yüzde 50 ve üzeridir. Son olarak EF hatası en büyük üç hastayı uzmanın ve ağın dört sınırıyla birlikte gösterin. Bu ölçüm bir laboratuvarda kullanılmadan önce dış doğrulamasının nasıl planlanması gerektiğini de yarım sayfada yazın.
 
-**Nereye bakılacak?** Ders: "Segmentasyon: Her piksel için bir etiket", "CAMUS ekokardiyogramlarında bir U-Net", "Disk yöntemiyle ejeksiyon fraksiyonu", "Uzmanla uyum: Bland-Altman" ve "Otomatik bir ölçümün klinik doğrulamasını planlamak" bölümleri. Etkileşimli lab: B, C ve D bölümleri. Jupyter defteri: Kısım 1, 2. ve 3. duraklar ya da Kısım 2, 5-9. bölümler.
+**Nereye bakılacak?** Ders: "U-Net mimarisi: Kardiyak segmentasyon", "Pixel-wise segmentasyon eğitimi", "Sol ventrikül EF otomatik ölçümü (Simpson)" ve "Klinik validasyon metodolojisi" bölümleri. Etkileşimli lab: B, C ve D bölümleri. Jupyter defteri: Kısım 1, 2. ve 3. duraklar ya da Kısım 2, 5-9. bölümler.
 
 **Prompt yolu.** Proje, [prompt kütüphanesindeki](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-04/PROMPTLAR.md#haftal%C4%B1k-projenin-prompt-yolu) dört promptla da tamamlanabilir; her adım için bir prompt vardır. Jupyter defterinin 1. kısmının sonundaki "Prompt yolunda haftalık proje" bölümü her promptun tablosunu hazırlar. Bir promptun testi sağlanmadan sonraki prompta geçilmez.
 

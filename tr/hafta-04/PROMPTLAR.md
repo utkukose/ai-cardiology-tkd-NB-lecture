@@ -10,9 +10,9 @@ Bu kütüphanede, 4. haftanın prompt (istem) yolundaki, yani Jupyter defterinin
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
-2. [Durak 1: Fotoğraflarla eğitilmiş bir ağla az hastadan öğrenmek](#durak-1-fotoğraflarla-eğitilmiş-bir-ağla-az-hastadan-öğrenmek)
-3. [Durak 2: CAMUS ekokardiyogramlarında bir U-Net](#durak-2-camus-ekokardiyogramlarında-bir-u-net)
-4. [Durak 3: Disk yöntemiyle ejeksiyon fraksiyonu](#durak-3-disk-yöntemiyle-ejeksiyon-fraksiyonu)
+2. [Durak 1: Mini proje: EfficientNet-B0 ile az sayıda etiketli görüntüden KMP sınıflandırma](#durak-1-mini-proje-efficientnet-b0-ile-az-sayıda-etiketli-görüntüden-kmp-sınıflandırma)
+3. [Durak 2: Pixel-wise segmentasyon eğitimi: CAMUS'ta bir U-Net](#durak-2-pixel-wise-segmentasyon-eğitimi-camusta-bir-u-net)
+4. [Durak 3: Simpson yöntemiyle otomatik EF ve uzmanla uyum](#durak-3-simpson-yöntemiyle-otomatik-ef-ve-uzmanla-uyum)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
 6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
 
@@ -28,7 +28,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 | 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-## Durak 1: Fotoğraflarla eğitilmiş bir ağla az hastadan öğrenmek
+## Durak 1: Mini proje: EfficientNet-B0 ile az sayıda etiketli görüntüden KMP sınıflandırma
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 4, 1-4. bölümler*
 
@@ -132,7 +132,7 @@ Test: Her seçimde, her gruptan beşer olmak üzere 15 farklı hasta bulunmalı.
 
 **Beklenen sonuç:** "cevap" = 0,62
 
-## Durak 2: CAMUS ekokardiyogramlarında bir U-Net
+## Durak 2: Pixel-wise segmentasyon eğitimi: CAMUS'ta bir U-Net
 
 *[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-2) · Python yolunda aynı sonuç: 5-7. bölümler*
 
@@ -232,7 +232,7 @@ Dice katsayısına eşit olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,908
 
-## Durak 3: Disk yöntemiyle ejeksiyon fraksiyonu
+## Durak 3: Simpson yöntemiyle otomatik EF ve uzmanla uyum
 
 *[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-3) · Python yolunda aynı sonuç: 8. ve 9. bölümler*
 

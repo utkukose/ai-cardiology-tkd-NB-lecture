@@ -859,6 +859,111 @@
     ]
   },
   {
+    "key": "brugada2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Brugada",
+        "given": "J."
+      },
+      {
+        "family": "Katritsis",
+        "given": "D. G."
+      },
+      {
+        "family": "Arbelo",
+        "given": "E."
+      },
+      {
+        "family": "Arribas",
+        "given": "F."
+      },
+      {
+        "family": "Bax",
+        "given": "J. J."
+      },
+      {
+        "family": "Blomström-Lundqvist",
+        "given": "C."
+      },
+      {
+        "family": "Calkins",
+        "given": "H."
+      },
+      {
+        "family": "Corrado",
+        "given": "D."
+      },
+      {
+        "family": "Deftereos",
+        "given": "S. G."
+      },
+      {
+        "family": "Diller",
+        "given": "G.-P."
+      },
+      {
+        "family": "Gomez-Doblas",
+        "given": "J. J."
+      },
+      {
+        "family": "Gorenek",
+        "given": "B."
+      },
+      {
+        "family": "Grace",
+        "given": "A."
+      },
+      {
+        "family": "Ho",
+        "given": "S. Y."
+      },
+      {
+        "family": "Kaski",
+        "given": "J.-C."
+      },
+      {
+        "family": "Kuck",
+        "given": "K.-H."
+      },
+      {
+        "family": "Lambiase",
+        "given": "P. D."
+      },
+      {
+        "family": "Sacher",
+        "given": "F."
+      },
+      {
+        "family": "Sarquella-Brugada",
+        "given": "G."
+      },
+      {
+        "family": "Suwalski",
+        "given": "P."
+      },
+      {
+        "family": "Zaza",
+        "given": "A."
+      },
+      {
+        "literal": "ESC Scientific Document Group"
+      }
+    ],
+    "year": "2020",
+    "title": "2019 ESC Guidelines for the management of patients with supraventricular tachycardia. The Task Force for the management of patients with supraventricular tachycardia of the European Society of Cardiology (ESC)",
+    "container": "European Heart Journal",
+    "volume": "41",
+    "issue": "5",
+    "pages": "655–720",
+    "doi": "10.1093/eurheartj/ehz467",
+    "url": "https://doi.org/10.1093/eurheartj/ehz467",
+    "apa": "Brugada, J., Katritsis, D. G., Arbelo, E., Arribas, F., Bax, J. J., Blomström-Lundqvist, C., Calkins, H., Corrado, D., Deftereos, S. G., Diller, G.-P., Gomez-Doblas, J. J., Gorenek, B., Grace, A., Ho, S. Y., Kaski, J.-C., Kuck, K.-H., Lambiase, P. D., Sacher, F., Sarquella-Brugada, G., Suwalski, P., Zaza, A., & ESC Scientific Document Group. (2020). 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. The Task Force for the management of patients with supraventricular tachycardia of the European Society of Cardiology (ESC). *European Heart Journal, 41*(5), 655–720. https://doi.org/10.1093/eurheartj/ehz467",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "byrne2023",
     "type": "article",
     "authors": [
@@ -1713,6 +1818,27 @@
     ]
   },
   {
+    "key": "cordis2026qoh",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "European Commission"
+      }
+    ],
+    "year": "2026",
+    "title": "The AI-enabled diagnostic already improving cardiovascular care",
+    "container": "CORDIS: EU research results",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://cordis.europa.eu/article/id/468359-the-ai-enabled-diagnostic-already-improving-cardiovascular-care",
+    "apa": "European Commission. (2026). The AI-enabled diagnostic already improving cardiovascular care. In *CORDIS: EU research results*. Publications Office of the European Union. https://cordis.europa.eu/article/id/468359-the-ai-enabled-diagnostic-already-improving-cardiovascular-care",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "finlayson2021",
     "type": "article",
     "authors": [
@@ -1782,6 +1908,36 @@
     "apa": "Fridericia, L. S. (1920). Die Systolendauer im Elektrokardiogramm bei normalen Menschen und bei Herzkranken. *Acta Medica Scandinavica, 53*(1), 469–486. https://doi.org/10.1111/j.0954-6820.1920.tb18266.x",
     "used_in": [
       "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
+    "key": "gers2000",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Gers",
+        "given": "F. A."
+      },
+      {
+        "family": "Schmidhuber",
+        "given": "J."
+      },
+      {
+        "family": "Cummins",
+        "given": "F."
+      }
+    ],
+    "year": "2000",
+    "title": "Learning to forget: Continual prediction with LSTM",
+    "container": "Neural Computation",
+    "volume": "12",
+    "issue": "10",
+    "pages": "2451–2471",
+    "doi": "10.1162/089976600300015015",
+    "url": "https://doi.org/10.1162/089976600300015015",
+    "apa": "Gers, F. A., Schmidhuber, J., & Cummins, F. (2000). Learning to forget: Continual prediction with LSTM. *Neural Computation, 12*(10), 2451–2471. https://doi.org/10.1162/089976600300015015",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -2391,6 +2547,40 @@
     "apa": "Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. *Neural Computation, 9*(8), 1735–1780. https://doi.org/10.1162/neco.1997.9.8.1735",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "huang2017",
+    "type": "proceedings",
+    "authors": [
+      {
+        "family": "Huang",
+        "given": "G."
+      },
+      {
+        "family": "Liu",
+        "given": "Z."
+      },
+      {
+        "family": "van der Maaten",
+        "given": "L."
+      },
+      {
+        "family": "Weinberger",
+        "given": "K. Q."
+      }
+    ],
+    "year": "2017",
+    "title": "Densely connected convolutional networks",
+    "container": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "volume": "",
+    "issue": "",
+    "pages": "2261–2269",
+    "doi": "10.1109/CVPR.2017.243",
+    "url": "https://doi.org/10.1109/CVPR.2017.243",
+    "apa": "Huang, G., Liu, Z., van der Maaten, L., & Weinberger, K. Q. (2017). Densely connected convolutional networks. In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)* (pp. 2261–2269). https://doi.org/10.1109/CVPR.2017.243",
+    "used_in": [
+      "Week 4: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -3584,6 +3774,72 @@
     "apa": "LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. *Nature, 521*(7553), 436–444. https://doi.org/10.1038/nature14539",
     "used_in": [
       "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "liu2018",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Liu",
+        "given": "F."
+      },
+      {
+        "family": "Liu",
+        "given": "C."
+      },
+      {
+        "family": "Zhao",
+        "given": "L."
+      },
+      {
+        "family": "Zhang",
+        "given": "X."
+      },
+      {
+        "family": "Wu",
+        "given": "X."
+      },
+      {
+        "family": "Xu",
+        "given": "X."
+      },
+      {
+        "family": "Liu",
+        "given": "Y."
+      },
+      {
+        "family": "Ma",
+        "given": "C."
+      },
+      {
+        "family": "Wei",
+        "given": "S."
+      },
+      {
+        "family": "He",
+        "given": "Z."
+      },
+      {
+        "family": "Li",
+        "given": "J."
+      },
+      {
+        "family": "Ng",
+        "given": "E. Y. K."
+      }
+    ],
+    "year": "2018",
+    "title": "An open access database for evaluating the algorithms of electrocardiogram rhythm and morphology abnormality detection",
+    "container": "Journal of Medical Imaging and Health Informatics",
+    "volume": "8",
+    "issue": "7",
+    "pages": "1368–1373",
+    "doi": "10.1166/jmihi.2018.2442",
+    "url": "https://doi.org/10.1166/jmihi.2018.2442",
+    "apa": "Liu, F., Liu, C., Zhao, L., Zhang, X., Wu, X., Xu, X., Liu, Y., Ma, C., Wei, S., He, Z., Li, J., & Ng, E. Y. K. (2018). An open access database for evaluating the algorithms of electrocardiogram rhythm and morphology abnormality detection. *Journal of Medical Imaging and Health Informatics, 8*(7), 1368–1373. https://doi.org/10.1166/jmihi.2018.2442",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4847,6 +5103,80 @@
     "doi": "10.1056/NEJMoa1901183",
     "url": "https://doi.org/10.1056/NEJMoa1901183",
     "apa": "Perez, M. V., Mahaffey, K. W., Hedlin, H., Rumsfeld, J. S., Garcia, A., Ferris, T., Balasubramanian, V., Russo, A. M., Rajmane, A., Cheung, L., Hung, G., Lee, J., Kowey, P., Talati, N., Nag, D., Gummidipundi, S. E., Beatty, A., Hills, M. T., Desai, S., Granger, C. B., Desai, M., Turakhia, M. P., & Apple Heart Study Investigators. (2019). Large-scale assessment of a smartwatch to identify atrial fibrillation. *New England Journal of Medicine, 381*(20), 1909–1917. https://doi.org/10.1056/NEJMoa1901183",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "perezalday2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Perez Alday",
+        "given": "E. A."
+      },
+      {
+        "family": "Gu",
+        "given": "A."
+      },
+      {
+        "family": "Shah",
+        "given": "A. J."
+      },
+      {
+        "family": "Robichaux",
+        "given": "C."
+      },
+      {
+        "family": "Wong",
+        "given": "A.-K. I."
+      },
+      {
+        "family": "Liu",
+        "given": "C."
+      },
+      {
+        "family": "Liu",
+        "given": "F."
+      },
+      {
+        "family": "Bahrami Rad",
+        "given": "A."
+      },
+      {
+        "family": "Elola",
+        "given": "A."
+      },
+      {
+        "family": "Seyedi",
+        "given": "S."
+      },
+      {
+        "family": "Li",
+        "given": "Q."
+      },
+      {
+        "family": "Sharma",
+        "given": "A."
+      },
+      {
+        "family": "Clifford",
+        "given": "G. D."
+      },
+      {
+        "family": "Reyna",
+        "given": "M. A."
+      }
+    ],
+    "year": "2020",
+    "title": "Classification of 12-lead ECGs: The PhysioNet/Computing in Cardiology Challenge 2020",
+    "container": "Physiological Measurement",
+    "volume": "41",
+    "issue": "12",
+    "pages": "124003",
+    "doi": "10.1088/1361-6579/abc960",
+    "url": "https://doi.org/10.1088/1361-6579/abc960",
+    "apa": "Perez Alday, E. A., Gu, A., Shah, A. J., Robichaux, C., Wong, A.-K. I., Liu, C., Liu, F., Bahrami Rad, A., Elola, A., Seyedi, S., Li, Q., Sharma, A., Clifford, G. D., & Reyna, M. A. (2020). Classification of 12-lead ECGs: The PhysioNet/Computing in Cardiology Challenge 2020. *Physiological Measurement, 41*(12), 124003. https://doi.org/10.1088/1361-6579/abc960",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
     ]
@@ -6187,6 +6517,52 @@
     "doi": "10.1161/CIR.0000000000000617",
     "url": "https://doi.org/10.1161/CIR.0000000000000617",
     "apa": "Thygesen, K., Alpert, J. S., Jaffe, A. S., Chaitman, B. R., Bax, J. J., Morrow, D. A., White, H. D., & Executive Group on behalf of the Joint European Society of Cardiology (ESC)/American College of Cardiology (ACC)/American Heart Association (AHA)/World Heart Federation (WHF) Task Force for the Universal Definition of Myocardial Infarction. (2018). Fourth universal definition of myocardial infarction (2018). *Circulation, 138*(20), e618–e651. https://doi.org/10.1161/CIR.0000000000000617",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "tisdale2013",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Tisdale",
+        "given": "J. E."
+      },
+      {
+        "family": "Jaynes",
+        "given": "H. A."
+      },
+      {
+        "family": "Kingery",
+        "given": "J. R."
+      },
+      {
+        "family": "Mourad",
+        "given": "N. A."
+      },
+      {
+        "family": "Trujillo",
+        "given": "T. N."
+      },
+      {
+        "family": "Overholser",
+        "given": "B. R."
+      },
+      {
+        "family": "Kovacs",
+        "given": "R. J."
+      }
+    ],
+    "year": "2013",
+    "title": "Development and validation of a risk score to predict QT interval prolongation in hospitalized patients",
+    "container": "Circulation: Cardiovascular Quality and Outcomes",
+    "volume": "6",
+    "issue": "4",
+    "pages": "479–487",
+    "doi": "10.1161/CIRCOUTCOMES.113.000152",
+    "url": "https://doi.org/10.1161/CIRCOUTCOMES.113.000152",
+    "apa": "Tisdale, J. E., Jaynes, H. A., Kingery, J. R., Mourad, N. A., Trujillo, T. N., Overholser, B. R., & Kovacs, R. J. (2013). Development and validation of a risk score to predict QT interval prolongation in hospitalized patients. *Circulation: Cardiovascular Quality and Outcomes, 6*(4), 479–487. https://doi.org/10.1161/CIRCOUTCOMES.113.000152",
     "used_in": [
       "Week 5: lecture page and Jupyter notebook"
     ]

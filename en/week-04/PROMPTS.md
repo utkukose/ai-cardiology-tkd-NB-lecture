@@ -10,9 +10,9 @@ This library holds every prompt of the prompt path of Week 4, Part 1 of the Jupy
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
 1. [How a step works](#how-a-step-works)
-2. [Stop 1: Learning from few patients with a network trained on photographs](#stop-1-learning-from-few-patients-with-a-network-trained-on-photographs)
-3. [Stop 2: A U-Net on the echocardiograms of CAMUS](#stop-2-a-u-net-on-the-echocardiograms-of-camus)
-4. [Stop 3: The ejection fraction by the method of discs](#stop-3-the-ejection-fraction-by-the-method-of-discs)
+2. [Stop 1: Mini project: Cardiomyopathy from few labelled images with EfficientNet-B0](#stop-1-mini-project-cardiomyopathy-from-few-labelled-images-with-efficientnet-b0)
+3. [Stop 2: Pixel-wise segmentation training: a U-Net on CAMUS](#stop-2-pixel-wise-segmentation-training-a-u-net-on-camus)
+4. [Stop 3: Automatic EF with Simpson's method and the agreement with the expert](#stop-3-automatic-ef-with-simpsons-method-and-the-agreement-with-the-expert)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
 6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
 
@@ -28,7 +28,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
 | 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-## Stop 1: Learning from few patients with a network trained on photographs
+## Stop 1: Mini project: Cardiomyopathy from few labelled images with EfficientNet-B0
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-1) · The same result on the Python path: Python step 4, Sections 1 to 4*
 
@@ -133,7 +133,7 @@ Test: Every choice must hold 15 different patients, five of each group.
 
 **Expected result:** "answer" = 0.62
 
-## Stop 2: A U-Net on the echocardiograms of CAMUS
+## Stop 2: Pixel-wise segmentation training: a U-Net on CAMUS
 
 *[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-2) · The same result on the Python path: Sections 5 to 7*
 
@@ -233,7 +233,7 @@ mean Dice coefficient of all 200 frames.
 
 **Expected result:** "answer" = 0.908
 
-## Stop 3: The ejection fraction by the method of discs
+## Stop 3: Automatic EF with Simpson's method and the agreement with the expert
 
 *[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-3) · The same result on the Python path: Sections 8 and 9*
 

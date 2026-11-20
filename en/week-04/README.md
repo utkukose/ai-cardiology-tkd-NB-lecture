@@ -2,12 +2,12 @@
 
 <div align="center">
 
-# Week 4: Transfer learning
+# Week 4: Transfer learning: Adapting ready-made power to cardiology
 
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology
 
-*From networks trained on photographs to an automatic ejection fraction*
+*Bringing what was learned from millions of images to your clinic*
 
 [Course home](../../README.md) · [Syllabus](../../SYLLABUS.md) · [Setup](../../SETUP.md) · [Türkçe](../../tr/hafta-04/README.md)
 
@@ -15,7 +15,7 @@ Turkish Society of Cardiology
 
 ## About the week
 
-Networks trained on millions of everyday photographs are adapted to cardiac images: feature extraction, fine-tuning and learning from few labelled patients, with EfficientNet-B0 pretrained on ImageNet and the cine cardiac magnetic resonance examinations of ACDC from Week 3. The second half outlines the left ventricle on the apical two-chamber and four-chamber echocardiograms of the public CAMUS data set with a U-Net, measures the outlines with the Dice coefficient and computes the volumes and the ejection fraction with the biplane method of discs. The automatic measurement is compared with the expert's in a Bland-Altman analysis, its clinical validation is planned, and a measurement pipeline written by an AI assistant is reviewed.
+The first two hours adapt networks trained on millions of photographs to cardiac images: the models pretrained on ImageNet, EfficientNet and DenseNet, the choice between feature extraction and fine-tuning, the replacement of the last layers for cardiac targets and the ways to reach a high performance with little data. The mini project classifies cardiomyopathy from few labelled images with EfficientNet-B0, on the cine cardiac magnetic resonance of ACDC and on the echocardiograms of CAMUS. The last two hours turn images into measurements: the U-Net architecture for cardiac segmentation, pixel-wise segmentation training with the Dice coefficient, the automatic measurement of the left ventricular ejection fraction with Simpson's method of discs and the methodology of clinical validation with Bland-Altman analysis. The virtual clinic gains an automatic ejection fraction.
 
 4 hours in the session and about 3 hours for the weekly project.
 
@@ -25,10 +25,10 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 | Main route: lecture page and interactive lab | Practice stop | Prompt path (Part 1) | Python path (Part 2) |
 |---|---|---|---|
-| [Transfer learning: What a network learned from photographs](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#transfer-learning-what-a-network-learned-from-photographs)<br>[Learning from few labelled patients](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#learning-from-few-labelled-patients) | **[Stop 1: Learning from few patients with a network trained on photographs](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-1)** | Stop 1 | Python step 4 and Sections 1 to 4 |
-| [Segmentation: A label for every pixel](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#segmentation-a-label-for-every-pixel)<br>[A U-Net on the echocardiograms of CAMUS](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#a-u-net-on-the-echocardiograms-of-camus) | **[Stop 2: A U-Net on the echocardiograms of CAMUS](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-2)** | Stop 2 | Sections 5 to 7 |
-| [The ejection fraction by the method of discs](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#the-ejection-fraction-by-the-method-of-discs)<br>[Agreement with the expert: Bland-Altman](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#agreement-with-the-expert-bland-altman) | **[Stop 3: The ejection fraction by the method of discs](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-3)** | Stop 3 | Sections 8 and 9 |
-| [Planning the clinical validation of an automatic measurement](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#planning-the-clinical-validation-of-an-automatic-measurement)<br>[Working with an AI assistant, part 4: Reviewing a measurement pipeline](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#ai-pair-programming-part-4-reviewing-a-measurement-pipeline)<br>[The paper of the week](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#the-paper-of-the-week)<br>[The virtual clinic, stage 4: Automatic ejection fraction](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#the-virtual-clinic-stage-4-automatic-ejection-fraction) | The section on your own data, the paper of the week and the virtual clinic | – | – |
+| [First two hours: Principles of transfer learning](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#first-two-hours-principles-of-transfer-learning)<br>[Models pretrained on ImageNet (EfficientNet, DenseNet)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#transfer-learning-what-a-network-learned-from-photographs)<br>[Feature extraction or fine-tuning: When?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#feature-extraction-or-fine-tuning-when)<br>[Replacing the last layers for cardiac targets](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#replacing-the-last-layers-for-cardiac-targets)<br>[How to reach high performance with little data](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#learning-from-few-labelled-patients)<br>[Mini project: Classifying cardiomyopathy from few labelled echocardiography images with EfficientNet-B0](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#mini-project-classifying-cardiomyopathy-from-few-labelled-echocardiography-images-with-efficientnet-b0) | **[Stop 1: Mini project: Cardiomyopathy from few labelled images with EfficientNet-B0](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-1)** | Stop 1 | Python step 4 and Sections 1 to 4 |
+| [Last two hours: Segmentation and measurement automation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#last-two-hours-segmentation-and-measurement-automation)<br>[The U-Net architecture: Cardiac segmentation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#segmentation-a-label-for-every-pixel)<br>[Pixel-wise segmentation training](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#pixel-wise-segmentation-training)<br>– [A U-Net on the echocardiograms of CAMUS](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#a-u-net-on-the-echocardiograms-of-camus) | **[Stop 2: Pixel-wise segmentation training: a U-Net on CAMUS](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-2)** | Stop 2 | Sections 5 to 7 |
+| [Automatic measurement of the left ventricular EF (Simpson)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#the-ejection-fraction-by-the-method-of-discs)<br>[Clinical validation methodology](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#clinical-validation-methodology)<br>– [Agreement with the expert: Bland-Altman](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#agreement-with-the-expert-bland-altman) | **[Stop 3: Automatic EF with Simpson's method and the agreement with the expert](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-3)** | Stop 3 | Sections 8 and 9 |
+| – [Planning the clinical validation of an automatic measurement](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#planning-the-clinical-validation-of-an-automatic-measurement)<br>[Working with an AI assistant, part 4: Reviewing a measurement pipeline](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#ai-pair-programming-part-4-reviewing-a-measurement-pipeline)<br>[The paper of the week](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#the-paper-of-the-week)<br>[The virtual clinic, stage 4: Automatic ejection fraction](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#the-virtual-clinic-stage-4-automatic-ejection-fraction) | The section on your own data, the paper of the week and the virtual clinic | – | – |
 
 ## Materials
 
@@ -53,7 +53,7 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 ## Learning outcomes
 
-By the end of the week, participants are expected to explain what a network learns from a large collection of photographs and how its features are reused for cardiac images, by feature extraction or by fine-tuning. They should be able to adapt a pretrained network to a few labelled patients and to compare it fairly with networks trained from random weights. They should be able to describe segmentation as a label for every pixel, to train a small U-Net on echocardiograms and to measure its outlines with the Dice coefficient by view and phase. Finally, they should be able to compute volumes and the ejection fraction with the biplane method of discs, to judge the agreement of an automatic measurement with the expert in a Bland-Altman analysis and to plan its clinical validation.
+By the end of the week, participants are expected to explain what a network learns from a large collection of photographs, to compare the models pretrained on ImageNet, EfficientNet, DenseNet and ResNet, and to decide between feature extraction and fine-tuning for a given number of patients. They should be able to replace the last layers of a pretrained network for a cardiac target, to adapt its input to grey-scale images, and to compare methods fairly with several draws of few labelled patients. They should be able to explain the U-Net architecture, to train a segmentation network pixel by pixel with the cross-entropy and the Dice loss, and to measure its outlines with the Dice coefficient. Finally, they should be able to compute the volumes and the ejection fraction with Simpson's method of discs, to judge an automatic measurement with a Bland-Altman analysis and to plan its clinical validation.
 
 ## Study path
 
@@ -61,15 +61,15 @@ Participants who attend the session complete the main route and the practice sto
 
 | Step | Activity | Prompt path | Python path |
 |---|---|---|---|
-| 1 | Read the case of the week and the lecture page up to Practice stop 1, with Part A of the interactive lab and the knowledge checks | 45 minutes | 45 minutes |
-| 2 | Practice stop 1, the mini project of the session: Part 1, Stop 1 on the prompt path, or Python step 4 and Sections 1 to 4 on the Python path | 30 minutes | 1 hour 20 minutes |
-| 3 | Read on up to Practice stop 2: segmentation, the Dice coefficient and the U-Net on CAMUS, with Part B of the interactive lab | 40 minutes | 40 minutes |
+| 1 | Read the case of the week and the first two hours of the lecture page up to Practice stop 1: models pretrained on ImageNet, feature extraction or fine-tuning, new last layers, little data and the mini project, with Part A of the interactive lab and the knowledge checks | 1 hour | 1 hour |
+| 2 | Practice stop 1, the mini project of the session: Part 1, Stop 1 on the prompt path, or Python step 4 and Sections 1 to 4 on the Python path, with the echocardiography part of Section 4 | 30 minutes | 1 hour 30 minutes |
+| 3 | Read on up to Practice stop 2: the U-Net architecture and pixel-wise segmentation training on CAMUS, with Part B of the interactive lab | 40 minutes | 40 minutes |
 | 4 | Practice stop 2: Part 1, Stop 2, or Sections 5 to 7 | 30 minutes | 1 hour |
-| 5 | Read on up to Practice stop 3: the method of discs with the 3D scene, and the agreement with the expert, with Parts C and D of the interactive lab | 45 minutes | 45 minutes |
+| 5 | Read on up to Practice stop 3: the automatic EF by Simpson's method with the 3D scene, and the agreement with the expert, with Parts C and D of the interactive lab | 45 minutes | 45 minutes |
 | 6 | Practice stop 3: Part 1, Stop 3, or Sections 8 and 9 | 25 minutes | 50 minutes |
 | 7 | Read the plan of a clinical validation, the review of a measurement pipeline with Parts E and F of the interactive lab, the paper of the week, the stage of the virtual clinic and the section on your own data; on the Python path, Section 10 as well | 45 minutes | 1 hour |
 | 8 | Take the self-assessment of the interactive lab (tab: Check yourself), write the reflection and export the learning log | 20 minutes | 20 minutes |
-| | **Total without the weekly project** | **4 hours 40 minutes** | **6 hours 40 minutes** |
+| | **Total without the weekly project** | **4 hours 55 minutes** | **7 hours 5 minutes** |
 | 9 | Complete the weekly project, on either path | 3 hours | 3 hours |
 
 ## Training flow of the session
@@ -79,19 +79,21 @@ The four-hour session of the week follows the plan below. It is shared to show h
 | Time | Activity |
 |---|---|
 | 0:00 to 0:15 | The case of the week, patient 201 of CAMUS, and the route of the week. Every participant opens the notebook in Google Colab or in Jupyter and runs Section 0. It downloads the ACDC files of Week 3 if they are missing, 300 patients of CAMUS, about 227 MB, from the public database of the Human Heart Project, and the ImageNet weights of EfficientNet-B0, about 21 MB. |
-| 0:15 to 0:50 | Main route: transfer learning, what a network learns from photographs, feature extraction and fine-tuning, and learning from few labelled patients with Part A of the interactive lab. |
-| 0:50 to 1:30 | Mini project of the session, Practice stop 1, in two groups, the prompt path and the Python path: The cardiomyopathy groups of ACDC are learned from 15 labelled patients per group, by feature extraction and by fine-tuning, and finally from only five patients per group. |
-| 1:30 to 1:45 | Break. |
-| 1:45 to 2:20 | Main route: segmentation as a label for every pixel, the Dice coefficient with Part B, and the U-Net on the echocardiograms of CAMUS. |
-| 2:20 to 2:50 | Practice stop 2: The U-Net is trained in about three minutes and its outlines are measured on the 50 test patients, by view and by phase. |
-| 2:50 to 3:35 | Main route: the method of discs in the 3D scene and Part C, the agreement with the expert in Part D. Practice stop 3: the ejection fraction of patient 201 and of the 50 test patients. |
-| 3:35 to 4:00 | The plan of a clinical validation, the review of a measurement pipeline with Parts E and F, the paper of the week, the echo measurement of the virtual clinic, the section on your own data and the weekly project. |
+| 0:15 to 0:55 | First two hours, principles of transfer learning: models pretrained on ImageNet, EfficientNet and DenseNet, feature extraction or fine-tuning, replacing the last layers for cardiac targets, and how to reach a high performance with little data with Part A of the interactive lab. |
+| 0:55 to 1:50 | Mini project of the session, Practice stop 1, in two groups, the prompt path and the Python path: cardiomyopathy from few labelled images with EfficientNet-B0. The groups of ACDC are learned from 15 labelled patients per group, by feature extraction and by fine-tuning, and from only five; on the Python path, Section 4 repeats the method on the echocardiograms of CAMUS. |
+| 1:50 to 2:00 | Break. |
+| 2:00 to 2:35 | Last two hours, segmentation and measurement automation: the U-Net architecture for cardiac segmentation, and pixel-wise segmentation training with the Dice coefficient in Part B. |
+| 2:35 to 3:05 | Practice stop 2: The U-Net is trained in about three minutes and its outlines are measured on the 50 test patients, by view and by phase. |
+| 3:05 to 3:40 | The automatic measurement of the left ventricular EF with Simpson's method in the 3D scene and Part C, and the clinical validation methodology with the agreement with the expert in Part D. Practice stop 3: the EF of patient 201 and of the 50 test patients. |
+| 3:40 to 4:00 | The plan of a clinical validation, the review of a measurement pipeline with Parts E and F, the paper of the week, the echo measurement of the virtual clinic, the section on your own data and the weekly project. |
 
 ## Weekly project
 
+**Project.** Left ventricular segmentation with the CAMUS data set and automatic calculation of the EF.
+
 **What to do.** Outline the left ventricle on the echocardiograms of CAMUS, measure the ejection fraction automatically and judge the measurement as an echocardiography laboratory would. First, train the U-Net of the course on the 200 training patients, with the 50 validation patients for the choice of the epoch, and report the Dice coefficient of the 200 test frames by view, by phase and by image quality. Second, compute the end-diastolic volume (EDV), the end-systolic volume (ESV) and the ejection fraction (EF) of the 50 test patients from the outlines of the network with the biplane method of discs, and compare each of the three with the expert in a Bland-Altman analysis. Third, cross-tabulate the EF of the network and of the expert in three ranges: 40 percent or less, 41 to 49 percent and 50 percent or more. Fourth, show the three patients with the largest errors of the EF, with the four outlines of the expert and of the network, and write in half a page how the external validation of this measurement should be planned before its use in a laboratory.
 
-**Where to look.** Lecture: sections "Segmentation: A label for every pixel", "A U-Net on the echocardiograms of CAMUS", "The ejection fraction by the method of discs", "Agreement with the expert: Bland-Altman" and "Planning the clinical validation of an automatic measurement". Interactive lab: Parts B, C and D. Jupyter notebook: Part 1, Stops 2 and 3, or Part 2, Sections 5 to 9.
+**Where to look.** Lecture: sections "The U-Net architecture: Cardiac segmentation", "Pixel-wise segmentation training", "Automatic measurement of the left ventricular EF (Simpson)" and "Clinical validation methodology". Interactive lab: Parts B, C and D. Jupyter notebook: Part 1, Stops 2 and 3, or Part 2, Sections 5 to 9.
 
 **Prompt path.** The project can also be built with four prompts, one for each step, from the [prompt library](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-04/PROMPTS.md#prompt-path-of-the-weekly-project). The section "Weekly project on the prompt path" at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The test of each prompt must hold before the next prompt is used.
 
