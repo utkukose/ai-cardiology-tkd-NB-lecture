@@ -108,7 +108,7 @@ The plan follows the program of the Turkish Society of Cardiology. Each week is 
 | 3 | [Deep learning and CNN fundamentals](en/week-03/README.md) | Imaging laboratory | Cardiac MRI, ACDC data set: Automatic classification of dilated and hypertrophic cardiomyopathy |
 | 4 | [Transfer learning: Adapting ready-made power to cardiology](en/week-04/README.md) | Echo measurement: Automatic ejection fraction | Left ventricular segmentation with the CAMUS data set and automatic calculation of the EF |
 | 5 | [Time series analysis and ECG artificial intelligence](en/week-05/README.md) | Rhythm and STEMI alarm | STEMI alarm system: Automatic detection of ST deviation from AMI ECGs (PTB-XL) |
-| 6 | [Natural language processing and clinical text mining](en/week-06/README.md) | Report archive: Clinical text | A pipeline that extracts the degree of stenosis and the vessel from angiography reports |
+| 6 | [NLP and clinical text mining](en/week-06/README.md) | Report archive: Clinical text | Cardiac angiography report NLP pipeline: Automatic extraction of the degree of stenosis and the affected vessel |
 | 7 | [Vision transformers](en/week-07/README.md) | Catheterisation laboratory | Detection of stenosis on coronary angiograms: Convolutional network, vision transformer and hybrid compared |
 | 8 | [Multimodal artificial intelligence and data fusion](en/week-08/README.md) | Heart team: Data fusion | Prediction of major adverse cardiovascular events (MACE) in a simulated triage |
 | 9 | [Model reliability and explainable artificial intelligence](en/week-09/README.md) | Quality and safety committee: XAI | Grad-CAM maps of the echo model compared with the reading of an expert |

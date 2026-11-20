@@ -11,7 +11,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Epikrizlerden altı tanı: Kurallar ve bir model](#durak-1-epikrizlerden-altı-tanı-kurallar-ve-bir-model)
-3. [Durak 2: Önceden eğitilmiş Türkçe bir modelle varlıklar](#durak-2-önceden-eğitilmiş-türkçe-bir-modelle-varlıklar)
+3. [Durak 2: Mini proje: NER pipeline ile STEMI, AF ve kalp yetersizliği](#durak-2-mini-proje-ner-pipeline-ile-stemi-af-ve-kalp-yetersizliği)
 4. [Durak 3: Anjiyografi raporları: Darlık derecesi ve damar](#durak-3-anjiyografi-raporları-darlık-derecesi-ve-damar)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
 6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
@@ -32,7 +32,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 6, 1-5. bölümler*
 
-Bu durak oturumun mini projesidir. Altı kronik tanı sanal kliniğin epikrizlerinden okunur: Önce tanıların kelimeleri aranır, sonra her geçişin durumu belirlenir, ardından ilaçlar ve iki laboratuvar değeri eklenir; son olarak eğitim epikrizlerinden öğrenen bir model kurulur. Her yöntem A hastanesinin test kümesinde, model ayrıca B hastanesinin epikrizlerinde değerlendirilir.
+Altı kronik tanı sanal kliniğin epikrizlerinden okunur: Önce tanıların kelimeleri aranır, sonra her geçişin durumu belirlenir, ardından ilaçlar ve iki laboratuvar değeri eklenir; son olarak eğitim epikrizlerinden öğrenen bir model kurulur. Her yöntem A hastanesinin test kümesinde, model ayrıca B hastanesinin epikrizlerinde değerlendirilir.
 
 ### Adım 1.1: Bir anahtar kelime kuralı
 
@@ -196,11 +196,11 @@ test epikrizlerindeki makro F1 değeri 0,9'un üstünde olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,708
 
-## Durak 2: Önceden eğitilmiş Türkçe bir modelle varlıklar
+## Durak 2: Mini proje: NER pipeline ile STEMI, AF ve kalp yetersizliği
 
 *[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-2) · Python yolunda aynı sonuç: 6-8. bölümler*
 
-Burada epikrizleri Hugging Face Hub'dan alınan, önceden eğitilmiş Türkçe bir dil modeli okur. Modelin tokenizer'ı önce B hastanesinin büyük harflerinin bir modele ne yaptığını gösterir. Model ardından tanıları, ilaçları ve işlemleri bulmak için ince ayarla eğitilir; bulduğu varlıklar, 1. duraktaki durum kuralı ve ilaçlarla birlikte B hastanesinin epikrizlerindeki altı tanıyı verir.
+Bu durak oturumun mini projesidir. Burada epikrizleri Hugging Face Hub'dan alınan, önceden eğitilmiş Türkçe bir dil modeli okur. Modelin tokenizer'ı önce B hastanesinin büyük harflerinin bir modele ne yaptığını gösterir. Model ardından tanıları, ilaçları ve işlemleri bulmak için ince ayarla eğitilir; bulduğu varlıklar, 1. duraktaki durum kuralı ve ilaçlarla birlikte B hastanesinin epikrizlerindeki altı tanıyı verir. Son adım, epikrizlerdeki akut koroner sendromdan ve ST yükselmesinden okunan STEMI'yi ekler.
 
 ### Adım 2.1: Önceden eğitilmiş Türkçe bir modelin token'ları
 
@@ -304,6 +304,37 @@ gelebilen kronik böbrek hastalığı ve diyabet dışında her tanı için nega
 ```
 
 **Beklenen sonuç:** "cevap" = 0,754
+
+### Adım 2.4: Seyirden ve EKG'den STEMI
+
+**Amaç.** Bu adımda epikrizlerin akut koroner sendrom ve ST segmenti hakkında yazdıklarından STEMI geçiren hastalar bulunur ve sonuç iki hastanede değerlendirilir.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+çalıştıracağım.
+Bağlam: İki hastanenin epikrizlerinde ST yükselmeli miyokard enfarktüsü geçiren hastaları bulmak ve
+basit bir kuralın onları ne kadar güvenilir biçimde bulduğunu öğrenmek istiyorum.
+Veri: Defterde "veri" adında bir tablo var; A hastanesinin test kümesine ait, tam cümlelerle
+yazılmış 600 epikrizi ve B hastanesine ait, kısa bir üslupla yazılmış 600 epikrizi, yani Türkçe
+yazılmış toplam 1.200 epikrizi tutar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya da
+"dış"), "epikriz" sütunu epikrizi verir; "STEMI" sütunu sanal kliniğin kayıt sistemi ST yükselmeli
+miyokard enfarktüsü kaydettiyse 1, kaydetmediyse 0'dır.
+Görev: Her epikrizi Türkçe kurallarına göre küçük harfe çevir: Önce I'yı ı, İ'yi i yap, ardından
+öteki harfleri küçült. Bir epikriz akut koroner sendromdan, yani "akut koroner sendrom" ifadesinden
+ya da tam kelime olarak "aks" kısaltmasından söz ediyorsa ve aynı cümlede ardından "dışlandı",
+"yok", "izlenmedi" ya da "saptanmadı" kelimelerinden biri gelmiyorsa, ayrıca "st yükselmesi"
+ifadesini de içeriyorsa ona STEMI de. Sonucu "STEMI" sütunuyla karşılaştır ve her küme için STEMI
+geçiren hasta sayısını, bulunan hasta sayısını, duyarlılığı, pozitif öngörü değerini ve F1 değerini
+hesapla.
+Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
+program kurmamalıdır.
+Çıktı: Her küme için bir satır ve bu değerleri içeren bir tablo yazdır; "test" kümesinin F1 değerini
+üç ondalık basamakla "cevap" adıyla sakla.
+Test: Her değer 0 ile 1 arasında olmalı ve her kümedeki STEMI geçiren hasta sayısı o kümedeki
+"STEMI" sütununun toplamına eşit olmalı.
+```
+
+**Beklenen sonuç:** "cevap" = 1,0
 
 ## Durak 3: Anjiyografi raporları: Darlık derecesi ve damar
 

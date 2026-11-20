@@ -11,7 +11,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 1. [How a step works](#how-a-step-works)
 2. [Stop 1: Six diagnoses from discharge summaries: rules and a model](#stop-1-six-diagnoses-from-discharge-summaries-rules-and-a-model)
-3. [Stop 2: Entities with a pretrained Turkish model](#stop-2-entities-with-a-pretrained-turkish-model)
+3. [Stop 2: Mini project: STEMI, AF and heart failure with an NER pipeline](#stop-2-mini-project-stemi-af-and-heart-failure-with-an-ner-pipeline)
 4. [Stop 3: Angiography reports: the degree of stenosis and the vessel](#stop-3-angiography-reports-the-degree-of-stenosis-and-the-vessel)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
 6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
@@ -32,7 +32,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-1) · The same result on the Python path: Python step 6, Sections 1 to 5*
 
-This stop is the mini project of the session. The six chronic diagnoses are read from the discharge summaries of the virtual clinic, first by searching for their words, then with the assertion of every mention, then with the drugs and two laboratory values, and finally by a model that learns from the training summaries. Every method is judged on the test set of hospital A, and the model also on the summaries of hospital B.
+The six chronic diagnoses are read from the discharge summaries of the virtual clinic, first by searching for their words, then with the assertion of every mention, then with the drugs and two laboratory values, and finally by a model that learns from the training summaries. Every method is judged on the test set of hospital A, and the model also on the summaries of hospital B.
 
 ### Step 1.1: A keyword rule
 
@@ -196,11 +196,11 @@ summaries only, and the macro F1 on the test summaries must be above 0.9.
 
 **Expected result:** "answer" = 0.708
 
-## Stop 2: Entities with a pretrained Turkish model
+## Stop 2: Mini project: STEMI, AF and heart failure with an NER pipeline
 
 *[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-2) · The same result on the Python path: Sections 6 to 8*
 
-A pretrained Turkish language model from the Hugging Face Hub reads the summaries here. Its tokenizer shows first what the capital letters of hospital B do to a model. The model is then fine-tuned to find diagnoses, drugs and procedures, and its entities, with the assertion rule and the drugs of Stop 1, give the six diagnoses of the summaries of hospital B.
+This stop is the mini project of the session. A pretrained Turkish language model from the Hugging Face Hub reads the summaries here. Its tokenizer shows first what the capital letters of hospital B do to a model. The model is then fine-tuned to find diagnoses, drugs and procedures, and its entities, with the assertion rule and the drugs of Stop 1, give the six diagnoses of the summaries of hospital B. The last step adds STEMI, read from the acute coronary syndrome and the ST elevation of the summaries.
 
 ### Step 2.1: The tokens of a pretrained Turkish model
 
@@ -306,6 +306,36 @@ values.
 ```
 
 **Expected result:** "answer" = 0.754
+
+### Step 2.4: STEMI from the course and the ECG of a summary
+
+**Goal.** Find the patients with a STEMI from what the summaries write about the acute coronary syndrome and the ST segment, and judge the result on both hospitals.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to find the patients with an ST-elevation myocardial infarction in
+the discharge summaries of two hospitals and to know how reliably a simple rule finds them.
+Data: The notebook holds a table named "data" with the 1,200 discharge summaries of the test set of
+hospital A, 600 in full sentences, and of hospital B, 600 in a short style, written in Turkish. Each
+row is a patient: "set" gives the set ("test" or "external"), "summary" holds the discharge summary,
+and "STEMI" is 1 when the registry of the virtual clinic recorded an ST-elevation myocardial
+infarction and 0 otherwise.
+Task: Bring every summary to small letters by the Turkish rules: First turn I into ı and İ into i,
+then make the other letters small. Call a summary STEMI when it mentions an acute coronary syndrome,
+"akut koroner sendrom" or the abbreviation "aks" as a whole word, without one of the words
+"dışlandı", "yok", "izlenmedi" or "saptanmadı" after it in the same sentence, and when it also
+contains "st yükselmesi". Compare with the column "STEMI" and compute, for each set, the number of
+patients with STEMI, the number found, the sensitivity, the positive predictive value and the F1.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print a table with one row for each set and these values, and keep the F1 of the set "test",
+with three decimals, under the name "answer".
+Test: Every value must lie between 0 and 1, and the number of patients with STEMI of each set must
+equal the sum of the column "STEMI" in that set.
+```
+
+**Expected result:** "answer" = 1.0
 
 ## Stop 3: Angiography reports: the degree of stenosis and the vessel
 

@@ -116,7 +116,7 @@ In Week 5 the virtual clinic gets a rhythm and STEMI alarm. A one-dimensional ne
 
 ## Next week
 
-**Week 6: Natural language processing and clinical text mining.** The reports of the clinic become data: tokens, word representations and pretrained language models extract diagnoses, drugs and the degree of stenosis from text in Turkish and English. See the [plan of the course](../../README.md#the-eleven-weeks).
+**Week 6: NLP and clinical text mining.** The reports of the clinic become data: tokens, word representations and pretrained language models extract diagnoses, drugs and the degree of stenosis from text in Turkish and English. See the [plan of the course](../../README.md#the-eleven-weeks).
 
 ---
 

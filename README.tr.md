@@ -106,7 +106,7 @@ Plan, Türk Kardiyoloji Derneği'nin programını izlemektedir. Her hafta bütü
 | 3 | [Derin öğrenme ve CNN temelleri](tr/hafta-03/README.md) | Görüntüleme laboratuvarı | Kardiyak MRI ACDC veri seti: Dilate/hipertrofik KMP otomatik sınıflandırma |
 | 4 | [Transfer learning: Hazır gücü kardiyolojiye uyarla](tr/hafta-04/README.md) | Eko ölçümü: Otomatik ejeksiyon fraksiyonu | CAMUS veri seti ile sol ventrikül segmentasyonu + EF otomatik hesaplama |
 | 5 | [Zaman serisi analizi ve EKG yapay zekâsı](tr/hafta-05/README.md) | Ritim ve STEMI alarmı | STEMI alarm sistemi: AMI EKG'lerinden ST deviasyonu otomatik tespiti (PTB-XL) |
-| 6 | [Doğal dil işleme ve klinik metin madenciliği](tr/hafta-06/README.md) | Rapor arşivi: Klinik metin | Anjiyografi raporlarından darlık derecesini ve damarı çıkaran bir işlem hattı |
+| 6 | [NLP ve klinik metin madenciliği](tr/hafta-06/README.md) | Rapor arşivi: Klinik metin | Kardiyak anjiyo raporu NLP pipeline: Stenoz derecesi + etkilenen damar otomatik çıkarımı |
 | 7 | [Vision Transformer modelleri](tr/hafta-07/README.md) | Kateter laboratuvarı | Koroner anjiyogramlarda darlık tespiti: Evrişimli ağ, Vision Transformer ve hibrit modelin karşılaştırması |
 | 8 | [Çok modlu yapay zekâ ve veri füzyonu](tr/hafta-08/README.md) | Kalp ekibi: Veri füzyonu | Simüle edilmiş bir triyajda majör olumsuz kardiyovasküler olayların (MACE) öngörüsü |
 | 9 | [Model güvenilirliği ve açıklanabilir yapay zekâ](tr/hafta-09/README.md) | Kalite ve güvenlik kurulu: XAI | Eko modelinin Grad-CAM haritalarının bir uzmanın değerlendirmesiyle karşılaştırılması |

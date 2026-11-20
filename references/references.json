@@ -2981,6 +2981,64 @@
     ]
   },
   {
+    "key": "jin2024",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Jin",
+        "given": "Q."
+      },
+      {
+        "family": "Wang",
+        "given": "Z."
+      },
+      {
+        "family": "Floudas",
+        "given": "C. S."
+      },
+      {
+        "family": "Chen",
+        "given": "F."
+      },
+      {
+        "family": "Gong",
+        "given": "C."
+      },
+      {
+        "family": "Bracken-Clarke",
+        "given": "D."
+      },
+      {
+        "family": "Xue",
+        "given": "E."
+      },
+      {
+        "family": "Yang",
+        "given": "Y."
+      },
+      {
+        "family": "Sun",
+        "given": "J."
+      },
+      {
+        "family": "Lu",
+        "given": "Z."
+      }
+    ],
+    "year": "2024",
+    "title": "Matching patients to clinical trials with large language models",
+    "container": "Nature Communications",
+    "volume": "15",
+    "issue": "",
+    "pages": "9074",
+    "doi": "10.1038/s41467-024-53081-z",
+    "url": "https://doi.org/10.1038/s41467-024-53081-z",
+    "apa": "Jin, Q., Wang, Z., Floudas, C. S., Chen, F., Gong, C., Bracken-Clarke, D., Xue, E., Yang, Y., Sun, J., & Lu, Z. (2024). Matching patients to clinical trials with large language models. *Nature Communications, 15*, 9074. https://doi.org/10.1038/s41467-024-53081-z",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "jolliffe2016",
     "type": "article",
     "authors": [
@@ -3774,6 +3832,52 @@
     "apa": "LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. *Nature, 521*(7553), 436–444. https://doi.org/10.1038/nature14539",
     "used_in": [
       "Week 3: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "lee2020",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Lee",
+        "given": "J."
+      },
+      {
+        "family": "Yoon",
+        "given": "W."
+      },
+      {
+        "family": "Kim",
+        "given": "S."
+      },
+      {
+        "family": "Kim",
+        "given": "D."
+      },
+      {
+        "family": "Kim",
+        "given": "S."
+      },
+      {
+        "family": "So",
+        "given": "C. H."
+      },
+      {
+        "family": "Kang",
+        "given": "J."
+      }
+    ],
+    "year": "2020",
+    "title": "BioBERT: A pre-trained biomedical language representation model for biomedical text mining",
+    "container": "Bioinformatics",
+    "volume": "36",
+    "issue": "4",
+    "pages": "1234–1240",
+    "doi": "10.1093/bioinformatics/btz682",
+    "url": "https://doi.org/10.1093/bioinformatics/btz682",
+    "apa": "Lee, J., Yoon, W., Kim, S., Kim, D., Kim, S., So, C. H., & Kang, J. (2020). BioBERT: A pre-trained biomedical language representation model for biomedical text mining. *Bioinformatics, 36*(4), 1234–1240. https://doi.org/10.1093/bioinformatics/btz682",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {
@@ -4724,6 +4828,28 @@
     "apa": "Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. *Science, 366*(6464), 447–453. https://doi.org/10.1126/science.aax2342",
     "used_in": [
       "Week 9: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "oflazer1994",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Oflazer",
+        "given": "K."
+      }
+    ],
+    "year": "1994",
+    "title": "Two-level description of Turkish morphology",
+    "container": "Literary and Linguistic Computing",
+    "volume": "9",
+    "issue": "2",
+    "pages": "137–148",
+    "doi": "10.1093/llc/9.2.137",
+    "url": "https://doi.org/10.1093/llc/9.2.137",
+    "apa": "Oflazer, K. (1994). Two-level description of Turkish morphology. *Literary and Linguistic Computing, 9*(2), 137–148. https://doi.org/10.1093/llc/9.2.137",
+    "used_in": [
+      "Week 5: lecture page and Jupyter notebook"
     ]
   },
   {

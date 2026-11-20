@@ -114,7 +114,7 @@ Sanal klinik 5. haftada bir ritim ve STEMI alarmı kazanır. PTB-XL ile eğitilm
 
 ## Gelecek hafta
 
-**Hafta 6: Doğal dil işleme ve klinik metin madenciliği.** Kliniğin raporları veriye dönüşür: Token'lar, kelime temsilleri ve önceden eğitilmiş dil modelleri, Türkçe ve İngilizce metinlerden tanıları, ilaçları ve darlık derecesini çıkarır. Ayrıntılar için [eğitimin planına](../../README.tr.md#on-bir-hafta) bakabilirsiniz.
+**Hafta 6: NLP ve klinik metin madenciliği.** Kliniğin raporları veriye dönüşür: Token'lar, kelime temsilleri ve önceden eğitilmiş dil modelleri, Türkçe ve İngilizce metinlerden tanıları, ilaçları ve darlık derecesini çıkarır. Ayrıntılar için [eğitimin planına](../../README.tr.md#on-bir-hafta) bakabilirsiniz.
 
 ---
 
