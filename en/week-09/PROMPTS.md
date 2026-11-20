@@ -32,7 +32,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-1) · The same result on the Python path: Python step 9, Sections 1 to 3*
 
-This stop is the mini project of the session. The two models of Week 2 for coronary artery disease, a random forest and a logistic regression, learn on the training patients of the Cleveland data. Their predictions for patient 172, a 59-year-old woman, are shared among her eight clinical variables with exact Shapley values; for the logistic regression, a closed form gives the same values on the scale of the log-odds. The last step turns the values of every test patient into a global explanation.
+This stop is the mini project of the session. The two models of Week 2 for coronary artery disease, a random forest and a logistic regression, learn on the training patients of the Cleveland data. Their predictions for patient 172, a 59-year-old woman, are shared among her eight clinical variables with exact Shapley values; for the logistic regression, a closed form gives the same values on the scale of the log-odds. Step 1.4 turns the values of every test patient into a global explanation, and step 1.5 asks which of nine factors, among them LDL, age and the ejection fraction, moves a model of the registry of the virtual clinic most.
 
 ### Step 1.1: The two models of Week 2
 
@@ -190,6 +190,43 @@ Test: The counts must add up to the number of test patients.
 ```
 
 **Expected result:** "answer" = 0.138
+
+### Step 1.5: Mini project: LDL, age, EF and the model of the registry
+
+**Goal.** Find out which of nine clinical factors moves a model for coronary artery disease most, with exact Shapley values.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to know which clinical factor, such as LDL, age or the ejection
+fraction, influences a model for coronary artery disease most.
+Data: The notebook holds a table named "data" with the 3,600 patients of the registry of the virtual
+clinic, a synthetic data set. Each row is a patient: "set" gives "training" (2,700 patients) or
+"test" (900 patients). The nine clinical factors are "age" (years), "sex" ("man" or "woman"),
+"smoker", "diabetes", "hypertension" and "family history" (1 when present and 0 otherwise), "LDL"
+and "HDL" (mg/dL) and "ejection fraction" (%). "coronary artery disease" is 1 when the patient has
+coronary artery disease and 0 otherwise.
+Task: Code the sex as 1 for a man and 0 for a woman. Fit a random forest of 200 trees, with at least
+10 patients in every leaf, on the training patients to predict coronary artery disease from the nine
+factors. Fix the random seed to 2026 so that the result can be repeated. Draw 100 training patients
+as the background and 100 test patients, each with the seed 2026. For each of the 100 test patients,
+compute exact Shapley values of the probability of the forest, with the nine factors as nine
+players: For each of the 512 groups of players, give the players of the group the values of the
+patient and the other players the values of each background patient in turn, predict, and average
+over the background; this is the value of the group. The Shapley value of a player is the sum, over
+all groups without it, of the value of the group with the player minus the value without it, times
+the weight s!(8 − s)!/9!, where s is the size of the group without the player. Then compute for each
+factor the mean of the absolute Shapley values over the 100 test patients.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Show the nine mean absolute values from the largest to the smallest, and keep under the name
+"answer" the place of the factor with the largest value in the list of the factors above, counted
+from 1: age 1, sex 2 and so on up to the ejection fraction, 9.
+Test: The Shapley values of every test patient must add up to the probability of the forest for the
+patient minus the value of the empty group.
+```
+
+**Expected result:** "answer" = 9
 
 ## Stop 2: LIME for one patient, and where the echo network looks
 

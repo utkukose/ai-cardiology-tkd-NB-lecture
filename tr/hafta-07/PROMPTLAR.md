@@ -10,7 +10,7 @@ Bu kütüphanede, 7. haftanın prompt (istem) yolundaki, yani Jupyter defterinin
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
-2. [Durak 1: Önceden eğitilmiş bir Vision Transformer ile ekokardiyografi için bir kalite kapısı](#durak-1-önceden-eğitilmiş-bir-vision-transformer-ile-ekokardiyografi-için-bir-kalite-kapısı)
+2. [Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje](#durak-1-ekokardiyografiye-aktarım-kalite-kapısı-ve-mini-proje)
 3. [Durak 2: Sentetik ve gerçek anjiyogramlarda darlıklar](#durak-2-sentetik-ve-gerçek-anjiyogramlarda-darlıklar)
 4. [Durak 3: Evrişimli ağ, Vision Transformer ve hibrit model](#durak-3-evrişimli-ağ-vision-transformer-ve-hibrit-model)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
@@ -28,11 +28,11 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 | 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-## Durak 1: Önceden eğitilmiş bir Vision Transformer ile ekokardiyografi için bir kalite kapısı
+## Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 7, 1-4. bölümler*
 
-Bu durak oturumun mini projesidir. Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur. Son adım, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar.
+Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur; 1.4. adım, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar. 1.5. adım oturumun mini projesidir: Küçük bir Vision Transformer önce CIFAR-10 fotoğraflarını, ardından EchoNet-Dynamic ya da CAMUS ekokardiyografi kare çiftlerinden düşük ejeksiyon fraksiyonunu öğrenir.
 
 ### Adım 1.1: Dört görüntü istatistiğinden bir kapı
 
@@ -167,6 +167,60 @@ Test: Oran 0 ile 1 arasında olmalı ve bir hastanın iki karesi her zaman birli
 ```
 
 **Beklenen sonuç:** "cevap" = 0,925
+
+### Adım 1.5: Mini proje: CIFAR-10'dan ekokardiyografiye küçük bir Vision Transformer
+
+**Amaç.** Bu adımda küçük bir Vision Transformer önce CIFAR-10 fotoğraflarıyla eğitilir, ardından düşük ejeksiyon fraksiyonunu tanımak için ekokardiyografi kare çiftleriyle ince ayar yapılır ve yalnızca ekokardiyogramlarla eğitilen aynı ağla karşılaştırılır.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+çalıştıracağım.
+Bağlam: Önce gündelik fotoğraflardan öğrenmiş küçük bir Vision Transformer'ın, ekokardiyogramlarda
+düşük ejeksiyon fraksiyonunu, yalnızca ekokardiyogramlardan öğrenen aynı ağdan daha iyi tanıyıp
+tanımadığını öğrenmek istiyorum.
+Veri: Defterde iki tür satırdan oluşan "veri" adlı bir tablo vardır. "kaynak" değeri "CIFAR-10" olan
+satırlar, uçak, kedi ve gemi gibi on gündelik sınıftan oluşan açık bir veri seti olan CIFAR-10'un
+60.000 renkli fotoğrafıdır: "küme" sütunu "eğitim" (50.000 fotoğraf) ya da "test" (10.000) değerini
+alır, "görüntü" sütununun her hücresi bir fotoğrafı 0 ile 255 arasındaki sayılardan oluşan 32 × 32 ×
+3 boyutlu bir dizi olarak tutar, "sınıf" sütunu da fotoğrafın sınıfını 0 ile 9 arasında bir sayı
+olarak verir. "kaynak" değeri "eko" olan satırlar, iki açık veri seti olan EchoNet-Dynamic ya da
+CAMUS'un apikal ekokardiyografi kare çiftleridir: "küme" sütunu "eğitim", "doğrulama" ya da "test"
+değerini alır, "hasta" sütunu hastayı ya da videoyu verir, "görüntü" sütununun her hücresi 32 × 32 ×
+3 boyutlu bir dizi tutar; bu dizinin üç kanalı, değerleri 0 ile 1 arasında olan diyastol sonu ve
+sistol sonu kareler ile değerleri −1 ile 1 arasında olan farklarıdır. "düşük EF" sütunu ejeksiyon
+fraksiyonu yüzde 50'nin altındaysa 1, değilse 0 olur.
+Görev: 32 × 32 piksellik renkli görüntüler için küçük bir Vision Transformer kur. Görüntüyü 4 × 4
+piksellik 64 kareye böl ve her kareyi aynı öğrenilen doğrusal dönüşümle 64 sayıya dönüştür. 64
+token'ın önüne 64 sayılık, öğrenilen bir sınıf token'ı koy ve öğrenilen konumları ekle: 65 yerin her
+biri için, standart sapması 0,02 olan küçük rastgele sayılarla başlatılan 64 sayılık bir vektör.
+Token'ları dört Transformer bloğundan geçir. Her blokta katman normalleştirmesini dört başlı öz
+dikkat izler ve öz dikkatin çıktısı bloğun girdisine eklenir; ikinci bir katman normalleştirmesini
+128 birimlik bir gizli katman ve GELU etkinleştirmesi içeren ileri beslemeli bir ağ izler ve bu ağın
+çıktısı da yeniden eklenir. Sonda sınıf token'ını al, katman normalleştirmesi uygula ve on çıktılı,
+yani on sınıfın puanlarını veren doğrusal bir katmandan geçir. Ağı eğitim kümesindeki CIFAR-10
+satırlarıyla eğit: Fotoğrafları 255'e böl ve her renk kanalını eğitim fotoğraflarının ortalaması ve
+standart sapmasıyla standartlaştır. 128 fotoğraflık karıştırılmış gruplarla, çapraz entropi kaybıyla
+ve öğrenme hızı 0,001, ağırlık azaltması 0,05 olan AdamW optimizer'ı ile 5 epoch eğit. Her grubu her
+yönde 4 piksele kadar rastgele kaydır, kenarları yansıtmayla doldur ve yarı olasılıkla soldan sağa
+aynala. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. 10.000 test fotoğrafında
+doğruluğu hesapla. Ardından ekokardiyografi satırları için, her biri tek çıktılı, yani düşük
+ejeksiyon fraksiyonunun logitini veren doğrusal bir katmanla biten iki ağ hazırla: Biri aynı yapıda
+ve yeni rastgele ağırlıklarla, diğeri de CIFAR-10 ile eğitilen ağın, son katmanı tek çıktılı yeni
+bir katmanla değiştirilmiş bir kopyası olsun. Ekokardiyografi görüntülerini oldukları gibi kullan.
+Her ağı eğitim satırlarıyla, 32'lik karıştırılmış gruplarla, logit üzerinde ikili çapraz entropi
+kaybıyla ve öğrenme hızı 0,0005 olan Adam optimizer'ı ile 30 epoch eğit. Her epoch'tan sonra
+doğrulama satırlarında AUC değerini hesapla ve doğrulama AUC değeri en büyük olan epoch'un
+ağırlıklarını sakla. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. İki ağın test
+AUC değerini "düşük EF" sütununa göre hesapla.
+Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
+program kurmamalıdır.
+Çıktı: CIFAR-10 doğruluğunu ve iki ağın test AUC değerini yazdır; CIFAR-10 ile başlayan ağın test
+AUC değerini üç ondalık basamakla "cevap" adıyla sakla.
+Test: CIFAR-10 doğruluğu, on sınıftan birinin şans eseri verdiği 0,1 değerinin belirgin biçimde
+üstünde olmalı ve test satırları sona kadar kullanılmamalı.
+```
+
+**Beklenen sonuç:** "cevap": bilgisayardan bilgisayara ve ekokardiyogram kopyasına göre değişen, 0,5 ile 1,0 arasında bir test AUC değeri
 
 ## Durak 2: Sentetik ve gerçek anjiyogramlarda darlıklar
 

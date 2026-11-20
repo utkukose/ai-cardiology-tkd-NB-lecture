@@ -18,5 +18,6 @@ scikit-image>=0.22
 keras>=3.0
 # Week 6 and later: pretrained language models of Hugging Face
 transformers>=4.40
-# Week 10: the web interface of the prototype
+# Week 10: the web interface and the prediction service of the prototype
 streamlit>=1.30
+flask>=3.0

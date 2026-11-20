@@ -10,7 +10,7 @@ This library holds every prompt of the prompt path of Week 7, Part 1 of the Jupy
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
 1. [How a step works](#how-a-step-works)
-2. [Stop 1: A quality gate for echocardiography with a pretrained vision transformer](#stop-1-a-quality-gate-for-echocardiography-with-a-pretrained-vision-transformer)
+2. [Stop 1: Transfer to echocardiography: A quality gate and the mini project](#stop-1-transfer-to-echocardiography-a-quality-gate-and-the-mini-project)
 3. [Stop 2: Stenoses on synthetic and on real angiograms](#stop-2-stenoses-on-synthetic-and-on-real-angiograms)
 4. [Stop 3: A convolutional network, a vision transformer and a hybrid](#stop-3-a-convolutional-network-a-vision-transformer-and-a-hybrid)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
@@ -28,11 +28,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
 | 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-## Stop 1: A quality gate for echocardiography with a pretrained vision transformer
+## Stop 1: Transfer to echocardiography: A quality gate and the mini project
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-1) · The same result on the Python path: Python step 7, Sections 1 to 4*
 
-This stop is the mini project of the session. A vision transformer pretrained on photographs, ViT-B/16, turns every echocardiography frame of CAMUS into 768 numbers, and a logistic regression learns from them which frames the experts rated as poor. The same gate is built from four simple image statistics and from the convolutional network of Week 4, EfficientNet-B0, and the last step asks how sure the difference between the two networks is with 50 test patients.
+A vision transformer pretrained on photographs, ViT-B/16, turns every echocardiography frame of CAMUS into 768 numbers, and a logistic regression learns from them which frames the experts rated as poor. The same gate is built from four simple image statistics and from the convolutional network of Week 4, EfficientNet-B0, and step 1.4 asks how sure the difference between the two networks is with 50 test patients. Step 1.5 is the mini project of the session: A mini vision transformer learns the photographs of CIFAR-10 and then a reduced ejection fraction from pairs of echocardiography frames of EchoNet-Dynamic or CAMUS.
 
 ### Step 1.1: A gate from four image statistics
 
@@ -169,6 +169,60 @@ together.
 ```
 
 **Expected result:** "answer" = 0.925
+
+### Step 1.5: Mini project: A mini vision transformer from CIFAR-10 to echocardiography
+
+**Goal.** Train a small vision transformer on the photographs of CIFAR-10, then fine-tune it on pairs of echocardiography frames to recognise a reduced ejection fraction, and compare it with the same network trained on the echocardiograms alone.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to know whether a small vision transformer that first learned from
+everyday photographs recognises a reduced ejection fraction on echocardiograms better than the same
+network that learned from the echocardiograms alone.
+Data: The notebook holds a table named "data" with two kinds of rows. The rows whose "source" is
+"CIFAR-10" are the 60,000 colour photographs of CIFAR-10, a public data set of ten everyday classes
+such as airplanes, cats and ships: "set" gives "training" (50,000 photographs) or "test" (10,000),
+each cell of "image" holds a photograph as an array of 32 × 32 × 3 numbers from 0 to 255, and
+"class" gives its class as a number from 0 to 9. The rows whose "source" is "echo" are pairs of
+apical echocardiography frames of EchoNet-Dynamic or of CAMUS, two public data sets: "set" gives
+"training", "validation" or "test", "patient" the patient or the video, each cell of "image" holds
+an array of 32 × 32 × 3 numbers whose three channels are the end-diastolic frame and the
+end-systolic frame, with values from 0 to 1, and their difference, with values from −1 to 1, and
+"reduced EF" is 1 when the ejection fraction is below 50 percent and 0 otherwise.
+Task: Build a small vision transformer for colour images of 32 × 32 pixels. Cut the image into 64
+squares of 4 × 4 pixels and map every square to 64 numbers with the same learned linear map. Put a
+learned class token of 64 numbers before the 64 tokens and add learned positions, one vector of 64
+numbers for each of the 65 places, started from small random numbers with a standard deviation of
+0.02. Pass the tokens through four transformer blocks. In each block, layer normalisation is
+followed by self-attention with four heads, whose output is added to the input of the block; a
+second layer normalisation is followed by a feed-forward network with a hidden layer of 128 units
+and the GELU activation, whose output is added again. At the end, take the class token, apply layer
+normalisation and a linear layer with ten outputs, the scores of the ten classes. Train it on the
+CIFAR-10 rows of the training set: Divide the photographs by 255 and standardise each colour channel
+with the mean and the standard deviation of the training photographs. Train for 5 epochs in shuffled
+groups of 128 photographs with the cross-entropy loss and the AdamW optimiser with a learning rate
+of 0.001 and a weight decay of 0.05. Move every group by a random shift of up to 4 pixels in each
+direction, with the borders filled by reflection, and mirror it from left to right with a
+probability of one half. Fix the random seed to 2026 so that the result can be repeated. Compute the
+accuracy on the 10,000 test photographs. Then make two networks for the echocardiography rows, each
+ending in a linear layer with one output, the logit of a reduced ejection fraction: one with the
+same structure and new random weights, and one as a copy of the network trained on CIFAR-10 whose
+last layer is replaced by a new layer with one output. Use the echocardiography images as they are.
+Train each network for 30 epochs on the training rows in shuffled groups of 32 with the binary
+cross-entropy loss on the logit and the Adam optimiser with a learning rate of 0.0005. After every
+epoch, compute the AUC on the validation rows, and keep the weights of the epoch with the largest
+validation AUC. Fix the random seed to 2026 so that the result can be repeated. Compute the test AUC
+of both networks against the column "reduced EF".
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the accuracy on CIFAR-10 and the test AUC of both networks, and keep the test AUC of
+the network that started from CIFAR-10, with three decimals, under the name "answer".
+Test: The accuracy on CIFAR-10 must lie well above 0.1, which one class in ten gives by chance, and
+the test rows must not be used before the end.
+```
+
+**Expected result:** "answer": a test AUC between 0.5 and 1.0, which varies from computer to computer and with the copy of the echocardiograms
 
 ## Stop 2: Stenoses on synthetic and on real angiograms
 

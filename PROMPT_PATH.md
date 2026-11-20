@@ -62,10 +62,10 @@ An assistant can write code that runs without an error and still gives a wrong n
 | 4 | [PROMPTS.md](en/week-04/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
 | 5 | [PROMPTS.md](en/week-05/PROMPTS.md) | 3 stops with 11 steps | Part F, prompt workshop |
 | 6 | [PROMPTS.md](en/week-06/PROMPTS.md) | 3 stops with 11 steps | Part F, prompt workshop |
-| 7 | [PROMPTS.md](en/week-07/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
+| 7 | [PROMPTS.md](en/week-07/PROMPTS.md) | 3 stops with 11 steps | Part F, prompt workshop |
 | 8 | [PROMPTS.md](en/week-08/PROMPTS.md) | 3 stops with 11 steps | Part F, prompt workshop |
-| 9 | [PROMPTS.md](en/week-09/PROMPTS.md) | 3 stops with 12 steps | Part F, prompt workshop |
-| 10 | [PROMPTS.md](en/week-10/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
+| 9 | [PROMPTS.md](en/week-09/PROMPTS.md) | 3 stops with 13 steps | Part F, prompt workshop |
+| 10 | [PROMPTS.md](en/week-10/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
 | 11 | [PROMPTS.md](en/week-11/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
 
 The prompt library of the week holds every prompt of Part 1 with a copy button on GitHub, the prompts for repairing code and the prompt path of the weekly project. Part F of the interactive lab trains the prompt card with a quality meter and a privacy check.

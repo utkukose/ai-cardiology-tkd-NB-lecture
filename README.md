@@ -109,11 +109,11 @@ The plan follows the program of the Turkish Society of Cardiology. Each week is 
 | 4 | [Transfer learning: Adapting ready-made power to cardiology](en/week-04/README.md) | Echo measurement: Automatic ejection fraction | Left ventricular segmentation with the CAMUS data set and automatic calculation of the EF |
 | 5 | [Time series analysis and ECG artificial intelligence](en/week-05/README.md) | Rhythm and STEMI alarm | STEMI alarm system: Automatic detection of ST deviation from AMI ECGs (PTB-XL) |
 | 6 | [NLP and clinical text mining](en/week-06/README.md) | Report archive: Clinical text | Cardiac angiography report NLP pipeline: Automatic extraction of the degree of stenosis and the affected vessel |
-| 7 | [Vision transformers](en/week-07/README.md) | Catheterisation laboratory | Detection of stenosis on coronary angiograms: Convolutional network, vision transformer and hybrid compared |
-| 8 | [Multimodal artificial intelligence and data fusion](en/week-08/README.md) | Heart team: Data fusion | Prediction of major adverse cardiovascular events (MACE) in a simulated triage |
-| 9 | [Model reliability and explainable artificial intelligence](en/week-09/README.md) | Quality and safety committee: XAI | Grad-CAM maps of the echo model compared with the reading of an expert |
-| 10 | [Clinical decision support systems](en/week-10/README.md) | Decision support at the bedside | A user test of the decision support prototype and its improvement |
-| 11 | [Final project and certificate](en/week-11/README.md) | Own units: Final projects | Final project: An end-to-end AI pipeline for a question of the participant's own clinic, and a personal action plan |
+| 7 | [Vision Transformer (ViT): The new generation in image processing](en/week-07/README.md) | Catheterisation laboratory | Coronary angiography: Stenosis detection, CNN vs ViT vs hybrid comparison + attention maps |
+| 8 | [Multimodal artificial intelligence and data fusion](en/week-08/README.md) | Heart team: Data fusion | Real-time MACE prediction model: Simulation of a triage scenario (synthetic MIMIC-IV) |
+| 9 | [Model reliability and explainable artificial intelligence (XAI)](en/week-09/README.md) | Quality and safety committee: XAI | Visualising with Grad-CAM where an echocardiography model looks, compared with the reading of an expert |
+| 10 | [Clinical decision support systems (CDSS)](en/week-10/README.md) | Decision support at the bedside | User test session: Improving the CDSS prototype with feedback |
+| 11 | [Final project and graduation](en/week-11/README.md) | Own units: Final projects | Final project presentation and the personal action plan "How will I use AI in my clinical practice?" |
 
 ### Materials of each week
 

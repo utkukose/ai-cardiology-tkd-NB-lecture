@@ -107,11 +107,11 @@ Plan, Türk Kardiyoloji Derneği'nin programını izlemektedir. Her hafta bütü
 | 4 | [Transfer learning: Hazır gücü kardiyolojiye uyarla](tr/hafta-04/README.md) | Eko ölçümü: Otomatik ejeksiyon fraksiyonu | CAMUS veri seti ile sol ventrikül segmentasyonu + EF otomatik hesaplama |
 | 5 | [Zaman serisi analizi ve EKG yapay zekâsı](tr/hafta-05/README.md) | Ritim ve STEMI alarmı | STEMI alarm sistemi: AMI EKG'lerinden ST deviasyonu otomatik tespiti (PTB-XL) |
 | 6 | [NLP ve klinik metin madenciliği](tr/hafta-06/README.md) | Rapor arşivi: Klinik metin | Kardiyak anjiyo raporu NLP pipeline: Stenoz derecesi + etkilenen damar otomatik çıkarımı |
-| 7 | [Vision Transformer modelleri](tr/hafta-07/README.md) | Kateter laboratuvarı | Koroner anjiyogramlarda darlık tespiti: Evrişimli ağ, Vision Transformer ve hibrit modelin karşılaştırması |
-| 8 | [Çok modlu yapay zekâ ve veri füzyonu](tr/hafta-08/README.md) | Kalp ekibi: Veri füzyonu | Simüle edilmiş bir triyajda majör olumsuz kardiyovasküler olayların (MACE) öngörüsü |
-| 9 | [Model güvenilirliği ve açıklanabilir yapay zekâ](tr/hafta-09/README.md) | Kalite ve güvenlik kurulu: XAI | Eko modelinin Grad-CAM haritalarının bir uzmanın değerlendirmesiyle karşılaştırılması |
-| 10 | [Klinik karar destek sistemleri](tr/hafta-10/README.md) | Yatak başında karar desteği | Karar destek prototipinin kullanıcı testi ve iyileştirilmesi |
-| 11 | [Final projesi ve sertifika](tr/hafta-11/README.md) | Katılımcıların birimleri: Final projeleri | Final projesi: Katılımcının kendi kliniğinden bir soru için uçtan uca bir YZ işlem hattı ve kişisel eylem planı |
+| 7 | [Vision Transformer (ViT): Görüntü işlemede yeni nesil](tr/hafta-07/README.md) | Kateter laboratuvarı | Koroner anjiyografi: Stenoz tespiti CNN vs ViT vs Hibrit karşılaştırması + attention haritaları |
+| 8 | [Çok modlu yapay zekâ ve veri füzyonu](tr/hafta-08/README.md) | Kalp ekibi: Veri füzyonu | Gerçek zamanlı MACE tahmin modeli: Triyaj senaryosu simülasyonu (MIMIC-IV sentetik) |
+| 9 | [Model güvenilirliği ve açıklanabilir yapay zekâ (XAI)](tr/hafta-09/README.md) | Kalite ve güvenlik kurulu: XAI | Grad-CAM ile ekokardiyografi modelinin 'nereye baktığını' görselleştirme ve uzman yorumuyla karşılaştırma |
+| 10 | [Klinik karar destek sistemleri (CDSS)](tr/hafta-10/README.md) | Yatak başında karar desteği | Kullanıcı test oturumu: Geri bildirimlerle CDSS prototipini iyileştirme |
+| 11 | [Final projesi ve mezuniyet](tr/hafta-11/README.md) | Katılımcıların birimleri: Final projeleri | Final proje sunumu + "Klinik Pratiğimde AI Nasıl Kullanacağım?" kişisel eylem planı |
 
 ### Haftaların malzemeleri
 

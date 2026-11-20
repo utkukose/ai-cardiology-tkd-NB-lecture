@@ -32,7 +32,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 9, 1-3. bölümler*
 
-Bu durak oturumun mini projesidir. 2. haftanın koroner arter hastalığı için kurduğu iki model, yani bir rastgele orman ve bir lojistik regresyon, Cleveland verisinin eğitim hastalarıyla öğrenir. Modellerin 59 yaşındaki bir kadın olan 172 numaralı hasta için verdiği tahminler, kesin Shapley değerleriyle hastanın sekiz klinik değişkeni arasında paylaştırılır; lojistik regresyon için kapalı bir form, log-odds ölçeğinde aynı değerleri verir. Son adım her test hastasının değerlerini genel bir açıklamaya dönüştürür.
+Bu durak oturumun mini projesidir. 2. haftanın koroner arter hastalığı için kurduğu iki model, yani bir rastgele orman ve bir lojistik regresyon, Cleveland verisinin eğitim hastalarıyla öğrenir. Modellerin 59 yaşındaki bir kadın olan 172 numaralı hasta için verdiği tahminler, kesin Shapley değerleriyle hastanın sekiz klinik değişkeni arasında paylaştırılır; lojistik regresyon için kapalı bir form, log-odds ölçeğinde aynı değerleri verir. 1.4. adım her test hastasının değerlerini genel bir açıklamaya dönüştürür; 1.5. adım ise LDL, yaş ve ejeksiyon fraksiyonunun da aralarında bulunduğu dokuz faktörden hangisinin sanal kliniğin kayıt sistemi üzerindeki bir modeli en çok etkilediğini sorar.
 
 ### Adım 1.1: 2. haftanın iki modeli
 
@@ -191,6 +191,43 @@ Test: Sayıların toplamı test hastalarının sayısına eşit olmalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,138
+
+### Adım 1.5: Mini proje: LDL, yaş, EF ve kayıt sistemi modeli
+
+**Amaç.** Bu adımda dokuz klinik faktörden hangisinin koroner arter hastalığı modelini en çok etkilediği kesin Shapley değerleriyle bulunur.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+çalıştıracağım.
+Bağlam: LDL, yaş ya da ejeksiyon fraksiyonu gibi klinik faktörlerden hangisinin bir koroner arter
+hastalığı modelini en çok etkilediğini öğrenmek istiyorum.
+Veri: Defterde sanal kliniğin kayıt sistemindeki 3.600 hastayı içeren "veri" adlı bir tablo vardır;
+bu sentetik bir veri setidir. Her satır bir hastadır: "küme" sütunu "eğitim" (2.700 hasta) ya da
+"test" (900 hasta) değerini alır. Dokuz klinik faktör şunlardır: "yaş" (yıl), "cinsiyet" ("erkek" ya
+da "kadın"), varsa 1, yoksa 0 olan "sigara", "diyabet", "hipertansiyon" ve "aile öyküsü", "LDL" ve
+"HDL" (mg/dL) ve "ejeksiyon fraksiyonu" (%). "koroner arter hastalığı" sütunu hastada koroner arter
+hastalığı varsa 1, yoksa 0 olur.
+Görev: Cinsiyeti erkek için 1, kadın için 0 olarak kodla. Koroner arter hastalığını dokuz faktörden
+öngörmek için eğitim hastalarıyla, her yaprağında en az 10 hasta bulunan 200 ağaçlı bir rastgele
+orman kur. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle. Her biri seed değeri
+2026 olmak üzere arka plan olarak 100 eğitim hastası ve 100 test hastası çek. 100 test hastasının
+her biri için, dokuz faktörü dokuz oyuncu sayarak ormanın olasılığının kesin Shapley değerlerini
+hesapla: 512 oyuncu grubunun her biri için gruptaki oyunculara hastanın değerlerini, öteki
+oyunculara sırayla her arka plan hastasının değerlerini ver, tahmin et ve arka plan üzerinden
+ortalama al; bu, grubun değeridir. Bir oyuncunun Shapley değeri, onu içermeyen bütün gruplar
+üzerinden, grubun oyuncuyla birlikteki değeri eksi oyuncu olmadan değerinin s!(8 − s)!/9!
+ağırlığıyla çarpımlarının toplamıdır; burada s, oyuncu olmadan grubun büyüklüğüdür. Ardından her
+faktör için 100 test hastası üzerinden mutlak Shapley değerlerinin ortalamasını hesapla.
+Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
+program kurmamalıdır.
+Çıktı: Dokuz ortalama mutlak değeri en büyükten en küçüğe göster; değeri en büyük olan faktörün
+yukarıdaki faktör listesindeki yerini, 1'den başlayarak sayıp "cevap" adıyla sakla: Yaş 1, cinsiyet
+2 ve böyle devam ederek ejeksiyon fraksiyonu 9.
+Test: Her test hastasının Shapley değerlerinin toplamı, ormanın o hasta için verdiği olasılık eksi
+boş grubun değerine eşit olmalı.
+```
+
+**Beklenen sonuç:** "cevap" = 9
 
 ## Durak 2: Tek bir hasta için LIME ve eko ağının baktığı yer
 

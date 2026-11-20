@@ -114,7 +114,7 @@ Sanal klinik 6. haftada rapor arşivini açar. Kliniğin 3.600 hastasının her 
 
 ## Gelecek hafta
 
-**Hafta 7: Vision Transformer modelleri.** Kateter laboratuvarında evrişimli bir ağ, bir Vision Transformer ve ikisini birleştiren hibrit bir model koroner anjiyogramlarda darlık arar. Ayrıntılar için [eğitimin planına](../../README.tr.md#on-bir-hafta) bakabilirsiniz.
+**Hafta 7: Vision Transformer (ViT): Görüntü işlemede yeni nesil.** Kateter laboratuvarında evrişimli bir ağ, bir Vision Transformer ve ikisini birleştiren hibrit bir model koroner anjiyogramlarda darlık arar. Ayrıntılar için [eğitimin planına](../../README.tr.md#on-bir-hafta) bakabilirsiniz.
 
 ---
 

@@ -32,7 +32,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-10/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 10, 1-4. bölümler*
 
-Bu durak oturumun mini projesidir. AFDB'nin 25 kaydının dakikaları RR aralıklarından elde edilen dört sayıyla tarif edilir; bir lojistik regresyon AF'yi eğitim kayıtlarından öğrenir, eşiği doğrulama kayıtlarında seçilir ve test kayıtları her kaydın AF yükünü ve alarm ataklarını verir.
+Bu durak oturumun mini projesi olan AF tespit CDSS'ini, tahmin yapan modelle başlatır. AFDB'nin 25 kaydının dakikaları RR aralıklarından elde edilen dört sayıyla tarif edilir; bir lojistik regresyon AF'yi eğitim kayıtlarından öğrenir, eşiği doğrulama kayıtlarında seçilir ve test kayıtları her kaydın AF yükünü ve alarm ataklarını verir.
 
 ### Adım 1.1: Bir dakikanın dört sayısı
 
@@ -138,7 +138,7 @@ arasında olmalı.
 
 *[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-10/ders.html#stop-2) · Python yolunda aynı sonuç: 5-8. bölümler*
 
-Bu durak bir alarmı ve bir hastayı izler. 08219 kaydındaki bir yanlış alarm dakikası dört sayısının katkılarıyla açıklanır, telemetri servisindeki VC-0128'in sonucu bir HL7 FHIR raporu olarak yazılır ve aynı hastanın vuru zamanları dersin tahmin servisine gönderilir.
+Bu durak oturumun mini projesini tamamlar ve bir alarmı ve bir hastayı izler. 08219 kaydındaki bir yanlış alarm dakikası dört sayısının SHAP değerleriyle açıklanır, telemetri servisindeki VC-0128'in sonucu bir HL7 FHIR raporu olarak yazılır, aynı hastanın vuru zamanları dersin tahmin servisine gönderilir ve VC-0128'in bir saatlik EKG'si yüklenerek vuruları bulunur ve dakikaları servise değerlendirtilir.
 
 ### Adım 2.1: Dakika neden alarm verdi?
 
@@ -239,6 +239,42 @@ yuvarlanmış olarak eşit olmalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 222
+
+### Adım 2.4: Yüklenen bir EKG'den AF dakikalarına
+
+**Amaç.** Bu adımda yüklenen bir EKG'nin vuruları bulunur ve EKG'nin her dakikası dersin tahmin servisine değerlendirtilir.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+çalıştıracağım.
+Bağlam: Mini projede hekim, monitörün vuru zamanları yerine VC-0128'in bir saatlik EKG'sini yükler;
+bu yüzden model tahmin yapmadan önce prototip vuruları kendisi bulmalıdır.
+Veri: Defterde "veri" adlı bir tablo vardır: Sanal kliniğin telemetri servisindeki VC-0128
+hastasının bir saatlik EKG'si (sentetik bir veri seti). Tablonun tek sütunu olan "mV", 13.00 ile
+14.00 arasında 250 Hz'de örneklenmiş DII derivasyonunun milivolt cinsinden 900.000 değerini içerir.
+İlk değer, kaydın 08.00'deki başlangıcından 5 saat, yani 18.000 saniye sonradır. Veri hücresi ayrıca
+dersin tahmin servisini bu bilgisayarda http://127.0.0.1:8765/predict adresinde başlatmıştır. Servis
+"patient_id" ve "beat_times_s" (kaydın başlangıcından itibaren saniye cinsinden vuru zamanlarının
+listesi) alanlarını içeren JSON biçiminde bir istek alır ve JSON biçiminde şu bilgilerle cevap
+verir: Model, sürümü ve parmak izi, eşik, incelenen dakikalar, atriyal fibrilasyon (AF) alarmı veren
+dakikalar, yüzde cinsinden AF yükü ve her biri saniye cinsinden başlangıcı ("start_s") ve dakika
+sayısıyla birlikte alarm atakları.
+Görev: EKG'nin vurularını bul. Sinyali, tepelerin yeri kaymasın diye ileri ve geri uygulanan 5-15
+Hz'lik bir bant geçiren süzgeçten geçir. Süzülmüş sinyalin 99. yüzdelik değerinin üçte birinden
+yüksek olan ve birbirinden en az 0,25 saniye uzak duran yerel tepelerini R tepeleri olarak al.
+Konumlarını kaydın başlangıcından itibaren saniye cinsinden zamanlara çevir: 250'ye böl ve 18.000
+ekle. Ardından "VC-0128" hastasının vuru zamanlarını POST yöntemiyle, vekil sunucudan (proxy)
+geçirmeden JSON olarak tahmin servisine gönder ve cevabı JSON olarak oku.
+Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
+program kurmamalıdır.
+Çıktı: Bulunan vuru sayısını, dakikaları, AF dakikalarını ve AF yükünü yazdır; alarm ataklarını
+başlangıçlarını günün saati olarak (kayıt 08.00'de başlar) gösteren bir tablo olarak göster ve AF
+dakikalarının sayısını "cevap" adıyla sakla.
+Test: Bir saatlik EKG 4.000 ile 9.000 arasında vuru vermeli ve cevaptaki AF yükü, AF dakikalarının
+dakikalara bölümünün 100 katına bir ondalık basamakla yuvarlanmış olarak eşit olmalı.
+```
+
+**Beklenen sonuç:** "cevap" = 39
 
 ## Durak 3: Kullanıcı testi ve 1.1 sürümü
 

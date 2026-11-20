@@ -32,7 +32,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-1) · The same result on the Python path: Python step 10, Sections 1 to 4*
 
-This stop is the mini project of the session. The minutes of the 25 records of the AFDB are described by four numbers of their RR intervals, a logistic regression learns AF from the training records, its threshold is chosen on the validation records, and the test records give the AF burden and the alarm episodes of each record.
+This stop starts the mini project of the session, an AF detection CDSS, with the model that predicts. The minutes of the 25 records of the AFDB are described by four numbers of their RR intervals, a logistic regression learns AF from the training records, its threshold is chosen on the validation records, and the test records give the AF burden and the alarm episodes of each record.
 
 ### Step 1.1: Four numbers of a minute
 
@@ -139,7 +139,7 @@ burdens must lie between 0 and 100.
 
 *[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-2) · The same result on the Python path: Sections 5 to 8*
 
-This stop follows one alarm and one patient. A false alarm minute of record 08219 is explained by the contributions of its four numbers, the result of VC-0128 of the telemetry ward is written as an HL7 FHIR report, and the beat times of the same patient are sent to the prediction service of the course.
+This stop completes the mini project of the session and follows one alarm and one patient. A false alarm minute of record 08219 is explained by the SHAP values of its four numbers, the result of VC-0128 of the telemetry ward is written as an HL7 FHIR report, the beat times of the same patient are sent to the prediction service of the course, and one hour of the ECG of VC-0128 is uploaded, its beats found and its minutes judged by the service.
 
 ### Step 2.1: Why the minute alarmed
 
@@ -241,6 +241,42 @@ to one decimal.
 ```
 
 **Expected result:** "answer" = 222
+
+### Step 2.4: From an uploaded ECG to the AF minutes
+
+**Goal.** Find the beats of an uploaded ECG and let the prediction service of the course judge every minute of it.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: In the mini project, the physician uploads one hour of the ECG of VC-0128 instead of the
+beat times of the monitor, so the prototype must find the beats itself before the model can predict.
+Data: The notebook holds a table named "data" with one hour of the ECG of VC-0128, a patient of the
+telemetry ward of the virtual clinic, a synthetic data set: one column, "mV", with 900,000 values of
+lead II in millivolts, sampled at 250 Hz, from 13:00 to 14:00. The first value lies 5 hours, 18,000
+seconds, after the start of the recording at 08:00. The data cell has also started the prediction
+service of the course on this computer at the address http://127.0.0.1:8765/predict. The service
+takes a request in JSON with the fields "patient_id" and "beat_times_s" (a list of beat times in
+seconds from the start of the recording) and answers in JSON with the model, its version and
+fingerprint, the threshold, the minutes analysed, the minutes with an alarm of atrial fibrillation
+(AF), the AF burden in percent and the alarm episodes, each with its start in seconds ("start_s")
+and its minutes.
+Task: Find the beats of the ECG. Filter the signal with a band-pass filter from 5 to 15 Hz, applied
+forwards and backwards so that the peaks do not shift. Take as R peaks the local maxima of the
+filtered signal that are higher than a third of its 99th percentile and at least 0.25 seconds apart.
+Turn their positions into times in seconds from the start of the recording: Divide by 250 and add
+18,000. Then send the beat times of patient "VC-0128" to the prediction service as JSON with the
+method POST, without a proxy server, and read the answer as JSON.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print the number of beats found, the minutes, the AF minutes and the AF burden, show the
+alarm episodes as a table with their start as a time of day (the recording starts at 08:00), and
+keep the number of AF minutes under the name "answer".
+Test: One hour of ECG must give between 4,000 and 9,000 beats, and the AF burden in the answer must
+be 100 times the AF minutes divided by the minutes, rounded to one decimal.
+```
+
+**Expected result:** "answer" = 39
 
 ## Stop 3: The user test and version 1.1
 

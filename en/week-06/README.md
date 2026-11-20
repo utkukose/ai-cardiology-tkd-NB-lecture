@@ -116,7 +116,7 @@ In Week 6 the virtual clinic opens its report archive. Every one of its 3,600 pa
 
 ## Next week
 
-**Week 7: Vision transformers.** The catheterisation laboratory: A convolutional network, a vision transformer and a hybrid of both look for stenoses on coronary angiograms. See the [plan of the course](../../README.md#the-eleven-weeks).
+**Week 7: Vision Transformer (ViT): The new generation in image processing.** The catheterisation laboratory: A convolutional network, a vision transformer and a hybrid of both look for stenoses on coronary angiograms. See the [plan of the course](../../README.md#the-eleven-weeks).
 
 ---
 

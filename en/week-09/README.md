@@ -2,12 +2,12 @@
 
 <div align="center">
 
-# Week 9: Model reliability and explainable artificial intelligence
+# Week 9: Model reliability and explainable artificial intelligence (XAI)
 
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology
 
-*Why a model says what it says, and whether it can be trusted for every patient, at another hospital and over time*
+*Transparency and explainability for the trust of clinicians*
 
 [Course home](../../README.md) · [Syllabus](../../SYLLABUS.md) · [Setup](../../SETUP.md) · [Türkçe](../../tr/hafta-09/README.md)
 
@@ -15,7 +15,7 @@ Turkish Society of Cardiology
 
 ## About the week
 
-The virtual clinic sets up a quality and safety committee, which asks of every model why it says what it says and whether it can be trusted. The first half explains predictions: Shapley values share a prediction fairly among the variables of a patient, LIME fits a simple model around one patient, and Grad-CAM shows where a convolutional network looks in an image. For patient 172 of the Cleveland data, the random forest of Week 2 gives 0.73 and the logistic regression 0.55, for different reasons that the Shapley values make visible. On CAMUS, the maps of an echo network put 32 percent of their weight on the outlined heart, which covers 21 percent of the frame, but in 9 of 20 random draws a copy of the network with a random last block does as well. The second half asks whether a model stays reliable: dataset shift found without outcomes by a classifier that tells two hospitals apart, monitoring of observed against expected events after deployment, subgroups by sex and age, the limits of leaving a variable out, and the legal and ethical frame of the KVKK, the medical device regulations and the EU AI Act. The week closes with the review of an explanation written by an AI assistant.
+The virtual clinic sets up a quality and safety committee, which asks of every model why it says what it says and whether it can be trusted. The first half starts from the black box problem, why clinicians do not trust a model whose reasons they cannot see, and explains predictions: SHAP values share a prediction fairly among the variables of a patient, LIME fits a simple model around one patient, and Grad-CAM shows where a convolutional network looks in an image. For patient 172 of the Cleveland data, the random forest of Week 2 gives 0.73 and the logistic regression 0.55, for different reasons that the Shapley values make visible. In the mini project, the ejection fraction moves a forest for coronary artery disease on the registry of the virtual clinic more than LDL or age, although the clinic never used it to draw the disease. On CAMUS, the maps of an echo network put 32 percent of their weight on the outlined heart, which covers 21 percent of the frame, but in 9 of 20 random draws a copy of the network with a random last block does as well. The second half asks whether a model stays reliable: dataset shift found without outcomes by a classifier that tells two hospitals apart, monitoring of observed against expected events after deployment, calibration and a confidence score that sends uncertain patients to the cardiologist, bias by sex, age and ethnicity, the limits of leaving a variable out, and the legal and ethical frame of GDPR, the KVKK, the medical device regulations and the EU AI Act. The week closes with the review of an explanation written by an AI assistant.
 
 4 hours in the session and about 3 hours for the weekly project.
 
@@ -25,9 +25,9 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 | Main route: lecture page and interactive lab | Practice stop | Prompt path (Part 1) | Python path (Part 2) |
 |---|---|---|---|
-| [Why explain? Interpretable models and explanations after the fact](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#why-explain-interpretable-models-and-explanations-after-the-fact)<br>[Shapley values: Sharing a prediction among the variables](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#shapley-values-sharing-a-prediction-among-the-variables)<br>[From one patient to all patients](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#from-one-patient-to-all-patients) | **[Stop 1: The clinical factors behind the model for coronary artery disease](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-1)** | Stop 1 | Python step 9 and Sections 1 to 3 |
-| [LIME: A simple model around one patient](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#lime-a-simple-model-around-one-patient)<br>[Grad-CAM: Where does a network look?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#grad-cam-where-does-a-network-look)<br>[Sanity checks: Is the map about the model?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#sanity-checks-is-the-map-about-the-model) | **[Stop 2: LIME for one patient, and where the echo network looks](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-2)** | Stop 2 | Sections 4 to 7 |
-| [Dataset shift: What changed, and does it matter?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#dataset-shift-what-changed-and-does-it-matter)<br>[Monitoring after deployment: Observed against expected events](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#monitoring-after-deployment-observed-against-expected-events)<br>[Fairness: Does the model work for every patient?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#fairness-does-the-model-work-for-every-patient)<br>[Law and ethics: Who answers for a model?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#law-and-ethics-who-answers-for-a-model) | **[Stop 3: Shift, monitoring and subgroups](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-3)** | Stop 3 | Sections 8 to 10 |
+| [First two hours: Explainable AI methods](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#first-two-hours-explainable-ai-methods)<br>[The black box problem: Why do clinicians not trust it?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#why-explain-interpretable-models-and-explanations-after-the-fact)<br>[SHAP values: Which feature contributed how much?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#shapley-values-sharing-a-prediction-among-the-variables)<br>– [From one patient to all patients](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#from-one-patient-to-all-patients)<br>[Mini project: SHAP in a CAD prediction model: Which clinical factor (LDL, age, EF?) influences the model most?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#mini-project-shap-in-a-cad-prediction-model-which-clinical-factor-ldl-age-ef-influences-the-model-most) | **[Stop 1: The clinical factors behind the model for coronary artery disease](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-1)** | Stop 1 | Python step 9 and Sections 1 to 3 |
+| [LIME: Local explanations](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#lime-a-simple-model-around-one-patient)<br>[Grad-CAM: Seeing where the CNN looks](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#grad-cam-where-does-a-network-look)<br>– [Sanity checks: Is the map about the model?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#sanity-checks-is-the-map-about-the-model) | **[Stop 2: LIME for one patient, and where the echo network looks](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-2)** | Stop 2 | Sections 4 to 7 |
+| [Last two hours: AI reliability and clinical validation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#last-two-hours-ai-reliability-and-clinical-validation)<br>[Distribution shift (data drift): Pitfalls](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#dataset-shift-what-changed-and-does-it-matter)<br>– [Monitoring after deployment: Observed against expected events](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#monitoring-after-deployment-observed-against-expected-events)<br>[Model calibration and confidence score](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#model-calibration-and-confidence-score)<br>[Bias detection: Sex, age, ethnicity](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#fairness-does-the-model-work-for-every-patient)<br>[Legal and ethical framework (GDPR, KVKK)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#law-and-ethics-who-answers-for-a-model) | **[Stop 3: Shift, monitoring and subgroups](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-3)** | Stop 3 | Sections 8 to 10 |
 | [Working with an AI assistant, part 9: Reviewing an explanation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#ai-pair-programming-part-9-reviewing-an-explanation)<br>[The paper of the week](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#the-paper-of-the-week)<br>[The virtual clinic, stage 9: Quality and safety committee](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#the-virtual-clinic-stage-9-quality-and-safety-committee) | The section on your own data, the paper of the week and the virtual clinic | – | – |
 
 ## Materials
@@ -53,7 +53,7 @@ Patient 172 of the Cleveland data is a 59-year-old woman without chest pain at r
 
 ## Learning outcomes
 
-By the end of the week, participants are expected to tell an interpretable model from an explanation after the fact, and a local explanation from a global one. They should be able to compute Shapley values by hand for three variables, read the Shapley values of a patient and of a group of patients, and explain the choice of the background patients. They should be able to fit LIME around one patient, judge its stability, and compute and read a Grad-CAM map together with a sanity check by randomisation. Finally, they should be able to detect dataset shift with and without outcomes, compare the calibration and the errors of a model across groups of sex and age, place a clinical model in the frame of the KVKK, the medical device regulations and the EU AI Act, and review an explanation written by an AI assistant.
+By the end of the week, participants are expected to tell an interpretable model from an explanation after the fact, and a local explanation from a global one. They should be able to explain why clinicians distrust a black box, to compute Shapley values by hand for three variables, to read the SHAP values of a patient and of a group of patients, to explain the choice of the background patients and to tell which clinical factor moves a model from which factor causes the disease. They should be able to fit LIME around one patient, judge its stability, and compute and read a Grad-CAM map together with a sanity check by randomisation. Finally, they should be able to detect dataset shift with and without outcomes, to judge the calibration of a model and use a confidence score for selective prediction, to compare the calibration and the errors of a model across groups of sex, age and ethnicity, to place a clinical model in the frame of GDPR, the KVKK, the medical device regulations and the EU AI Act, and to review an explanation written by an AI assistant.
 
 ## Study path
 
@@ -61,15 +61,15 @@ Participants who attend the session complete the main route and the practice sto
 
 | Step | Activity | Prompt path | Python path |
 |---|---|---|---|
-| 1 | Read the case of the week and the lecture page up to Practice stop 1, with the 3D scene of the coalitions, Part A of the interactive lab and the knowledge checks | 1 hour | 1 hour |
-| 2 | Practice stop 1, the mini project of the session: Part 1, Stop 1 on the prompt path, or Python step 9 and Sections 1 to 3 on the Python path | 35 minutes | 1 hour 30 minutes |
-| 3 | Read on up to Practice stop 2: LIME with its animation and Part B, Grad-CAM with its animation and Part C, and sanity checks | 50 minutes | 50 minutes |
+| 1 | Read the case of the week and the lecture page up to Practice stop 1: the black box problem, SHAP values with the 3D scene of the coalitions and Part A of the interactive lab, from one patient to all patients and the mini project, with the knowledge checks | 1 hour 5 minutes | 1 hour 5 minutes |
+| 2 | Practice stop 1, the mini project of the session: Part 1, Stop 1 on the prompt path, or Python step 9 and Sections 1 to 3 on the Python path | 40 minutes | 1 hour 35 minutes |
+| 3 | Read on up to Practice stop 2: LIME and its local explanations with its animation and Part B, Grad-CAM with its animation and Part C, and sanity checks | 50 minutes | 50 minutes |
 | 4 | Practice stop 2: Part 1, Stop 2, or Sections 4 to 7 | 40 minutes | 1 hour 30 minutes |
-| 5 | Read on up to Practice stop 3: dataset shift, monitoring, fairness with Part D of the interactive lab, and the legal and ethical frame | 40 minutes | 40 minutes |
-| 6 | Practice stop 3: Part 1, Stop 3, or Sections 8 to 10 | 30 minutes | 45 minutes |
+| 5 | Read on up to Practice stop 3: data drift and monitoring, calibration and the confidence score, bias by sex, age and ethnicity with Part D of the interactive lab, and the legal and ethical framework of GDPR and KVKK | 45 minutes | 45 minutes |
+| 6 | Practice stop 3: Part 1, Stop 3, or Sections 8 to 10 | 30 minutes | 50 minutes |
 | 7 | Read the review of an explanation with Parts E and F of the interactive lab, the paper of the week, the stage of the virtual clinic and the section on your own data | 35 minutes | 35 minutes |
 | 8 | Take the self-assessment of the interactive lab (tab: Check yourself), write the reflection and export the learning log | 20 minutes | 20 minutes |
-| | **Total without the weekly project** | **5 hours 10 minutes** | **7 hours 10 minutes** |
+| | **Total without the weekly project** | **5 hours 25 minutes** | **7 hours 30 minutes** |
 | 9 | Complete the weekly project, on either path | 3 hours | 3 hours |
 
 ## Training flow of the session
@@ -79,18 +79,20 @@ The four-hour session of the week follows the plan below. It is shared to show h
 | Time | Activity |
 |---|---|
 | 0:00 to 0:15 | The case of the week and the route of the week. Every participant opens the notebook in Google Colab or in Jupyter and runs Section 0, which downloads the 300 patients of CAMUS of Week 4 again in one to three minutes; the Cleveland data and the chest pain unit need no download. |
-| 0:15 to 1:00 | Main route: why explain, Shapley values with the 3D scene of the coalitions and Part A, and from one patient to all patients. |
-| 1:00 to 1:35 | Mini project of the session, Practice stop 1, in two groups, the prompt path and the Python path: the clinical factors that weigh most in the model for coronary artery disease, explained with Shapley values. |
+| 0:15 to 1:00 | First two hours, explainable AI methods: the black box problem and why clinicians do not trust it, SHAP values with the 3D scene of the coalitions and Part A, and from one patient to all patients. |
+| 1:00 to 1:35 | Mini project of the session, Practice stop 1, in two groups, the prompt path and the Python path: SHAP in a model for coronary artery disease, on the Cleveland data and on the registry with LDL, age and the ejection fraction. |
 | 1:35 to 1:50 | Break. |
-| 1:50 to 2:35 | Main route: LIME with its animation and Part B, Grad-CAM with its animation and Part C, and sanity checks. Practice stop 2: LIME for patient 172 and its stability, the echo network and its Grad-CAM maps against the expert outlines. |
-| 2:35 to 3:20 | Main route: dataset shift, monitoring after deployment, fairness with Part D, and the legal and ethical frame. Practice stop 3: the classifier that tells the hospitals apart, observed against expected events at hospital B, subgroups of the chest pain unit and a model without sex. |
+| 1:50 to 2:35 | First two hours, continued: LIME and its local explanations with the animation and Part B, Grad-CAM, which shows where a CNN looks, with the animation and Part C, and sanity checks. Practice stop 2: LIME for patient 172 and its stability, the echo network and its Grad-CAM maps against the expert outlines. |
+| 2:35 to 3:20 | Last two hours, AI reliability and clinical validation: data drift and its pitfalls, monitoring after deployment, calibration and a confidence score, bias by sex, age and ethnicity with Part D, and the legal and ethical framework of GDPR and KVKK. Practice stop 3: the classifier that tells the hospitals apart, observed against expected events at hospital B, subgroups of the chest pain unit and a model without sex. |
 | 3:20 to 4:00 | The review of an explanation with Parts E and F, the paper of the week, the quality and safety committee of the virtual clinic, the section on your own data and the weekly project. |
 
 ## Weekly project
 
+**Project.** Visualising with Grad-CAM where an echocardiography model looks, compared with the reading of an expert.
+
 **What to do.** Judge the Grad-CAM maps of an echo network against the outlines of the experts, as a quality and safety committee would before it accepts them. First, train the small network of the course to flag an ejection fraction below 45 percent from the end-diastolic and end-systolic frames of one view, on the 300 patients of CAMUS of the course, and give its test AUC for single views and for patients with a 95 percent interval from 2,000 bootstrap samples. Second, compute the Grad-CAM map of the last block for each of the 100 test views and measure the share of its weight inside the expert outline of the left ventricular cavity and the myocardium, the place of its strongest pixel, and the area of the outline; compare these measures for views with a low and a normal ejection fraction, for right and wrong predictions and for the three grades of image quality. Third, repeat the maps after giving the last block and the head new random weights, and then all weights, with 20 random seeds, and report the median and the range of the rank correlation with the maps of the trained network and of the share inside the outline. Fourth, show six views with their maps and outlines, chosen to include right and wrong predictions, and write half a page for the committee on what the maps can and cannot support.
 
-**Where to look.** Lecture: sections "Grad-CAM: Where does a network look?" and "Sanity checks: Is the map about the model?". Interactive lab: Part C. Jupyter notebook: Part 1, Stop 2, or Part 2, Sections 5 to 7.
+**Where to look.** Lecture: sections "Grad-CAM: Seeing where the CNN looks" and "Sanity checks: Is the map about the model?". Interactive lab: Part C. Jupyter notebook: Part 1, Stop 2, or Part 2, Sections 5 to 7.
 
 **Prompt path.** The project can also be built with four prompts, one for each step, from the [prompt library](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-09/PROMPTS.md#prompt-path-of-the-weekly-project). The section "Weekly project on the prompt path" at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The test of each prompt must hold before the next prompt is used.
 
@@ -114,7 +116,7 @@ In Week 9 the virtual clinic sets up a quality and safety committee. It reviews 
 
 ## Next week
 
-**Week 10: Clinical decision support systems.** The model goes to the bedside: a decision support prototype with a web interface, its user test and its improvement. See the [plan of the course](../../README.md#the-eleven-weeks).
+**Week 10: Clinical decision support systems (CDSS).** The model goes to the bedside: a decision support prototype with a web interface, its user test and its improvement. See the [plan of the course](../../README.md#the-eleven-weeks).
 
 ---
 
