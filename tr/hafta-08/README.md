@@ -17,26 +17,36 @@ Sanal klinik bir göğüs ağrısı ünitesi açar; kalp ekibi de beş tür veri
 
 Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
-## Haftanın rotası
+## Haftanın vakası
 
-Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunmaz; sayfa etkileşimli labla birlikte yukarıdan aşağıya okunur. Her uygulama durağında katılımcılar Jupyter defterindeki iki yoldan birini seçer. **Prompt yolunda** (Kısım 1) kodu, hazır promptlara göre bir yapay zekâ (YZ) asistanı yazar; katılımcı bu kodu çalıştırır ve sonucu denetler. **Python yolunda** (Kısım 2) ise kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Defter hem kurulum gerektirmeyen Google Colab'da hem de kendi bilgisayarınızdaki Jupyter'de çalışır ([kurulum](../../SETUP.tr.md)).
-
-| Ana rota: Ders sayfası ve etkileşimli lab | Uygulama durağı | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
-|---|---|---|---|
-| [İlk 2 saat: Multimodal AI prensipleri](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#first-two-hours-principles-of-multimodal-ai)<br>[Bir kalp ekibinin verileri: Sanal kliniğin göğüs ağrısı ünitesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#the-data-of-a-heart-team-the-chest-pain-unit-of-the-virtual-clinic)<br>[Erken füzyon vs geç füzyon vs hibrit füzyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#early-late-and-hybrid-fusion)<br>[Farklı veri tiplerini tek modelde birleştirme](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#combining-different-data-types-in-one-model)<br>[Attention tabanlı füzyon mekanizmaları](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#attention-based-fusion-modalities-as-tokens)<br>[Eksik veri yönetimi: Klinik gerçeklik](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#missing-modalities)<br>[Mini proje: EKG sinyali + ekokardiyografi + lab değerleri füzyon modeli ile KY risk sınıflandırması](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#mini-project-heart-failure-risk-classification-with-a-fusion-model-of-the-ecg-signal-echocardiography-and-laboratory-values) | **[Durak 1: EKG, ekokardiyogram ve laboratuvarla kalp yetersizliği olayları](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-1)** | Durak 1 | Python adımı 8 ve 1-3. bölümler |
-| [Son 2 saat: Kardiyovasküler risk skorlama sistemi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#last-two-hours-cardiovascular-risk-scoring-system)<br>[SCORE2, Framingham alternatifi AI modeli tasarımı](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#designing-an-ai-model-as-an-alternative-to-score2-and-framingham)<br>[Şüpheli AKS erken uyarı modeli](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#a-risk-model-for-triage-heart-and-the-fused-models)<br>[Biyobelirteçler + klinik değişkenler + görüntüleme füzyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#fusion-of-biomarkers-clinical-variables-and-imaging)<br>[Kalibrasyon ve güven aralıklarının önemi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#the-importance-of-calibration-and-confidence-intervals)<br>– [Kalibrasyon: Olasılıklar söylediklerini ifade ediyor mu?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#calibration-do-the-probabilities-mean-what-they-say)<br>– [Aralıklar: Bir farktan ne kadar emin olunabilir?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#intervals-how-sure-is-a-difference) | **[Durak 2: Göğüs ağrısı ünitesinde majör olumsuz kardiyak olaylar: HEART, tek modaliteler ve füzyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-2)** | Durak 2 | 4-8. bölümler |
-| [Başka bir hastane: Kayma ve yeniden kalibrasyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#another-hospital-drift-and-recalibration)<br>[Taburculuk eşikleri ve net yarar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#thresholds-for-discharge-and-net-benefit) | **[Durak 3: Triyaj: Başka bir hastane, bir taburculuk eşiği ve net yarar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-3)** | Durak 3 | 9. ve 10. bölümler |
-| [YZ asistanıyla çalışmak, 8. bölüm: Bir füzyon işlem hattını denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#ai-pair-programming-part-8-reviewing-a-fusion-pipeline)<br>[Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#the-paper-of-the-week)<br>[Sanal klinik, 8. aşama: Kalp ekibi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#the-virtual-clinic-stage-8-heart-team) | "Kendi verinizle" bölümü, haftanın makalesi ve sanal klinik | – | – |
+CP-3304 numaralı hasta, baskı tarzında göğüs ağrısı, normal bir EKG'si, yükselen bir troponini ve 5 puanlık bir HEART skoru olan, 58 yaşında bir kadındır. Ekibin onun hakkında bildikleri bir programda nasıl birleştirilmeli ve bu programın verdiği olasılıklara yatak başında ve başka bir hastanede güvenilebilir mi?
 
 ## Malzemeler
 
-| Malzeme | Aç | İçeriği |
+| Malzeme | Aç | Ne işe yarar? |
 |---|---|---|
-| **Ders sayfası (ana rota)** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html) | Vakayı, kavramları çözümlü örnekleriyle, hastaları üç modalitenin puanlarının oluşturduğu uzayda gösteren üç boyutlu (3B) bir sahneyi, iki animasyonu, bilgi kontrolü sorularını, üç uygulama durağını, "Kendi verinizle" bölümünü, tekrar kartlarını ve kaynakları içerir. Sayfada kod ve prompt yer almaz. |
-| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/lab.html) | Kod gerektirmeyen A'dan F'ye kadar altı bölümü (F bölümü prompt atölyesidir), öz değerlendirmeyi, yansıtma yazısını ve dışa aktarılabilen öğrenme günlüğünü içerir |
-| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb)<br>[Jupyter için indir](NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb) | Kısım 1 prompt yoludur: Üç durakta toplam on bir adım vardır ve her adımda hazır bir prompt, adımın tablosunu hazırlayan bir veri hücresi, YZ asistanının kodu için bir hücre, otomatik bir kontrol ve hazır kod bulunur. Kısmın sonunda haftalık proje dört promptla yer alır. Kısım 2 Python yoludur: Python adımı 8'i, A-J alıştırmalarıyla birlikte 1-10. bölümleri ve yedi alan için uygulama görevlerini içerir. |
-| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun bütün promptlarını, kodu onarmaya ve denetlemeye yarayan promptları ve haftalık projenin prompt yolunu içerir. GitHub'da her promptun yanında bir kopyalama düğmesi bulunur. |
-| **PDF ders notu** | [Hafta08_Ders_Notlari.pdf](Hafta08_Ders_Notlari.pdf) | Ders sayfasının yazdırılabilir biçimidir; uygulama duraklarını ve "Kendi verinizle" bölümünü de içerir. |
+| **Ders sayfası** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html) | Haftanın anlatımıdır. Yukarıdan aşağıya okunur, uygulama duraklarına götürür ve kod ya da prompt (istem) içermez. |
+| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/lab.html) | Kod gerektirmeyen A-F bölümleri, ders sayfasında yeri geldiğinde açılır. F bölümü prompt atölyesidir. Öz değerlendirme ve öğrenme günlüğü de labdadır. |
+| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb)<br>[Jupyter için indir](NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb) | Uygulama durakları burada çalışılır: Kısım 1 prompt yolu, Kısım 2 Python yoludur. Defter Google Colab'da kurulum gerektirmeden ya da kendi bilgisayarınızdaki Jupyter'de çalışır. |
+| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun ve haftalık projenin bütün promptlarını, kodu onarmak, açıklatmak ve denetlemek için promptlarla birlikte içerir. GitHub'da her promptun yanında bir kopyalama düğmesi bulunur. |
+| **PDF ders notu** | [Hafta08_Ders_Notlari.pdf](Hafta08_Ders_Notlari.pdf) | Ders sayfasının yazdırılabilir biçimidir. |
+
+## Çalışma yolu
+
+Ders sayfası yukarıdan aşağıya okunur ve etkileşimli labın bölümlerini yeri geldikçe açar. Her uygulama durağında çalışma Jupyter defterinde, iki yoldan biriyle sürer. **Prompt yolunda** (defterin 1. kısmı) kodu hazır promptlarla bir yapay zekâ (YZ) asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. **Python yolunda** (2. kısım) kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Oturuma katılanlar adımları oturumda tamamlar. Süreler, haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar içindir.
+
+| Adım | Ne yapılır? | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
+|---|---|---|---|
+| 1 | Haftanın vakasını ve ders sayfasının ilk iki saatini 1. uygulama durağına kadar [okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html) (erken, geç ve hibrit füzyon, veri tiplerinin tek modelde birleştirilmesi, attention tabanlı füzyon, eksik veri ve mini proje); etkileşimli labın A ve B bölümlerini yapın, hastaları üç modalite puanının uzayında gösteren 3B sahneyi ve dört füzyon türünün animasyonunu inceleyin ve bilgi kontrolü sorularını cevaplayın | 1 saat 20 dakika | 1 saat 20 dakika |
+| 2 | **[1. uygulama durağı: EKG, ekokardiyogram ve laboratuvarla kalp yetersizliği olayları](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-1)**<br>Oturumun mini projesi. | Kısım 1, Durak 1 ([promptlar](PROMPTLAR.md#durak-1-ekg-ekokardiyogram-ve-laboratuvarla-kalp-yetersizli%C4%9Fi-olaylar%C4%B1))<br>35 dakika | Python adımı 8, 1-3. bölümler<br>1 saat 30 dakika |
+| 3 | 2. uygulama durağına kadar [okumayı sürdürün](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#last-two-hours-cardiovascular-risk-scoring-system) (SCORE2 ve Framingham'a alternatif bir yapay zekâ modelinin tasarımı, HEART skoruyla şüpheli AKS erken uyarı modeli, biyobelirteçlerin, klinik değişkenlerin ve görüntülemenin füzyonu, kalibrasyon ve aralıklar); etkileşimli labın C bölümünü yapın | 45 dakika | 45 dakika |
+| 4 | **[2. uygulama durağı: Göğüs ağrısı ünitesinde majör olumsuz kardiyak olaylar: HEART, tek modaliteler ve füzyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-2)** | Kısım 1, Durak 2 ([promptlar](PROMPTLAR.md#durak-2-g%C3%B6%C4%9F%C3%BCs-a%C4%9Fr%C4%B1s%C4%B1-%C3%BCnitesinde-maj%C3%B6r-olumsuz-kardiyak-olaylar-heart-tek-modaliteler-ve-f%C3%BCzyon))<br>40 dakika | 4-8. bölümler<br>1 saat 30 dakika |
+| 5 | 3. uygulama durağına kadar [okumayı sürdürün](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#another-hospital-drift-and-recalibration) (başka bir hastane ve yeniden kalibrasyon, eşikler ve net yarar); etkileşimli labın D bölümünü yapın | 30 dakika | 30 dakika |
+| 6 | **[3. uygulama durağı: Triyaj: Başka bir hastane, bir taburculuk eşiği ve net yarar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-3)** | Kısım 1, Durak 3 ([promptlar](PROMPTLAR.md#durak-3-triyaj-ba%C5%9Fka-bir-hastane-bir-taburculuk-e%C5%9Fi%C4%9Fi-ve-net-yarar))<br>35 dakika | 9. ve 10. bölümler<br>45 dakika |
+| 7 | Füzyon işlem hattının denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü [okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#ai-pair-programming-part-8-reviewing-a-fusion-pipeline); etkileşimli labın E ve F bölümlerini yapın | 40 dakika | 40 dakika |
+| 8 | [Etkileşimli labın](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/lab.html) "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
+| | **Haftalık proje dışında toplam** | **5 saat 25 dakika** | **7 saat 20 dakika** |
+| 9 | [Haftalık projeyi](#haftal%C4%B1k-proje) iki yoldan biriyle tamamlayın | [Promptlar](PROMPTLAR.md#haftal%C4%B1k-projenin-prompt-yolu)<br>3 saat | 3 saat |
 
 <table>
 <tr><td width="50%"><img src="ekran-goruntuleri/lab_a_bolumu_gec_fuzyon.png" alt="Etkileşimli lab, A bölümü: Bir hastanın beş modalite olasılığı logitlerin ortalamasıyla ve istiflemeyle adım adım birleştirilir." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_kalibrasyon.png" alt="Jupyter defteri, 9. bölüm: A hastanesinin test kümesinde erken füzyonun, istiflemenin ve logit ortalamasının kalibrasyon ölçütleri ve güvenilirlik eğrileri." width="100%"></td></tr>
@@ -44,45 +54,6 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 <tr><td width="50%"><img src="ekran-goruntuleri/lab_d_bolumu_taburculuk.png" alt="Etkileşimli lab, D bölümü: Test hastalarının tahmin edilen riskleri üzerinde bir taburculuk eşiği; taburcu edilenlerin oranı ve kaçırılan olaylar HEART 0-3 ile birlikte gösterilir." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/ders_fuzyon.png" alt="Ders sayfası: Bir hastanın verilerini birleştirmenin dört yolu, adım adım." width="100%"></td></tr>
 <tr><td>Etkileşimli lab, D bölümü: Test hastalarının tahmin edilen riskleri üzerinde bir taburculuk eşiği; taburcu edilenlerin oranı ve kaçırılan olaylar HEART 0-3 ile birlikte gösterilir.</td><td>Ders sayfası: Bir hastanın verilerini birleştirmenin dört yolu, adım adım.</td></tr>
 </table>
-
-## Haftanın vakası
-
-CP-3304 numaralı hasta, baskı tarzında göğüs ağrısı, normal bir EKG'si, yükselen bir troponini ve 5 puanlık bir HEART skoru olan, 58 yaşında bir kadındır. Ekibin onun hakkında bildikleri bir programda nasıl birleştirilmeli ve bu programın verdiği olasılıklara yatak başında ve başka bir hastanede güvenilebilir mi?
-
-## Öğrenme çıktıları
-
-Haftanın sonunda katılımcıların erken, geç, hibrit ve dikkat tabanlı füzyonu formülleriyle açıklayabilmeleri, birkaç modalitenin puanlarını elle birleştirebilmeleri ve eksik modaliteler için bir yöntem seçebilmeleri beklenmektedir. Farklı veri tiplerini tek bir modelde birleştirebilmeli, çok modlu bir risk modeli kurabilmeli ve bu modeli her tek modaliteyle ve HEART gibi bir klinik skorla, hastalardan yapılan bootstrap aralıklarıyla birlikte karşılaştırabilmeli, SCORE2 ya da Framingham gibi bir skorun yerini alacak bir yapay zekâ modelinin tasarımını ortaya koyabilmelidirler. Bir modelin kalibrasyonunu sabiti, eğimi, Brier skoru ve güvenilirlik eğrisiyle değerlendirebilmeli ve bir modeli başka bir hastane için güncelleyebilmelidirler. Son olarak klinik bir karar için doğrulama kümesinde bir eşik seçebilmeli, sonucunu aralıklar ve net yararla birlikte bildirebilmeli ve bir YZ asistanının yazdığı bir füzyon işlem hattını denetleyebilmelidirler.
-
-## Çalışma yolu
-
-Oturuma katılanlar ana rotayı ve uygulama duraklarını oturumda tamamlar. Haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar, aşağıdaki sürelerle plan yapabilir.
-
-| Adım | Etkinlik | Prompt yolu | Python yolu |
-|---|---|---|---|
-| 1 | Haftanın vakasını ve ders sayfasının ilk iki saatini 1. uygulama durağına kadar okuyun (erken, geç ve hibrit füzyon, veri tiplerinin tek modelde birleştirilmesi, attention tabanlı füzyon, eksik veri ve mini proje); etkileşimli labın A ve B bölümlerini yapın, hastaları üç modalite puanının uzayında gösteren 3B sahneyi ve dört füzyon türünün animasyonunu inceleyin ve bilgi kontrolü sorularını cevaplayın | 1 saat 20 dakika | 1 saat 20 dakika |
-| 2 | 1. uygulama durağı (oturumun mini projesi): Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 8'i ve 1-3. bölümleri çalışın | 35 dakika | 1 saat 30 dakika |
-| 3 | 2. uygulama durağına kadar okumayı sürdürün (SCORE2 ve Framingham'a alternatif bir yapay zekâ modelinin tasarımı, HEART skoruyla şüpheli AKS erken uyarı modeli, biyobelirteçlerin, klinik değişkenlerin ve görüntülemenin füzyonu, kalibrasyon ve aralıklar); etkileşimli labın C bölümünü yapın | 45 dakika | 45 dakika |
-| 4 | 2. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 2'yi, Python yolunda 4-8. bölümleri çalışın | 40 dakika | 1 saat 30 dakika |
-| 5 | 3. uygulama durağına kadar okumayı sürdürün (başka bir hastane ve yeniden kalibrasyon, eşikler ve net yarar); etkileşimli labın D bölümünü yapın | 30 dakika | 30 dakika |
-| 6 | 3. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 3'ü, Python yolunda 9. ve 10. bölümleri çalışın | 35 dakika | 45 dakika |
-| 7 | Füzyon işlem hattının denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü okuyun; etkileşimli labın E ve F bölümlerini yapın | 40 dakika | 40 dakika |
-| 8 | Etkileşimli labın "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
-| | **Haftalık proje dışında toplam** | **5 saat 25 dakika** | **7 saat 20 dakika** |
-| 9 | Haftalık projeyi iki yoldan biriyle tamamlayın | 3 saat | 3 saat |
-
-## Oturumun eğitim akışı
-
-Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzemelerin canlı bir oturumda nasıl bir araya geldiğini göstermek için paylaşılmaktadır.
-
-| Süre | Etkinlik |
-|---|---|
-| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Hiçbir şey indirilmez: Göğüs ağrısı ünitesi, EKG'leri ve kayıt sistemi katılımcının bilgisayarında bir dakikadan kısa sürede çizilir. |
-| 0:15-1:00 | İlk iki saat, multimodal AI prensipleri: Bir kalp ekibinin verileri, 3B sahne, animasyon ve A bölümüyle erken, geç ve hibrit füzyon, veri tiplerinin tek modelde birleştirilmesi, B bölümüyle attention tabanlı füzyon ve eksik verinin yönetimi anlatılır. |
-| 1:00-1:35 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır. Kalp yetersizliği riski EKG sinyali, ekokardiyogram ve laboratuvar değerleriyle önce tek tek, sonra birlikte sınıflandırılır ve farkın bootstrap aralığı hesaplanır. |
-| 1:35-1:50 | Ara. |
-| 1:50-2:35 | Son iki saat, kardiyovasküler risk skorlama sistemi: SCORE2 ve Framingham'a alternatif bir yapay zekâ modelinin tasarımı, HEART skoruyla şüpheli AKS erken uyarı modeli, biyobelirteçlerin, klinik değişkenlerin ve görüntülemenin füzyonu ile animasyonu ve C bölümüyle kalibrasyonun ve aralıkların önemi anlatılır. 2. uygulama durağında göğüs ağrısı ünitesindeki MACE için HEART, tek modaliteler ve füzyon karşılaştırılır; iki tür geç füzyonun kalibrasyonu incelenir. |
-| 2:35-3:20 | Ana rotada başka bir hastane ve yeniden kalibrasyon, D bölümüyle eşikler ve net yarar ele alınır. 3. uygulama durağında B hastanesindeki güncelleme, HEART 0-3 ile karşılaştırılan bir taburculuk eşiği ve net yarar çalışılır. |
-| 3:20-4:00 | Etkileşimli labın E ve F bölümleriyle bir füzyon işlem hattının denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin göğüs ağrısı ünitesi, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Haftalık proje
 
@@ -101,6 +72,24 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 **Ne teslim edilecek?** [Rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılmış, bir ya da iki sayfalık bir rapor teslim edilir. Raporda modellerin aralıklarıyla birlikte tablosu, iki hastanedeki kalibrasyon ölçütleri ve güvenilirlik eğrileri, HEART 0-3 ile birlikte iki eşiğin tablosu, karar eğrisi ve kalp ekibi için yazılan yarım sayfa yer almalıdır. Rapora YZ kullanım günlüğünü (araç, prompt, neyin denetlendiği, neyin değiştirildiği) ve çıktılarıyla birlikte Jupyter defterini ekleyin.
 
 **Teslim.** Haftalık proje, 9. haftanın oturumundan önce utkukose@sdu.edu.tr ya da utkukose@gmail.com adresine e-postayla gönderilir. E-postaya "Ne teslim edilecek?" başlığında sayılan öğeler ve etkileşimli labdan dışa aktarılan öğrenme günlüğü eklenir. Haftalık projeler değerlendirmenin yüzde 40'ını oluşturur; değerlendirme ölçütleri izlencede yer almaktadır.
+
+## Öğrenme çıktıları
+
+Haftanın sonunda katılımcıların erken, geç, hibrit ve dikkat tabanlı füzyonu formülleriyle açıklayabilmeleri, birkaç modalitenin puanlarını elle birleştirebilmeleri ve eksik modaliteler için bir yöntem seçebilmeleri beklenmektedir. Farklı veri tiplerini tek bir modelde birleştirebilmeli, çok modlu bir risk modeli kurabilmeli ve bu modeli her tek modaliteyle ve HEART gibi bir klinik skorla, hastalardan yapılan bootstrap aralıklarıyla birlikte karşılaştırabilmeli, SCORE2 ya da Framingham gibi bir skorun yerini alacak bir yapay zekâ modelinin tasarımını ortaya koyabilmelidirler. Bir modelin kalibrasyonunu sabiti, eğimi, Brier skoru ve güvenilirlik eğrisiyle değerlendirebilmeli ve bir modeli başka bir hastane için güncelleyebilmelidirler. Son olarak klinik bir karar için doğrulama kümesinde bir eşik seçebilmeli, sonucunu aralıklar ve net yararla birlikte bildirebilmeli ve bir YZ asistanının yazdığı bir füzyon işlem hattını denetleyebilmelidirler.
+
+## Oturumun eğitim akışı
+
+Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzemelerin canlı bir oturumda nasıl bir araya geldiğini göstermek için paylaşılmaktadır.
+
+| Süre | Etkinlik |
+|---|---|
+| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Hiçbir şey indirilmez: Göğüs ağrısı ünitesi, EKG'leri ve kayıt sistemi katılımcının bilgisayarında bir dakikadan kısa sürede çizilir. |
+| 0:15-1:00 | İlk iki saat, multimodal AI prensipleri: Bir kalp ekibinin verileri, 3B sahne, animasyon ve A bölümüyle erken, geç ve hibrit füzyon, veri tiplerinin tek modelde birleştirilmesi, B bölümüyle attention tabanlı füzyon ve eksik verinin yönetimi anlatılır. |
+| 1:00-1:35 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır. Kalp yetersizliği riski EKG sinyali, ekokardiyogram ve laboratuvar değerleriyle önce tek tek, sonra birlikte sınıflandırılır ve farkın bootstrap aralığı hesaplanır. |
+| 1:35-1:50 | Ara. |
+| 1:50-2:35 | Son iki saat, kardiyovasküler risk skorlama sistemi: SCORE2 ve Framingham'a alternatif bir yapay zekâ modelinin tasarımı, HEART skoruyla şüpheli AKS erken uyarı modeli, biyobelirteçlerin, klinik değişkenlerin ve görüntülemenin füzyonu ile animasyonu ve C bölümüyle kalibrasyonun ve aralıkların önemi anlatılır. 2. uygulama durağında göğüs ağrısı ünitesindeki MACE için HEART, tek modaliteler ve füzyon karşılaştırılır; iki tür geç füzyonun kalibrasyonu incelenir. |
+| 2:35-3:20 | Ana rotada başka bir hastane ve yeniden kalibrasyon, D bölümüyle eşikler ve net yarar ele alınır. 3. uygulama durağında B hastanesindeki güncelleme, HEART 0-3 ile karşılaştırılan bir taburculuk eşiği ve net yarar çalışılır. |
+| 3:20-4:00 | Etkileşimli labın E ve F bölümleriyle bir füzyon işlem hattının denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin göğüs ağrısı ünitesi, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Kendi verinizle
 

@@ -17,26 +17,36 @@ Sanal klinik bir kalite ve güvenlik kurulu kurar. Kurul her modele neden o sonu
 
 Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
-## Haftanın rotası
+## Haftanın vakası
 
-Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunmaz; sayfa etkileşimli labla birlikte yukarıdan aşağıya okunur. Her uygulama durağında katılımcılar Jupyter defterindeki iki yoldan birini seçer. **Prompt yolunda** (Kısım 1) kodu, hazır promptlara göre bir yapay zekâ (YZ) asistanı yazar; katılımcı bu kodu çalıştırır ve sonucu denetler. **Python yolunda** (Kısım 2) ise kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Defter hem kurulum gerektirmeyen Google Colab'da hem de kendi bilgisayarınızdaki Jupyter'de çalışır ([kurulum](../../SETUP.tr.md)).
-
-| Ana rota: Ders sayfası ve etkileşimli lab | Uygulama durağı | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
-|---|---|---|---|
-| [İlk 2 saat: Açıklanabilir AI yöntemleri](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#first-two-hours-explainable-ai-methods)<br>[Kara kutu problemi: Neden klinisyen güvenmez?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#why-explain-interpretable-models-and-explanations-after-the-fact)<br>[SHAP değerleri: Hangi özellik ne kadar katkı yaptı?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#shapley-values-sharing-a-prediction-among-the-variables)<br>– [Tek bir hastadan bütün hastalara](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#from-one-patient-to-all-patients)<br>[Mini proje: KAH tahmin modelinde SHAP: Hangi klinik faktör (LDL, yaş, EF?) modeli en çok etkiliyor?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#mini-project-shap-in-a-cad-prediction-model-which-clinical-factor-ldl-age-ef-influences-the-model-most) | **[Durak 1: Koroner arter hastalığı modelinin ardındaki klinik etkenler](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-1)** | Durak 1 | Python adımı 9 ve 1-3. bölümler |
-| [LIME: Yerel açıklamalar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#lime-a-simple-model-around-one-patient)<br>[Grad-CAM: CNN'in nereye baktığını görmek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#grad-cam-where-does-a-network-look)<br>– [Sağlamlık testleri: Harita modelle mi ilgili?](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#sanity-checks-is-the-map-about-the-model) | **[Durak 2: Tek bir hasta için LIME ve eko ağının baktığı yer](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-2)** | Durak 2 | 4-7. bölümler |
-| [Son 2 saat: AI güvenilirliği ve klinik validasyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#last-two-hours-ai-reliability-and-clinical-validation)<br>[Distribüsyon kayması (data drift): Tuzaklar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#dataset-shift-what-changed-and-does-it-matter)<br>– [Kullanıma alındıktan sonra izlem: Gözlenen ve beklenen olaylar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#monitoring-after-deployment-observed-against-expected-events)<br>[Model kalibrasyonu ve güven skoru](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#model-calibration-and-confidence-score)<br>[Önyargı (bias) tespiti: Cinsiyet, yaş, etnik köken](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#fairness-does-the-model-work-for-every-patient)<br>[Hukuki ve etik çerçeve (GDPR, KVKK)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#law-and-ethics-who-answers-for-a-model) | **[Durak 3: Kayma, izlem ve alt gruplar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-3)** | Durak 3 | 8-10. bölümler |
-| [YZ asistanıyla çalışmak, 9. bölüm: Bir açıklamayı denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#ai-pair-programming-part-9-reviewing-an-explanation)<br>[Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#the-paper-of-the-week)<br>[Sanal klinik, 9. aşama: Kalite ve güvenlik kurulu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#the-virtual-clinic-stage-9-quality-and-safety-committee) | "Kendi verinizle" bölümü, haftanın makalesi ve sanal klinik | – | – |
+Cleveland verisindeki 172 numaralı hasta, istirahatte göğüs ağrısı olmayan ve egzersiz testinde anjinası ortaya çıkan 59 yaşında bir kadındır. 2. haftanın rastgele ormanı bu hastaya koroner arter hastalığı için 0,73, lojistik regresyon ise 0,55 olasılık verir. Modeller neden böyle söylüyor ve her hasta için, başka bir hastanede ve gelecek yıl bu modellere güvenilebilir mi?
 
 ## Malzemeler
 
-| Malzeme | Aç | İçeriği |
+| Malzeme | Aç | Ne işe yarar? |
 |---|---|---|
-| **Ders sayfası (ana rota)** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html) | Vakayı, kavramları çözümlü örnekleriyle, üç değişkenin koalisyonlarını gösteren üç boyutlu (3B) bir sahneyi, iki animasyonu, bilgi kontrolü sorularını, üç uygulama durağını, "Kendi verinizle" bölümünü, tekrar kartlarını ve kaynakları içerir. Sayfada kod ve prompt yer almaz. |
-| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/lab.html) | Kod gerektirmeyen A'dan F'ye kadar altı bölümü (F bölümü prompt atölyesidir), öz değerlendirmeyi, yansıtma yazısını ve dışa aktarılabilen öğrenme günlüğünü içerir |
-| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb)<br>[Jupyter için indir](NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb) | Kısım 1 prompt yoludur: Üç durakta toplam on iki adım vardır ve her adımda hazır bir prompt, adımın tablosunu hazırlayan bir veri hücresi, YZ asistanının kodu için bir hücre, otomatik bir kontrol ve hazır kod bulunur. Kısmın sonunda haftalık proje dört promptla yer alır. Kısım 2 Python yoludur: Python adımı 9'u, A-J alıştırmalarıyla birlikte 1-10. bölümleri ve yedi alan için uygulama görevlerini içerir. |
-| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun bütün promptlarını, kodu onarmaya ve denetlemeye yarayan promptları ve haftalık projenin prompt yolunu içerir. GitHub'da her promptun yanında bir kopyalama düğmesi bulunur. |
-| **PDF ders notu** | [Hafta09_Ders_Notlari.pdf](Hafta09_Ders_Notlari.pdf) | Ders sayfasının yazdırılabilir biçimidir; uygulama duraklarını ve "Kendi verinizle" bölümünü de içerir. |
+| **Ders sayfası** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html) | Haftanın anlatımıdır. Yukarıdan aşağıya okunur, uygulama duraklarına götürür ve kod ya da prompt (istem) içermez. |
+| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/lab.html) | Kod gerektirmeyen A-F bölümleri, ders sayfasında yeri geldiğinde açılır. F bölümü prompt atölyesidir. Öz değerlendirme ve öğrenme günlüğü de labdadır. |
+| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb)<br>[Jupyter için indir](NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb) | Uygulama durakları burada çalışılır: Kısım 1 prompt yolu, Kısım 2 Python yoludur. Defter Google Colab'da kurulum gerektirmeden ya da kendi bilgisayarınızdaki Jupyter'de çalışır. |
+| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun ve haftalık projenin bütün promptlarını, kodu onarmak, açıklatmak ve denetlemek için promptlarla birlikte içerir. GitHub'da her promptun yanında bir kopyalama düğmesi bulunur. |
+| **PDF ders notu** | [Hafta09_Ders_Notlari.pdf](Hafta09_Ders_Notlari.pdf) | Ders sayfasının yazdırılabilir biçimidir. |
+
+## Çalışma yolu
+
+Ders sayfası yukarıdan aşağıya okunur ve etkileşimli labın bölümlerini yeri geldikçe açar. Her uygulama durağında çalışma Jupyter defterinde, iki yoldan biriyle sürer. **Prompt yolunda** (defterin 1. kısmı) kodu hazır promptlarla bir yapay zekâ (YZ) asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. **Python yolunda** (2. kısım) kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Oturuma katılanlar adımları oturumda tamamlar. Süreler, haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar içindir.
+
+| Adım | Ne yapılır? | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
+|---|---|---|---|
+| 1 | Haftanın vakasını ve ders sayfasını 1. uygulama durağına kadar [okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html) (kara kutu problemi, 3B koalisyon sahnesi ve etkileşimli labın A bölümüyle SHAP değerleri, tek bir hastadan bütün hastalara ve mini proje); bilgi kontrolü sorularını cevaplayın | 1 saat 5 dakika | 1 saat 5 dakika |
+| 2 | **[1. uygulama durağı: Koroner arter hastalığı modelinin ardındaki klinik etkenler](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-1)**<br>Oturumun mini projesi. | Kısım 1, Durak 1 ([promptlar](PROMPTLAR.md#durak-1-koroner-arter-hastal%C4%B1%C4%9F%C4%B1-modelinin-ard%C4%B1ndaki-klinik-etkenler))<br>40 dakika | Python adımı 9, 1-3. bölümler<br>1 saat 35 dakika |
+| 3 | 2. uygulama durağına kadar [okumayı sürdürün](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#lime-a-simple-model-around-one-patient) (animasyonu ve B bölümüyle LIME ve yerel açıklamalar, animasyonu ve C bölümüyle Grad-CAM, sağlamlık testleri) | 50 dakika | 50 dakika |
+| 4 | **[2. uygulama durağı: Tek bir hasta için LIME ve eko ağının baktığı yer](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-2)** | Kısım 1, Durak 2 ([promptlar](PROMPTLAR.md#durak-2-tek-bir-hasta-i%C3%A7in-lime-ve-eko-a%C4%9F%C4%B1n%C4%B1n-bakt%C4%B1%C4%9F%C4%B1-yer))<br>40 dakika | 4-7. bölümler<br>1 saat 30 dakika |
+| 5 | 3. uygulama durağına kadar [okumayı sürdürün](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#last-two-hours-ai-reliability-and-clinical-validation) (data drift ve izlem, kalibrasyon ve güven skoru, cinsiyet, yaş ve etnik kökene göre önyargı, GDPR ve KVKK ile hukuki ve etik çerçeve); etkileşimli labın D bölümünü yapın | 45 dakika | 45 dakika |
+| 6 | **[3. uygulama durağı: Kayma, izlem ve alt gruplar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-3)** | Kısım 1, Durak 3 ([promptlar](PROMPTLAR.md#durak-3-kayma-izlem-ve-alt-gruplar))<br>30 dakika | 8-10. bölümler<br>50 dakika |
+| 7 | Bir açıklamanın denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü [okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#ai-pair-programming-part-9-reviewing-an-explanation); etkileşimli labın E ve F bölümlerini yapın | 35 dakika | 35 dakika |
+| 8 | [Etkileşimli labın](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/lab.html) "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
+| | **Haftalık proje dışında toplam** | **5 saat 25 dakika** | **7 saat 30 dakika** |
+| 9 | [Haftalık projeyi](#haftal%C4%B1k-proje) iki yoldan biriyle tamamlayın | [Promptlar](PROMPTLAR.md#haftal%C4%B1k-projenin-prompt-yolu)<br>3 saat | 3 saat |
 
 <table>
 <tr><td width="50%"><img src="ekran-goruntuleri/lab_a_bolumu_shapley.png" alt="Etkileşimli lab, A bölümü: 172 numaralı hastanın üç değişkeninin, katılabilecekleri altı sıradan hesaplanan Shapley değerleri ve toplamlarının tahmine eşit olduğunun kontrolü." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_grad_cam.png" alt="Jupyter defteri, 6. bölüm: Eko ağının CAMUS test görüntülerindeki Grad-CAM haritaları ve sol ventrikülün uzman sınırı. Veri: CAMUS, CC BY-NC-SA 4.0." width="100%"></td></tr>
@@ -44,45 +54,6 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 <tr><td width="50%"><img src="ekran-goruntuleri/lab_d_bolumu_izlem.png" alt="Etkileşimli lab, D bölümü: B hastanesinde geliş sırasıyla gözlenen eksi beklenen olaylar; kalibre bir modelin bandı ve sabit terim güncellemeleri." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/ders_lime.png" alt="Ders sayfası: 172 numaralı hastanın çevresinde, ormanın yaşa ve en yüksek kalp hızına göre riski üzerinde adım adım LIME." width="100%"></td></tr>
 <tr><td>Etkileşimli lab, D bölümü: B hastanesinde geliş sırasıyla gözlenen eksi beklenen olaylar; kalibre bir modelin bandı ve sabit terim güncellemeleri.</td><td>Ders sayfası: 172 numaralı hastanın çevresinde, ormanın yaşa ve en yüksek kalp hızına göre riski üzerinde adım adım LIME.</td></tr>
 </table>
-
-## Haftanın vakası
-
-Cleveland verisindeki 172 numaralı hasta, istirahatte göğüs ağrısı olmayan ve egzersiz testinde anjinası ortaya çıkan 59 yaşında bir kadındır. 2. haftanın rastgele ormanı bu hastaya koroner arter hastalığı için 0,73, lojistik regresyon ise 0,55 olasılık verir. Modeller neden böyle söylüyor ve her hasta için, başka bir hastanede ve gelecek yıl bu modellere güvenilebilir mi?
-
-## Öğrenme çıktıları
-
-Haftanın sonunda katılımcıların yorumlanabilir bir modeli sonradan yapılan bir açıklamadan, yerel bir açıklamayı da genel bir açıklamadan ayırabilmeleri beklenmektedir. Klinisyenin bir kara kutuya neden güvenmediğini açıklayabilmeli, üç değişken için Shapley değerlerini elle hesaplayabilmeli, bir hastanın ve bir hasta grubunun SHAP değerlerini okuyabilmeli, arka plan hastalarının seçimini açıklayabilmeli ve bir modeli etkileyen klinik faktörü hastalığa neden olan faktörden ayırabilmelidirler. Tek bir hastanın çevresinde LIME kurabilmeli ve kararlılığını değerlendirebilmeli; bir Grad-CAM haritasını hesaplayıp rastgeleleştirmeyle yapılan bir sağlamlık testiyle birlikte okuyabilmelidirler. Son olarak veri kaymasını sonuçlarla ve sonuçlar olmadan saptayabilmeli, bir modelin kalibrasyonunu değerlendirip seçici tahmin için bir güven skoru kullanabilmeli, bir modelin kalibrasyonunu ve hatalarını cinsiyet, yaş ve etnik köken grupları arasında karşılaştırabilmeli, klinik bir modeli GDPR, KVKK, tıbbi cihaz mevzuatı ve AB Yapay Zekâ Tüzüğü çerçevesine yerleştirebilmeli ve bir YZ asistanının yazdığı bir açıklamayı denetleyebilmelidirler.
-
-## Çalışma yolu
-
-Oturuma katılanlar ana rotayı ve uygulama duraklarını oturumda tamamlar. Haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar, aşağıdaki sürelerle plan yapabilir.
-
-| Adım | Etkinlik | Prompt yolu | Python yolu |
-|---|---|---|---|
-| 1 | Haftanın vakasını ve ders sayfasını 1. uygulama durağına kadar okuyun (kara kutu problemi, 3B koalisyon sahnesi ve etkileşimli labın A bölümüyle SHAP değerleri, tek bir hastadan bütün hastalara ve mini proje); bilgi kontrolü sorularını cevaplayın | 1 saat 5 dakika | 1 saat 5 dakika |
-| 2 | 1. uygulama durağı (oturumun mini projesi): Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 9'u ve 1-3. bölümleri çalışın | 40 dakika | 1 saat 35 dakika |
-| 3 | 2. uygulama durağına kadar okumayı sürdürün (animasyonu ve B bölümüyle LIME ve yerel açıklamalar, animasyonu ve C bölümüyle Grad-CAM, sağlamlık testleri) | 50 dakika | 50 dakika |
-| 4 | 2. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 2'yi, Python yolunda 4-7. bölümleri çalışın | 40 dakika | 1 saat 30 dakika |
-| 5 | 3. uygulama durağına kadar okumayı sürdürün (data drift ve izlem, kalibrasyon ve güven skoru, cinsiyet, yaş ve etnik kökene göre önyargı, GDPR ve KVKK ile hukuki ve etik çerçeve); etkileşimli labın D bölümünü yapın | 45 dakika | 45 dakika |
-| 6 | 3. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 3'ü, Python yolunda 8-10. bölümleri çalışın | 30 dakika | 50 dakika |
-| 7 | Bir açıklamanın denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü okuyun; etkileşimli labın E ve F bölümlerini yapın | 35 dakika | 35 dakika |
-| 8 | Etkileşimli labın "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
-| | **Haftalık proje dışında toplam** | **5 saat 25 dakika** | **7 saat 30 dakika** |
-| 9 | Haftalık projeyi iki yoldan biriyle tamamlayın | 3 saat | 3 saat |
-
-## Oturumun eğitim akışı
-
-Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzemelerin canlı bir oturumda nasıl bir araya geldiğini göstermek için paylaşılmaktadır.
-
-| Süre | Etkinlik |
-|---|---|
-| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm 4. haftada kullanılan 300 CAMUS hastasını bir ile üç dakikada yeniden indirir; Cleveland verisi ve göğüs ağrısı ünitesi için indirme gerekmez. |
-| 0:15-1:00 | İlk iki saat, açıklanabilir AI yöntemleri: Kara kutu problemi ve klinisyenin neden güvenmediği, 3B koalisyon sahnesi ve A bölümüyle SHAP değerleri, tek bir hastadan bütün hastalara. |
-| 1:00-1:35 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır: Cleveland verisinde ve LDL, yaş ve ejeksiyon fraksiyonunu içeren kayıt sisteminde bir koroner arter hastalığı modelinde SHAP. |
-| 1:35-1:50 | Ara. |
-| 1:50-2:35 | İlk iki saatin devamı: Animasyonu ve B bölümüyle LIME ve yerel açıklamalar, CNN'in nereye baktığını gösteren Grad-CAM, animasyonu ve C bölümüyle, ve sağlamlık testleri. 2. uygulama durağında 172 numaralı hasta için LIME ve kararlılığı, eko ağı ve uzman sınırlarına karşı Grad-CAM haritaları çalışılır. |
-| 2:35-3:20 | Son iki saat, AI güvenilirliği ve klinik validasyon: Data drift ve tuzakları, kullanıma alındıktan sonra izlem, kalibrasyon ve güven skoru, D bölümüyle cinsiyet, yaş ve etnik kökene göre önyargı ve GDPR ile KVKK'nın çizdiği hukuki ve etik çerçeve. 3. uygulama durağında hastaneleri birbirinden ayıran sınıflandırıcı, B hastanesinde gözlenen ve beklenen olaylar, göğüs ağrısı ünitesinin alt grupları ve cinsiyetsiz bir model çalışılır. |
-| 3:20-4:00 | Etkileşimli labın E ve F bölümleriyle bir açıklamanın denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin kalite ve güvenlik kurulu, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Haftalık proje
 
@@ -99,6 +70,24 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 **Ne teslim edilecek?** [Rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılmış, bir ya da iki sayfalık bir rapor teslim edilir. Raporda ölçütlerin tablosu, altı görüntünün şekli ve kurul için yazılan yarım sayfa yer almalıdır. Rapora YZ kullanım günlüğünü (araç, prompt, neyin denetlendiği, neyin değiştirildiği) ve çıktılarıyla birlikte Jupyter defterini ekleyin. CAMUS ekokardiyogramları raporda "CAMUS, CC BY-NC-SA 4.0" atfıyla yer alabilir; başka biçimde paylaşılmaz.
 
 **Teslim.** Haftalık proje, 10. haftanın oturumundan önce utkukose@sdu.edu.tr ya da utkukose@gmail.com adresine e-postayla gönderilir. E-postaya "Ne teslim edilecek?" başlığında sayılan öğeler ve etkileşimli labdan dışa aktarılan öğrenme günlüğü eklenir. Haftalık projeler değerlendirmenin yüzde 40'ını oluşturur; değerlendirme ölçütleri izlencede yer almaktadır.
+
+## Öğrenme çıktıları
+
+Haftanın sonunda katılımcıların yorumlanabilir bir modeli sonradan yapılan bir açıklamadan, yerel bir açıklamayı da genel bir açıklamadan ayırabilmeleri beklenmektedir. Klinisyenin bir kara kutuya neden güvenmediğini açıklayabilmeli, üç değişken için Shapley değerlerini elle hesaplayabilmeli, bir hastanın ve bir hasta grubunun SHAP değerlerini okuyabilmeli, arka plan hastalarının seçimini açıklayabilmeli ve bir modeli etkileyen klinik faktörü hastalığa neden olan faktörden ayırabilmelidirler. Tek bir hastanın çevresinde LIME kurabilmeli ve kararlılığını değerlendirebilmeli; bir Grad-CAM haritasını hesaplayıp rastgeleleştirmeyle yapılan bir sağlamlık testiyle birlikte okuyabilmelidirler. Son olarak veri kaymasını sonuçlarla ve sonuçlar olmadan saptayabilmeli, bir modelin kalibrasyonunu değerlendirip seçici tahmin için bir güven skoru kullanabilmeli, bir modelin kalibrasyonunu ve hatalarını cinsiyet, yaş ve etnik köken grupları arasında karşılaştırabilmeli, klinik bir modeli GDPR, KVKK, tıbbi cihaz mevzuatı ve AB Yapay Zekâ Tüzüğü çerçevesine yerleştirebilmeli ve bir YZ asistanının yazdığı bir açıklamayı denetleyebilmelidirler.
+
+## Oturumun eğitim akışı
+
+Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzemelerin canlı bir oturumda nasıl bir araya geldiğini göstermek için paylaşılmaktadır.
+
+| Süre | Etkinlik |
+|---|---|
+| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm 4. haftada kullanılan 300 CAMUS hastasını bir ile üç dakikada yeniden indirir; Cleveland verisi ve göğüs ağrısı ünitesi için indirme gerekmez. |
+| 0:15-1:00 | İlk iki saat, açıklanabilir AI yöntemleri: Kara kutu problemi ve klinisyenin neden güvenmediği, 3B koalisyon sahnesi ve A bölümüyle SHAP değerleri, tek bir hastadan bütün hastalara. |
+| 1:00-1:35 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır: Cleveland verisinde ve LDL, yaş ve ejeksiyon fraksiyonunu içeren kayıt sisteminde bir koroner arter hastalığı modelinde SHAP. |
+| 1:35-1:50 | Ara. |
+| 1:50-2:35 | İlk iki saatin devamı: Animasyonu ve B bölümüyle LIME ve yerel açıklamalar, CNN'in nereye baktığını gösteren Grad-CAM, animasyonu ve C bölümüyle, ve sağlamlık testleri. 2. uygulama durağında 172 numaralı hasta için LIME ve kararlılığı, eko ağı ve uzman sınırlarına karşı Grad-CAM haritaları çalışılır. |
+| 2:35-3:20 | Son iki saat, AI güvenilirliği ve klinik validasyon: Data drift ve tuzakları, kullanıma alındıktan sonra izlem, kalibrasyon ve güven skoru, D bölümüyle cinsiyet, yaş ve etnik kökene göre önyargı ve GDPR ile KVKK'nın çizdiği hukuki ve etik çerçeve. 3. uygulama durağında hastaneleri birbirinden ayıran sınıflandırıcı, B hastanesinde gözlenen ve beklenen olaylar, göğüs ağrısı ünitesinin alt grupları ve cinsiyetsiz bir model çalışılır. |
+| 3:20-4:00 | Etkileşimli labın E ve F bölümleriyle bir açıklamanın denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin kalite ve güvenlik kurulu, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Kendi verinizle
 

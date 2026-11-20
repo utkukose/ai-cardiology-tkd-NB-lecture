@@ -17,26 +17,36 @@ Türk Kardiyoloji Derneği
 
 Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
-## Haftanın rotası
+## Haftanın vakası
 
-Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunmaz; sayfa etkileşimli labla birlikte yukarıdan aşağıya okunur. Her uygulama durağında katılımcılar Jupyter defterindeki iki yoldan birini seçer. **Prompt yolunda** (Kısım 1) kodu, hazır promptlara göre bir yapay zekâ (YZ) asistanı yazar; katılımcı bu kodu çalıştırır ve sonucu denetler. **Python yolunda** (Kısım 2) ise kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Defter hem kurulum gerektirmeyen Google Colab'da hem de kendi bilgisayarınızdaki Jupyter'de çalışır ([kurulum](../../SETUP.tr.md)).
-
-| Ana rota: Ders sayfası ve etkileşimli lab | Uygulama durağı | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
-|---|---|---|---|
-| [İlk 2 saat: 1D CNN ve LSTM ile EKG analizi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#first-two-hours-ecg-analysis-with-1d-cnn-and-lstm)<br>[EKG'yi zaman serisi olarak modellemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#the-ecg-as-a-time-series)<br>[1D CNN: Aritmi tespiti (AF, VT, SVT)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#arrhythmia-detection-with-a-1d-cnn-af-vt-svt)<br>– [Önce bir kural: RR aralıkları ve atriyal fibrilasyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#a-rule-first-rr-intervals-and-atrial-fibrillation)<br>– [Tek boyutlu evrişim: Zaman boyunca kayan bir çekirdek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#one-dimensional-convolution-a-kernel-that-slides-along-time)<br>– [EKG'de ve ağda AF, VT ve SVT](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#af-vt-and-svt-on-the-ecg-and-in-the-network)<br>[LSTM: Temporal bağımlılıkların yakalanması](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#recurrent-networks-a-state-that-moves-along-the-signal)<br>[Çok etiketli sınıflandırma (multi-label)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#many-labels-at-once-multi-label-classification)<br>[Mini proje: PhysioNet 2020 Challenge: 12 derivasyon EKG'den 9 ritim bozukluğu tespiti](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#mini-project-physionet-2020-challenge-detection-of-nine-rhythm-disorders-from-the-12-lead-ecg) | **[Durak 1: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-1)** | Durak 1 | Python adımı 5 ve 1-5. bölümler |
-| [Son 2 saat: Gelişmiş EKG modelleri ve klinik entegrasyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#last-two-hours-advanced-ecg-models-and-clinical-integration)<br>[ST-yükselmesi/depresyonu otomatik tespiti (AMI)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#automatic-detection-of-st-elevation-depression-ami)<br>– [ST yükselmesi ve çökmesi: Evrensel tanımın ölçütleri](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#st-elevation-and-depression-the-criteria-of-the-universal-definition)<br>– [ST segmentini otomatik ölçmek: Medyan atım ve J noktası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#measuring-the-st-segment-automatically-the-median-beat-and-the-j-point) | **[Durak 2: ST yükselmesi: Medyan atım, J noktası ve alarm](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-2)** | Durak 2 | 6. ve 7. bölümler |
-| [QTc uzaması risk algoritması](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#qt-prolongation-and-its-risk)<br>[Holter analizi: Uzun dönem AI monitoring](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#long-term-monitoring-from-ten-seconds-to-twenty-four-hours) | **[Durak 3: Uzun süreli izlem: Pencereler, AF yükü ve yanlış alarmlar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-3)** | Durak 3 | 8. ve 9. bölümler |
-| [FDA/CE onaylı EKG AI ürünlerine genel bakış](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#ecg-algorithms-with-regulatory-approval)<br>[YZ asistanıyla çalışmak, 5. bölüm: Bir zaman serisi işlem hattını denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#ai-pair-programming-part-5-reviewing-a-time-series-pipeline)<br>[Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#the-paper-of-the-week)<br>[Sanal klinik, 5. aşama: Ritim ve STEMI alarmı](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#the-virtual-clinic-stage-5-rhythm-and-stemi-alarm) | "Kendi verinizle" bölümü, haftanın makalesi ve sanal klinik | – | – |
+PTB-XL'in 13913 numaralı kaydı, sinüs taşikardisi ve akut anterior ve lateral enfarktüsü olan 68 yaşında bir erkeğe aittir. Bir program kaydın 12.000 sayısından hangi ritmi bildirir, bir STEMI alarmı verir mi ve böyle bir alarm ne sıklıkla doğru çıkar?
 
 ## Malzemeler
 
-| Malzeme | Aç | İçeriği |
+| Malzeme | Aç | Ne işe yarar? |
 |---|---|---|
-| **Ders sayfası (ana rota)** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html) | Vakayı, kavramları çözümlü örnekleriyle, ST hasar vektörünün üç boyutlu (3B) bir sahnesini, iki animasyonu, bilgi kontrolü sorularını, üç uygulama durağını, "Kendi verinizle" bölümünü, tekrar kartlarını ve kaynakları içerir. Sayfada kod ve prompt yer almaz. |
-| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/lab.html) | Kod gerektirmeyen A'dan F'ye kadar altı bölümü (F bölümü prompt atölyesidir), öz değerlendirmeyi, yansıtma yazısını ve dışa aktarılabilen öğrenme günlüğünü içerir |
-| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb)<br>[Jupyter için indir](NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb) | Kısım 1 prompt yoludur: Üç durakta toplam on adım vardır ve her adımda hazır bir prompt, adımın tablosunu hazırlayan bir veri hücresi, YZ asistanının kodu için bir hücre, otomatik bir kontrol ve hazır kod bulunur. Kısmın sonunda haftalık proje dört promptla yer alır. Kısım 2 Python yoludur: Python adımı 5'i, A-J alıştırmalarıyla birlikte 1-10. bölümleri ve yedi alan için uygulama görevlerini içerir. |
-| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun bütün promptlarını, kodu onarmaya yarayan promptları ve haftalık projenin prompt yolunu içerir. GitHub'da her promptun yanında bir kopyalama düğmesi bulunur. |
-| **PDF ders notu** | [Hafta05_Ders_Notlari.pdf](Hafta05_Ders_Notlari.pdf) | Ders sayfasının yazdırılabilir biçimidir; uygulama duraklarını ve "Kendi verinizle" bölümünü de içerir. |
+| **Ders sayfası** | [Ders sayfasını aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html) | Haftanın anlatımıdır. Yukarıdan aşağıya okunur, uygulama duraklarına götürür ve kod ya da prompt (istem) içermez. |
+| **Etkileşimli lab** | [Etkileşimli labı aç](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/lab.html) | Kod gerektirmeyen A-F bölümleri, ders sayfasında yeri geldiğinde açılır. F bölümü prompt atölyesidir. Öz değerlendirme ve öğrenme günlüğü de labdadır. |
+| **Jupyter defteri** | [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb)<br>[Jupyter için indir](NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb) | Uygulama durakları burada çalışılır: Kısım 1 prompt yolu, Kısım 2 Python yoludur. Defter Google Colab'da kurulum gerektirmeden ya da kendi bilgisayarınızdaki Jupyter'de çalışır. |
+| **Prompt kütüphanesi** | [PROMPTLAR.md](PROMPTLAR.md) | Prompt yolunun ve haftalık projenin bütün promptlarını, kodu onarmak, açıklatmak ve denetlemek için promptlarla birlikte içerir. GitHub'da her promptun yanında bir kopyalama düğmesi bulunur. |
+| **PDF ders notu** | [Hafta05_Ders_Notlari.pdf](Hafta05_Ders_Notlari.pdf) | Ders sayfasının yazdırılabilir biçimidir. |
+
+## Çalışma yolu
+
+Ders sayfası yukarıdan aşağıya okunur ve etkileşimli labın bölümlerini yeri geldikçe açar. Her uygulama durağında çalışma Jupyter defterinde, iki yoldan biriyle sürer. **Prompt yolunda** (defterin 1. kısmı) kodu hazır promptlarla bir yapay zekâ (YZ) asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. **Python yolunda** (2. kısım) kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Oturuma katılanlar adımları oturumda tamamlar. Süreler, haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar içindir.
+
+| Adım | Ne yapılır? | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
+|---|---|---|---|
+| 1 | Haftanın vakasını ve ders sayfasının ilk iki saatini 1. uygulama durağına kadar [okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html) (zaman serisi olarak EKG, AF, VT ve SVT için 1D CNN, LSTM, çok etiketli sınıflandırma ve mini proje); etkileşimli labın A, B ve C bölümlerini yapın ve bilgi kontrolü sorularını cevaplayın | 1 saat 10 dakika | 1 saat 10 dakika |
+| 2 | **[1. uygulama durağı: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-1)** | Kısım 1, Durak 1 ([promptlar](PROMPTLAR.md#durak-1-mini-proje-ritim-bir-kuraldan-physionet-2020-challenge%C4%B1n-dokuz-s%C4%B1n%C4%B1f%C4%B1na))<br>35 dakika | Python adımı 5, 1-5. bölümler (4. bölümün sonundaki PhysioNet 2020 Challenge'ın dokuz sınıfıyla birlikte)<br>1 saat 50 dakika |
+| 3 | 2. uygulama durağına kadar [okumayı sürdürün](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#last-two-hours-advanced-ecg-models-and-clinical-integration) (3B sahneyle AMI'de ST yükselmesi ve çökmesinin otomatik tespiti, otomatik ST ölçümü); etkileşimli labın D bölümünü yapın | 40 dakika | 40 dakika |
+| 4 | **[2. uygulama durağı: ST yükselmesi: Medyan atım, J noktası ve alarm](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-2)** | Kısım 1, Durak 2 ([promptlar](PROMPTLAR.md#durak-2-st-y%C3%BCkselmesi-medyan-at%C4%B1m-j-noktas%C4%B1-ve-alarm))<br>25 dakika | 6. ve 7. bölümler<br>50 dakika |
+| 5 | 3. uygulama durağına kadar [okumayı sürdürün](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#qt-prolongation-and-its-risk) (QTc uzaması risk algoritması ve Holter analizi); Holter kaydının animasyonunu inceleyin | 35 dakika | 35 dakika |
+| 6 | **[3. uygulama durağı: Uzun süreli izlem: Pencereler, AF yükü ve yanlış alarmlar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-3)** | Kısım 1, Durak 3 ([promptlar](PROMPTLAR.md#durak-3-uzun-s%C3%BCreli-izlem-pencereler-af-y%C3%BCk%C3%BC-ve-yanl%C4%B1%C5%9F-alarmlar))<br>20 dakika | 8. ve 9. bölümler<br>45 dakika |
+| 7 | FDA/CE onaylı EKG ürünlerine genel bakışı, zaman serisi işlem hattı denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü [okuyun](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#ecg-algorithms-with-regulatory-approval); etkileşimli labın E ve F bölümlerini yapın. Python yolunu izliyorsanız 10. bölümü de çalışın | 40 dakika | 55 dakika |
+| 8 | [Etkileşimli labın](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/lab.html) "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
+| | **Haftalık proje dışında toplam** | **4 saat 45 dakika** | **7 saat 5 dakika** |
+| 9 | [Haftalık projeyi](#haftal%C4%B1k-proje) iki yoldan biriyle tamamlayın | [Promptlar](PROMPTLAR.md#haftal%C4%B1k-projenin-prompt-yolu)<br>3 saat | 3 saat |
 
 <table>
 <tr><td width="50%"><img src="ekran-goruntuleri/lab_b_bolumu_rr_kurali.png" alt="Etkileşimli lab, B bölümü: Test katındaki değişim katsayıları, AF kuralının eşiği, alarmlar, duyarlılık, özgüllük ve pozitif öngörü değeri; altta ventriküler erken vurulu bir kaydın RR aralıkları görülmektedir." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/defter_12_derivasyonlu_vaka.png" alt="Jupyter defteri, 1. bölüm: PTB-XL'den haftanın vakasının 12 derivasyonlu EKG'si." width="100%"></td></tr>
@@ -44,45 +54,6 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 <tr><td width="50%"><img src="ekran-goruntuleri/lab_d_bolumu_st.png" alt="Etkileşimli lab, D bölümü: Vakanın on iki derivasyonunun medyan atımları PR düzeyi ve J noktasıyla birlikte çizilir; panel STEMI alarmının kararını verir." width="100%"></td><td width="50%"><img src="ekran-goruntuleri/ders_holter_pencereleri.png" alt="Ders sayfası: Sanal kliniğin 24 saatlik Holter kaydının pencereleri, alarmın eşiği ve yanlış alarmları." width="100%"></td></tr>
 <tr><td>Etkileşimli lab, D bölümü: Vakanın on iki derivasyonunun medyan atımları PR düzeyi ve J noktasıyla birlikte çizilir; panel STEMI alarmının kararını verir.</td><td>Ders sayfası: Sanal kliniğin 24 saatlik Holter kaydının pencereleri, alarmın eşiği ve yanlış alarmları.</td></tr>
 </table>
-
-## Haftanın vakası
-
-PTB-XL'in 13913 numaralı kaydı, sinüs taşikardisi ve akut anterior ve lateral enfarktüsü olan 68 yaşında bir erkeğe aittir. Bir program kaydın 12.000 sayısından hangi ritmi bildirir, bir STEMI alarmı verir mi ve böyle bir alarm ne sıklıkla doğru çıkar?
-
-## Öğrenme çıktıları
-
-Haftanın sonunda katılımcıların bir EKG'yi zaman serisi olarak modelleyebilmeleri, örnekleme frekansını ve etiketlerini açıklayabilmeleri ve bir hastanın kayıtlarını tek bir kümede tutabilmeleri beklenmektedir. AF'yi RR aralıklarına dayanan bir kuralla tespit edebilmeli, tek boyutlu evrişimi ve alıcı alanını açıklayabilmeli ve AF, VT ile SVT'yi RR aralıklarının düzeni, QRS kompleksinin genişliği ve P dalgalarıyla birbirinden ayırabilmelidirler. LSTM ve GRU kapılarının temporal bağımlılıkları nasıl yakaladığını açıklayabilmeli ve çok etiketli bir ağı, PhysioNet 2020 Challenge'ın dokuz sınıfında olduğu gibi, eşikleri bir doğrulama kümesinde seçilmiş olarak etiket etiket değerlendirebilmelidirler. Son olarak ST segmentini bir medyan atımda ölçebilmeli, evrensel tanımın ST yükselmesi ölçütlerini bir alarm olarak uygulayıp yanlış alarmlarını değerlendirebilmeli, bir QTc uzaması risk skoru hesaplayabilmeli, 24 saatlik bir kaydı pencereler hâlinde okuyabilmeli ve bir EKG ürününün onayının neyi kapsadığını söyleyebilmelidirler.
-
-## Çalışma yolu
-
-Oturuma katılanlar ana rotayı ve uygulama duraklarını oturumda tamamlar. Haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar, aşağıdaki sürelerle plan yapabilir.
-
-| Adım | Etkinlik | Prompt yolu | Python yolu |
-|---|---|---|---|
-| 1 | Haftanın vakasını ve ders sayfasının ilk iki saatini 1. uygulama durağına kadar okuyun (zaman serisi olarak EKG, AF, VT ve SVT için 1D CNN, LSTM, çok etiketli sınıflandırma ve mini proje); etkileşimli labın A, B ve C bölümlerini yapın ve bilgi kontrolü sorularını cevaplayın | 1 saat 10 dakika | 1 saat 10 dakika |
-| 2 | 1. uygulama durağı (oturumun mini projesi): Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 5'i ve 4. bölümün sonundaki PhysioNet 2020 Challenge'ın dokuz sınıfıyla birlikte 1-5. bölümleri çalışın | 35 dakika | 1 saat 50 dakika |
-| 3 | 2. uygulama durağına kadar okumayı sürdürün (3B sahneyle AMI'de ST yükselmesi ve çökmesinin otomatik tespiti, otomatik ST ölçümü); etkileşimli labın D bölümünü yapın | 40 dakika | 40 dakika |
-| 4 | 2. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 2'yi, Python yolunda 6. ve 7. bölümleri çalışın | 25 dakika | 50 dakika |
-| 5 | 3. uygulama durağına kadar okumayı sürdürün (QTc uzaması risk algoritması ve Holter analizi); Holter kaydının animasyonunu inceleyin | 35 dakika | 35 dakika |
-| 6 | 3. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 3'ü, Python yolunda 8. ve 9. bölümleri çalışın | 20 dakika | 45 dakika |
-| 7 | FDA/CE onaylı EKG ürünlerine genel bakışı, zaman serisi işlem hattı denetimini, haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü okuyun; etkileşimli labın E ve F bölümlerini yapın. Python yolunu izliyorsanız 10. bölümü de çalışın | 40 dakika | 55 dakika |
-| 8 | Etkileşimli labın "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
-| | **Haftalık proje dışında toplam** | **4 saat 45 dakika** | **7 saat 5 dakika** |
-| 9 | Haftalık projeyi iki yoldan biriyle tamamlayın | 3 saat | 3 saat |
-
-## Oturumun eğitim akışı
-
-Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzemelerin canlı bir oturumda nasıl bir araya geldiğini göstermek için paylaşılmaktadır.
-
-| Süre | Etkinlik |
-|---|---|
-| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm, PTB-XL'in dört katındaki 100 Hz'lik 12 derivasyonlu EKG'leri (yaklaşık 216 MB) PhysioNet'ten indirir. |
-| 0:15-0:55 | İlk iki saat, 1D CNN ve LSTM ile EKG analizi: EKG bir zaman serisi olarak modellenir; B bölümüyle RR aralıklarına dayanan bir AF kuralı, A bölümüyle tek boyutlu evrişim çalışılır. Ardından EKG'de ve ağda AF, VT ve SVT, LSTM ve GRU ile etkileşimli labın C bölümüyle çok etiketli sınıflandırma anlatılır. |
-| 0:55-1:45 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır ve PhysioNet 2020 Challenge'ın dokuz sınıfı üzerinde çalışır. Tek boyutlu bir ağ PTB-XL'in ritim etiketlerini yaklaşık iki dakikada öğrenir; eşikleri 9. katta seçilir ve ağ 10. katta kuralla karşılaştırılır. Python yolunda 4. bölümün sonu ağı Challenge'ın dokuz sınıfı için eğitir. |
-| 1:45-2:00 | Ara. |
-| 2:00-2:35 | Son iki saat, gelişmiş EKG modelleri ve klinik entegrasyon: AMI'de ST yükselmesi ve çökmesinin otomatik tespiti 3B sahne, evrensel tanımın ölçütleri ve D bölümüyle medyan atım ve J noktası üzerinden çalışılır. Ardından 2. uygulama durağında vakanın ST sapması ve test katındaki alarm hesaplanır. |
-| 2:35-3:20 | QTc uzaması risk algoritması ve sanal kliniğin 24 saatlik kaydıyla Holter analizi anlatılır. 3. uygulama durağında dört yatan hastanın risk skoru, pencereler, AF yükü ve bir günün yanlış alarmları çalışılır. |
-| 3:20-4:00 | FDA/CE onaylı EKG yapay zekâ ürünlerine genel bir bakış sunulur; etkileşimli labın E ve F bölümleriyle bir zaman serisi işlem hattının denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin ritim ve STEMI alarmı, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Haftalık proje
 
@@ -99,6 +70,24 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 **Ne teslim edilecek?** [Rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılmış, bir ya da iki sayfalık bir rapor teslim edilir. Raporda duyarlılık, özgüllük ve pozitif öngörü değeri tablosu, yanlış alarmların ifadelere göre sayımı, altı medyan atımın şekli ve alarmın neye ihtiyaç duyacağını anlatan yarım sayfa yer almalıdır. Rapora YZ kullanım günlüğünü (kullanılan araç, prompt, neyin denetlendiği ve neyin değiştirildiği) ve çıktılarıyla birlikte Jupyter defterini ekleyin. PTB-XL EKG'leri içeren şekiller "PTB-XL, CC BY 4.0" kaynak bilgisini taşımalıdır.
 
 **Teslim.** Haftalık proje, 6. haftanın oturumundan önce utkukose@sdu.edu.tr ya da utkukose@gmail.com adresine e-postayla gönderilir. E-postaya "Ne teslim edilecek?" başlığında sayılan öğeler ve etkileşimli labdan dışa aktarılan öğrenme günlüğü eklenir. Haftalık projeler değerlendirmenin yüzde 40'ını oluşturur; değerlendirme ölçütleri izlencede yer almaktadır.
+
+## Öğrenme çıktıları
+
+Haftanın sonunda katılımcıların bir EKG'yi zaman serisi olarak modelleyebilmeleri, örnekleme frekansını ve etiketlerini açıklayabilmeleri ve bir hastanın kayıtlarını tek bir kümede tutabilmeleri beklenmektedir. AF'yi RR aralıklarına dayanan bir kuralla tespit edebilmeli, tek boyutlu evrişimi ve alıcı alanını açıklayabilmeli ve AF, VT ile SVT'yi RR aralıklarının düzeni, QRS kompleksinin genişliği ve P dalgalarıyla birbirinden ayırabilmelidirler. LSTM ve GRU kapılarının temporal bağımlılıkları nasıl yakaladığını açıklayabilmeli ve çok etiketli bir ağı, PhysioNet 2020 Challenge'ın dokuz sınıfında olduğu gibi, eşikleri bir doğrulama kümesinde seçilmiş olarak etiket etiket değerlendirebilmelidirler. Son olarak ST segmentini bir medyan atımda ölçebilmeli, evrensel tanımın ST yükselmesi ölçütlerini bir alarm olarak uygulayıp yanlış alarmlarını değerlendirebilmeli, bir QTc uzaması risk skoru hesaplayabilmeli, 24 saatlik bir kaydı pencereler hâlinde okuyabilmeli ve bir EKG ürününün onayının neyi kapsadığını söyleyebilmelidirler.
+
+## Oturumun eğitim akışı
+
+Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzemelerin canlı bir oturumda nasıl bir araya geldiğini göstermek için paylaşılmaktadır.
+
+| Süre | Etkinlik |
+|---|---|
+| 0:00-0:15 | Haftanın vakası tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. Bu bölüm, PTB-XL'in dört katındaki 100 Hz'lik 12 derivasyonlu EKG'leri (yaklaşık 216 MB) PhysioNet'ten indirir. |
+| 0:15-0:55 | İlk iki saat, 1D CNN ve LSTM ile EKG analizi: EKG bir zaman serisi olarak modellenir; B bölümüyle RR aralıklarına dayanan bir AF kuralı, A bölümüyle tek boyutlu evrişim çalışılır. Ardından EKG'de ve ağda AF, VT ve SVT, LSTM ve GRU ile etkileşimli labın C bölümüyle çok etiketli sınıflandırma anlatılır. |
+| 0:55-1:45 | Oturumun mini projesi olan 1. uygulama durağında katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır ve PhysioNet 2020 Challenge'ın dokuz sınıfı üzerinde çalışır. Tek boyutlu bir ağ PTB-XL'in ritim etiketlerini yaklaşık iki dakikada öğrenir; eşikleri 9. katta seçilir ve ağ 10. katta kuralla karşılaştırılır. Python yolunda 4. bölümün sonu ağı Challenge'ın dokuz sınıfı için eğitir. |
+| 1:45-2:00 | Ara. |
+| 2:00-2:35 | Son iki saat, gelişmiş EKG modelleri ve klinik entegrasyon: AMI'de ST yükselmesi ve çökmesinin otomatik tespiti 3B sahne, evrensel tanımın ölçütleri ve D bölümüyle medyan atım ve J noktası üzerinden çalışılır. Ardından 2. uygulama durağında vakanın ST sapması ve test katındaki alarm hesaplanır. |
+| 2:35-3:20 | QTc uzaması risk algoritması ve sanal kliniğin 24 saatlik kaydıyla Holter analizi anlatılır. 3. uygulama durağında dört yatan hastanın risk skoru, pencereler, AF yükü ve bir günün yanlış alarmları çalışılır. |
+| 3:20-4:00 | FDA/CE onaylı EKG yapay zekâ ürünlerine genel bir bakış sunulur; etkileşimli labın E ve F bölümleriyle bir zaman serisi işlem hattının denetimi çalışılır. Ardından haftanın makalesi, sanal kliniğin ritim ve STEMI alarmı, "Kendi verinizle" bölümü ve haftalık proje ele alınır. |
 
 ## Kendi verinizle
 
