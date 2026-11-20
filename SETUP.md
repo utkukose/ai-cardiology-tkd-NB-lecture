@@ -22,7 +22,7 @@ Every Jupyter notebook of the course runs in two places, with the same data and 
 3. Run **Section 0**. Its first cell downloads the course package `vclinic` and the data files of the week from GitHub in a few seconds.
 4. Continue in **Part 1, the prompt path**, or in **Part 2, the Python path**. Gemini, the AI assistant of Colab, opens with its button at the top of the window.
 
-Colab sessions are temporary: Files created in a session disappear when it ends, while the notebook saved in Drive stays. Colab already includes the packages of the course, PyTorch among them.
+Colab sessions are temporary: Files created in a session disappear when it ends, while the notebook saved in Drive stays. Colab already includes most packages of the course, PyTorch among them. The two ECG packages `wfdb` and `neurokit2` are installed by Section 0 of the Week 1 notebook.
 
 ## Option B: Jupyter on your own computer
 
@@ -30,7 +30,7 @@ The steps below install Anaconda, which brings Python and Jupyter, and download 
 
 ### 1. Install Anaconda
 
-Download the Anaconda Distribution for the operating system of the computer from [anaconda.com/download](https://www.anaconda.com/download) and install it with the default options. Anaconda brings Python, Jupyter and the packages that Week 1 needs: NumPy, pandas, SciPy and Matplotlib.
+Download the Anaconda Distribution for the operating system of the computer from [anaconda.com/download](https://www.anaconda.com/download) and install it with the default options. Anaconda brings Python, Jupyter and most packages that Week 1 needs: NumPy, pandas, SciPy, Matplotlib and Seaborn.
 
 ### 2. Download the course folder
 
@@ -87,7 +87,7 @@ Week 10 needs one new package, Streamlit, for the web interface of the prototype
 
 Week 11 needs no new package and downloads nothing: The Cleveland data of its worked final project come with the course folder. The notebook writes the folder `final_project` next to itself, with the results, a figure and the toolbox of the final project, `final_project/code/project_tools.py`.
 
-The notebooks use `wfdb` and `neurokit2` when they are installed and a built-in fallback when they are not. To install them, run:
+Week 1 reads and processes ECGs with the packages `wfdb` and `neurokit2`, which neither Anaconda nor Colab includes. Section 0 of the Week 1 notebook installs them when they are missing and the computer is online. Without them, the notebooks use a built-in fallback. They can also be installed beforehand:
 
 ```bash
 pip install wfdb neurokit2

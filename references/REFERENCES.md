@@ -34,6 +34,7 @@ All sources cited in the materials of the course, in APA 7 style. Every entry wa
 - Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology. (1996). Heart rate variability: Standards of measurement, physiological interpretation, and clinical use. *Circulation, 93*(5), 1043–1065. https://doi.org/10.1161/01.CIR.93.5.1043
 - Vandenberk, B., Vandael, E., Robyns, T., Vandenberghe, J., Garweg, C., Foulon, V., Ector, J., & Willems, R. (2016). Which QT correction formulae to use for QT monitoring? *Journal of the American Heart Association, 5*(6), Article e003264. https://doi.org/10.1161/JAHA.116.003264
 - Wagner, P., Strodthoff, N., Bousseljot, R.-D., Kreiseler, D., Lunze, F. I., Samek, W., & Schaeffter, T. (2020). PTB-XL, a large publicly available electrocardiography dataset. *Scientific Data, 7*(1), Article 154. https://doi.org/10.1038/s41597-020-0495-6
+- Waskom, M. L. (2021). seaborn: Statistical data visualization. *Journal of Open Source Software, 6*(60), 3021. https://doi.org/10.21105/joss.03021
 - Xie, C., McCullum, L., Johnson, A., Pollard, T., Gow, B., & Moody, B. (2023). *Waveform Database Software Package (WFDB) for Python (version 4.1.0)* [Computer software]. PhysioNet. https://doi.org/10.13026/9njx-6322
 
 ## Week 2: lecture page and Jupyter notebook

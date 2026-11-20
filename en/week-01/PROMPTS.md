@@ -10,7 +10,7 @@ This library holds every prompt of the prompt path of Week 1, Part 1 of the Jupy
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
 1. [How a step works](#how-a-step-works)
-2. [Stop 1: Patient tables](#stop-1-patient-tables)
+2. [Stop 1: Mini project: The Kaggle Heart Disease data set](#stop-1-mini-project-the-kaggle-heart-disease-data-set)
 3. [Stop 2: The ECG as data](#stop-2-the-ecg-as-data)
 4. [Stop 3: Real recordings and a careless prompt](#stop-3-real-recordings-and-a-careless-prompt)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
@@ -28,11 +28,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
 | 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-## Stop 1: Patient tables
+## Stop 1: Mini project: The Kaggle Heart Disease data set
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-1) · The same result on the Python path: Python step 1, Sections 1 and 2*
 
-The registry of a clinic is a table: one row per patient, one column per variable. In this stop, the 303 patients of the Cleveland data and the first 500 patients of the virtual clinic are summarised by a mean, a share and a count, each with a clinical question behind it.
+This stop is the mini project of the session: loading the Kaggle Heart Disease data set, the Cleveland data of the UCI Heart Disease collection, with a statistical summary and a visualisation. The registry of a clinic is a table: one row per patient, one column per variable. In this stop, the 303 patients of the data set and the first 500 patients of the virtual clinic are summarised by a mean, a share and a count, each with a clinical question behind it.
 
 ### Step 1.1: The mean age of the patients with disease
 

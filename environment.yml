@@ -8,6 +8,7 @@ dependencies:
   - pandas
   - scipy
   - matplotlib
+  - seaborn
   - scikit-learn
   - scikit-image
   - ipywidgets

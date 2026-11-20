@@ -22,7 +22,7 @@ Eğitimin her Jupyter defteri, aynı verilerle ve aynı sonuçlarla iki ortamda 
 3. **0. bölümü** çalıştırın. İlk hücresi `vclinic` ders paketini ve haftanın veri dosyalarını birkaç saniyede GitHub'dan indirir.
 4. **Kısım 1, prompt yolu** ya da **Kısım 2, Python yolu** ile devam edin. Colab'ın YZ asistanı Gemini, pencerenin üstündeki düğmesiyle açılır.
 
-Colab oturumları geçicidir: Bir oturumda oluşturulan dosyalar oturum bitince silinir; Drive'a kaydedilen defter ise kalır. Colab, PyTorch dâhil eğitimin paketlerini zaten içerir.
+Colab oturumları geçicidir: Bir oturumda oluşturulan dosyalar oturum bitince silinir; Drive'a kaydedilen defter ise kalır. Colab, PyTorch dâhil eğitimin paketlerinin çoğunu zaten içerir. İki EKG paketi, `wfdb` ve `neurokit2`, 1. haftanın defterinin 0. bölümünde kurulur.
 
 ## B seçeneği: Kendi bilgisayarınızda Jupyter
 
@@ -30,7 +30,7 @@ Aşağıdaki adımlarla, Python'u ve Jupyter'i birlikte getiren Anaconda kurulur
 
 ### 1. Anaconda'yı kurun
 
-Bilgisayarın işletim sistemine uygun Anaconda Distribution'ı [anaconda.com/download](https://www.anaconda.com/download) adresinden indirin ve varsayılan seçeneklerle kurun. Anaconda, Python ve Jupyter ile birlikte 1. haftanın gerektirdiği NumPy, pandas, SciPy ve Matplotlib paketlerini de kurar.
+Bilgisayarın işletim sistemine uygun Anaconda Distribution'ı [anaconda.com/download](https://www.anaconda.com/download) adresinden indirin ve varsayılan seçeneklerle kurun. Anaconda, Python ve Jupyter ile birlikte 1. haftanın gerektirdiği paketlerin çoğunu da kurar: NumPy, pandas, SciPy, Matplotlib ve Seaborn.
 
 ### 2. Ders klasörünü indirin
 
@@ -87,7 +87,7 @@ Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging 
 
 11. hafta yeni bir paket gerektirmez ve hiçbir şey indirmez: Haftanın çözümlü final projesinin Cleveland verisi ders klasörüyle birlikte gelir. Defter kendi yanına sonuçları, bir grafiği ve final projesinin araç takımını (`final_project/code/project_tools.py`) içeren `final_project` klasörünü yazar.
 
-Defterler, `wfdb` ve `neurokit2` paketleri kuruluysa bu paketleri, kurulu değilse kendi içlerindeki yedek kodu kullanır. Paketleri kurmak için şu komutu çalıştırın:
+1. hafta EKG'leri, ne Anaconda'nın ne de Colab'ın içerdiği `wfdb` ve `neurokit2` paketleriyle okur ve işler. 1. haftanın defterinin 0. bölümü, bu paketler eksikse ve bilgisayar internete bağlıysa onları kurar. Paketler kurulamazsa defterler kendi içlerindeki yedek kodu kullanır. Paketler önceden de kurulabilir:
 
 ```bash
 pip install wfdb neurokit2

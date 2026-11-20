@@ -10,7 +10,7 @@ Bu kütüphanede, 1. haftanın prompt (istem) yolundaki, yani Jupyter defterinin
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
-2. [Durak 1: Hasta tabloları](#durak-1-hasta-tabloları)
+2. [Durak 1: Mini proje: Kaggle Heart Disease veri seti](#durak-1-mini-proje-kaggle-heart-disease-veri-seti)
 3. [Durak 2: Veri olarak EKG](#durak-2-veri-olarak-ekg)
 4. [Durak 3: Gerçek kayıtlar ve özensiz bir prompt](#durak-3-gerçek-kayıtlar-ve-özensiz-bir-prompt)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
@@ -28,11 +28,11 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 | 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-## Durak 1: Hasta tabloları
+## Durak 1: Mini proje: Kaggle Heart Disease veri seti
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 1, 1. ve 2. bölümler*
 
-Bir kliniğin hasta kaydı bir tablo olarak düşünülebilir: Her hasta bir satırda, her değişken bir sütunda yer alır. Bu durakta Cleveland verisindeki 303 hasta ile sanal kliniğin ilk 500 hastası bir ortalama, bir oran ve bir sayıyla özetlenmektedir. Bu sayıların her birinin ardında klinik bir soru vardır.
+Bu durak oturumun mini projesidir: UCI Heart Disease koleksiyonunun Cleveland verisi olan Kaggle Heart Disease veri seti yüklenir, istatistiksel olarak özetlenir ve görselleştirilir. Bir kliniğin hasta kaydı bir tablo olarak düşünülebilir: Her hasta bir satırda, her değişken bir sütunda yer alır. Bu durakta veri setindeki 303 hasta ile sanal kliniğin ilk 500 hastası bir ortalama, bir oran ve bir sayıyla özetlenmektedir. Bu sayıların her birinin ardında klinik bir soru vardır.
 
 ### Adım 1.1: Hastalığı olanların ortalama yaşı
 

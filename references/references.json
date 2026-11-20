@@ -6996,6 +6996,28 @@
     ]
   },
   {
+    "key": "waskom2021",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Waskom",
+        "given": "M. L."
+      }
+    ],
+    "year": "2021",
+    "title": "seaborn: Statistical data visualization",
+    "container": "Journal of Open Source Software",
+    "volume": "6",
+    "issue": "60",
+    "pages": "3021",
+    "doi": "10.21105/joss.03021",
+    "url": "https://doi.org/10.21105/joss.03021",
+    "apa": "Waskom, M. L. (2021). seaborn: Statistical data visualization. *Journal of Open Source Software, 6*(60), 3021. https://doi.org/10.21105/joss.03021",
+    "used_in": [
+      "Week 1: lecture page, Jupyter notebook and course documents"
+    ]
+  },
+  {
     "key": "wilson1927",
     "type": "article",
     "authors": [

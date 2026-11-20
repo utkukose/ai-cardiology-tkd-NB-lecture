@@ -13,7 +13,7 @@ Participants who do not want to write code follow the [prompt path](PROMPT_PATH.
 
 | Week | Python step | Topics | Notebook |
 |---|---|---|---|
-| 1 | Python step 1: Values, lists, dictionaries, decisions, loops and functions | Variables and types, arithmetic with clinical values, lists and indexing, dictionaries, if and else, for loops, functions with arguments and return values, NumPy arrays, pandas DataFrames and Matplotlib plots | [NB01_python_and_ecg_basics.ipynb](en/week-01/NB01_python_and_ecg_basics.ipynb) |
+| 1 | Python step 1: Variables, lists and loops with medical examples; dictionaries, decisions and functions | Variables and types, arithmetic with clinical values, lists and indexing, dictionaries, if and else, for loops, functions with arguments and return values, NumPy arrays, pandas DataFrames and Matplotlib plots | [NB01_python_and_ecg_basics.ipynb](en/week-01/NB01_python_and_ecg_basics.ipynb) |
 | 2 | Python step 2: Data for models | Selecting columns and rows, missing values, dummy variables, splitting data by patient, the fit and predict pattern of scikit-learn, pipelines | [NB02_machine_learning_fundamentals.ipynb](en/week-02/NB02_machine_learning_fundamentals.ipynb) |
 | 3 | Python step 3: Images as arrays | Arrays with two and three dimensions, slicing, normalisation, loading images, the training loop of a neural network | [NB03_deep_learning_and_cnns.ipynb](en/week-03/NB03_deep_learning_and_cnns.ipynb) |
 | 4 | Python step 4: Reusing trained models | Loading pretrained weights, freezing layers, masks as arrays, functions that measure areas and volumes | [NB04_transfer_learning.ipynb](en/week-04/NB04_transfer_learning.ipynb) |
