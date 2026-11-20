@@ -5,7 +5,7 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği
 
-*Risk faktörlerinden olasılığa, tek tek hastalardan fenogruplara geçilir.*
+*İstatistikten akıllı modellere: Kardiyoloji odaklı*
 
 [Eğitimin ana sayfası](../../README.tr.md) · [İzlence](../../SYLLABUS.tr.md) · [Kurulum](../../SETUP.tr.md) · [English](../../en/week-02/README.md)
 
@@ -13,7 +13,7 @@ Türk Kardiyoloji Derneği
 
 ## Hafta hakkında
 
-Hafta, scikit-learn ile denetimli öğrenmeyle başlar. Cleveland verisinde koroner arter hastalığı için lojistik regresyon kurulur ve model, karışıklık matrisi ile alıcı işletim karakteristiği (ROC) eğrisiyle değerlendirilir. Ardından çapraz doğrulama, veri sızıntısı, karar ağaçları, rastgele ormanlar ve nadir sonuçların tuzakları ele alınır. Denetimsiz öğrenmede k-ortalamalar yöntemiyle kalp yetersizliği fenogrupları bulunur; Kaplan-Meier eğrileri ve log-rank testi bu grupların prognozunu karşılaştırır. Sanal klinik 2.000 hastaya ulaşır ve risk polikliniğini açar.
+İlk iki saatte scikit-learn ile denetimli modeller kurulur. Modelleme pipeline'ı ilk bir regresyon çizgisiyle tanıtılır ve Cleveland verisinde koroner arter hastalığı (KAH) için lojistik regresyon kurulur. Model çapraz doğrulama, alıcı işletim karakteristiği (ROC) eğrisi ve eğri altındaki alanla değerlendirilir; duyarlılığı ve özgüllüğü yorumlanır, ardından bir karar ağacı bir rastgele ormanla karşılaştırılır. Mini projede bir KAH tahmin modeli kurulur ve modelin ROC eğrisi ile AUC değeri incelenir. Son iki saatte dengesiz veri SMOTE ile ele alınır, kalp yetersizliği fenogrupları k-ortalamalar yöntemiyle bulunur, UMAP ve t-SNE haritalarında gösterilir ve prognozları Kaplan-Meier eğrileri ile log-rank testiyle karşılaştırılır. Sanal klinik 2.000 hastaya ulaşır ve risk polikliniğini açar.
 
 Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
@@ -23,9 +23,9 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 
 | Ana rota: Ders sayfası ve etkileşimli lab | Uygulama durağı | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
 |---|---|---|---|
-| [Tek sayfada makine öğrenmesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#machine-learning-in-one-page)<br>[Lojistik regresyon: Risk faktörlerinden olasılığa](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#logistic-regression-from-risk-factors-to-a-probability)<br>[Bir modeli değerlendirmek: Karışıklık matrisi ve ROC eğrisi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#measuring-a-model-confusion-matrix-and-roc-curve) | **[Durak 1: İlk risk modeli](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-1)** | Durak 1 | Python adımı 2 ve 1. ve 2. bölümler |
-| [Eğitim ve test: Çapraz doğrulama ve veri sızıntısı](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#training-and-testing-cross-validation-and-data-leakage)<br>[Karar ağaçları ve rastgele ormanlar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#decision-trees-and-random-forests)<br>[Nadir sonuçlar: Dengesiz veri](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#rare-outcomes-imbalanced-data) | **[Durak 2: Bir modeli dürüstçe sınamak](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-2)** | Durak 2 | 3-6. bölümler |
-| [Denetimsiz öğrenme: k-ortalamalar ve fenogruplar](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#unsupervised-learning-k-means-and-phenogroups)<br>[Sağkalım analizi: Kaplan-Meier ve log-rank testi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#survival-analysis-kaplan-meier-and-the-log-rank-test)<br>[YZ asistanıyla çalışmak, 2. bölüm: Bir modeli denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#ai-pair-programming-part-2-reviewing-a-model-built-by-an-assistant) | **[Durak 3: Alt gruplar, sağkalım ve denetlenecek bir model](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-3)** | Durak 3 | 7-9. bölümler |
+| [İlk 2 saat: Sınıflandırma ve regresyon](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#first-two-hours-classification-and-regression)<br>[Tek sayfada makine öğrenmesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#machine-learning-in-one-page)<br>[Scikit-learn ile modelleme pipeline](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#the-modelling-pipeline-with-scikit-learn)<br>[Lojistik regresyon: KAH riski tahmini](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#logistic-regression-from-risk-factors-to-a-probability)<br>[Cross-validation, ROC-AUC; sensitivity/specificity yorumu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#cross-validation-roc-auc-sensitivity-and-specificity)<br>– [Bir modeli değerlendirmek: Karışıklık matrisi ve ROC eğrisi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#measuring-a-model-confusion-matrix-and-roc-curve)<br>– [Eğitim ve test: Çapraz doğrulama ve veri sızıntısı](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#training-and-testing-cross-validation-and-data-leakage)<br>– [Duyarlılık ve özgüllüğün yorumu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#interpreting-sensitivity-and-specificity)<br>[Mini proje: Cleveland Heart Disease veri seti ile KAH tahmin modeli, ROC eğrisi ve AUC analizi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#mini-project-a-cad-prediction-model-with-the-cleveland-heart-disease-data-set-roc-curve-and-auc-analysis) | **[Durak 1: Mini proje: KAH tahmin modeli, ROC eğrisi ve AUC](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-1)** | Durak 1 | Python adımı 2 ve 1. ve 2. bölümler |
+| [Karar ağacı ve Random Forest karşılaştırması](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#decision-trees-and-random-forests)<br>[Son 2 saat: Kümeleme ve hasta segmentasyonu](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#last-two-hours-clustering-and-patient-segmentation)<br>[Dengesiz veri ile başa çıkma (SMOTE)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#rare-outcomes-imbalanced-data) | **[Durak 2: Bir modeli dürüstçe sınamak](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-2)** | Durak 2 | 3-6. bölümler |
+| [K-Means ile hasta alt gruplarını bulma](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#unsupervised-learning-k-means-and-phenogroups)<br>[UMAP / t-SNE görselleştirmesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#umap-and-t-sne-visualisation)<br>[Survival analysis (sağkalım analizi): Kaplan-Meier eğrisi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#survival-analysis-kaplan-meier-and-the-log-rank-test)<br>[YZ asistanıyla çalışmak, 2. bölüm: Bir modeli denetlemek](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#ai-pair-programming-part-2-reviewing-a-model-built-by-an-assistant) | **[Durak 3: Alt gruplar, sağkalım ve denetlenecek bir model](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-3)** | Durak 3 | 7-9. bölümler |
 | [Haftanın makalesi](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#the-paper-of-the-week)<br>[Sanal klinik, 2. aşama: Risk polikliniği açılıyor](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#the-virtual-clinic-stage-2-the-risk-outpatient-clinic-opens) | "Kendi verinizle" bölümü, haftanın makalesi ve sanal klinik | – | – |
 
 ## Malzemeler
@@ -51,7 +51,7 @@ Ders sayfası haftanın ana rotasıdır. Sayfada kod ya da prompt (istem) bulunm
 
 ## Öğrenme çıktıları
 
-Haftanın sonunda katılımcıların bir klinik tabloyu modele hazırlayabilmeleri, scikit-learn ile bir lojistik regresyon modeli kurabilmeleri ve bu modelin sonuçlarını okuyabilmeleri beklenmektedir. Bir modelin başarımını karışıklık matrisi, duyarlılık, özgüllük, öngörü değerleri, ROC eğrisi ve eğri altındaki alanla ölçebilmeli; bu başarımı test hastalarından bilgi sızdırmadan çapraz doğrulamayla kestirebilmelidirler. Bir karar ağacını rastgele bir ormanla karşılaştırabilmeli, nadir sonuçlarda doğruluğun neden yanılttığını ve pozitif öngörü değerinin prevalansa nasıl bağlı olduğunu açıklayabilmelidirler. Son olarak k-ortalamalar yöntemiyle hasta alt gruplarını bulabilmeli, bu grupların prognozunu Kaplan-Meier eğrileri ve log-rank testiyle karşılaştırabilmeli ve bir YZ asistanının kurduğu modeli dört soruyla denetleyebilmelidirler.
+Haftanın sonunda katılımcıların bir klinik tabloyu modele hazırlayabilmeleri, scikit-learn ile bir modelleme pipeline'ı kurabilmeleri, doğrusal ve lojistik regresyon modellerini eğitip sonuçlarını okuyabilmeleri beklenmektedir. Bir modelin başarımını karışıklık matrisi, duyarlılık, özgüllük, öngörü değerleri, ROC eğrisi ve eğri altındaki alanla ölçebilmeli, duyarlılık ile özgüllüğü bir hastalığı dışlama ya da doğrulama açısından yorumlayabilmeli ve başarımı test hastalarından bilgi sızdırmadan çapraz doğrulamayla kestirebilmelidirler. Bir karar ağacını rastgele bir ormanla karşılaştırabilmeli, nadir sonuçlarda doğruluğun neden yanılttığını ve SMOTE ile sınıf ağırlıklarının olasılıkları nasıl değiştirdiğini açıklayabilmelidirler. Son olarak k-ortalamalar yöntemiyle hasta alt gruplarını bulabilmeli, bu grupları bir t-SNE ya da UMAP haritasında gösterebilmeli, prognozlarını Kaplan-Meier eğrileri ve log-rank testiyle karşılaştırabilmeli ve bir YZ asistanının kurduğu modeli dört soruyla denetleyebilmelidirler.
 
 ## Çalışma yolu
 
@@ -59,15 +59,15 @@ Oturuma katılanlar ana rotayı ve uygulama duraklarını oturumda tamamlar. Haf
 
 | Adım | Etkinlik | Prompt yolu | Python yolu |
 |---|---|---|---|
-| 1 | Haftanın vakasını ve ders sayfasını 1. uygulama durağına kadar okuyun; etkileşimli labın A ve B bölümlerini yapın ve bilgi kontrolü sorularını cevaplayın | 55 dakika | 55 dakika |
-| 2 | 1. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 2'yi ve 1. ile 2. bölümleri çalışın | 30 dakika | 1 saat 10 dakika |
-| 3 | 2. uygulama durağına kadar okumayı sürdürün (çapraz doğrulama, karar ağaçları ve rastgele ormanlar, nadir sonuçlar) | 35 dakika | 35 dakika |
-| 4 | 2. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 2'yi, Python yolunda 3, 4, 5 ve 6. bölümleri çalışın | 30 dakika | 1 saat |
-| 5 | 3. uygulama durağına kadar okumayı sürdürün ve etkileşimli labın C, D, E ve F bölümlerini yapın | 50 dakika | 50 dakika |
-| 6 | 3. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 3'ü, Python yolunda 7, 8 ve 9. bölümleri çalışın | 30 dakika | 50 dakika |
+| 1 | Haftanın vakasını ve ders sayfasının ilk iki saatini 1. uygulama durağına, yani mini projeye kadar okuyun; etkileşimli labın A ve B bölümlerini yapın ve bilgi kontrolü sorularını cevaplayın | 1 saat 10 dakika | 1 saat 10 dakika |
+| 2 | 1. uygulama durağı, mini proje: Prompt yolunda Kısım 1'deki Durak 1'i, Python yolunda Python adımı 2'yi ve 1. ile 2. bölümleri çalışın | 30 dakika | 1 saat 15 dakika |
+| 3 | 2. uygulama durağına kadar okumayı sürdürün (karar ağacı ve rastgele orman karşılaştırması, SMOTE ile dengesiz veri) | 35 dakika | 35 dakika |
+| 4 | 2. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 2'yi, Python yolunda 3, 4, 5 ve 6. bölümleri çalışın | 30 dakika | 1 saat 5 dakika |
+| 5 | 3. uygulama durağına kadar okumayı sürdürün (k-ortalamalar, UMAP ve t-SNE haritaları, Kaplan-Meier eğrisi) ve etkileşimli labın C, D, E ve F bölümlerini yapın | 55 dakika | 55 dakika |
+| 6 | 3. uygulama durağı: Prompt yolunda Kısım 1'deki Durak 3'ü, Python yolunda 7, 8 ve 9. bölümleri çalışın | 30 dakika | 55 dakika |
 | 7 | Haftanın makalesini, sanal kliniğin bu haftaki aşamasını ve "Kendi verinizle" bölümünü okuyun | 30 dakika | 30 dakika |
 | 8 | Etkileşimli labın "Kendini sına" sekmesindeki öz değerlendirmeyi yapın, yansıtma yazınızı yazın ve öğrenme günlüğünü dışa aktarın | 20 dakika | 20 dakika |
-| | **Haftalık proje dışında toplam** | **4 saat 40 dakika** | **6 saat 10 dakika** |
+| | **Haftalık proje dışında toplam** | **5 saat** | **6 saat 45 dakika** |
 | 9 | Haftalık projeyi iki yoldan biriyle tamamlayın | 3 saat | 3 saat |
 
 ## Oturumun eğitim akışı
@@ -77,19 +77,23 @@ Haftanın dört saatlik oturumu aşağıdaki plana göre işlenir. Plan, malzeme
 | Süre | Etkinlik |
 |---|---|
 | 0:00-0:15 | Haftanın vakası VC-0246 tanıtılır ve haftanın rotası anlatılır. Her katılımcı defteri Google Colab'da ya da Jupyter'de açar ve 0. bölümü çalıştırır. |
-| 0:15-0:55 | Ana rotada makine öğrenmesinin temel fikirleri anlatılır. Etkileşimli labın A bölümüyle lojistik regresyon, B bölümüyle de karışıklık matrisi ve ROC eğrisi çalışılır. |
-| 0:55-1:35 | 1. uygulama durağında katılımcılar iki gruba ayrılır: Prompt yolunu izleyenler ve Python yolunu izleyenler. Durağın sonunda iki grup, test kümesindeki AUC değerlerini karşılaştırır. |
-| 1:35-1:50 | Ara. |
-| 1:50-2:30 | Ana rotada çapraz doğrulama ve veri sızıntısı, karar ağaçları ve rastgele ormanlar ile nadir sonuçlar anlatılır. Ardından 2. uygulama durağına geçilir. |
-| 2:30-3:20 | Ana rotada C bölümüyle üç boyutta k-ortalamalar, D bölümüyle elle Kaplan-Meier hesabı, E ve F bölümleriyle de bir modelin denetlenmesi çalışılır. Ardından 3. uygulama durağına geçilir. |
+| 0:15-0:45 | İlk iki saat, sınıflandırma ve regresyon: Makine öğrenmesinin temel fikirleri, scikit-learn ile modelleme pipeline'ı ve ilk regresyon çizgisi anlatılır; etkileşimli labın A bölümüyle KAH riski için lojistik regresyon çalışılır. |
+| 0:45-1:15 | Çapraz doğrulama, ROC-AUC ve duyarlılık ile özgüllüğün yorumu etkileşimli labın B bölümüyle çalışılır. |
+| 1:15-1:45 | Mini proje, 1. uygulama durağı: Katılımcılar prompt yolu ve Python yolu olmak üzere iki gruba ayrılır ve Cleveland verisinde bir KAH tahmin modeli kurarak modelin ROC eğrisini ve AUC değerini inceler. Durağın sonunda iki grup, test kümesindeki AUC değerlerini karşılaştırır. |
+| 1:45-2:00 | Karar ağacı ve rastgele orman karşılaştırılır. |
+| 2:00-2:10 | Ara. |
+| 2:10-2:40 | Son iki saat, kümeleme ve hasta segmentasyonu: SMOTE ile dengesiz veriyle başa çıkma anlatılır. Ardından 2. uygulama durağına geçilir. |
+| 2:40-3:20 | C bölümüyle k-ortalamalar yöntemiyle hasta alt grupları bulunur, UMAP ve t-SNE haritaları incelenir, D bölümüyle Kaplan-Meier eğrisi, E ve F bölümleriyle bir modelin denetlenmesi çalışılır. Ardından 3. uygulama durağına geçilir. |
 | 3:20-3:45 | Haftanın makalesi, sanal kliniğin risk polikliniği ve "Kendi verinizle" bölümü ele alınır. |
 | 3:45-4:00 | Haftalık proje tanıtılır ve sorular cevaplanır. |
 
 ## Haftalık proje
 
+**Proje.** HFpEF vs HFrEF hasta kümeleme + Kaplan-Meier sağkalım analizi.
+
 **Ne yapılacak?** Sanal kliniğin kaydındaki kalp yetersizliği fenogruplarını bulun ve prognozlarını karşılaştırın. Önce HFrEF ya da HFpEF tanısı olan hastaları dokuz standartlaştırılmış değişkenle ve k = 2-6 için k-ortalamalar yöntemiyle kümeleyin; k değerini siluet değerine ve klinik anlama bakarak seçin. Ardından her kümeyi bir tabloda tanımlayın ve kümeye kısa bir klinik ad verin. Sonra kümelerin ve HFrEF ile HFpEF gruplarının Kaplan-Meier eğrilerini çizin ve eğrileri log-rank testiyle karşılaştırın. Daha sonra kümeleri, dersin kayda gizlediği fenogruplarla bir çapraz tablo ve düzeltilmiş Rand indeksi yardımıyla karşılaştırın. Son olarak kümelemenin, tek başına ejeksiyon fraksiyonunun kaçırdığı hangi bilgiyi ortaya çıkardığını yazın.
 
-**Nereye bakılacak?** Ders sayfasında "Denetimsiz öğrenme: k-ortalamalar ve fenogruplar", "Sağkalım analizi: Kaplan-Meier ve log-rank testi" ve "Haftanın makalesi" bölümlerine bakın. Etkileşimli labda C, D ve F bölümleri, Jupyter defterinde ise 7. ve 8. bölümler yardımcı olur.
+**Nereye bakılacak?** Ders sayfasında "K-Means ile hasta alt gruplarını bulma", "UMAP / t-SNE görselleştirmesi", "Survival analysis (sağkalım analizi): Kaplan-Meier eğrisi" ve "Haftanın makalesi" bölümlerine bakın. Etkileşimli labda C, D ve F bölümleri, Jupyter defterinde ise 7. ve 8. bölümler yardımcı olur.
 
 **Prompt yolu.** Proje, [prompt kütüphanesindeki](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-02/PROMPTLAR.md#haftal%C4%B1k-projenin-prompt-yolu) dört promptla da tamamlanabilir; her adım için bir prompt vardır. Jupyter defterinin 1. kısmının sonundaki "Prompt yolunda haftalık proje" bölümü her promptun tablosunu hazırlar. Bir promptun testi sağlanmadan sonraki prompta geçilmez.
 

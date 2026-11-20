@@ -102,7 +102,7 @@ Plan, Türk Kardiyoloji Derneği'nin programını izlemektedir. Her hafta bütü
 | Hafta | Konu | Sanal kliniğin aşaması | Haftalık proje |
 |---|---|---|---|
 | 1 | [Python ve kardiyoloji veri temelleri](tr/hafta-01/README.md) | Hasta kaydı ve EKG laboratuvarı | EKG görselleştirme ve temel ölçümleri (PR, QRS, QT) otomatik hesaplayan script |
-| 2 | [Makine öğrenmesi temelleri](tr/hafta-02/README.md) | Risk polikliniği | Korunmuş ve düşük ejeksiyon fraksiyonlu kalp yetersizliğinin kümelenmesi ve Kaplan-Meier sağkalım analizi |
+| 2 | [Makine öğrenmesi temelleri](tr/hafta-02/README.md) | Risk polikliniği | HFpEF vs HFrEF hasta kümeleme + Kaplan-Meier sağkalım analizi |
 | 3 | [Derin öğrenme ve evrişimli sinir ağları](tr/hafta-03/README.md) | Görüntüleme laboratuvarı | Kardiyak manyetik rezonans görüntülerinde dilate ve hipertrofik kardiyomiyopati sınıflandırması |
 | 4 | [Transfer öğrenme](tr/hafta-04/README.md) | Eko ölçümü: Otomatik ejeksiyon fraksiyonu | Sol ventrikül segmentasyonu ve otomatik ejeksiyon fraksiyonu |
 | 5 | [Zaman serisi analizi ve EKG yapay zekâsı](tr/hafta-05/README.md) | Ritim ve STEMI alarmı | Bir STEMI alarmı: 12 derivasyonlu EKG'lerde ST sapmasının otomatik tespiti |

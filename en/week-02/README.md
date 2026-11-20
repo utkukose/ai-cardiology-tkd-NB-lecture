@@ -7,7 +7,7 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology
 
-*From risk factors to a probability, from patients to phenogroups*
+*From statistics to intelligent models, with a focus on cardiology*
 
 [Course home](../../README.md) · [Syllabus](../../SYLLABUS.md) · [Setup](../../SETUP.md) · [Türkçe](../../tr/hafta-02/README.md)
 
@@ -15,7 +15,7 @@ Turkish Society of Cardiology
 
 ## About the week
 
-Supervised learning with scikit-learn: a logistic regression for coronary artery disease on the Cleveland data, the confusion matrix and the receiver operating characteristic (ROC) curve, cross-validation and data leakage, decision trees and random forests, and the pitfalls of rare outcomes. Unsupervised learning then finds phenogroups of heart failure with k-means, and Kaplan-Meier curves with the log-rank test compare their prognosis. The virtual clinic grows to 2000 patients and opens its risk outpatient clinic.
+The first two hours build supervised models with scikit-learn. They introduce the modelling pipeline with a first regression line, fit a logistic regression for coronary artery disease (CAD) on the Cleveland data, measure it with cross-validation, the receiver operating characteristic (ROC) curve and the area under it, interpret its sensitivity and specificity, and compare a decision tree with a random forest. The mini project builds a CAD prediction model and analyses its ROC curve and AUC. The last two hours deal with imbalanced data with SMOTE, find phenogroups of heart failure with k-means, show them on UMAP and t-SNE maps and compare their prognosis with Kaplan-Meier curves and the log-rank test. The virtual clinic grows to 2000 patients and opens its risk outpatient clinic.
 
 4 hours in the session and about 3 hours for the weekly project.
 
@@ -25,9 +25,9 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 | Main route: lecture page and interactive lab | Practice stop | Prompt path (Part 1) | Python path (Part 2) |
 |---|---|---|---|
-| [Machine learning in one page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#machine-learning-in-one-page)<br>[Logistic regression: From risk factors to a probability](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#logistic-regression-from-risk-factors-to-a-probability)<br>[Measuring a model: Confusion matrix and ROC curve](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#measuring-a-model-confusion-matrix-and-roc-curve) | **[Stop 1: A first risk model](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-1)** | Stop 1 | Python step 2 and Sections 1 and 2 |
-| [Training and testing: Cross-validation and data leakage](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#training-and-testing-cross-validation-and-data-leakage)<br>[Decision trees and random forests](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#decision-trees-and-random-forests)<br>[Rare outcomes: Imbalanced data](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#rare-outcomes-imbalanced-data) | **[Stop 2: Testing a model honestly](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-2)** | Stop 2 | Sections 3 to 6 |
-| [Unsupervised learning: k-means and phenogroups](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#unsupervised-learning-k-means-and-phenogroups)<br>[Survival analysis: Kaplan-Meier and the log-rank test](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#survival-analysis-kaplan-meier-and-the-log-rank-test)<br>[Working with an AI assistant, part 2: Reviewing a model](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#ai-pair-programming-part-2-reviewing-a-model-built-by-an-assistant) | **[Stop 3: Subgroups, survival and a model to review](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-3)** | Stop 3 | Sections 7 to 9 |
+| [First two hours: Classification and regression](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#first-two-hours-classification-and-regression)<br>[Machine learning in one page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#machine-learning-in-one-page)<br>[The modelling pipeline with scikit-learn](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#the-modelling-pipeline-with-scikit-learn)<br>[Logistic regression: Predicting the risk of CAD](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#logistic-regression-from-risk-factors-to-a-probability)<br>[Cross-validation, ROC-AUC; interpreting sensitivity and specificity](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#cross-validation-roc-auc-sensitivity-and-specificity)<br>– [Measuring a model: Confusion matrix and ROC curve](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#measuring-a-model-confusion-matrix-and-roc-curve)<br>– [Training and testing: Cross-validation and data leakage](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#training-and-testing-cross-validation-and-data-leakage)<br>– [Interpreting sensitivity and specificity](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#interpreting-sensitivity-and-specificity)<br>[Mini project: A CAD prediction model with the Cleveland Heart Disease data set, ROC curve and AUC analysis](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#mini-project-a-cad-prediction-model-with-the-cleveland-heart-disease-data-set-roc-curve-and-auc-analysis) | **[Stop 1: Mini project: A CAD prediction model, ROC curve and AUC](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-1)** | Stop 1 | Python step 2 and Sections 1 and 2 |
+| [Comparing a decision tree and a random forest](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#decision-trees-and-random-forests)<br>[Last two hours: Clustering and patient segmentation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#last-two-hours-clustering-and-patient-segmentation)<br>[Dealing with imbalanced data (SMOTE)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#rare-outcomes-imbalanced-data) | **[Stop 2: Testing a model honestly](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-2)** | Stop 2 | Sections 3 to 6 |
+| [Finding subgroups of patients with k-means](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#unsupervised-learning-k-means-and-phenogroups)<br>[UMAP / t-SNE visualisation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#umap-and-t-sne-visualisation)<br>[Survival analysis: The Kaplan-Meier curve](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#survival-analysis-kaplan-meier-and-the-log-rank-test)<br>[Working with an AI assistant, part 2: Reviewing a model](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#ai-pair-programming-part-2-reviewing-a-model-built-by-an-assistant) | **[Stop 3: Subgroups, survival and a model to review](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-3)** | Stop 3 | Sections 7 to 9 |
 | [The paper of the week](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#the-paper-of-the-week)<br>[The virtual clinic, stage 2: The risk outpatient clinic opens](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#the-virtual-clinic-stage-2-the-risk-outpatient-clinic-opens) | The section on your own data, the paper of the week and the virtual clinic | – | – |
 
 ## Materials
@@ -53,7 +53,7 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 ## Learning outcomes
 
-By the end of the week, participants are expected to prepare a clinical table for a model and to fit, read and use a logistic regression with scikit-learn. They should be able to measure a model with the confusion matrix, sensitivity, specificity, predictive values, the ROC curve and the area under it, and to estimate its performance with cross-validation without leaking information from the test patients. They should be able to compare a decision tree and a random forest, and to explain why accuracy misleads with rare outcomes and how the positive predictive value depends on the prevalence. Finally, they should be able to find subgroups of patients with k-means, to compare their prognosis with Kaplan-Meier curves and the log-rank test, and to review a model built by an AI assistant with four questions.
+By the end of the week, participants are expected to prepare a clinical table for a model, to build a modelling pipeline with scikit-learn and to fit and read a linear regression and a logistic regression. They should be able to measure a model with the confusion matrix, sensitivity, specificity, predictive values, the ROC curve and the area under it, to interpret sensitivity and specificity for ruling a disease out or in, and to estimate the performance with cross-validation without leaking information from the test patients. They should be able to compare a decision tree and a random forest, and to explain why accuracy misleads with rare outcomes and what SMOTE and class weights do to the probabilities. Finally, they should be able to find subgroups of patients with k-means, to show them on a t-SNE or UMAP map, to compare their prognosis with Kaplan-Meier curves and the log-rank test, and to review a model built by an AI assistant with four questions.
 
 ## Study path
 
@@ -61,15 +61,15 @@ Participants who attend the session complete the main route and the practice sto
 
 | Step | Activity | Prompt path | Python path |
 |---|---|---|---|
-| 1 | Read the case of the week and the lecture page up to Practice stop 1, with Parts A and B of the interactive lab and the knowledge checks | 55 minutes | 55 minutes |
-| 2 | Practice stop 1: Part 1, Stop 1 on the prompt path, or Python step 2 and Sections 1 and 2 on the Python path | 30 minutes | 1 hour 10 minutes |
-| 3 | Read on up to Practice stop 2: cross-validation, trees and forests, rare outcomes | 35 minutes | 35 minutes |
-| 4 | Practice stop 2: Part 1, Stop 2, or Sections 3 to 6 | 30 minutes | 1 hour |
-| 5 | Read on up to Practice stop 3, with Parts C to F of the interactive lab | 50 minutes | 50 minutes |
-| 6 | Practice stop 3: Part 1, Stop 3, or Sections 7 to 9 | 30 minutes | 50 minutes |
+| 1 | Read the case of the week and the first two hours of the lecture page up to Practice stop 1, the mini project, with Parts A and B of the interactive lab and the knowledge checks | 1 hour 10 minutes | 1 hour 10 minutes |
+| 2 | Practice stop 1, the mini project: Part 1, Stop 1 on the prompt path, or Python step 2 and Sections 1 and 2 on the Python path | 30 minutes | 1 hour 15 minutes |
+| 3 | Read on up to Practice stop 2: the comparison of a tree with a forest and imbalanced data with SMOTE | 35 minutes | 35 minutes |
+| 4 | Practice stop 2: Part 1, Stop 2, or Sections 3 to 6 | 30 minutes | 1 hour 5 minutes |
+| 5 | Read on up to Practice stop 3: k-means, UMAP and t-SNE maps and the Kaplan-Meier curve, with Parts C to F of the interactive lab | 55 minutes | 55 minutes |
+| 6 | Practice stop 3: Part 1, Stop 3, or Sections 7 to 9 | 30 minutes | 55 minutes |
 | 7 | Read the paper of the week, the stage of the virtual clinic and the section on your own data | 30 minutes | 30 minutes |
 | 8 | Take the self-assessment of the interactive lab (tab: Check yourself), write the reflection and export the learning log | 20 minutes | 20 minutes |
-| | **Total without the weekly project** | **4 hours 40 minutes** | **6 hours 10 minutes** |
+| | **Total without the weekly project** | **5 hours** | **6 hours 45 minutes** |
 | 9 | Complete the weekly project, on either path | 3 hours | 3 hours |
 
 ## Training flow of the session
@@ -79,19 +79,23 @@ The four-hour session of the week follows the plan below. It is shared to show h
 | Time | Activity |
 |---|---|
 | 0:00 to 0:15 | The case of the week, VC-0246, and the route of the week. Every participant opens the notebook in Google Colab or in Jupyter and runs Section 0. |
-| 0:15 to 0:55 | Main route: machine learning in one page, logistic regression with Part A of the interactive lab, the confusion matrix and the ROC curve with Part B. |
-| 0:55 to 1:35 | Practice stop 1 in two groups, the prompt path and the Python path. Both groups compare their test AUC at the end. |
-| 1:35 to 1:50 | Break. |
-| 1:50 to 2:30 | Main route: cross-validation and data leakage, trees and forests, rare outcomes. Practice stop 2. |
-| 2:30 to 3:20 | Main route: k-means in three dimensions with Part C, Kaplan-Meier by hand with Part D, reviewing a model with Parts E and F. Practice stop 3. |
+| 0:15 to 0:45 | First two hours, classification and regression: machine learning in one page, the modelling pipeline with scikit-learn and a first regression line, logistic regression for the risk of CAD with Part A of the interactive lab. |
+| 0:45 to 1:15 | Cross-validation, ROC-AUC and the interpretation of sensitivity and specificity, with Part B of the interactive lab. |
+| 1:15 to 1:45 | Mini project, Practice stop 1, in two groups, the prompt path and the Python path: a CAD prediction model on the Cleveland data with its ROC curve and AUC. Both groups compare their test AUC at the end. |
+| 1:45 to 2:00 | Comparing a decision tree and a random forest. |
+| 2:00 to 2:10 | Break. |
+| 2:10 to 2:40 | Last two hours, clustering and patient segmentation: dealing with imbalanced data with SMOTE. Practice stop 2. |
+| 2:40 to 3:20 | Finding subgroups of patients with k-means with Part C, UMAP and t-SNE maps, the Kaplan-Meier curve with Part D, reviewing a model with Parts E and F. Practice stop 3. |
 | 3:20 to 3:45 | The paper of the week, the risk outpatient clinic of the virtual clinic and the section on your own data. |
 | 3:45 to 4:00 | The weekly project and questions. |
 
 ## Weekly project
 
+**Project.** HFpEF vs HFrEF patient clustering with Kaplan-Meier survival analysis.
+
 **What to do.** Find the phenogroups of heart failure in the registry of the virtual clinic and compare their prognosis. First, cluster the patients with HFrEF or HFpEF on nine standardised variables with k-means for k from 2 to 6, and choose k with the silhouette and with clinical sense. Second, describe each cluster in a table and give it a short clinical name. Third, draw the Kaplan-Meier curves of the clusters and of HFrEF against HFpEF, and compare them with the log-rank test. Fourth, compare the clusters with the phenogroups that the course hid in the registry, with a cross-table and the adjusted Rand index. Then write what the clustering found that the ejection fraction alone misses.
 
-**Where to look.** Lecture: sections "Unsupervised learning: k-means and phenogroups", "Survival analysis: Kaplan-Meier and the log-rank test" and "The paper of the week". Interactive lab: Parts C, D and F. Jupyter notebook: Sections 7 and 8.
+**Where to look.** Lecture: sections "Finding subgroups of patients with k-means", "UMAP / t-SNE visualisation", "Survival analysis: The Kaplan-Meier curve" and "The paper of the week". Interactive lab: Parts C, D and F. Jupyter notebook: Sections 7 and 8.
 
 **Prompt path.** The project can also be built with four prompts, one for each step, from the [prompt library](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-02/PROMPTS.md#prompt-path-of-the-weekly-project). The section "Weekly project on the prompt path" at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The test of each prompt must hold before the next prompt is used.
 

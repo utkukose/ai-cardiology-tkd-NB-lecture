@@ -1043,6 +1043,40 @@
     ]
   },
   {
+    "key": "chawla2002",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Chawla",
+        "given": "N. V."
+      },
+      {
+        "family": "Bowyer",
+        "given": "K. W."
+      },
+      {
+        "family": "Hall",
+        "given": "L. O."
+      },
+      {
+        "family": "Kegelmeyer",
+        "given": "W. P."
+      }
+    ],
+    "year": "2002",
+    "title": "SMOTE: Synthetic minority over-sampling technique",
+    "container": "Journal of Artificial Intelligence Research",
+    "volume": "16",
+    "issue": "",
+    "pages": "321–357",
+    "doi": "10.1613/jair.953",
+    "url": "https://doi.org/10.1613/jair.953",
+    "apa": "Chawla, N. V., Bowyer, K. W., Hall, L. O., & Kegelmeyer, W. P. (2002). SMOTE: Synthetic minority over-sampling technique. *Journal of Artificial Intelligence Research, 16*, 321–357. https://doi.org/10.1613/jair.953",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "cho2014",
     "type": "proceedings",
     "authors": [
@@ -3911,6 +3945,40 @@
     ]
   },
   {
+    "key": "mcinnes2018",
+    "type": "article",
+    "authors": [
+      {
+        "family": "McInnes",
+        "given": "L."
+      },
+      {
+        "family": "Healy",
+        "given": "J."
+      },
+      {
+        "family": "Saul",
+        "given": "N."
+      },
+      {
+        "family": "Großberger",
+        "given": "L."
+      }
+    ],
+    "year": "2018",
+    "title": "UMAP: Uniform Manifold Approximation and Projection",
+    "container": "Journal of Open Source Software",
+    "volume": "3",
+    "issue": "29",
+    "pages": "861",
+    "doi": "10.21105/joss.00861",
+    "url": "https://doi.org/10.21105/joss.00861",
+    "apa": "McInnes, L., Healy, J., Saul, N., & Großberger, L. (2018). UMAP: Uniform Manifold Approximation and Projection. *Journal of Open Source Software, 3*(29), 861. https://doi.org/10.21105/joss.00861",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "mckinney2010",
     "type": "proceedings",
     "authors": [
@@ -5999,6 +6067,36 @@
     ]
   },
   {
+    "key": "tanaka2001",
+    "type": "article",
+    "authors": [
+      {
+        "family": "Tanaka",
+        "given": "H."
+      },
+      {
+        "family": "Monahan",
+        "given": "K. D."
+      },
+      {
+        "family": "Seals",
+        "given": "D. R."
+      }
+    ],
+    "year": "2001",
+    "title": "Age-predicted maximal heart rate revisited",
+    "container": "Journal of the American College of Cardiology",
+    "volume": "37",
+    "issue": "1",
+    "pages": "153–156",
+    "doi": "10.1016/S0735-1097(00)01054-8",
+    "url": "https://doi.org/10.1016/S0735-1097(00)01054-8",
+    "apa": "Tanaka, H., Monahan, K. D., & Seals, D. R. (2001). Age-predicted maximal heart rate revisited. *Journal of the American College of Cardiology, 37*(1), 153–156. https://doi.org/10.1016/S0735-1097(00)01054-8",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "taskforce1996",
     "type": "article",
     "authors": [
@@ -6279,6 +6377,40 @@
     ]
   },
   {
+    "key": "vandengoorbergh2022",
+    "type": "article",
+    "authors": [
+      {
+        "family": "van den Goorbergh",
+        "given": "R."
+      },
+      {
+        "family": "van Smeden",
+        "given": "M."
+      },
+      {
+        "family": "Timmerman",
+        "given": "D."
+      },
+      {
+        "family": "Van Calster",
+        "given": "B."
+      }
+    ],
+    "year": "2022",
+    "title": "The harm of class imbalance corrections for risk prediction models: Illustration and simulation using logistic regression",
+    "container": "Journal of the American Medical Informatics Association",
+    "volume": "29",
+    "issue": "9",
+    "pages": "1525–1534",
+    "doi": "10.1093/jamia/ocac093",
+    "url": "https://doi.org/10.1093/jamia/ocac093",
+    "apa": "van den Goorbergh, R., van Smeden, M., Timmerman, D., & Van Calster, B. (2022). The harm of class imbalance corrections for risk prediction models: Illustration and simulation using logistic regression. *Journal of the American Medical Informatics Association, 29*(9), 1525–1534. https://doi.org/10.1093/jamia/ocac093",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "vanderloo2026",
     "type": "article",
     "authors": [
@@ -6318,6 +6450,32 @@
     "apa": "van der Loo, W., van der Valk, V., van den Broek, T., Atsma, D., Staring, M., & Scherptong, R. (2026). Large language models for structured cardiovascular data extraction: A foundation for scalable research and clinical applications. *European Heart Journal - Digital Health, 7*, ztaf127. https://doi.org/10.1093/ehjdh/ztaf127",
     "used_in": [
       "Week 6: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "vandermaaten2008",
+    "type": "article",
+    "authors": [
+      {
+        "family": "van der Maaten",
+        "given": "L."
+      },
+      {
+        "family": "Hinton",
+        "given": "G."
+      }
+    ],
+    "year": "2008",
+    "title": "Visualizing data using t-SNE",
+    "container": "Journal of Machine Learning Research",
+    "volume": "9",
+    "issue": "86",
+    "pages": "2579–2605",
+    "doi": "",
+    "url": "https://jmlr.org/papers/v9/vandermaaten08a.html",
+    "apa": "van der Maaten, L., & Hinton, G. (2008). Visualizing data using t-SNE. *Journal of Machine Learning Research, 9*(86), 2579–2605. https://jmlr.org/papers/v9/vandermaaten08a.html",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
     ]
   },
   {

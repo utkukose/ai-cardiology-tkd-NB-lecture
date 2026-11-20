@@ -10,7 +10,7 @@ This library holds every prompt of the prompt path of Week 2, Part 1 of the Jupy
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
 1. [How a step works](#how-a-step-works)
-2. [Stop 1: A first risk model](#stop-1-a-first-risk-model)
+2. [Stop 1: Mini project: A CAD prediction model, ROC curve and AUC](#stop-1-mini-project-a-cad-prediction-model-roc-curve-and-auc)
 3. [Stop 2: Testing a model honestly](#stop-2-testing-a-model-honestly)
 4. [Stop 3: Subgroups, survival and a model to review](#stop-3-subgroups-survival-and-a-model-to-review)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
@@ -28,7 +28,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
 | 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-## Stop 1: A first risk model
+## Stop 1: Mini project: A CAD prediction model, ROC curve and AUC
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-1) · The same result on the Python path: Python step 2, Sections 1 and 2*
 
