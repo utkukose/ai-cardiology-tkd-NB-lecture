@@ -10,7 +10,7 @@ This library holds every prompt of the prompt path of Week 5, Part 1 of the Jupy
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
 1. [How a step works](#how-a-step-works)
-2. [Stop 1: Rhythm: a rule and a network for six labels](#stop-1-rhythm-a-rule-and-a-network-for-six-labels)
+2. [Stop 1: Mini project: Rhythm, from a rule to the nine classes of the PhysioNet 2020 Challenge](#stop-1-mini-project-rhythm-from-a-rule-to-the-nine-classes-of-the-physionet-2020-challenge)
 3. [Stop 2: ST elevation: the median beat, the J point and the alarm](#stop-2-st-elevation-the-median-beat-the-j-point-and-the-alarm)
 4. [Stop 3: Long-term monitoring: windows, AF burden and false alarms](#stop-3-long-term-monitoring-windows-af-burden-and-false-alarms)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
@@ -28,11 +28,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | 6. Repair | If the check prints *not yet*, send the repair prompt with the code. If the result is still wrong, run the *Ready code* cell, which gives the correct result. |
 | 7. Explain and log | Ask the assistant to explain the code in plain language, and write the tool, the prompt and what was checked in the AI usage log. |
 
-## Stop 1: Rhythm: a rule and a network for six labels
+## Stop 1: Mini project: Rhythm, from a rule to the nine classes of the PhysioNet 2020 Challenge
 
 *[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-1) · The same result on the Python path: Python step 5, Sections 1 to 5*
 
-This stop is the mini project of the session. The 12-lead ECGs of PTB-XL are read first as a cardiologist reads the rhythm, from the RR intervals, and then by a one-dimensional convolutional network that learns six labels at once. The network is trained on folds 1 and 2, its thresholds are chosen on fold 9, and both the rule and the network are judged on fold 10.
+This stop is the mini project of the session. The 12-lead ECGs of PTB-XL are read first as a cardiologist reads the rhythm, from the RR intervals, and then by a one-dimensional convolutional network that learns six labels at once. The network is trained on folds 1 and 2, its thresholds are chosen on fold 9, and both the rule and the network are judged on fold 10. The last step judges the same network trained for the nine classes of the PhysioNet 2020 Challenge.
 
 ### Step 1.1: A rule from the RR intervals
 
@@ -158,6 +158,36 @@ specificity must lie between 0 and 1.
 ```
 
 **Expected result:** "answer" = 0.636
+
+### Step 1.5: The nine classes of the PhysioNet 2020 Challenge
+
+**Goal.** Judge class by class a network trained for the nine classes of CPSC 2018, one of the databases of the PhysioNet 2020 Challenge. The training takes about a minute.
+
+```text
+Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
+notebook and run there.
+Context: The cardiologist wants to know how well a network recognises nine findings of the 12-lead
+ECG at once, from a normal ECG to ST elevation, and which findings it misses.
+Data: The notebook holds a table named "data" with the 2,198 recordings of the test fold of PTB-XL.
+Each row is a recording: "record" gives its number. The nine columns "Normal", "AF", "I-AVB",
+"LBBB", "RBBB", "PAC", "PVC", "STD" and "STE" are 1 when the cardiologists gave the finding and 0
+otherwise: a normal ECG, atrial fibrillation, first-degree atrioventricular block, left and right
+bundle branch block, premature atrial and ventricular contractions, ST depression and ST elevation,
+the nine classes of the China Physiological Signal Challenge 2018, a database of the PhysioNet 2020
+Challenge. The nine columns "probability Normal" to "probability STE" hold the probabilities that a
+one-dimensional convolutional network, trained on folds 1 and 2, gave to the nine classes.
+Task: For each of the nine classes, count the recordings with the class and compute the area under
+the ROC curve (AUC) of its probability against its column of 0 and 1. Draw the nine AUC values as a
+horizontal bar chart, sorted from the lowest to the highest, with a dashed line at 0.5.
+Constraints: Use only this table. The code must not read files, download anything from the internet
+or install programs.
+Output: Print a table with the class, the number of recordings and the AUC, and keep the mean AUC of
+the nine classes, with three decimals, under the name "answer".
+Test: Every AUC must lie between 0 and 1, and every class must have at least one recording in the
+table.
+```
+
+**Expected result:** "answer" = 0.848
 
 ## Stop 2: ST elevation: the median beat, the J point and the alarm
 

@@ -10,7 +10,7 @@ Bu kütüphanede, 5. haftanın prompt (istem) yolundaki, yani Jupyter defterinin
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
-2. [Durak 1: Ritim: Altı etiket için bir kural ve bir ağ](#durak-1-ritim-altı-etiket-için-bir-kural-ve-bir-ağ)
+2. [Durak 1: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına](#durak-1-mini-proje-ritim-bir-kuraldan-physionet-2020-challengeın-dokuz-sınıfına)
 3. [Durak 2: ST yükselmesi: Medyan atım, J noktası ve alarm](#durak-2-st-yükselmesi-medyan-atım-j-noktası-ve-alarm)
 4. [Durak 3: Uzun süreli izlem: Pencereler, AF yükü ve yanlış alarmlar](#durak-3-uzun-süreli-izlem-pencereler-af-yükü-ve-yanlış-alarmlar)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
@@ -28,11 +28,11 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 | 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-## Durak 1: Ritim: Altı etiket için bir kural ve bir ağ
+## Durak 1: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına
 
 *[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 5, 1-5. bölümler*
 
-Bu durak oturumun mini projesidir. PTB-XL'in 12 derivasyonlu EKG'leri önce bir kardiyoloğun ritmi okuduğu gibi RR aralıklarından, ardından altı etiketi aynı anda öğrenen tek boyutlu evrişimli bir ağ tarafından okunur. Ağ 1. ve 2. katlarla eğitilir, eşikleri 9. katta seçilir; kural da ağ da 10. katta değerlendirilir.
+Bu durak oturumun mini projesidir. PTB-XL'in 12 derivasyonlu EKG'leri önce bir kardiyoloğun ritmi okuduğu gibi RR aralıklarından, ardından altı etiketi aynı anda öğrenen tek boyutlu evrişimli bir ağ tarafından okunur. Ağ 1. ve 2. katlarla eğitilir, eşikleri 9. katta seçilir; kural da ağ da 10. katta değerlendirilir. Son adım, aynı ağın PhysioNet 2020 Challenge'ın dokuz sınıfı için eğitilmiş hâlini değerlendirir.
 
 ### Adım 1.1: RR aralıklarından bir kural
 
@@ -158,6 +158,36 @@ olmalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,636
+
+### Adım 1.5: PhysioNet 2020 Challenge'ın dokuz sınıfı
+
+**Amaç.** Bu adımda PhysioNet 2020 Challenge'ın veri tabanlarından biri olan CPSC 2018'in dokuz sınıfı için eğitilmiş bir ağ, sınıf sınıf değerlendirilir. Eğitim yaklaşık bir dakika sürer.
+
+```text
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+çalıştıracağım.
+Bağlam: Bir ağın normal EKG'den ST yükselmesine kadar dokuz 12 derivasyonlu EKG bulgusunu aynı anda
+ne kadar iyi tanıdığını ve hangi bulguları kaçırdığını öğrenmek istiyorum.
+Veri: Defterde "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar. Her satır
+bir kayıttır: "kayıt" sütunu kaydın numarasını verir. "Normal", "AF", "I-AVB", "LBBB", "RBBB",
+"PAC", "PVC", "STD" ve "STE" adlı dokuz sütun, kardiyologlar ilgili bulguyu verdiyse 1, vermediyse
+0'dır. Bu bulgular sırasıyla normal EKG, atriyal fibrilasyon, birinci derece atriyoventriküler blok,
+sol ve sağ dal bloğu, atriyal ve ventriküler erken vurular, ST çökmesi ve ST yükselmesidir; yani
+PhysioNet 2020 Challenge'ın veri tabanlarından biri olan China Physiological Signal Challenge
+2018'in dokuz sınıfıdır. "olasılık Normal" ile "olasılık STE" arasındaki dokuz sütun, 1. ve 2.
+katlarla eğitilmiş tek boyutlu evrişimli bir ağın dokuz sınıfa verdiği olasılıkları tutar.
+Görev: Dokuz sınıfın her biri için o sınıfı taşıyan kayıtları say ve sınıfın olasılığının 0 ve 1
+değerlerinden oluşan kendi sütununa karşı ROC eğrisi altındaki alanını (AUC) hesapla. Dokuz AUC
+değerini en düşükten en yükseğe sıralanmış yatay bir çubuk grafikle çiz ve 0,5 düzeyine kesikli bir
+çizgi ekle.
+Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
+program kurmamalıdır.
+Çıktı: Sınıfı, kayıt sayısını ve AUC değerini gösteren bir tablo yazdır; dokuz sınıfın ortalama AUC
+değerini üç ondalık basamakla "cevap" adıyla sakla.
+Test: Her AUC 0 ile 1 arasında olmalı ve tablodaki her sınıfın en az bir kaydı bulunmalı.
+```
+
+**Beklenen sonuç:** "cevap" = 0,848
 
 ## Durak 2: ST yükselmesi: Medyan atım, J noktası ve alarm
 

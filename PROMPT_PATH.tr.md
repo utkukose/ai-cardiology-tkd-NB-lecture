@@ -60,7 +60,7 @@ Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabil
 | 2 | [PROMPTLAR.md](tr/hafta-02/PROMPTLAR.md) | 3 durak, 9 adım | F bölümü, prompt atölyesi |
 | 3 | [PROMPTLAR.md](tr/hafta-03/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
 | 4 | [PROMPTLAR.md](tr/hafta-04/PROMPTLAR.md) | 3 durak, 9 adım | F bölümü, prompt atölyesi |
-| 5 | [PROMPTLAR.md](tr/hafta-05/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
+| 5 | [PROMPTLAR.md](tr/hafta-05/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |
 | 6 | [PROMPTLAR.md](tr/hafta-06/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
 | 7 | [PROMPTLAR.md](tr/hafta-07/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
 | 8 | [PROMPTLAR.md](tr/hafta-08/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |

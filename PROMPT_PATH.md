@@ -60,7 +60,7 @@ An assistant can write code that runs without an error and still gives a wrong n
 | 2 | [PROMPTS.md](en/week-02/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
 | 3 | [PROMPTS.md](en/week-03/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
 | 4 | [PROMPTS.md](en/week-04/PROMPTS.md) | 3 stops with 9 steps | Part F, prompt workshop |
-| 5 | [PROMPTS.md](en/week-05/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
+| 5 | [PROMPTS.md](en/week-05/PROMPTS.md) | 3 stops with 11 steps | Part F, prompt workshop |
 | 6 | [PROMPTS.md](en/week-06/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
 | 7 | [PROMPTS.md](en/week-07/PROMPTS.md) | 3 stops with 10 steps | Part F, prompt workshop |
 | 8 | [PROMPTS.md](en/week-08/PROMPTS.md) | 3 stops with 11 steps | Part F, prompt workshop |
