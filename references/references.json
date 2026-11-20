@@ -1123,6 +1123,31 @@
     ]
   },
   {
+    "key": "chollet2015",
+    "type": "software",
+    "authors": [
+      {
+        "family": "Chollet",
+        "given": "F."
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "year": "2015",
+    "title": "Keras",
+    "container": "GitHub",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://keras.io",
+    "apa": "Chollet, F., & others. (2015). *Keras* [Computer software]. GitHub. https://keras.io",
+    "used_in": [
+      "Week 2: lecture page and Jupyter notebook"
+    ]
+  },
+  {
     "key": "collins2024",
     "type": "article",
     "authors": [

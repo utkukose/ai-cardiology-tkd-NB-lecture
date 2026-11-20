@@ -2,12 +2,12 @@
 
 <div align="center">
 
-# Week 3: Deep learning and convolutional neural networks
+# Week 3: Deep learning and CNN fundamentals
 
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology
 
-*From one neuron to a network that reads cardiac images*
+*Making sense of images: Cardiac imaging*
 
 [Course home](../../README.md) · [Syllabus](../../SYLLABUS.md) · [Setup](../../SETUP.md) · [Türkçe](../../tr/hafta-03/README.md)
 
@@ -15,7 +15,7 @@ Turkish Society of Cardiology
 
 ## About the week
 
-Neural networks from one neuron to a deep network: the loss, the gradients and the training loop, images as arrays, convolution and pooling, and a convolutional neural network (CNN) that tells normal hearts, dilated cardiomyopathy and hypertrophic cardiomyopathy apart on the cine cardiac magnetic resonance examinations of the public ACDC data set. Overfitting is met with dropout, batch normalisation, augmentation and early stopping, and the results are read with precision, recall and the F1 score, class by class, next to the measurements of the expert contours. The known architectures from LeNet to ResNet follow, then the review of a training loop written by an AI assistant and the echocardiography videos of EchoNet-Dynamic, which each participant obtains through a personal registration.
+The first two hours build a network from its smallest part: the neuron, the layer and the activation function with a medical analogy, the loss, the gradients and the training loop, a first model with the Keras Sequential API, images as arrays, the convolution operation that finds edges and patterns, and pooling, dropout and batch normalisation. A convolutional neural network (CNN) then tells normal hearts, dilated cardiomyopathy and hypertrophic cardiomyopathy apart on the cine cardiac magnetic resonance examinations of the public ACDC data set. The last two hours place the network among the VGG16 and ResNet50 architectures, augment cardiac images, read the result with the confusion matrix and the F1 score, and detect and prevent overfitting. A training loop written by an AI assistant is reviewed, and the mini project classifies the echocardiography videos of EchoNet-Dynamic, which each participant obtains through a personal registration, as normal or abnormal.
 
 4 hours in the session and about 3 hours for the weekly project.
 
@@ -25,9 +25,9 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 | Main route: lecture page and interactive lab | Practice stop | Prompt path (Part 1) | Python path (Part 2) |
 |---|---|---|---|
-| [Neural networks in one page](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#neural-networks-in-one-page)<br>[Learning: Loss, gradients and the training loop](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#learning-loss-gradients-and-the-training-loop)<br>[Images as arrays: Cine cardiac MR of ACDC](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#images-as-arrays-cine-cardiac-mr-of-acdc) | **[Stop 1: Cine MR as numbers](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-1)** | Stop 1 | Python step 3 and Sections 1 to 3 |
-| [Convolution: Filters that slide over an image](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#convolution-filters-that-slide-over-an-image)<br>[A convolutional network for cine MR](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#a-convolutional-network-for-cine-mr)<br>[Overfitting: Dropout, batch normalisation and augmentation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#overfitting-dropout-batch-normalisation-and-augmentation)<br>[Reading the result: Precision, recall and F1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#reading-the-result-precision-recall-and-f1) | **[Stop 2: A first convolutional network](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-2)** | Stop 2 | Sections 4 to 7 |
-| [Known architectures: From LeNet to ResNet](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#known-architectures-from-lenet-to-resnet)<br>[Working with an AI assistant, part 3: Reviewing a training loop](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#ai-pair-programming-part-3-reviewing-a-training-loop)<br>[EchoNet-Dynamic: Echocardiography with personal registration](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#echonet-dynamic-echocardiography-with-personal-registration) | **[Stop 3: EchoNet-Dynamic: normal or abnormal (with your registration)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-3)** | Stop 3 | Sections 8 to 10 |
+| [First two hours: Artificial neural networks and CNNs](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#first-two-hours-artificial-neural-networks-and-cnns)<br>[Neuron, layer, activation function (a medical analogy)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#neural-networks-in-one-page)<br>[Learning: Loss, gradients and the training loop](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#learning-loss-gradients-and-the-training-loop)<br>[A first model with the Keras Sequential API](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#a-first-model-with-the-keras-sequential-api)<br>[Images as arrays: Cine cardiac MR of ACDC](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#images-as-arrays-cine-cardiac-mr-of-acdc) | **[Stop 1: Cine MR as numbers](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-1)** | Stop 1 | Python step 3 and Sections 1 to 3 |
+| [The convolution operation: Finding edges and patterns in an image](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#convolution-filters-that-slide-over-an-image)<br>[Pooling, dropout and batch normalisation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#pooling-dropout-batch-normalization)<br>[A convolutional network for cine MR](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#a-convolutional-network-for-cine-mr)<br>[Last two hours: Advanced CNNs and model evaluation](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#last-two-hours-advanced-cnns-and-model-evaluation)<br>[The VGG16 and ResNet50 architectures (conceptual)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#known-architectures-from-lenet-to-resnet)<br>[Image augmentation for cardiac images](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#image-augmentation-for-cardiac-images)<br>[Detecting and preventing overfitting](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#overfitting-dropout-batch-normalisation-and-augmentation)<br>[Interpreting the confusion matrix and the F1 score](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#reading-the-result-precision-recall-and-f1) | **[Stop 2: A first convolutional network](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-2)** | Stop 2 | Sections 4 to 7 |
+| [Working with an AI assistant, part 3: Reviewing a training loop](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#ai-pair-programming-part-3-reviewing-a-training-loop)<br>[Mini project: Classifying normal and abnormal echocardiograms of the EchoNet-Dynamic data set](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#echonet-dynamic-echocardiography-with-personal-registration) | **[Stop 3: Mini project: EchoNet-Dynamic, normal or abnormal (with your registration)](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-3)** | Stop 3 | Sections 8 to 10 |
 | [The paper of the week](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#the-paper-of-the-week)<br>[The virtual clinic, stage 3: The imaging laboratory opens](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#the-virtual-clinic-stage-3-the-imaging-laboratory-opens) | The section on your own data, the paper of the week and the virtual clinic | – | – |
 
 ## Materials
@@ -53,7 +53,7 @@ The lecture page is the main route of the week. It holds no code and no prompts,
 
 ## Learning outcomes
 
-By the end of the week, participants are expected to explain how a neuron, a layer and a network compute their outputs, and how a loss, its gradients and the update of the weights make a network learn. They should be able to describe a cine cardiac magnetic resonance examination as an array, to compute volumes and the ejection fraction from expert contours and to split the patients of a study before any learning. They should be able to follow a convolution and a pooling step, to train a small convolutional network, to recognise overfitting in its learning curves and to read its result with precision, recall and the F1 score for each class. Finally, they should be able to place the network among the known architectures, to review a training loop written by an AI assistant and to obtain a registered data set such as EchoNet-Dynamic under its terms of use.
+By the end of the week, participants are expected to explain how a neuron, a layer and a network compute their outputs, with a medical analogy, and how a loss, its gradients and the update of the weights make a network learn. They should be able to build a first model with the Keras Sequential API and to read the same model in PyTorch, to describe a cine cardiac magnetic resonance examination as an array and to split the patients of a study before any learning. They should be able to follow a convolution, a pooling step, dropout and batch normalisation, to train a small convolutional network, and to place it among the VGG16 and ResNet50 architectures. They should be able to choose augmentations that respect the anatomy, to recognise and prevent overfitting in the learning curves and to read the result with the confusion matrix, precision, recall and the F1 score for each class. Finally, they should be able to review a training loop written by an AI assistant and to obtain a registered data set such as EchoNet-Dynamic under its terms of use.
 
 ## Study path
 
@@ -61,15 +61,15 @@ Participants who attend the session complete the main route and the practice sto
 
 | Step | Activity | Prompt path | Python path |
 |---|---|---|---|
-| 1 | Read the case of the week and the lecture page up to Practice stop 1, with Part A of the interactive lab and the knowledge checks | 55 minutes | 55 minutes |
-| 2 | Practice stop 1: Part 1, Stop 1 on the prompt path, or Python step 3 and Sections 1 to 3 on the Python path | 25 minutes | 1 hour 15 minutes |
-| 3 | Read on up to Practice stop 2: convolution, the network in three dimensions, overfitting and reading the result, with Parts B to D of the interactive lab | 1 hour | 1 hour |
-| 4 | Practice stop 2: Part 1, Stop 2, or Sections 4 to 7 | 35 minutes | 1 hour 15 minutes |
-| 5 | Read on up to Practice stop 3: known architectures, the review of a training loop and EchoNet-Dynamic, with Parts E and F of the interactive lab | 40 minutes | 40 minutes |
-| 6 | Practice stop 3, with a personal registration for EchoNet-Dynamic: Part 1, Stop 3, or Sections 8 to 10 | 30 minutes | 50 minutes |
+| 1 | Read the case of the week and the lecture page up to Practice stop 1: the neuron, learning, the Keras Sequential API and cine MR as arrays, with Part A of the interactive lab and the knowledge checks | 1 hour 5 minutes | 1 hour 5 minutes |
+| 2 | Practice stop 1: Part 1, Stop 1 on the prompt path, or Python step 3 and Sections 1 to 3 on the Python path | 25 minutes | 1 hour 20 minutes |
+| 3 | Read on up to Practice stop 2: convolution, pooling, dropout and batch normalisation, the network, VGG16 and ResNet50, augmentation, overfitting and the F1 score, with Parts B to D of the interactive lab | 1 hour 15 minutes | 1 hour 15 minutes |
+| 4 | Practice stop 2: Part 1, Stop 2, or Sections 4 to 7 | 35 minutes | 1 hour 20 minutes |
+| 5 | Read on up to Practice stop 3: the review of a training loop and the mini project with EchoNet-Dynamic, with Parts E and F of the interactive lab | 30 minutes | 30 minutes |
+| 6 | Practice stop 3, the mini project, with a personal registration for EchoNet-Dynamic: Part 1, Stop 3, or Sections 8 to 10 | 30 minutes | 55 minutes |
 | 7 | Read the paper of the week, the stage of the virtual clinic and the section on your own data | 30 minutes | 30 minutes |
 | 8 | Take the self-assessment of the interactive lab (tab: Check yourself), write the reflection and export the learning log | 20 minutes | 20 minutes |
-| | **Total without the weekly project** | **4 hours 55 minutes** | **6 hours 45 minutes** |
+| | **Total without the weekly project** | **5 hours 10 minutes** | **7 hours 15 minutes** |
 | 9 | Complete the weekly project, on either path | 3 hours | 3 hours |
 
 ## Training flow of the session
@@ -79,19 +79,22 @@ The four-hour session of the week follows the plan below. It is shared to show h
 | Time | Activity |
 |---|---|
 | 0:00 to 0:15 | The case of the week, patient 134 of ACDC, and the route of the week. Every participant opens the notebook in Google Colab or in Jupyter and runs Section 0, which downloads the ACDC files of the three groups, about 105 MB, from their public source. |
-| 0:15 to 0:55 | Main route: neural networks in one page, learning with Part A of the interactive lab, cine cardiac magnetic resonance as arrays. |
-| 0:55 to 1:30 | Practice stop 1 in two groups, the prompt path and the Python path. Both groups compare the ejection fraction of patient 134 and the accuracy of the rules of ACDC. |
-| 1:30 to 1:45 | Break. |
-| 1:45 to 2:30 | Main route: convolution with Part B, the network in three dimensions, overfitting with Part C and reading the result with Part D. |
-| 2:30 to 3:05 | Practice stop 2: the network is trained in about a minute and compared, patient by patient, with the measurements of the contours. |
-| 3:05 to 3:40 | Main route: known architectures, reviewing a training loop with Parts E and F, EchoNet-Dynamic. Mini project of the session, Practice stop 3: Participants with a registration run it on their own copy; the instructor runs it on the shared screen for the others. |
-| 3:40 to 4:00 | The paper of the week, the imaging laboratory of the virtual clinic, the section on your own data and the weekly project. |
+| 0:15 to 0:50 | First two hours, artificial neural networks and CNNs: the neuron, the layer and the activation function with a medical analogy, learning with Part A of the interactive lab, a first model with the Keras Sequential API and cine cardiac magnetic resonance as arrays. |
+| 0:50 to 1:20 | Practice stop 1 in two groups, the prompt path and the Python path. Both groups compare the ejection fraction of patient 134 and the accuracy of the rules of ACDC. |
+| 1:20 to 2:00 | The convolution operation with Part B, pooling, dropout and batch normalisation, and the network of the course in three dimensions. |
+| 2:00 to 2:10 | Break. |
+| 2:10 to 2:45 | Last two hours, advanced CNNs and model evaluation: the VGG16 and ResNet50 architectures, image augmentation for cardiac images, overfitting with Part C and the confusion matrix and the F1 score with Part D. |
+| 2:45 to 3:15 | Practice stop 2: the network is trained in about a minute and compared, patient by patient, with the measurements of the contours. |
+| 3:15 to 3:45 | Reviewing a training loop with Parts E and F. Mini project of the session, Practice stop 3, EchoNet-Dynamic normal or abnormal: Participants with a registration run it on their own copy; the instructor runs it on the shared screen for the others. |
+| 3:45 to 4:00 | The paper of the week, the imaging laboratory of the virtual clinic, the section on your own data and the weekly project. |
 
 ## Weekly project
 
+**Project.** Cardiac MRI, ACDC data set: Automatic classification of dilated and hypertrophic cardiomyopathy.
+
 **What to do.** Classify dilated cardiomyopathy (DCM), hypertrophic cardiomyopathy (HCM) and normal hearts on the cine cardiac magnetic resonance examinations of ACDC, and compare the network with the measurements of the cardiologist. First, train the network of the course on the 45 training patients, with the 15 validation patients for early stopping. Second, report the confusion matrix of the 30 test patients, the precision, the recall and the F1 of each class, and the macro F1. Third, apply the rules of ACDC to the measurements of the expert contours of the same 30 patients and compare both confusion matrices. Fourth, show for every misclassified patient the slices that the network saw and the slice with the thickest wall, and write which errors would matter most in the clinic and why.
 
-**Where to look.** Lecture: sections "Images as arrays: Cine cardiac MR of ACDC", "A convolutional network for cine MR", "Overfitting: Dropout, batch normalisation and augmentation" and "Reading the result: Precision, recall and F1". Interactive lab: Parts C, D and F. Jupyter notebook: Part 1, Stops 1 and 2, or Part 2, Sections 3, 5, 6 and 7.
+**Where to look.** Lecture: sections "Images as arrays: Cine cardiac MR of ACDC", "A convolutional network for cine MR", "Detecting and preventing overfitting" and "Interpreting the confusion matrix and the F1 score". Interactive lab: Parts C, D and F. Jupyter notebook: Part 1, Stops 1 and 2, or Part 2, Sections 3, 5, 6 and 7.
 
 **Prompt path.** The project can also be built with four prompts, one for each step, from the [prompt library](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/PROMPTS.md#prompt-path-of-the-weekly-project). The section "Weekly project on the prompt path" at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The test of each prompt must hold before the next prompt is used.
 

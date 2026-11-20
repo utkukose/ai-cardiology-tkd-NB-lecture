@@ -12,7 +12,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Sayılarla sine MR](#durak-1-sayılarla-sine-mr)
 3. [Durak 2: İlk evrişimli ağ](#durak-2-ilk-evrişimli-ağ)
-4. [Durak 3: EchoNet-Dynamic: Normal mi, anormal mi? (kişisel kayıtla)](#durak-3-echonet-dynamic-normal-mi-anormal-mi-kişisel-kayıtla)
+4. [Durak 3: Mini proje: EchoNet-Dynamic, normal mi anormal mi? (kişisel kayıtla)](#durak-3-mini-proje-echonet-dynamic-normal-mi-anormal-mi-kişisel-kayıtla)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
 6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
 
@@ -230,7 +230,7 @@ Test: Karışıklık matrisinin toplamı 30, her satırının toplamı 10 olmal�
 
 **Beklenen sonuç:** "cevap" = 0,933
 
-## Durak 3: EchoNet-Dynamic: Normal mi, anormal mi? (kişisel kayıtla)
+## Durak 3: Mini proje: EchoNet-Dynamic, normal mi anormal mi? (kişisel kayıtla)
 
 *[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-3) · Python yolunda aynı sonuç: 8-10. bölümler*
 

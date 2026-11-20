@@ -12,7 +12,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 1. [How a step works](#how-a-step-works)
 2. [Stop 1: Cine MR as numbers](#stop-1-cine-mr-as-numbers)
 3. [Stop 2: A first convolutional network](#stop-2-a-first-convolutional-network)
-4. [Stop 3: EchoNet-Dynamic: normal or abnormal (with your registration)](#stop-3-echonet-dynamic-normal-or-abnormal-with-your-registration)
+4. [Stop 3: Mini project: EchoNet-Dynamic, normal or abnormal (with your registration)](#stop-3-mini-project-echonet-dynamic-normal-or-abnormal-with-your-registration)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
 6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
 
@@ -234,7 +234,7 @@ Test: The confusion matrix must add up to 30 patients, and each of its rows to 1
 
 **Expected result:** "answer" = 0.933
 
-## Stop 3: EchoNet-Dynamic: normal or abnormal (with your registration)
+## Stop 3: Mini project: EchoNet-Dynamic, normal or abnormal (with your registration)
 
 *[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-3) · The same result on the Python path: Sections 8 to 10*
 

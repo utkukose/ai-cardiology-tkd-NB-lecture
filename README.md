@@ -105,7 +105,7 @@ The plan follows the program of the Turkish Society of Cardiology. Each week is 
 |---|---|---|---|
 | 1 | [Python and cardiology data basics](en/week-01/README.md) | Patient registry and ECG laboratory | A script that visualises the ECG and calculates its basic measurements, PR, QRS and QT, automatically |
 | 2 | [Machine learning fundamentals](en/week-02/README.md) | Risk outpatient clinic | HFpEF vs HFrEF patient clustering with Kaplan-Meier survival analysis |
-| 3 | [Deep learning and convolutional neural networks](en/week-03/README.md) | Imaging laboratory | Classification of dilated and hypertrophic cardiomyopathy on cardiac magnetic resonance images |
+| 3 | [Deep learning and CNN fundamentals](en/week-03/README.md) | Imaging laboratory | Cardiac MRI, ACDC data set: Automatic classification of dilated and hypertrophic cardiomyopathy |
 | 4 | [Transfer learning](en/week-04/README.md) | Echo measurement: Automatic ejection fraction | Segmentation of the left ventricle and automatic ejection fraction |
 | 5 | [Time series analysis and ECG artificial intelligence](en/week-05/README.md) | Rhythm and STEMI alarm | A STEMI alarm: Automatic detection of ST deviation on 12-lead ECGs |
 | 6 | [Natural language processing and clinical text mining](en/week-06/README.md) | Report archive: Clinical text | A pipeline that extracts the degree of stenosis and the vessel from angiography reports |

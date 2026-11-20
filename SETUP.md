@@ -73,6 +73,8 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 For other systems, the selector at [pytorch.org/get-started/locally](https://pytorch.org/get-started/locally/) gives the command. Restart the kernel of an open notebook after the installation. Colab includes PyTorch.
 
+Week 3 also builds a first model with Keras, a high-level interface for deep learning. Colab includes it; elsewhere, `pip install keras` installs it, and the notebook runs it on PyTorch, so TensorFlow is not needed. Without Keras, the notebook skips this one cell.
+
 From Week 4, the notebooks also use scikit-image for the outlines of the echocardiograms. Anaconda and Colab include it; in another Python environment, `pip install scikit-image` installs it.
 
 From Week 6, the notebooks also use transformers, the package of Hugging Face for pretrained language models. On first use, it downloads the tokenizer and the weights of the tiny Turkish model of the course, about 19 MB, from the Hugging Face Hub. Colab includes the package; elsewhere, `pip install transformers` installs it.

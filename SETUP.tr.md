@@ -73,6 +73,8 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 Başka sistemler için komutu [pytorch.org/get-started/locally](https://pytorch.org/get-started/locally/) adresindeki seçici verir. Kurulumdan sonra açık bir defterin çekirdeğini yeniden başlatın. Colab'da PyTorch hazır gelir.
 
+3. hafta, derin öğrenme için üst düzey bir arayüz olan Keras ile ilk modeli de kurar. Colab Keras'ı içerir; başka ortamlarda paket `pip install keras` komutuyla kurulur ve defter onu PyTorch üzerinde çalıştırır; bu yüzden TensorFlow gerekmez. Keras kurulu değilse defter yalnızca bu hücreyi atlar.
+
 Defterler 4. haftadan itibaren ekokardiyogramlardaki sınırlar için scikit-image paketini de kullanır. Anaconda ve Colab bu paketi içerir; başka bir Python ortamında `pip install scikit-image` komutuyla kurulur.
 
 Defterler 6. haftadan itibaren önceden eğitilmiş dil modelleri için Hugging Face'in transformers paketini de kullanır. Paket ilk kullanımda eğitimin küçük Türkçe modelinin tokenizer'ını ve ağırlıklarını (yaklaşık 19 MB) Hugging Face Hub'dan indirir. Colab bu paketi içerir; başka ortamlarda `pip install transformers` komutuyla kurulur.
