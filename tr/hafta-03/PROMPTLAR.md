@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [3. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-03/PROMPTS.md)
 
-Bu kütüphanede, 3. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 3. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Sayılarla sine MR](#durak-1-sayılarla-sine-mr)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,16 +39,16 @@ ACDC'nin uzman konturları her incelemeyi sayılara dönüştürür: Hacimler, e
 **Amaç.** Bu adımda EF'nin ACDC'nin üç grubunu nasıl ayırdığı görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyak MR veri seti ACDC'de, sol ventrikül ejeksiyon fraksiyonunun normal kalpler, dilate
 kardiyomiyopati ve hipertrofik kardiyomiyopati arasında nasıl farklılaştığını görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'nin NOR (normal), DCM (dilate kardiyomiyopati) ve
-HCM (hipertrofik kardiyomiyopati) gruplarındaki 90 hastayı tutar. Her satır bir hastadır: "hasta"
-sütunu hastanın adını, "grup" grubunu, "LVEF" sol ventrikül ejeksiyon fraksiyonunu yüzde olarak,
-"LVEDVI" vücut yüzey alanına göre indekslenmiş sol ventrikül diyastol sonu hacmini mL/m² olarak, "en
-kalın duvar" da diyastol sonunda duvarın en kalın segmentini mm olarak verir. Bütün değerler
-uzmanların çizdiği konturlarda ölçülmüştür.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'nin NOR (normal), DCM (dilate
+kardiyomiyopati) ve HCM (hipertrofik kardiyomiyopati) gruplarındaki 90 hastayı tutar. Her satır bir
+hastadır: "hasta" sütunu hastanın adını, "grup" grubunu, "LVEF" sol ventrikül ejeksiyon fraksiyonunu
+yüzde olarak, "LVEDVI" vücut yüzey alanına göre indekslenmiş sol ventrikül diyastol sonu hacmini
+mL/m² olarak, "en kalın duvar" da diyastol sonunda duvarın en kalın segmentini mm olarak verir.
+Bütün değerler uzmanların çizdiği konturlarda ölçülmüştür.
 Görev: Her grubun ortalama LVEF değerini hesapla ve üç ortalamayı bir ondalık basamakla yazdır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
@@ -63,14 +63,14 @@ Test: DCM grubunun ortalaması yüzde 40'ın altında, HCM grubununki yüzde 50'
 **Amaç.** Bu adımda, bir KMR laboratuvarının yazılımında olduğu gibi, hacimler ve EF uzman konturlarından kesit kesit hesaplanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC'deki 134 numaralı hastanın sol ventrikül diyastol sonu ve sistol sonu hacimlerini ve
 ejeksiyon fraksiyonunu, konturla çizilmiş kaviteyi kesit kesit toplayarak hesaplamak istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır, incelemenin tabandan apekse doğru sıralanmış
-bir kısa eksen kesitidir: "kesit" sütunu kesitin numarasını, "diyastol sonu" ve "sistol sonu"
-sütunları da o kesitte sol ventrikül kavitesinin konturu içinde kalan piksel sayısını verir. Bir
-piksel 1,445 × 1,445 mm'dir ve kesitler 10 mm kalınlığındadır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır, incelemenin tabandan apekse doğru
+sıralanmış bir kısa eksen kesitidir: "kesit" sütunu kesitin numarasını, "diyastol sonu" ve "sistol
+sonu" sütunları da o kesitte sol ventrikül kavitesinin konturu içinde kalan piksel sayısını verir.
+Bir piksel 1,445 × 1,445 mm'dir ve kesitler 10 mm kalınlığındadır.
 Görev: Her faz için bütün kesitlerdeki pikselleri topla ve toplamı bir vokselin hacmiyle, yani 1,445
 × 1,445 × 10 mm³ ile çarp; mL'ye çevirmek için 1.000'e böl. Böylece diyastol sonu hacmi EDV ve
 sistol sonu hacmi ESV bulunur. EF, (EDV − ESV)/EDV × 100 formülüyle hesaplanır.
@@ -88,16 +88,16 @@ Test: EDV, ESV'den büyük olmalı ve 50 ile 300 mL arasında bulunmalı.
 **Amaç.** Bu adımda 90 hasta ACDC tanımlarıyla sınıflanır ve ölçümlerin tek başına nerede yanıldığı görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC tanımlarındaki ölçüm kurallarının bir hastayı ne sıklıkla uzmanların verdiği gruba
 yerleştirdiğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'nin NOR (normal), DCM (dilate kardiyomiyopati) ve
-HCM (hipertrofik kardiyomiyopati) gruplarındaki 90 hastayı tutar. Her satır bir hastadır: "hasta"
-sütunu hastanın adını, "grup" grubunu, "LVEF" sol ventrikül ejeksiyon fraksiyonunu yüzde olarak,
-"LVEDVI" vücut yüzey alanına göre indekslenmiş sol ventrikül diyastol sonu hacmini mL/m² olarak, "en
-kalın duvar" da diyastol sonunda duvarın en kalın segmentini mm olarak verir. Bütün değerler
-uzmanların çizdiği konturlarda ölçülmüştür.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'nin NOR (normal), DCM (dilate
+kardiyomiyopati) ve HCM (hipertrofik kardiyomiyopati) gruplarındaki 90 hastayı tutar. Her satır bir
+hastadır: "hasta" sütunu hastanın adını, "grup" grubunu, "LVEF" sol ventrikül ejeksiyon fraksiyonunu
+yüzde olarak, "LVEDVI" vücut yüzey alanına göre indekslenmiş sol ventrikül diyastol sonu hacmini
+mL/m² olarak, "en kalın duvar" da diyastol sonunda duvarın en kalın segmentini mm olarak verir.
+Bütün değerler uzmanların çizdiği konturlarda ölçülmüştür.
 Görev: ACDC kurallarını her hastaya uygula: LVEF 40'ın altında ve LVEDVI 100'ün üzerindeyse hasta
 DCM'dir; değilse en kalın duvar 15'in üzerinde ve LVEF 50 ya da daha yüksekse HCM'dir; ikisi de
 değilse NOR'dur. Hastaları gruba ve kurala göre sayan bir çapraz tablo yazdır ve kuralı grubuyla
@@ -121,16 +121,16 @@ Dersin ağı üç grubu ortadaki kesitlerin piksellerinden öğrenir; her kesiti
 **Amaç.** Bu adımda ağın girdileri, yalnızca eğitim hastalarından hesaplanan istatistiklerle hazırlanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir ağ ACDC gruplarını sine MR kesitlerinden öğrenmeden önce, pikselleri yalnızca eğitim
 hastalarından gelen sayılarla ölçeklemek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", 45 hasta;
-"doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu" sütunlarının her
-hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır; bir piksel 2
-mm'dir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu"
+sütunlarının her hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır;
+bir piksel 2 mm'dir.
 Görev: Eğitim kesitlerinin, yani kümesi "eğitim" olan kesitlerin iki karesindeki bütün piksellerin
 ortalamasını ve standart sapmasını hesapla. Bütün kesitlerin piksellerini bu iki sayıyla
 normalleştir: Ortalamayı çıkar ve standart sapmaya böl.
@@ -149,16 +149,16 @@ Test: Normalleştirmeden sonra eğitim piksellerinin ortalaması yaklaşık 0, s
 **Amaç.** Bu adımda dersin ağı kurulur ve ağırlıkları sayılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC grupları için küçük bir evrişimli ağ kurmak ve ağın kaç ağırlık öğrendiğini bilmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", 45 hasta;
-"doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu" sütunlarının her
-hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır; bir piksel 2
-mm'dir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu"
+sütunlarının her hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır;
+bir piksel 2 mm'dir.
 Görev: Bir kesitin iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan
 oluşur; her blokta görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu,
 ReLU ve 2 × 2 maksimum havuzlama bulunur. Bloklarda sırasıyla 8, 16 ve 32 çekirdek vardır. Blokların
@@ -177,16 +177,16 @@ Test: Ağ, ilk dört eğitim kesiti için her biri üç skordan oluşan dört sa
 **Amaç.** Bu adımda ağ eğitilir ve bir kliniğin yapacağı gibi değerlendirilir: Her hasta için tek bir karar verilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC'nin sine MR kesitlerinde küçük bir evrişimli ağ eğitmek ve ağı test hastalarında bir
 kliniğin yapacağı gibi, her hasta için tek bir kararla değerlendirmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", 45 hasta;
-"doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu" sütunlarının her
-hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır; bir piksel 2
-mm'dir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu"
+sütunlarının her hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır;
+bir piksel 2 mm'dir.
 Görev: Pikselleri eğitim kesitlerinin ortalaması ve standart sapmasıyla normalleştir. Bir kesitin
 iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan oluşur; her blokta
 görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu, ReLU ve 2 × 2
@@ -212,13 +212,13 @@ Test: 30 test hastası olmalı ve her hastanın üç ortalama olasılığının 
 **Amaç.** Bu adımda sonuç sınıf sınıf okunur ve ağın kaçırdığı hastalar bulunur. Veri hücresi dersin ağını bir kez eğitir; bu yaklaşık bir dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC'nin 30 test hastasında bir ağın kararlarını grup grup okumak ve ağın kaçırdığı
 hastaları bulmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir test hastasıdır: "hasta" sütunu hastanın
-adını, "gerçek grup" uzmanların verdiği grubu, "karar" ise ağın seçtiği grubu verir; ikisi de "NOR",
-"DCM" ya da "HCM" değerlerinden biridir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir test hastasıdır: "hasta" sütunu
+hastanın adını, "gerçek grup" uzmanların verdiği grubu, "karar" ise ağın seçtiği grubu verir; ikisi
+de "NOR", "DCM" ya da "HCM" değerlerinden biridir.
 Görev: Satırlarda gerçek gruplar, sütunlarda kararlar NOR, DCM, HCM sırasıyla yer alacak biçimde
 karışıklık matrisini oluştur ve yazdır. Her grubun F1 skorunu ve bunların düz ortalaması olan makro
 F1'i hesapla. Kararı gerçek grubundan farklı olan hastaların adlarını yazdır.
@@ -234,18 +234,18 @@ Test: Karışıklık matrisinin toplamı 30, her satırının toplamı 10 olmal�
 
 *[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-3) · Python yolunda aynı sonuç: 8-10. bölümler*
 
-Oturumun mini projesi, her katılımcının Stanford AIMI'ye kişisel kayıtla edindiği ekokardiyografi videolarını, yani EchoNet-Dynamic'i kullanmaktadır. Kaydınız yoksa eğitmenin ortak ekrandaki çalıştırmasını izleyin. Kaydınız varsa kişisel indirme bağlantınızı defterde bu durağın ilk hücresine yapıştırın ya da zip dosyasını ders klasöründeki data/echonet klasörüne koyun. Veriler Colab oturumunuzda ya da bilgisayarınızda kalır ve hiçbir zaman bir prompta girmez: Promptlar yalnızca defterin hazırladığı tabloyu tarif eder.
+Oturumun mini projesi, her katılımcının Stanford AIMI'ye kişisel kayıtla edindiği ekokardiyografi videolarını, yani EchoNet-Dynamic'i kullanmaktadır. Kaydınız yoksa eğitmenin ortak ekrandaki çalıştırmasını izleyin. Kaydınız varsa kişisel indirme bağlantınızı Jupyter Notebook'ta bu durağın ilk hücresine yapıştırın ya da zip dosyasını ders klasöründeki data/echonet klasörüne koyun. Veriler Colab oturumunuzda ya da bilgisayarınızda kalır ve hiçbir zaman bir prompta girmez: Promptlar yalnızca Jupyter Notebook'un hazırladığı tabloyu tarif eder.
 
 ### Adım 3.1: Videolar ve kümeleri
 
 **Amaç.** Bu adımda her analizden önce kopyanın eksiksiz olduğu denetlenir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Her analizden önce, ekokardiyografi veri seti EchoNet-Dynamic'ten edindiğim kopyanın
 eksiksiz olduğunu denetlemek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; bir ekokardiyografi video veri seti olan
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; bir ekokardiyografi video veri seti olan
 EchoNet-Dynamic'in kendi kopyamdaki videolarını tutar. Her satır bir videodur: "video" sütunu
 videonun adını, "EF" ejeksiyon fraksiyonunu yüzde olarak, "küme" ise yazarların seçtiği kümeyi verir
 ("eğitim", "doğrulama" ya da "test").
@@ -263,11 +263,11 @@ Test: "eğitim", "doğrulama" ve "test" kümelerinde sırasıyla 7.465, 1.288 ve
 **Amaç.** Bu adımda bir model değerlendirilmeden önce anormal sınıfın ne kadar sık olduğu öğrenilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: EchoNet-Dynamic için bir model değerlendirilmeden önce, test videoları arasında yüzde 50'nin
 altındaki anormal bir ejeksiyon fraksiyonunun ne kadar sık olduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; bir ekokardiyografi video veri seti olan
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; bir ekokardiyografi video veri seti olan
 EchoNet-Dynamic'in kendi kopyamdaki videolarını tutar. Her satır bir videodur: "video" sütunu
 videonun adını, "EF" ejeksiyon fraksiyonunu yüzde olarak, "küme" ise yazarların seçtiği kümeyi verir
 ("eğitim", "doğrulama" ya da "test").
@@ -286,16 +286,16 @@ Test: Oran 0 ile 1 arasında olmalı ve test videosu sayısı 1.277 olmalı.
 **Amaç.** Bu adımda aynı ağ videoların diyastol sonu ve sistol sonu karelerinde eğitilir ve anormal EF'yi ne kadar iyi tanıdığı ölçülür. Veri hücresi 1.400 videoyu okur; bu birkaç dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Küçük bir evrişimli ağın, bir ekokardiyografi videosunun iki karesinden, yani diyastol sonu
 ve sistol sonu karelerinden yüzde 50'nin altındaki bir ejeksiyon fraksiyonunu ne kadar iyi
 tanıdığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; EchoNet-Dynamic'ten 1.000 eğitim ve 400 test videosunu
-tutar. Her satır bir videodur: "küme" sütununda "eğitim" ya da "test" yazar; "anormal" sütunu EF
-yüzde 50'nin altındaysa 1, değilse 0'dır. "diyastol sonu" ve "sistol sonu" sütunlarının her hücresi,
-o fazın çizilmiş karesini değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak
-tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; EchoNet-Dynamic'ten 1.000 eğitim ve 400 test
+videosunu tutar. Her satır bir videodur: "küme" sütununda "eğitim" ya da "test" yazar; "anormal"
+sütunu EF yüzde 50'nin altındaysa 1, değilse 0'dır. "diyastol sonu" ve "sistol sonu" sütunlarının
+her hücresi, o fazın çizilmiş karesini değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü
+olarak tutar.
 Görev: Pikselleri eğitim videolarının ortalaması ve standart sapmasıyla normalleştir. Bir videonun
 iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan oluşur; her blokta
 görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu, ReLU ve 2 × 2
@@ -330,7 +330,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -363,21 +363,21 @@ bir listeyle cevap ver, ardından düzeltilmiş kodu ver.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Ağı eğitmek
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC'nin sine MR kesitlerinde küçük bir evrişimli ağı erken durdurmayla eğitmek ve eğitim
 ile doğrulama kesitlerinin kayıplarının nasıl değiştiğini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", 45 hasta;
-"doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu" sütunlarının her
-hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır; bir piksel 2
-mm'dir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "diyastol sonu" ve "sistol sonu"
+sütunlarının her hücresinde, değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü vardır;
+bir piksel 2 mm'dir.
 Görev: Pikselleri eğitim kesitlerinin ortalaması ve standart sapmasıyla normalleştir. Bir kesitin
 iki karesini iki kanal olarak alan küçük bir evrişimli ağ kur. Ağ üç bloktan oluşur; her blokta
 görüntünün boyutunu koruyan 3 × 3 çekirdekli bir evrişim, batch normalizasyonu, ReLU ve 2 × 2
@@ -396,14 +396,14 @@ Test: Saklanan ağırlıklar yüklendikten sonra doğrulama kaybı yine en düş
 ### Adım 2: Ağın karışıklık matrisi
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC'nin 30 test hastasında, her hasta için tek bir kararla bir ağın karışıklık matrisini ve
 her grubun kesinlik, duyarlılık ve F1 değerlerini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; 30 test hastasının her birinden üç kesit olmak üzere 90
-test kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "gerçek grup" uzmanların
-verdiği grubu, "NOR", "DCM" ve "HCM" sütunları da dersin ağının bu kesite verdiği üç grubun
-olasılıklarını 0 ile 1 arasında bir sayı olarak verir. Veri hücresi bu ağı bir kez eğitir; bu
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; 30 test hastasının her birinden üç kesit
+olmak üzere 90 test kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "gerçek grup"
+uzmanların verdiği grubu, "NOR", "DCM" ve "HCM" sütunları da dersin ağının bu kesite verdiği üç
+grubun olasılıklarını 0 ile 1 arasında bir sayı olarak verir. Veri hücresi bu ağı bir kez eğitir; bu
 yaklaşık bir dakika sürer.
 Görev: Olasılıkların her hastanın kesitleri üzerinden ortalamasını al ve ortalaması en büyük grubu
 karar olarak seç. 30 hastanın karışıklık matrisini, satırlarda gerçek gruplar ve sütunlarda kararlar
@@ -418,15 +418,15 @@ Test: Matrisin toplamı 30, her satırının toplamı 10 olmalı.
 ### Adım 3: Aynı hastalarda ACDC kuralları
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Ağı, aynı 30 test hastasında ACDC'nin ölçüm kurallarıyla karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'nin NOR (normal), DCM (dilate kardiyomiyopati) ve
-HCM (hipertrofik kardiyomiyopati) gruplarındaki 30 test hastasını tutar. Her satır bir hastadır:
-"hasta" sütunu hastanın adını, "grup" grubunu, "LVEF" sol ventrikül ejeksiyon fraksiyonunu yüzde
-olarak, "LVEDVI" vücut yüzey alanına göre indekslenmiş sol ventrikül diyastol sonu hacmini mL/m²
-olarak, "en kalın duvar" da diyastol sonunda duvarın en kalın segmentini mm olarak verir. Bütün
-değerler uzmanların çizdiği konturlarda ölçülmüştür.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'nin NOR (normal), DCM (dilate
+kardiyomiyopati) ve HCM (hipertrofik kardiyomiyopati) gruplarındaki 30 test hastasını tutar. Her
+satır bir hastadır: "hasta" sütunu hastanın adını, "grup" grubunu, "LVEF" sol ventrikül ejeksiyon
+fraksiyonunu yüzde olarak, "LVEDVI" vücut yüzey alanına göre indekslenmiş sol ventrikül diyastol
+sonu hacmini mL/m² olarak, "en kalın duvar" da diyastol sonunda duvarın en kalın segmentini mm
+olarak verir. Bütün değerler uzmanların çizdiği konturlarda ölçülmüştür.
 Görev: ACDC kurallarını uygula: LVEF 40'ın altında ve LVEDVI 100'ün üzerindeyse hasta DCM'dir;
 değilse en kalın duvar 15'in üzerinde ve LVEF 50 ya da daha yüksekse HCM'dir; ikisi de değilse
 NOR'dur. Grup ile kuralın karışıklık matrisini NOR, DCM, HCM sırasıyla oluştur ve doğruluğu hesapla.
@@ -439,15 +439,16 @@ Test: Matrisin toplamı 30 olmalı.
 ### Adım 4: Hatalar
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir ACDC ağının yanlış sınıfladığı test hastalarında, sol ventrikülün en kalın duvarının
 tabandan apekse doğru nerede bulunduğunu görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; dersin ağının yanlış sınıfladığı test hastalarını tutar.
-Her satır bu hastalardan birinin diyastol sonundaki bir kısa eksen kesitidir: "hasta" sütunu
-hastayı, "gerçek grup" ve "karar" uzmanların ve ağın verdiği grubu, "kesit" kesitin tabandan (0)
-apekse doğru numarasını, "en kalın duvar" o kesitteki duvarın en kalın segmentini mm olarak verir.
-"ağın gördüğü" sütununda, ağın gördüğü tek kesitler olan ortadaki üç kesit için "evet" yazar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; dersin ağının yanlış sınıfladığı test
+hastalarını tutar. Her satır bu hastalardan birinin diyastol sonundaki bir kısa eksen kesitidir:
+"hasta" sütunu hastayı, "gerçek grup" ve "karar" uzmanların ve ağın verdiği grubu, "kesit" kesitin
+tabandan (0) apekse doğru numarasını, "en kalın duvar" o kesitteki duvarın en kalın segmentini mm
+olarak verir. "ağın gördüğü" sütununda, ağın gördüğü tek kesitler olan ortadaki üç kesit için "evet"
+yazar.
 Görev: Her hasta için en kalın duvarı kesit numarasına karşı çiz ve ağın gördüğü kesitleri işaretle.
 İncelemenin en kalın duvarının bulunduğu kesiti ve ağın bu kesiti görüp görmediğini yazdır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
