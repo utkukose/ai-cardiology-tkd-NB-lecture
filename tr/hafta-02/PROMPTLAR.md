@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [2. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-02/PROMPTS.md)
 
-Bu kütüphanede, 2. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 2. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Mini proje: KAH tahmin modeli, ROC eğrisi ve AUC](#durak-1-mini-proje-kah-tahmin-modeli-roc-eğrisi-ve-auc)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,14 +39,14 @@ UCI Heart Disease veri setindeki Cleveland hastalarına efor testi ve koroner an
 **Amaç.** Bu adımda eğitim kümesinde bir lojistik regresyon eğitilir ve model test kümesinde ROC eğrisinin altındaki alanla (AUC) ölçülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Cleveland Clinic'te efor testi ve koroner anjiyografi yapılmış 303 hastada, öykü ve efor
 testindeki sekiz değişkenden koroner arter hastalığını öngören bir model kurmak ve modeli görmediği
 hastalarda sınamak istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu yaşı yıl olarak
-verir; "cinsiyet" erkekler için 1, kadınlar için 0'dır. "göğüs ağrısı" sütununda "tipik anjina",
-"atipik anjina", "anjina dışı ağrı" ya da "asemptomatik" yazar. "istirahat kan basıncı"
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu yaşı yıl
+olarak verir; "cinsiyet" erkekler için 1, kadınlar için 0'dır. "göğüs ağrısı" sütununda "tipik
+anjina", "atipik anjina", "anjina dışı ağrı" ya da "asemptomatik" yazar. "istirahat kan basıncı"
 istirahatteki sistolik kan basıncını mmHg, "kolesterol" serum kolesterolünü mg/dL, "en yüksek kalp
 hızı" da efor testinde ulaşılan en yüksek kalp hızını atım/dk olarak verir. "efor anjinası", eforla
 anjina ortaya çıkmışsa 1, çıkmamışsa 0'dır; "ST çökmesi" ise eforda istirahate göre ST çökmesini mm
@@ -71,13 +71,13 @@ Test: Test kümesinde 76 hasta bulunmalı ve AUC 0,5 ile 1 arasında olmalı.
 **Amaç.** Bu adımda modelin olasılıkları 0,5 eşiğinde karara dönüştürülür ve modelin hastalığı olanların ne kadarını tanıdığı bulunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir modelin, olasılığı 0,5 ya da daha yüksek olan hastayı pozitif saydığında koroner arter
 hastalığı olanların ne kadarını tanıdığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır test kümesindeki bir hastadır: "olasılık"
-sütunu modelin bu hastaya verdiği koroner arter hastalığı olasılığını, "KAH" sütunu da gerçek durumu
-verir (hastalık varsa 1, yoksa 0).
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır test kümesindeki bir hastadır:
+"olasılık" sütunu modelin bu hastaya verdiği koroner arter hastalığı olasılığını, "KAH" sütunu da
+gerçek durumu verir (hastalık varsa 1, yoksa 0).
 Görev: Olasılığı 0,5 ya da daha yüksek olan hastayı pozitif say. Doğru pozitifleri (TP; hastalığı
 olup pozitif sayılanlar) ve yanlış negatifleri (FN; hastalığı olup negatif sayılanlar) say.
 Duyarlılık, TP / (TP + FN) oranıdır.
@@ -95,14 +95,14 @@ Test: TP + FN, tablodaki hastalığı olanların sayısına, yani 35'e eşit olm
 **Amaç.** Bu adımda efor testinde ulaşılan en yüksek kalp hızı bir standart sapma arttığında koroner arter hastalığının odds değerinin nasıl değiştiği modelden okunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir koroner arter hastalığı modelindeki değişkenlerin, özellikle de efor testinde ulaşılan
 en yüksek kalp hızının, hastalığın odds değeriyle ilişkisini odds oranı olarak görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır, standartlaştırılmış değişkenlerle eğitilmiş
-bir lojistik regresyon modelinin bir değişkenidir: "değişken" sütunu değişkenin adını, "katsayı"
-sütunu da modelin katsayısını, yani bir standart sapmalık artışa karşılık gelen log-odds değişimini
-verir. Göğüs ağrısı tiplerinin katsayıları her tipi tipik anjinayla karşılaştırır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır, standartlaştırılmış değişkenlerle
+eğitilmiş bir lojistik regresyon modelinin bir değişkenidir: "değişken" sütunu değişkenin adını,
+"katsayı" sütunu da modelin katsayısını, yani bir standart sapmalık artışa karşılık gelen log-odds
+değişimini verir. Göğüs ağrısı tiplerinin katsayıları her tipi tipik anjinayla karşılaştırır.
 Görev: Her katsayıyı standart sapma başına bir odds oranına çevir: e sayısının katsayı kadar
 kuvvetini al. Bütün odds oranlarını değişkenlerin adlarıyla birlikte yazdır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -125,13 +125,13 @@ Test: Katsayısı 0 olan bir değişkenin odds oranı tam 1 olmalı; ST çökmes
 **Amaç.** Bu adımda 1. duraktaki lojistik regresyon, her seferinde hastaların başka bir beşte birinde olmak üzere beş kez sınanır ve ortalama AUC alınır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Cleveland Clinic'teki 303 hastada, bir koroner arter hastalığı modelinin AUC değeri için 76
 hastalık tek bir test kümesinin verebileceğinden daha güvenilir bir kestirim istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu yaşı yıl olarak
-verir; "cinsiyet" erkekler için 1, kadınlar için 0'dır. "göğüs ağrısı" sütununda "tipik anjina",
-"atipik anjina", "anjina dışı ağrı" ya da "asemptomatik" yazar. "istirahat kan basıncı"
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu yaşı yıl
+olarak verir; "cinsiyet" erkekler için 1, kadınlar için 0'dır. "göğüs ağrısı" sütununda "tipik
+anjina", "atipik anjina", "anjina dışı ağrı" ya da "asemptomatik" yazar. "istirahat kan basıncı"
 istirahatteki sistolik kan basıncını mmHg, "kolesterol" serum kolesterolünü mg/dL, "en yüksek kalp
 hızı" da efor testinde ulaşılan en yüksek kalp hızını atım/dk olarak verir. "efor anjinası", eforla
 anjina ortaya çıkmışsa 1, çıkmamışsa 0'dır; "ST çökmesi" ise eforda istirahate göre ST çökmesini mm
@@ -155,13 +155,13 @@ Test: Her biri 0,5 ile 1 arasında olan beş değer yazdırılmalı.
 **Amaç.** Bu adımda aynı hastalarda daha esnek bir model eğitilir ve test AUC değeri lojistik regresyonunkiyle karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Cleveland Clinic'teki 303 hastada, daha esnek bir model olan rastgele ormanın koroner arter
 hastalığını lojistik regresyondan daha iyi öngörüp öngörmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu yaşı yıl olarak
-verir; "cinsiyet" erkekler için 1, kadınlar için 0'dır. "göğüs ağrısı" sütununda "tipik anjina",
-"atipik anjina", "anjina dışı ağrı" ya da "asemptomatik" yazar. "istirahat kan basıncı"
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu yaşı yıl
+olarak verir; "cinsiyet" erkekler için 1, kadınlar için 0'dır. "göğüs ağrısı" sütununda "tipik
+anjina", "atipik anjina", "anjina dışı ağrı" ya da "asemptomatik" yazar. "istirahat kan basıncı"
 istirahatteki sistolik kan basıncını mmHg, "kolesterol" serum kolesterolünü mg/dL, "en yüksek kalp
 hızı" da efor testinde ulaşılan en yüksek kalp hızını atım/dk olarak verir. "efor anjinası", eforla
 anjina ortaya çıkmışsa 1, çıkmamışsa 0'dır; "ST çökmesi" ise eforda istirahate göre ST çökmesini mm
@@ -186,12 +186,12 @@ AUC değerini de hesapla ve iki değeri yan yana yazdır.
 **Amaç.** Bu adımda hastaların yalnızca 100'de 3 kadarında görülen 12 aylık olay için bir model eğitilir ve sınıf ağırlıklarının modelin bulduklarını nasıl değiştirdiği görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal kliniğin 2.000 hastasında, nadir bir olayı, yani ilk 12 ay içinde ölüm ya da kalp
 yetersizliği nedeniyle hastaneye yatışı öngören bir model kurmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "yaş" (yıl), "eGFR" (tahmini
-glomerüler filtrasyon hızı, mL/dk/1,73 m²), "LVEF" (sol ventrikül ejeksiyon fraksiyonu, %),
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "yaş" (yıl), "eGFR"
+(tahmini glomerüler filtrasyon hızı, mL/dk/1,73 m²), "LVEF" (sol ventrikül ejeksiyon fraksiyonu, %),
 "NT-proBNP" (pg/mL), "AF" (atriyal fibrilasyon; varsa 1) ve "diyabet" (varsa 1). "olay" sütunu, ilk
 12 ay içinde ölüm ya da kalp yetersizliği nedeniyle yatış için 1, diğer hastalar için 0'dır. "küme"
 sütununda "eğitim" ya da "test" yazar; test kümesinde 600 hasta vardır.
@@ -220,17 +220,18 @@ Kalp yetersizliği olan hastalar yalnızca ejeksiyon fraksiyonuyla değil, başk
 **Amaç.** Bu adımda k-ortalamalar yöntemi kalp yetersizliği olan hastalar arasında üç grup arar; ardından bu gruplar gizli fenogruplarla karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal klinikte kalp yetersizliği olan 407 hastada, yönteme hiçbir cevap vermeden alt gruplar
 bulmak ve bu grupların kliniğin kurulurken kullandığı fenogruplarla ne kadar örtüştüğünü görmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir hastadır: "yaş"
-(yıl), "BKİ" (beden kitle indeksi, kg/m²), "eGFR" (tahmini glomerüler filtrasyon hızı, mL/dk/1,73
-m²), "LVEF" (sol ventrikül ejeksiyon fraksiyonu, %), "NT-proBNP" (pg/mL), "LAVI" (sol atriyum hacim
-indeksi, mL/m²), "E/e'" (bir oran), "LV kütle indeksi" (sol ventrikül kütle indeksi, g/m²) ve
-"TAPSE" (triküspit anüler düzlem sistolik hareketi, mm). "fenogrup" sütunu, kliniğin hastayı
-üretirken kullandığı gizli grubu verir: "HFrEF", "HFpEF-metabolik" ya da "HFpEF-kardiyorenal".
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir
+hastadır: "yaş" (yıl), "BKİ" (beden kitle indeksi, kg/m²), "eGFR" (tahmini glomerüler filtrasyon
+hızı, mL/dk/1,73 m²), "LVEF" (sol ventrikül ejeksiyon fraksiyonu, %), "NT-proBNP" (pg/mL), "LAVI"
+(sol atriyum hacim indeksi, mL/m²), "E/e'" (bir oran), "LV kütle indeksi" (sol ventrikül kütle
+indeksi, g/m²) ve "TAPSE" (triküspit anüler düzlem sistolik hareketi, mm). "fenogrup" sütunu,
+kliniğin hastayı üretirken kullandığı gizli grubu verir: "HFrEF", "HFpEF-metabolik" ya da
+"HFpEF-kardiyorenal".
 Görev: NT-proBNP yerine onun doğal logaritmasını kullan ve dokuz değişkeni standartlaştır;
 "fenogrup" sütununu kümelemede kullanma. Hastaları k-ortalamalar yöntemiyle üç kümeye ayır. Yöntemi
 farklı rastgele başlangıç noktalarından on kez çalıştır ve en iyi çözümü al; rastgele seçimler için
@@ -251,14 +252,14 @@ uyumu gösterir.
 **Amaç.** Bu adımda HFrEF hastalarının izlemin başlamasından iki yıl sonra hangi oranda hayatta olduğu ve kalp yetersizliği nedeniyle hastaneye yatmadığı kestirilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal klinikteki HFrEF hastalarının, izlemin başlamasından 24 ay sonra hangi oranda hayatta
 olduğunu ve kalp yetersizliği nedeniyle hastaneye yatmadığını kestirmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir hastadır: "ana
-tanı" sütununda "HFrEF" ya da "HFpEF" yazar. "izlem süresi", izlemin başlangıcından ilk olaya ya da
-izlemin sonuna kadar geçen süreyi ay olarak verir. "olay" sütunu ölüm ya da kalp yetersizliği
-nedeniyle yatış için 1, izlemden olaysız ayrılan (sansürlenen) hasta için 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir
+hastadır: "ana tanı" sütununda "HFrEF" ya da "HFpEF" yazar. "izlem süresi", izlemin başlangıcından
+ilk olaya ya da izlemin sonuna kadar geçen süreyi ay olarak verir. "olay" sütunu ölüm ya da kalp
+yetersizliği nedeniyle yatış için 1, izlemden olaysız ayrılan (sansürlenen) hasta için 0'dır.
 Görev: Ana tanısı HFrEF olan hastalar için olaysız sağkalımın Kaplan-Meier kestirimini adım adım
 hesapla. 1'den başla. En az bir olayın görüldüğü her zamanda kestirimi 1 − d/n ile çarp; burada d o
 zamandaki olay sayısı, n ise o zamanda hâlâ izlenen, yani izlem süresi en az o kadar olan hasta
@@ -276,18 +277,18 @@ Test: Aynı hesap, HFpEF hastalarında 24. ayda daha yüksek bir değer vermeli.
 **Amaç.** Bir YZ asistanı, 12 ay içindeki olay için 1,000'lik bir AUC bildirmiştir. Asistanın modeli izlem süresini de kullanmış ve eğitildiği hastaların kendisinde ölçülmüştür. Bu adımda aynı türden bir modelin dürüst bir değerlendirmede ne verdiği bulunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal kliniğin 2.000 hastasında, bir asistan kusursuz bir sonuç bildirdikten sonra, bir
 rastgele ormanın 12 ay içindeki ölümü ya da kalp yetersizliği nedeniyle yatışı ne kadar iyi
 öngördüğüne dair dürüst bir kestirim istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır sanal klinikteki bir hastadır: "yaş" (yıl),
-"eGFR" (tahmini glomerüler filtrasyon hızı, mL/dk/1,73 m²), "LVEF" (sol ventrikül ejeksiyon
-fraksiyonu, %), "NT-proBNP" (pg/mL), "AF" (atriyal fibrilasyon; varsa 1), "diyabet" (varsa 1), "BKİ"
-(beden kitle indeksi, kg/m²) ve "sistolik kan basıncı" (mmHg). "izlem süresi" izlemin ay olarak
-süresidir ve ancak izlem bittikten sonra bilinir. "olay" sütunu, ilk 12 ay içinde ölüm ya da kalp
-yetersizliği nedeniyle yatış için 1, diğer hastalar için 0'dır. "kat" sütunu hastanın beş kattan
-hangisinde olduğunu (1-5) gösterir; olay oranı her katta aşağı yukarı aynıdır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır sanal klinikteki bir hastadır:
+"yaş" (yıl), "eGFR" (tahmini glomerüler filtrasyon hızı, mL/dk/1,73 m²), "LVEF" (sol ventrikül
+ejeksiyon fraksiyonu, %), "NT-proBNP" (pg/mL), "AF" (atriyal fibrilasyon; varsa 1), "diyabet" (varsa
+1), "BKİ" (beden kitle indeksi, kg/m²) ve "sistolik kan basıncı" (mmHg). "izlem süresi" izlemin ay
+olarak süresidir ve ancak izlem bittikten sonra bilinir. "olay" sütunu, ilk 12 ay içinde ölüm ya da
+kalp yetersizliği nedeniyle yatış için 1, diğer hastalar için 0'dır. "kat" sütunu hastanın beş
+kattan hangisinde olduğunu (1-5) gösterir; olay oranı her katta aşağı yukarı aynıdır.
 Görev: Karar anında bilinmediği için "izlem süresi" sütununu girdilerden çıkar. "olay" sütununu
 diğer sekiz değişkenle bir rastgele orman modeli kullanarak öngör. Rastgele seçimler her
 çalıştırmada aynı olsun; bunun için başlangıç değeri olarak 2026 sayısını kullan. Modeli beş katlı
@@ -320,7 +321,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -350,20 +351,20 @@ düzeltilmiş kodu ver.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Fenogrup sayısını seçmek
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal klinikte kalp yetersizliği olan 407 hastada fenogrupları bulmak ve sayılarını seçmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir hastadır: "yaş"
-(yıl), "BKİ" (beden kitle indeksi, kg/m²), "eGFR" (tahmini glomerüler filtrasyon hızı, mL/dk/1,73
-m²), "LVEF" (sol ventrikül ejeksiyon fraksiyonu, %), "NT-proBNP" (pg/mL), "LAVI" (sol atriyum hacim
-indeksi, mL/m²), "E/e'" (bir oran), "LV kütle indeksi" (sol ventrikül kütle indeksi, g/m²) ve
-"TAPSE" (triküspit anüler düzlem sistolik hareketi, mm).
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir
+hastadır: "yaş" (yıl), "BKİ" (beden kitle indeksi, kg/m²), "eGFR" (tahmini glomerüler filtrasyon
+hızı, mL/dk/1,73 m²), "LVEF" (sol ventrikül ejeksiyon fraksiyonu, %), "NT-proBNP" (pg/mL), "LAVI"
+(sol atriyum hacim indeksi, mL/m²), "E/e'" (bir oran), "LV kütle indeksi" (sol ventrikül kütle
+indeksi, g/m²) ve "TAPSE" (triküspit anüler düzlem sistolik hareketi, mm).
 Görev: NT-proBNP yerine onun doğal logaritmasını kullan ve dokuz değişkeni standartlaştır. 2'den
 6'ya kadar her küme sayısı için hastaları k-ortalamalar yöntemiyle kümelere ayır; yöntemi farklı
 rastgele başlangıç noktalarından on kez çalıştır, en iyi çözümü al ve başlangıç değeri olarak 2026
@@ -379,15 +380,15 @@ Test: Küme sayısı arttıkça WCSS azalmalı ve her siluet değeri −1 ile 1 
 ### Adım 2: Fenogrupları tanımlamak ve adlandırmak
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kalp yetersizliği olan hastaların fenogruplarını tanımlamak ve her birine kısa bir klinik ad
 vermek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir hastadır: "küme"
-sütunu, proje adımı 1'de seçilen küme sayısıyla bulunan fenogrubu verir. Diğer sütunlar "yaş" (yıl),
-"BKİ" (kg/m²), "eGFR" (mL/dk/1,73 m²), "LVEF" (%), "NT-proBNP" (pg/mL), "LAVI" (mL/m²), "E/e'", "LV
-kütle indeksi" (g/m²), "TAPSE" (mm), "kadın" (kadınlarda 1), "diyabet" ve "AF" (varsa 1) ile "ana
-tanı" ("HFrEF" ya da "HFpEF") değerlerini tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir
+hastadır: "küme" sütunu, proje adımı 1'de seçilen küme sayısıyla bulunan fenogrubu verir. Diğer
+sütunlar "yaş" (yıl), "BKİ" (kg/m²), "eGFR" (mL/dk/1,73 m²), "LVEF" (%), "NT-proBNP" (pg/mL), "LAVI"
+(mL/m²), "E/e'", "LV kütle indeksi" (g/m²), "TAPSE" (mm), "kadın" (kadınlarda 1), "diyabet" ve "AF"
+(varsa 1) ile "ana tanı" ("HFrEF" ya da "HFpEF") değerlerini tutar.
 Görev: Her küme için bir sütun içeren bir tablo kur: hasta sayısı; yaş, BKİ, eGFR, LVEF, LAVI, E/e',
 LV kütle indeksi ve TAPSE ortalamaları; NT-proBNP medyanı; kadınların, diyabetin, AF'nin ve
 HFrEF'nin yüzdesi. Ardından her küme için kısa bir klinik ad öner.
@@ -400,14 +401,15 @@ Test: Tablodaki hasta sayılarının toplamı 407 olmalı.
 ### Adım 3: Fenogruba göre prognoz
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Fenogrupların prognozunu iki klasik grubun, yani HFrEF ve HFpEF gruplarının prognozuyla
 karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir hastadır: "küme"
-sütunu proje adımı 1'deki fenogrubu verir; "ana tanı" sütununda "HFrEF" ya da "HFpEF" yazar. "izlem
-süresi" ilk olaya ya da izlemin sonuna kadar geçen süreyi ay olarak verir; "olay" ise ölüm ya da
-kalp yetersizliği nedeniyle yatış için 1, izlemden olaysız ayrılan (sansürlenen) hasta için 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir
+hastadır: "küme" sütunu proje adımı 1'deki fenogrubu verir; "ana tanı" sütununda "HFrEF" ya da
+"HFpEF" yazar. "izlem süresi" ilk olaya ya da izlemin sonuna kadar geçen süreyi ay olarak verir;
+"olay" ise ölüm ya da kalp yetersizliği nedeniyle yatış için 1, izlemden olaysız ayrılan
+(sansürlenen) hasta için 0'dır.
 Görev: Olaysız sağkalımın Kaplan-Meier eğrilerini bir panelde kümeler için, ikinci bir panelde HFrEF
 ve HFpEF için çiz. Her grubun 24. aydaki sağkalımını hesapla ve her paneldeki grupları log-rank
 testiyle karşılaştır.
@@ -421,13 +423,13 @@ Test: Her eğri 1'den başlamalı ve hiç yükselmemeli.
 ### Adım 4: Gizli gerçekle karşılaştırmak
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal klinik, kalp yetersizliği olan her hastaya gizli bir fenogrup atamıştır. Proje adımı
 1'de bulunan kümelerin bu fenogrupları ne kadar yakaladığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir hastadır: "küme"
-sütunu proje adımı 1'deki kümeyi, "fenogrup" sütunu da gizli fenogrubu verir: "HFrEF",
-"HFpEF-metabolik" ya da "HFpEF-kardiyorenal".
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kalp yetersizliği olan bir
+hastadır: "küme" sütunu proje adımı 1'deki kümeyi, "fenogrup" sütunu da gizli fenogrubu verir:
+"HFrEF", "HFpEF-metabolik" ya da "HFpEF-kardiyorenal".
 Görev: Kümeleri fenogruplarla çapraz tabloya dök ve düzeltilmiş Rand indeksini hesapla. Ardından
 kümelemenin, yalnızca ejeksiyon fraksiyonuna bakıldığında gözden kaçan neyi bulduğunu üç cümleyle
 yaz.
