@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [6. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-06/PROMPTS.md)
 
-Bu kütüphanede, 6. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 6. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Epikrizlerden altı tanı: Kurallar ve bir model](#durak-1-epikrizlerden-altı-tanı-kurallar-ve-bir-model)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,15 +39,16 @@ Altı kronik tanı sanal kliniğin epikrizlerinden okunur: Önce tanıların kel
 **Amaç.** Bu adımda epikrizlerde altı tanının kelimeleri aranır ve bir kelime aramasının nerede yanıldığı görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir tanının kelimelerini arayan basit bir aramanın epikrizlerde altı kronik tanıyı ne kadar
 iyi bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 600 epikrizi tutar. Her satır bir hastadır: "epikriz" sütunu Türkçe
-epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1 değerini alır;
-kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter hastalığı,
-hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse 0 olur.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 600 epikrizi tutar. Her satır bir hastadır: "epikriz"
+sütunu Türkçe epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1
+değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter
+hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse
+0 olur.
 Görev: Her metni Türkçe kurallarına göre küçük harfe çevir: Önce I'yı ı, İ'yi i yap, ardından öteki
 harfleri küçült. Her tanının şu kelimelerini tam kelime olarak ara; böylece hiçbir kelime daha uzun
 bir kelimenin içinde bulunmaz: Kalp yetersizliği için "kalp yetersizliği", "kalp yetmezliği",
@@ -75,16 +76,17 @@ atriyal fibrilasyon ve koroner arter hastalığı için pozitif bulunmalı.
 **Amaç.** Bu adımda yok sayılan, olası ya da bir yakına ait geçişler dışarıda bırakılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Epikrizlerde altı tanının kelimelerini arayan bir aramanın, yok sayılan, yalnızca
 şüphelenilen ya da bir yakına ait geçişler dışarıda bırakıldığında ne kadar iyileştiğini öğrenmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 600 epikrizi tutar. Her satır bir hastadır: "epikriz" sütunu Türkçe
-epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1 değerini alır;
-kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter hastalığı,
-hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse 0 olur.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 600 epikrizi tutar. Her satır bir hastadır: "epikriz"
+sütunu Türkçe epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1
+değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter
+hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse
+0 olur.
 Görev: Her metni Türkçe kurallarına göre küçük harfe çevir: Önce I'yı ı, İ'yi i yap, ardından öteki
 harfleri küçült. Her tanının şu kelimelerini tam kelime olarak ara; böylece hiçbir kelime daha uzun
 bir kelimenin içinde bulunmaz: Kalp yetersizliği için "kalp yetersizliği", "kalp yetmezliği",
@@ -116,15 +118,16 @@ numaralı hastanın epikrizi yalnızca kalp yetersizliği için pozitif bulunmal
 **Amaç.** Bu adımda hastalığın adı olmayan kanıtlar eklenir: İlaçlar, eGFR ve HbA1c.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Epikrizlerde altı kronik tanıyı, epikriz bu tanıların adını anmadığında ama onlar için
 verilen bir ilacı ya da onları tanımlayan bir laboratuvar değerini andığında da bulmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 600 epikrizi tutar. Her satır bir hastadır: "epikriz" sütunu Türkçe
-epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1 değerini alır;
-kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter hastalığı,
-hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse 0 olur.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 600 epikrizi tutar. Her satır bir hastadır: "epikriz"
+sütunu Türkçe epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1
+değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter
+hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse
+0 olur.
 Görev: Her metni Türkçe kurallarına göre küçük harfe çevir: Önce I'yı ı, İ'yi i yap, ardından öteki
 harfleri küçült. Her tanının şu kelimelerini tam kelime olarak ara; böylece hiçbir kelime daha uzun
 bir kelimenin içinde bulunmaz: Kalp yetersizliği için "kalp yetersizliği", "kalp yetmezliği",
@@ -164,18 +167,18 @@ yetersizliği, hipertansiyon ve kronik böbrek hastalığı için pozitif bulunm
 **Amaç.** Bu adımda A hastanesinin epikrizleriyle bir model eğitilir ve A ile B hastanelerinde değerlendirilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Epikrizlerde altı kronik tanıyı örneklerden öğrenerek bulan bir model eğitmek ve bu modelin
 kendi hastanesinde ve başka bir üslupla yazan başka bir hastanede ne kadar iyi çalıştığını öğrenmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin 3.600
-epikrizini tutar. Her satır bir hastadır: "küme" sütunu epikrizin kümesini verir ("eğitim": 1.800
-epikriz; "doğrulama": 600; "test": 600; bu üçü A hastanesindendir; "dış": B hastanesinden, (+) ve
-(-) işaretli kısa bir üslupla yazılmış 600 epikriz). "epikriz" sütunu Türkçe epikrizi tutar; "KY",
-"AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1 değerini alır; kayıt sisteminde sırasıyla
-kalp yetersizliği, atriyal fibrilasyon, koroner arter hastalığı, hipertansiyon, diyabetes mellitus
-ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse 0 olur.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin 3.600 epikrizini tutar. Her satır bir hastadır: "küme" sütunu epikrizin kümesini verir
+("eğitim": 1.800 epikriz; "doğrulama": 600; "test": 600; bu üçü A hastanesindendir; "dış": B
+hastanesinden, (+) ve (-) işaretli kısa bir üslupla yazılmış 600 epikriz). "epikriz" sütunu Türkçe
+epikrizi tutar; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da 1 değerini alır;
+kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter hastalığı,
+hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse 0 olur.
 Görev: Her metni Türkçe kurallarına göre küçük harfe çevir: Önce I'yı ı, İ'yi i yap, ardından öteki
 harfleri küçült. Her epikrizi, kelimelerinin ve yan yana duran kelime çiftlerinin TF-IDF
 ağırlıklarından oluşan bir vektöre dönüştür; kelime, harf ve rakamlardan oluşan kesintisiz bir
@@ -207,13 +210,13 @@ Bu durak oturumun mini projesidir. Burada epikrizleri Hugging Face Hub'dan alın
 **Amaç.** Bu adımda önceden eğitilmiş Türkçe bir modelin B hastanesinin epikrizlerini nasıl token'lara böldüğü ve harflerin büyük ya da küçük olmasının neyi değiştirdiği görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kısmen büyük harflerle yazılmış epikrizlerde önceden eğitilmiş Türkçe bir dil modeli
 kullanmak ve modelin bu epikrizlerin kelimelerini bilip bilmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin B
-hastanesine ait, büyük harfli kısaltmalar içeren kısa bir üslupla Türkçe yazılmış 600 epikrizi
-tutar. Her satır bir hastadır ve "epikriz" sütunu epikrizi tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin B hastanesine ait, büyük harfli kısaltmalar içeren kısa bir üslupla Türkçe yazılmış 600
+epikrizi tutar. Her satır bir hastadır ve "epikriz" sütunu epikrizi tutar.
 Görev: "ytu-ce-cosmos/turkish-tiny-bert-uncased" modelinin tokenizer'ını Hugging Face Hub'dan yükle.
 Her epikrizi üç kez token'lara böl: Yazıldığı gibi, programlama dilinin olağan küçük harf işleminden
 sonra ve Türkçe küçük harf işleminden sonra (önce I, ı; İ, i olur, ardından öteki harfler küçülür).
@@ -234,20 +237,20 @@ harf işleminden sonra Türkçe işlemden sonrakinden daha çok ya da aynı say�
 **Amaç.** Bu adımda önceden eğitilmiş modele tanıları, ilaçları ve işlemleri etiketlemesi öğretilir. Eğitim birkaç dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Küçük ve önceden eğitilmiş Türkçe bir dil modelini epikrizlerdeki tanıları, ilaçları ve
 işlemleri bulacak biçimde uyarlamak ve modelin bunları görmediği epikrizlerde ne kadar doğru
 bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal klinikten 3.000
-epikriz tutar. Her satır bir hastadır: "küme" sütunu kümeyi verir ("eğitim": A hastanesinden 1.800
-epikriz; "test": A hastanesinden 600; "dış": B hastanesinden 600). "epikriz" sütunu Türkçe epikrizi
-tutar; "varlıklar" sütunu epikrizdeki açıklanmış varlıkları, 0'dan başlayarak sayılan (ilk karakter,
-son karakter artı bir, tür) üçlüleri hâlinde listeler. Türler tanı için "DIAG", ilaç için "DRUG",
-işlem için "PROC" olarak yazılmıştır; "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı altı sütun 0 ya da
-1 değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal fibrilasyon, koroner arter
-hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı kayıtlıysa değer 1, değilse
-0 olur.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+klinikten 3.000 epikriz tutar. Her satır bir hastadır: "küme" sütunu kümeyi verir ("eğitim": A
+hastanesinden 1.800 epikriz; "test": A hastanesinden 600; "dış": B hastanesinden 600). "epikriz"
+sütunu Türkçe epikrizi tutar; "varlıklar" sütunu epikrizdeki açıklanmış varlıkları, 0'dan başlayarak
+sayılan (ilk karakter, son karakter artı bir, tür) üçlüleri hâlinde listeler. Türler tanı için
+"DIAG", ilaç için "DRUG", işlem için "PROC" olarak yazılmıştır; "KY", "AF", "KAH", "HT", "DM" ve
+"KBH" adlı altı sütun 0 ya da 1 değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal
+fibrilasyon, koroner arter hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı
+kayıtlıysa değer 1, değilse 0 olur.
 Görev: "ytu-ce-cosmos/turkish-tiny-bert-uncased" modelini Hugging Face Hub'dan, her token'a yedi
 etiketten birini veren bir katmanla kullan: Varlığın dışında ya da bir tanının, bir ilacın veya bir
 işlemin başlangıcı ya da içi. Her epikrizi Türkçe küçük harfe çevir (önce I, ı; İ, i olur); bu işlem
@@ -274,18 +277,18 @@ Test: Kayıp ilk epoch'tan son epoch'a düşmeli ve F1 değeri 0 ile 1 arasında
 **Amaç.** Bu adımda modelin varlıkları, 1. duraktaki durum kuralı ve ilaçlarla B hastanesinin her epikrizi için altı tanıya dönüştürülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir dil modelinin başka bir hastanenin epikrizlerinde bulduğu tanıları ve ilaçları her
 hastanın altı kronik tanısına dönüştürmek ve bunun ne kadar iyi çalıştığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin B
-hastanesine ait, kısa bir üslupla Türkçe yazılmış 600 epikrizi tutar. Her satır bir hastadır:
-"epikriz" sütunu epikrizi tutar; "varlıklar" sütunu epikrizdeki açıklanmış varlıkları, "model
-varlıkları" sütunu ise A hastanesinin eğitim epikrizleriyle ince ayar yapılmış küçük Türkçe dil
-modelinin epikrizde bulduğu varlıkları listeler. İki sütunda da varlıklar, 0'dan başlayarak sayılan
-(ilk karakter, son karakter artı bir, tür) üçlüleri hâlinde yazılmıştır; türler tanı için "DIAG",
-ilaç için "DRUG" ve işlem için "PROC" olarak gösterilir. "KY", "AF", "KAH", "HT", "DM" ve "KBH" adlı
-altı sütun 0 ya da 1 değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin B hastanesine ait, kısa bir üslupla Türkçe yazılmış 600 epikrizi tutar. Her satır bir
+hastadır: "epikriz" sütunu epikrizi tutar; "varlıklar" sütunu epikrizdeki açıklanmış varlıkları,
+"model varlıkları" sütunu ise A hastanesinin eğitim epikrizleriyle ince ayar yapılmış küçük Türkçe
+dil modelinin epikrizde bulduğu varlıkları listeler. İki sütunda da varlıklar, 0'dan başlayarak
+sayılan (ilk karakter, son karakter artı bir, tür) üçlüleri hâlinde yazılmıştır; türler tanı için
+"DIAG", ilaç için "DRUG" ve işlem için "PROC" olarak gösterilir. "KY", "AF", "KAH", "HT", "DM" ve
+"KBH" adlı altı sütun 0 ya da 1 değerini alır; kayıt sisteminde sırasıyla kalp yetersizliği, atriyal
 fibrilasyon, koroner arter hastalığı, hipertansiyon, diyabetes mellitus ve kronik böbrek hastalığı
 kayıtlıysa değer 1, değilse 0 olur.
 Görev: "model varlıkları" sütununu kullan. Her tanı varlığını, 1. duraktaki gibi kelimelerine göre
@@ -310,15 +313,15 @@ gelebilen kronik böbrek hastalığı ve diyabet dışında her tanı için nega
 **Amaç.** Bu adımda epikrizlerin akut koroner sendrom ve ST segmenti hakkında yazdıklarından STEMI geçiren hastalar bulunur ve sonuç iki hastanede değerlendirilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: İki hastanenin epikrizlerinde ST yükselmeli miyokard enfarktüsü geçiren hastaları bulmak ve
 basit bir kuralın onları ne kadar güvenilir biçimde bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; A hastanesinin test kümesine ait, tam cümlelerle
-yazılmış 600 epikrizi ve B hastanesine ait, kısa bir üslupla yazılmış 600 epikrizi, yani Türkçe
-yazılmış toplam 1.200 epikrizi tutar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya da
-"dış"), "epikriz" sütunu epikrizi verir; "STEMI" sütunu sanal kliniğin kayıt sistemi ST yükselmeli
-miyokard enfarktüsü kaydettiyse 1, kaydetmediyse 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; A hastanesinin test kümesine ait, tam
+cümlelerle yazılmış 600 epikrizi ve B hastanesine ait, kısa bir üslupla yazılmış 600 epikrizi, yani
+Türkçe yazılmış toplam 1.200 epikrizi tutar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya
+da "dış"), "epikriz" sütunu epikrizi verir; "STEMI" sütunu sanal kliniğin kayıt sistemi ST
+yükselmeli miyokard enfarktüsü kaydettiyse 1, kaydetmediyse 0'dır.
 Görev: Her epikrizi Türkçe kurallarına göre küçük harfe çevir: Önce I'yı ı, İ'yi i yap, ardından
 öteki harfleri küçült. Bir epikriz akut koroner sendromdan, yani "akut koroner sendrom" ifadesinden
 ya da tam kelime olarak "aks" kısaltmasından söz ediyorsa ve aynı cümlede ardından "dışlandı",
@@ -347,12 +350,13 @@ Burada sanal kliniğin anjiyografi raporları bir kayıt sisteminin okuyacağı 
 **Amaç.** Bu adımda tek bir anjiyografi raporu dersteki işlem hattının yaptığı gibi okunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Türkçe yazılmış bir koroner anjiyografi raporunu okuyan ve her koroner bölgenin en büyük
 darlığını ve hastalıklı damar sayısını veren bir program istiyorum.
-Veri: Defterde "veri" adında tek satırlık bir tablo var: "rapor" sütunu, sentetik bir kayıt sistemi
-olan sanal kliniğin VC-2914 numaralı hastasının Türkçe yazılmış koroner anjiyografi raporunu tutar.
+Veri: Jupyter Notebook'ta "veri" adında tek satırlık bir tablo var: "rapor" sütunu, sentetik bir
+kayıt sistemi olan sanal kliniğin VC-2914 numaralı hastasının Türkçe yazılmış koroner anjiyografi
+raporunu tutar.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
@@ -384,17 +388,17 @@ kateterlerin numarası olan 6 bir darlık olarak görünmemeli.
 **Amaç.** Bu adımda işlem hattı her test raporuna uygulanır ve kayıt sistemiyle karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Koroner anjiyografi raporlarını okuyan bir programın ne sıklıkla kayıt sistemiyle aynı
 hastalıklı damar sayısını ve aynı darlık derecesini verdiğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki Türkçe yazılmış 394 koroner anjiyografi raporunu tutar. Her satır
-bir hastadır: "rapor" sütunu raporu tutar; "LM", "LAD", "CX" ve "RCA" adlı dört sütun, kayıt
-sistemine göre sırasıyla sol ana koroner arterin, diyagonal dallarıyla sol ön inen arterin, obtus
-marjinal dallarıyla sirkumfleks arterin ve arka inen arterle sağ koroner arterin bölgelerindeki en
-büyük darlığı yüzde olarak verir. "hastalıklı damar" sütunu, yüzde 70 ya da daha fazla darlığı olan
-LAD, CX ve RCA bölgelerinin sayısını verir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki Türkçe yazılmış 394 koroner anjiyografi raporunu tutar.
+Her satır bir hastadır: "rapor" sütunu raporu tutar; "LM", "LAD", "CX" ve "RCA" adlı dört sütun,
+kayıt sistemine göre sırasıyla sol ana koroner arterin, diyagonal dallarıyla sol ön inen arterin,
+obtus marjinal dallarıyla sirkumfleks arterin ve arka inen arterle sağ koroner arterin
+bölgelerindeki en büyük darlığı yüzde olarak verir. "hastalıklı damar" sütunu, yüzde 70 ya da daha
+fazla darlığı olan LAD, CX ve RCA bölgelerinin sayısını verir.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
@@ -429,17 +433,17 @@ damar bulmalı.
 **Amaç.** Bu adımda aynı işlem hattı, büyük harflerle ve kısa bir üslupla yazılmış başka bir hastanenin raporlarına uygulanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir hastanenin koroner anjiyografi raporlarını okuyan bir programın, büyük harflerle ve kısa
 bir üslupla yazılmış başka bir hastanenin raporlarını da okuyup okumadığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin B
-hastanesinden gelen ve Türkçe yazılmış 373 koroner anjiyografi raporunu tutar; raporlar büyük
-harflerle yazılmıştır. Her satır bir hastadır: "rapor" sütunu raporu tutar; "LM", "LAD", "CX" ve
-"RCA" adlı dört sütun, kayıt sistemine göre sırasıyla sol ana koroner arterin, diyagonal dallarıyla
-sol ön inen arterin, obtus marjinal dallarıyla sirkumfleks arterin ve arka inen arterle sağ koroner
-arterin bölgelerindeki en büyük darlığı yüzde olarak verir. "hastalıklı damar" sütunu, yüzde 70 ya
-da daha fazla darlığı olan LAD, CX ve RCA bölgelerinin sayısını verir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin B hastanesinden gelen ve Türkçe yazılmış 373 koroner anjiyografi raporunu tutar; raporlar
+büyük harflerle yazılmıştır. Her satır bir hastadır: "rapor" sütunu raporu tutar; "LM", "LAD", "CX"
+ve "RCA" adlı dört sütun, kayıt sistemine göre sırasıyla sol ana koroner arterin, diyagonal
+dallarıyla sol ön inen arterin, obtus marjinal dallarıyla sirkumfleks arterin ve arka inen arterle
+sağ koroner arterin bölgelerindeki en büyük darlığı yüzde olarak verir. "hastalıklı damar" sütunu,
+yüzde 70 ya da daha fazla darlığı olan LAD, CX ve RCA bölgelerinin sayısını verir.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
@@ -485,7 +489,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -522,23 +526,23 @@ alıntıla ve düzeltmesini öner.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: İki hastanede bölge bölge
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir kayıt sistemi için iki hastanenin koroner anjiyografi raporlarını okuyan bir program
 kurmak ve programın her koroner bölgede ne sıklıkla kayıt sistemiyle aynı darlık derecesini
 verdiğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi raporunu, yani
-Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir üslupla yazar. Her
-satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı, "rapor" raporu
-verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner bölgenin en
-büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı olan LAD, CX
-ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi
+raporunu, yani Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir
+üslupla yazar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı,
+"rapor" raporu verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner
+bölgenin en büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı
+olan LAD, CX ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
@@ -567,18 +571,18 @@ Test: "test" kümesinde 394, "dış" kümesinde 373 rapor bulunmalı ve her oran
 ### Adım 2: Sol ana koroner arter ve hastalıklı damar sayısı
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Koroner anjiyografi raporlarını okuyan bir programın, cerrahi ile stent arasındaki kararı
 belirleyen iki bulguyu, yani sol ana koroner arter hastalığını ve hastalıklı damar sayısını ne kadar
 iyi bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi raporunu, yani
-Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir üslupla yazar. Her
-satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı, "rapor" raporu
-verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner bölgenin en
-büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı olan LAD, CX
-ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi
+raporunu, yani Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir
+üslupla yazar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı,
+"rapor" raporu verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner
+bölgenin en büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı
+olan LAD, CX ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
@@ -608,17 +612,17 @@ Test: İki tablonun sayılarının toplamı kümedeki rapor sayısına eşit olm
 ### Adım 3: Hatalar ve nedenleri
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Koroner anjiyografi raporlarını okuyan bir programın yanlış okuduğu her raporu görmek ve
 programı yanıltan cümleyi bulmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi raporunu, yani
-Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir üslupla yazar. Her
-satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı, "rapor" raporu
-verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner bölgenin en
-büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı olan LAD, CX
-ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi
+raporunu, yani Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir
+üslupla yazar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı,
+"rapor" raporu verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner
+bölgenin en büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı
+olan LAD, CX ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
@@ -648,17 +652,17 @@ Test: Yanlış rapor sayısı 394'ten büyük olamaz.
 ### Adım 4: Anjiyografi ve epikriz birlikte
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Anjiyografide anlamlı koroner darlığı olan hastalardan kaçının epikrizinde, epikrizleri
 tarayan bir aramanın bulacağı biçimde koroner arter hastalığı bulunmadığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal kliniğin A
-hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi raporunu, yani
-Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir üslupla yazar. Her
-satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı, "rapor" raporu
-verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner bölgenin en
-büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı olan LAD, CX
-ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sentetik bir kayıt sistemi olan sanal
+kliniğin A hastanesine ait test kümesindeki 394 ve B hastanesindeki 373 koroner anjiyografi
+raporunu, yani Türkçe yazılmış toplam 767 raporu tutar; B hastanesi büyük harflerle ve kısa bir
+üslupla yazar. Her satır bir hastadır: "küme" sütunu kümeyi ("test" ya da "dış"), "hasta" hastayı,
+"rapor" raporu verir; "LM", "LAD", "CX" ve "RCA" adlı dört sütun kayıt sistemine göre dört koroner
+bölgenin en büyük darlığını yüzde olarak, "hastalıklı damar" ise yüzde 70 ya da daha fazla darlığı
+olan LAD, CX ve RCA bölgelerinin sayısını verir. "epikriz" sütunu aynı hastanın epikrizini tutar.
 Görev: Raporu cümle cümle oku; bir cümle, ardından bir boşluk ve bir büyük harf ya da bir rakam
 gelen noktada biter. Her cümleyi Türkçe kurallarına göre küçük harfe çevir (önce I, ı; İ, i olur).
 "endikasyon", "öykü", "sol ventrikülografi", "sv:", "girişim" ya da "işlem" ile başlayan cümleleri
