@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [4. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-04/PROMPTS.md)
 
-Bu kütüphanede, 4. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 4. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Mini proje: EfficientNet-B0 ile az sayıda etiketli görüntüden KMP sınıflandırma](#durak-1-mini-proje-efficientnet-b0-ile-az-sayıda-etiketli-görüntüden-kmp-sınıflandırma)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,18 +39,18 @@ ImageNet'in bir milyondan fazla fotoğrafıyla eğitilmiş bir ağ kenarları, d
 **Amaç.** Bu adımda her kesit EfficientNet-B0'ın 1.280 özniteliğiyle tarif edilir ve üç grup bu özniteliklerden basit bir modelle öğrenilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ACDC'nin kardiyomiyopati gruplarındaki sine MR kesitlerinde, yalnızca fotoğraflarla
 eğitilmiş bir ağın özniteliklerinin normal kalpleri, dilate kardiyomiyopatiyi ve hipertrofik
 kardiyomiyopatiyi ne kadar iyi ayırdığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", her
-gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "görüntü" sütununun her
-hücresi, kesiti fotoğraflarla eğitilmiş bir ağa uygun biçimde tutar: 128 × 128 piksellik üç renk
-kanalı (diyastol sonu karesi, sistol sonu karesi ve ikisinin ortalaması), ImageNet'in ortalamaları
-ve standart sapmalarıyla normalleştirilmiştir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", her gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "görüntü"
+sütununun her hücresi, kesiti fotoğraflarla eğitilmiş bir ağa uygun biçimde tutar: 128 × 128
+piksellik üç renk kanalı (diyastol sonu karesi, sistol sonu karesi ve ikisinin ortalaması),
+ImageNet'in ortalamaları ve standart sapmalarıyla normalleştirilmiştir.
 Görev: EfficientNet-B0'ı ImageNet ağırlıklarıyla ve değerlendirme modunda kullan. Bütün kesitlerin
 görüntülerini gradyan kaydetmeden, 32'şerlik gruplar hâlinde ağdan geçir ve ağın son katmanından
 önceki ortalama havuzlamanın çıktısını, yani kesit başına 1.280 sayıdan oluşan öznitelikleri al.
@@ -72,18 +72,18 @@ Test: Öznitelikler 270 satır ve 1.280 sütundan oluşan bir tablo olmalı ve 3
 **Amaç.** Bu adımda EfficientNet-B0'ın bütün katmanları, ImageNet ağırlıklarından başlayarak kesitlere uyarlanır. Eğitim yaklaşık bir dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Fotoğraflarla eğitilmiş bir ağın bütün katmanlarını ACDC'nin sine MR kesitlerine
 uyarlamanın, üç grubu yalnızca ağın özniteliklerinden daha iyi ayırıp ayırmadığını öğrenmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", her
-gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "görüntü" sütununun her
-hücresi, kesiti fotoğraflarla eğitilmiş bir ağa uygun biçimde tutar: 128 × 128 piksellik üç renk
-kanalı (diyastol sonu karesi, sistol sonu karesi ve ikisinin ortalaması), ImageNet'in ortalamaları
-ve standart sapmalarıyla normalleştirilmiştir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", her gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "görüntü"
+sütununun her hücresi, kesiti fotoğraflarla eğitilmiş bir ağa uygun biçimde tutar: 128 × 128
+piksellik üç renk kanalı (diyastol sonu karesi, sistol sonu karesi ve ikisinin ortalaması),
+ImageNet'in ortalamaları ve standart sapmalarıyla normalleştirilmiştir.
 Görev: EfficientNet-B0'ı ImageNet ağırlıklarıyla kur ve son katmanını, 0,3 oranında dropout'un
 ardından gelen ve her grup için bir çıktı veren üç çıktılı yeni bir doğrusal katmanla değiştir. Ağın
 tamamını eğitim kesitlerinde 15 epoch boyunca, 16 kesitlik karıştırılmış gruplarla, 0,001 öğrenme
@@ -108,16 +108,16 @@ Test: Saklanan ağırlıklar yüklendikten sonra doğrulama kaybı yine en düş
 **Amaç.** Bu adımda az sayıda hastadan elde edilen bir sonucun, seçilen hastalara ne kadar bağlı olduğu görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Her gruptan yalnızca beş hastayla elde edilen bir sonucun, rastgele seçilen hastalara ne
 kadar bağlı olduğunu görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç kısa eksen
-kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu hastayı, "grup"
-hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir ("eğitim", her
-gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "ö1"den "ö1280"e kadar
-olan öteki 1.280 sütun, kesitin özniteliklerini, yani ImageNet fotoğraflarıyla eğitilmiş
-EfficientNet-B0'ın son katmanından önceki ortalama havuzlamanın çıktısını tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; ACDC'deki 90 hastanın her birinin ortadaki üç
+kısa eksen kesitinden oluşan 270 sine MR kesitini tutar. Her satır bir kesittir: "hasta" sütunu
+hastayı, "grup" hastanın grubunu ("NOR", "DCM" ya da "HCM"), "küme" ise hastanın kümesini verir
+("eğitim", her gruptan 15 olmak üzere 45 hasta; "doğrulama", 15 hasta; "test", 30 hasta). "ö1"den
+"ö1280"e kadar olan öteki 1.280 sütun, kesitin özniteliklerini, yani ImageNet fotoğraflarıyla
+eğitilmiş EfficientNet-B0'ın son katmanından önceki ortalama havuzlamanın çıktısını tutar.
 Görev: Eğitim kümesinin her grubundan rastgele beşer hasta seç ve bu seçimi beş kez tekrarla.
 Rastgele seçimler her çalıştırmada aynı olsun; bunun için başlangıç değeri olarak 2026 sayısını
 kullan. Her seçimde öznitelikleri yalnızca seçilen 15 hastanın kesitleriyle standartlaştır ve bu
@@ -143,14 +143,14 @@ Bir segmentasyon ağı her piksele bir etiket verir. Bu durakta önce Dice katsa
 **Amaç.** Bu adımda bir sınırın küçük bir kaymasının Dice katsayısını ne kadar düşürdüğü görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir sınırın küçük bir kaymasının, iki sınır arasındaki uyumun olağan ölçütü olan Dice
 katsayısını ne kadar düşürdüğünü görmek istiyorum.
-Veri: Defterde "veri" adında 96 satır ve 96 sütunluk bir tablo var: CAMUS'taki 201 numaralı hastanın
-apikal dört boşluk görüntüsünün diyastol sonu karesinde uzmanın çizdiği sol ventrikül kavitesidir;
-kare 96 × 96 piksele küçültülmüştür. Her hücre bir pikseldir: Kavitenin içindeki pikseller 1,
-dışındakiler 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında 96 satır ve 96 sütunluk bir tablo var: CAMUS'taki 201
+numaralı hastanın apikal dört boşluk görüntüsünün diyastol sonu karesinde uzmanın çizdiği sol
+ventrikül kavitesidir; kare 96 × 96 piksele küçültülmüştür. Her hücre bir pikseldir: Kavitenin
+içindeki pikseller 1, dışındakiler 0'dır.
 Görev: Kaviteyi 3 piksel sağa kaydır, yani her pikseli 3 sütun sağa taşı. Özgün ve kaydırılmış
 kavitenin piksellerini ve ikisinin ortak piksellerini say. Dice katsayısını hesapla: Ortak
 piksellerin iki katı, iki sayının toplamına bölünür.
@@ -167,15 +167,15 @@ Test: Kavitenin kaydırılmamış kendisiyle Dice katsayısı 1 olmalı.
 **Amaç.** Bu adımda sol ventrikül kavitesini çizen küçük bir U-Net eğitilir ve ağ, hiç görmediği hastaların karelerinde ölçülür. Eğitim yaklaşık üç dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: CAMUS'un apikal ekokardiyogramlarında sol ventrikül kavitesinin sınırını çizen küçük bir
 U-Net eğitmek ve bu ağı hiç görmediği hastalarda ölçmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 1.200 karesini, yani 300 hastanın apikal iki
-boşluk ve dört boşluk görüntülerinin diyastol sonu ve sistol sonu karelerini tutar. Her satır bir
-karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"), "faz" fazı ("ED" ya da
-"ES"), "küme" ise hastanın kümesini verir ("eğitim", 200 hasta; "doğrulama", 50 hasta; "test", 50
-hasta). "kare" sütununun her hücresi kareyi değerleri 0 ile 1 arasında olan 96 × 96 piksellik bir
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 1.200 karesini, yani 300 hastanın
+apikal iki boşluk ve dört boşluk görüntülerinin diyastol sonu ve sistol sonu karelerini tutar. Her
+satır bir karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"), "faz" fazı ("ED"
+ya da "ES"), "küme" ise hastanın kümesini verir ("eğitim", 200 hasta; "doğrulama", 50 hasta; "test",
+50 hasta). "kare" sütununun her hücresi kareyi değerleri 0 ile 1 arasında olan 96 × 96 piksellik bir
 görüntü olarak, "kavite" sütununun her hücresi ise uzmanın çizdiği sol ventrikül kavitesini aynı
 boyutta tutar: Kavitenin içindeki pikseller 1, dışındakiler 0'dır.
 Görev: Her piksele, biri kavite, biri kavite dışı için olmak üzere iki skor veren küçük bir U-Net
@@ -208,17 +208,17 @@ olmalı.
 **Amaç.** Bu adımda, bir ekokardiyografi laboratuvarının soracağı gibi, ağın sınırları en kötü nerede çizdiği bulunur. Veri hücresi dersin U-Net'ini bir kez eğitir; bu yaklaşık üç dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir ekokardiyografi laboratuvarının soracağı gibi, bir U-Net'in sol ventrikül kavitesini
 hangi görüntüde ve hangi fazda en kötü çizdiğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 200 test karesini, yani 50 hastanın apikal iki
-boşluk ve dört boşluk görüntülerinin diyastol sonu ve sistol sonu karelerini tutar. Her satır bir
-karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"), "faz" ise fazı ("ED" ya da
-"ES") verir. "olasılık" sütununun her hücresi, 96 × 96 piksellik karenin her pikseli için bir
-U-Net'in verdiği sol ventrikül kavitesi olasılığını 0 ile 1 arasında bir sayı olarak tutar. "kavite"
-sütununun her hücresi ise uzmanın çizdiği kaviteyi aynı boyutta tutar: Kavitenin içindeki pikseller
-1, dışındakiler 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 200 test karesini, yani 50 hastanın
+apikal iki boşluk ve dört boşluk görüntülerinin diyastol sonu ve sistol sonu karelerini tutar. Her
+satır bir karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"), "faz" ise fazı
+("ED" ya da "ES") verir. "olasılık" sütununun her hücresi, 96 × 96 piksellik karenin her pikseli
+için bir U-Net'in verdiği sol ventrikül kavitesi olasılığını 0 ile 1 arasında bir sayı olarak tutar.
+"kavite" sütununun her hücresi ise uzmanın çizdiği kaviteyi aynı boyutta tutar: Kavitenin içindeki
+pikseller 1, dışındakiler 0'dır.
 Görev: Her karenin olasılığını 0,5'te eşikle ve karenin Dice katsayısını uzmanın çizdiği kaviteye
 göre hesapla: Ortak piksellerin iki katı, iki kavitenin piksellerinin toplamına bölünür. Kareleri
 görüntüye ve faza göre grupla ve dört grubun, yani 2CH ED, 2CH ES, 4CH ED ve 4CH ES gruplarının kare
@@ -243,12 +243,12 @@ Sınırlar, bir ekokardiyografi laboratuvarında olduğu gibi biplan disk yönte
 **Amaç.** Bu adımda haftanın vakası, CAMUS'un referansında olduğu gibi uzmanın sınırlarından ölçülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: CAMUS'taki 201 numaralı hastanın diyastol sonu ve sistol sonu hacimlerini ve ejeksiyon
 fraksiyonunu, CAMUS'un referansındaki gibi uzman sınırlarından biplan disk yöntemiyle hesaplamak
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'taki 201 numaralı hastada sol ventrikül
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'taki 201 numaralı hastada sol ventrikül
 kavitesinin dört uzman sınırına uygulanan disk yönteminin disklerini tutar. Bu sınırlar apikal iki
 boşluk (2CH) ve dört boşluk (4CH) görüntülerinin diyastol sonu (ED) ve sistol sonu (ES)
 karelerindedir. Her sınır, mitral halkadan apekse uzanan uzun eksenine dik 20 diske bölünmüştür. Her
@@ -276,14 +276,14 @@ Test: EDV, ESV'den büyük olmalı ve 50 ile 300 mL arasında bulunmalı.
 **Amaç.** Bu adımda otomatik EF, bir laboratuvarın kullanmadan önce yapacağı gibi 50 test hastasında uzmanınkiyle karşılaştırılır. Dersin U-Net'i henüz bellekte değilse veri hücresi önce onu eğitir; bu yaklaşık üç dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik bir ejeksiyon fraksiyonu kullanılmadan önce, bir laboratuvarın yapacağı gibi, onu
 CAMUS'un 50 test hastasında bir Bland-Altman analiziyle uzmanınkiyle karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 50 test hastasını tutar. Her satır bir
-hastadır: "hasta" sütunu hastayı, "uzman EF" uzmanın çizdiği sınırlardan, "ağ EF" ise bir U-Net'in
-çizdiği sınırlardan elde edilen ejeksiyon fraksiyonunu verir; ikisi de yüzde olarak ve biplan disk
-yöntemiyle ölçülmüştür.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 50 test hastasını tutar. Her satır
+bir hastadır: "hasta" sütunu hastayı, "uzman EF" uzmanın çizdiği sınırlardan, "ağ EF" ise bir
+U-Net'in çizdiği sınırlardan elde edilen ejeksiyon fraksiyonunu verir; ikisi de yüzde olarak ve
+biplan disk yöntemiyle ölçülmüştür.
 Görev: Her hasta için EF farkını (ağ eksi uzman) hesapla; ardından farkların ortalamasını, standart
 sapmasını ve uyum sınırlarını, yani ortalama ± 1,96 standart sapmayı bul. Bir Bland-Altman grafiği
 çiz: Farkı iki EF'nin ortalamasına karşı göster; ortalama fark ve iki uyum sınırı için yatay
@@ -302,11 +302,11 @@ Test: 50 hasta bulunmalı ve patient0201 hastasının uzman EF'si yüzde 42,1 ol
 **Amaç.** Bu adımda bir sınırın değil, yazılımın bir kuralının vakanın EF'sini ne kadar değiştirdiği görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir sınırın değil, disklerin kalınlığı için seçilen kuralın 201 numaralı hastanın ejeksiyon
 fraksiyonunu ne kadar değiştirdiğini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'taki 201 numaralı hastada sol ventrikül
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'taki 201 numaralı hastada sol ventrikül
 kavitesinin dört uzman sınırına uygulanan disk yönteminin disklerini tutar. Bu sınırlar apikal iki
 boşluk (2CH) ve dört boşluk (4CH) görüntülerinin diyastol sonu (ED) ve sistol sonu (ES)
 karelerindedir. Her sınır, mitral halkadan apekse uzanan uzun eksenine dik 20 diske bölünmüştür. Her
@@ -347,7 +347,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -380,24 +380,24 @@ göster, nedenini açıkla ve düzeltilmiş kodu ver.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: U-Net'i eğitmek ve sınırlarını ölçmek
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: CAMUS ekokardiyogramlarında sol ventrikül kavitesinin sınırını çizen bir U-Net eğitmek ve
 ağın sınırları nerede daha kötü çizdiğini görüntüye, faza ve görüntü kalitesine göre görmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 1.200 karesini, yani 300 hastanın apikal iki
-boşluk ve dört boşluk görüntülerinin diyastol sonu ve sistol sonu karelerini tutar. Her satır bir
-karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"), "faz" fazı ("ED" ya da
-"ES"), "küme" hastanın kümesini ("eğitim", 200 hasta; "doğrulama", 50 hasta; "test", 50 hasta),
-"görüntü kalitesi" ise yazarların hastanın bu görüntüsüne verdiği kaliteyi ("iyi", "orta" ya da
-"kötü") verir. "kare" sütununun her hücresi kareyi değerleri 0 ile 1 arasında olan 96 × 96 piksellik
-bir görüntü olarak, "kavite" sütununun her hücresi ise uzmanın çizdiği sol ventrikül kavitesini aynı
-boyutta tutar: Kavitenin içindeki pikseller 1, dışındakiler 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 1.200 karesini, yani 300 hastanın
+apikal iki boşluk ve dört boşluk görüntülerinin diyastol sonu ve sistol sonu karelerini tutar. Her
+satır bir karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"), "faz" fazı ("ED"
+ya da "ES"), "küme" hastanın kümesini ("eğitim", 200 hasta; "doğrulama", 50 hasta; "test", 50
+hasta), "görüntü kalitesi" ise yazarların hastanın bu görüntüsüne verdiği kaliteyi ("iyi", "orta" ya
+da "kötü") verir. "kare" sütununun her hücresi kareyi değerleri 0 ile 1 arasında olan 96 × 96
+piksellik bir görüntü olarak, "kavite" sütununun her hücresi ise uzmanın çizdiği sol ventrikül
+kavitesini aynı boyutta tutar: Kavitenin içindeki pikseller 1, dışındakiler 0'dır.
 Görev: Her piksele, biri kavite, biri kavite dışı için olmak üzere iki skor veren küçük bir U-Net
 kur. Ağda atlama bağlantılarıyla üç düzey aşağı, bir dar boğaz ve üç düzey yukarı bulunur. Her
 düzeyde görüntünün boyutunu koruyan 3 × 3 çekirdekli iki evrişim vardır ve her evrişimin ardından
@@ -426,15 +426,15 @@ ortalama Dice katsayısı 0,85 ile 0,97 arasında olmalı.
 ### Adım 2: Hacimler, EF ve Bland-Altman
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik hacimler ve otomatik bir ejeksiyon fraksiyonu kullanılmadan önce üçünü de CAMUS'un
 50 test hastasında uzmanınkilerle karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 50 test hastasını tutar. Her satır bir
-hastadır: "hasta" sütunu hastayı verir; "uzman EDV" ve "ağ EDV" diyastol sonu hacmini, "uzman ESV"
-ve "ağ ESV" sistol sonu hacmini mL olarak, "uzman EF" ve "ağ EF" ise ejeksiyon fraksiyonunu yüzde
-olarak verir. Uzmanın değerleri uzmanın çizdiği sınırlardan, ağın değerleri ise bir U-Net'in çizdiği
-sınırlardan gelir ve hepsi biplan disk yöntemiyle ölçülmüştür.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 50 test hastasını tutar. Her satır
+bir hastadır: "hasta" sütunu hastayı verir; "uzman EDV" ve "ağ EDV" diyastol sonu hacmini, "uzman
+ESV" ve "ağ ESV" sistol sonu hacmini mL olarak, "uzman EF" ve "ağ EF" ise ejeksiyon fraksiyonunu
+yüzde olarak verir. Uzmanın değerleri uzmanın çizdiği sınırlardan, ağın değerleri ise bir U-Net'in
+çizdiği sınırlardan gelir ve hepsi biplan disk yöntemiyle ölçülmüştür.
 Görev: Üç ölçümün, yani EDV, ESV ve EF'nin her biri için her hastadaki farkı (ağ eksi uzman)
 hesapla; ardından ortalama farkı, farkların standart sapmasını ve uyum sınırlarını, yani ortalama ±
 1,96 standart sapmayı bul. Her ölçüm için bir Bland-Altman grafiği çiz: Farkı iki değerin
@@ -450,15 +450,15 @@ Test: 50 hasta bulunmalı ve patient0201 hastasının uzman EF'si yüzde 42,1 ol
 ### Adım 3: EF aralıkları
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 50 test hastasının kaçında ağın ve uzmanın ejeksiyon fraksiyonunu aynı klinik aralığa
 yerleştirdiğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 50 test hastasını tutar. Her satır bir
-hastadır: "hasta" sütunu hastayı verir; "uzman EDV" ve "ağ EDV" diyastol sonu hacmini, "uzman ESV"
-ve "ağ ESV" sistol sonu hacmini mL olarak, "uzman EF" ve "ağ EF" ise ejeksiyon fraksiyonunu yüzde
-olarak verir. Uzmanın değerleri uzmanın çizdiği sınırlardan, ağın değerleri ise bir U-Net'in çizdiği
-sınırlardan gelir ve hepsi biplan disk yöntemiyle ölçülmüştür.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 50 test hastasını tutar. Her satır
+bir hastadır: "hasta" sütunu hastayı verir; "uzman EDV" ve "ağ EDV" diyastol sonu hacmini, "uzman
+ESV" ve "ağ ESV" sistol sonu hacmini mL olarak, "uzman EF" ve "ağ EF" ise ejeksiyon fraksiyonunu
+yüzde olarak verir. Uzmanın değerleri uzmanın çizdiği sınırlardan, ağın değerleri ise bir U-Net'in
+çizdiği sınırlardan gelir ve hepsi biplan disk yöntemiyle ölçülmüştür.
 Görev: Uzmanın ve ağın her EF değerini üç aralıktan birine yerleştir. Birinci aralık yüzde 40 ve
 altını, ikinci aralık yüzde 40'ın üzerini ve yüzde 50'nin altını, üçüncü aralık ise yüzde 50 ve
 üzerini kapsar. Satırlarda uzmanın, sütunlarda ağın aralığı aralıkların sırasıyla yer alacak biçimde
@@ -472,15 +472,15 @@ Test: Çapraz tablonun toplamı 50 hasta olmalı.
 ### Adım 4: En büyük hatalar
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik ejeksiyon fraksiyonu uzmanınkinden en çok ayrılan test hastalarında, ağın nerede
 yanıldığını değerlendirmek için kareleri ve iki sınırı görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; CAMUS'un 50 test hastasının her birinden dört kare olmak
-üzere 200 test karesini tutar. Her satır bir karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü
-("2CH" ya da "4CH"), "faz" fazı ("ED" ya da "ES"), "görüntü kalitesi" ise görüntünün kalitesini
-("iyi", "orta" ya da "kötü") verir. "kare" sütununun her hücresi kareyi 96 × 96 piksellik bir
-görüntü olarak tutar; "uzman kavitesi" ve "ağ kavitesi" sütunları ise uzmanın ve bir U-Net'in
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; CAMUS'un 50 test hastasının her birinden dört
+kare olmak üzere 200 test karesini tutar. Her satır bir karedir: "hasta" sütunu hastayı, "görüntü"
+görüntüyü ("2CH" ya da "4CH"), "faz" fazı ("ED" ya da "ES"), "görüntü kalitesi" ise görüntünün
+kalitesini ("iyi", "orta" ya da "kötü") verir. "kare" sütununun her hücresi kareyi 96 × 96 piksellik
+bir görüntü olarak tutar; "uzman kavitesi" ve "ağ kavitesi" sütunları ise uzmanın ve bir U-Net'in
 çizdiği sol ventrikül kavitesini aynı boyutta tutar: Kavitenin içindeki pikseller 1, dışındakiler
 0'dır. "uzman EF" ve "ağ EF" sütunları hastanın ejeksiyon fraksiyonunu yüzde olarak verir; bu
 değerler hastanın dört satırında da aynıdır.
