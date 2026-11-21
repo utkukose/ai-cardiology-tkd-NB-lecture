@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 1](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-01/PROMPTLAR.md)
+[Week 1](README.md) · [Türkçe](../../tr/hafta-01/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 1, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Mini project: The Kaggle Heart Disease data set](#stop-1-mini-project-the-kaggle-heart-disease-data-set)
 3. [Stop 2: The ECG as data](#stop-2-the-ecg-as-data)
 4. [Stop 3: Real recordings and a careless prompt](#stop-3-real-recordings-and-a-careless-prompt)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it, so the prompt also works when the Jupyter notebook is opened at this place. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Mini project: The Kaggle Heart Disease data set
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-1) · The same result on the Python path: Python step 1, Sections 1 and 2*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-01/NB01_python_and_ecg_basics.ipynb#scrollTo=stop-1-prompt)*
 
 This stop is the mini project of the session: loading the Kaggle Heart Disease data set, the Cleveland data of the UCI Heart Disease collection, with a statistical summary and a visualisation. The registry of a clinic is a table: one row per patient, one column per variable. In this stop, the 303 patients of the data set and the first 500 patients of the virtual clinic are summarised by a mean, a share and a count, each with a clinical question behind it.
 
-### Step 1.1: The mean age of the patients with disease
+### Prompt 1.1: The mean age of the patients with disease
 
 **Goal.** Find out how old, on average, the Cleveland patients with coronary artery disease were.
 
@@ -57,7 +57,7 @@ the patients with disease must differ from it.
 
 **Expected result:** "answer" = 56.6
 
-### Step 1.2: The share of women
+### Prompt 1.2: The share of women
 
 **Goal.** Find out which percentage of the Cleveland patients were women.
 
@@ -79,7 +79,7 @@ Test: The two percentages must add up to 100.
 
 **Expected result:** "answer" = 32.0
 
-### Step 1.3: Patients with HFrEF in the virtual clinic
+### Prompt 1.3: Patients with HFrEF in the virtual clinic
 
 **Goal.** Count the patients of the virtual clinic who have heart failure with reduced ejection fraction, and see the ejection fraction of every diagnosis in one figure.
 
@@ -109,11 +109,11 @@ patient with HFrEF may have an ejection fraction above 40 percent.
 
 ## Stop 2: The ECG as data
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-2) · The same result on the Python path: Sections 3 to 5*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-01/NB01_python_and_ecg_basics.ipynb#scrollTo=stop-2-prompt)*
 
 A digital ECG is a table of numbers: one column per lead, one row per sample. In this stop, lead II of the ECG of the case of the week, VC-0317, is drawn and measured, and the QT interval of another patient is corrected for the heart rate by two formulas.
 
-### Step 2.1: A strip of lead II
+### Prompt 2.1: A strip of lead II
 
 **Goal.** Draw the first 2.5 seconds of lead II and see how many numbers such a strip holds.
 
@@ -136,7 +136,7 @@ Test: The time axis of the plot must start at 0 and end at 2.5 seconds.
 
 **Expected result:** "answer" = 1250
 
-### Step 2.2: The heart rate from the R peaks
+### Prompt 2.2: The heart rate from the R peaks
 
 **Goal.** Find the R peaks of lead II and compute the heart rate from the intervals between them.
 
@@ -161,7 +161,7 @@ Test: About 14 R peaks must be found in the 10 seconds, and the heart rate must 
 
 **Expected result:** "answer" = 84.9
 
-### Step 2.3: The QTc by two formulas
+### Prompt 2.3: The QTc by two formulas
 
 **Goal.** Correct the QT interval of patient VC-0254 for his fast heart rate with the formulas of Fridericia and Bazett, and compare the two.
 
@@ -187,11 +187,11 @@ Test: At a heart rate of 60 beats per minute, both formulas must give the QT its
 
 ## Stop 3: Real recordings and a careless prompt
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-3) · The same result on the Python path: Sections 6 to 9*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-01/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-01/NB01_python_and_ecg_basics.ipynb#scrollTo=stop-3-prompt)*
 
 Real recordings bring their own noise, annotations and units. In this stop, record 100 of the MIT-BIH Arrhythmia Database is read with the beat labels of its cardiologists, and the heart rate variability is computed from its normal beats. Then a real 12-lead ECG of the PTB database is drawn. Finally, a QTc calculation that an AI assistant wrote from a short and careless prompt is requested again with the prompt card, and its result is checked.
 
-### Step 3.1: The beats of record 100
+### Prompt 3.1: The beats of record 100
 
 **Goal.** Count the beats of a 30-minute recording by the labels that cardiologists gave them.
 
@@ -214,7 +214,7 @@ Test: The labels N, A and V together must count 2273 beats.
 
 **Expected result:** "answer" = 33
 
-### Step 3.2: Heart rate variability: SDNN
+### Prompt 3.2: Heart rate variability: SDNN
 
 **Goal.** Measure how much the intervals between normal beats vary over 30 minutes.
 
@@ -239,7 +239,7 @@ Test: The mean NN interval must lie between 700 and 900 ms.
 
 **Expected result:** "answer" = 36.0
 
-### Step 3.3: A real 12-lead ECG
+### Prompt 3.3: A real 12-lead ECG
 
 **Goal.** Draw a real 12-lead ECG of a patient with an acute myocardial infarction as on ECG paper, and measure its heart rate.
 
@@ -268,9 +268,9 @@ fit it: At 80 beats per minute, 38.4 seconds hold about 51 beats.
 
 **Expected result:** "answer" = 81.8
 
-### Step 3.4: From a careless prompt to the prompt card
+### Prompt 3.4: From a careless prompt to the prompt card
 
-**Goal.** From the short prompt "write a python function that gives the qtc from qt and rr in samples", an AI assistant wrote code that returned an impossible QTc of 17 ms. The data cell of this step shows this result. In this step, the same calculation is requested again with the seven fields of the prompt card, and the result is checked.
+**Goal.** From the short prompt "write a python function that gives the qtc from qt and rr in samples", an AI assistant wrote code that returned an impossible QTc of 17 ms. The data cell of this prompt shows this result. With this prompt, the same calculation is requested again with the seven fields of the prompt card, and the result is checked.
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -337,11 +337,11 @@ each test protects against.
 [paste the code here]
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: The frontal axis of the case
+### Project step 1: The frontal axis of the case
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -364,7 +364,7 @@ The registry gives an axis of 21 degrees for this patient, and the result should
 degrees of it, because the net voltages also hold the small septal and terminal forces.
 ```
 
-### Step 2: Ten patients against the truth
+### Project step 2: Ten patients against the truth
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -389,7 +389,7 @@ Test: The table must have ten rows. For patient VC-0317, the differences of the 
 intervals must be only a few milliseconds.
 ```
 
-### Step 3: The heart rate of record 100 over thirty minutes
+### Project step 3: The heart rate of record 100 over thirty minutes
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -412,7 +412,7 @@ Test: An RR interval of exactly 1 second must give 60 beats per minute, and the 
 lie between 60 and 90 beats per minute.
 ```
 
-### Step 4: Bazett or Fridericia for each patient
+### Project step 4: Bazett or Fridericia for each patient
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

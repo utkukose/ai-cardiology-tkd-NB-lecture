@@ -3,25 +3,25 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[1. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-01/PROMPTS.md)
+[1. hafta](README.md) · [English](../../en/week-01/PROMPTS.md)
 
-Bu kütüphanede, 1. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Mini proje: Kaggle Heart Disease veri seti](#durak-1-mini-proje-kaggle-heart-disease-veri-seti)
 3. [Durak 2: Veri olarak EKG](#durak-2-veri-olarak-ekg)
 4. [Durak 3: Gerçek kayıtlar ve özensiz bir prompt](#durak-3-gerçek-kayıtlar-ve-özensiz-bir-prompt)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir; böylece Jupyter Notebook tam bu yerde açıldığında da prompt çalışır. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
@@ -30,13 +30,13 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 ## Durak 1: Mini proje: Kaggle Heart Disease veri seti
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 1, 1. ve 2. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-1-prompt)*
 
 Bu durak oturumun mini projesidir: UCI Heart Disease koleksiyonunun Cleveland verisi olan Kaggle Heart Disease veri seti yüklenir, istatistiksel olarak özetlenir ve görselleştirilir. Bir kliniğin hasta kaydı bir tablo olarak düşünülebilir: Her hasta bir satırda, her değişken bir sütunda yer alır. Bu durakta veri setindeki 303 hasta ile sanal kliniğin ilk 500 hastası bir ortalama, bir oran ve bir sayıyla özetlenmektedir. Bu sayıların her birinin ardında klinik bir soru vardır.
 
-### Adım 1.1: Hastalığı olanların ortalama yaşı
+### Prompt 1.1: Hastalığı olanların ortalama yaşı
 
-**Amaç.** Bu adımda koroner arter hastalığı olan Cleveland hastalarının ortalama yaşı hesaplanır.
+**Amaç.** Bu promptla koroner arter hastalığı olan Cleveland hastalarının ortalama yaşı hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -57,9 +57,9 @@ Hastalığı olanların ortalaması bundan farklı çıkmalı.
 
 **Beklenen sonuç:** "cevap" = 56,6
 
-### Adım 1.2: Kadınların oranı
+### Prompt 1.2: Kadınların oranı
 
-**Amaç.** Bu adımda Cleveland hastaları arasında kadınların oranı bulunur.
+**Amaç.** Bu promptla Cleveland hastaları arasında kadınların oranı bulunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -79,9 +79,9 @@ Test: Kadınların ve erkeklerin yüzdelerinin toplamı 100 olmalı.
 
 **Beklenen sonuç:** "cevap" = 32,0
 
-### Adım 1.3: Sanal klinikte HFrEF hastaları
+### Prompt 1.3: Sanal klinikte HFrEF hastaları
 
-**Amaç.** Bu adımda sanal klinikteki düşük ejeksiyon fraksiyonlu kalp yetersizliği (HFrEF) hastaları sayılır ve her tanının ejeksiyon fraksiyonu tek bir şekilde gösterilir.
+**Amaç.** Bu promptla sanal klinikteki düşük ejeksiyon fraksiyonlu kalp yetersizliği (HFrEF) hastaları sayılır ve her tanının ejeksiyon fraksiyonu tek bir şekilde gösterilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -106,13 +106,13 @@ ejeksiyon fraksiyonu yüzde 40'ı geçmemeli.
 
 ## Durak 2: Veri olarak EKG
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-2) · Python yolunda aynı sonuç: 3-5. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-2-prompt)*
 
 Dijital bir EKG de bir sayı tablosudur: Her derivasyon bir sütunda, her örnek bir satırda yer alır. Bu durakta haftanın vakası olan VC-0317 numaralı hastanın EKG'sinden D2 derivasyonu çizilir ve ölçülür; başka bir hastanın QT aralığı da iki formülle kalp hızına göre düzeltilir.
 
-### Adım 2.1: Bir D2 şeridi
+### Prompt 2.1: Bir D2 şeridi
 
-**Amaç.** Bu adımda D2 derivasyonunun ilk 2,5 saniyesi çizilir ve böyle bir şeridin kaç sayıdan oluştuğu görülür.
+**Amaç.** Bu promptla D2 derivasyonunun ilk 2,5 saniyesi çizilir ve böyle bir şeridin kaç sayıdan oluştuğu görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -132,9 +132,9 @@ Test: Grafiğin zaman ekseni 0'da başlamalı ve 2,5 saniyede bitmeli.
 
 **Beklenen sonuç:** "cevap" = 1250
 
-### Adım 2.2: R tepelerinden kalp hızı
+### Prompt 2.2: R tepelerinden kalp hızı
 
-**Amaç.** Bu adımda D2 derivasyonunun R tepeleri bulunur ve aralarındaki sürelerden kalp hızı hesaplanır.
+**Amaç.** Bu promptla D2 derivasyonunun R tepeleri bulunur ve aralarındaki sürelerden kalp hızı hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -157,9 +157,9 @@ olmalı.
 
 **Beklenen sonuç:** "cevap" = 84,9
 
-### Adım 2.3: İki formülle QTc
+### Prompt 2.3: İki formülle QTc
 
-**Amaç.** Bu adımda VC-0254 numaralı hastanın QT aralığı, yüksek kalp hızına göre Fridericia ve Bazett formülleriyle düzeltilir ve iki sonuç karşılaştırılır.
+**Amaç.** Bu promptla VC-0254 numaralı hastanın QT aralığı, yüksek kalp hızına göre Fridericia ve Bazett formülleriyle düzeltilir ve iki sonuç karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -183,13 +183,13 @@ Test: Kalp hızı dakikada 60 atım olduğunda iki formül de QT'nin kendisini v
 
 ## Durak 3: Gerçek kayıtlar ve özensiz bir prompt
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-3) · Python yolunda aynı sonuç: 6-9. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-3-prompt)*
 
 Gerçek kayıtlar kendi gürültüsü, işaretlemeleri ve birimleriyle gelir. Bu durakta MIT-BIH Aritmi Veri Tabanı'ndaki 100 numaralı kayıt, kardiyologların verdiği atım etiketleriyle birlikte okunur ve normal atımlardan kalp hızı değişkenliği hesaplanır. Ardından PTB veri tabanındaki gerçek bir 12 derivasyonlu EKG çizilir. Son olarak, bir YZ asistanının kısa ve özensiz bir prompttan yazdığı QTc hesabı prompt kartıyla yeniden istenir ve sonucu denetlenir.
 
-### Adım 3.1: 100 numaralı kaydın atımları
+### Prompt 3.1: 100 numaralı kaydın atımları
 
-**Amaç.** Bu adımda 30 dakikalık bir kaydın atımları, kardiyologların onlara verdiği etiketlere göre sayılır.
+**Amaç.** Bu promptla 30 dakikalık bir kaydın atımları, kardiyologların onlara verdiği etiketlere göre sayılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -210,9 +210,9 @@ Test: N, A ve V etiketlerinin toplamı 2.273 atım olmalı.
 
 **Beklenen sonuç:** "cevap" = 33
 
-### Adım 3.2: Kalp hızı değişkenliği: SDNN
+### Prompt 3.2: Kalp hızı değişkenliği: SDNN
 
-**Amaç.** Bu adımda normal atımlar arasındaki sürelerin 30 dakika boyunca ne kadar değiştiği ölçülür.
+**Amaç.** Bu promptla normal atımlar arasındaki sürelerin 30 dakika boyunca ne kadar değiştiği ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -236,9 +236,9 @@ Test: Ortalama NN aralığı 700 ile 900 ms arasında olmalı.
 
 **Beklenen sonuç:** "cevap" = 36,0
 
-### Adım 3.3: Gerçek bir 12 derivasyonlu EKG
+### Prompt 3.3: Gerçek bir 12 derivasyonlu EKG
 
-**Amaç.** Bu adımda akut miyokard enfarktüsü geçiren bir hastanın gerçek 12 derivasyonlu EKG'si, EKG kâğıdındaki düzende çizilir ve kalp hızı ölçülür.
+**Amaç.** Bu promptla akut miyokard enfarktüsü geçiren bir hastanın gerçek 12 derivasyonlu EKG'si, EKG kâğıdındaki düzende çizilir ve kalp hızı ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -264,9 +264,9 @@ olmalı: Dakikada 80 atımla 38,4 saniyede yaklaşık 51 atım bulunur.
 
 **Beklenen sonuç:** "cevap" = 81,8
 
-### Adım 3.4: Özensiz bir prompttan prompt kartına
+### Prompt 3.4: Özensiz bir prompttan prompt kartına
 
-**Amaç.** Bir YZ asistanı, "örnek sayısı olarak verilen qt ve rr'den qtc veren bir python fonksiyonu yaz" biçimindeki kısa prompta karşılık 17 ms gibi olanaksız bir QTc veren bir kod yazmıştır. Bu adımın veri hücresi bu sonucu da göstermektedir. Bu adımda aynı hesap, prompt kartının yedi alanıyla yeniden istenir ve sonuç denetlenir.
+**Amaç.** Bir YZ asistanı, "örnek sayısı olarak verilen qt ve rr'den qtc veren bir python fonksiyonu yaz" biçimindeki kısa prompta karşılık 17 ms gibi olanaksız bir QTc veren bir kod yazmıştır. Bu promptun veri hücresi bu sonucu da göstermektedir. Bu promptla aynı hesap, prompt kartının yedi alanıyla yeniden istenir ve sonuç denetlenir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -330,11 +330,11 @@ mesajla durdurmalı. Her testin hangi hatayı yakaladığını bir cümleyle aç
 [kodu buraya yapıştırın]
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Vakanın frontal ekseni
+### Proje adımı 1: Vakanın frontal ekseni
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -356,7 +356,7 @@ bu hastanın ekseni 21 derecedir; sonuç bu değerin yaklaşık 10 derece yakın
 gerilimler küçük septal ve terminal kuvvetleri de içerir.
 ```
 
-### Adım 2: Gerçek değerlere karşı on hasta
+### Proje adımı 2: Gerçek değerlere karşı on hasta
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -381,7 +381,7 @@ Test: Tabloda on satır bulunmalı. VC-0317 numaralı hastada PR, QRS ve QT fark
 milisaniye olmalı.
 ```
 
-### Adım 3: 100 numaralı kayıtta otuz dakika boyunca kalp hızı
+### Proje adımı 3: 100 numaralı kayıtta otuz dakika boyunca kalp hızı
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -404,7 +404,7 @@ Test: Tam 1 saniyelik bir RR aralığı dakikada 60 atım vermeli; ortalama kalp
 90 atım arasında olmalı.
 ```
 
-### Adım 4: Her hasta için Bazett mi Fridericia mı?
+### Proje adımı 4: Her hasta için Bazett mi Fridericia mı?
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
