@@ -27,4 +27,4 @@ from .cohort import make_cohort, patient_ecg, ecg_params, TRUE_EFFECTS
 from .followup import add_followup, PHENOGROUPS
 from .sources import COURSE_RAW, install, local_file, local_files
 
-__version__ = "1.11.0"
+__version__ = "1.12.0"

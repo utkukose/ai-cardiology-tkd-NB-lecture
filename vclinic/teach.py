@@ -21,6 +21,8 @@ TEXT = {
         "range": "plausible range {low} to {high}",
         "time": "Time (s)", "mv": "Amplitude (mV)",
         "bias": "Bias", "loa": "Limits of agreement",
+        "ready": "Ready: the course package {version}{packages} and the expected answers of Week {week}.",
+        "not_installed": "{name} could not be installed: Check the internet connection. Where it can, the Jupyter notebook uses a built-in fallback.",
         "mean_pair": "Mean of the two measurements (ms)",
         "diff_pair": "Difference (ms)",
     },
@@ -35,7 +37,9 @@ TEXT = {
         "reference": "hazır kodun sonucu:",
         "range": "makul aralık {low} ile {high} arası",
         "time": "Zaman (s)", "mv": "Genlik (mV)",
-        "bias": "Sapma", "loa": "Uyum sınırları",
+        "bias": "Ortalama fark", "loa": "Uyum sınırları",
+        "ready": "Hazır: Ders paketi {version}{packages} ve {week}. haftanın beklenen cevapları yüklendi.",
+        "not_installed": "{name} kurulamadı: İnternet bağlantısını denetleyin. Jupyter Notebook, gerekirse yerleşik bir yedek yöntem kullanır.",
         "mean_pair": "İki ölçümün ortalaması (ms)",
         "diff_pair": "Fark (ms)",
     },
@@ -49,6 +53,44 @@ def set_language(lang):
 
 def t(key):
     return TEXT[_STATE["lang"]][key]
+
+
+def start(week, language="en", packages=()):
+    """Prepare a session of the Jupyter notebook of a week.
+
+    Section 0 and the start cell of every part call this function, so
+    that every part also runs on its own: It sets the language of the
+    messages, the style of the figures, installs the packages of the week
+    when they are missing and loads the expected answers of the exercises
+    and of the prompts from vclinic/answers.py.
+    """
+    import importlib
+    import importlib.util
+    import subprocess
+    import sys
+
+    import matplotlib.pyplot as plt
+
+    from . import __version__
+    set_language(language)
+    plt.rcParams.update({"figure.dpi": 110, "font.family": "DejaVu Sans"})
+    installed = []
+    for name in packages:
+        if importlib.util.find_spec(name) is None:
+            result = subprocess.run([sys.executable, "-m", "pip", "install", "-q", name],
+                                    capture_output=True, text=True)
+            importlib.invalidate_caches()
+            if result.returncode != 0 or importlib.util.find_spec(name) is None:
+                print(t("not_installed").format(name=name))
+                continue
+        installed.append(name)
+    try:
+        from .answers import ANSWERS
+    except ImportError:
+        ANSWERS = {}
+    register_answers(ANSWERS.get(int(week), {}).get(_STATE["lang"], {}))
+    extra = "".join(", " + n for n in installed)
+    print(t("ready").format(version=__version__, packages=extra, week=week))
 
 
 def register_answers(answers):
@@ -100,7 +142,8 @@ def check_step(name, variable, scope):
     notebook (pass globals()). Missing variables give a short hint instead of
     an error message.
     """
-    if variable not in scope:
+    if scope.get(variable) is None:
+        # the name is missing, or the data cell has cleared the answer of an earlier prompt
         print(f"{name}: {t('not_yet')} ✗ " + t("no_var").format(name=variable))
         return None
     key = _answer_key(name)
@@ -129,7 +172,7 @@ def check_value(name, variable, expected, tol, scope):
     For data that only the participant holds, such as a personal copy of a data
     set, the expected value is computed in the same cell by the reference code.
     """
-    if variable not in scope:
+    if scope.get(variable) is None:
         print(f"{name}: {t('not_yet')} ✗ " + t("no_var").format(name=variable))
         return None
     answer = scope[variable]
@@ -146,7 +189,7 @@ def check_value(name, variable, expected, tol, scope):
 
 def check_range(name, variable, low, high, scope):
     """Check that a result whose exact value differs between computers lies in a plausible range."""
-    if variable not in scope:
+    if scope.get(variable) is None:
         print(f"{name}: {t('not_yet')} ✗ " + t("no_var").format(name=variable))
         return None
     answer = scope[variable]

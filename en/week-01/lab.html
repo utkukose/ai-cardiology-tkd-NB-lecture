@@ -183,6 +183,21 @@ ol.how li{margin:.25rem 0}
 ol.how code{font-size:.85em;word-break:break-all}
 .labbox .small{margin:.5rem 0 0}
 
+/* links into the Jupyter notebook: the way back shows the paragraph above the link */
+a.nbref{scroll-margin-top:35vh;white-space:normal}
+
+/* the three parts of a practice stop and the weekly project: one colour each */
+.parts3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:.5rem 0 .7rem}
+@media (max-width:760px){.parts3{grid-template-columns:1fr}}
+.pcard{background:var(--panel);border:1px solid var(--line);border-top:6px solid var(--pc);border-radius:8px;padding:10px 12px}
+.pcard p{margin:.45rem 0 0;font-size:.93rem}
+.pcard.basics{--pc:#2E7D32} .pcard.prompt{--pc:#6A3D9A} .pcard.app{--pc:#0E6E8C}
+.pbtn{display:inline-block;background:var(--pc,#9B1B1B);color:#fff !important;border-radius:8px;padding:8px 14px;font-family:var(--sans);font-weight:700;font-size:1rem;line-height:1.3;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.pbtn:hover,.pbtn:focus-visible{filter:brightness(1.12);text-decoration:none}
+.pbtn.project{--pc:#9B1B1B;font-size:1.06rem;padding:10px 18px}
+.projbtn{margin:.8rem 0 .3rem}
+@media (prefers-color-scheme:dark){.pcard.basics{--pc:#3E9A44} .pcard.prompt{--pc:#8455B8} .pcard.app{--pc:#1D86A8} .pbtn.project{--pc:#B33434}}
+
 .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:1rem 0;background:var(--paper);padding:6px 0;z-index:6;border-bottom:1px solid var(--line)}
 @media (min-width:721px){.tabs{position:sticky;top:0}}
 .tabs button{font-family:var(--sans);font-size:.92rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}

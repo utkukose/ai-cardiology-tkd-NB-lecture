@@ -18,7 +18,7 @@ Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın *
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 Her durak, o durağın verilerini yükleyen bir hazırlık hücresiyle başlar; böylece bir durağa başka bir gün de başlanabilir. Her adımın da, promptun tarif ettiği "veri" tablosunu hazırlayıp gösteren kendi veri hücresi vardır. Her adımın *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı bir adımda takılıp kalmaz ve sonraki adıma her zaman geçilebilir.

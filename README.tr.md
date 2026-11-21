@@ -41,6 +41,8 @@ Eğitimin ana ekseni sanal bir kardiyoloji kliniğidir. `vclinic` ders paketi se
 
 Eğitim, yapay zekâ (YZ) asistanlarıyla nasıl çalışılacağını da öğretmektedir. İlk haftadan başlayarak her uygulama durağı iki yoldan biriyle çalışılabilir. Birinci yolda kodu, kendisine verilen hazır bir prompt (istem) ile bir YZ asistanı yazar; bu yola prompt yolu denir. İkinci yol olan Python yolunda ise kodu katılımcı kendisi yazar. Promptlarda birimler ve testler belirtilir, kod bir kod güvenlik kontrol listesiyle denetlenir ve asistanın her kullanımı YZ kullanım günlüğüne kaydedilir. Hiçbir prompta hasta verisi girmez.
 
+**Ders sitesi (isteğe bağlı).** Ders akışına eğitimin ders sitesinden, [utkukose.github.io/ai-cardiology-tkd-NB-lecture](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/) adresinden de devam edebilirsiniz. Site, haftaların ders sayfalarını, etkileşimli lablarını ve Jupyter Notebook'larını bir arada sunduğu için eğitimde daha pratik ilerlemeyi sağlar.
+
 ## Başka derslerde kullanım
 
 Malzemeler, kaynak gösterilerek her düzeyde, tamamen ya da kısmen kullanılabilir ([Bu eğitime atıf](#bu-eğitime-atıf) bölümüne bakın). Hatalar ve öneriler deponun [issues](https://github.com/utkukose/ai-cardiology-tkd-NB-lecture/issues) bölümünden bildirilebilir. Eğitim sürerken sorular ve haftalık projeler utkukose@sdu.edu.tr ya da utkukose@gmail.com adresine gönderilebilir.

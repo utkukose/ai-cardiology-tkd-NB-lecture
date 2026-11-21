@@ -20,7 +20,21 @@ def course_root():
 
 
 def data_path(*parts):
-    return course_root().joinpath("data", *parts)
+    """A data file of the course: the copy in the folder of the course, or, when it is missing there, a copy downloaded once from the GitHub repository of the course."""
+    path = course_root().joinpath("data", *parts)
+    if path.exists() or not Path(parts[-1]).suffix:
+        return path
+    import tempfile
+    import urllib.request
+    from .sources import COURSE_RAW
+    cache = Path(tempfile.gettempdir()).joinpath("ai-cardiology-data", *parts)
+    if not cache.exists():
+        try:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            urllib.request.urlretrieve(COURSE_RAW + "data/" + "/".join(parts), cache)
+        except OSError:
+            return path
+    return cache
 
 
 def load_cleveland(download_if_missing=True, source=None):

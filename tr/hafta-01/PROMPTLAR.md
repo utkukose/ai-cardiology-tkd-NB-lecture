@@ -21,11 +21,11 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 | Adım | Ne yapılır? |
 |---|---|
 | 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir; böylece Jupyter Notebook tam bu yerde açıldığında da prompt çalışır. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Mini proje: Kaggle Heart Disease veri seti
@@ -409,8 +409,8 @@ Test: Tam 1 saniyelik bir RR aralığı dakikada 60 atım vermeli; ortalama kalp
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
-Bağlam: Sanal klinikteki on hastada, Bazett ya da Fridericia düzeltmesini seçmenin QT aralığının
-uzun olup olmadığı kararını değiştirip değiştirmediğini öğrenmek istiyorum.
+Bağlam: Sanal klinikteki on hastada, QT aralığının uzun olup olmadığına ilişkin kararın Bazett ya da
+Fridericia düzeltmesine göre değişip değişmediğini öğrenmek istiyorum.
 Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "hasta" sütunu
 hastanın numarasını verir; "cinsiyet" sütununda "kadın" ya da "erkek" yazar. "kalp hızı" sütunu
 ölçülen kalp hızını dakikadaki atım sayısı olarak, "QT" sütunu da ölçülen QT aralığını milisaniye
@@ -423,7 +423,7 @@ Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir �
 program kurmamalıdır.
 Çıktı: İki düzeltmeyi ve iki kararı içeren tabloyu ve kararları uyuşmayan hastaların listesini
 yazdır. Kararları farklı olan hastaların sayısını "cevap" adıyla sakla.
-Test: Dakikada yaklaşık 85 atımlık kalp hızıyla bir kadın olan VC-0317, Bazett formülüne göre uzun,
+Test: Kalp hızı dakikada yaklaşık 85 atım olan kadın hasta VC-0317, Bazett formülüne göre uzun,
 Fridericia formülüne göre normal çıkmalı.
 ```
 

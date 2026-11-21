@@ -21,7 +21,7 @@ No prompt of the course contains patient data, and none should be added. Real pa
 | Step | What to do |
 |---|---|
 | 1. Read | Read the goal of the prompt in the Jupyter notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it, so the prompt also works when the Jupyter notebook is opened at this place. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
