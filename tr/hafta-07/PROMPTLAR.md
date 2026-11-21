@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [7. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-07/PROMPTS.md)
 
-Bu kütüphanede, 7. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 7. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje](#durak-1-ekokardiyografiye-aktarım-kalite-kapısı-ve-mini-proje)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,11 +39,11 @@ Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'
 **Amaç.** Bu adımda bir karenin parlaklığını, karşıtlığını ve keskinliğini anlatan dört sayıdan ilk kalite kapısı kurulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik bir ejeksiyon fraksiyonu ölçümünden önce kalitesi kötü ekokardiyografi karelerini
 işaretlemek istiyorum ve her karenin dört basit sayısıyla başlıyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
 ekokardiyografi karesini, yani 300 hastanın apikal iki boşluk ve dört boşluk görüntülerinin diyastol
 sonu karelerini tutar. Her satır bir karedir: "küme" sütunu hastanın kümesini ("eğitim", 200 hasta;
 "doğrulama", 50 hasta; "test", 50 hasta), "hasta" hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"),
@@ -70,11 +70,11 @@ Test: AUC 0 ile 1 arasında olmalı ve test kareleri son adımdan önce kullanı
 **Amaç.** Bu adımda her kare, ImageNet ile önceden eğitilmiş ViT-B/16'nın sınıf token'ındaki 768 sayıyla tarif edilir ve kapı bu sayılarla kurulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Milyonlarca fotoğraftan öğrenmiş ve hiç ekokardiyogram görmemiş bir Vision Transformer'ın,
 kalitesi kötü kareleri işaretleyecek kadar iyi tarif edip edemediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
 ekokardiyografi karesini, yani 300 hastanın apikal iki boşluk ve dört boşluk görüntülerinin diyastol
 sonu karelerini tutar. Her satır bir karedir: "küme" sütunu hastanın kümesini ("eğitim", 200 hasta;
 "doğrulama", 50 hasta; "test", 50 hasta), "hasta" hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"),
@@ -106,11 +106,11 @@ Test: Her kare 768 sayı vermeli ve AUC 0 ile 1 arasında olmalı.
 **Amaç.** Bu adımda aynı kapı, 4. haftanın ağı EfficientNet-B0'ın 1.280 özniteliğiyle kurulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Ekokardiyografi kareleri için bir kalite kapısında öznitelik kaynağı olarak bir Vision
 Transformer'ı 4. haftada kullanılan evrişimli ağla karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan CAMUS'tan 600 apikal
 ekokardiyografi karesini, yani 300 hastanın apikal iki boşluk ve dört boşluk görüntülerinin diyastol
 sonu karelerini tutar. Her satır bir karedir: "küme" sütunu hastanın kümesini ("eğitim", 200 hasta;
 "doğrulama", 50 hasta; "test", 50 hasta), "hasta" hastayı, "görüntü" görüntüyü ("2CH" ya da "4CH"),
@@ -142,17 +142,17 @@ Test: Her kare 1.280 sayı vermeli ve AUC 0 ile 1 arasında olmalı.
 **Amaç.** Bu adımda 50 test hastası yerine koyarak tekrar tekrar çekilir ve Vision Transformer'ın ne sıklıkla daha iyi olduğu görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 50 test hastasının karelerinde ölçülen iki ekokardiyografi kalite kapısı arasındaki farkın
 başka hastalarda da geçerli olup olmayacağını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir apikal ekokardiyografi veri seti olan CAMUS'un
-100 test karesini, yani 50 hastanın apikal iki boşluk ve dört boşluk görüntülerinin diyastol sonu
-karelerini tutar. Her satır bir karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü ("2CH" ya da
-"4CH") verir; "kötü" sütunu CAMUS uzmanları görüntü kalitesini kötü olarak değerlendirdiyse 1,
-değilse 0 değerini alır. "olasılık, ViT-B/16" ve "olasılık, EfficientNet-B0" adlı iki sütun, dersin
-iki kalite kapısının verdiği kötü kalite olasılığını tutar; bu kapılar, ImageNet ile önceden
-eğitilmiş iki ağın öznitelikleri üzerinde kurulmuş lojistik regresyonlardır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir apikal ekokardiyografi veri seti
+olan CAMUS'un 100 test karesini, yani 50 hastanın apikal iki boşluk ve dört boşluk görüntülerinin
+diyastol sonu karelerini tutar. Her satır bir karedir: "hasta" sütunu hastayı, "görüntü" görüntüyü
+("2CH" ya da "4CH") verir; "kötü" sütunu CAMUS uzmanları görüntü kalitesini kötü olarak
+değerlendirdiyse 1, değilse 0 değerini alır. "olasılık, ViT-B/16" ve "olasılık, EfficientNet-B0"
+adlı iki sütun, dersin iki kalite kapısının verdiği kötü kalite olasılığını tutar; bu kapılar,
+ImageNet ile önceden eğitilmiş iki ağın öznitelikleri üzerinde kurulmuş lojistik regresyonlardır.
 Görev: İki olasılık sütununun "kötü" sütununa göre AUC değerini hesapla. Ardından 2.000 bootstrap
 örneği çek: Her örnek 50 test hastası arasından yerine koyarak 50 hasta çeker ve çekilen her
 hastanın iki karesini de tutar. Sonucun tekrarlanabilmesi için seed değerini 2026 olarak sabitle.
@@ -173,22 +173,22 @@ Test: Oran 0 ile 1 arasında olmalı ve bir hastanın iki karesi her zaman birli
 **Amaç.** Bu adımda küçük bir Vision Transformer önce CIFAR-10 fotoğraflarıyla eğitilir, ardından düşük ejeksiyon fraksiyonunu tanımak için ekokardiyografi kare çiftleriyle ince ayar yapılır ve yalnızca ekokardiyogramlarla eğitilen aynı ağla karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Önce gündelik fotoğraflardan öğrenmiş küçük bir Vision Transformer'ın, ekokardiyogramlarda
 düşük ejeksiyon fraksiyonunu, yalnızca ekokardiyogramlardan öğrenen aynı ağdan daha iyi tanıyıp
 tanımadığını öğrenmek istiyorum.
-Veri: Defterde iki tür satırdan oluşan "veri" adlı bir tablo vardır. "kaynak" değeri "CIFAR-10" olan
-satırlar, uçak, kedi ve gemi gibi on gündelik sınıftan oluşan açık bir veri seti olan CIFAR-10'un
-60.000 renkli fotoğrafıdır: "küme" sütunu "eğitim" (50.000 fotoğraf) ya da "test" (10.000) değerini
-alır, "görüntü" sütununun her hücresi bir fotoğrafı 0 ile 255 arasındaki sayılardan oluşan 32 × 32 ×
-3 boyutlu bir dizi olarak tutar, "sınıf" sütunu da fotoğrafın sınıfını 0 ile 9 arasında bir sayı
-olarak verir. "kaynak" değeri "eko" olan satırlar, iki açık veri seti olan EchoNet-Dynamic ya da
-CAMUS'un apikal ekokardiyografi kare çiftleridir: "küme" sütunu "eğitim", "doğrulama" ya da "test"
-değerini alır, "hasta" sütunu hastayı ya da videoyu verir, "görüntü" sütununun her hücresi 32 × 32 ×
-3 boyutlu bir dizi tutar; bu dizinin üç kanalı, değerleri 0 ile 1 arasında olan diyastol sonu ve
-sistol sonu kareler ile değerleri −1 ile 1 arasında olan farklarıdır. "düşük EF" sütunu ejeksiyon
-fraksiyonu yüzde 50'nin altındaysa 1, değilse 0 olur.
+Veri: Jupyter Notebook'ta iki tür satırdan oluşan "veri" adlı bir tablo vardır. "kaynak" değeri
+"CIFAR-10" olan satırlar, uçak, kedi ve gemi gibi on gündelik sınıftan oluşan açık bir veri seti
+olan CIFAR-10'un 60.000 renkli fotoğrafıdır: "küme" sütunu "eğitim" (50.000 fotoğraf) ya da "test"
+(10.000) değerini alır, "görüntü" sütununun her hücresi bir fotoğrafı 0 ile 255 arasındaki
+sayılardan oluşan 32 × 32 × 3 boyutlu bir dizi olarak tutar, "sınıf" sütunu da fotoğrafın sınıfını 0
+ile 9 arasında bir sayı olarak verir. "kaynak" değeri "eko" olan satırlar, iki açık veri seti olan
+EchoNet-Dynamic ya da CAMUS'un apikal ekokardiyografi kare çiftleridir: "küme" sütunu "eğitim",
+"doğrulama" ya da "test" değerini alır, "hasta" sütunu hastayı ya da videoyu verir, "görüntü"
+sütununun her hücresi 32 × 32 × 3 boyutlu bir dizi tutar; bu dizinin üç kanalı, değerleri 0 ile 1
+arasında olan diyastol sonu ve sistol sonu kareler ile değerleri −1 ile 1 arasında olan farklarıdır.
+"düşük EF" sütunu ejeksiyon fraksiyonu yüzde 50'nin altındaysa 1, değilse 0 olur.
 Görev: 32 × 32 piksellik renkli görüntüler için küçük bir Vision Transformer kur. Görüntüyü 4 × 4
 piksellik 64 kareye böl ve her kareyi aynı öğrenilen doğrusal dönüşümle 64 sayıya dönüştür. 64
 token'ın önüne 64 sayılık, öğrenilen bir sınıf token'ı koy ve öğrenilen konumları ekle: 65 yerin her
@@ -233,18 +233,18 @@ Küçük bir evrişimli ağ, merkezi anlamlı bir darlıkta olan 64 × 64 piksel
 **Amaç.** Bu adımda sentetik anjiyogramların yamalarıyla küçük bir evrişimli ağ eğitilir ve ağ test hastalarının yamalarında ölçülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Küçük bir ağın koroner anjiyogramlardan, bir görüntünün küçük bir karesinin merkezinin
 anlamlı bir darlıkta olup olmadığını öğrenip öğrenemeyeceğini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sanal kliniğin sentetik koroner anjiyogramlarından, 500
-hastanın her biri için iki görüntüden (eğitim 300 hasta, doğrulama 100, test 100) kesilmiş 64 × 64
-piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("eğitim",
-"doğrulama" ya da "test"), "hasta" hastayı verir; "yama" sütununun her hücresi yamayı gri değerleri
-0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar. "darlık" sütunu, yamanın merkezi
-anlamlı bir darlığa (sol ana koroner arterde yüzde 50 ya da daha fazla, öteki arterlerde yüzde 70 ya
-da daha fazla) 6 pikselden yakınsa 1, yama her darlıktan en az 48 piksel uzakta bir damarın
-üzerindeyse 0 değerini alır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sanal kliniğin sentetik koroner
+anjiyogramlarından, 500 hastanın her biri için iki görüntüden (eğitim 300 hasta, doğrulama 100, test
+100) kesilmiş 64 × 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın
+kümesini ("eğitim", "doğrulama" ya da "test"), "hasta" hastayı verir; "yama" sütununun her hücresi
+yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar. "darlık"
+sütunu, yamanın merkezi anlamlı bir darlığa (sol ana koroner arterde yüzde 50 ya da daha fazla,
+öteki arterlerde yüzde 70 ya da daha fazla) 6 pikselden yakınsa 1, yama her darlıktan en az 48
+piksel uzakta bir damarın üzerindeyse 0 değerini alır.
 Görev: Her yamayı kendi içinde standartlaştır: Gri değerlerinin ortalamasını çıkar ve standart
 sapmalarının 0,02 fazlasına böl. Tek kanallı, 64 × 64 piksellik bir yama için küçük bir evrişimli ağ
 kur: Her biri 3 × 3 piksellik filtreler ve bir piksellik dolgu içeren bir evrişim (16, 32, 64 ve 64
@@ -271,12 +271,12 @@ Test: Ağın 60.641 eğitilebilir ağırlığı olmalı ve test yamaları son ad
 **Amaç.** Bu adımda yalnızca sentetik anjiyogramlardan öğrenen bir ağ, ARCADE'in gerçek anjiyogramlarında sınanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sentetik anjiyogramlarda darlık bulmayı öğrenen bir ağın hiç görmediği gerçek X ışınlı
 anjiyogramlarda nasıl çalıştığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; iki kaynaktan gelen test yamalarını tutar: Sanal
-kliniğin sentetik koroner anjiyogramlarından 1.700, açık bir veri seti olan ARCADE'in gerçek X
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; iki kaynaktan gelen test yamalarını tutar:
+Sanal kliniğin sentetik koroner anjiyogramlarından 1.700, açık bir veri seti olan ARCADE'in gerçek X
 ışınlı anjiyogramlarından 3.088 yama; yamaların her biri 64 × 64 pikseldir. Her satır bir yamadır:
 "kaynak" sütunu yamanın kaynağını ("sentetik" ya da "ARCADE") verir; "darlık" sütunu, merkezi bir
 darlıkta olan yama için 1, her darlıktan uzakta bir damarın üzerindeki yama için 0 değerini alır.
@@ -298,15 +298,15 @@ Test: Her AUC yalnızca kendi kaynağının yamalarından hesaplanmalı.
 **Amaç.** Bu adımda aynı küçük ağ, ARCADE'in eğitim anjiyogramlarının yamalarıyla eğitilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Küçük bir evrişimli ağın gerçek anjiyogramlardan öğrendiğinde gerçek koroner anjiyogramlarda
 darlıkları ne kadar iyi bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
-1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300) kesilmiş 64
-× 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("eğitim",
-"doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun her
-hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık
+kümesindeki 1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300)
+kesilmiş 64 × 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini
+("eğitim", "doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun
+her hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
 "darlık" sütunu, yamanın merkezi uzmanların sınırını çizdiği bir darlığın merkezine 6 pikselden
 yakınsa 1, yama sınırı çizilmiş her darlıktan ve görüntünün kenarından en az 48 piksel uzakta bir
 damarın üzerindeyse 0 değerini alır.
@@ -343,15 +343,15 @@ Küçük bir Vision Transformer ve evrişimle dikkati birleştiren hibrit bir mo
 **Amaç.** Bu adımda her yamayı 64 kareye bölen ve bu karelerin birbirine dikkat etmesini sağlayan küçük bir Vision Transformer ARCADE'in yamalarıyla eğitilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Gerçek koroner anjiyogramlarda darlık bulmak için aynı biçimde eğitilmiş küçük bir Vision
 Transformer'ı küçük bir evrişimli ağla karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
-1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300) kesilmiş 64
-× 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("eğitim",
-"doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun her
-hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık
+kümesindeki 1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300)
+kesilmiş 64 × 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini
+("eğitim", "doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun
+her hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
 "darlık" sütunu, yamanın merkezi uzmanların sınırını çizdiği bir darlığın merkezine 6 pikselden
 yakınsa 1, yama sınırı çizilmiş her darlıktan ve görüntünün kenarından en az 48 piksel uzakta bir
 damarın üzerindeyse 0 değerini alır.
@@ -387,16 +387,16 @@ kullanılmamalı.
 **Amaç.** Bu adımda hibrit bir model eğitilir: Önce üç evrişim bloğu, ardından bunların çıktısındaki konumlar üzerinde iki Transformer bloğu.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Önce evrişimlerle küçük komşuluklara bakan, ardından yamanın parçalarını dikkatle birbirine
 bağlayan bir ağın gerçek anjiyogramlarda darlıkları iki türün her birinden daha iyi bulup
 bulmadığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
-1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300) kesilmiş 64
-× 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("eğitim",
-"doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun her
-hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık
+kümesindeki 1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300)
+kesilmiş 64 × 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini
+("eğitim", "doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun
+her hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
 "darlık" sütunu, yamanın merkezi uzmanların sınırını çizdiği bir darlığın merkezine 6 pikselden
 yakınsa 1, yama sınırı çizilmiş her darlıktan ve görüntünün kenarından en az 48 piksel uzakta bir
 damarın üzerindeyse 0 değerini alır.
@@ -433,18 +433,18 @@ kullanılmamalı.
 **Amaç.** Bu adımda Vision Transformer'ın sınıf token'ının dikkatinin ne kadarının, darlığın bulunduğu yama merkezine düştüğü ölçülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Anjiyogramlarda darlık bulan bir Vision Transformer'ın dikkat haritalarını bir açıklama
 olarak okumadan önce, dikkatinin darlığın bulunduğu yere düşüp düşmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri seti olan
-ARCADE'in 64 × 64 piksellik 3.088 test yamasını tutar. Her satır bir yamadır: "anjiyogram" sütunu
-yamanın anjiyogramının numarasını verir; "darlık" sütunu, merkezi uzmanların sınırını çizdiği bir
-darlıkta olan yama için 1, her darlıktan uzakta bir damarın üzerindeki yama için 0 değerini alır.
-"dikkat" sütununun her hücresi toplamı 1 olan 8 × 8 sayılık bir tablo tutar: Dersin küçük Vision
-Transformer'ın sınıf token'ının, yamanın 8 × 8 piksellik 64 karesinin her birine gösterdiği ve dört
-katmanı boyunca izlenen dikkat (dikkat aktarımı). Ortadaki dört kare, yamanın ortadaki 16 × 16
-pikselini kaplar; 1'den başlayarak sayıldığında bunlar 4. ve 5. satır ve sütunlardır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri
+seti olan ARCADE'in 64 × 64 piksellik 3.088 test yamasını tutar. Her satır bir yamadır: "anjiyogram"
+sütunu yamanın anjiyogramının numarasını verir; "darlık" sütunu, merkezi uzmanların sınırını çizdiği
+bir darlıkta olan yama için 1, her darlıktan uzakta bir damarın üzerindeki yama için 0 değerini
+alır. "dikkat" sütununun her hücresi toplamı 1 olan 8 × 8 sayılık bir tablo tutar: Dersin küçük
+Vision Transformer'ın sınıf token'ının, yamanın 8 × 8 piksellik 64 karesinin her birine gösterdiği
+ve dört katmanı boyunca izlenen dikkat (dikkat aktarımı). Ortadaki dört kare, yamanın ortadaki 16 ×
+16 pikselini kaplar; 1'den başlayarak sayıldığında bunlar 4. ve 5. satır ve sütunlardır.
 Görev: Her yama için ortadaki dört karenin dikkatini topla. Bu payın darlık içeren yamalar ve öteki
 yamalar üzerindeki ortalamasını hesapla ve iki ortalamayı, dikkat eşit dağılsaydı dört karenin
 alacağı pay olan 4/64 = 0,0625 ile karşılaştır.
@@ -474,7 +474,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -509,21 +509,21 @@ ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Üç ağ, tek bir test
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Gerçek koroner anjiyogramlarda darlık bulmak için aynı biçimde eğitilmiş ve aynı
 anjiyogramlarda sınanmış evrişimli bir ağı, bir Vision Transformer'ı ve hibrit bir modeli
 karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
-1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300) kesilmiş 64
-× 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("eğitim",
-"doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun her
-hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık
+kümesindeki 1.500 X ışınlı koroner anjiyogramdan (eğitim 1.000 anjiyogram, doğrulama 200, test 300)
+kesilmiş 64 × 64 piksellik yamaları tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini
+("eğitim", "doğrulama" ya da "test"), "anjiyogram" anjiyogramının numarasını verir; "yama" sütununun
+her hücresi yamayı gri değerleri 0 ile 1 arasında olan 64 × 64 piksellik bir görüntü olarak tutar.
 "darlık" sütunu, yamanın merkezi uzmanların sınırını çizdiği bir darlığın merkezine 6 pikselden
 yakınsa 1, yama sınırı çizilmiş her darlıktan ve görüntünün kenarından en az 48 piksel uzakta bir
 damarın üzerindeyse 0 değerini alır.
@@ -574,14 +574,14 @@ değil anjiyogramlardan hesaplanmalı.
 ### Adım 2: Laboratuvar için bir eşik
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Anjiyogramlarda darlık arayan ağların sabit bir eşikte uygulamada ne vereceğini, hem özenle
 seçilmiş yamalar arasında hem de darlığın seyrek olduğu bütün bir anjiyogramın pencereleri arasında
 öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri seti olan
-ARCADE'in 64 × 64 piksellik 6.336 doğrulama ve test yamasını (doğrulama 200 anjiyogram, test 300)
-tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("doğrulama" ya da "test"),
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri
+seti olan ARCADE'in 64 × 64 piksellik 6.336 doğrulama ve test yamasını (doğrulama 200 anjiyogram,
+test 300) tutar. Her satır bir yamadır: "küme" sütunu yamanın kümesini ("doğrulama" ya da "test"),
 "anjiyogram" anjiyogramının numarasını verir; "darlık" sütunu merkezi uzmanların sınırını çizdiği
 bir darlıkta olan yama için 1, her darlıktan uzaktaki bir damarın üzerindeki yama için 0 değerini
 alır. "evrişimli ağ", "Vision Transformer" ve "hibrit model" adlı üç sütun, dersin eğitim
@@ -601,16 +601,17 @@ Test: Eşikler yalnızca doğrulama yamalarında seçilmeli ve her değer 0 ile 
 ### Adım 3: Bütün anjiyogramlar için bir tespit modeli
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bütün koroner anjiyogramlarda darlıkları, anjiyogram başına yaklaşık bir yanlış tespitle
 işaretleyen bir program istiyorum ve programın darlıkların ne kadarını bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık kümesindeki
-1.500 X ışınlı koroner anjiyogramı (eğitim 1.000, doğrulama 200, test 300) tutar. Her satır bir
-anjiyogramdır: "küme" sütunu kümesini ("eğitim", "doğrulama" ya da "test"), "anjiyogram" numarasını
-verir; "görüntü" sütununun her hücresi anjiyogramı gri değerleri 0 ile 255 arasında olan 512 × 512
-piksellik bir görüntü olarak tutar; "darlıklar" sütunu uzmanların sınırını çizdiği darlıkların
-merkezlerini, 0'dan başlayarak sayılan piksel olarak (sütun, satır) çiftleri hâlinde listeler.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir veri seti olan ARCADE'in darlık
+kümesindeki 1.500 X ışınlı koroner anjiyogramı (eğitim 1.000, doğrulama 200, test 300) tutar. Her
+satır bir anjiyogramdır: "küme" sütunu kümesini ("eğitim", "doğrulama" ya da "test"), "anjiyogram"
+numarasını verir; "görüntü" sütununun her hücresi anjiyogramı gri değerleri 0 ile 255 arasında olan
+512 × 512 piksellik bir görüntü olarak tutar; "darlıklar" sütunu uzmanların sınırını çizdiği
+darlıkların merkezlerini, 0'dan başlayarak sayılan piksel olarak (sütun, satır) çiftleri hâlinde
+listeler.
 Görev: Her görüntüyü 0 ile 1 arasında gri değerlere getir. Her anjiyogramdan 64 × 64 piksellik
 pencereler kes: Her darlık için, darlığı ortalayan ve her yönde rastgele en fazla 16 piksel
 kaydırılmış dört pencere (etiket 1); her darlık için, görüntünün kenarından en az 48 piksel uzaktaki
@@ -653,20 +654,20 @@ bulunmalı.
 ### Adım 4: Bir kardiyoloğun okuduğu hatalar
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Böyle bir aracın kateter laboratuvarında neler yapabileceğine karar verebilmek için bir
 tespit modelinin kaçırdığı darlıkları ve yanlış işaretlediği yerleri görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri seti olan
-ARCADE'in 300 test anjiyogramını tutar. Her satır bir anjiyogramdır: "anjiyogram" sütunu numarasını
-verir; "görüntü" sütununun her hücresi anjiyogramı gri değerleri 0 ile 255 arasında olan 512 × 512
-piksellik bir görüntü olarak tutar; "darlıklar" sütunu uzmanların sınırını çizdiği darlıkların
-merkezlerini 0'dan başlayarak sayılan piksel olarak (sütun, satır) çiftleri hâlinde listeler.
-"olasılıklar" sütununun her hücresi, dersin tespit modelinin verdiği darlık olasılıklarını 32 × 32
-sayılık bir tablo olarak tutar; her sayı, merkezi her yönde 8, 24, 40 ve böyle 504 piksele kadar
-giden noktalarda bulunan 64 × 64 piksellik bir pencereye aittir. "eşik" sütunu tespit modelinin,
-doğrulama anjiyogramlarında anjiyogram başına en fazla bir yanlış tespit verecek biçimde seçilmiş
-eşiğini tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; açık bir X ışınlı koroner anjiyogram veri
+seti olan ARCADE'in 300 test anjiyogramını tutar. Her satır bir anjiyogramdır: "anjiyogram" sütunu
+numarasını verir; "görüntü" sütununun her hücresi anjiyogramı gri değerleri 0 ile 255 arasında olan
+512 × 512 piksellik bir görüntü olarak tutar; "darlıklar" sütunu uzmanların sınırını çizdiği
+darlıkların merkezlerini 0'dan başlayarak sayılan piksel olarak (sütun, satır) çiftleri hâlinde
+listeler. "olasılıklar" sütununun her hücresi, dersin tespit modelinin verdiği darlık olasılıklarını
+32 × 32 sayılık bir tablo olarak tutar; her sayı, merkezi her yönde 8, 24, 40 ve böyle 504 piksele
+kadar giden noktalarda bulunan 64 × 64 piksellik bir pencereye aittir. "eşik" sütunu tespit
+modelinin, doğrulama anjiyogramlarında anjiyogram başına en fazla bir yanlış tespit verecek biçimde
+seçilmiş eşiğini tutar.
 Görev: Tespit, olasılığı eşiğe eşit ya da eşikten büyük olan ve 5 × 5 merkezlik komşuluğundaki
 pencereler arasında en büyük olasılığa sahip penceredir. Bir tespit bir darlığa 32 pikselden yakınsa
 darlık bulunmuş sayılır; öteki her tespit yanlıştır. Her anjiyogram için kaçırılan darlıkları ve
