@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [8. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-08/PROMPTS.md)
 
-Bu kütüphanede, 8. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 8. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: EKG, ekokardiyogram ve laboratuvarla kalp yetersizliği olayları](#durak-1-ekg-ekokardiyogram-ve-laboratuvarla-kalp-yetersizliği-olayları)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,20 +39,20 @@ Bu durak oturumun mini projesidir. Sanal kliniğin kayıt sistemindeki hastalar 
 **Amaç.** Bu adımda üç laboratuvar değeriyle kalp yetersizliği olayları için ilk model kurulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: NT-proBNP, eGFR ve troponinin tek başına 24 ay içinde ölümü ya da kalp yetersizliği
 nedeniyle hastaneye yatışı ne kadar iyi öngördüğünü, EKG ve ekokardiyogramı ekleyecek modeller için
 bir başlangıç noktası olarak öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden, yani sentetik
-bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen hastalar. Her
-satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta; "doğrulama", 640
-hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp yetersizliği nedeniyle
-hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS" ve "QT" (ms), "sol dal
-bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram; "ejeksiyon fraksiyonu"
-(%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'", "TAPSE" (mm) ve "sol
-ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP" (pg/mL), "eGFR"
-(mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden,
+yani sentetik bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen
+hastalar. Her satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta;
+"doğrulama", 640 hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp
+yetersizliği nedeniyle hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS"
+ve "QT" (ms), "sol dal bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram;
+"ejeksiyon fraksiyonu" (%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'",
+"TAPSE" (mm) ve "sol ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP"
+(pg/mL), "eGFR" (mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
 Görev: NT-proBNP ve troponin çok çarpık dağıldığı için ikisinin de logaritmasını kullan. Üç
 laboratuvar değerini öznitelik olarak kullan. Sütunları eğitim hastalarıyla standartlaştır ve eğitim
 hastalarında bir lojistik regresyon kur. Düzenlileştirmenin miktarını doğrulama hastalarındaki ROC
@@ -72,20 +72,20 @@ Test: AUC 0 ile 1 arasında olmalı ve hiçbir test hastası son adımdan önce 
 **Amaç.** Bu adımda üç modalitenin 14 değeri yan yana konur ve bunlar üzerinde tek bir model kurulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir hastanın EKG'sini, ekokardiyogramını ve laboratuvar değerlerini birlikte gören bir
 modelin kalp yetersizliği olaylarını tek başına laboratuvar değerlerinden daha iyi öngörüp
 öngörmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden, yani sentetik
-bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen hastalar. Her
-satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta; "doğrulama", 640
-hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp yetersizliği nedeniyle
-hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS" ve "QT" (ms), "sol dal
-bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram; "ejeksiyon fraksiyonu"
-(%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'", "TAPSE" (mm) ve "sol
-ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP" (pg/mL), "eGFR"
-(mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden,
+yani sentetik bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen
+hastalar. Her satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta;
+"doğrulama", 640 hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp
+yetersizliği nedeniyle hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS"
+ve "QT" (ms), "sol dal bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram;
+"ejeksiyon fraksiyonu" (%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'",
+"TAPSE" (mm) ve "sol ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP"
+(pg/mL), "eGFR" (mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
 Görev: NT-proBNP ve troponin çok çarpık dağıldığı için ikisinin de logaritmasını kullan. Üç modalite
 EKG (kalp hızı, QRS, QT, sol dal bloğu, atriyal fibrilasyon), ekokardiyogram (ejeksiyon fraksiyonu,
 diyastol sonu çap, sol atriyum hacim indeksi, E/e', TAPSE, sol ventrikül kütle indeksi) ve
@@ -108,19 +108,19 @@ Test: Model 14 öznitelik kullanmalı ve AUC 0 ile 1 arasında olmalı.
 **Amaç.** Bu adımda her modalite için bir model kurulur ve tahminleri logitlerinin ortalamasıyla birleştirilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bütün değerler üzerinde kurulan tek bir modeli, her modalite için birer tane olmak üzere
 görüşlerinin ortalaması alınan üç ayrı modelle karşılaştırmak istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden, yani sentetik
-bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen hastalar. Her
-satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta; "doğrulama", 640
-hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp yetersizliği nedeniyle
-hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS" ve "QT" (ms), "sol dal
-bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram; "ejeksiyon fraksiyonu"
-(%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'", "TAPSE" (mm) ve "sol
-ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP" (pg/mL), "eGFR"
-(mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden,
+yani sentetik bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen
+hastalar. Her satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta;
+"doğrulama", 640 hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp
+yetersizliği nedeniyle hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS"
+ve "QT" (ms), "sol dal bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram;
+"ejeksiyon fraksiyonu" (%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'",
+"TAPSE" (mm) ve "sol ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP"
+(pg/mL), "eGFR" (mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
 Görev: NT-proBNP ve troponin çok çarpık dağıldığı için ikisinin de logaritmasını kullan. Üç modalite
 EKG (kalp hızı, QRS, QT, sol dal bloğu, atriyal fibrilasyon), ekokardiyogram (ejeksiyon fraksiyonu,
 diyastol sonu çap, sol atriyum hacim indeksi, E/e', TAPSE, sol ventrikül kütle indeksi) ve
@@ -144,20 +144,20 @@ Test: Her modalite için bir tane olmak üzere üç model olmalı ve AUC 0 ile 1
 **Amaç.** Bu adımda test hastaları yerine koyarak tekrar tekrar çekilir ve erken füzyonun tek başına laboratuvarı ne sıklıkla geçtiği görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Az sayıda olayı olan birkaç yüz test hastasında ölçülen, üç modaliteli bir model ile tek
 başına laboratuvar değerleri arasındaki farkın başka hastalarda da geçerli olup olmayacağını
 öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden, yani sentetik
-bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen hastalar. Her
-satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta; "doğrulama", 640
-hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp yetersizliği nedeniyle
-hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS" ve "QT" (ms), "sol dal
-bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram; "ejeksiyon fraksiyonu"
-(%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'", "TAPSE" (mm) ve "sol
-ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP" (pg/mL), "eGFR"
-(mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin kayıt sisteminden,
+yani sentetik bir kohorttan 3.227 hasta bulunur: En az 24 ay izlenen ya da daha önce olay görülen
+hastalar. Her satır bir hastadır: "hasta" hastayı, "küme" kümesini verir ("eğitim", 1.936 hasta;
+"doğrulama", 640 hasta; "test", 651 hasta); "olay" ise hasta 24 ay içinde öldüyse ya da kalp
+yetersizliği nedeniyle hastaneye yattıysa 1, aksi hâlde 0 olur. EKG; "kalp hızı" (dakikada), "QRS"
+ve "QT" (ms), "sol dal bloğu" ve "atriyal fibrilasyon" (varsa 1) sütunlarını verir. Ekokardiyogram;
+"ejeksiyon fraksiyonu" (%), "diyastol sonu çap" (mm), "sol atriyum hacim indeksi" (mL/m²), "E/e'",
+"TAPSE" (mm) ve "sol ventrikül kütle indeksi" (g/m²) sütunlarını verir. Laboratuvar; "NT-proBNP"
+(pg/mL), "eGFR" (mL/dk/1,73 m²) ve "troponin" (yüksek duyarlıklı, ng/L) sütunlarını verir.
 Görev: NT-proBNP ve troponin çok çarpık dağıldığı için ikisinin de logaritmasını kullan. Üç modalite
 EKG (kalp hızı, QRS, QT, sol dal bloğu, atriyal fibrilasyon), ekokardiyogram (ejeksiyon fraksiyonu,
 diyastol sonu çap, sol atriyum hacim indeksi, E/e', TAPSE, sol ventrikül kütle indeksi) ve
@@ -191,15 +191,16 @@ Sanal kliniğin göğüs ağrısı ünitesi 30 gün içindeki MACE'i öngörür.
 **Amaç.** Bu adımda HEART skorunun beş öğesi toplanır ve toplamın MACE görülen ve görülmeyen başvuruları ne kadar iyi ayırdığı görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Ünitenin her modelinin aşması gereken çıta olarak HEART skorunun göğüs ağrısı ünitesinin
 test başvurularındaki sonucunu öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden 800 test başvurusu bulunur. Her satır bir başvurudur: "başvuru"
-numarasını verir; "öykü", "EKG", "yaş", "risk faktörleri" ve "troponin" sütunları HEART skorunun beş
-öğesinin puanlarını (her biri 0, 1 ya da 2) verir; "MACE" ise 30 gün içinde majör olumsuz kardiyak
-olay (miyokard enfarktüsü, acil revaskülarizasyon ya da ölüm) görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden 800 test başvurusu bulunur. Her satır bir başvurudur:
+"başvuru" numarasını verir; "öykü", "EKG", "yaş", "risk faktörleri" ve "troponin" sütunları HEART
+skorunun beş öğesinin puanlarını (her biri 0, 1 ya da 2) verir; "MACE" ise 30 gün içinde majör
+olumsuz kardiyak olay (miyokard enfarktüsü, acil revaskülarizasyon ya da ölüm) görüldüyse 1, aksi
+hâlde 0 olur.
 Görev: Beş öğeyi HEART skorunda (0-10) topla. Skorun "MACE" sütununa göre AUC değerini hesapla.
 Ardından 0-3, 4-6 ve 7-10 gruplarını oluştur ve her biri için başvuru sayısını, oranını ve gruptaki
 MACE oranını ver.
@@ -216,23 +217,23 @@ Test: Her skor 0 ile 10 arasında olmalı ve üç grup 800 başvurunun tamamın�
 **Amaç.** Bu adımda her başvurunun klinik değerleri, troponinleri ve ekokardiyogramı tek bir satıra konur, boşluklar bir işaretle doldurulur ve tek bir model kurulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Ekibin gelişten bir saat sonra bildikleriyle, EKG ve not olmadan, ikinci troponini ya da
 ekokardiyogramı eksik olan hastaları da tutarak 30 gün içindeki MACE için bir risk modeli kurmak
 istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden göğüs ağrısıyla yapılmış 4.000 başvuru bulunur. Her satır bir
-başvurudur: "başvuru" numarasını, "küme" kümesini verir ("eğitim", 2.400; "doğrulama", 800; "test",
-800). Klinik tablo; "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), varsa 1 olan yedi risk faktörü
-("sigara", "diyabet", "hipertansiyon", "hiperlipidemi", "obezite", "aile öyküsü" ve "bilinen koroner
-arter hastalığı"), "kalp hızı" (dakikada), "sistolik basınç" (mmHg) ve "eGFR" sütunlarını verir.
-Yüksek duyarlıklı troponin T, testin üst referans sınırının katları olarak verilir: "gelişte
-troponin" ve ölçülmediğinde boş kalan "bir saat sonra troponin". Yatak başı ekokardiyogram
-"ekokardiyogram yapıldı" (1 ya da 0) sütununu ve yapıldıysa "ejeksiyon fraksiyonu" (%) ile "duvar
-hareket bozukluğu" (bölgesel bir bozukluk görüldüyse 1) sütunlarını verir; yapılmadıysa bu iki sütun
-boştur. "HEART" HEART skorudur; "MACE" ise 30 gün içinde majör olumsuz kardiyak olay görüldüyse 1,
-aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden göğüs ağrısıyla yapılmış 4.000 başvuru bulunur. Her
+satır bir başvurudur: "başvuru" numarasını, "küme" kümesini verir ("eğitim", 2.400; "doğrulama",
+800; "test", 800). Klinik tablo; "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), varsa 1 olan yedi
+risk faktörü ("sigara", "diyabet", "hipertansiyon", "hiperlipidemi", "obezite", "aile öyküsü" ve
+"bilinen koroner arter hastalığı"), "kalp hızı" (dakikada), "sistolik basınç" (mmHg) ve "eGFR"
+sütunlarını verir. Yüksek duyarlıklı troponin T, testin üst referans sınırının katları olarak
+verilir: "gelişte troponin" ve ölçülmediğinde boş kalan "bir saat sonra troponin". Yatak başı
+ekokardiyogram "ekokardiyogram yapıldı" (1 ya da 0) sütununu ve yapıldıysa "ejeksiyon fraksiyonu"
+(%) ile "duvar hareket bozukluğu" (bölgesel bir bozukluk görüldüyse 1) sütunlarını verir;
+yapılmadıysa bu iki sütun boştur. "HEART" HEART skorudur; "MACE" ise 30 gün içinde majör olumsuz
+kardiyak olay görüldüyse 1, aksi hâlde 0 olur.
 Görev: Her başvurunun özniteliklerini oluştur: Yaş, erkek için 1 olan cinsiyet, yedi risk faktörü,
 kalp hızı, sistolik basınç ve eGFR; gelişteki troponinin logaritması, bir saat sonraki troponinin
 logaritması (ölçülmediyse gelişteki değer), bir saatteki değişim (ölçülmediyse 0) ve ikinci troponin
@@ -257,15 +258,15 @@ arasında olmamalı.
 **Amaç.** Bu adımda beş tek modaliteli modelin her birinin ne kadar sayılması gerektiği doğrulama başvurularında öğrenilir ve birleşim sınanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Her biri göğüs ağrılı bir başvurunun bir modalitesini okuyan beş modelim var; bunların
 görüşlerini eşit bir oy yerine verilerden öğrenilen ağırlıklarla tek bir riskte birleştirmek
 istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden 800 doğrulama ve 800 test başvurusu bulunur. Her satır bir
-başvurudur: "küme" kümesini verir ("doğrulama" ya da "test"); beş sütun ise dersin, her biri tek bir
-modaliteden öğrenen ve hepsi eğitim başvurularıyla eğitilmiş beş modelinin 30 gün içinde majör
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden 800 doğrulama ve 800 test başvurusu bulunur. Her satır
+bir başvurudur: "küme" kümesini verir ("doğrulama" ya da "test"); beş sütun ise dersin, her biri tek
+bir modaliteden öğrenen ve hepsi eğitim başvurularıyla eğitilmiş beş modelinin 30 gün içinde majör
 olumsuz kardiyak olay için verdiği olasılıkları içerir: "olasılık, klinik", "olasılık, troponin",
 "olasılık, ekokardiyogram", "olasılık, EKG ağı" ve "olasılık, not". "MACE" böyle bir olay görüldüyse
 1, aksi hâlde 0 olur.
@@ -287,17 +288,17 @@ Test: İstifleme yalnızca doğrulama başvurularında öğrenmeli ve her ağır
 **Amaç.** Bu adımda AUC değerleri neredeyse aynı olan iki modelin, erken füzyonun ve logitlerin ortalamasının, kalibrasyonu değerlendirilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Hastalara MACE risklerini söylemek ve bir eşiğin altındakileri eve göndermek istiyorum;
 hastaları eşit derecede iyi sıralayan iki modelin olasılıklarının söylediklerini ifade edip
 etmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden 800 test başvurusu bulunur. Her satır bir başvurudur: "olasılık,
-erken füzyon", dersin beş modaliteyi birlikte kullanan bir modelinin 30 gün içinde majör olumsuz
-kardiyak olay için verdiği olasılık; "olasılık, logitlerin ortalaması", beş tek modaliteli modelin
-logitlerinin ortalamasından gelen olasılıktır. "MACE" böyle bir olay görüldüyse 1, aksi hâlde 0
-olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden 800 test başvurusu bulunur. Her satır bir başvurudur:
+"olasılık, erken füzyon", dersin beş modaliteyi birlikte kullanan bir modelinin 30 gün içinde majör
+olumsuz kardiyak olay için verdiği olasılık; "olasılık, logitlerin ortalaması", beş tek modaliteli
+modelin logitlerinin ortalamasından gelen olasılıktır. "MACE" böyle bir olay görüldüyse 1, aksi
+hâlde 0 olur.
 Görev: İki olasılık sütununun her biri için AUC değerini ve ortalama tahmin edilen riski MACE
 oranının yanında hesapla. Kalibrasyon sabitini (eğim 1'e sabitlenmişken ortalama tahmin edilen riski
 gözlenen orana eşitleyen logit kayması), kalibrasyon eğimini (MACE'in olasılığın logiti üzerine
@@ -325,13 +326,13 @@ Hastanesinden çıkan bir model, kullanıldığı yerde denetlenmelidir. İlk ad
 **Amaç.** Bu adımda modelin logitleri, ortalama riski B hastanesinin ilk 300 hastasındaki olay oranına uyacak biçimde kaydırılır ve sonraki 700 hasta denetlenir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: B hastanesinin kardiyoloğu olarak hastaları ve uygulaması farklı olan A hastanesinden bir
 model kullanmak istiyorum ve ona güvenmeden önce risklerinin düzeyini B'nin ilk hastalarıyla
 düzeltmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin ikinci hastanesi olan B
-hastanesinden, yani sentetik bir veri setinden göğüs ağrısıyla yapılmış 1.000 başvuru, geliş
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin ikinci hastanesi olan
+B hastanesinden, yani sentetik bir veri setinden göğüs ağrısıyla yapılmış 1.000 başvuru, geliş
 sırasıyla bulunur. Her satır bir başvurudur: "sıra" zamandaki yerini, "olasılık" birinci hastane
 olan A'da öğrenmiş bir modelin 30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı
 verir; "MACE" böyle bir olay görüldüyse 1, aksi hâlde 0 olur.
@@ -354,14 +355,14 @@ Test: Kaymayı bulmak için yalnızca ilk 300 başvuru kullanılmalı ve AUC de�
 **Amaç.** Bu adımda doğrulama başvurularında modelin HEART 0-3 kadar hastayı eve gönderen bir eşiği seçilir ve bu eşiğin eve gönderdiği test hastalarındaki MACE sayılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Eve gönderilen hasta sayısı aynı kalmak koşuluyla, hastaları HEART 0-3 yerine bir modelin
 riskine göre taburcu etmenin daha az majör olumsuz kardiyak olay kaçırıp kaçırmayacağını öğrenmek
 istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden 800 doğrulama ve 800 test başvurusu bulunur. Her satır bir
-başvurudur: "küme" kümesini ("doğrulama" ya da "test"), "HEART" HEART skorunu (0-10), "olasılık"
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden 800 doğrulama ve 800 test başvurusu bulunur. Her satır
+bir başvurudur: "küme" kümesini ("doğrulama" ya da "test"), "HEART" HEART skorunu (0-10), "olasılık"
 dersin beş modalite kullanan bir modelinin 30 gün içinde majör olumsuz kardiyak olay için verdiği
 olasılığı verir; "MACE" böyle bir olay görüldüyse 1, aksi hâlde 0 olur.
 Görev: Doğrulama başvurularında HEART skoru 0-3 olan hastaları say; bu sayıya k de. Doğrulama
@@ -384,15 +385,16 @@ skorununkine yakın olmalı.
 **Amaç.** Bu adımda modelin riskine göre ve HEART 4 ya da üstüne göre yatırmanın net yararı yüzde 20 eşik olasılığında hesaplanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Yüzde 20 MACE riski olan bir hastayı, yakalanan her olay için dört gereksiz yatışı kabul
 ederek yatırırdım; bir modelin olasılıklarının bu karara "HEART skoru 4 ya da üstü olan her hastayı
 yatır" kuralından daha iyi hizmet edip etmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden 800 test başvurusu bulunur. Her satır bir başvurudur: "HEART" HEART
-skorunu (0-10), "olasılık" dersin beş modalite kullanan bir modelinin 30 gün içinde majör olumsuz
-kardiyak olay için verdiği olasılığı verir; "MACE" böyle bir olay görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden 800 test başvurusu bulunur. Her satır bir başvurudur:
+"HEART" HEART skorunu (0-10), "olasılık" dersin beş modalite kullanan bir modelinin 30 gün içinde
+majör olumsuz kardiyak olay için verdiği olasılığı verir; "MACE" böyle bir olay görüldüyse 1, aksi
+hâlde 0 olur.
 Görev: t = 0,20 eşik olasılığında doğru pozitifleri (yatırılanlarda MACE) ve yanlış pozitifleri
 (yatırılanlarda MACE yok) bir kez olasılığı en az t olan her hastayı yatırmak, bir kez de HEART
 skoru 4 ya da üstü olan her hastayı yatırmak için say. Net yarar, doğru pozitiflerin hasta sayısına
@@ -425,7 +427,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -460,30 +462,30 @@ ver.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Tek modaliteler, füzyon ve HEART
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir göğüs ağrısı ünitesinin her modalitesinden ve hepsinden birlikte kurulan 30 gün içindeki
 MACE modellerini HEART skoruyla, her farktan ne kadar emin olunabileceğini gösteren aralıklarla
 karşılaştırmak istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı ünitesinden,
-yani sentetik bir veri setinden göğüs ağrısıyla yapılmış 4.000 başvuru bulunur. Her satır bir
-başvurudur: "başvuru" numarasını, "küme" kümesini verir ("eğitim", 2.400; "doğrulama", 800; "test",
-800). Klinik tablo; "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), varsa 1 olan yedi risk faktörü
-("sigara", "diyabet", "hipertansiyon", "hiperlipidemi", "obezite", "aile öyküsü" ve "bilinen koroner
-arter hastalığı"), "kalp hızı" (dakikada), "sistolik basınç" (mmHg) ve "eGFR" sütunlarını verir.
-Yüksek duyarlıklı troponin T, testin üst referans sınırının katları olarak verilir: "gelişte
-troponin" ve ölçülmediğinde boş kalan "bir saat sonra troponin". Yatak başı ekokardiyogram
-"ekokardiyogram yapıldı" (1 ya da 0) sütununu ve yapıldıysa "ejeksiyon fraksiyonu" (%) ile "duvar
-hareket bozukluğu" (bölgesel bir bozukluk görüldüyse 1) sütunlarını verir; yapılmadıysa bu iki sütun
-boştur. "HEART" HEART skorudur; "MACE" ise 30 gün içinde majör olumsuz kardiyak olay görüldüyse 1,
-aksi hâlde 0 olur. Dersin eğitim başvurularıyla eğitilmiş modellerinden iki sütun daha gelir: "EKG
-puanı", bir ağın 12 derivasyonlu EKG'den verdiği MACE olasılığının logiti; "not puanı" ise triyaj
-notundan gelen olasılığın logitidir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin bir göğüs ağrısı
+ünitesinden, yani sentetik bir veri setinden göğüs ağrısıyla yapılmış 4.000 başvuru bulunur. Her
+satır bir başvurudur: "başvuru" numarasını, "küme" kümesini verir ("eğitim", 2.400; "doğrulama",
+800; "test", 800). Klinik tablo; "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), varsa 1 olan yedi
+risk faktörü ("sigara", "diyabet", "hipertansiyon", "hiperlipidemi", "obezite", "aile öyküsü" ve
+"bilinen koroner arter hastalığı"), "kalp hızı" (dakikada), "sistolik basınç" (mmHg) ve "eGFR"
+sütunlarını verir. Yüksek duyarlıklı troponin T, testin üst referans sınırının katları olarak
+verilir: "gelişte troponin" ve ölçülmediğinde boş kalan "bir saat sonra troponin". Yatak başı
+ekokardiyogram "ekokardiyogram yapıldı" (1 ya da 0) sütununu ve yapıldıysa "ejeksiyon fraksiyonu"
+(%) ile "duvar hareket bozukluğu" (bölgesel bir bozukluk görüldüyse 1) sütunlarını verir;
+yapılmadıysa bu iki sütun boştur. "HEART" HEART skorudur; "MACE" ise 30 gün içinde majör olumsuz
+kardiyak olay görüldüyse 1, aksi hâlde 0 olur. Dersin eğitim başvurularıyla eğitilmiş modellerinden
+iki sütun daha gelir: "EKG puanı", bir ağın 12 derivasyonlu EKG'den verdiği MACE olasılığının
+logiti; "not puanı" ise triyaj notundan gelen olasılığın logitidir.
 Görev: Beş öznitelik grubu oluştur: Klinik tablo (yaş, erkek için 1 olan cinsiyet, yedi risk
 faktörü, kalp hızı, sistolik basınç, eGFR); troponin (gelişteki troponinin logaritması, ölçülmediyse
 gelişteki değerle bir saat sonraki troponinin logaritması, ölçülmediyse 0 ile bir saatteki değişim
@@ -508,18 +510,18 @@ olmamalı.
 ### Adım 2: İki hastanede kalibrasyon
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: MACE için bir risk modelinin olasılıklarına, öğrendiği hastanenin test hastalarında ve
 ikinci bir hastanede, o hastanenin ilk hastalarıyla yapılan bir güncellemeden önce ve sonra
 güvenilip güvenilemeyeceğini öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin iki hastanesinden, yani sentetik
-bir veri setinden göğüs ağrısıyla yapılmış başvurular bulunur: A hastanesinin 800 doğrulama ve 800
-test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur: "küme" "doğrulama",
-"test" ya da "B hastanesi" değerini, "sıra" B'deki bir başvurunun zamandaki yerini (1-1.000; A için
-0), "HEART" HEART skorunu (0-10), "olasılık" A hastanesinin beş modaliteyi birleştiren bir modelinin
-30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir; "MACE" böyle bir olay
-görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin iki hastanesinden,
+yani sentetik bir veri setinden göğüs ağrısıyla yapılmış başvurular bulunur: A hastanesinin 800
+doğrulama ve 800 test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur: "küme"
+"doğrulama", "test" ya da "B hastanesi" değerini, "sıra" B'deki bir başvurunun zamandaki yerini
+(1-1.000; A için 0), "HEART" HEART skorunu (0-10), "olasılık" A hastanesinin beş modaliteyi
+birleştiren bir modelinin 30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir;
+"MACE" böyle bir olay görüldüyse 1, aksi hâlde 0 olur.
 Görev: A'nın test başvuruları için ortalama tahmin edilen riski MACE oranının yanında hesapla.
 Kalibrasyon sabitini (eğim 1'e sabitlenmişken ortalama tahmin edilen riski gözlenen orana eşitleyen
 logit kayması), kalibrasyon eğimini (MACE'in olasılığın logiti üzerine düzenlileştirmesiz bir
@@ -538,18 +540,18 @@ Test: Kaymayı bulmak için B'nin yalnızca sırası 1-300 olan başvuruları ku
 ### Adım 3: İki taburculuk eşiği
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Göğüs ağrılı hastaları bir modelin riskine göre taburcu etmek için bir eşik seçmek ve bu
 eşiğin, seçildiği hastanede ve başka bir hastanede, HEART 0-3'ün yanında kaç olay kaçıracağını
 öğrenmek istiyorum.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin iki hastanesinden, yani sentetik
-bir veri setinden göğüs ağrısıyla yapılmış başvurular bulunur: A hastanesinin 800 doğrulama ve 800
-test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur: "küme" "doğrulama",
-"test" ya da "B hastanesi" değerini, "sıra" B'deki bir başvurunun zamandaki yerini (1-1.000; A için
-0), "HEART" HEART skorunu (0-10), "olasılık" A hastanesinin beş modaliteyi birleştiren bir modelinin
-30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir; "MACE" böyle bir olay
-görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin iki hastanesinden,
+yani sentetik bir veri setinden göğüs ağrısıyla yapılmış başvurular bulunur: A hastanesinin 800
+doğrulama ve 800 test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur: "küme"
+"doğrulama", "test" ya da "B hastanesi" değerini, "sıra" B'deki bir başvurunun zamandaki yerini
+(1-1.000; A için 0), "HEART" HEART skorunu (0-10), "olasılık" A hastanesinin beş modaliteyi
+birleştiren bir modelinin 30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir;
+"MACE" böyle bir olay görüldüyse 1, aksi hâlde 0 olur.
 Görev: Yalnızca A'nın doğrulama başvurularında iki eşik seç. Birincisi: HEART skoru 0-3 olan
 doğrulama başvurularını say (k) ve en düşük k. olasılığı al. İkincisi: MACE görülen doğrulama
 başvurularının en fazla yüzde 2'sinin eşikte ya da altında kaldığı en büyük olasılık. Her eşik ve
@@ -566,18 +568,18 @@ Test: İki eşik de yalnızca A'nın doğrulama başvurularından gelmeli.
 ### Adım 4: Kalp ekibi için bir karar eğrisi
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir MACE risk modelinin hangi karar için yardımcı olduğunu bir kalp ekibine göstermek
 istiyorum; bunun için modelin net yararını bir dizi yatırma eşiğinde HEART skorununkiyle
 karşılaştıracağım.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin iki hastanesinden, yani sentetik
-bir veri setinden göğüs ağrısıyla yapılmış başvurular bulunur: A hastanesinin 800 doğrulama ve 800
-test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur: "küme" "doğrulama",
-"test" ya da "B hastanesi" değerini, "sıra" B'deki bir başvurunun zamandaki yerini (1-1.000; A için
-0), "HEART" HEART skorunu (0-10), "olasılık" A hastanesinin beş modaliteyi birleştiren bir modelinin
-30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir; "MACE" böyle bir olay
-görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin iki hastanesinden,
+yani sentetik bir veri setinden göğüs ağrısıyla yapılmış başvurular bulunur: A hastanesinin 800
+doğrulama ve 800 test başvurusu ile B hastanesinin 1.000 başvurusu. Her satır bir başvurudur: "küme"
+"doğrulama", "test" ya da "B hastanesi" değerini, "sıra" B'deki bir başvurunun zamandaki yerini
+(1-1.000; A için 0), "HEART" HEART skorunu (0-10), "olasılık" A hastanesinin beş modaliteyi
+birleştiren bir modelinin 30 gün içinde majör olumsuz kardiyak olay için verdiği olasılığı verir;
+"MACE" böyle bir olay görüldüyse 1, aksi hâlde 0 olur.
 Görev: A'nın test başvurularını kullan. 0,01'den 0,30'a 0,01'lik adımlarla her t eşik olasılığı için
 olasılığı en az t olan her başvuruyu yatırmanın, HEART skoru 4 ya da üstü olan her başvuruyu
 yatırmanın ve herkesi yatırmanın net yararını hesapla: Doğru pozitiflerin başvuru sayısına
