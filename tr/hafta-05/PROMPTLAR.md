@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [5. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-05/PROMPTS.md)
 
-Bu kütüphanede, 5. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 5. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına](#durak-1-mini-proje-ritim-bir-kuraldan-physionet-2020-challengeın-dokuz-sınıfına)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,14 +39,14 @@ Bu durak oturumun mini projesidir. PTB-XL'in 12 derivasyonlu EKG'leri önce bir 
 **Amaç.** Bu adımda AF için klinik kuralın ilk yarısı, yani düzensiz biçimde düzensiz RR aralıkları, test katında sınanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: RR aralıklarına dayanan basit bir kuralın 10 saniyelik 12 derivasyonlu EKG'lerde atriyal
 fibrilasyonu (AF) ne kadar iyi bulduğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; klinik ortamda alınmış 10 saniyelik 12 derivasyonlu
-EKG'lerden oluşan herkese açık PTB-XL veri setinin test katındaki 2.198 kaydı tutar. Her satır bir
-kayıttır: "kayıt" sütunu kaydın numarasını verir, "RR" sütunu kaydın 12 derivasyonun hepsinden
-bulunan R tepelerine göre hesaplanmış RR aralıklarını saniye olarak tutar, "AF" sütunu ise
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; klinik ortamda alınmış 10 saniyelik 12
+derivasyonlu EKG'lerden oluşan herkese açık PTB-XL veri setinin test katındaki 2.198 kaydı tutar.
+Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını verir, "RR" sütunu kaydın 12 derivasyonun
+hepsinden bulunan R tepelerine göre hesaplanmış RR aralıklarını saniye olarak tutar, "AF" sütunu ise
 kardiyologlar atriyal fibrilasyon tanımladıysa 1, tanımlamadıysa 0'dır.
 Görev: En az üç RR aralığı olan her kayıt için değişim katsayısını hesapla: Aralıkların standart
 sapması (paydada aralık sayısının bir eksiği kullanılır) ortalamalarına bölünür. Değişim katsayısı
@@ -67,17 +67,17 @@ kayıtların sayısına bölümüne eşit olmalı.
 **Amaç.** Bu adımda 12 derivasyonun sinyalinin tamamını okuyan ve aynı anda altı etiket veren bir ağ eğitilir. Eğitim yaklaşık bir dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 10 saniyelik 12 derivasyonlu EKG'leri okuyan ve altı ritim bulgusunu aynı anda tanıyan bir
 ağ eğitmek ve bu ağın bulguları yeni kayıtlarda ne kadar iyi ayırdığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; klinik ortamda alınmış 10 saniyelik 12 derivasyonlu
-EKG'lerden oluşan herkese açık PTB-XL veri setinden 6.539 kayıt tutar. Her satır bir kayıttır:
-"küme" sütunu kaydın kümesini verir ("eğitim": 1. ve 2. katlar, 4.356 kayıt; "doğrulama": 9. kat,
-2.183 kayıt). "EKG" sütununun her hücresi kaydı, 100 Hz'de alınmış 12 derivasyon × 1.000 örnekten
-oluşan ve mV cinsinden değerler içeren bir dizi olarak tutar; derivasyonların sırası D1, D2, D3,
-aVR, aVL, aVF ve V1-V6'dır. "SR", "AFIB", "STACH", "SBRAD", "SARRH" ve "PVC" adlı altı sütun,
-kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu ifadeler sırasıyla sinüs ritmi,
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; klinik ortamda alınmış 10 saniyelik 12
+derivasyonlu EKG'lerden oluşan herkese açık PTB-XL veri setinden 6.539 kayıt tutar. Her satır bir
+kayıttır: "küme" sütunu kaydın kümesini verir ("eğitim": 1. ve 2. katlar, 4.356 kayıt; "doğrulama":
+9. kat, 2.183 kayıt). "EKG" sütununun her hücresi kaydı, 100 Hz'de alınmış 12 derivasyon × 1.000
+örnekten oluşan ve mV cinsinden değerler içeren bir dizi olarak tutar; derivasyonların sırası D1,
+D2, D3, aVR, aVL, aVF ve V1-V6'dır. "SR", "AFIB", "STACH", "SBRAD", "SARRH" ve "PVC" adlı altı
+sütun, kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu ifadeler sırasıyla sinüs ritmi,
 atriyal fibrilasyon, sinüs taşikardisi, sinüs bradikardisi, sinüs aritmisi ve ventriküler erken
 vurulardır.
 Görev: Altı etiketin her birine bir skor veren tek boyutlu bir evrişimli ağ kur. Ağda zaman boyunca
@@ -106,16 +106,16 @@ Test: Ağın 59.622 parametresi olmalı ve ortalama AUC 0,5 ile 1 arasında olma
 **Amaç.** Bu adımda dersin ağı, hiç görmediği kayıtlarda etiket etiket değerlendirilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Altı ritim bulgusunun her biri için bir ağın, bulguyu taşıyan 12 derivasyonlu EKG'leri
 taşımayanlardan ne kadar iyi ayırdığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar. Her satır
-bir kayıttır: "kayıt" sütunu kaydın numarasını verir. "SR", "AFIB", "STACH", "SBRAD", "SARRH" ve
-"PVC" adlı altı sütun, kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu ifadeler
-sırasıyla sinüs ritmi, atriyal fibrilasyon, sinüs taşikardisi, sinüs bradikardisi, sinüs aritmisi ve
-ventriküler erken vurulardır. "olasılık SR" ile "olasılık PVC" arasındaki altı sütun, 1. ve 2.
-katlarla eğitilmiş tek boyutlu evrişimli bir ağın altı etikete verdiği olasılıkları tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar.
+Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını verir. "SR", "AFIB", "STACH", "SBRAD",
+"SARRH" ve "PVC" adlı altı sütun, kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu
+ifadeler sırasıyla sinüs ritmi, atriyal fibrilasyon, sinüs taşikardisi, sinüs bradikardisi, sinüs
+aritmisi ve ventriküler erken vurulardır. "olasılık SR" ile "olasılık PVC" arasındaki altı sütun, 1.
+ve 2. katlarla eğitilmiş tek boyutlu evrişimli bir ağın altı etikete verdiği olasılıkları tutar.
 Görev: Altı etiketin her biri için, o etiketin olasılığının 0 ve 1 değerlerinden oluşan kendi
 sütununa karşı ROC eğrisi altındaki alanını (AUC) hesapla. Altı ROC eğrisini tek bir şekilde çiz ve
 her birinin AUC değerini açıklamaya yaz.
@@ -134,14 +134,14 @@ toplamı en az 2.198 olmalı.
 **Amaç.** Bu adımda olasılıklar, her etiket için 9. katta seçilip 10. katta değerlendirilen bir eşikle kararlara dönüştürülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir ağın altı ritim bulgusu için verdiği olasılıkları, her bulgu için testten ayrı tutulan
 kayıtlarda seçilmiş bir eşikle kararlara dönüştürmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı tutar. Her
-satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" sütunu ise kümesini verir ("doğrulama":
-9. kat; "test": 10. kat). "SR", "AFIB", "STACH", "SBRAD", "SARRH" ve "PVC" adlı altı sütun,
-kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu ifadeler sırasıyla sinüs ritmi,
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı
+tutar. Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" sütunu ise kümesini verir
+("doğrulama": 9. kat; "test": 10. kat). "SR", "AFIB", "STACH", "SBRAD", "SARRH" ve "PVC" adlı altı
+sütun, kardiyologlar ilgili ifadeyi verdiyse 1, vermediyse 0'dır. Bu ifadeler sırasıyla sinüs ritmi,
 atriyal fibrilasyon, sinüs taşikardisi, sinüs bradikardisi, sinüs aritmisi ve ventriküler erken
 vurulardır. "olasılık SR" ile "olasılık PVC" arasındaki altı sütun, 1. ve 2. katlarla eğitilmiş tek
 boyutlu evrişimli bir ağın altı etikete verdiği olasılıkları tutar.
@@ -164,18 +164,19 @@ olmalı.
 **Amaç.** Bu adımda PhysioNet 2020 Challenge'ın veri tabanlarından biri olan CPSC 2018'in dokuz sınıfı için eğitilmiş bir ağ, sınıf sınıf değerlendirilir. Eğitim yaklaşık bir dakika sürer.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir ağın normal EKG'den ST yükselmesine kadar dokuz 12 derivasyonlu EKG bulgusunu aynı anda
 ne kadar iyi tanıdığını ve hangi bulguları kaçırdığını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar. Her satır
-bir kayıttır: "kayıt" sütunu kaydın numarasını verir. "Normal", "AF", "I-AVB", "LBBB", "RBBB",
-"PAC", "PVC", "STD" ve "STE" adlı dokuz sütun, kardiyologlar ilgili bulguyu verdiyse 1, vermediyse
-0'dır. Bu bulgular sırasıyla normal EKG, atriyal fibrilasyon, birinci derece atriyoventriküler blok,
-sol ve sağ dal bloğu, atriyal ve ventriküler erken vurular, ST çökmesi ve ST yükselmesidir; yani
-PhysioNet 2020 Challenge'ın veri tabanlarından biri olan China Physiological Signal Challenge
-2018'in dokuz sınıfıdır. "olasılık Normal" ile "olasılık STE" arasındaki dokuz sütun, 1. ve 2.
-katlarla eğitilmiş tek boyutlu evrişimli bir ağın dokuz sınıfa verdiği olasılıkları tutar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar.
+Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını verir. "Normal", "AF", "I-AVB", "LBBB",
+"RBBB", "PAC", "PVC", "STD" ve "STE" adlı dokuz sütun, kardiyologlar ilgili bulguyu verdiyse 1,
+vermediyse 0'dır. Bu bulgular sırasıyla normal EKG, atriyal fibrilasyon, birinci derece
+atriyoventriküler blok, sol ve sağ dal bloğu, atriyal ve ventriküler erken vurular, ST çökmesi ve ST
+yükselmesidir; yani PhysioNet 2020 Challenge'ın veri tabanlarından biri olan China Physiological
+Signal Challenge 2018'in dokuz sınıfıdır. "olasılık Normal" ile "olasılık STE" arasındaki dokuz
+sütun, 1. ve 2. katlarla eğitilmiş tek boyutlu evrişimli bir ağın dokuz sınıfa verdiği olasılıkları
+tutar.
 Görev: Dokuz sınıfın her biri için o sınıfı taşıyan kayıtları say ve sınıfın olasılığının 0 ve 1
 değerlerinden oluşan kendi sütununa karşı ROC eğrisi altındaki alanını (AUC) hesapla. Dokuz AUC
 değerini en düşükten en yükseğe sıralanmış yatay bir çubuk grafikle çiz ve 0,5 düzeyine kesikli bir
@@ -200,15 +201,15 @@ Haftanın vakası olan 13913 numaralı kayıt, burada bir STEMI alarmının okud
 **Amaç.** Bu adımda vakanın tek tek atımlarından, bir EKG cihazının yazılımının ölçümden önce yaptığı gibi, her derivasyon için temiz bir atım oluşturulur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: ST segmenti ölçülmeden önce 10 saniyelik 12 derivasyonlu bir EKG'nin medyan atımını, yani
 her derivasyon için temiz bir atımı oluşturmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 13913 numaralı kaydını, yani 68 yaşında bir
-erkeğin 100 Hz'de alınmış 10 saniyelik 12 derivasyonlu EKG'sini tutar. Her satır, bir öncekinden 10
-ms sonra alınmış bir örnektir: "zaman" sütunu örneğin zamanını saniye olarak verir, "I" ile "V6"
-arasındaki on iki sütun on iki derivasyonun değerlerini mV olarak tutar; "R tepesi" sütunu ise R
-tepelerinin bulunduğu örneklerde 1, diğer örneklerde 0'dır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 13913 numaralı kaydını, yani 68
+yaşında bir erkeğin 100 Hz'de alınmış 10 saniyelik 12 derivasyonlu EKG'sini tutar. Her satır, bir
+öncekinden 10 ms sonra alınmış bir örnektir: "zaman" sütunu örneğin zamanını saniye olarak verir,
+"I" ile "V6" arasındaki on iki sütun on iki derivasyonun değerlerini mV olarak tutar; "R tepesi"
+sütunu ise R tepelerinin bulunduğu örneklerde 1, diğer örneklerde 0'dır.
 Görev: Her atımı R tepesinden 0,30 s önceden 0,55 s sonraya kadar kes ve yalnızca penceresi tamamen
 10 saniyenin içinde kalan atımları tut. Her derivasyon için bu atımların örnek örnek medyanını al:
 Medyan atım budur. V2'nin medyan atımını, V2'nin tek tek atımlarının üzerine çiz; tek tek atımlar
@@ -227,18 +228,18 @@ atımların aralığında kalmalı.
 **Amaç.** Bu adımda vakanın on iki derivasyonundaki ST sapması ölçülür ve otomatik bir STEMI alarmının yaptığı gibi evrensel tanımın ölçütleri uygulanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir medyan atımın on iki derivasyonunda J noktasındaki ST sapmasını ölçmek ve EKG'nin
 miyokard enfarktüsünün dördüncü evrensel tanımındaki ST ölçütlerini karşılayıp karşılamadığını
 görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 13913 numaralı kaydının, yani 68 yaşında bir
-erkeğin EKG'sinin 12 derivasyonuna ait medyan atımı tutar. Medyan atım, R tepelerine göre hizalanmış
-tek tek atımların örnek örnek medyanıdır. Her satır, bir öncekinden 10 ms sonra gelen bir örnektir:
-"zaman" sütunu örneğin R tepesine göre zamanını −300 ile 550 ms arasında ms olarak verir, "I" ile
-"V6" arasındaki on iki sütun ise on iki derivasyonun değerlerini mV olarak tutar. Bu medyan atımda
-QRS kompleksi, on iki derivasyonun eğimlerinin gösterdiği gibi, R tepesinden 70 ms önce başlar ve R
-tepesinden 50 ms sonra J noktasında biter.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 13913 numaralı kaydının, yani 68
+yaşında bir erkeğin EKG'sinin 12 derivasyonuna ait medyan atımı tutar. Medyan atım, R tepelerine
+göre hizalanmış tek tek atımların örnek örnek medyanıdır. Her satır, bir öncekinden 10 ms sonra
+gelen bir örnektir: "zaman" sütunu örneğin R tepesine göre zamanını −300 ile 550 ms arasında ms
+olarak verir, "I" ile "V6" arasındaki on iki sütun ise on iki derivasyonun değerlerini mV olarak
+tutar. Bu medyan atımda QRS kompleksi, on iki derivasyonun eğimlerinin gösterdiği gibi, R tepesinden
+70 ms önce başlar ve R tepesinden 50 ms sonra J noktasında biter.
 Görev: Her derivasyon için referans düzeyi olarak R tepesinden 130, 120, 110 ve 100 ms önceki
 değerlerin ortalamasını al; bunlar PR segmentinin, QRS başlangıcından 20 ms önce biten 40 ms'sidir.
 Bir derivasyonun ST sapması, R tepesinden 50 ms sonraki J noktasındaki değerinden referans düzeyinin
@@ -265,16 +266,16 @@ raporu D3'te ST çökmesi tanımlamaktadır.
 **Amaç.** Bu adımda aynı alarm test katındaki bütün kayıtlarda denenir ve ölçütlerin uygulanamadığı sol dal bloğunda ne yaptığı görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Miyokard enfarktüsünün dördüncü evrensel tanımındaki ST ölçütlerine dayanan otomatik bir
 STEMI alarmını bir test kümesinin bütün EKG'lerine uygulamak ve alarmın tam sol dal bloğunda ne
 sıklıkla çaldığını görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar. Her satır
-bir kayıttır: "kayıt" sütunu kaydın numarasını, "cinsiyet" hastanın cinsiyetini ("E" ya da "K"),
-"yaş" ise yaşını verir; "LBBB" sütunu kardiyologlar tam sol dal bloğu tanımladıysa 1, tanımlamadıysa
-0'dır. "I" ile "V6" arasındaki on iki sütun, on iki derivasyonun ST sapmasını mV olarak tutar:
-Kaydın medyan atımında J noktasındaki değerden PR segmentinin düzeyi çıkarılmıştır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in test katındaki 2.198 kaydı tutar.
+Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "cinsiyet" hastanın cinsiyetini ("E" ya da
+"K"), "yaş" ise yaşını verir; "LBBB" sütunu kardiyologlar tam sol dal bloğu tanımladıysa 1,
+tanımlamadıysa 0'dır. "I" ile "V6" arasındaki on iki sütun, on iki derivasyonun ST sapmasını mV
+olarak tutar: Kaydın medyan atımında J noktasındaki değerden PR segmentinin düzeyi çıkarılmıştır.
 Görev: Bir derivasyon, J noktasındaki ST yükselmesi kendi eşiğine ulaştığında miyokard enfarktüsünün
 dördüncü evrensel tanımındaki ölçütü karşılar. Eşikler V2 ve V3 için 40 yaş ve üstündeki erkeklerde
 0,2 mV, 40 yaşın altındaki erkeklerde 0,25 mV, kadınlarda 0,15 mV; diğer bütün derivasyonlarda ise
@@ -305,12 +306,12 @@ Sanal kliniğin bir Holter cihazı VC-0128 numaralı hastayı 24 saat izlemişti
 **Amaç.** Bu adımda 24 saat, bir monitörün yaptığı gibi pencere pencere okunur ve RR aralıkları düzensiz olan pencereler sayılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 24 saatlik bir Holter kaydını 30 saniyelik pencereler hâlinde okumak ve kaç pencerede RR
 aralıklarının bir atriyal fibrilasyon (AF) alarmı verecek kadar düzensiz olduğunu görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sanal kliniğin VC-0128 numaralı hastasına, çarpıntı
-yakınması olan 76 yaşındaki bir kadına ait 24 saatlik bir Holter kaydının atımlarını, kayıt
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sanal kliniğin VC-0128 numaralı hastasına,
+çarpıntı yakınması olan 76 yaşındaki bir kadına ait 24 saatlik bir Holter kaydının atımlarını, kayıt
 cihazının atım algılayıcısının bulduğu biçimiyle tutar. Kayıt saat 08.00'de başlar. Her satır bir
 atımdır: "zaman" sütunu atımın kaydın başından itibaren saniye cinsinden zamanını, "RR" ise önceki
 atımdan bu yana geçen aralığı saniye olarak verir.
@@ -333,13 +334,13 @@ Test: 30 saniyelik 2.880 pencere bulunmalı ve bütün değişim katsayıları p
 **Amaç.** Bu adımda pencereler, bir Holter raporunun verdiği sayıya, yani günün AF içinde geçen bölümünün oranına dönüştürülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 24 saatlik bir Holter kaydının AF yükünü, yani kaydın atriyal fibrilasyon içinde geçen
 bölümünün oranını, 30 saniyelik pencereleri okuyan bir algoritmanın bildireceği biçimde öğrenmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sanal kliniğin VC-0128 numaralı hastasına, çarpıntı
-yakınması olan 76 yaşındaki bir kadına ait 24 saatlik bir Holter kaydının atımlarını, kayıt
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sanal kliniğin VC-0128 numaralı hastasına,
+çarpıntı yakınması olan 76 yaşındaki bir kadına ait 24 saatlik bir Holter kaydının atımlarını, kayıt
 cihazının atım algılayıcısının bulduğu biçimiyle tutar. Kayıt saat 08.00'de başlar. Her satır bir
 atımdır: "zaman" sütunu atımın kaydın başından itibaren saniye cinsinden zamanını, "RR" ise önceki
 atımdan bu yana geçen aralığı saniye olarak verir.
@@ -364,12 +365,12 @@ olmalı.
 **Amaç.** Bu adımda alarm doğrulanmış ataklarla karşılaştırılır ve bir Holter okuyucusunun yapacağı gibi yanlış alarmların saatleri bulunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 24 saatlik bir Holter kaydının AF alarmını bir kardiyoloğun doğruladığı ataklarla
 karşılaştırmak ve yanlış alarmların günün hangi saatlerinde çıktığını görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; sanal kliniğin VC-0128 numaralı hastasına, çarpıntı
-yakınması olan 76 yaşındaki bir kadına ait 24 saatlik bir Holter kaydının atımlarını, kayıt
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; sanal kliniğin VC-0128 numaralı hastasına,
+çarpıntı yakınması olan 76 yaşındaki bir kadına ait 24 saatlik bir Holter kaydının atımlarını, kayıt
 cihazının atım algılayıcısının bulduğu biçimiyle tutar. Kayıt saat 08.00'de başlar. Her satır bir
 atımdır: "zaman" sütunu atımın kaydın başından itibaren saniye cinsinden zamanını, "RR" ise önceki
 atımdan bu yana geçen aralığı saniye olarak verir. "AF" sütunu, bir kardiyoloğun kaydın tamamında
@@ -408,7 +409,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -440,20 +441,20 @@ Başka hiçbir şeyi değiştirme.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Alarm ve akut enfarktüsler
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Miyokard enfarktüsünün dördüncü evrensel tanımındaki ST ölçütlerine dayanan otomatik bir
 STEMI alarmını bir göğüs ağrısı biriminin yapacağı gibi değerlendirmek istiyorum: Alarm kaç akut
 enfarktüsü bulur ve alarmlarının kaçı doğrudur?
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı tutar. Her
-satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da "test"),
-"cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs" sütunu,
-kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı
+tutar. Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da
+"test"), "cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs"
+sütunu, kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
 sınıflamadıysa 0'dır. "ifadeler" sütunu kardiyologların bütün ifadelerinin kodlarını virgülle
 ayrılmış olarak listeler; örneğin tam sol dal bloğu için "CLBBB", sol ventrikül hipertrofisi için
 "LVH", kalp pili için "PACE". "I" ile "V6" arasındaki on iki sütun, on iki derivasyonun ST sapmasını
@@ -478,14 +479,14 @@ Test: 4.381 kayıt ve 26 akut enfarktüs bulunmalı; doğru alarmlar 26'dan fazl
 ### Adım 2: Yanlış alarmlar nereden geliyor?
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik bir STEMI alarmının yanlış alarmlarının hangi tanıları taşıdığını öğrenmek ve
 böylece ölçütlerinin nerede uymadığını görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı tutar. Her
-satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da "test"),
-"cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs" sütunu,
-kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı
+tutar. Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da
+"test"), "cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs"
+sütunu, kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
 sınıflamadıysa 0'dır. "ifadeler" sütunu kardiyologların bütün ifadelerinin kodlarını virgülle
 ayrılmış olarak listeler; örneğin tam sol dal bloğu için "CLBBB", sol ventrikül hipertrofisi için
 "LVH", kalp pili için "PACE". "I" ile "V6" arasındaki on iki sütun, on iki derivasyonun ST sapmasını
@@ -511,14 +512,14 @@ toplamı da 1. adımdaki alarmlardan doğru alarmların çıkarılmasıyla bulun
 ### Adım 3: Eşiklerin taranması
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik bir STEMI alarmının bütün eşikleri birlikte yükseltildiğinde duyarlılığının ve
 pozitif öngörü değerinin nasıl değiştiğini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı tutar. Her
-satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da "test"),
-"cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs" sütunu,
-kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı
+tutar. Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da
+"test"), "cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs"
+sütunu, kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
 sınıflamadıysa 0'dır. "ifadeler" sütunu kardiyologların bütün ifadelerinin kodlarını virgülle
 ayrılmış olarak listeler; örneğin tam sol dal bloğu için "CLBBB", sol ventrikül hipertrofisi için
 "LVH", kalp pili için "PACE". "I" ile "V6" arasındaki on iki sütun, on iki derivasyonun ST sapmasını
@@ -543,14 +544,14 @@ Test: Pay büyüdükçe alarm sayısı artamaz; payın 0 olduğu satır 1. adım
 ### Adım 4: Ölçütlerin uygulanamadığı kayıtları dışarıda bırakmak
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik bir STEMI alarmını yalnızca evrensel tanımın ST ölçütlerinin uygulanabildiği
 EKG'lerde değerlendirmek; sol dal bloğunu ve kalp pili ritmini dışarıda bırakmak istiyorum.
-Veri: Defterde "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı tutar. Her
-satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da "test"),
-"cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs" sütunu,
-kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var; PTB-XL'in 9. ve 10. katlarındaki 4.381 kaydı
+tutar. Her satır bir kayıttır: "kayıt" sütunu kaydın numarasını, "küme" kümesini ("doğrulama" ya da
+"test"), "cinsiyet" hastanın cinsiyetini ("E" ya da "K"), "yaş" ise yaşını verir. "akut enfarktüs"
+sütunu, kardiyologlar kayıttaki bir enfarktüsü akut (I. ya da I-II. evre) olarak sınıfladıysa 1,
 sınıflamadıysa 0'dır. "ifadeler" sütunu kardiyologların bütün ifadelerinin kodlarını virgülle
 ayrılmış olarak listeler; örneğin tam sol dal bloğu için "CLBBB", sol ventrikül hipertrofisi için
 "LVH", kalp pili için "PACE". "I" ile "V6" arasındaki on iki sütun, on iki derivasyonun ST sapmasını
