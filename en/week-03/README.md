@@ -15,7 +15,7 @@ Turkish Society of Cardiology
 
 ## About the week
 
-The first two hours build a network from its smallest part: the neuron, the layer and the activation function with a medical analogy, the loss, the gradients and the training loop, a first model with the Keras Sequential API, images as arrays, the convolution operation that finds edges and patterns, and pooling, dropout and batch normalisation. A convolutional neural network (CNN) then tells normal hearts, dilated cardiomyopathy and hypertrophic cardiomyopathy apart on the cine cardiac magnetic resonance examinations of the public ACDC data set. The last two hours place the network among the VGG16 and ResNet50 architectures, augment cardiac images, read the result with the confusion matrix and the F1 score, and detect and prevent overfitting. A training loop written by an AI assistant is reviewed, and the mini project classifies the echocardiography videos of EchoNet-Dynamic, which each participant obtains through a personal registration, as normal or abnormal.
+The first two hours build a network from its smallest part: the neuron, the layer and the activation function with a medical analogy, the loss, the gradients and the training loop, a first model with the Keras Sequential API, images as arrays, the convolution operation that finds edges and patterns, and pooling, dropout and batch normalisation. A convolutional neural network (CNN) then tells normal hearts, dilated cardiomyopathy and hypertrophic cardiomyopathy apart on the cine cardiac magnetic resonance examinations of the public ACDC data set. The last two hours place the network among the VGG16 and ResNet50 architectures, augment cardiac images, read the result with the confusion matrix and the F1 score, and detect and prevent overfitting. A training loop written by an artificial intelligence (AI) assistant is reviewed, and the mini project classifies the echocardiography videos of EchoNet-Dynamic, which each participant obtains through a personal registration, as normal or abnormal.
 
 4 hours in the session and about 3 hours for the weekly project.
 
@@ -35,7 +35,7 @@ The first two hours build a network from its smallest part: the neuron, the laye
 
 ## Study path
 
-The lecture page is read from top to bottom, and it opens the parts of the interactive lab where they belong. At each practice stop, the work continues in the Jupyter notebook on one of two paths. On the **prompt path** (Part 1 of the notebook), an artificial intelligence (AI) assistant writes the code from ready prompts, and the participant runs it and checks the result. On the **Python path** (Part 2), participants write the code themselves. Both paths reach the same results. Participants who attend the session complete the steps there. The times help those who follow the week on their own, for example after a missed session.
+The lecture page is read from top to bottom, and it opens the parts of the interactive lab where they belong. At each practice stop, the work continues in the Jupyter notebook on one of two paths. On the **prompt path** (Part 1 of the notebook), an AI assistant writes the code from ready prompts, and the participant runs it and checks the result. On the **Python path** (Part 2), participants write the code themselves. Both paths reach the same results. Participants who attend the session complete the steps there. The times help those who follow the week on their own, for example after a missed session.
 
 | Step | What to do | Prompt path (Part 1) | Python path (Part 2) |
 |---|---|---|---|

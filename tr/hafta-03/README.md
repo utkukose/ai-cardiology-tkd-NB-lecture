@@ -13,7 +13,7 @@ Türk Kardiyoloji Derneği
 
 ## Hafta hakkında
 
-İlk iki saat bir ağı en küçük parçasından başlayarak kurar: Nöron, katman ve aktivasyon fonksiyonu tıbbi bir analojiyle anlatılır; ardından kayıp, gradyanlar ve eğitim döngüsü, Keras Sequential API ile ilk model, dizi olarak görüntüler, kenarları ve desenleri bulan konvolüsyon işlemi ve pooling, dropout ve batch normalizasyonu ele alınır. Sonra herkese açık ACDC veri setinin sine kardiyak manyetik rezonans incelemelerinde normal kalbi, dilate kardiyomiyopatiyi ve hipertrofik kardiyomiyopatiyi birbirinden ayıran bir evrişimli sinir ağı (CNN) eğitilir. Son iki saatte ağ VGG16 ve ResNet50 mimarileri arasına yerleştirilir, kardiyak görüntülerde veri çoğaltma yapılır, sonuç karışıklık matrisi ve F1 skoruyla okunur ve aşırı öğrenme tespit edilip önlenir. Bir YZ asistanının yazdığı eğitim döngüsü denetlenir; mini proje ise her katılımcının kişisel kayıtla edindiği EchoNet-Dynamic ekokardiyografi videolarını normal ya da anormal olarak sınıflar.
+İlk iki saat bir ağı en küçük parçasından başlayarak kurar: Nöron, katman ve aktivasyon fonksiyonu tıbbi bir analojiyle anlatılır; ardından kayıp, gradyanlar ve eğitim döngüsü, Keras Sequential API ile ilk model, dizi olarak görüntüler, kenarları ve desenleri bulan konvolüsyon işlemi ve pooling, dropout ve batch normalizasyonu ele alınır. Sonra herkese açık ACDC veri setinin sine kardiyak manyetik rezonans incelemelerinde normal kalbi, dilate kardiyomiyopatiyi ve hipertrofik kardiyomiyopatiyi birbirinden ayıran bir evrişimli sinir ağı (CNN) eğitilir. Son iki saatte ağ VGG16 ve ResNet50 mimarileri arasına yerleştirilir, kardiyak görüntülerde veri çoğaltma yapılır, sonuç karışıklık matrisi ve F1 skoruyla okunur ve aşırı öğrenme tespit edilip önlenir. Bir yapay zekâ (YZ) asistanının yazdığı eğitim döngüsü denetlenir; mini proje ise her katılımcının kişisel kayıtla edindiği EchoNet-Dynamic ekokardiyografi videolarını normal ya da anormal olarak sınıflar.
 
 Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
@@ -33,7 +33,7 @@ Oturum 4 saat sürer. Haftalık proje için yaklaşık 3 saat ayrılmalıdır.
 
 ## Çalışma yolu
 
-Ders sayfası yukarıdan aşağıya okunur ve etkileşimli labın bölümlerini yeri geldikçe açar. Her uygulama durağında çalışma Jupyter defterinde, iki yoldan biriyle sürer. **Prompt yolunda** (defterin 1. kısmı) kodu hazır promptlarla bir yapay zekâ (YZ) asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. **Python yolunda** (2. kısım) kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Oturuma katılanlar adımları oturumda tamamlar. Süreler, haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar içindir.
+Ders sayfası yukarıdan aşağıya okunur ve etkileşimli labın bölümlerini yeri geldikçe açar. Her uygulama durağında çalışma Jupyter defterinde, iki yoldan biriyle sürer. **Prompt yolunda** (defterin 1. kısmı) kodu hazır promptlarla bir YZ asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. **Python yolunda** (2. kısım) kodu katılımcı kendisi yazar. İki yol da aynı sonuçlara varır. Oturuma katılanlar adımları oturumda tamamlar. Süreler, haftayı kendi başına izleyenler, örneğin bir oturumu kaçıranlar içindir.
 
 | Adım | Ne yapılır? | Prompt yolu (Kısım 1) | Python yolu (Kısım 2) |
 |---|---|---|---|
