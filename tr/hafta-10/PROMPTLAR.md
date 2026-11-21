@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [10. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-10/PROMPTS.md)
 
-Bu kütüphanede, 10. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 10. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Prototipin AF modeli](#durak-1-prototipin-af-modeli)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,19 +39,19 @@ Bu durak oturumun mini projesi olan AF tespit CDSS'ini, tahmin yapan modelle ba�
 **Amaç.** Bu adımda AFDB'nin her dakikası RR aralıklarından elde edilen dört sayıyla tarif edilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir telemetri servisinin kardiyoloğu, vuruların zamanlarından olası AF dakikalarını
 işaretleyen bir karar destek prototipi istiyor. İlk adım, her dakikayı RR aralıklarının ne kadar
 düzensiz olduğunu ölçen sayılarla tarif etmektir.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'ndaki
-(AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25 Holter
-kaydından elde edilen bir dakikalık pencereler bulunur. Her satır bir dakikadır: "kayıt" kaydı,
-"küme" kaydın kümesini ("eğitim", 15 kayıt; "doğrulama", 5 kayıt; "test", 5 kayıt), "başlangıç (s)"
-ise dakikanın kaydın başından itibaren saniye cinsinden başlangıcını verir. Dakikanın yarısından
-fazlası uzmanların işaretlediği AF içindeyse "AF" 1, değilse 0 olur. "RR aralıkları (s)" sütununun
-her hücresi, dakikanın RR aralıklarını saniye cinsinden ve sırasıyla, 20 ya da daha fazla sayıdan
-oluşan bir liste olarak tutar.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'ndaki (AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25
+Holter kaydından elde edilen bir dakikalık pencereler bulunur. Her satır bir dakikadır: "kayıt"
+kaydı, "küme" kaydın kümesini ("eğitim", 15 kayıt; "doğrulama", 5 kayıt; "test", 5 kayıt),
+"başlangıç (s)" ise dakikanın kaydın başından itibaren saniye cinsinden başlangıcını verir.
+Dakikanın yarısından fazlası uzmanların işaretlediği AF içindeyse "AF" 1, değilse 0 olur. "RR
+aralıkları (s)" sütununun her hücresi, dakikanın RR aralıklarını saniye cinsinden ve sırasıyla, 20
+ya da daha fazla sayıdan oluşan bir liste olarak tutar.
 Görev: Her dakika için RR aralıklarından dört sayı hesapla: Kalp hızı, yani 60'ın ortalama aralığa
 bölümü; değişim katsayısı, yani aralıkların standart sapmasının (n − 1 ile) ortalamalarına bölümü;
 RMSSD'nin ortalama aralığa bölümü (RMSSD, ardışık aralıklar arasındaki farkların karelerinin
@@ -72,20 +72,20 @@ olmalı.
 **Amaç.** Bu adımda AF modelinin 1.0 sürümü eğitim kayıtlarında kurulur ve eşiği doğrulama kayıtlarında seçilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog prototipin olabildiğince az AF dakikası kaçırmasını istiyor: AF dakikalarının en
 az yüzde 95'i alarm vermeli. Yanlış alarmlar bunun bedelidir; test kayıtları da son değerlendirmeye
 kadar hiç kullanılmamalıdır.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'ndaki
-(AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25 Holter
-kaydından elde edilen bir dakikalık pencereler bulunur. Her satır bir dakikadır: "kayıt" kaydı,
-"küme" kaydın kümesini ("eğitim", 15 kayıt; "doğrulama", 5 kayıt; "test", 5 kayıt), "başlangıç (s)"
-ise dakikanın saniye cinsinden başlangıcını verir. Dakikanın yarısından fazlası uzmanların
-işaretlediği AF içindeyse "AF" 1, değilse 0 olur. Dört sayı dakikanın RR aralıklarını tarif eder:
-"kalp hızı" (dakikada), "CV" (aralıkların standart sapmasının ortalamalarına bölümü), "RMSSD/RR"
-(ardışık farkların karelerinin ortalamasının karekökünün ortalama aralığa bölümü) ve "pNN50" (50
-ms'den büyük ardışık farkların oranı).
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'ndaki (AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25
+Holter kaydından elde edilen bir dakikalık pencereler bulunur. Her satır bir dakikadır: "kayıt"
+kaydı, "küme" kaydın kümesini ("eğitim", 15 kayıt; "doğrulama", 5 kayıt; "test", 5 kayıt),
+"başlangıç (s)" ise dakikanın saniye cinsinden başlangıcını verir. Dakikanın yarısından fazlası
+uzmanların işaretlediği AF içindeyse "AF" 1, değilse 0 olur. Dört sayı dakikanın RR aralıklarını
+tarif eder: "kalp hızı" (dakikada), "CV" (aralıkların standart sapmasının ortalamalarına bölümü),
+"RMSSD/RR" (ardışık farkların karelerinin ortalamasının karekökünün ortalama aralığa bölümü) ve
+"pNN50" (50 ms'den büyük ardışık farkların oranı).
 Görev: Yalnızca eğitim dakikalarında AF için bir lojistik regresyon kur; en fazla 3.000 yineleme
 kullan. Girdileri kalp hızı, CV'nin doğal logaritması, RMSSD/RR'nin doğal logaritması ve pNN50'dir;
 her biri eğitim dakikalarının ortalaması ve standart sapmasıyla bir z-skoruna dönüştürülür. Her
@@ -108,17 +108,17 @@ kalan payı en az 0,95 olmalı.
 **Amaç.** Bu adımda test dakikalarının olasılıkları her test kaydı için alarm ataklarına ve bir AF yüküne dönüştürülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog tek tek dakikaları değil, art arda gelen alarm dakikalarını inceler ve her kaydın
 AF yükünü raporun vereceği biçimde görmek istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 5
-test kaydının, yani çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin Holter kayıtlarının
-bir dakikalık pencereleri bulunur. Her satır bir dakikadır: "kayıt" kaydı, "başlangıç (s)" ise
-dakikanın saniye cinsinden başlangıcını verir. Dakikanın yarısından fazlası uzmanların işaretlediği
-AF içindeyse "AF" 1 olur; "AF payı" dakikanın AF içinde geçen payıdır ve 0 ile 1 arasında değer
-alır; "olasılık" ise dersin bir modelinin dakikaya verdiği AF olasılığıdır. Model, olasılığı en az
-0,37 olan bir dakika için alarm verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'nın 5 test kaydının, yani çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin Holter
+kayıtlarının bir dakikalık pencereleri bulunur. Her satır bir dakikadır: "kayıt" kaydı, "başlangıç
+(s)" ise dakikanın saniye cinsinden başlangıcını verir. Dakikanın yarısından fazlası uzmanların
+işaretlediği AF içindeyse "AF" 1 olur; "AF payı" dakikanın AF içinde geçen payıdır ve 0 ile 1
+arasında değer alır; "olasılık" ise dersin bir modelinin dakikaya verdiği AF olasılığıdır. Model,
+olasılığı en az 0,37 olan bir dakika için alarm verir.
 Görev: Her kayıt içinde dakikaları başlangıçlarına göre sırala. Bir alarm atağı, alarm veren art
 arda dakikalardan oluşan bir dizidir; içinde AF olan hiçbir dakika bulunmayan atak ise bir yanlış
 alarm atağıdır. Her kayıt için işaretlemenin AF yükünü, yani dakikalarının ortalama AF payının 100
@@ -145,16 +145,16 @@ Bu durak oturumun mini projesini tamamlar ve bir alarmı ve bir hastayı izler. 
 **Amaç.** Bu adımda bir yanlış alarm dakikasında dört sayının her birinin AF'nin log-odds değerine kattığı değer hesaplanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Hekim 08219 kaydındaki bir yanlış alarmı açıyor ve EKG şeridine bakmadan önce dakikanın
 hangi sayılarının modeli alarm vermeye yönelttiğini soruyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tablo, MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın
-08219 kaydından, AF olmadığı hâlde dersin bir lojistik regresyonunun alarm verdiği bir dakikayı
-tarif eder. İlk dört satır dakikanın dört sayısıdır: "sayı" sayıyı adlandırır, "dakikadaki değer"
-değerini verir, "önce logaritma" modelin her şeyden önce değerin doğal logaritmasını alıp almadığını
-söyler ("evet" ya da "hayır"); "ortalama, eğitim" ve "standart sapma, eğitim" değerin ya da
-logaritmasının eğitim dakikalarındaki ortalaması ve standart sapmasıdır; "katsayı" ise sayının
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tablo, MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'nın 08219 kaydından, AF olmadığı hâlde dersin bir lojistik regresyonunun alarm verdiği bir
+dakikayı tarif eder. İlk dört satır dakikanın dört sayısıdır: "sayı" sayıyı adlandırır, "dakikadaki
+değer" değerini verir, "önce logaritma" modelin her şeyden önce değerin doğal logaritmasını alıp
+almadığını söyler ("evet" ya da "hayır"); "ortalama, eğitim" ve "standart sapma, eğitim" değerin ya
+da logaritmasının eğitim dakikalarındaki ortalaması ve standart sapmasıdır; "katsayı" ise sayının
 modeldeki katsayısıdır. Son satır olan "sabit terim", "katsayı" sütununda yalnızca modelin sabit
 terimini tutar.
 Görev: Dört sayının her biri için "önce logaritma" evet diyorsa değerin doğal logaritmasını al,
@@ -176,18 +176,18 @@ olmalı.
 **Amaç.** Bu adımda VC-0128'in sonucu, bir hastane bilgi sisteminin okuyabileceği bir HL7 FHIR R4 raporu olarak yazılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Prototipin 24 saatlik raporu, bir kardiyolog onaylayana ya da reddedene kadar ön rapor
 olarak hastanın kaydına ulaşmalı ve raporu hangi modelin yazdığını belirtmelidir.
-Veri: Defterde "veri" adlı ve tek satırlık bir tablo vardır. Satır, dersin bir karar destek
-prototipinin sanal kliniğin telemetri servisindeki bir hasta olan VC-0128 için verdiği sonuçtur;
-veriler sentetiktir. "hasta" hastanın kimliğini, "AF yükü (%)" incelenen dakikalardan atriyal
-fibrilasyon (AF) alarmı verenlerin payını, "alarm atakları" art arda gelen alarm dakikalarından
-oluşan dizilerin sayısını, "en uzun atak (dakika)" ise bunların en uzununu verir. "kaydın
-başlangıcı" ve "kaydın sonu" 24 saatlik kaydın dönemini; "model", "sürüm" ve "SHA-256" modeli ve
-dosyasının parmak izini; "raporun zamanı" ise raporun yazıldığı zamanı verir. Bütün zamanlar UTC'ye
-göre farklarıyla birlikte ISO biçimindedir.
+Veri: Jupyter Notebook'ta "veri" adlı ve tek satırlık bir tablo vardır. Satır, dersin bir karar
+destek prototipinin sanal kliniğin telemetri servisindeki bir hasta olan VC-0128 için verdiği
+sonuçtur; veriler sentetiktir. "hasta" hastanın kimliğini, "AF yükü (%)" incelenen dakikalardan
+atriyal fibrilasyon (AF) alarmı verenlerin payını, "alarm atakları" art arda gelen alarm
+dakikalarından oluşan dizilerin sayısını, "en uzun atak (dakika)" ise bunların en uzununu verir.
+"kaydın başlangıcı" ve "kaydın sonu" 24 saatlik kaydın dönemini; "model", "sürüm" ve "SHA-256"
+modeli ve dosyasının parmak izini; "raporun zamanı" ise raporun yazıldığı zamanı verir. Bütün
+zamanlar UTC'ye göre farklarıyla birlikte ISO biçimindedir.
 Görev: "collection" türünde, dört kaynaktan oluşan bir FHIR Bundle yaz; her kaynağın bir kimliği ve
 http://example.org/fhir altında bir fullUrl değeri olsun. Modelin adını, sürümünü ve SHA-256
 değerini içeren bir not taşıyan "af-rr" kimlikli bir Device. Durumu "preliminary", kategorisi
@@ -214,18 +214,18 @@ durum da "preliminary" olmalı.
 **Amaç.** Bu adımda VC-0128'in vuru zamanları dersin tahmin servisine gönderilir ve servisin cevabı okunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Servisin web arayüzü modeli kendisi tutmamalı: Sonucu ve modelin sürümünü veren tahmin
 servisine sormalıdır.
-Veri: Defterde "veri" adlı ve tek sütunlu bir tablo vardır: "vuru zamanı (s)". Sütun, sanal kliniğin
-telemetri servisindeki bir hasta olan VC-0128'in 24 saatlik kaydında monitörün bulduğu 104.314
-vurunun zamanlarını, kaydın başından itibaren saniye cinsinden verir; veriler sentetiktir. Veri
-hücresi ayrıca dersin bir tahmin servisini bu bilgisayarda http://127.0.0.1:8765/predict adresinde
-başlatmıştır. Servis "patient_id" ve "beat_times_s" (saniye cinsinden vuru zamanlarının listesi)
-alanlarını içeren JSON biçiminde bir istek alır; modeli, sürümünü ve parmak izini, eşiği, incelenen
-dakikaları, atriyal fibrilasyon (AF) alarmı veren dakikaları, yüzde cinsinden AF yükünü ve alarm
-ataklarını içeren JSON biçiminde bir cevap verir.
+Veri: Jupyter Notebook'ta "veri" adlı ve tek sütunlu bir tablo vardır: "vuru zamanı (s)". Sütun,
+sanal kliniğin telemetri servisindeki bir hasta olan VC-0128'in 24 saatlik kaydında monitörün
+bulduğu 104.314 vurunun zamanlarını, kaydın başından itibaren saniye cinsinden verir; veriler
+sentetiktir. Veri hücresi ayrıca dersin bir tahmin servisini bu bilgisayarda
+http://127.0.0.1:8765/predict adresinde başlatmıştır. Servis "patient_id" ve "beat_times_s" (saniye
+cinsinden vuru zamanlarının listesi) alanlarını içeren JSON biçiminde bir istek alır; modeli,
+sürümünü ve parmak izini, eşiği, incelenen dakikaları, atriyal fibrilasyon (AF) alarmı veren
+dakikaları, yüzde cinsinden AF yükünü ve alarm ataklarını içeren JSON biçiminde bir cevap verir.
 Görev: "VC-0128" hastası için bütün vuru zamanlarını içeren isteği hazırla, POST yöntemiyle JSON
 olarak servise gönder ve cevabı JSON olarak oku. Servis bu bilgisayarda çalıştığı için istek bir
 vekil sunucudan (proxy) geçmemelidir.
@@ -245,20 +245,20 @@ yuvarlanmış olarak eşit olmalı.
 **Amaç.** Bu adımda yüklenen bir EKG'nin vuruları bulunur ve EKG'nin her dakikası dersin tahmin servisine değerlendirtilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Mini projede hekim, monitörün vuru zamanları yerine VC-0128'in bir saatlik EKG'sini yükler;
 bu yüzden model tahmin yapmadan önce prototip vuruları kendisi bulmalıdır.
-Veri: Defterde "veri" adlı bir tablo vardır: Sanal kliniğin telemetri servisindeki VC-0128
-hastasının bir saatlik EKG'si (sentetik bir veri seti). Tablonun tek sütunu olan "mV", 13.00 ile
-14.00 arasında 250 Hz'de örneklenmiş DII derivasyonunun milivolt cinsinden 900.000 değerini içerir.
-İlk değer, kaydın 08.00'deki başlangıcından 5 saat, yani 18.000 saniye sonradır. Veri hücresi ayrıca
-dersin tahmin servisini bu bilgisayarda http://127.0.0.1:8765/predict adresinde başlatmıştır. Servis
-"patient_id" ve "beat_times_s" (kaydın başlangıcından itibaren saniye cinsinden vuru zamanlarının
-listesi) alanlarını içeren JSON biçiminde bir istek alır ve JSON biçiminde şu bilgilerle cevap
-verir: Model, sürümü ve parmak izi, eşik, incelenen dakikalar, atriyal fibrilasyon (AF) alarmı veren
-dakikalar, yüzde cinsinden AF yükü ve her biri saniye cinsinden başlangıcı ("start_s") ve dakika
-sayısıyla birlikte alarm atakları.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır: Sanal kliniğin telemetri servisindeki
+VC-0128 hastasının bir saatlik EKG'si (sentetik bir veri seti). Tablonun tek sütunu olan "mV", 13.00
+ile 14.00 arasında 250 Hz'de örneklenmiş DII derivasyonunun milivolt cinsinden 900.000 değerini
+içerir. İlk değer, kaydın 08.00'deki başlangıcından 5 saat, yani 18.000 saniye sonradır. Veri
+hücresi ayrıca dersin tahmin servisini bu bilgisayarda http://127.0.0.1:8765/predict adresinde
+başlatmıştır. Servis "patient_id" ve "beat_times_s" (kaydın başlangıcından itibaren saniye cinsinden
+vuru zamanlarının listesi) alanlarını içeren JSON biçiminde bir istek alır ve JSON biçiminde şu
+bilgilerle cevap verir: Model, sürümü ve parmak izi, eşik, incelenen dakikalar, atriyal fibrilasyon
+(AF) alarmı veren dakikalar, yüzde cinsinden AF yükü ve her biri saniye cinsinden başlangıcı
+("start_s") ve dakika sayısıyla birlikte alarm atakları.
 Görev: EKG'nin vurularını bul. Sinyali, tepelerin yeri kaymasın diye ileri ve geri uygulanan 5-15
 Hz'lik bir bant geçiren süzgeçten geçir. Süzülmüş sinyalin 99. yüzdelik değerinin üçte birinden
 yüksek olan ve birbirinden en az 0,25 saniye uzak duran yerel tepelerini R tepeleri olarak al.
@@ -287,18 +287,18 @@ Bu durak kullanıcı testini yapar ve prototipi iyileştirir. Telemetri servisin
 **Amaç.** Bu adımda servis hekiminin 24 saatte inceleyeceği alarm atakları ve bunların yanlış olanları sayılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kullanıcı testi, prototipin servis hekimine ne kadar iş çıkardığını ve yanlış alarmlarının
 nereden geldiğini soruyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda sanal kliniğin telemetri servisindeki dört
-hastanın 24 saatlik kayıtlarının dakikaları bulunur; veriler sentetiktir: VC-0128 (paroksismal
-atriyal fibrilasyon, atriyal erken vurular ve iki elektrot gürültüsü dönemi), VC-0347 (sık atriyal
-erken vurulu sinüs ritmi, AF yok), VC-0519 (kalıcı AF) ve VC-0733 (uzun elektrot gürültüsü dönemleri
-olan sinüs ritmi, AF yok). Her satır bir dakikadır: "hasta" hastayı, "başlangıç (sa)" dakikanın
-kaydın başından itibaren saat cinsinden başlangıcını verir; dakikanın yarısından fazlası kaydın
-gerçeğinde AF içindeyse "AF" 1 olur; "olasılık" ise dersin bir modelinin 1.0 sürümünün verdiği AF
-olasılığıdır. Model, olasılık en az 0,37 olduğunda alarm verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda sanal kliniğin telemetri
+servisindeki dört hastanın 24 saatlik kayıtlarının dakikaları bulunur; veriler sentetiktir: VC-0128
+(paroksismal atriyal fibrilasyon, atriyal erken vurular ve iki elektrot gürültüsü dönemi), VC-0347
+(sık atriyal erken vurulu sinüs ritmi, AF yok), VC-0519 (kalıcı AF) ve VC-0733 (uzun elektrot
+gürültüsü dönemleri olan sinüs ritmi, AF yok). Her satır bir dakikadır: "hasta" hastayı, "başlangıç
+(sa)" dakikanın kaydın başından itibaren saat cinsinden başlangıcını verir; dakikanın yarısından
+fazlası kaydın gerçeğinde AF içindeyse "AF" 1 olur; "olasılık" ise dersin bir modelinin 1.0
+sürümünün verdiği AF olasılığıdır. Model, olasılık en az 0,37 olduğunda alarm verir.
 Görev: Her hasta içinde dakikaları başlangıçlarına göre sırala. Bir alarm atağı, alarm veren art
 arda dakikalardan oluşan bir dizidir; içinde AF olan hiçbir dakika bulunmayan atak ise bir yanlış
 alarm atağıdır. Her hasta için alarm dakikalarını, yanlış alarm dakikalarını (AF olmayan alarm
@@ -318,16 +318,16 @@ ataklarından fazla olamaz.
 **Amaç.** Bu adımda örneklem entropisi beşinci sayı olarak eklenir, 1.1 sürümü eğitim kayıtlarında kurulur ve doğrulama kayıtlarındaki yanlış alarm atakları sayılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kullanıcı testi, yanlış alarmların çoğunu erken vuruların verdiğini göstermiştir. Erken
 vurular aynı kısa ve uzun aralıkları tekrarlar, AF'de ise örüntü yoktur; bu yüzden örüntüyü ölçen
 bir sayı yardımcı olabilir. Test kayıtlarına dokunulmamalıdır.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'ndaki
-(AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25 Holter
-kaydından elde edilen bir dakikalık pencereler arasından eğitim ve doğrulama dakikaları bulunur;
-test kayıtları tabloda yoktur. Her satır bir dakikadır: "kayıt" kaydı, "küme" kaydın kümesini
-("eğitim", 15 kayıt; "doğrulama", 5 kayıt), "başlangıç (s)" ise dakikanın saniye cinsinden
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'ndaki (AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25
+Holter kaydından elde edilen bir dakikalık pencereler arasından eğitim ve doğrulama dakikaları
+bulunur; test kayıtları tabloda yoktur. Her satır bir dakikadır: "kayıt" kaydı, "küme" kaydın
+kümesini ("eğitim", 15 kayıt; "doğrulama", 5 kayıt), "başlangıç (s)" ise dakikanın saniye cinsinden
 başlangıcını verir. Dakikanın yarısından fazlası uzmanların işaretlediği AF içindeyse "AF" 1 olur.
 "RR aralıkları (s)" sütununun her hücresi dakikanın RR aralıklarını saniye cinsinden ve sırasıyla
 tutar. Dakikanın dört sayısı, önceki adımlarda olduğu gibi "kalp hızı" (dakikada), "CV", "RMSSD/RR"
@@ -360,18 +360,18 @@ olmalı.
 **Amaç.** Bu adımda test kayıtları bir kez açılır ve modelin iki sürümü karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Klinik servisteki deneme için bir sürüm seçmeden önce kardiyolog, iki sürümün de görmediği
 kayıtlarda, 1.1 sürümünün kazanç ve bedelleriyle birlikte değerlendirilmesini istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 5
-test kaydının, yani çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin Holter kayıtlarının
-bir dakikalık pencereleri bulunur. Her satır bir dakikadır: "kayıt" kaydı, "başlangıç (s)" ise
-dakikanın saniye cinsinden başlangıcını verir. Dakikanın yarısından fazlası uzmanların işaretlediği
-AF içindeyse "AF" 1 olur; "AF payı" dakikanın AF içinde geçen payıdır ve 0 ile 1 arasında değer
-alır. "olasılık, 1.0 sürümü" ve "olasılık, 1.1 sürümü" dersin bir modelinin iki sürümünün verdiği AF
-olasılıklarıdır. 1.0 sürümü olasılığı en az 0,37, 1.1 sürümü ise olasılığı en az 0,28 olduğunda
-alarm verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'nın 5 test kaydının, yani çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin Holter
+kayıtlarının bir dakikalık pencereleri bulunur. Her satır bir dakikadır: "kayıt" kaydı, "başlangıç
+(s)" ise dakikanın saniye cinsinden başlangıcını verir. Dakikanın yarısından fazlası uzmanların
+işaretlediği AF içindeyse "AF" 1 olur; "AF payı" dakikanın AF içinde geçen payıdır ve 0 ile 1
+arasında değer alır. "olasılık, 1.0 sürümü" ve "olasılık, 1.1 sürümü" dersin bir modelinin iki
+sürümünün verdiği AF olasılıklarıdır. 1.0 sürümü olasılığı en az 0,37, 1.1 sürümü ise olasılığı en
+az 0,28 olduğunda alarm verir.
 Görev: Her kayıt içinde dakikaları başlangıçlarına göre sırala. Bir alarm atağı, alarm veren art
 arda dakikalardan oluşan bir dizidir; içinde AF olan hiçbir dakika bulunmayan atak ise bir yanlış
 alarm atağıdır. Her sürüm için bütün test dakikalarında AUC değerini, duyarlılığı (alarm veren AF
@@ -406,7 +406,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -440,24 +440,24 @@ olmadıklarını söyle ve doğru olmadıkları yerde bir düzeltme öner. Başk
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Kullanıcı testinin alarm atakları
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog bir AF prototipinin kullanıcı testini beş doğrulama kaydında ve bir telemetri
 servisinin dört hastasında yapıyor ve incelenecek alarm ataklarının, her atak için bir satır olmak
 üzere, listesine ihtiyaç duyuyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda kullanıcı testinin dakikaları bulunur: MIT-BIH
-Atriyal Fibrilasyon Veri Tabanı'nın 5 doğrulama kaydı ve sanal kliniğin telemetri servisindeki dört
-hastanın 24 saatlik kayıtları; servisin verileri sentetiktir. Her satır bir dakikadır: "kaynak"
-"AFDB" ya da "servis" değerini, "kayıt" kaydı ya da hastayı, "başlangıç (sa)" ise dakikanın kaydın
-başından itibaren saat cinsinden başlangıcını verir. Dakikanın yarısından fazlası işaretlemede ya da
-kaydın gerçeğinde atriyal fibrilasyon (AF) içindeyse "AF" 1 olur; "olasılık, 1.0 sürümü" ise dersin
-bir modelinin 1.0 sürümünün verdiği AF olasılığıdır; model 0,37 ya da daha yüksek olasılıkta alarm
-verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda kullanıcı testinin dakikaları
+bulunur: MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 5 doğrulama kaydı ve sanal kliniğin telemetri
+servisindeki dört hastanın 24 saatlik kayıtları; servisin verileri sentetiktir. Her satır bir
+dakikadır: "kaynak" "AFDB" ya da "servis" değerini, "kayıt" kaydı ya da hastayı, "başlangıç (sa)"
+ise dakikanın kaydın başından itibaren saat cinsinden başlangıcını verir. Dakikanın yarısından
+fazlası işaretlemede ya da kaydın gerçeğinde atriyal fibrilasyon (AF) içindeyse "AF" 1 olur;
+"olasılık, 1.0 sürümü" ise dersin bir modelinin 1.0 sürümünün verdiği AF olasılığıdır; model 0,37 ya
+da daha yüksek olasılıkta alarm verir.
 Görev: Her kayıt içinde dakikaları başlangıçlarına göre sırala. Bir alarm atağı, alarm veren art
 arda dakikalardan oluşan bir dizidir. Her alarm atağı için kaynağı, kaydı, saat cinsinden
 başlangıcı, dakika cinsinden uzunluğu, en yüksek olasılığı ve atağın herhangi bir dakikasında AF
@@ -472,18 +472,18 @@ Test: Atakların uzunluklarının toplamı alarm veren dakikaların sayısına e
 ### Adım 2: Hekimin iş yükü
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog, 1.0 sürümüyle bir hekimin 24 saatte kaç alarm atağını inceleyeceğini, bunların
 kaçının yanlış olduğunu ve yanlış olanların hangi kayıtlarda toplandığını öğrenmek istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda kullanıcı testinin dakikaları bulunur: MIT-BIH
-Atriyal Fibrilasyon Veri Tabanı'nın 5 doğrulama kaydı ve sanal kliniğin telemetri servisindeki dört
-hastanın 24 saatlik kayıtları; servisin verileri sentetiktir. Her satır bir dakikadır: "kaynak"
-"AFDB" ya da "servis" değerini, "kayıt" kaydı ya da hastayı, "başlangıç (sa)" ise dakikanın kaydın
-başından itibaren saat cinsinden başlangıcını verir. Dakikanın yarısından fazlası işaretlemede ya da
-kaydın gerçeğinde atriyal fibrilasyon (AF) içindeyse "AF" 1 olur; "olasılık, 1.0 sürümü" ise dersin
-bir modelinin 1.0 sürümünün verdiği AF olasılığıdır; model 0,37 ya da daha yüksek olasılıkta alarm
-verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda kullanıcı testinin dakikaları
+bulunur: MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 5 doğrulama kaydı ve sanal kliniğin telemetri
+servisindeki dört hastanın 24 saatlik kayıtları; servisin verileri sentetiktir. Her satır bir
+dakikadır: "kaynak" "AFDB" ya da "servis" değerini, "kayıt" kaydı ya da hastayı, "başlangıç (sa)"
+ise dakikanın kaydın başından itibaren saat cinsinden başlangıcını verir. Dakikanın yarısından
+fazlası işaretlemede ya da kaydın gerçeğinde atriyal fibrilasyon (AF) içindeyse "AF" 1 olur;
+"olasılık, 1.0 sürümü" ise dersin bir modelinin 1.0 sürümünün verdiği AF olasılığıdır; model 0,37 ya
+da daha yüksek olasılıkta alarm verir.
 Görev: Her kayıt içinde dakikaları başlangıçlarına göre sırala. Bir alarm atağı, alarm veren art
 arda dakikalardan oluşan bir dizidir; içinde AF olan hiçbir dakika bulunmayan atak ise bir yanlış
 alarm atağıdır. Her kayıt için dakikaları, alarm ataklarını ve yanlış alarm ataklarını say; alarm
@@ -499,16 +499,16 @@ Test: Bir kaydın yanlış alarm atakları alarm ataklarını aşamaz.
 ### Adım 3: Doğrulama kayıtlarında iyileştirilmiş bir sürüm
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kullanıcı testi yanlış alarmların çoğunu erken vuruların verdiğini göstermiştir. Kardiyolog,
 eğitim kayıtlarında kurulan ve yalnızca doğrulama kayıtlarında değerlendirilen iyileştirilmiş bir
 sürüm istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'ndaki
-(AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25 Holter
-kaydından elde edilen bir dakikalık pencereler bulunur. Test kayıtları tabloda yoktur. Her satır bir
-dakikadır: "kayıt" kaydı, "küme" kaydın kümesini ("eğitim", 15 kayıt; "doğrulama", 5 kayıt),
-"başlangıç (s)" ise dakikanın kaydın başından itibaren saniye cinsinden başlangıcını verir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'ndaki (AFDB) çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin yaklaşık on saatlik 25
+Holter kaydından elde edilen bir dakikalık pencereler bulunur. Test kayıtları tabloda yoktur. Her
+satır bir dakikadır: "kayıt" kaydı, "küme" kaydın kümesini ("eğitim", 15 kayıt; "doğrulama", 5
+kayıt), "başlangıç (s)" ise dakikanın kaydın başından itibaren saniye cinsinden başlangıcını verir.
 Dakikanın yarısından fazlası uzmanların işaretlediği AF içindeyse "AF" 1, değilse 0 olur. "RR
 aralıkları (s)" sütununun her hücresi, dakikanın RR aralıklarını saniye cinsinden ve sırasıyla, 20
 ya da daha fazla sayıdan oluşan bir liste olarak tutar. Dakikanın dört sayısı "kalp hızı", "CV",
@@ -534,17 +534,17 @@ Test: Hiçbir test dakikası kullanılmamalı ve doğrulama kayıtlarındaki duy
 ### Adım 4: Test kayıtlarında iki sürüm ve değişiklik kaydı
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog test kayıtlarını iki sürüm için bir kez açıyor ve yeni sürümün değişiklik kaydını
 kazançları ve bedelleriyle birlikte yazıyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 5
-test kaydının, yani çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin Holter kayıtlarının
-bir dakikalık pencereleri bulunur. Her satır bir dakikadır: "kayıt" kaydı, "başlangıç (s)" dakikanın
-saniye cinsinden başlangıcını verir; dakikanın yarısından fazlası uzmanların işaretlediği AF
-içindeyse "AF" 1 olur; "AF payı" dakikanın AF içinde geçen payıdır. "RR aralıkları (s)" sütununun
-her hücresi dakikanın RR aralıklarını saniye cinsinden tutar; dakikanın dört sayısı "kalp hızı",
-"CV", "RMSSD/RR" ve "pNN50" sütunlarındadır.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda MIT-BIH Atriyal Fibrilasyon Veri
+Tabanı'nın 5 test kaydının, yani çoğu paroksismal atriyal fibrilasyonu (AF) olan kişilerin Holter
+kayıtlarının bir dakikalık pencereleri bulunur. Her satır bir dakikadır: "kayıt" kaydı, "başlangıç
+(s)" dakikanın saniye cinsinden başlangıcını verir; dakikanın yarısından fazlası uzmanların
+işaretlediği AF içindeyse "AF" 1 olur; "AF payı" dakikanın AF içinde geçen payıdır. "RR aralıkları
+(s)" sütununun her hücresi dakikanın RR aralıklarını saniye cinsinden tutar; dakikanın dört sayısı
+"kalp hızı", "CV", "RMSSD/RR" ve "pNN50" sütunlarındadır.
 Görev: 1.0 sürümü dört girdi kullanır: Kalp hızı, CV'nin doğal logaritması, RMSSD/RR'nin doğal
 logaritması ve pNN50; 1.1 sürümü bunlara RR aralıklarının bir aralıklı dizilerle ve 0,03 saniyelik
 toleransla hesaplanan örneklem entropisini ekler. İki sürümü 1. duraktaki ve 3. adımdaki
