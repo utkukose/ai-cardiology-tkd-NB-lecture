@@ -11,7 +11,7 @@ Final projesi, eğitimin yöntemlerini katılımcının kendi klinik çalışmas
 
 ## Seçenekler
 
-Yedi seçenek vardır. A-F seçeneklerinde sentetik ya da açık veriler, G seçeneğinde ise katılımcının kurumuna ait veriler kullanılır. Son sütun, başlangıç kodunu veren Jupyter defterlerinin haftalarını gösterir.
+Yedi seçenek vardır. A-F seçeneklerinde sentetik ya da açık veriler, G seçeneğinde ise katılımcının kurumuna ait veriler kullanılır. Son sütun, başlangıç kodunu veren Jupyter Notebook'ların haftalarını gösterir.
 
 | Seçenek | Soru | Veriler | Başlangıç noktası |
 |---|---|---|---|
@@ -23,11 +23,11 @@ Yedi seçenek vardır. A-F seçeneklerinde sentetik ya da açık veriler, G seç
 | F. Karar desteği | Açıklamalar ve bir kullanıcı testi içeren bir klinik karar destek sistemi prototipi | Yukarıdakilerden herhangi biri | 9. ve 10. haftalar |
 | G. Kendi sorusu | Katılımcının kliniğinden bir soru | Kurumun izniyle ve gerektiğinde etik kurul onayıyla kurum verileri | Herhangi bir hafta |
 
-Kurum verileri yalnızca katılımcının kendi bilgisayarında, Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak işlenir. Bu veriler hiçbir zaman bulut tabanlı bir deftere ya da bir yapay zekâ (YZ) sohbetine aktarılmaz; raporda yalnızca toplu sonuçlar gösterilir.
+Kurum verileri yalnızca katılımcının kendi bilgisayarında, Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak işlenir. Bu veriler hiçbir zaman bulut tabanlı bir Jupyter Notebook'a ya da bir yapay zekâ (YZ) sohbetine aktarılmaz; raporda yalnızca toplu sonuçlar gösterilir.
 
 ## Ne teslim edilecek?
 
-Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılır. Raporda klinik soru, veriler ve kaynakları, yöntemler, belirsizlik ölçüsüyle birlikte sonuçlar, modelin açıklaması, sınırlılıklar ve klinik değerlendirme için bir plan yer alır. Rapor, "Klinik pratiğimde yapay zekâyı nasıl kullanacağım?" başlıklı yarım sayfalık kişisel bir eylem planıyla biter. Jupyter defteri ya da betikler, rapordaki her sonucu yeniden üretir. YZ kullanım günlüğü, bir YZ asistanının her kullanımını kaydeder. Sunumun slaytları teslimi tamamlar.
+Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılır. Raporda klinik soru, veriler ve kaynakları, yöntemler, belirsizlik ölçüsüyle birlikte sonuçlar, modelin açıklaması, sınırlılıklar ve klinik değerlendirme için bir plan yer alır. Rapor, "Klinik pratiğimde yapay zekâyı nasıl kullanacağım?" başlıklı yarım sayfalık kişisel bir eylem planıyla biter. Jupyter Notebook ya da betikler, rapordaki her sonucu yeniden üretir. YZ kullanım günlüğü, bir YZ asistanının her kullanımını kaydeder. Sunumun slaytları teslimi tamamlar.
 
 ## Önerilen ara aşamalar
 
@@ -49,11 +49,11 @@ Jüri projeyi aşağıdaki ölçütlerle 100 puan üzerinden değerlendirir. Kat
 | Yöntemler: Eğitimin yöntemlerinin doğru kullanımı ve sağlam bir doğrulama | 25 |
 | Sonuçlar: Doğru, bir belirsizlik ölçüsüyle verilmiş ve bir referansla karşılaştırılmış | 15 |
 | Açıklama ve sınırlılıklar: Modelin neyi kullandığı, nerede yanıldığı ve klinik değerlendirmenin neyi gerektirdiği | 15 |
-| Sunum ve yeniden üretilebilirlik: Açık bir sunum, sonuçları yeniden üreten bir defter ve eksiksiz bir YZ kullanım günlüğü | 15 |
+| Sunum ve yeniden üretilebilirlik: Açık bir sunum, sonuçları yeniden üreten bir Jupyter Notebook ve eksiksiz bir YZ kullanım günlüğü | 15 |
 
 ## Başlangıç kodu
 
-Her seçenek, seçenekler tablosunda adı geçen haftaların Jupyter defterleri üzerine kurulur. [11. haftanın Jupyter defteri](../hafta-11/NB11_final_projesi_atolyesi.ipynb), B seçeneğine ait bir final projesini Cleveland verisi üzerinde verilerin denetiminden raporun sonuç tablosuna kadar götürür. Defterin son bölümü final projesinin araç takımını, yani `final_project/code/project_tools.py` modülünü yazar. Bu modül 11. haftanın denetimlerini her seçeneğin modeli için yapar: Bir referansa göre kazancın bootstrap aralığı, kalibrasyon, eğitim verilerinde seçilen bir dışlama eşiği ve bütün hastalarda ve gruplarda Wilson aralıkları. Aynı bölümdeki tablo her seçenek için başlanacak defterleri, sonucu, referansı ve modeli adlandırır. [11. haftanın ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html) aynı projeyi adım adım izler; etkileşimli labında da sorunun formu, klinik değerlendirmenin planlayıcısı ve sunum için süre ölçerli değerlendirme ölçütleri yer alır.
+Her seçenek, seçenekler tablosunda adı geçen haftaların Jupyter Notebook'lar üzerine kurulur. [11. haftanın Jupyter Notebook'u](../hafta-11/NB11_final_projesi_atolyesi.ipynb), B seçeneğine ait bir final projesini Cleveland verisi üzerinde verilerin denetiminden raporun sonuç tablosuna kadar götürür. Jupyter Notebook'un son bölümü final projesinin araç takımını, yani `final_project/code/project_tools.py` modülünü yazar. Bu modül 11. haftanın denetimlerini her seçeneğin modeli için yapar: Bir referansa göre kazancın bootstrap aralığı, kalibrasyon, eğitim verilerinde seçilen bir dışlama eşiği ve bütün hastalarda ve gruplarda Wilson aralıkları. Aynı bölümdeki tablo her seçenek için başlanacak Jupyter Notebook'ları, sonucu, referansı ve modeli adlandırır. [11. haftanın ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html) aynı projeyi adım adım izler; etkileşimli labında da sorunun formu, klinik değerlendirmenin planlayıcısı ve sunum için süre ölçerli değerlendirme ölçütleri yer alır.
 
 ---
 

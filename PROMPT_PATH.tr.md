@@ -5,15 +5,15 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [Python yolu](PYTHON_PATH.tr.md) · [Kendi verileriniz](OWN_DATA.tr.md) · [English](PROMPT_PATH.md)
 
-Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Haftanın Jupyter defterinde ise iki uygulama yolu bulunur. Kod yazmayan, belki de hiç yapay zekâ (YZ) asistanı kullanmamış katılımcılar için hazırlanan yolda kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir YZ asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. Her defterin 1. kısmını oluşturan bu yola **prompt yolu** denir. Defterin 2. kısmı olan **Python yolunda** ise aynı sonuçlara kod yazılarak ulaşılır ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)). Yol, her uygulama durağında değiştirilebilir.
+Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Haftanın Jupyter Notebook'unda ise iki uygulama yolu bulunur. Kod yazmayan, belki de hiç yapay zekâ (YZ) asistanı kullanmamış katılımcılar için hazırlanan yolda kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir YZ asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. Her Jupyter Notebook'un 1. kısmını oluşturan bu yola **prompt yolu** denir. Jupyter Notebook'un 2. kısmı olan **Python yolunda** ise aynı sonuçlara kod yazılarak ulaşılır ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)). Yol, her uygulama durağında değiştirilebilir.
 
 ## Bir uygulama durağında ne olur?
 
-Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın **Prompt yolu** düğmesi, defterin 1. kısmını aynı durağın başında, Google Colab'da ya da kendi bilgisayarınızdaki Jupyter'de açar. Bir durakta iki ile dört adım bulunur ve her adım aynı biçimde ilerler.
+Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın **Prompt yolu** düğmesi, Jupyter Notebook'un 1. kısmını aynı durağın başında, Google Colab'da ya da kendi bilgisayarınızdaki Jupyter'de açar. Bir durakta iki ile dört adım bulunur ve her adım aynı biçimde ilerler.
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -30,7 +30,7 @@ Python kodu yazabilen her asistan kullanılabilir; eğitimin promptları hepsiyl
 | Asistan | Nerede çalışır? | Bilinmesi gerekenler |
 |---|---|---|
 | [Colab'da Gemini](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab | Colab'ın içinde bulunur ve pencerenin üstündeki düğmesiyle açılır. Bir açıklamadan yola çıkarak kod yazar ve hataları açıklar. Özellikler hesaba ve bölgeye göre farklılık gösterebilir. |
-| ChatGPT, Claude, Copilot ya da Gemini gibi bir sohbet asistanı | Web tarayıcısının ikinci bir sekmesi | Prompt sohbete yapıştırılır, kod da deftere geri kopyalanır. |
+| ChatGPT, Claude, Copilot ya da Gemini gibi bir sohbet asistanı | Web tarayıcısının ikinci bir sekmesi | Prompt sohbete yapıştırılır, kod da Jupyter Notebook'a geri kopyalanır. |
 | [Anaconda Assistant](https://docs.anaconda.com/anaconda-notebooks/local-assistant) | Anaconda Toolbox aracılığıyla Anaconda'daki JupyterLab (`conda install anaconda-toolbox`) | Bir Anaconda hesabı gerektirir. Ücretsiz hesapta istek sayısı sınırlıdır. |
 | [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) | Anaconda'daki JupyterLab | Sohbet paneli olan açık kaynaklı bir eklentidir. Bir model sağlayıcısının uygulama programlama arayüzü (API) anahtarını ya da yerel bir modeli gerektirir. Sağlayıcılar kullanım için ücret alabilir. |
 
@@ -42,7 +42,7 @@ Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asis
 
 | Alan | Ne belirtilir? |
 |---|---|
-| Rol | Asistanın kime yardım ettiği ve kodunun nerede çalışacağı: Kod yazmayan bir kardiyolog ve bir Jupyter defteri |
+| Rol | Asistanın kime yardım ettiği ve kodunun nerede çalışacağı: Kod yazmayan bir kardiyolog ve bir Jupyter Notebook |
 | Bağlam | Adımın klinik sorusu |
 | Veri | "veri" tablosu: Satırları, sütunları ve birimleri; sinyallerde saniyedeki örnek sayısı |
 | Görev | Formülü ya da kuralıyla birlikte tek ve açık bir görev |

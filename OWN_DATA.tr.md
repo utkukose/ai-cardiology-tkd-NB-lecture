@@ -5,7 +5,7 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](OWN_DATA.md)
 
-Eğitimde sentetik hastalar ve açık araştırma verileri kullanılır; böylece her defter herkes için çalışır ve gerçek cevaplar bilinir. Eğitimin asıl hedefi ise katılımcının kendi kliniğinin verileridir. Bu rehber, ders sayfalarındaki "Kendi verinizle" bölümlerinin hafta hafta anlattıklarını bir araya getirmektedir. Rehberde hangi sorunun hangi yönteme uyduğu, verilerin hastane sistemlerinden nasıl alındığı, yasanın ve etik kurulun neyi gerektirdiği ve analizin nerede yapılacağı anlatılır.
+Eğitimde sentetik hastalar ve açık araştırma verileri kullanılır; böylece her Jupyter Notebook herkes için çalışır ve gerçek cevaplar bilinir. Eğitimin asıl hedefi ise katılımcının kendi kliniğinin verileridir. Bu rehber, ders sayfalarındaki "Kendi verinizle" bölümlerinin hafta hafta anlattıklarını bir araya getirmektedir. Rehberde hangi sorunun hangi yönteme uyduğu, verilerin hastane sistemlerinden nasıl alındığı, yasanın ve etik kurulun neyi gerektirdiği ve analizin nerede yapılacağı anlatılır.
 
 Rehber yol gösterir; hukuki görüş değildir. Her çalışmada son söz kurumun etik kuruluna, veri koruma sorumlusuna ve hukuk birimine aittir.
 
@@ -46,7 +46,7 @@ Rehber yol gösterir; hukuki görüş değildir. Her çalışmada son söz kurum
 | Yazılı raporlar | Bulguların çıkarılması | Doğal dil işleme | 6 |
 | Birkaç veri türü birlikte | Birleşik bir risk | Veri füzyonu, eksik veri ve kalibrasyon | 8 |
 | Her model | Model güvenilir ve açıklanabilir mi? | Açıklanabilir yapay zekâ (YZ), dağılım kayması ve yanlılık | 9 |
-| Her model | Model hasta başında nasıl kullanılır? | Klinik karar destek sistemleri | 10 |
+| Her model | Model hasta başında nasıl kullanılır? | Klinik karar destek sistemleri (CDSS) | 10 |
 
 ## 4. Ne kadar veri?
 
@@ -56,7 +56,7 @@ Her durumda verilerin bir bölümü ilk modelden önce test kümesi olarak ayrı
 
 ## 5. Hesap nerede yapılır ve YZ asistanları nasıl kullanılır?
 
-Gerçek hastaların verileri kurumun bir bilgisayarında, Jupyter'de (Anaconda) analiz edilir; Google Colab gibi bulut tabanlı bir deftere ya da bir YZ sohbetine asla aktarılmaz. Böyle verileri taşıyan bir dizüstü bilgisayarın diski şifrelenmelidir.
+Gerçek hastaların verileri kurumun bir bilgisayarında, Jupyter'de (Anaconda) analiz edilir; Google Colab gibi bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine asla aktarılmaz. Böyle verileri taşıyan bir dizüstü bilgisayarın diski şifrelenmelidir.
 
 Kodu hazır bir prompt (istem) ile bir YZ asistanına yazdırmak, yani prompt yolu, kişinin kendi verileriyle de işe yarar. Bunun tek bir kuralı vardır: Prompt verinin yapısını, yani sütunların adlarını, birimlerini, kodlarını ve örnekleme frekansını tarif eder; hiçbir zaman bir hastanın satırını içermez. Kodu önce aynı sütunlara sahip sentetik bir tabloda denemek, gerçek veride ise ancak bu denemeden geçtikten sonra çalıştırmak iyi bir alışkanlıktır; `vclinic` ders paketi böyle tablolar üretebilir. 6. haftada kullanılan ve kişinin kendi bilgisayarında çalışan önceden eğitilmiş dil modelleri, raporların metnini o bilgisayarın içinde tutar.
 

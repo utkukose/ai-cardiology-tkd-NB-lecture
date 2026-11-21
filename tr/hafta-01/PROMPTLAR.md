@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [1. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-01/PROMPTS.md)
 
-Bu kütüphanede, 1. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Mini proje: Kaggle Heart Disease veri seti](#durak-1-mini-proje-kaggle-heart-disease-veri-seti)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,13 +39,13 @@ Bu durak oturumun mini projesidir: UCI Heart Disease koleksiyonunun Cleveland ve
 **Amaç.** Bu adımda koroner arter hastalığı olan Cleveland hastalarının ortalama yaşı hesaplanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Cleveland Clinic'te koroner anjiyografi yapılmış 303 hastada, koroner arter hastalığı
 olanların ortalama yaşını öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu hastanın yaşını yıl
-olarak verir. "KAH" sütununda, anjiyografide en az bir büyük koroner arterinin çapı yüzde 50'den
-fazla daralmış hastalar için "var", diğer hastalar için "yok" yazar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu hastanın
+yaşını yıl olarak verir. "KAH" sütununda, anjiyografide en az bir büyük koroner arterinin çapı yüzde
+50'den fazla daralmış hastalar için "var", diğer hastalar için "yok" yazar.
 Görev: Koroner arter hastalığı olan hastaları seç ve ortalama yaşlarını hesapla. Kaç hasta
 seçildiğini de yazdır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -62,12 +62,12 @@ Hastalığı olanların ortalaması bundan farklı çıkmalı.
 **Amaç.** Bu adımda Cleveland hastaları arasında kadınların oranı bulunur.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Cleveland Clinic'te koroner anjiyografi yapılmış 303 hastanın yüzde kaçının kadın olduğunu
 öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu hastanın yaşını yıl
-olarak verir; "cinsiyet" sütununda "kadın" ya da "erkek" yazar.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "yaş" sütunu hastanın
+yaşını yıl olarak verir; "cinsiyet" sütununda "kadın" ya da "erkek" yazar.
 Görev: Kadın hastaların sayısını bütün hastaların sayısına böl ve sonucu yüzde olarak ifade et.
 Erkeklerin yüzdesini de aynı yolla hesapla.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -84,15 +84,15 @@ Test: Kadınların ve erkeklerin yüzdelerinin toplamı 100 olmalı.
 **Amaç.** Bu adımda sanal klinikteki düşük ejeksiyon fraksiyonlu kalp yetersizliği (HFrEF) hastaları sayılır ve her tanının ejeksiyon fraksiyonu tek bir şekilde gösterilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal kliniğin 500 sentetik hastasında düşük ejeksiyon fraksiyonlu kalp yetersizliği (HFrEF)
 olanları saymak ve ejeksiyon fraksiyonunun tanılara göre nasıl değiştiğini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "hasta" sütunu hastanın
-numarasını, "ana tanı" sütunu ana tanıyı, "LVEF" sütunu da sol ventrikül ejeksiyon fraksiyonunu
-yüzde olarak verir. Ana tanı şu değerlerden biridir: "yok" (tanı yok), "CCS" (kronik koroner
-sendrom), "ACS" (akut koroner sendrom), "HFrEF" (düşük ejeksiyon fraksiyonlu kalp yetersizliği) ve
-"HFpEF" (korunmuş ejeksiyon fraksiyonlu kalp yetersizliği).
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "hasta" sütunu
+hastanın numarasını, "ana tanı" sütunu ana tanıyı, "LVEF" sütunu da sol ventrikül ejeksiyon
+fraksiyonunu yüzde olarak verir. Ana tanı şu değerlerden biridir: "yok" (tanı yok), "CCS" (kronik
+koroner sendrom), "ACS" (akut koroner sendrom), "HFrEF" (düşük ejeksiyon fraksiyonlu kalp
+yetersizliği) ve "HFpEF" (korunmuş ejeksiyon fraksiyonlu kalp yetersizliği).
 Görev: Ana tanısı HFrEF olan hastaları say. Ardından her ana tanı için ejeksiyon fraksiyonunun kutu
 grafiğini çiz; tanılar yatay eksende, yüzde cinsinden ejeksiyon fraksiyonu dikey eksende yer alsın.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
@@ -115,12 +115,12 @@ Dijital bir EKG de bir sayı tablosudur: Her derivasyon bir sütunda, her örnek
 **Amaç.** Bu adımda D2 derivasyonunun ilk 2,5 saniyesi çizilir ve böyle bir şeridin kaç sayıdan oluştuğu görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 67 yaşında bir kadın hastanın 10 saniyelik istirahat EKG'sinden D2 derivasyonunun ilk 2,5
 saniyesini görmek ve bu kısa şeridin kaç örnekten oluştuğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kaydın bir anıdır: "zaman" sütunu saniyeyi,
-"D2" sütunu D2 derivasyonundaki gerilimi milivolt olarak verir. Kayıt saniyede 500 kez
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kaydın bir anıdır: "zaman" sütunu
+saniyeyi, "D2" sütunu D2 derivasyonundaki gerilimi milivolt olarak verir. Kayıt saniyede 500 kez
 örneklenmiştir.
 Görev: Zamanı 2,5 saniyeden küçük olan satırları ayır ve say. Bu bölümü, yatay eksende saniye
 cinsinden zaman, dikey eksende milivolt cinsinden gerilim olacak biçimde çiz.
@@ -137,12 +137,12 @@ Test: Grafiğin zaman ekseni 0'da başlamalı ve 2,5 saniyede bitmeli.
 **Amaç.** Bu adımda D2 derivasyonunun R tepeleri bulunur ve aralarındaki sürelerden kalp hızı hesaplanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 67 yaşında bir kadın hastanın 10 saniyelik istirahat EKG'sinden kalp hızını ölçmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kaydın bir anıdır: "zaman" sütunu saniyeyi,
-"D2" sütunu D2 derivasyonundaki gerilimi milivolt olarak verir. Kayıt saniyede 500 kez
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kaydın bir anıdır: "zaman" sütunu
+saniyeyi, "D2" sütunu D2 derivasyonundaki gerilimi milivolt olarak verir. Kayıt saniyede 500 kez
 örneklenmiştir.
 Görev: R tepelerini bul. En yüksek değerin yarısını aşan ve birbirinden en az 0,3 saniye uzakta
 duran tepeleri R tepesi kabul et. Ardışık R tepeleri arasındaki ortalama süreden kalp hızını
@@ -162,12 +162,13 @@ olmalı.
 **Amaç.** Bu adımda VC-0254 numaralı hastanın QT aralığı, yüksek kalp hızına göre Fridericia ve Bazett formülleriyle düzeltilir ve iki sonuç karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kalp hızı yüksek olan 58 yaşında bir erkek hastanın QT aralığını iki formülle düzeltmek ve
 sonuçları karşılaştırmak istiyorum.
-Veri: Defterde "veri" adında tek satırlık bir tablo var: "hasta" sütunu hastanın numarasını, "kalp
-hızı" sütunu dakikadaki atım sayısını, "QT" sütunu da QT aralığını milisaniye olarak verir.
+Veri: Jupyter Notebook'ta "veri" adında tek satırlık bir tablo var: "hasta" sütunu hastanın
+numarasını, "kalp hızı" sütunu dakikadaki atım sayısını, "QT" sütunu da QT aralığını milisaniye
+olarak verir.
 Görev: RR aralığını saniye olarak, 60'ın kalp hızına bölümüyle hesapla. Ardından QT aralığını iki
 formülle düzelt: Fridericia formülü QT'yi RR'nin küp köküne, Bazett formülü ise RR'nin kareköküne
 böler.
@@ -191,15 +192,15 @@ Gerçek kayıtlar kendi gürültüsü, işaretlemeleri ve birimleriyle gelir. Bu
 **Amaç.** Bu adımda 30 dakikalık bir kaydın atımları, kardiyologların onlara verdiği etiketlere göre sayılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: MIT-BIH Aritmi Veri Tabanı'ndaki 100 numaralı kayıt, 69 yaşında bir erkeğin 30 dakikalık
 ambulatuvar EKG kaydıdır. Bu kayıttaki atımları, kardiyologların onlara verdiği etiketlere göre
 saymak istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır, kardiyologların kayda koyduğu bir işarettir:
-"zaman" sütunu işaretin yerini saniye olarak, "etiket" sütunu da türünü verir. "N" normal atımı, "A"
-atriyal erken atımı, "V" ventriküler erken atımı gösterir; "+" ise ritim değişikliğini belirtir ve
-bir atım değildir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır, kardiyologların kayda koyduğu bir
+işarettir: "zaman" sütunu işaretin yerini saniye olarak, "etiket" sütunu da türünü verir. "N" normal
+atımı, "A" atriyal erken atımı, "V" ventriküler erken atımı gösterir; "+" ise ritim değişikliğini
+belirtir ve bir atım değildir.
 Görev: Her etiketin kaç kez geçtiğini say ve sayıları yazdır.
 Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir şey indirmemeli ve
 program kurmamalıdır.
@@ -214,14 +215,14 @@ Test: N, A ve V etiketlerinin toplamı 2.273 atım olmalı.
 **Amaç.** Bu adımda normal atımlar arasındaki sürelerin 30 dakika boyunca ne kadar değiştiği ölçülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: MIT-BIH Aritmi Veri Tabanı'ndaki 100 numaralı kayıtta, yani 69 yaşında bir erkeğin 30
 dakikalık ambulatuvar EKG'sinde, kalp hızı değişkenliğini SDNN ile ölçmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır, kardiyologların kayda koyduğu bir işarettir:
-"zaman" sütunu işaretin yerini saniye olarak, "etiket" sütunu da türünü verir. "N" normal atımı, "A"
-atriyal erken atımı, "V" ventriküler erken atımı gösterir; "+" ise ritim değişikliğini belirtir ve
-bir atım değildir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır, kardiyologların kayda koyduğu bir
+işarettir: "zaman" sütunu işaretin yerini saniye olarak, "etiket" sütunu da türünü verir. "N" normal
+atımı, "A" atriyal erken atımı, "V" ventriküler erken atımı gösterir; "+" ise ritim değişikliğini
+belirtir ve bir atım değildir.
 Görev: Yalnızca atımları, yani "+" dışındaki etiketleri tut. Ardışık atımlar arasındaki RR
 aralıklarını milisaniye olarak hesapla. Bunlardan yalnızca iki ucu da normal atım ("N") olan
 aralıkları, yani NN aralıklarını kullan. SDNN, NN aralıklarının standart sapmasıdır; bu sapmayı bir
@@ -240,13 +241,14 @@ Test: Ortalama NN aralığı 700 ile 900 ms arasında olmalı.
 **Amaç.** Bu adımda akut miyokard enfarktüsü geçiren bir hastanın gerçek 12 derivasyonlu EKG'si, EKG kâğıdındaki düzende çizilir ve kalp hızı ölçülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Akut infero-lateral miyokard enfarktüsüyle yatırılmış 81 yaşında bir kadın hastanın gerçek
 12 derivasyonlu EKG'sini kâğıttaki düzende görmek ve kalp hızını ölçmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır kaydın bir anıdır: "zaman" sütunu saniyeyi;
-"D1", "D2", "D3", "aVR", "aVL", "aVF" ve "V1"-"V6" sütunları da on iki standart derivasyondaki
-gerilimi milivolt olarak verir. Kayıt 38,4 saniye sürer ve saniyede 1.000 kez örneklenmiştir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır kaydın bir anıdır: "zaman" sütunu
+saniyeyi; "D1", "D2", "D3", "aVR", "aVL", "aVF" ve "V1"-"V6" sütunları da on iki standart
+derivasyondaki gerilimi milivolt olarak verir. Kayıt 38,4 saniye sürer ve saniyede 1.000 kez
+örneklenmiştir.
 Görev: On iki derivasyonun ilk 3 saniyesini EKG kâğıdındaki gibi üç satır ve dört sütun hâlinde çiz:
 Birinci sütunda D1, D2 ve D3; ikincide aVR, aVL ve aVF; üçüncüde V1-V3; dördüncüde V4-V6 yer alsın
 ve her panelin üstünde derivasyonun adı yazsın. Ardından D1 derivasyonunda R tepelerini bul. En
@@ -267,12 +269,12 @@ olmalı: Dakikada 80 atımla 38,4 saniyede yaklaşık 51 atım bulunur.
 **Amaç.** Bir YZ asistanı, "örnek sayısı olarak verilen qt ve rr'den qtc veren bir python fonksiyonu yaz" biçimindeki kısa prompta karşılık 17 ms gibi olanaksız bir QTc veren bir kod yazmıştır. Bu adımın veri hücresi bu sonucu da göstermektedir. Bu adımda aynı hesap, prompt kartının yedi alanıyla yeniden istenir ve sonuç denetlenir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Saniyede 500 kez örneklenmiş bir EKG'de QT ve RR aralıkları örnek sayısı olarak ölçüldü.
 Bazett yöntemiyle düzeltilmiş QT aralığını milisaniye olarak bulmak istiyorum.
-Veri: Defterde "veri" adında tek satırlık bir tablo var: "QT" sütunu QT aralığını, "RR" sütunu RR
-aralığını örnek sayısı olarak verir. Kayıt saniyede 500 kez örneklenmiştir.
+Veri: Jupyter Notebook'ta "veri" adında tek satırlık bir tablo var: "QT" sütunu QT aralığını, "RR"
+sütunu RR aralığını örnek sayısı olarak verir. Kayıt saniyede 500 kez örneklenmiştir.
 Görev: QT aralığını milisaniyeye, RR aralığını saniyeye çevir. QT'yi Bazett yöntemiyle düzelt:
 Milisaniye cinsinden QT'yi, saniye cinsinden RR aralığının kareköküne böl.
 Kısıtlar: Yalnızca bu tabloyu kullan. Saniyedeki örnek sayısını kendin varsayma; burada verilen 500
@@ -301,7 +303,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -330,18 +332,18 @@ mesajla durdurmalı. Her testin hangi hatayı yakaladığını bir cümleyle aç
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Vakanın frontal ekseni
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: 67 yaşında bir kadın hastanın istirahat EKG'sinden frontal QRS eksenini atım atım ölçmek
 istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir atımdır: "atım" sütunu atımın sırasını,
-"D1" ve "aVF" sütunları da bu derivasyonlardaki net QRS gerilimini milivolt olarak verir. Net
-gerilim, QRS kompleksindeki en büyük pozitif ve en büyük negatif sapmanın toplamıdır.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir atımdır: "atım" sütunu atımın
+sırasını, "D1" ve "aVF" sütunları da bu derivasyonlardaki net QRS gerilimini milivolt olarak verir.
+Net gerilim, QRS kompleksindeki en büyük pozitif ve en büyük negatif sapmanın toplamıdır.
 Görev: Her atım için yatay bileşeni D1 gerilimi, dikey bileşeni aVF geriliminin 0,866'ya bölümü olan
 vektörü kur. Frontal eksen, bu vektörün derece cinsinden açısıdır; açı D1 yönünden ölçülür ve
 ayaklara doğru artı değer alır. Ardından bütün atımların medyan eksenini bul ve −30 ile +90 derece
@@ -357,16 +359,16 @@ gerilimler küçük septal ve terminal kuvvetleri de içerir.
 ### Adım 2: Gerçek değerlere karşı on hasta
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Otomatik bir EKG ölçümünün, aralarında atriyal fibrilasyonu ya da sol dal bloğu olanların da
 bulunduğu on sanal klinik hastasında gerçek değerlerle ne kadar uyuştuğunu öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastanın bir ölçümüdür: "hasta" sütunu
-hastanın numarasını verir; "ritim" sütununda "sinüs" ya da "AF", "ileti" sütununda "normal" ya da
-"LBBB" (sol dal bloğu) yazar. "ölçüm" sütunu ölçümün adını ("kalp hızı", "PR", "QRS", "QT" ya da
-"eksen"), "ölçülen" sütunu otomatik ölçümün değerini, "gerçek" sütunu da gerçek değeri verir. Kalp
-hızları dakikadaki atım sayısı, aralıklar milisaniye, eksenler derece olarak verilmiştir. Atriyal
-fibrilasyonda PR aralığı olmadığından bu hücreler boştur.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastanın bir ölçümüdür: "hasta"
+sütunu hastanın numarasını verir; "ritim" sütununda "sinüs" ya da "AF", "ileti" sütununda "normal"
+ya da "LBBB" (sol dal bloğu) yazar. "ölçüm" sütunu ölçümün adını ("kalp hızı", "PR", "QRS", "QT" ya
+da "eksen"), "ölçülen" sütunu otomatik ölçümün değerini, "gerçek" sütunu da gerçek değeri verir.
+Kalp hızları dakikadaki atım sayısı, aralıklar milisaniye, eksenler derece olarak verilmiştir.
+Atriyal fibrilasyonda PR aralığı olmadığından bu hücreler boştur.
 Görev: Her satır için ölçülen ile gerçek değer arasındaki farkı (ölçülen eksi gerçek) hesapla. Her
 ölçüm türü için ortalama mutlak farkı ve en büyük mutlak farkı, bu farkın görüldüğü hastayla
 birlikte yazdır. Ardından bütün farkları, her hastanın bir satırda, her ölçümün bir sütunda yer
@@ -382,14 +384,14 @@ milisaniye olmalı.
 ### Adım 3: 100 numaralı kayıtta otuz dakika boyunca kalp hızı
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: MIT-BIH Aritmi Veri Tabanı'ndaki 100 numaralı kayıtta, yani 69 yaşında bir erkeğin 30
 dakikalık ambulatuvar EKG'sinde, kalp hızının zaman içinde nasıl değiştiğini görmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır, kardiyologların kayda koyduğu bir işarettir:
-"zaman" sütunu işaretin yerini saniye olarak, "etiket" sütunu da türünü verir. "N" normal atımı, "A"
-atriyal erken atımı, "V" ventriküler erken atımı gösterir; "+" ise ritim değişikliğini belirtir ve
-bir atım değildir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır, kardiyologların kayda koyduğu bir
+işarettir: "zaman" sütunu işaretin yerini saniye olarak, "etiket" sütunu da türünü verir. "N" normal
+atımı, "A" atriyal erken atımı, "V" ventriküler erken atımı gösterir; "+" ise ritim değişikliğini
+belirtir ve bir atım değildir.
 Görev: Yalnızca atımları, yani "+" dışındaki etiketleri tut. İlk atımdan sonraki her atım için kalp
 hızını, 60'ın saniye cinsinden RR aralığına bölümü olarak hesapla. Bu kalp hızını dakika cinsinden
 zamana karşı çiz. Ardından kaydın tamamının ortalama kalp hızını, 60'ın ortalama RR aralığına
@@ -405,13 +407,14 @@ Test: Tam 1 saniyelik bir RR aralığı dakikada 60 atım vermeli; ortalama kalp
 ### Adım 4: Her hasta için Bazett mi Fridericia mı?
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Sanal klinikteki on hastada, Bazett ya da Fridericia düzeltmesini seçmenin QT aralığının
 uzun olup olmadığı kararını değiştirip değiştirmediğini öğrenmek istiyorum.
-Veri: Defterde "veri" adında bir tablo var. Her satır bir hastadır: "hasta" sütunu hastanın
-numarasını verir; "cinsiyet" sütununda "kadın" ya da "erkek" yazar. "kalp hızı" sütunu ölçülen kalp
-hızını dakikadaki atım sayısı olarak, "QT" sütunu da ölçülen QT aralığını milisaniye olarak verir.
+Veri: Jupyter Notebook'ta "veri" adında bir tablo var. Her satır bir hastadır: "hasta" sütunu
+hastanın numarasını verir; "cinsiyet" sütununda "kadın" ya da "erkek" yazar. "kalp hızı" sütunu
+ölçülen kalp hızını dakikadaki atım sayısı olarak, "QT" sütunu da ölçülen QT aralığını milisaniye
+olarak verir.
 Görev: Her hasta için RR aralığını saniye olarak, 60'ın kalp hızına bölümüyle hesapla. QTc'yi Bazett
 formülüyle (QT bölü RR'nin karekökü) ve Fridericia formülüyle (QT bölü RR'nin küp kökü) bul.
 Kadınlarda 460 ms ya da daha uzun, erkeklerde 450 ms ya da daha uzun bir QTc'yi uzun kabul et. İki

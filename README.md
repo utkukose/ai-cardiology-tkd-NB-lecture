@@ -95,7 +95,21 @@ Every week follows the same rhythm. It opens with **the case of the week**, a pa
 | Prompt library | Every prompt of the prompt path of the week, with a copy button on GitHub |
 | PDF notes | The lecture page for reading and printing, with the prompts and the Python step in two appendices |
 
-The materials link to each other in one direction. The lecture page opens the parts of the interactive lab in the order A, B, C and the practice stops in increasing order. Each practice stop names the step of the prompt path and the sections of the Python path that reach its result, and each part of the lab ends with a link to the same places.
+The materials link to each other in both directions. The lecture page opens the parts of the interactive lab in the order A, B, C and the practice stops in increasing order. Each practice stop names the step of the prompt path and the sections of the Python path that reach its result. Every part of the lab and every stop in the Jupyter notebook ends with a link back to the lecture page, to the place where reading continues.
+
+## The order of the materials
+
+Every week is worked through in the same order. Each material names the next step and the place to return to, so nobody gets lost between the materials when the order below is followed.
+
+1. **Setup, once.** Install Anaconda, download the course folder and run the [start-here Jupyter notebook](en/start-here/README.md), following the [setup guide](SETUP.md). Those who cannot install anything open the same Jupyter notebooks in Google Colab.
+2. **Week page.** Open the week page (README) of the week. Its table «Study path» lists every step of the week in order, with its time.
+3. **Lecture page.** Read the lecture page from top to bottom. It is the main route of the week.
+4. **Blue boxes: the interactive lab.** At a blue box, open that part of the lab with the button of the box. Do the part, click «Back to the lecture page» at its end and continue reading below the box.
+5. **Orange boxes: the practice stops.** At an orange box, open the Jupyter notebook of the week in Colab or in Jupyter and choose your path: the stop in Part 1 on the prompt path, or the sections in Part 2 on the Python path. The link at the end of the stop takes you back to the lecture page, to the place where reading continues.
+6. **Finishing the week.** Follow the box «Finishing the week» at the end of the lecture page: Take the self-assessment in the tab «Check yourself» of the lab, export the learning log in the tab «Reflect and export» and submit the weekly project.
+7. **Next week.** Go on to the next week with the link in the section «Next week» of the week page.
+
+The PDF notes are the printable version of the lecture page, optional for reading and review. The prompt library gathers every prompt of the prompt path; the prompts are in the Jupyter notebook as well. If you lose your place, return to the table «Study path» on the week page.
 
 ## The eleven weeks
 

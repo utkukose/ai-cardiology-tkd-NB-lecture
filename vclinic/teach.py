@@ -30,7 +30,7 @@ TEXT = {
         "expected_close": "beklenen değer cevaba {tol} kadar yakın olmalı",
         "missing": "önce None yerine bir cevap yazın",
         "no_key": "şu alıştırma için kayıtlı bir beklenen cevap yok:",
-        "no_var": "defterde `{name}` adıyla saklanmış bir sonuç yok. Asistanın kodu sonucu bu adla saklamalı. Asistandan bunu isteyin ya da aşağıdaki hazır kodu çalıştırın.",
+        "no_var": "Jupyter Notebook'ta `{name}` adıyla saklanmış bir sonuç yok. Asistanın kodu sonucu bu adla saklamalı. Asistandan bunu isteyin ya da aşağıdaki hazır kodu çalıştırın.",
         "step_hint": "Kodu promptla karşılaştırın, prompt kütüphanesindeki onarım promptunu kullanın ya da aşağıdaki hazır kodu çalıştırın",
         "reference": "hazır kodun sonucu:",
         "range": "makul aralık {low} ile {high} arası",

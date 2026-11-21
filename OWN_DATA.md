@@ -46,7 +46,7 @@ A key that links the study numbers to the patients, if one is needed at all, sta
 | Written reports | Extraction of findings | Natural language processing | 6 |
 | Several kinds at once | A combined risk | Data fusion, missing data and calibration | 8 |
 | Any model | Can it be trusted and explained? | Explainable artificial intelligence (AI), distribution shift and bias | 9 |
-| Any model | Use at the bedside | Clinical decision support systems | 10 |
+| Any model | Use at the bedside | Clinical decision support systems (CDSS) | 10 |
 
 ## 4. How much data?
 
