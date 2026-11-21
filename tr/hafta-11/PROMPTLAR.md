@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [11. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-11/PROMPTS.md)
 
-Bu kütüphanede, 11. haftanın prompt (istem) yolundaki, yani Jupyter defterinin 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, defterde aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 11. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir deftere ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
 1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
 2. [Durak 1: Soru, veriler ve bir referans](#durak-1-soru-veriler-ve-bir-referans)
@@ -20,7 +20,7 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Defterde adımın amacını okuyun. |
+| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
 | 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
@@ -39,25 +39,25 @@ Bu durak, haftanın çözümlü projesi üzerinde final projeleri atölyesinin i
 **Amaç.** Bu adımda verilerin eksik değerleri sütun sütun sayılır ve projenin hangi sütunları kullandığı görülür.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir kardiyolog, bazı hastaların anjiyografiye gönderilmesine gerek kalmasın diye egzersiz
 testinden sonra koroner arter hastalığını dışlamayı amaçlayan bir final projesi planlıyor. Herhangi
 bir modelden önce veriler denetlenir: Hangi sütunlarda eksik değer var ve bunlar kararın kendi
 anında sahip olacağı sütunlar mı?
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 303
-hasta, bütün sütunlarıyla birlikte bulunur. Her satır bir hastadır: "hasta" hastanın verideki
-numarasını (0-302) verir. Projenin sekiz değişkeni şunlardır: "yaş" (yıl), "cinsiyet" ("erkek" ya da
-"kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina", "anjina dışı ağrı" ya da "ağrı
-yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en yüksek kalp hızı" (egzersiz
-testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası" (egzersiz testi anjinaya yol
-açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre çökmesi, mm). Veri setinden
-beş sütun daha gelir: "açlık kan şekeri 120 üstü" (açlık kan şekeri 120 mg/dL'nin üstündeyse 1),
-"istirahat EKG'si" (0 normal, 1 ST segmenti ya da T dalgası bozukluğu, 2 sol ventrikül
-hipertrofisi), "ST eğimi" (egzersizin doruğunda ST segmentinin eğimi: 1 yukarı, 2 düz, 3 aşağı),
-"floroskopide damar" (floroskopiyle boyanan ana damar sayısı, 0-3) ve "talyum sintigrafisi" (3
-normal, 6 sabit defekt, 7 geri dönüşlü defekt). Boş bir hücre eksik bir değerdir. "hastalık",
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 303 hasta, bütün sütunlarıyla birlikte bulunur. Her satır bir hastadır: "hasta" hastanın
+verideki numarasını (0-302) verir. Projenin sekiz değişkeni şunlardır: "yaş" (yıl), "cinsiyet"
+("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina", "anjina dışı ağrı" ya
+da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en yüksek kalp hızı"
+(egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası" (egzersiz testi
+anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre çökmesi, mm).
+Veri setinden beş sütun daha gelir: "açlık kan şekeri 120 üstü" (açlık kan şekeri 120 mg/dL'nin
+üstündeyse 1), "istirahat EKG'si" (0 normal, 1 ST segmenti ya da T dalgası bozukluğu, 2 sol
+ventrikül hipertrofisi), "ST eğimi" (egzersizin doruğunda ST segmentinin eğimi: 1 yukarı, 2 düz, 3
+aşağı), "floroskopide damar" (floroskopiyle boyanan ana damar sayısı, 0-3) ve "talyum sintigrafisi"
+(3 normal, 6 sabit defekt, 7 geri dönüşlü defekt). Boş bir hücre eksik bir değerdir. "hastalık",
 anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi
 hâlde 0 olur.
 Görev: "hasta" dışındaki her sütunun eksik değerlerini say. Proje dokuz sütun kullanır; bunlar sekiz
@@ -79,18 +79,18 @@ Test: Projenin kullandığı dokuz sütunda hiç eksik değer olmamalı ve tablo
 **Amaç.** Bu adımda Riley ve arkadaşlarının ölçütlerine göre on parametreli bir modelin ihtiyaç duyduğu üç en küçük büyüklük hesaplanır ve eğitim hastalarının sayısıyla karşılaştırılır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Projenin tam modelinin on parametresi vardır: Yedi değişken ve göğüs ağrısı tipi için üç
 sütun. Kardiyolog 227 eğitim hastasının yeterli olup olmadığını öğrenmek istiyor ve öngörülen değer
 olarak yaş, cinsiyet ve göğüs ağrısı tipinden oluşan referansın R kare değerini alıyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 227
-eğitim hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "olasılık,
-referans" ise dersin bir referans modelinin, yani yaş, cinsiyet ve göğüs ağrısı tipiyle kurulan bir
-lojistik regresyonun, aynı hastalarda kurulduktan sonra hastaya verdiği koroner arter hastalığı
-olasılığını verir. "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden
-fazla daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 227 eğitim hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki
+numarasını, "olasılık, referans" ise dersin bir referans modelinin, yani yaş, cinsiyet ve göğüs
+ağrısı tipiyle kurulan bir lojistik regresyonun, aynı hastalarda kurulduktan sonra hastaya verdiği
+koroner arter hastalığı olasılığını verir. "hastalık", anjiyogramda en az bir ana koroner arterde
+çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
 Görev: Olasılıkların Cox-Snell R kare değerini hesapla: Olasılıkların log-olabilirliğini, yani her
 hastada hastanın sahip olduğu sonuca verilen olasılığın doğal logaritmasının toplamını ve her
 hastaya genel hastalık oranını veren bir modelin log-olabilirliğini al; R kare, boş modelin
@@ -117,21 +117,21 @@ Test: R kare 0 ile en büyük R kare arasında olmalı ve (iii) büyüklüğü o
 **Amaç.** Bu adımda yaş, cinsiyet ve göğüs ağrısı tipinden oluşan referans model eğitim hastalarında kurulur ve test hastalarında bir kez sınanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog egzersiz testinin sonuçlarının yardımcı olup olmadığını sormadan önce, projenin
 aşması gereken çıtaya ihtiyacı vardır. Bu çıta, kardiyoloğun testten önce bildiği yaş, cinsiyet ve
 göğüs ağrısı tipidir.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 303
-hasta bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını (0-302), "küme" 2.
-haftanın kümesini verir ("eğitim", 227 hasta; "test", 76 hasta). Klinik değişkenler şunlardır: "yaş"
-(yıl), "cinsiyet" ("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina",
-"anjina dışı ağrı" ya da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en
-yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası"
-(egzersiz testi anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre
-çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla
-daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 303 hasta bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını (0-302),
+"küme" 2. haftanın kümesini verir ("eğitim", 227 hasta; "test", 76 hasta). Klinik değişkenler
+şunlardır: "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina",
+"atipik anjina", "anjina dışı ağrı" ya da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol"
+(mg/dL), "en yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz
+anjinası" (egzersiz testi anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin
+istirahate göre çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde
+50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
 Görev: Referansın girdilerini hazırla. Girdiler yaş, erkekler için 1 ve kadınlar için 0 olan bir
 sütun ve atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ile 1 değerlerinden oluşan üç sütundur;
 böylece tipik anjina referans kategori olur. Her girdiyi eğitim hastalarının ortalaması ve standart
@@ -158,19 +158,20 @@ Bu durak sonuçlardan ne kadar emin olunabileceğini sorar. Bootstrap yöntemi, 
 **Amaç.** Bu adımda referansın ve tam modelin test AUC değerleri bootstrap aralıklarıyla birlikte verilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Final projesinin raporu her sonucu belirsizliğiyle birlikte verir. 76 test hastasıyla
 kardiyolog, aynı türden başka hastalarla her AUC değerinin ne kadar değişebileceğini öğrenmek
 istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 76 test
-hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "olasılık, referans"
-dersin bir referans modelinin (yaş, cinsiyet ve göğüs ağrısı tipiyle kurulan bir lojistik regresyon)
-verdiği koroner arter hastalığı olasılığını, "olasılık, model" ise dersin tam modelinin (buna
-istirahat kan basıncı, kolesterol ve egzersiz testinin üç sonucu eklenmiş hâli) verdiği olasılığı
-gösterir. İki model de yalnızca 227 eğitim hastasında kurulmuştur. "hastalık", anjiyogramda en az
-bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 76 test hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını,
+"olasılık, referans" dersin bir referans modelinin (yaş, cinsiyet ve göğüs ağrısı tipiyle kurulan
+bir lojistik regresyon) verdiği koroner arter hastalığı olasılığını, "olasılık, model" ise dersin
+tam modelinin (buna istirahat kan basıncı, kolesterol ve egzersiz testinin üç sonucu eklenmiş hâli)
+verdiği olasılığı gösterir. İki model de yalnızca 227 eğitim hastasında kurulmuştur. "hastalık",
+anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi
+hâlde 0 olur.
 Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 seed değeriyle
 başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar hastayı yerine koyarak çeker.
 Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla. Her yeniden örneklemde aynı
@@ -193,18 +194,19 @@ model için de kullanılmalı.
 **Amaç.** Bu adımda tam model ile referans arasındaki fark, aynı yeniden örneklemlerde hesaplanan bootstrap aralığıyla birlikte verilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Projenin sorusu, egzersiz testinin sonuçlarının kardiyoloğun testten önce bildiklerine bir
 şey katıp katmadığıdır. Cevap yan yana konan iki AUC değeri değil, farkın aralığıdır.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 76 test
-hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "olasılık, referans"
-dersin bir referans modelinin (yaş, cinsiyet ve göğüs ağrısı tipiyle kurulan bir lojistik regresyon)
-verdiği koroner arter hastalığı olasılığını, "olasılık, model" ise dersin tam modelinin (buna
-istirahat kan basıncı, kolesterol ve egzersiz testinin üç sonucu eklenmiş hâli) verdiği olasılığı
-gösterir. İki model de yalnızca 227 eğitim hastasında kurulmuştur. "hastalık", anjiyogramda en az
-bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 76 test hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını,
+"olasılık, referans" dersin bir referans modelinin (yaş, cinsiyet ve göğüs ağrısı tipiyle kurulan
+bir lojistik regresyon) verdiği koroner arter hastalığı olasılığını, "olasılık, model" ise dersin
+tam modelinin (buna istirahat kan basıncı, kolesterol ve egzersiz testinin üç sonucu eklenmiş hâli)
+verdiği olasılığı gösterir. İki model de yalnızca 227 eğitim hastasında kurulmuştur. "hastalık",
+anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi
+hâlde 0 olur.
 Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 seed değeriyle
 başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar hastayı yerine koyarak çeker.
 Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla. Her yeniden örneklemde aynı
@@ -227,16 +229,17 @@ yeniden örneklem kümesinden hesaplanmamalı.
 **Amaç.** Bu adımda tam modelin test hastalarındaki kalibrasyon sabiti ve eğimi hesaplanır.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir dışlama olasılıkların kendisini kullanır. Kardiyolog, olasılıkların ortalamada doğru
 olup olmadığını ve fazla uç ya da fazla ılımlı olup olmadıklarını öğrenmek istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 76 test
-hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "olasılık, model" ise
-dersin sekiz klinik değişkenle ve yalnızca 227 eğitim hastasında kurulan bir lojistik regresyonunun
-verdiği koroner arter hastalığı olasılığını gösterir. "hastalık", anjiyogramda en az bir ana koroner
-arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 76 test hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını,
+"olasılık, model" ise dersin sekiz klinik değişkenle ve yalnızca 227 eğitim hastasında kurulan bir
+lojistik regresyonunun verdiği koroner arter hastalığı olasılığını gösterir. "hastalık",
+anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi
+hâlde 0 olur.
 Görev: Her olasılığı log-odds değerine, yani olasılığın bir eksi olasılığa bölümünün doğal
 logaritmasına dönüştür. Kalibrasyon sabiti, hastalık için yalnızca bir sabit terim içeren ve
 log-odds değerini sabit bir kayma olarak alan bir lojistik regresyondan gelir. Kalibrasyon eğimi ise
@@ -263,18 +266,19 @@ Bu durak olasılıkları bir karara dönüştürür. Dışlama eşiği eğitim h
 **Amaç.** Bu adımda dışlama eşiği eğitim hastalarının çapraz doğrulama olasılıklarında seçilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Eşiğin altındaki bir hasta anjiyografiye gönderilmezdi; bu yüzden eşik çok yüksek bir
 duyarlılığı korumalıdır: Hastalığı olanların en az yüzde 95'i eşikte ya da eşiğin üstünde
 kalmalıdır. Test hastaları bu seçimde hiçbir rol oynamamalıdır.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 227
-eğitim hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "olasılık,
-çapraz doğrulama" ise dersin sekiz klinik değişkenle kurulan bir lojistik regresyonunun beş katlı
-çapraz doğrulamayla hesaplanan koroner arter hastalığı olasılığını verir: Her hasta, eğitim
-hastalarının öteki beşte dördünde kurulmuş bir modelin olasılığını alır. "hastalık", anjiyogramda en
-az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 227 eğitim hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki
+numarasını, "olasılık, çapraz doğrulama" ise dersin sekiz klinik değişkenle kurulan bir lojistik
+regresyonunun beş katlı çapraz doğrulamayla hesaplanan koroner arter hastalığı olasılığını verir:
+Her hasta, eğitim hastalarının öteki beşte dördünde kurulmuş bir modelin olasılığını alır.
+"hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma
+görüldüyse 1, aksi hâlde 0 olur.
 Görev: 0,01, 0,02 ve bu biçimde 0,50'ye kadar giden eşikler arasından, hastalığı olan eğitim
 hastalarının en az yüzde 95'inin olasılığının ona eşit ya da ondan büyük olduğu en yüksek eşiği al.
 Bu eşikteki duyarlılığı ve olasılığı eşiğin altında kalan eğitim hastalarının payını ver.
@@ -293,18 +297,18 @@ düşmeli.
 **Amaç.** Bu adımda eşik test hastalarına bir kez uygulanır ve duyarlılık, özgüllük ve negatif öngörü değeri Wilson aralıklarıyla birlikte verilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog, dışlamanın kaç sevki önleyeceğini, hastalığı olan herhangi bir hastayı kaçırıp
 kaçırmadığını ve 76 hastayla bu sayılardan ne kadar emin olunabileceğini öğrenmek istiyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 76 test
-hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "olasılık, model" ise
-dersin sekiz klinik değişkenle ve yalnızca 227 eğitim hastasında kurulan bir lojistik regresyonunun
-verdiği koroner arter hastalığı olasılığını gösterir. "hastalık", anjiyogramda en az bir ana koroner
-arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur. Projenin eğitim
-hastalarında seçilen dışlama eşiği 0,18 değerindedir: Olasılığı bu eşiğin altında kalan bir hasta
-anjiyografiye gönderilmezdi.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 76 test hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını,
+"olasılık, model" ise dersin sekiz klinik değişkenle ve yalnızca 227 eğitim hastasında kurulan bir
+lojistik regresyonunun verdiği koroner arter hastalığı olasılığını gösterir. "hastalık",
+anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi
+hâlde 0 olur. Projenin eğitim hastalarında seçilen dışlama eşiği 0,18 değerindedir: Olasılığı bu
+eşiğin altında kalan bir hasta anjiyografiye gönderilmezdi.
 Görev: Olasılığı eşiğin altında kalan hasta dışlanır. Dışlananlar ve sevk edilenler arasında
 hastalığı olan ve olmayan hastaları say; duyarlılığı, özgüllüğü ve negatif öngörü değerini, yani
 dışlanan hastalar arasında hastalığı olmayanların payını hesapla. Her oranı yüzde 95'lik Wilson
@@ -325,18 +329,18 @@ Test: Dört sayının toplamı 76 olmalı ve her aralık 0 ile 1 arasında kalı
 **Amaç.** Bu adımda dışlamanın kadınlardaki ve erkeklerdeki duyarlılığı Wilson aralıklarının alt sınırlarıyla birlikte verilir.
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir dışlama kullanıldığı her grupta güvenli olmalıdır. Test kümesinde kadınlar erkeklerden
 azdır ve kadınların daha azında hastalık vardır.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 76 test
-hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "cinsiyet" "erkek" ya
-da "kadın" değerini, "olasılık, model" ise dersin sekiz klinik değişkenle ve yalnızca 227 eğitim
-hastasında kurulan bir lojistik regresyonunun verdiği koroner arter hastalığı olasılığını gösterir.
-"hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma
-görüldüyse 1, aksi hâlde 0 olur. Projenin eğitim hastalarında seçilen dışlama eşiği 0,18
-değerindedir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 76 test hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını,
+"cinsiyet" "erkek" ya da "kadın" değerini, "olasılık, model" ise dersin sekiz klinik değişkenle ve
+yalnızca 227 eğitim hastasında kurulan bir lojistik regresyonunun verdiği koroner arter hastalığı
+olasılığını gösterir. "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden
+fazla daralma görüldüyse 1, aksi hâlde 0 olur. Projenin eğitim hastalarında seçilen dışlama eşiği
+0,18 değerindedir.
 Görev: Kadınlar ve erkekler için ayrı ayrı hastaları, hastalığı olanları, hastalığı olup eşikte ya
 da eşiğin üstünde kalanları ve dışlananları say; duyarlılığı hesapla. Her oranı yüzde 95'lik Wilson
 aralığıyla ver: n hastanın k tanesi için, z = 1,96 olmak üzere merkez (k/n artı z kare bölü 2n) bölü
@@ -368,7 +372,7 @@ Sonuç yine "cevap" adıyla saklanmalı.
 ### Bir hata mesajını anlamak
 
 ```text
-Aşağıdaki kod bir Jupyter defterinde çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
+Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
 [kodu buraya yapıştırın]
@@ -403,31 +407,31 @@ satırla birlikte evet, hayır ya da belirsiz diye cevap ver.
 
 ## Haftalık projenin prompt yolu
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter defterinin 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
 ### Adım 1: Verilerin denetimi ve ayırma
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Bir kardiyolog, egzersiz testinden sonra koroner arter hastalığını dışlamayı amaçlayan bir
 final projesi kuruyor. Herhangi bir modelden önce veriler denetlenir ve bir kez eğitim ve test
 hastalarına ayrılır. Kendi final projeniz için Veri satırını kendi tablonuza göre yeniden yazın:
 Sütunları, birimlerini ve sonucun anlamını kelimelerle anlatın; hiçbir zaman bir hastanın satırını
 eklemeyin.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 303
-hasta, bütün sütunlarıyla birlikte bulunur. Her satır bir hastadır: "hasta" hastanın verideki
-numarasını (0-302) verir. Projenin sekiz değişkeni şunlardır: "yaş" (yıl), "cinsiyet" ("erkek" ya da
-"kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina", "anjina dışı ağrı" ya da "ağrı
-yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en yüksek kalp hızı" (egzersiz
-testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası" (egzersiz testi anjinaya yol
-açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre çökmesi, mm). Veri setinden
-beş sütun daha gelir: "açlık kan şekeri 120 üstü" (açlık kan şekeri 120 mg/dL'nin üstündeyse 1),
-"istirahat EKG'si" (0 normal, 1 ST segmenti ya da T dalgası bozukluğu, 2 sol ventrikül
-hipertrofisi), "ST eğimi" (egzersizin doruğunda ST segmentinin eğimi: 1 yukarı, 2 düz, 3 aşağı),
-"floroskopide damar" (floroskopiyle boyanan ana damar sayısı, 0-3) ve "talyum sintigrafisi" (3
-normal, 6 sabit defekt, 7 geri dönüşlü defekt). Boş bir hücre eksik bir değerdir. "hastalık",
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 303 hasta, bütün sütunlarıyla birlikte bulunur. Her satır bir hastadır: "hasta" hastanın
+verideki numarasını (0-302) verir. Projenin sekiz değişkeni şunlardır: "yaş" (yıl), "cinsiyet"
+("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina", "anjina dışı ağrı" ya
+da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en yüksek kalp hızı"
+(egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası" (egzersiz testi
+anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre çökmesi, mm).
+Veri setinden beş sütun daha gelir: "açlık kan şekeri 120 üstü" (açlık kan şekeri 120 mg/dL'nin
+üstündeyse 1), "istirahat EKG'si" (0 normal, 1 ST segmenti ya da T dalgası bozukluğu, 2 sol
+ventrikül hipertrofisi), "ST eğimi" (egzersizin doruğunda ST segmentinin eğimi: 1 yukarı, 2 düz, 3
+aşağı), "floroskopide damar" (floroskopiyle boyanan ana damar sayısı, 0-3) ve "talyum sintigrafisi"
+(3 normal, 6 sabit defekt, 7 geri dönüşlü defekt). Boş bir hücre eksik bir değerdir. "hastalık",
 anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla daralma görüldüyse 1, aksi
 hâlde 0 olur.
 Görev: Hasta sayısını, hastalığı olanların sayısını ve oranını ve her sütunun eksik değerlerini ver.
@@ -444,20 +448,20 @@ Test: İki küme bütün hastaları kapsamalı ve hiçbir hasta iki kümede bird
 ### Adım 2: Bir referans, model ve kazancın aralığı
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog tam modeli, egzersiz testinden önce bilinenlerle aynı test hastalarında
 karşılaştırıyor ve kazancı aralığıyla birlikte veriyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 303
-hasta bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını (0-302), "küme" 2.
-haftanın kümesini verir ("eğitim", 227 hasta; "test", 76 hasta). Klinik değişkenler şunlardır: "yaş"
-(yıl), "cinsiyet" ("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina",
-"anjina dışı ağrı" ya da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en
-yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası"
-(egzersiz testi anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre
-çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla
-daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 303 hasta bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını (0-302),
+"küme" 2. haftanın kümesini verir ("eğitim", 227 hasta; "test", 76 hasta). Klinik değişkenler
+şunlardır: "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina",
+"atipik anjina", "anjina dışı ağrı" ya da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol"
+(mg/dL), "en yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz
+anjinası" (egzersiz testi anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin
+istirahate göre çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde
+50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
 Görev: Referansın girdilerini hazırla. Girdiler yaş, erkekler için 1 ve kadınlar için 0 olan bir
 sütun ve atipik anjina, anjina dışı ağrı ve ağrı yok için 0 ile 1 değerlerinden oluşan üç sütundur;
 böylece tipik anjina referans kategori olur. Her girdiyi eğitim hastalarının ortalaması ve standart
@@ -482,20 +486,20 @@ Test: Hiçbir test hastası iki modelden birini kurmak için kullanılmamalı ve
 ### Adım 3: Kalibrasyon ve karar eşiği
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Kardiyolog, tam modelin dışlama eşiğini eğitim hastalarında seçiyor ve test hastaları
 açılmadan önce kalibrasyonu denetliyor.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 303
-hasta bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını (0-302), "küme" 2.
-haftanın kümesini verir ("eğitim", 227 hasta; "test", 76 hasta). Klinik değişkenler şunlardır: "yaş"
-(yıl), "cinsiyet" ("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina", "atipik anjina",
-"anjina dışı ağrı" ya da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol" (mg/dL), "en
-yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz anjinası"
-(egzersiz testi anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin istirahate göre
-çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden fazla
-daralma görüldüyse 1, aksi hâlde 0 olur.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 303 hasta bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını (0-302),
+"küme" 2. haftanın kümesini verir ("eğitim", 227 hasta; "test", 76 hasta). Klinik değişkenler
+şunlardır: "yaş" (yıl), "cinsiyet" ("erkek" ya da "kadın"), "göğüs ağrısı tipi" ("tipik anjina",
+"atipik anjina", "anjina dışı ağrı" ya da "ağrı yok"), "istirahat kan basıncı" (mmHg), "kolesterol"
+(mg/dL), "en yüksek kalp hızı" (egzersiz testinde ulaşılan en yüksek kalp hızı, dakikada), "egzersiz
+anjinası" (egzersiz testi anjinaya yol açtıysa 1) ve "ST çökmesi" (egzersizde ST segmentinin
+istirahate göre çökmesi, mm). "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde
+50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur.
 Görev: 2. adımdaki tam modeli eğitim hastalarında beş katlı çapraz doğrulamayla kur; katlar aynı
 hastalık oranıyla ve 2026 seed değeriyle çekilsin; böylece her eğitim hastası onu görmemiş bir
 modelin olasılığını alsın. Bu olasılıklarda kalibrasyon sabitini ve eğimini 2. duraktaki gibi
@@ -514,20 +518,20 @@ Test: Eşik herhangi bir test hastası kullanılmadan seçilmeli ve eşikteki e�
 ### Adım 4: Rapor için sonuç tablosu
 
 ```text
-Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter defterime yapıştırıp
+Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
 çalıştıracağım.
 Bağlam: Final projesinin raporu TRIPOD+AI'ı izler: Her sonuç, hem bütün hastalarda hem de modelin
 kullanılacağı gruplarda aralığıyla birlikte verilir.
-Veri: Defterde "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin Cleveland
-verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş hastalardan 76 test
-hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını, "cinsiyet" "erkek" ya
-da "kadın" değerini, "olasılık, referans" dersin bir referans modelinin (yaş, cinsiyet ve göğüs
-ağrısı tipiyle kurulan bir lojistik regresyon) verdiği koroner arter hastalığı olasılığını,
-"olasılık, model" ise dersin tam modelinin (buna istirahat kan basıncı, kolesterol ve egzersiz
-testinin üç sonucu eklenmiş hâli) verdiği olasılığı gösterir. İki model de yalnızca 227 eğitim
-hastasında kurulmuştur. "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde 50'sinden
-fazla daralma görüldüyse 1, aksi hâlde 0 olur. Projenin eğitim hastalarında seçilen dışlama eşiği
-0,18 değerindedir.
+Veri: Jupyter Notebook'ta "veri" adlı bir tablo vardır. Tabloda UCI Heart Disease veri setinin
+Cleveland verisinden, yani bir egzersiz testinden sonra koroner anjiyografiye gönderilmiş
+hastalardan 76 test hastası bulunur. Her satır bir hastadır: "hasta" hastanın verideki numarasını,
+"cinsiyet" "erkek" ya da "kadın" değerini, "olasılık, referans" dersin bir referans modelinin (yaş,
+cinsiyet ve göğüs ağrısı tipiyle kurulan bir lojistik regresyon) verdiği koroner arter hastalığı
+olasılığını, "olasılık, model" ise dersin tam modelinin (buna istirahat kan basıncı, kolesterol ve
+egzersiz testinin üç sonucu eklenmiş hâli) verdiği olasılığı gösterir. İki model de yalnızca 227
+eğitim hastasında kurulmuştur. "hastalık", anjiyogramda en az bir ana koroner arterde çapın yüzde
+50'sinden fazla daralma görüldüyse 1, aksi hâlde 0 olur. Projenin eğitim hastalarında seçilen
+dışlama eşiği 0,18 değerindedir.
 Görev: Test hastalarından 2.000 yeniden örneklem çek: Her yeniden örneklem, 2026 seed değeriyle
 başlatılan bir rastgele sayı üreteciyle, tablodaki hasta sayısı kadar hastayı yerine koyarak çeker.
 Yalnızca tek bir sonucun hastalarını içeren yeniden örneklemi atla. Her yeniden örneklemde aynı
