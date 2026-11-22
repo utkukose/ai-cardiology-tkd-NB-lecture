@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[2. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-02/PROMPTS.md)
+[2. hafta](README.md) · [English](../../en/week-02/PROMPTS.md)
 
-Bu kütüphanede, 2. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Mini proje: KAH tahmin modeli, ROC eğrisi ve AUC](#durak-1-mini-proje-kah-tahmin-modeli-roc-eğrisi-ve-auc)
 3. [Durak 2: Bir modeli dürüstçe sınamak](#durak-2-bir-modeli-dürüstçe-sınamak)
 4. [Durak 3: Alt gruplar, sağkalım ve denetlenecek bir model](#durak-3-alt-gruplar-sağkalım-ve-denetlenecek-bir-model)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Mini proje: KAH tahmin modeli, ROC eğrisi ve AUC
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 2, 1. ve 2. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-02/NB02_makine_ogrenmesi_temelleri.ipynb#scrollTo=stop-1-prompt)*
 
 UCI Heart Disease veri setindeki Cleveland hastalarına efor testi ve koroner anjiyografi yapılmıştır. Bu durakta öykü ve efor testinden alınan sekiz değişkenle bir lojistik regresyon kurulur; modelin daha önce görmediği hastalarda koroner arter hastalığını ne kadar iyi tanıdığı denetlenir.
 
-### Adım 1.1: Model ve test AUC değeri
+### Prompt 1.1: Model ve test AUC değeri
 
-**Amaç.** Bu adımda eğitim kümesinde bir lojistik regresyon eğitilir ve model test kümesinde ROC eğrisinin altındaki alanla (AUC) ölçülür.
+**Amaç.** Bu promptla eğitim kümesinde bir lojistik regresyon eğitilir ve model test kümesinde ROC eğrisinin altındaki alanla (AUC) ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -66,9 +66,9 @@ Test: Test kümesinde 76 hasta bulunmalı ve AUC 0,5 ile 1 arasında olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,931
 
-### Adım 1.2: 0,5 eşiğinde duyarlılık
+### Prompt 1.2: 0,5 eşiğinde duyarlılık
 
-**Amaç.** Bu adımda modelin olasılıkları 0,5 eşiğinde karara dönüştürülür ve modelin hastalığı olanların ne kadarını tanıdığı bulunur.
+**Amaç.** Bu promptla modelin olasılıkları 0,5 eşiğinde karara dönüştürülür ve modelin hastalığı olanların ne kadarını tanıdığı bulunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -90,9 +90,9 @@ Test: TP + FN, tablodaki hastalığı olanların sayısına, yani 35'e eşit olm
 
 **Beklenen sonuç:** "cevap" = 0,8
 
-### Adım 1.3: En yüksek kalp hızının odds oranı
+### Prompt 1.3: En yüksek kalp hızının odds oranı
 
-**Amaç.** Bu adımda efor testinde ulaşılan en yüksek kalp hızı bir standart sapma arttığında koroner arter hastalığının odds değerinin nasıl değiştiği modelden okunur.
+**Amaç.** Bu promptla efor testinde ulaşılan en yüksek kalp hızı bir standart sapma arttığında koroner arter hastalığının odds değerinin nasıl değiştiği modelden okunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -116,13 +116,13 @@ Test: Katsayısı 0 olan bir değişkenin odds oranı tam 1 olmalı; ST çökmes
 
 ## Durak 2: Bir modeli dürüstçe sınamak
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-2) · Python yolunda aynı sonuç: 3-6. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-02/NB02_makine_ogrenmesi_temelleri.ipynb#scrollTo=stop-2-prompt)*
 
 76 hastalık tek bir test kümesi belirsiz bir kestirim verir ve bazı modeller olduklarından daha iyi görünür. Bu durakta test çapraz doğrulamayla tekrarlanır ve bir rastgele orman denenir. Ardından sanal kliniğin nadir bir sonucuna geçilir: 12 ay içinde ölüm ya da kalp yetersizliği nedeniyle hastaneye yatış.
 
-### Adım 2.1: Beş katlı çapraz doğrulama
+### Prompt 2.1: Beş katlı çapraz doğrulama
 
-**Amaç.** Bu adımda 1. duraktaki lojistik regresyon, her seferinde hastaların başka bir beşte birinde olmak üzere beş kez sınanır ve ortalama AUC alınır.
+**Amaç.** Bu promptla 1. duraktaki lojistik regresyon, her seferinde hastaların başka bir beşte birinde olmak üzere beş kez sınanır ve ortalama AUC alınır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -150,9 +150,9 @@ Test: Her biri 0,5 ile 1 arasında olan beş değer yazdırılmalı.
 
 **Beklenen sonuç:** "cevap" = 0,871
 
-### Adım 2.2: Bir rastgele orman
+### Prompt 2.2: Bir rastgele orman
 
-**Amaç.** Bu adımda aynı hastalarda daha esnek bir model eğitilir ve test AUC değeri lojistik regresyonunkiyle karşılaştırılır.
+**Amaç.** Bu promptla aynı hastalarda daha esnek bir model eğitilir ve test AUC değeri lojistik regresyonunkiyle karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -181,9 +181,9 @@ AUC değerini de hesapla ve iki değeri yan yana yazdır.
 
 **Beklenen sonuç:** "cevap" = 0,911
 
-### Adım 2.3: Nadir bir sonuç
+### Prompt 2.3: Nadir bir sonuç
 
-**Amaç.** Bu adımda hastaların yalnızca 100'de 3 kadarında görülen 12 aylık olay için bir model eğitilir ve sınıf ağırlıklarının modelin bulduklarını nasıl değiştirdiği görülür.
+**Amaç.** Bu promptla hastaların yalnızca 100'de 3 kadarında görülen 12 aylık olay için bir model eğitilir ve sınıf ağırlıklarının modelin bulduklarını nasıl değiştirdiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -211,13 +211,13 @@ eğitilen aynı model, 0,5 eşiğinde bu olayların hiçbirini bulamamalı.
 
 ## Durak 3: Alt gruplar, sağkalım ve denetlenecek bir model
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-3) · Python yolunda aynı sonuç: 7-9. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-02/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-02/NB02_makine_ogrenmesi_temelleri.ipynb#scrollTo=stop-3-prompt)*
 
 Kalp yetersizliği olan hastalar yalnızca ejeksiyon fraksiyonuyla değil, başka özellikleriyle de birbirinden ayrılır. Bu durakta önce, yönteme sonuç bilgisi verilmeden alt gruplar aranır; ardından izlem boyunca sağkalım kestirilir. Son olarak bir YZ asistanının kusursuz bir sonuç bildirdiği bir model denetlenir.
 
-### Adım 3.1: Üç küme
+### Prompt 3.1: Üç küme
 
-**Amaç.** Bu adımda k-ortalamalar yöntemi kalp yetersizliği olan hastalar arasında üç grup arar; ardından bu gruplar gizli fenogruplarla karşılaştırılır.
+**Amaç.** Bu promptla k-ortalamalar yöntemi kalp yetersizliği olan hastalar arasında üç grup arar; ardından bu gruplar gizli fenogruplarla karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -247,9 +247,9 @@ uyumu gösterir.
 
 **Beklenen sonuç:** "cevap" = 0,706
 
-### Adım 3.2: 24. ayda Kaplan-Meier
+### Prompt 3.2: 24. ayda Kaplan-Meier
 
-**Amaç.** Bu adımda HFrEF hastalarının izlemin başlamasından iki yıl sonra hangi oranda hayatta olduğu ve kalp yetersizliği nedeniyle hastaneye yatmadığı kestirilir.
+**Amaç.** Bu promptla HFrEF hastalarının izlemin başlamasından iki yıl sonra hangi oranda hayatta olduğu ve kalp yetersizliği nedeniyle hastaneye yatmadığı kestirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -272,9 +272,9 @@ Test: Aynı hesap, HFpEF hastalarında 24. ayda daha yüksek bir değer vermeli.
 
 **Beklenen sonuç:** "cevap" = 0,733
 
-### Adım 3.3: Bir asistanın modelini denetlemek
+### Prompt 3.3: Bir asistanın modelini denetlemek
 
-**Amaç.** Bir YZ asistanı, 12 ay içindeki olay için 1,000'lik bir AUC bildirmiştir. Asistanın modeli izlem süresini de kullanmış ve eğitildiği hastaların kendisinde ölçülmüştür. Bu adımda aynı türden bir modelin dürüst bir değerlendirmede ne verdiği bulunur.
+**Amaç.** Bir YZ asistanı, 12 ay içindeki olay için 1,000'lik bir AUC bildirmiştir. Asistanın modeli izlem süresini de kullanmış ve eğitildiği hastaların kendisinde ölçülmüştür. Bu promptla aynı türden bir modelin dürüst bir değerlendirmede ne verdiği bulunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -349,11 +349,11 @@ düzeltilmiş kodu ver.
 [kodu buraya yapıştırın]
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Fenogrup sayısını seçmek
+### Proje adımı 1: Fenogrup sayısını seçmek
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -377,7 +377,7 @@ sayısını tam sayı olarak "cevap" adıyla sakla.
 Test: Küme sayısı arttıkça WCSS azalmalı ve her siluet değeri −1 ile 1 arasında bulunmalı.
 ```
 
-### Adım 2: Fenogrupları tanımlamak ve adlandırmak
+### Proje adımı 2: Fenogrupları tanımlamak ve adlandırmak
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -398,7 +398,7 @@ program kurmamalıdır.
 Test: Tablodaki hasta sayılarının toplamı 407 olmalı.
 ```
 
-### Adım 3: Fenogruba göre prognoz
+### Proje adımı 3: Fenogruba göre prognoz
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -420,7 +420,7 @@ p değerini "cevap" adıyla sakla.
 Test: Her eğri 1'den başlamalı ve hiç yükselmemeli.
 ```
 
-### Adım 4: Gizli gerçekle karşılaştırmak
+### Proje adımı 4: Gizli gerçekle karşılaştırmak
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp

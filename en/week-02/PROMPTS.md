@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 2](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-02/PROMPTLAR.md)
+[Week 2](README.md) · [Türkçe](../../tr/hafta-02/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 2, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Mini project: A CAD prediction model, ROC curve and AUC](#stop-1-mini-project-a-cad-prediction-model-roc-curve-and-auc)
 3. [Stop 2: Testing a model honestly](#stop-2-testing-a-model-honestly)
 4. [Stop 3: Subgroups, survival and a model to review](#stop-3-subgroups-survival-and-a-model-to-review)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Mini project: A CAD prediction model, ROC curve and AUC
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-1) · The same result on the Python path: Python step 2, Sections 1 and 2*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-02/NB02_machine_learning_fundamentals.ipynb#scrollTo=stop-1-prompt)*
 
 The Cleveland patients of the UCI Heart Disease data set had an exercise test and a coronary angiography. In this stop a logistic regression is built from eight variables of the history and the exercise test, and its ability to recognise coronary artery disease is checked in patients that the model has not seen.
 
-### Step 1.1: The model and its test AUC
+### Prompt 1.1: The model and its test AUC
 
 **Goal.** Fit a logistic regression on the training set and measure it on the test set with the area under the ROC curve (AUC).
 
@@ -66,7 +66,7 @@ Test: The test set must hold 76 patients, and the AUC must lie between 0.5 and 1
 
 **Expected result:** "answer" = 0.931
 
-### Step 1.2: Sensitivity at the threshold 0.5
+### Prompt 1.2: Sensitivity at the threshold 0.5
 
 **Goal.** Turn the probabilities of the model into decisions at the threshold 0.5 and find out how many of the patients with disease the model recognises.
 
@@ -90,7 +90,7 @@ Test: TP + FN must equal the number of patients with disease in the table, which
 
 **Expected result:** "answer" = 0.8
 
-### Step 1.3: The odds ratio of the highest heart rate
+### Prompt 1.3: The odds ratio of the highest heart rate
 
 **Goal.** Read from the model how the odds of coronary artery disease change when the highest heart rate of the exercise test is one standard deviation higher.
 
@@ -117,11 +117,11 @@ depression must be above 1.
 
 ## Stop 2: Testing a model honestly
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-2) · The same result on the Python path: Sections 3 to 6*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-02/NB02_machine_learning_fundamentals.ipynb#scrollTo=stop-2-prompt)*
 
 A single test set of 76 patients gives an uncertain estimate, and some models look better than they are. In this stop the test is repeated with cross-validation and a random forest is tried. Then the work turns to a rare outcome of the virtual clinic: death or a hospitalisation for heart failure within 12 months.
 
-### Step 2.1: Five-fold cross-validation
+### Prompt 2.1: Five-fold cross-validation
 
 **Goal.** Test the logistic regression of Stop 1 five times, each time on another fifth of the patients, and take the mean AUC.
 
@@ -153,7 +153,7 @@ Test: Five values must be printed, each between 0.5 and 1.
 
 **Expected result:** "answer" = 0.871
 
-### Step 2.2: A random forest
+### Prompt 2.2: A random forest
 
 **Goal.** Train a more flexible model on the same patients and compare its test AUC with the logistic regression.
 
@@ -184,7 +184,7 @@ regression on the same sets and print the two values side by side.
 
 **Expected result:** "answer" = 0.911
 
-### Step 2.3: A rare outcome
+### Prompt 2.3: A rare outcome
 
 **Goal.** Train a model of an event within 12 months, which only about 3 of 100 patients have, and see how class weights change what the model finds.
 
@@ -214,11 +214,11 @@ balancing the classes must find none of these events at the threshold 0.5.
 
 ## Stop 3: Subgroups, survival and a model to review
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-3) · The same result on the Python path: Sections 7 to 9*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-02/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-02/NB02_machine_learning_fundamentals.ipynb#scrollTo=stop-3-prompt)*
 
 Patients with heart failure differ in more than their ejection fraction. In this stop subgroups are searched for without telling the method the answer, and survival over the follow-up is estimated. Then a model for which an AI assistant reported a perfect result is reviewed.
 
-### Step 3.1: Three clusters
+### Prompt 3.1: Three clusters
 
 **Goal.** Let k-means find three groups among the patients with heart failure, then compare them with the hidden phenogroups.
 
@@ -249,7 +249,7 @@ and 0 agreement by chance.
 
 **Expected result:** "answer" = 0.706
 
-### Step 3.2: Kaplan-Meier at 24 months
+### Prompt 3.2: Kaplan-Meier at 24 months
 
 **Goal.** Estimate which share of the patients with HFrEF are alive and free of a hospitalisation for heart failure two years after the start of follow-up.
 
@@ -276,7 +276,7 @@ Test: The same calculation for the patients with HFpEF must give a higher value 
 
 **Expected result:** "answer" = 0.733
 
-### Step 3.3: Reviewing the model of an assistant
+### Prompt 3.3: Reviewing the model of an assistant
 
 **Goal.** An assistant reported an AUC of 1.000 for the event within 12 months. Its model used the length of follow-up and was measured on the patients on which it was trained. Find out what an honest evaluation of the same kind of model gives.
 
@@ -352,11 +352,11 @@ Answer with a short list, then return the corrected code.
 [paste the code here]
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Choose the number of phenogroups
+### Project step 1: Choose the number of phenogroups
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -381,7 +381,7 @@ Test: The WCSS must fall as the number of clusters rises, and every silhouette m
 and 1.
 ```
 
-### Step 2: Describe and name the phenogroups
+### Project step 2: Describe and name the phenogroups
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -402,7 +402,7 @@ Output: Print the table and the names, and keep the table under the name "answer
 Test: The numbers of patients in the table must add up to 407.
 ```
 
-### Step 3: Prognosis by phenogroup
+### Project step 3: Prognosis by phenogroup
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -424,7 +424,7 @@ tests, and keep the p value of the clusters under the name "answer".
 Test: Every curve must start at 1 and never rise.
 ```
 
-### Step 4: Compare with the hidden truth
+### Project step 4: Compare with the hidden truth
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
