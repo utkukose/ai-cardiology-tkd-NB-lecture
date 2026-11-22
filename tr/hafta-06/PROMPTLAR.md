@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[6. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-06/PROMPTS.md)
+[6. hafta](README.md) · [English](../../en/week-06/PROMPTS.md)
 
-Bu kütüphanede, 6. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Epikrizlerden altı tanı: Kurallar ve bir model](#durak-1-epikrizlerden-altı-tanı-kurallar-ve-bir-model)
 3. [Durak 2: Mini proje: NER pipeline ile STEMI, AF ve kalp yetersizliği](#durak-2-mini-proje-ner-pipeline-ile-stemi-af-ve-kalp-yetersizliği)
 4. [Durak 3: Anjiyografi raporları: Darlık derecesi ve damar](#durak-3-anjiyografi-raporları-darlık-derecesi-ve-damar)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Epikrizlerden altı tanı: Kurallar ve bir model
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 6, 1-5. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-06/NB06_klinik_metin_madenciligi.ipynb#scrollTo=stop-1-prompt)*
 
 Altı kronik tanı sanal kliniğin epikrizlerinden okunur: Önce tanıların kelimeleri aranır, sonra her geçişin durumu belirlenir, ardından ilaçlar ve iki laboratuvar değeri eklenir; son olarak eğitim epikrizlerinden öğrenen bir model kurulur. Her yöntem A hastanesinin test kümesinde, model ayrıca B hastanesinin epikrizlerinde değerlendirilir.
 
-### Adım 1.1: Bir anahtar kelime kuralı
+### Prompt 1.1: Bir anahtar kelime kuralı
 
-**Amaç.** Bu adımda epikrizlerde altı tanının kelimeleri aranır ve bir kelime aramasının nerede yanıldığı görülür.
+**Amaç.** Bu promptla epikrizlerde altı tanının kelimeleri aranır ve bir kelime aramasının nerede yanıldığı görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -71,9 +71,9 @@ atriyal fibrilasyon ve koroner arter hastalığı için pozitif bulunmalı.
 
 **Beklenen sonuç:** "cevap" = 0,19
 
-### Adım 1.2: Her geçişin durumu
+### Prompt 1.2: Her geçişin durumu
 
-**Amaç.** Bu adımda yok sayılan, olası ya da bir yakına ait geçişler dışarıda bırakılır.
+**Amaç.** Bu promptla yok sayılan, olası ya da bir yakına ait geçişler dışarıda bırakılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -107,15 +107,15 @@ Kısıtlar: Yalnızca bu tabloyu kullan. Kod dosya okumamalı, internetten bir �
 program kurmamalıdır.
 Çıktı: Her tanı için bir satır ve üç değer içeren bir tablo yazdır; makro F1 değerini üç ondalık
 basamakla "cevap" adıyla sakla.
-Test: Atriyal fibrilasyonun pozitif öngörü değeri 1.1. adımdakinden yüksek olmalı ve VC-2444
+Test: Atriyal fibrilasyonun pozitif öngörü değeri Prompt 1.1'dekinden yüksek olmalı ve VC-2444
 numaralı hastanın epikrizi yalnızca kalp yetersizliği için pozitif bulunmalı.
 ```
 
 **Beklenen sonuç:** "cevap" = 0,856
 
-### Adım 1.3: İlaçlar ve laboratuvar değerleri
+### Prompt 1.3: İlaçlar ve laboratuvar değerleri
 
-**Amaç.** Bu adımda hastalığın adı olmayan kanıtlar eklenir: İlaçlar, eGFR ve HbA1c.
+**Amaç.** Bu promptla hastalığın adı olmayan kanıtlar eklenir: İlaçlar, eGFR ve HbA1c.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -162,9 +162,9 @@ yetersizliği, hipertansiyon ve kronik böbrek hastalığı için pozitif bulunm
 
 **Beklenen sonuç:** "cevap" = 0,98
 
-### Adım 1.4: Epikrizlerden öğrenen bir model: TF-IDF ve lojistik regresyon
+### Prompt 1.4: Epikrizlerden öğrenen bir model: TF-IDF ve lojistik regresyon
 
-**Amaç.** Bu adımda A hastanesinin epikrizleriyle bir model eğitilir ve A ile B hastanelerinde değerlendirilir.
+**Amaç.** Bu promptla A hastanesinin epikrizleriyle bir model eğitilir ve A ile B hastanelerinde değerlendirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -201,13 +201,13 @@ test epikrizlerindeki makro F1 değeri 0,9'un üstünde olmalı.
 
 ## Durak 2: Mini proje: NER pipeline ile STEMI, AF ve kalp yetersizliği
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-2) · Python yolunda aynı sonuç: 6-8. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-06/NB06_klinik_metin_madenciligi.ipynb#scrollTo=stop-2-prompt)*
 
 Bu durak oturumun mini projesidir. Burada epikrizleri Hugging Face Hub'dan alınan, önceden eğitilmiş Türkçe bir dil modeli okur. Modelin tokenizer'ı önce B hastanesinin büyük harflerinin bir modele ne yaptığını gösterir. Model ardından tanıları, ilaçları ve işlemleri bulmak için ince ayarla eğitilir; bulduğu varlıklar, 1. duraktaki durum kuralı ve ilaçlarla birlikte B hastanesinin epikrizlerindeki altı tanıyı verir. Son adım, epikrizlerdeki akut koroner sendromdan ve ST yükselmesinden okunan STEMI'yi ekler.
 
-### Adım 2.1: Önceden eğitilmiş Türkçe bir modelin token'ları
+### Prompt 2.1: Önceden eğitilmiş Türkçe bir modelin token'ları
 
-**Amaç.** Bu adımda önceden eğitilmiş Türkçe bir modelin B hastanesinin epikrizlerini nasıl token'lara böldüğü ve harflerin büyük ya da küçük olmasının neyi değiştirdiği görülür.
+**Amaç.** Bu promptla önceden eğitilmiş Türkçe bir modelin B hastanesinin epikrizlerini nasıl token'lara böldüğü ve harflerin büyük ya da küçük olmasının neyi değiştirdiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -232,9 +232,9 @@ harf işleminden sonra Türkçe işlemden sonrakinden daha çok ya da aynı say�
 
 **Beklenen sonuç:** "cevap" = 19,5
 
-### Adım 2.2: Varlıklar için modele ince ayar
+### Prompt 2.2: Varlıklar için modele ince ayar
 
-**Amaç.** Bu adımda önceden eğitilmiş modele tanıları, ilaçları ve işlemleri etiketlemesi öğretilir. Eğitim birkaç dakika sürer.
+**Amaç.** Bu promptla önceden eğitilmiş modele tanıları, ilaçları ve işlemleri etiketlemesi öğretilir. Eğitim birkaç dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -272,9 +272,9 @@ Test: Kayıp ilk epoch'tan son epoch'a düşmeli ve F1 değeri 0 ile 1 arasında
 
 **Beklenen sonuç:** "cevap" = 0,981
 
-### Adım 2.3: Varlıklardan B hastanesindeki altı tanıya
+### Prompt 2.3: Varlıklardan B hastanesindeki altı tanıya
 
-**Amaç.** Bu adımda modelin varlıkları, 1. duraktaki durum kuralı ve ilaçlarla B hastanesinin her epikrizi için altı tanıya dönüştürülür.
+**Amaç.** Bu promptla modelin varlıkları, 1. duraktaki durum kuralı ve ilaçlarla B hastanesinin her epikrizi için altı tanıya dönüştürülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -308,9 +308,9 @@ gelebilen kronik böbrek hastalığı ve diyabet dışında her tanı için nega
 
 **Beklenen sonuç:** "cevap" = 0,754
 
-### Adım 2.4: Seyirden ve EKG'den STEMI
+### Prompt 2.4: Seyirden ve EKG'den STEMI
 
-**Amaç.** Bu adımda epikrizlerin akut koroner sendrom ve ST segmenti hakkında yazdıklarından STEMI geçiren hastalar bulunur ve sonuç iki hastanede değerlendirilir.
+**Amaç.** Bu promptla epikrizlerin akut koroner sendrom ve ST segmenti hakkında yazdıklarından STEMI geçiren hastalar bulunur ve sonuç iki hastanede değerlendirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -341,13 +341,13 @@ Test: Her değer 0 ile 1 arasında olmalı ve her kümedeki STEMI geçiren hasta
 
 ## Durak 3: Anjiyografi raporları: Darlık derecesi ve damar
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-3) · Python yolunda aynı sonuç: 9. bölüm*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-06/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-06/NB06_klinik_metin_madenciligi.ipynb#scrollTo=stop-3-prompt)*
 
 Burada sanal kliniğin anjiyografi raporları bir kayıt sisteminin okuyacağı gibi okunur. Dersteki işlem hattı bir rapordaki arterleri, segmentleri ve darlık derecelerini bulur, her bölgenin en büyük darlığını tutar ve hastalıklı damarları sayar. İşlem hattı önce tek bir rapora, sonra A hastanesinin test raporlarına, son olarak da büyük harflerle yazılmış B hastanesi raporlarına uygulanır.
 
-### Adım 3.1: Tek bir rapor, cümle cümle
+### Prompt 3.1: Tek bir rapor, cümle cümle
 
-**Amaç.** Bu adımda tek bir anjiyografi raporu dersteki işlem hattının yaptığı gibi okunur.
+**Amaç.** Bu promptla tek bir anjiyografi raporu dersteki işlem hattının yaptığı gibi okunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -383,9 +383,9 @@ kateterlerin numarası olan 6 bir darlık olarak görünmemeli.
 
 **Beklenen sonuç:** "cevap" = 3
 
-### Adım 3.2: A hastanesinin bütün test raporları
+### Prompt 3.2: A hastanesinin bütün test raporları
 
-**Amaç.** Bu adımda işlem hattı her test raporuna uygulanır ve kayıt sistemiyle karşılaştırılır.
+**Amaç.** Bu promptla işlem hattı her test raporuna uygulanır ve kayıt sistemiyle karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -428,9 +428,9 @@ damar bulmalı.
 
 **Beklenen sonuç:** "cevap" = 0,959
 
-### Adım 3.3: B hastanesinin büyük harfli raporları
+### Prompt 3.3: B hastanesinin büyük harfli raporları
 
-**Amaç.** Bu adımda aynı işlem hattı, büyük harflerle ve kısa bir üslupla yazılmış başka bir hastanenin raporlarına uygulanır.
+**Amaç.** Bu promptla aynı işlem hattı, büyük harflerle ve kısa bir üslupla yazılmış başka bir hastanenin raporlarına uygulanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -524,11 +524,11 @@ alıntıla ve düzeltmesini öner.
 [kodu buraya yapıştırın]
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: İki hastanede bölge bölge
+### Proje adımı 1: İki hastanede bölge bölge
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -568,7 +568,7 @@ de uyuştuğu raporların oranını üç ondalık basamakla "cevap" adıyla sakl
 Test: "test" kümesinde 394, "dış" kümesinde 373 rapor bulunmalı ve her oran 0 ile 1 arasında olmalı.
 ```
 
-### Adım 2: Sol ana koroner arter ve hastalıklı damar sayısı
+### Proje adımı 2: Sol ana koroner arter ve hastalıklı damar sayısı
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -609,7 +609,7 @@ hastalığının pozitif öngörü değerini üç ondalık basamakla "cevap" ad�
 Test: İki tablonun sayılarının toplamı kümedeki rapor sayısına eşit olmalı.
 ```
 
-### Adım 3: Hatalar ve nedenleri
+### Proje adımı 3: Hatalar ve nedenleri
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -649,7 +649,7 @@ program kurmamalıdır.
 Test: Yanlış rapor sayısı 394'ten büyük olamaz.
 ```
 
-### Adım 4: Anjiyografi ve epikriz birlikte
+### Proje adımı 4: Anjiyografi ve epikriz birlikte
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp

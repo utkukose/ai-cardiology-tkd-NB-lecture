@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 6](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-06/PROMPTLAR.md)
+[Week 6](README.md) · [Türkçe](../../tr/hafta-06/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 6, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Six diagnoses from discharge summaries: rules and a model](#stop-1-six-diagnoses-from-discharge-summaries-rules-and-a-model)
 3. [Stop 2: Mini project: STEMI, AF and heart failure with an NER pipeline](#stop-2-mini-project-stemi-af-and-heart-failure-with-an-ner-pipeline)
 4. [Stop 3: Angiography reports: the degree of stenosis and the vessel](#stop-3-angiography-reports-the-degree-of-stenosis-and-the-vessel)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Six diagnoses from discharge summaries: rules and a model
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-1) · The same result on the Python path: Python step 6, Sections 1 to 5*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-06/NB06_clinical_text_mining.ipynb#scrollTo=stop-1-prompt)*
 
 The six chronic diagnoses are read from the discharge summaries of the virtual clinic, first by searching for their words, then with the assertion of every mention, then with the drugs and two laboratory values, and finally by a model that learns from the training summaries. Every method is judged on the test set of hospital A, and the model also on the summaries of hospital B.
 
-### Step 1.1: A keyword rule
+### Prompt 1.1: A keyword rule
 
 **Goal.** Search the summaries for the words of six diagnoses and see where a search for words goes wrong.
 
@@ -70,7 +70,7 @@ positive for heart failure, atrial fibrillation and coronary artery disease.
 
 **Expected result:** "answer" = 0.19
 
-### Step 1.2: The assertion of every mention
+### Prompt 1.2: The assertion of every mention
 
 **Goal.** Leave out the mentions that are negated, possible or in a relative.
 
@@ -105,13 +105,13 @@ Constraints: Use only this table. The code must not read files, download anythin
 or install programs.
 Output: Print a table with one row for each diagnosis and the three values, and keep the macro F1,
 with three decimals, under the name "answer".
-Test: The positive predictive value of atrial fibrillation must be higher than in step 1.1, and the
-summary of patient VC-2444 must be positive only for heart failure.
+Test: The positive predictive value of atrial fibrillation must be higher than with Prompt 1.1, and
+the summary of patient VC-2444 must be positive only for heart failure.
 ```
 
 **Expected result:** "answer" = 0.856
 
-### Step 1.3: Drugs and laboratory values
+### Prompt 1.3: Drugs and laboratory values
 
 **Goal.** Add the evidence that is not a word for the disease: drugs, eGFR and HbA1c.
 
@@ -159,7 +159,7 @@ be positive for heart failure, hypertension and chronic kidney disease.
 
 **Expected result:** "answer" = 0.98
 
-### Step 1.4: A model that learns from the summaries: TF-IDF and logistic regression
+### Prompt 1.4: A model that learns from the summaries: TF-IDF and logistic regression
 
 **Goal.** Train a model on the summaries of hospital A and judge it on hospital A and on hospital B.
 
@@ -198,11 +198,11 @@ summaries only, and the macro F1 on the test summaries must be above 0.9.
 
 ## Stop 2: Mini project: STEMI, AF and heart failure with an NER pipeline
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-2) · The same result on the Python path: Sections 6 to 8*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-06/NB06_clinical_text_mining.ipynb#scrollTo=stop-2-prompt)*
 
 This stop is the mini project of the session. A pretrained Turkish language model from the Hugging Face Hub reads the summaries here. Its tokenizer shows first what the capital letters of hospital B do to a model. The model is then fine-tuned to find diagnoses, drugs and procedures, and its entities, with the assertion rule and the drugs of Stop 1, give the six diagnoses of the summaries of hospital B. The last step adds STEMI, read from the acute coronary syndrome and the ST elevation of the summaries.
 
-### Step 2.1: The tokens of a pretrained Turkish model
+### Prompt 2.1: The tokens of a pretrained Turkish model
 
 **Goal.** See how a pretrained Turkish model cuts the summaries of hospital B into tokens, and what the case of the letters changes.
 
@@ -230,7 +230,7 @@ tokens after the usual lower case than after the Turkish one or the same number.
 
 **Expected result:** "answer" = 19.5
 
-### Step 2.2: Fine-tuning the model for entities
+### Prompt 2.2: Fine-tuning the model for entities
 
 **Goal.** Teach the pretrained model to tag diagnoses, drugs and procedures. The training takes a few minutes.
 
@@ -270,7 +270,7 @@ Test: The loss must fall from the first to the last epoch, and the F1 score must
 
 **Expected result:** "answer" = 0.981
 
-### Step 2.3: From entities to the six diagnoses of hospital B
+### Prompt 2.3: From entities to the six diagnoses of hospital B
 
 **Goal.** Turn the entities of the model into the six diagnoses of every summary of hospital B, with the assertion rule and the drugs of Stop 1.
 
@@ -307,7 +307,7 @@ values.
 
 **Expected result:** "answer" = 0.754
 
-### Step 2.4: STEMI from the course and the ECG of a summary
+### Prompt 2.4: STEMI from the course and the ECG of a summary
 
 **Goal.** Find the patients with a STEMI from what the summaries write about the acute coronary syndrome and the ST segment, and judge the result on both hospitals.
 
@@ -339,11 +339,11 @@ equal the sum of the column "STEMI" in that set.
 
 ## Stop 3: Angiography reports: the degree of stenosis and the vessel
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-3) · The same result on the Python path: Section 9*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-06/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-06/NB06_clinical_text_mining.ipynb#scrollTo=stop-3-prompt)*
 
 The angiography reports of the virtual clinic are read here as a registry would read them. The pipeline of the lecture finds the arteries, the segments and the degrees of stenosis of a report, keeps the largest stenosis of every territory and counts the diseased vessels. It is applied first to one report, then to the test reports of hospital A and finally to the reports of hospital B, which are written in capitals.
 
-### Step 3.1: One report, sentence by sentence
+### Prompt 3.1: One report, sentence by sentence
 
 **Goal.** Read one angiography report as the pipeline of the lecture does.
 
@@ -382,7 +382,7 @@ and the number of the catheters, 6, must not appear as a stenosis.
 
 **Expected result:** "answer" = 3
 
-### Step 3.2: All test reports of hospital A
+### Prompt 3.2: All test reports of hospital A
 
 **Goal.** Apply the pipeline to every test report and compare it with the registry.
 
@@ -429,7 +429,7 @@ report of patient VC-2914.
 
 **Expected result:** "answer" = 0.959
 
-### Step 3.3: The reports of hospital B, in capitals
+### Prompt 3.3: The reports of hospital B, in capitals
 
 **Goal.** Apply the same pipeline to the reports of another hospital, written in capitals and in a short style.
 
@@ -526,11 +526,11 @@ the line of the code that is wrong and propose the correction.
 [paste the code here]
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Territory by territory in both hospitals
+### Project step 1: Territory by territory in both hospitals
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -572,7 +572,7 @@ Test: There must be 394 reports in the set "test" and 373 in the set "external",
 must lie between 0 and 1.
 ```
 
-### Step 2: The left main coronary artery and the number of diseased vessels
+### Project step 2: The left main coronary artery and the number of diseased vessels
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -613,7 +613,7 @@ for left main disease in the set "test", with three decimals, under the name "an
 Test: The numbers of the two tables must add up to the number of reports of the set.
 ```
 
-### Step 3: The errors and their causes
+### Project step 3: The errors and their causes
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -654,7 +654,7 @@ reports under the name "answer".
 Test: The number of wrong reports cannot be larger than 394.
 ```
 
-### Step 4: The angiography and the discharge summary together
+### Project step 4: The angiography and the discharge summary together
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
