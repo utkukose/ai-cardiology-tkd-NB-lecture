@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 5](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-05/PROMPTLAR.md)
+[Week 5](README.md) · [Türkçe](../../tr/hafta-05/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 5, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Mini project: Rhythm, from a rule to the nine classes of the PhysioNet 2020 Challenge](#stop-1-mini-project-rhythm-from-a-rule-to-the-nine-classes-of-the-physionet-2020-challenge)
 3. [Stop 2: ST elevation: the median beat, the J point and the alarm](#stop-2-st-elevation-the-median-beat-the-j-point-and-the-alarm)
 4. [Stop 3: Long-term monitoring: windows, AF burden and false alarms](#stop-3-long-term-monitoring-windows-af-burden-and-false-alarms)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Mini project: Rhythm, from a rule to the nine classes of the PhysioNet 2020 Challenge
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-1) · The same result on the Python path: Python step 5, Sections 1 to 5*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-05/NB05_time_series_and_ecg_ai.ipynb#scrollTo=stop-1-prompt)*
 
 This stop is the mini project of the session. The 12-lead ECGs of PTB-XL are read first as a cardiologist reads the rhythm, from the RR intervals, and then by a one-dimensional convolutional network that learns six labels at once. The network is trained on folds 1 and 2, its thresholds are chosen on fold 9, and both the rule and the network are judged on fold 10. The last step judges the same network trained for the nine classes of the PhysioNet 2020 Challenge.
 
-### Step 1.1: A rule from the RR intervals
+### Prompt 1.1: A rule from the RR intervals
 
 **Goal.** Test the first half of the clinical rule for AF, irregularly irregular RR intervals, on the test fold.
 
@@ -63,7 +63,7 @@ the true alarms divided by the recordings with AF.
 
 **Expected result:** "answer" = 0.914
 
-### Step 1.2: A one-dimensional network for six labels
+### Prompt 1.2: A one-dimensional network for six labels
 
 **Goal.** Train a network that reads the whole signal of the 12 leads and gives six labels at once. The training takes about a minute.
 
@@ -100,7 +100,7 @@ Test: The network must have 59,622 parameters, and the mean AUC must lie between
 
 **Expected result:** "answer" = 0.881
 
-### Step 1.3: Each label on the test fold
+### Prompt 1.3: Each label on the test fold
 
 **Goal.** Judge the network of the course label by label on recordings that it never saw.
 
@@ -128,7 +128,7 @@ Test: Every AUC must lie between 0 and 1, and the numbers of recordings must add
 
 **Expected result:** "answer" = 0.975
 
-### Step 1.4: Thresholds chosen on fold 9
+### Prompt 1.4: Thresholds chosen on fold 9
 
 **Goal.** Turn the probabilities into decisions with one threshold per label, chosen on fold 9 and judged on fold 10.
 
@@ -159,7 +159,7 @@ specificity must lie between 0 and 1.
 
 **Expected result:** "answer" = 0.636
 
-### Step 1.5: The nine classes of the PhysioNet 2020 Challenge
+### Prompt 1.5: The nine classes of the PhysioNet 2020 Challenge
 
 **Goal.** Judge class by class a network trained for the nine classes of CPSC 2018, one of the databases of the PhysioNet 2020 Challenge. The training takes about a minute.
 
@@ -191,11 +191,11 @@ table.
 
 ## Stop 2: ST elevation: the median beat, the J point and the alarm
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-2) · The same result on the Python path: Sections 6 and 7*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-05/NB05_time_series_and_ecg_ai.ipynb#scrollTo=stop-2-prompt)*
 
 The case of the week, record 13913, is read here as a STEMI alarm reads it. The single beats are aligned on their R peaks and their median gives one clean beat for each lead. The ST deviation at the J point is measured against the PR segment, the criteria of the universal definition decide the alarm, and the same alarm is then tried on the recordings of the test fold with left bundle branch block.
 
-### Step 2.1: The median beat of the case
+### Prompt 2.1: The median beat of the case
 
 **Goal.** Build from the single beats of the case one clean beat for each lead, as the software of an ECG machine does before it measures.
 
@@ -221,7 +221,7 @@ the range of its single beats at every sample.
 
 **Expected result:** "answer" = 19
 
-### Step 2.2: ST at the J point and the criteria of the universal definition
+### Prompt 2.2: ST at the J point and the criteria of the universal definition
 
 **Goal.** Measure the ST deviation of the twelve leads of the case and apply the criteria of the universal definition, as an automatic STEMI alarm does.
 
@@ -256,7 +256,7 @@ describes ST depression in III.
 
 **Expected result:** "answer" = 9
 
-### Step 2.3: The alarm in left bundle branch block
+### Prompt 2.3: The alarm in left bundle branch block
 
 **Goal.** Try the same alarm on all recordings of the test fold and see what it does in left bundle branch block, where the criteria do not apply.
 
@@ -292,11 +292,11 @@ them cannot be more than 54.
 
 ## Stop 3: Long-term monitoring: windows, AF burden and false alarms
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-3) · The same result on the Python path: Sections 8 and 9*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-05/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-05/NB05_time_series_and_ecg_ai.ipynb#scrollTo=stop-3-prompt)*
 
 A Holter recorder of the virtual clinic has followed patient VC-0128 for 24 hours. In this stop the beats of the recording are read in windows of 30 seconds, as the algorithm of a recorder does: The irregularity of the RR intervals in each window decides the alarm, the windows with an alarm give the AF burden, and the false alarms are traced back to their hours. The recording is synthetic, so the truth is known beat by beat, and nothing has to be downloaded.
 
-### Step 3.1: The irregularity of the rhythm in windows of 30 seconds
+### Prompt 3.1: The irregularity of the rhythm in windows of 30 seconds
 
 **Goal.** Read the 24 hours as a monitor does, window by window, and count the windows whose RR intervals are irregular.
 
@@ -327,7 +327,7 @@ positive.
 
 **Expected result:** "answer" = 519
 
-### Step 3.2: The AF burden
+### Prompt 3.2: The AF burden
 
 **Goal.** Turn the windows into the number that a Holter report gives: the share of the day spent in AF.
 
@@ -358,7 +358,7 @@ Test: The burden must equal the share of AF windows among all windows of 30 seco
 
 **Expected result:** "answer" = 18.0
 
-### Step 3.3: Where the false alarms come from
+### Prompt 3.3: Where the false alarms come from
 
 **Goal.** Compare the alarm with the confirmed episodes and find the hours of its false alarms, as the reader of a Holter recording would.
 
@@ -437,11 +437,11 @@ baseline, the J point and the cut-points by sex and age? For every problem, quot
 the consequence in clinical words and give the corrected line. Do not change anything else.
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: The alarm against the acute infarctions
+### Project step 1: The alarm against the acute infarctions
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -474,7 +474,7 @@ Test: There must be 4,381 recordings and 26 acute infarctions, and the true alar
 than 26.
 ```
 
-### Step 2: Where the false alarms come from
+### Project step 2: Where the false alarms come from
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -506,7 +506,7 @@ Test: The false alarms of a statement cannot be more than the recordings that ca
 total of false alarms must equal the alarms minus the true alarms of step 1.
 ```
 
-### Step 3: A sweep of the cut-points
+### Project step 3: A sweep of the cut-points
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -539,7 +539,7 @@ Test: The number of alarms cannot rise when the margin grows, and the row with a
 equal the result of step 1.
 ```
 
-### Step 4: Leaving out the recordings where the criteria do not apply
+### Project step 4: Leaving out the recordings where the criteria do not apply
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

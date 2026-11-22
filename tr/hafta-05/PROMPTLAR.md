@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[5. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-05/PROMPTS.md)
+[5. hafta](README.md) · [English](../../en/week-05/PROMPTS.md)
 
-Bu kütüphanede, 5. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına](#durak-1-mini-proje-ritim-bir-kuraldan-physionet-2020-challengeın-dokuz-sınıfına)
 3. [Durak 2: ST yükselmesi: Medyan atım, J noktası ve alarm](#durak-2-st-yükselmesi-medyan-atım-j-noktası-ve-alarm)
 4. [Durak 3: Uzun süreli izlem: Pencereler, AF yükü ve yanlış alarmlar](#durak-3-uzun-süreli-izlem-pencereler-af-yükü-ve-yanlış-alarmlar)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Mini proje: Ritim, bir kuraldan PhysioNet 2020 Challenge'ın dokuz sınıfına
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 5, 1-5. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb#scrollTo=stop-1-prompt)*
 
 Bu durak oturumun mini projesidir. PTB-XL'in 12 derivasyonlu EKG'leri önce bir kardiyoloğun ritmi okuduğu gibi RR aralıklarından, ardından altı etiketi aynı anda öğrenen tek boyutlu evrişimli bir ağ tarafından okunur. Ağ 1. ve 2. katlarla eğitilir, eşikleri 9. katta seçilir; kural da ağ da 10. katta değerlendirilir. Son adım, aynı ağın PhysioNet 2020 Challenge'ın dokuz sınıfı için eğitilmiş hâlini değerlendirir.
 
-### Adım 1.1: RR aralıklarından bir kural
+### Prompt 1.1: RR aralıklarından bir kural
 
-**Amaç.** Bu adımda AF için klinik kuralın ilk yarısı, yani düzensiz biçimde düzensiz RR aralıkları, test katında sınanır.
+**Amaç.** Bu promptla AF için klinik kuralın ilk yarısı, yani düzensiz biçimde düzensiz RR aralıkları, test katında sınanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -62,9 +62,9 @@ kayıtların sayısına bölümüne eşit olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,914
 
-### Adım 1.2: Altı etiket için tek boyutlu bir ağ
+### Prompt 1.2: Altı etiket için tek boyutlu bir ağ
 
-**Amaç.** Bu adımda 12 derivasyonun sinyalinin tamamını okuyan ve aynı anda altı etiket veren bir ağ eğitilir. Eğitim yaklaşık bir dakika sürer.
+**Amaç.** Bu promptla 12 derivasyonun sinyalinin tamamını okuyan ve aynı anda altı etiket veren bir ağ eğitilir. Eğitim yaklaşık bir dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -101,9 +101,9 @@ Test: Ağın 59.622 parametresi olmalı ve ortalama AUC 0,5 ile 1 arasında olma
 
 **Beklenen sonuç:** "cevap" = 0,881
 
-### Adım 1.3: Test katında her etiket
+### Prompt 1.3: Test katında her etiket
 
-**Amaç.** Bu adımda dersin ağı, hiç görmediği kayıtlarda etiket etiket değerlendirilir.
+**Amaç.** Bu promptla dersin ağı, hiç görmediği kayıtlarda etiket etiket değerlendirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -129,9 +129,9 @@ toplamı en az 2.198 olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,975
 
-### Adım 1.4: 9. katta seçilen eşikler
+### Prompt 1.4: 9. katta seçilen eşikler
 
-**Amaç.** Bu adımda olasılıklar, her etiket için 9. katta seçilip 10. katta değerlendirilen bir eşikle kararlara dönüştürülür.
+**Amaç.** Bu promptla olasılıklar, her etiket için 9. katta seçilip 10. katta değerlendirilen bir eşikle kararlara dönüştürülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -159,9 +159,9 @@ olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,636
 
-### Adım 1.5: PhysioNet 2020 Challenge'ın dokuz sınıfı
+### Prompt 1.5: PhysioNet 2020 Challenge'ın dokuz sınıfı
 
-**Amaç.** Bu adımda PhysioNet 2020 Challenge'ın veri tabanlarından biri olan CPSC 2018'in dokuz sınıfı için eğitilmiş bir ağ, sınıf sınıf değerlendirilir. Eğitim yaklaşık bir dakika sürer.
+**Amaç.** Bu promptla PhysioNet 2020 Challenge'ın veri tabanlarından biri olan CPSC 2018'in dokuz sınıfı için eğitilmiş bir ağ, sınıf sınıf değerlendirilir. Eğitim yaklaşık bir dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -192,13 +192,13 @@ Test: Her AUC 0 ile 1 arasında olmalı ve tablodaki her sınıfın en az bir ka
 
 ## Durak 2: ST yükselmesi: Medyan atım, J noktası ve alarm
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-2) · Python yolunda aynı sonuç: 6. ve 7. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb#scrollTo=stop-2-prompt)*
 
 Haftanın vakası olan 13913 numaralı kayıt, burada bir STEMI alarmının okuduğu gibi okunur. Tek tek atımlar R tepelerine göre hizalanır ve medyanları her derivasyon için temiz bir atım verir. J noktasındaki ST sapması PR segmentine göre ölçülür, alarmın kararını evrensel tanımın ölçütleri verir; aynı alarm daha sonra test katındaki sol dal bloklu kayıtlarda denenir.
 
-### Adım 2.1: Vakanın medyan atımı
+### Prompt 2.1: Vakanın medyan atımı
 
-**Amaç.** Bu adımda vakanın tek tek atımlarından, bir EKG cihazının yazılımının ölçümden önce yaptığı gibi, her derivasyon için temiz bir atım oluşturulur.
+**Amaç.** Bu promptla vakanın tek tek atımlarından, bir EKG cihazının yazılımının ölçümden önce yaptığı gibi, her derivasyon için temiz bir atım oluşturulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -223,9 +223,9 @@ atımların aralığında kalmalı.
 
 **Beklenen sonuç:** "cevap" = 19
 
-### Adım 2.2: J noktasında ST ve evrensel tanımın ölçütleri
+### Prompt 2.2: J noktasında ST ve evrensel tanımın ölçütleri
 
-**Amaç.** Bu adımda vakanın on iki derivasyonundaki ST sapması ölçülür ve otomatik bir STEMI alarmının yaptığı gibi evrensel tanımın ölçütleri uygulanır.
+**Amaç.** Bu promptla vakanın on iki derivasyonundaki ST sapması ölçülür ve otomatik bir STEMI alarmının yaptığı gibi evrensel tanımın ölçütleri uygulanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -261,9 +261,9 @@ raporu D3'te ST çökmesi tanımlamaktadır.
 
 **Beklenen sonuç:** "cevap" = 9
 
-### Adım 2.3: Sol dal bloğunda alarm
+### Prompt 2.3: Sol dal bloğunda alarm
 
-**Amaç.** Bu adımda aynı alarm test katındaki bütün kayıtlarda denenir ve ölçütlerin uygulanamadığı sol dal bloğunda ne yaptığı görülür.
+**Amaç.** Bu promptla aynı alarm test katındaki bütün kayıtlarda denenir ve ölçütlerin uygulanamadığı sol dal bloğunda ne yaptığı görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -297,11 +297,11 @@ alarmlar 54'ten fazla olamaz.
 
 ## Durak 3: Uzun süreli izlem: Pencereler, AF yükü ve yanlış alarmlar
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-3) · Python yolunda aynı sonuç: 8. ve 9. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-05/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-05/NB05_zaman_serisi_ve_ekg_yapay_zekasi.ipynb#scrollTo=stop-3-prompt)*
 
 Sanal kliniğin bir Holter cihazı VC-0128 numaralı hastayı 24 saat izlemiştir. Bu durakta kaydın atımları, bir kayıt cihazının algoritmasının yaptığı gibi 30 saniyelik pencereler hâlinde okunur: Her penceredeki RR aralıklarının düzensizliği alarmı belirler, alarm verilen pencereler AF yükünü verir ve yanlış alarmların hangi saatlerde çıktığı izlenir. Kayıt sentetik olduğu için gerçek durum atım atım bilinmektedir ve hiçbir şeyin indirilmesi gerekmez.
 
-### Adım 3.1: 30 saniyelik pencerelerde ritmin düzensizliği
+### Prompt 3.1: 30 saniyelik pencerelerde ritmin düzensizliği
 
 **Amaç.** Bu adımda 24 saat, bir monitörün yaptığı gibi pencere pencere okunur ve RR aralıkları düzensiz olan pencereler sayılır.
 
@@ -329,7 +329,7 @@ Test: 30 saniyelik 2.880 pencere bulunmalı ve bütün değişim katsayıları p
 
 **Beklenen sonuç:** "cevap" = 519
 
-### Adım 3.2: AF yükü
+### Prompt 3.2: AF yükü
 
 **Amaç.** Bu adımda pencereler, bir Holter raporunun verdiği sayıya, yani günün AF içinde geçen bölümünün oranına dönüştürülür.
 
@@ -360,7 +360,7 @@ olmalı.
 
 **Beklenen sonuç:** "cevap" = 18,0
 
-### Adım 3.3: Yanlış alarmlar nereden geliyor?
+### Prompt 3.3: Yanlış alarmlar nereden geliyor?
 
 **Amaç.** Bu adımda alarm doğrulanmış ataklarla karşılaştırılır ve bir Holter okuyucusunun yapacağı gibi yanlış alarmların saatleri bulunur.
 
@@ -439,11 +439,11 @@ Her sorun için ilgili satırı aktar, sonucunu klinik sözcüklerle açıkla ve
 Başka hiçbir şeyi değiştirme.
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Alarm ve akut enfarktüsler
+### Proje adımı 1: Alarm ve akut enfarktüsler
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -476,7 +476,7 @@ ondalık basamakla "cevap" adıyla sakla.
 Test: 4.381 kayıt ve 26 akut enfarktüs bulunmalı; doğru alarmlar 26'dan fazla olamaz.
 ```
 
-### Adım 2: Yanlış alarmlar nereden geliyor?
+### Proje adımı 2: Yanlış alarmlar nereden geliyor?
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -509,7 +509,7 @@ Test: Bir ifadenin yanlış alarmları, o ifadeyi taşıyan kayıtlardan fazla o
 toplamı da 1. adımdaki alarmlardan doğru alarmların çıkarılmasıyla bulunan sayıya eşit olmalı.
 ```
 
-### Adım 3: Eşiklerin taranması
+### Proje adımı 3: Eşiklerin taranması
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -541,7 +541,7 @@ basamakla "cevap" adıyla sakla.
 Test: Pay büyüdükçe alarm sayısı artamaz; payın 0 olduğu satır 1. adımın sonucuna eşit olmalı.
 ```
 
-### Adım 4: Ölçütlerin uygulanamadığı kayıtları dışarıda bırakmak
+### Proje adımı 4: Ölçütlerin uygulanamadığı kayıtları dışarıda bırakmak
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
