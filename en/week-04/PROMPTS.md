@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 4](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-04/PROMPTLAR.md)
+[Week 4](README.md) · [Türkçe](../../tr/hafta-04/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 4, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Mini project: Cardiomyopathy from few labelled images with EfficientNet-B0](#stop-1-mini-project-cardiomyopathy-from-few-labelled-images-with-efficientnet-b0)
 3. [Stop 2: Pixel-wise segmentation training: a U-Net on CAMUS](#stop-2-pixel-wise-segmentation-training-a-u-net-on-camus)
 4. [Stop 3: Automatic EF with Simpson's method and the agreement with the expert](#stop-3-automatic-ef-with-simpsons-method-and-the-agreement-with-the-expert)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Mini project: Cardiomyopathy from few labelled images with EfficientNet-B0
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-1) · The same result on the Python path: Python step 4, Sections 1 to 4*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-04/NB04_transfer_learning.ipynb#scrollTo=stop-1-prompt)*
 
 A network trained on more than a million photographs of ImageNet already knows edges, textures and shapes. In this stop EfficientNet-B0 is reused in two ways on the cardiomyopathy groups of ACDC: Its features feed a simple model, and the whole network is fine-tuned. Then only five patients per group are kept, to see how much the result depends on the patients that happen to be chosen.
 
-### Step 1.1: Features of a network trained on photographs
+### Prompt 1.1: Features of a network trained on photographs
 
 **Goal.** Describe every slice with the 1280 features of EfficientNet-B0 and learn the three groups from them with a simple model.
 
@@ -68,7 +68,7 @@ patients.
 
 **Expected result:** "answer" = 0.867
 
-### Step 1.2: Fine-tuning the whole network
+### Prompt 1.2: Fine-tuning the whole network
 
 **Goal.** Let every layer of EfficientNet-B0 adapt to the slices, starting from the ImageNet weights. The training takes about a minute.
 
@@ -103,7 +103,7 @@ Test: After the kept weights are loaded, the validation loss must again have its
 
 **Expected result:** "answer" = 0.967
 
-### Step 1.3: Five patients per group
+### Prompt 1.3: Five patients per group
 
 **Goal.** See how much a result from few patients depends on which patients are chosen.
 
@@ -135,11 +135,11 @@ Test: Every choice must hold 15 different patients, five of each group.
 
 ## Stop 2: Pixel-wise segmentation training: a U-Net on CAMUS
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-2) · The same result on the Python path: Sections 5 to 7*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-04/NB04_transfer_learning.ipynb#scrollTo=stop-2-prompt)*
 
 A segmentation network gives every pixel a label. In this stop the Dice coefficient is first computed by hand, on an outline shifted by a few pixels. Then a small U-Net learns the cavity of the left ventricle from 800 training frames of CAMUS and is measured on the 200 frames of the 50 test patients, by view and by phase.
 
-### Step 2.1: The Dice coefficient by hand
+### Prompt 2.1: The Dice coefficient by hand
 
 **Goal.** See how much a small shift of an outline lowers the Dice coefficient.
 
@@ -163,7 +163,7 @@ Test: The Dice coefficient of the cavity with itself, without a shift, must be 1
 
 **Expected result:** "answer" = 0.877
 
-### Step 2.2: Training the U-Net
+### Prompt 2.2: Training the U-Net
 
 **Goal.** Train a small U-Net to draw the cavity of the left ventricle and measure it on frames of patients it has never seen. The training takes about three minutes.
 
@@ -204,7 +204,7 @@ trainable parameters.
 
 **Expected result:** "answer" = 0.924
 
-### Step 2.3: The Dice coefficient by view and phase
+### Prompt 2.3: The Dice coefficient by view and phase
 
 **Goal.** Find where the network draws worst, as an echocardiography laboratory would ask. The data cell trains the U-Net of the course once, which takes about three minutes.
 
@@ -235,11 +235,11 @@ mean Dice coefficient of all 200 frames.
 
 ## Stop 3: Automatic EF with Simpson's method and the agreement with the expert
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-3) · The same result on the Python path: Sections 8 and 9*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-04/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-04/NB04_transfer_learning.ipynb#scrollTo=stop-3-prompt)*
 
 The outlines become numbers with the biplane method of discs, as in an echocardiography laboratory. In this stop the volumes and the ejection fraction (EF) of patient 201 are computed from the expert outlines, the network is compared with the expert on the 50 test patients with a Bland-Altman analysis, and the case is measured again with another convention for the thickness of the discs.
 
-### Step 3.1: Patient 201 by the method of discs
+### Prompt 3.1: Patient 201 by the method of discs
 
 **Goal.** Measure the case of the week from the outlines of the expert, as the reference of CAMUS does.
 
@@ -272,7 +272,7 @@ Test: EDV must be larger than ESV and lie between 50 and 300 mL.
 
 **Expected result:** "answer" = 42.1
 
-### Step 3.2: Agreement of the network with the expert
+### Prompt 3.2: Agreement of the network with the expert
 
 **Goal.** Compare the automatic EF with the expert's on the 50 test patients, as a laboratory would before using it. If the U-Net of the course is not yet in memory, the data cell trains it first, which takes about three minutes.
 
@@ -298,7 +298,7 @@ Test: There must be 50 patients, and the expert EF of patient0201 must be 42.1 p
 
 **Expected result:** "answer" = −4.24
 
-### Step 3.3: Another convention for the thickness of the discs
+### Prompt 3.3: Another convention for the thickness of the discs
 
 **Goal.** See how much a convention of the software, not a border, changes the EF of the case.
 
@@ -379,11 +379,11 @@ line, explain the cause and give the corrected code.
 [paste the code here]
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Train the U-Net and measure its outlines
+### Project step 1: Train the U-Net and measure its outlines
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -423,7 +423,7 @@ Test: Each of the four groups of view and phase must hold 50 test frames, and th
 coefficient of the 200 test frames must lie between 0.85 and 0.97.
 ```
 
-### Step 2: Volumes, EF and Bland-Altman
+### Project step 2: Volumes, EF and Bland-Altman
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -448,7 +448,7 @@ of the EF, with two decimals, under the name "answer".
 Test: There must be 50 patients, and the expert EF of patient0201 must be 42.1 percent.
 ```
 
-### Step 3: The ranges of EF
+### Project step 3: The ranges of EF
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -471,7 +471,7 @@ Output: Show the cross table, and keep the number of patients on its diagonal un
 Test: The cross table must add up to 50 patients.
 ```
 
-### Step 4: The largest errors
+### Project step 4: The largest errors
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

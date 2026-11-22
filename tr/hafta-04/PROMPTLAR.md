@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[4. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-04/PROMPTS.md)
+[4. hafta](README.md) · [English](../../en/week-04/PROMPTS.md)
 
-Bu kütüphanede, 4. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Mini proje: EfficientNet-B0 ile az sayıda etiketli görüntüden KMP sınıflandırma](#durak-1-mini-proje-efficientnet-b0-ile-az-sayıda-etiketli-görüntüden-kmp-sınıflandırma)
 3. [Durak 2: Pixel-wise segmentasyon eğitimi: CAMUS'ta bir U-Net](#durak-2-pixel-wise-segmentasyon-eğitimi-camusta-bir-u-net)
 4. [Durak 3: Simpson yöntemiyle otomatik EF ve uzmanla uyum](#durak-3-simpson-yöntemiyle-otomatik-ef-ve-uzmanla-uyum)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Mini proje: EfficientNet-B0 ile az sayıda etiketli görüntüden KMP sınıflandırma
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 4, 1-4. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-04/NB04_transfer_ogrenme.ipynb#scrollTo=stop-1-prompt)*
 
 ImageNet'in bir milyondan fazla fotoğrafıyla eğitilmiş bir ağ kenarları, dokuları ve biçimleri zaten tanır. Bu durakta EfficientNet-B0, ACDC'nin kardiyomiyopati grupları üzerinde iki yoldan yeniden kullanılır: Ağın öznitelikleri basit bir modele verilir ve ağın tamamına ince ayar yapılır. Ardından her gruptan yalnızca beş hasta tutulur ve sonucun, rastgele seçilen hastalara ne kadar bağlı olduğu görülür.
 
-### Adım 1.1: Fotoğraflarla eğitilmiş bir ağın öznitelikleri
+### Prompt 1.1: Fotoğraflarla eğitilmiş bir ağın öznitelikleri
 
-**Amaç.** Bu adımda her kesit EfficientNet-B0'ın 1.280 özniteliğiyle tarif edilir ve üç grup bu özniteliklerden basit bir modelle öğrenilir.
+**Amaç.** Bu promptla her kesit EfficientNet-B0'ın 1.280 özniteliğiyle tarif edilir ve üç grup bu özniteliklerden basit bir modelle öğrenilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -67,9 +67,9 @@ Test: Öznitelikler 270 satır ve 1.280 sütundan oluşan bir tablo olmalı ve 3
 
 **Beklenen sonuç:** "cevap" = 0,867
 
-### Adım 1.2: Ağın tamamına ince ayar
+### Prompt 1.2: Ağın tamamına ince ayar
 
-**Amaç.** Bu adımda EfficientNet-B0'ın bütün katmanları, ImageNet ağırlıklarından başlayarak kesitlere uyarlanır. Eğitim yaklaşık bir dakika sürer.
+**Amaç.** Bu promptla EfficientNet-B0'ın bütün katmanları, ImageNet ağırlıklarından başlayarak kesitlere uyarlanır. Eğitim yaklaşık bir dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -103,9 +103,9 @@ Test: Saklanan ağırlıklar yüklendikten sonra doğrulama kaybı yine en düş
 
 **Beklenen sonuç:** "cevap" = 0,967
 
-### Adım 1.3: Her gruptan beş hasta
+### Prompt 1.3: Her gruptan beş hasta
 
-**Amaç.** Bu adımda az sayıda hastadan elde edilen bir sonucun, seçilen hastalara ne kadar bağlı olduğu görülür.
+**Amaç.** Bu promptla az sayıda hastadan elde edilen bir sonucun, seçilen hastalara ne kadar bağlı olduğu görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -134,13 +134,13 @@ Test: Her seçimde, her gruptan beşer olmak üzere 15 farklı hasta bulunmalı.
 
 ## Durak 2: Pixel-wise segmentasyon eğitimi: CAMUS'ta bir U-Net
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-2) · Python yolunda aynı sonuç: 5-7. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-04/NB04_transfer_ogrenme.ipynb#scrollTo=stop-2-prompt)*
 
 Bir segmentasyon ağı her piksele bir etiket verir. Bu durakta önce Dice katsayısı, birkaç piksel kaydırılmış bir sınır üzerinde elle hesaplanır. Ardından küçük bir U-Net, sol ventrikül kavitesini CAMUS'un 800 eğitim karesinden öğrenir ve 50 test hastasının 200 karesinde görüntüye ve faza göre değerlendirilir.
 
-### Adım 2.1: Elle Dice katsayısı
+### Prompt 2.1: Elle Dice katsayısı
 
-**Amaç.** Bu adımda bir sınırın küçük bir kaymasının Dice katsayısını ne kadar düşürdüğü görülür.
+**Amaç.** Bu promptla bir sınırın küçük bir kaymasının Dice katsayısını ne kadar düşürdüğü görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -162,9 +162,9 @@ Test: Kavitenin kaydırılmamış kendisiyle Dice katsayısı 1 olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,877
 
-### Adım 2.2: U-Net'i eğitmek
+### Prompt 2.2: U-Net'i eğitmek
 
-**Amaç.** Bu adımda sol ventrikül kavitesini çizen küçük bir U-Net eğitilir ve ağ, hiç görmediği hastaların karelerinde ölçülür. Eğitim yaklaşık üç dakika sürer.
+**Amaç.** Bu promptla sol ventrikül kavitesini çizen küçük bir U-Net eğitilir ve ağ, hiç görmediği hastaların karelerinde ölçülür. Eğitim yaklaşık üç dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -203,7 +203,7 @@ olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,924
 
-### Adım 2.3: Görüntü ve faza göre Dice katsayısı
+### Prompt 2.3: Görüntü ve faza göre Dice katsayısı
 
 **Amaç.** Bu adımda, bir ekokardiyografi laboratuvarının soracağı gibi, ağın sınırları en kötü nerede çizdiği bulunur. Veri hücresi dersin U-Net'ini bir kez eğitir; bu yaklaşık üç dakika sürer.
 
@@ -234,13 +234,13 @@ Dice katsayısına eşit olmalı.
 
 ## Durak 3: Simpson yöntemiyle otomatik EF ve uzmanla uyum
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-3) · Python yolunda aynı sonuç: 8. ve 9. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-04/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-04/NB04_transfer_ogrenme.ipynb#scrollTo=stop-3-prompt)*
 
 Sınırlar, bir ekokardiyografi laboratuvarında olduğu gibi biplan disk yöntemiyle sayılara dönüşür. Bu durakta 201 numaralı hastanın hacimleri ve ejeksiyon fraksiyonu (EF) uzman sınırlarından hesaplanır, ağ 50 test hastasında bir Bland-Altman analiziyle uzmanla karşılaştırılır ve vaka, disklerin kalınlığı için başka bir kuralla yeniden ölçülür.
 
-### Adım 3.1: Disk yöntemiyle 201 numaralı hasta
+### Prompt 3.1: Disk yöntemiyle 201 numaralı hasta
 
-**Amaç.** Bu adımda haftanın vakası, CAMUS'un referansında olduğu gibi uzmanın sınırlarından ölçülür.
+**Amaç.** Bu promptla haftanın vakası, CAMUS'un referansında olduğu gibi uzmanın sınırlarından ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -271,9 +271,9 @@ Test: EDV, ESV'den büyük olmalı ve 50 ile 300 mL arasında bulunmalı.
 
 **Beklenen sonuç:** "cevap" = 42,1
 
-### Adım 3.2: Ağın uzmanla uyumu
+### Prompt 3.2: Ağın uzmanla uyumu
 
-**Amaç.** Bu adımda otomatik EF, bir laboratuvarın kullanmadan önce yapacağı gibi 50 test hastasında uzmanınkiyle karşılaştırılır. Dersin U-Net'i henüz bellekte değilse veri hücresi önce onu eğitir; bu yaklaşık üç dakika sürer.
+**Amaç.** Bu promptla otomatik EF, bir laboratuvarın kullanmadan önce yapacağı gibi 50 test hastasında uzmanınkiyle karşılaştırılır. Dersin U-Net'i henüz bellekte değilse veri hücresi önce onu eğitir; bu yaklaşık üç dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -297,9 +297,9 @@ Test: 50 hasta bulunmalı ve patient0201 hastasının uzman EF'si yüzde 42,1 ol
 
 **Beklenen sonuç:** "cevap" = −4,24
 
-### Adım 3.3: Disklerin kalınlığı için başka bir kural
+### Prompt 3.3: Disklerin kalınlığı için başka bir kural
 
-**Amaç.** Bu adımda bir sınırın değil, yazılımın bir kuralının vakanın EF'sini ne kadar değiştirdiği görülür.
+**Amaç.** Bu promptla bir sınırın değil, yazılımın bir kuralının vakanın EF'sini ne kadar değiştirdiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -378,11 +378,11 @@ göster, nedenini açıkla ve düzeltilmiş kodu ver.
 [kodu buraya yapıştırın]
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: U-Net'i eğitmek ve sınırlarını ölçmek
+### Proje adımı 1: U-Net'i eğitmek ve sınırlarını ölçmek
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -423,7 +423,7 @@ Test: Görüntü ve fazın dört grubunun her birinde 50 test karesi bulunmalı 
 ortalama Dice katsayısı 0,85 ile 0,97 arasında olmalı.
 ```
 
-### Adım 2: Hacimler, EF ve Bland-Altman
+### Proje adımı 2: Hacimler, EF ve Bland-Altman
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -447,7 +447,7 @@ basamakla "cevap" adıyla sakla.
 Test: 50 hasta bulunmalı ve patient0201 hastasının uzman EF'si yüzde 42,1 olmalı.
 ```
 
-### Adım 3: EF aralıkları
+### Proje adımı 3: EF aralıkları
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -469,7 +469,7 @@ program kurmamalıdır.
 Test: Çapraz tablonun toplamı 50 hasta olmalı.
 ```
 
-### Adım 4: En büyük hatalar
+### Proje adımı 4: En büyük hatalar
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
