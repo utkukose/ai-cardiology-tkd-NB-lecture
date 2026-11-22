@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 3](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-03/PROMPTLAR.md)
+[Week 3](README.md) · [Türkçe](../../tr/hafta-03/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 3, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Cine MR as numbers](#stop-1-cine-mr-as-numbers)
 3. [Stop 2: A first convolutional network](#stop-2-a-first-convolutional-network)
 4. [Stop 3: Mini project: EchoNet-Dynamic, normal or abnormal (with your registration)](#stop-3-mini-project-echonet-dynamic-normal-or-abnormal-with-your-registration)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Cine MR as numbers
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-1) · The same result on the Python path: Python step 3, Sections 1 to 3*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/NB03_deep_learning_and_cnns.ipynb#scrollTo=stop-1-prompt)*
 
 The expert contours of ACDC turn each examination into numbers: volumes, the ejection fraction (EF) and the thickness of the walls. In this stop the three groups are described with these numbers, the EF of patient 134 is computed from the voxels of the contours, and the rules of ACDC are applied to every patient.
 
-### Step 1.1: The ejection fraction of the three groups
+### Prompt 1.1: The ejection fraction of the three groups
 
 **Goal.** See how the EF separates the three groups of ACDC.
 
@@ -60,7 +60,7 @@ percent.
 
 **Expected result:** "answer" = 19.8
 
-### Step 1.2: The ejection fraction of patient 134 from the voxels
+### Prompt 1.2: The ejection fraction of patient 134 from the voxels
 
 **Goal.** Compute volumes and the EF from the expert contours slice by slice, as the software of a CMR laboratory does.
 
@@ -86,7 +86,7 @@ Test: EDV must be larger than ESV and lie between 50 and 300 mL.
 
 **Expected result:** "answer" = 62.2
 
-### Step 1.3: The rules of ACDC on every patient
+### Prompt 1.3: The rules of ACDC on every patient
 
 **Goal.** Classify the 90 patients with the definitions of ACDC and see where the measurements alone go wrong.
 
@@ -115,11 +115,11 @@ Test: The table must count 90 patients in total, and the share must lie between 
 
 ## Stop 2: A first convolutional network
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-2) · The same result on the Python path: Sections 4 to 7*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/NB03_deep_learning_and_cnns.ipynb#scrollTo=stop-2-prompt)*
 
 The network of the course learns the three groups from the pixels of the middle slices, with the end-diastolic and the end-systolic frame of each slice as two channels. In this stop the slices are normalised, the network is built, trained with early stopping and judged patient by patient on the 30 test patients.
 
-### Step 2.1: Normalising with the training slices
+### Prompt 2.1: Normalising with the training slices
 
 **Goal.** Prepare the inputs of the network with statistics that come from the training patients alone.
 
@@ -147,7 +147,7 @@ deviation of about 1; the 135 training slices must keep their size of 64 × 64 p
 
 **Expected result:** "answer" = 0.2961
 
-### Step 2.2: The network and its parameters
+### Prompt 2.2: The network and its parameters
 
 **Goal.** Build the network of the course and count its weights.
 
@@ -175,7 +175,7 @@ Test: For the first four training slices, the network must return four rows of t
 
 **Expected result:** "answer" = 12,219
 
-### Step 2.3: Training with early stopping and a decision per patient
+### Prompt 2.3: Training with early stopping and a decision per patient
 
 **Goal.** Train the network and judge it as a clinic would: one decision for each patient.
 
@@ -211,7 +211,7 @@ to 1.
 
 **Expected result:** "answer" = 0.933
 
-### Step 2.4: The confusion matrix and the macro F1
+### Prompt 2.4: The confusion matrix and the macro F1
 
 **Goal.** Read the result class by class and find the patients that the network misses. The data cell trains the network of the course once, which takes about a minute.
 
@@ -236,11 +236,11 @@ Test: The confusion matrix must add up to 30 patients, and each of its rows to 1
 
 ## Stop 3: Mini project: EchoNet-Dynamic, normal or abnormal (with your registration)
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-3) · The same result on the Python path: Sections 8 to 10*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-03/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-03/NB03_deep_learning_and_cnns.ipynb#scrollTo=stop-3-prompt)*
 
 The mini project of the session uses EchoNet-Dynamic, the echocardiography videos that each participant obtains through a personal registration at Stanford AIMI. Without a registration, follow the run of the instructor on the shared screen. With one, paste your personal download link into the first cell of this stop in the notebook, or put the zip file into the folder data/echonet of the course folder. The data stay in your Colab session or on your computer and never enter a prompt: The prompts describe only the table that the notebook prepares.
 
-### Step 3.1: The videos and their sets
+### Prompt 3.1: The videos and their sets
 
 **Goal.** Check that the copy is complete before any analysis.
 
@@ -263,7 +263,7 @@ Test: The set "training" must hold 7,465 videos, the set "validation" 1,288 and 
 
 **Expected result:** "answer": 10,030 for a complete copy
 
-### Step 3.2: The share of abnormal EF
+### Prompt 3.2: The share of abnormal EF
 
 **Goal.** Know how common the abnormal class is before judging a model.
 
@@ -286,7 +286,7 @@ Test: The share must lie between 0 and 1, and the number of test videos must be 
 
 **Expected result:** "answer": the value of the ready code on your copy
 
-### Step 3.3: The network of the course on echocardiography
+### Prompt 3.3: The network of the course on echocardiography
 
 **Goal.** Train the same network on the end-diastolic and end-systolic frames of the videos and measure how well it recognises an abnormal EF. The data cell reads 1,400 videos, which takes a few minutes.
 
@@ -366,11 +366,11 @@ return the corrected code.
 [paste the code here]
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Train the network
+### Project step 1: Train the network
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -399,7 +399,7 @@ the name "answer".
 Test: After the kept weights are loaded, the validation loss must again have its lowest value.
 ```
 
-### Step 2: The confusion matrix of the network
+### Project step 2: The confusion matrix of the network
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -423,7 +423,7 @@ name "answer".
 Test: The matrix must add up to 30, and each of its rows to 10.
 ```
 
-### Step 3: The rules on the same patients
+### Project step 3: The rules on the same patients
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -446,7 +446,7 @@ name "answer".
 Test: The matrix must add up to 30.
 ```
 
-### Step 4: The errors
+### Project step 4: The errors
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

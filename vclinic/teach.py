@@ -75,12 +75,15 @@ def start(week, language="en", packages=()):
     set_language(language)
     plt.rcParams.update({"figure.dpi": 110, "font.family": "DejaVu Sans"})
     installed = []
-    for name in packages:
-        if importlib.util.find_spec(name) is None:
+    for spec in packages:
+        # "name" when pip and Python use the same name, "pip-name:module" when they differ
+        name, _, module = spec.partition(":")
+        module = module or name
+        if importlib.util.find_spec(module) is None:
             result = subprocess.run([sys.executable, "-m", "pip", "install", "-q", name],
                                     capture_output=True, text=True)
             importlib.invalidate_caches()
-            if result.returncode != 0 or importlib.util.find_spec(name) is None:
+            if result.returncode != 0 or importlib.util.find_spec(module) is None:
                 print(t("not_installed").format(name=name))
                 continue
         installed.append(name)
@@ -135,9 +138,9 @@ def check(name, answer):
 
 
 def check_step(name, variable, scope):
-    """Check one step of the prompt path.
+    """Check the result of one prompt.
 
-    name is the step ("Step 1.2" or "Adım 1.2"), variable the name under which
+    name is the prompt ("Prompt 1.2"), variable the name under which
     the code of the assistant saves its result, and scope the namespace of the
     notebook (pass globals()). Missing variables give a short hint instead of
     an error message.

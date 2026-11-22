@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[3. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-03/PROMPTS.md)
+[3. hafta](README.md) · [English](../../en/week-03/PROMPTS.md)
 
-Bu kütüphanede, 3. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Sayılarla sine MR](#durak-1-sayılarla-sine-mr)
 3. [Durak 2: İlk evrişimli ağ](#durak-2-ilk-evrişimli-ağ)
 4. [Durak 3: Mini proje: EchoNet-Dynamic, normal mi anormal mi? (kişisel kayıtla)](#durak-3-mini-proje-echonet-dynamic-normal-mi-anormal-mi-kişisel-kayıtla)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Sayılarla sine MR
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 3, 1-3. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-03/NB03_derin_ogrenme_ve_evrisimli_aglar.ipynb#scrollTo=stop-1-prompt)*
 
 ACDC'nin uzman konturları her incelemeyi sayılara dönüştürür: Hacimler, ejeksiyon fraksiyonu (EF) ve duvarların kalınlığı bu konturlardan ölçülür. Bu durakta üç grup bu sayılarla tanımlanır, 134 numaralı hastanın EF'si konturların vokselleriyle hesaplanır ve ACDC kuralları her hastaya uygulanır.
 
-### Adım 1.1: Üç grubun ejeksiyon fraksiyonu
+### Prompt 1.1: Üç grubun ejeksiyon fraksiyonu
 
-**Amaç.** Bu adımda EF'nin ACDC'nin üç grubunu nasıl ayırdığı görülür.
+**Amaç.** Bu promptla EF'nin ACDC'nin üç grubunu nasıl ayırdığı görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -58,7 +58,7 @@ Test: DCM grubunun ortalaması yüzde 40'ın altında, HCM grubununki yüzde 50'
 
 **Beklenen sonuç:** "cevap" = 19,8
 
-### Adım 1.2: 134 numaralı hastanın voksellerden hesaplanan ejeksiyon fraksiyonu
+### Prompt 1.2: 134 numaralı hastanın voksellerden hesaplanan ejeksiyon fraksiyonu
 
 **Amaç.** Bu adımda, bir KMR laboratuvarının yazılımında olduğu gibi, hacimler ve EF uzman konturlarından kesit kesit hesaplanır.
 
@@ -83,9 +83,9 @@ Test: EDV, ESV'den büyük olmalı ve 50 ile 300 mL arasında bulunmalı.
 
 **Beklenen sonuç:** "cevap" = 62,2
 
-### Adım 1.3: ACDC kurallarının her hastaya uygulanması
+### Prompt 1.3: ACDC kurallarının her hastaya uygulanması
 
-**Amaç.** Bu adımda 90 hasta ACDC tanımlarıyla sınıflanır ve ölçümlerin tek başına nerede yanıldığı görülür.
+**Amaç.** Bu promptla 90 hasta ACDC tanımlarıyla sınıflanır ve ölçümlerin tek başına nerede yanıldığı görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -112,13 +112,13 @@ Test: Çapraz tablodaki hastaların toplamı 90 olmalı ve oran 0 ile 1 arasınd
 
 ## Durak 2: İlk evrişimli ağ
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-2) · Python yolunda aynı sonuç: 4-7. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-03/NB03_derin_ogrenme_ve_evrisimli_aglar.ipynb#scrollTo=stop-2-prompt)*
 
 Dersin ağı üç grubu ortadaki kesitlerin piksellerinden öğrenir; her kesitin diyastol sonu ve sistol sonu kareleri ağa iki kanal olarak girer. Bu durakta kesitler normalleştirilir, ağ kurulur ve erken durdurmayla eğitilir; ardından ağ 30 test hastasında, her hasta için tek bir kararla değerlendirilir.
 
-### Adım 2.1: Eğitim kesitleriyle normalleştirme
+### Prompt 2.1: Eğitim kesitleriyle normalleştirme
 
-**Amaç.** Bu adımda ağın girdileri, yalnızca eğitim hastalarından hesaplanan istatistiklerle hazırlanır.
+**Amaç.** Bu promptla ağın girdileri, yalnızca eğitim hastalarından hesaplanan istatistiklerle hazırlanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -144,9 +144,9 @@ Test: Normalleştirmeden sonra eğitim piksellerinin ortalaması yaklaşık 0, s
 
 **Beklenen sonuç:** "cevap" = 0,2961
 
-### Adım 2.2: Ağ ve parametreleri
+### Prompt 2.2: Ağ ve parametreleri
 
-**Amaç.** Bu adımda dersin ağı kurulur ve ağırlıkları sayılır.
+**Amaç.** Bu promptla dersin ağı kurulur ve ağırlıkları sayılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -172,9 +172,9 @@ Test: Ağ, ilk dört eğitim kesiti için her biri üç skordan oluşan dört sa
 
 **Beklenen sonuç:** "cevap" = 12.219
 
-### Adım 2.3: Erken durdurmayla eğitim ve hasta başına karar
+### Prompt 2.3: Erken durdurmayla eğitim ve hasta başına karar
 
-**Amaç.** Bu adımda ağ eğitilir ve bir kliniğin yapacağı gibi değerlendirilir: Her hasta için tek bir karar verilir.
+**Amaç.** Bu promptla ağ eğitilir ve bir kliniğin yapacağı gibi değerlendirilir: Her hasta için tek bir karar verilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -207,9 +207,9 @@ Test: 30 test hastası olmalı ve her hastanın üç ortalama olasılığının 
 
 **Beklenen sonuç:** "cevap" = 0,933
 
-### Adım 2.4: Karışıklık matrisi ve makro F1
+### Prompt 2.4: Karışıklık matrisi ve makro F1
 
-**Amaç.** Bu adımda sonuç sınıf sınıf okunur ve ağın kaçırdığı hastalar bulunur. Veri hücresi dersin ağını bir kez eğitir; bu yaklaşık bir dakika sürer.
+**Amaç.** Bu promptla sonuç sınıf sınıf okunur ve ağın kaçırdığı hastalar bulunur. Veri hücresi dersin ağını bir kez eğitir; bu yaklaşık bir dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -232,13 +232,13 @@ Test: Karışıklık matrisinin toplamı 30, her satırının toplamı 10 olmal�
 
 ## Durak 3: Mini proje: EchoNet-Dynamic, normal mi anormal mi? (kişisel kayıtla)
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-3) · Python yolunda aynı sonuç: 8-10. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-03/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-03/NB03_derin_ogrenme_ve_evrisimli_aglar.ipynb#scrollTo=stop-3-prompt)*
 
 Oturumun mini projesi, her katılımcının Stanford AIMI'ye kişisel kayıtla edindiği ekokardiyografi videolarını, yani EchoNet-Dynamic'i kullanmaktadır. Kaydınız yoksa eğitmenin ortak ekrandaki çalıştırmasını izleyin. Kaydınız varsa kişisel indirme bağlantınızı Jupyter Notebook'ta bu durağın ilk hücresine yapıştırın ya da zip dosyasını ders klasöründeki data/echonet klasörüne koyun. Veriler Colab oturumunuzda ya da bilgisayarınızda kalır ve hiçbir zaman bir prompta girmez: Promptlar yalnızca Jupyter Notebook'un hazırladığı tabloyu tarif eder.
 
-### Adım 3.1: Videolar ve kümeleri
+### Prompt 3.1: Videolar ve kümeleri
 
-**Amaç.** Bu adımda her analizden önce kopyanın eksiksiz olduğu denetlenir.
+**Amaç.** Bu promptla her analizden önce kopyanın eksiksiz olduğu denetlenir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -258,9 +258,9 @@ Test: "eğitim", "doğrulama" ve "test" kümelerinde sırasıyla 7.465, 1.288 ve
 
 **Beklenen sonuç:** "cevap": eksiksiz bir kopya için 10.030
 
-### Adım 3.2: Anormal EF oranı
+### Prompt 3.2: Anormal EF oranı
 
-**Amaç.** Bu adımda bir model değerlendirilmeden önce anormal sınıfın ne kadar sık olduğu öğrenilir.
+**Amaç.** Bu promptla bir model değerlendirilmeden önce anormal sınıfın ne kadar sık olduğu öğrenilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -281,9 +281,9 @@ Test: Oran 0 ile 1 arasında olmalı ve test videosu sayısı 1.277 olmalı.
 
 **Beklenen sonuç:** "cevap": hazır kodun kopyanızdaki değeri
 
-### Adım 3.3: Dersin ağı ekokardiyografide
+### Prompt 3.3: Dersin ağı ekokardiyografide
 
-**Amaç.** Bu adımda aynı ağ videoların diyastol sonu ve sistol sonu karelerinde eğitilir ve anormal EF'yi ne kadar iyi tanıdığı ölçülür. Veri hücresi 1.400 videoyu okur; bu birkaç dakika sürer.
+**Amaç.** Bu promptla aynı ağ videoların diyastol sonu ve sistol sonu karelerinde eğitilir ve anormal EF'yi ne kadar iyi tanıdığı ölçülür. Veri hücresi 1.400 videoyu okur; bu birkaç dakika sürer.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -361,11 +361,11 @@ bir listeyle cevap ver, ardından düzeltilmiş kodu ver.
 [kodu buraya yapıştırın]
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Ağı eğitmek
+### Proje adımı 1: Ağı eğitmek
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -393,7 +393,7 @@ program kurmamalıdır.
 Test: Saklanan ağırlıklar yüklendikten sonra doğrulama kaybı yine en düşük değerini vermeli.
 ```
 
-### Adım 2: Ağın karışıklık matrisi
+### Proje adımı 2: Ağın karışıklık matrisi
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -415,7 +415,7 @@ program kurmamalıdır.
 Test: Matrisin toplamı 30, her satırının toplamı 10 olmalı.
 ```
 
-### Adım 3: Aynı hastalarda ACDC kuralları
+### Proje adımı 3: Aynı hastalarda ACDC kuralları
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -436,7 +436,7 @@ program kurmamalıdır.
 Test: Matrisin toplamı 30 olmalı.
 ```
 
-### Adım 4: Hatalar
+### Proje adımı 4: Hatalar
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp

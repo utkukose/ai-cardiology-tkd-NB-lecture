@@ -23,3 +23,12 @@ teach.py
 triage.py
 week01.py
 week02.py
+week03.py
+week04.py
+week05.py
+week06.py
+week07.py
+week08.py
+week09.py
+week10.py
+week11.py
