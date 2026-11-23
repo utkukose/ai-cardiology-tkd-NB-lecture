@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 10](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-10/PROMPTLAR.md)
+[Week 10](README.md) · [Türkçe](../../tr/hafta-10/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 10, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: The AF model of the prototype](#stop-1-the-af-model-of-the-prototype)
 3. [Stop 2: The explanation, the report and the service](#stop-2-the-explanation-the-report-and-the-service)
 4. [Stop 3: The user test and version 1.1](#stop-3-the-user-test-and-version-11)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: The AF model of the prototype
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-1) · The same result on the Python path: Python step 10, Sections 1 to 4*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-10/NB10_clinical_decision_support.ipynb#scrollTo=stop-1-prompt)*
 
 This stop starts the mini project of the session, an AF detection CDSS, with the model that predicts. The minutes of the 25 records of the AFDB are described by four numbers of their RR intervals, a logistic regression learns AF from the training records, its threshold is chosen on the validation records, and the test records give the AF burden and the alarm episodes of each record.
 
-### Step 1.1: Four numbers of a minute
+### Prompt 1.1: Four numbers of a minute
 
 **Goal.** Describe every minute of the AFDB by four numbers of its RR intervals.
 
@@ -68,7 +68,7 @@ and 1.
 
 **Expected result:** "answer" = 0.222
 
-### Step 1.2: The model and its threshold
+### Prompt 1.2: The model and its threshold
 
 **Goal.** Fit version 1.0 of the AF model on the training records and choose its threshold on the validation records.
 
@@ -104,7 +104,7 @@ threshold must be at least 0.95.
 
 **Expected result:** "answer" = 0.37
 
-### Step 1.3: AF burden and alarm episodes of the test records
+### Prompt 1.3: AF burden and alarm episodes of the test records
 
 **Goal.** Turn the probabilities of the test minutes into alarm episodes and an AF burden for every test record.
 
@@ -137,11 +137,11 @@ burdens must lie between 0 and 100.
 
 ## Stop 2: The explanation, the report and the service
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-2) · The same result on the Python path: Sections 5 to 8*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-10/NB10_clinical_decision_support.ipynb#scrollTo=stop-2-prompt)*
 
 This stop completes the mini project of the session and follows one alarm and one patient. A false alarm minute of record 08219 is explained by the SHAP values of its four numbers, the result of VC-0128 of the telemetry ward is written as an HL7 FHIR report, the beat times of the same patient are sent to the prediction service of the course, and one hour of the ECG of VC-0128 is uploaded, its beats found and its minutes judged by the service.
 
-### Step 2.1: Why the minute alarmed
+### Prompt 2.1: Why the minute alarmed
 
 **Goal.** Compute what each of the four numbers adds to the log-odds of AF in one false alarm minute.
 
@@ -173,7 +173,7 @@ between 0 and 1.
 
 **Expected result:** "answer" = 0.985
 
-### Step 2.2: The report as HL7 FHIR resources
+### Prompt 2.2: The report as HL7 FHIR resources
 
 **Goal.** Write the result of VC-0128 as an HL7 FHIR R4 report that the information system of a hospital can read.
 
@@ -211,7 +211,7 @@ and both statuses must be "preliminary".
 
 **Expected result:** "answer" = 15.5
 
-### Step 2.3: A request to the prediction service
+### Prompt 2.3: A request to the prediction service
 
 **Goal.** Send the beat times of VC-0128 to the prediction service of the course and read its answer.
 
@@ -242,7 +242,7 @@ to one decimal.
 
 **Expected result:** "answer" = 222
 
-### Step 2.4: From an uploaded ECG to the AF minutes
+### Prompt 2.4: From an uploaded ECG to the AF minutes
 
 **Goal.** Find the beats of an uploaded ECG and let the prediction service of the course judge every minute of it.
 
@@ -280,11 +280,11 @@ be 100 times the AF minutes divided by the minutes, rounded to one decimal.
 
 ## Stop 3: The user test and version 1.1
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-3) · The same result on the Python path: Sections 9 and 10*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-10/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-10/NB10_clinical_decision_support.ipynb#scrollTo=stop-3-prompt)*
 
 This stop runs the user test and improves the prototype. The alarm episodes of the four patients of the telemetry ward show what a physician would review in 24 hours, version 1.1 adds the sample entropy and learns again on the training records, and the test records judge both versions once.
 
-### Step 3.1: The alarm episodes of the ward
+### Prompt 3.1: The alarm episodes of the ward
 
 **Goal.** Count the alarm episodes that the physician of the ward would review in 24 hours, and the false ones among them.
 
@@ -316,7 +316,7 @@ cannot outnumber the alarm episodes.
 
 **Expected result:** "answer" = 76
 
-### Step 3.2: Version 1.1 with the sample entropy
+### Prompt 3.2: Version 1.1 with the sample entropy
 
 **Goal.** Add the sample entropy as a fifth number, fit version 1.1 on the training records and count its false alarm episodes on the validation records.
 
@@ -357,7 +357,7 @@ Test: No test minute may be used, and the sample entropy of every minute must be
 
 **Expected result:** "answer" = 69
 
-### Step 3.3: Both versions on the test records
+### Prompt 3.3: Both versions on the test records
 
 **Goal.** Open the test records once and compare the two versions of the model.
 
@@ -441,11 +441,11 @@ example to an online service? For each point, quote the lines that answer it, sa
 right, and propose a correction where they are not. Do not change anything else.
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: The alarm episodes of the user test
+### Project step 1: The alarm episodes of the user test
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -471,7 +471,7 @@ total number of alarm episodes under the name "answer".
 Test: The lengths of the episodes must add up to the minutes with an alarm.
 ```
 
-### Step 2: The workload of the physician
+### Project step 2: The workload of the physician
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -498,7 +498,7 @@ alarm episodes over all recordings, with three decimals, under the name "answer"
 Test: The false alarm episodes of a recording cannot exceed its alarm episodes.
 ```
 
-### Step 3: An improved version on the validation records
+### Project step 3: An improved version on the validation records
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -534,7 +534,7 @@ Test: No test minute may be used, and the sensitivity on the validation records 
 0.95.
 ```
 
-### Step 4: Both versions on the test records and the change log
+### Project step 4: Both versions on the test records and the change log
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
