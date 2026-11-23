@@ -1,27 +1,27 @@
-# Prompt yolu
+# Promptlarla çalışmak
 
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[Eğitimin ana sayfası](README.tr.md) · [Python yolu](PYTHON_PATH.tr.md) · [Kendi verileriniz](OWN_DATA.tr.md) · [English](PROMPT_PATH.md)
+[Eğitimin ana sayfası](README.tr.md) · [Python temelleri](PYTHON_PATH.tr.md) · [Kendi verileriniz](OWN_DATA.tr.md) · [English](PROMPT_PATH.md)
 
-Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Haftanın Jupyter Notebook'unda ise iki uygulama yolu bulunur. Kod yazmayan, belki de hiç yapay zekâ (YZ) asistanı kullanmamış katılımcılar için hazırlanan yolda kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir YZ asistanı yazar; katılımcı kodu çalıştırır ve sonucu denetler. Her Jupyter Notebook'un 1. kısmını oluşturan bu yola **prompt yolu** denir. Jupyter Notebook'un 2. kısmı olan **Python yolunda** ise aynı sonuçlara kod yazılarak ulaşılır ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)). Yol, her uygulama durağında değiştirilebilir.
+Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Sayfadaki uygulama duraklarında çalışma haftanın Jupyter Notebook'unda sürer. Orada kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir yapay zekâ (YZ) asistanı yazabilir; katılımcı kodu çalıştırır ve sonucu denetler. Bu rehber, kod yazmayan, belki de hiç YZ asistanı kullanmamış katılımcılar için hazırlanan bu çalışmayı anlatmaktadır. Jupyter Notebook'ta her durak **Python temelleri**, **Prompt ile uygulama** ve **Hazır uygulama** olmak üzere üç bölümden oluşur ve promptlar «Prompt ile uygulama» bölümünde yer alır. Aynı durağın Python temelleri böyle bir kodun nasıl yazılacağını öğretir ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)), hazır uygulaması ise durağın eksiksiz programını gösterir.
 
 ## Bir uygulama durağında ne olur?
 
-Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın **Prompt yolu** düğmesi, Jupyter Notebook'un 1. kısmını aynı durağın başında, Google Colab'da ya da kendi bilgisayarınızdaki Jupyter'de açar. Bir durakta iki ile dört adım bulunur ve her adım aynı biçimde ilerler.
+Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın **2 · Prompt ile uygulama** düğmesi Jupyter Notebook'u Google Colab'da bu bölümün başında açar. Kendi bilgisayarınızdaki Jupyter'de ise «Durak N · Prompt ile uygulama» başlığı içindekiler panelinde bulunur. Bir durakta üç ile beş prompt bulunur ve her promptla aynı biçimde çalışılır.
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
 | 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
-Her durak, o durağın verilerini yükleyen bir hazırlık hücresiyle başlar; böylece bir durağa başka bir gün de başlanabilir. Her adımın da, promptun tarif ettiği "veri" tablosunu hazırlayıp gösteren kendi veri hücresi vardır. Her adımın *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı bir adımda takılıp kalmaz ve sonraki adıma her zaman geçilebilir.
+Bölüm, kullandığı kurulumu ve veri çağrılarını yineleyen bir başlangıç hücresiyle açılır; böylece bölüme başka bir gün de başlanabilir. Her promptun da, promptun tarif ettiği "veri" tablosunu hazırlayıp gösteren kendi veri hücresi vardır. Her promptun *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı takılıp kalmaz ve sonraki prompta her zaman geçilebilir. Ardından gelen «Hazır uygulama» bölümü durağın eksiksiz programını içerir.
 
 ## Hangi asistan?
 
@@ -38,45 +38,45 @@ Eğitim bu araçların hiçbirine bağlı değildir. Asistanlar sık değiştiğ
 
 ## Prompt kartı
 
-Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asistana iyi bir istek yazmayı öğretir. Promptlar klinik bir dille yazılır. Bir promptta koddan yalnızca iki ad geçer: Her adımın veri hücresinin hazırlayıp gösterdiği "veri" tablosu ve sonucun kontrol için saklandığı "cevap" adı. Kodun hiçbir paketinin, fonksiyonunun ya da ayarının adı geçmez.
+Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asistana iyi bir istek yazmayı öğretir. Promptlar klinik bir dille yazılır. Bir promptta koddan yalnızca iki ad geçer: Her promptun veri hücresinin hazırlayıp gösterdiği "veri" tablosu ve sonucun kontrol için saklandığı "cevap" adı. Kodun hiçbir paketinin, fonksiyonunun ya da ayarının adı geçmez.
 
 | Alan | Ne belirtilir? |
 |---|---|
 | Rol | Asistanın kime yardım ettiği ve kodunun nerede çalışacağı: Kod yazmayan bir kardiyolog ve bir Jupyter Notebook |
-| Bağlam | Adımın klinik sorusu |
+| Bağlam | Promptun klinik sorusu |
 | Veri | "veri" tablosu: Satırları, sütunları ve birimleri; sinyallerde saniyedeki örnek sayısı |
 | Görev | Formülü ya da kuralıyla birlikte tek ve açık bir görev |
 | Kısıtlar | Kodun yapmaması gerekenler: Başka veri kullanmak, dosya okumak, bir şey indirmek ya da program kurmak |
 | Çıktı | Neyin yazdırılacağı ya da çizileceği; sonucun "cevap" adıyla saklanması |
 | Test | Sonucun denetlenebilmesi için cevabı bilinen bir durum ya da makul bir aralık |
 
-Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabilir. Bu yüzden prompt yolunun en önemli parçası her adımın kontrolüdür.
+Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabilir. Bu yüzden promptlarla çalışmanın en önemli parçası her promptun kontrolüdür.
 
 ## Promptlar nerede?
 
-| Hafta | Prompt kütüphanesi | Prompt yolu | Etkileşimli lab |
+| Hafta | Prompt kütüphanesi | Jupyter Notebook'taki promptlar | Etkileşimli lab |
 |---|---|---|---|
-| 1 | [PROMPTLAR.md](tr/hafta-01/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
-| 2 | [PROMPTLAR.md](tr/hafta-02/PROMPTLAR.md) | 3 durak, 9 adım | F bölümü, prompt atölyesi |
-| 3 | [PROMPTLAR.md](tr/hafta-03/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
-| 4 | [PROMPTLAR.md](tr/hafta-04/PROMPTLAR.md) | 3 durak, 9 adım | F bölümü, prompt atölyesi |
-| 5 | [PROMPTLAR.md](tr/hafta-05/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |
-| 6 | [PROMPTLAR.md](tr/hafta-06/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |
-| 7 | [PROMPTLAR.md](tr/hafta-07/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |
-| 8 | [PROMPTLAR.md](tr/hafta-08/PROMPTLAR.md) | 3 durak, 11 adım | F bölümü, prompt atölyesi |
-| 9 | [PROMPTLAR.md](tr/hafta-09/PROMPTLAR.md) | 3 durak, 13 adım | F bölümü, prompt atölyesi |
-| 10 | [PROMPTLAR.md](tr/hafta-10/PROMPTLAR.md) | 3 durak, 10 adım | F bölümü, prompt atölyesi |
-| 11 | [PROMPTLAR.md](tr/hafta-11/PROMPTLAR.md) | 3 durak, 9 adım | F bölümü, prompt atölyesi |
+| 1 | [PROMPTLAR.md](tr/hafta-01/PROMPTLAR.md) | 3 durakta 10 prompt | F bölümü, prompt atölyesi |
+| 2 | [PROMPTLAR.md](tr/hafta-02/PROMPTLAR.md) | 3 durakta 9 prompt | F bölümü, prompt atölyesi |
+| 3 | [PROMPTLAR.md](tr/hafta-03/PROMPTLAR.md) | 3 durakta 10 prompt | F bölümü, prompt atölyesi |
+| 4 | [PROMPTLAR.md](tr/hafta-04/PROMPTLAR.md) | 3 durakta 9 prompt | F bölümü, prompt atölyesi |
+| 5 | [PROMPTLAR.md](tr/hafta-05/PROMPTLAR.md) | 3 durakta 11 prompt | F bölümü, prompt atölyesi |
+| 6 | [PROMPTLAR.md](tr/hafta-06/PROMPTLAR.md) | 3 durakta 11 prompt | F bölümü, prompt atölyesi |
+| 7 | [PROMPTLAR.md](tr/hafta-07/PROMPTLAR.md) | 3 durakta 11 prompt | F bölümü, prompt atölyesi |
+| 8 | [PROMPTLAR.md](tr/hafta-08/PROMPTLAR.md) | 3 durakta 11 prompt | F bölümü, prompt atölyesi |
+| 9 | [PROMPTLAR.md](tr/hafta-09/PROMPTLAR.md) | 3 durakta 13 prompt | F bölümü, prompt atölyesi |
+| 10 | [PROMPTLAR.md](tr/hafta-10/PROMPTLAR.md) | 3 durakta 10 prompt | F bölümü, prompt atölyesi |
+| 11 | [PROMPTLAR.md](tr/hafta-11/PROMPTLAR.md) | 3 durakta 9 prompt | F bölümü, prompt atölyesi |
 
-Haftanın prompt kütüphanesi, 1. kısmın bütün promptlarını GitHub'da birer kopyalama düğmesiyle, kodu onarmak için promptları ve haftalık projenin prompt yolunu içerir. Etkileşimli labın F bölümünde prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimiyle çalışılır.
+Haftanın prompt kütüphanesi, uygulama duraklarının bütün promptlarını GitHub'da birer kopyalama düğmesiyle, kodu onarmak için promptları ve haftalık projenin promptlarını içerir. Etkileşimli labın F bölümünde prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimiyle çalışılır.
 
 ## Mahremiyet
 
-Hiçbir prompta hasta verisi girmez. Buna adlar, doğum tarihleri, T.C. kimlik numaraları, hastane ve protokol numaraları, yatış tarihleri, hasta dosyalarından alınan serbest metinler ve kimlik bilgisi taşıyan görüntüler dâhildir. Eğitimin promptları verinin yapısını, yani sütun adlarını, birimleri ve örnekleme frekansını tarif eder; hiçbir zaman gerçek bir hastayı tarif etmez. Gerçek hasta verileri kurumun bir bilgisayarında, kurumun kurallarına ve Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak kalır [1]. [OWN_DATA.tr.md](OWN_DATA.tr.md), prompt yolunun kişinin kendi verileriyle nasıl kullanılacağını anlatır: Prompt sütunları tarif eder, veriler bilgisayardan hiç çıkmaz.
+Hiçbir prompta hasta verisi girmez. Buna adlar, doğum tarihleri, T.C. kimlik numaraları, hastane ve protokol numaraları, yatış tarihleri, hasta dosyalarından alınan serbest metinler ve kimlik bilgisi taşıyan görüntüler dâhildir. Eğitimin promptları verinin yapısını, yani sütun adlarını, birimleri ve örnekleme frekansını tarif eder; hiçbir zaman gerçek bir hastayı tarif etmez. Gerçek hasta verileri kurumun bir bilgisayarında, kurumun kurallarına ve Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak kalır [1]. [OWN_DATA.tr.md](OWN_DATA.tr.md), promptların kişinin kendi verileriyle nasıl kullanılacağını anlatır: Prompt sütunları tarif eder, veriler bilgisayardan hiç çıkmaz.
 
 ## YZ kullanım günlüğü ve değerlendirme
 
-Prompt yolundan gelen kod, elle yazılmış kodla aynı biçimde değerlendirilir. Haftalık proje, [izlencede](SYLLABUS.tr.md#değerlendirme-ve-sertifika) anlatıldığı gibi sonuçları, yöntemleri ve bunların açıklaması, tartışması ve kayıtları üzerinden puanlanır. Her haftalık projeye, bir asistanın her kullanımı için bir satır içeren bir YZ kullanım günlüğü eklenir. Her satırda araç, prompt, neyin denetlendiği ve neyin değiştirildiği yazılır.
+Promptlarla yazılan kod, elle yazılmış kodla aynı biçimde değerlendirilir. Haftalık proje, [izlencede](SYLLABUS.tr.md#değerlendirme-ve-sertifika) anlatıldığı gibi sonuçları, yöntemleri ve bunların açıklaması, tartışması ve kayıtları üzerinden puanlanır. Her haftalık projeye, bir asistanın her kullanımı için bir satır içeren bir YZ kullanım günlüğü eklenir. Her satırda araç, prompt, neyin denetlendiği ve neyin değiştirildiği yazılır.
 
 ## Kaynaklar
 

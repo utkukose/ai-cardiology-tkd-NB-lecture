@@ -1966,27 +1966,6 @@
     ]
   },
   {
-    "key": "esc2026summit",
-    "type": "web",
-    "authors": [
-      {
-        "literal": "European Society of Cardiology"
-      }
-    ],
-    "year": "2026",
-    "title": "ESC Digital & AI Summit 2026: Where human insight and intelligent technology shape the future of cardiovascular care (press release, 3 November 2026)",
-    "container": "ESC press releases",
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "doi": "",
-    "url": "https://www.escardio.org/news/press/press-releases/esc-digital--ai-summit-2026-where-human-insight-and-intelligent-technology-shape-the-future-of-cardiovascular-care/",
-    "apa": "European Society of Cardiology. (2026). ESC Digital & AI Summit 2026: Where human insight and intelligent technology shape the future of cardiovascular care (press release, 3 November 2026). In *ESC press releases*. European Society of Cardiology. https://www.escardio.org/news/press/press-releases/esc-digital--ai-summit-2026-where-human-insight-and-intelligent-technology-shape-the-future-of-cardiovascular-care/",
-    "used_in": [
-      "Week 11: lecture page and Jupyter notebook"
-    ]
-  },
-  {
     "key": "esc2026digital",
     "type": "web",
     "authors": [
@@ -2003,6 +1982,27 @@
     "doi": "",
     "url": "https://www.escardio.org/topics/digital-health-ai/",
     "apa": "European Society of Cardiology. (2026). Digital health & AI: Essential resources in digital health and artificial intelligence. In *ESC topics*. European Society of Cardiology. https://www.escardio.org/topics/digital-health-ai/",
+    "used_in": [
+      "Week 11: lecture page and Jupyter notebook"
+    ]
+  },
+  {
+    "key": "esc2026summit",
+    "type": "web",
+    "authors": [
+      {
+        "literal": "European Society of Cardiology"
+      }
+    ],
+    "year": "2026",
+    "title": "ESC Digital & AI Summit 2026: Where human insight and intelligent technology shape the future of cardiovascular care (press release, 3 November 2026)",
+    "container": "ESC press releases",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "doi": "",
+    "url": "https://www.escardio.org/news/press/press-releases/esc-digital--ai-summit-2026-where-human-insight-and-intelligent-technology-shape-the-future-of-cardiovascular-care/",
+    "apa": "European Society of Cardiology. (2026). ESC Digital & AI Summit 2026: Where human insight and intelligent technology shape the future of cardiovascular care (press release, 3 November 2026). In *ESC press releases*. European Society of Cardiology. https://www.escardio.org/news/press/press-releases/esc-digital--ai-summit-2026-where-human-insight-and-intelligent-technology-shape-the-future-of-cardiovascular-care/",
     "used_in": [
       "Week 11: lecture page and Jupyter notebook"
     ]

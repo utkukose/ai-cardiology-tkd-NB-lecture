@@ -15,7 +15,7 @@ Turkish Society of Cardiology · First version: November 2026
 | Format | 11 weeks, one session of 4 hours per week, 44 hours in total; about 80 percent hands-on work |
 | Languages of the materials | English and Turkish |
 | Environment | Google Colab, with nothing to install, or Jupyter in Anaconda on the participant's own computer, as the participant prefers |
-| Two paths of practice | The prompt path, on which an artificial intelligence (AI) assistant writes the code from ready prompts, and the Python path, on which the participant writes it; both reach the same results |
+| Practice in the Jupyter notebook | Every practice stop has three parts: Python basics for writing the code, ready prompts with which an artificial intelligence (AI) assistant writes it, and the complete ready application |
 | Prerequisites | No programming experience and no previous knowledge of AI. A Google account for Colab, or Anaconda installed before Week 1 ([SETUP.md](SETUP.md)) |
 | Contact | utkukose@sdu.edu.tr, utkukose@gmail.com |
 
@@ -111,7 +111,7 @@ Weekly projects are submitted by e-mail to utkukose@sdu.edu.tr or utkukose@gmail
 
 ## Rules for the use of generative AI
 
-Generative AI tools are allowed in this course and are part of its teaching. Four rules apply. First, no patient data enter a prompt: no names, dates of birth, hospital numbers or recordings of real patients. Second, every use of an AI tool for a weekly or final project is recorded in the AI usage log, with the tool, the prompt, what was checked and what was changed. Third, the participant is responsible for every line of submitted code and must be able to explain it. Code written with an assistant is checked with the code safety checklist before its results are used. Fourth, the interpretation and the discussion in the reports are the participant's own. An assistant may help with the language, and such help is recorded in the log as well. The [prompt path](PROMPT_PATH.md) applies the same rules to every exercise, and code that comes from it is assessed like code typed by hand.
+Generative AI tools are allowed in this course and are part of its teaching. Four rules apply. First, no patient data enter a prompt: no names, dates of birth, hospital numbers or recordings of real patients. Second, every use of an AI tool for a weekly or final project is recorded in the AI usage log, with the tool, the prompt, what was checked and what was changed. Third, the participant is responsible for every line of submitted code and must be able to explain it. Code written with an assistant is checked with the code safety checklist before its results are used. Fourth, the interpretation and the discussion in the reports are the participant's own. An assistant may help with the language, and such help is recorded in the log as well. The [prompts](PROMPT_PATH.md) of the Jupyter notebooks follow the same rules, and code written with them is assessed like code typed by hand.
 
 ## Data protection and ethics
 
@@ -123,7 +123,7 @@ The certificate requires attendance of at least 80 percent of the sessions, that
 
 ## Materials and environment
 
-Each week has a week page with links to its lecture page, interactive lab, Jupyter notebook, prompt library and PDF notes. [SETUP.md](SETUP.md) explains the two places where the notebooks run, Google Colab and Jupyter on one's own computer, and the [start-here notebook](en/start-here/NB00_start_here.ipynb) prepares the first steps on both paths before Week 1. [DATASETS.md](DATASETS.md) lists the data sets with their licenses, and [PYTHON_PATH.md](PYTHON_PATH.md) lists the Python steps of the weeks. [PROMPT_PATH.md](PROMPT_PATH.md) describes the prompt path and the AI assistants that work with it, and [OWN_DATA.md](OWN_DATA.md) explains how to apply the methods of the course to the data of one's own clinic.
+Each week has a week page with links to its lecture page, interactive lab, Jupyter notebook, prompt library and PDF notes. [SETUP.md](SETUP.md) explains the two places where the notebooks run, Google Colab and Jupyter on one's own computer, and the [start-here notebook](en/start-here/NB00_start_here.ipynb) introduces a first prompt and the first lines of Python before Week 1. [DATASETS.md](DATASETS.md) lists the data sets with their licenses, and [PYTHON_PATH.md](PYTHON_PATH.md) lists the Python basics of the weeks. [PROMPT_PATH.md](PROMPT_PATH.md) describes how to work with the prompts and the AI assistants that work with them, and [OWN_DATA.md](OWN_DATA.md) explains how to apply the methods of the course to the data of one's own clinic.
 
 ## Communication
 

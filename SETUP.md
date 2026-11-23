@@ -5,22 +5,22 @@ Turkish Society of Cardiology · First version: November 2026
 
 [Course home](README.md) · [Türkçe](SETUP.tr.md)
 
-Every Jupyter notebook of the course runs in two places, with the same data and the same results. Choose the one you prefer; switching from one week to the next is possible. In Part 1 of a notebook, an artificial intelligence (AI) assistant writes the code from a ready prompt; in Part 2, the participant writes the code in Python.
+Every Jupyter notebook of the course runs in two places, with the same data and the same results. Choose the one you prefer; switching from one week to the next is possible. At every practice stop of a notebook, an artificial intelligence (AI) assistant can write the code from ready prompts, the Python basics teach how to write it, and the ready application gives the complete program.
 
 | | Google Colab | Jupyter on your own computer (Anaconda) |
 |---|---|---|
 | What you need | A Google account and a web browser | A computer with Windows, macOS or Linux and about 5 GB of free space |
 | Installation | None | About 20 minutes, once, before Week 1 |
 | Opening a notebook | The **Open in Colab** button of a practice stop, of the week page or of the course site | **Download for Jupyter**, or the whole course folder |
-| AI assistant for the prompt path | Gemini is built in | Any assistant in the browser; Anaconda Assistant or Jupyter AI inside Jupyter |
+| AI assistant for the prompts | Gemini is built in | Any assistant in the browser; Anaconda Assistant or Jupyter AI inside Jupyter |
 | Data of real patients | Never | Only on a computer of the institution, under its rules |
 
 ## Option A: Google Colab
 
 1. On the lecture page of the week, press **Open in Colab** at a practice stop. The week page and the course site have the same button.
 2. Sign in with a Google account and keep your own copy with **File → Save a copy in Drive**, so that your changes are not lost.
-3. Run **Section 0**. Its first cell downloads the course package `vclinic` and the data files of the week from GitHub in a few seconds.
-4. Continue in **Part 1, the prompt path**, or in **Part 2, the Python path**. Gemini, the AI assistant of Colab, opens with its button at the top of the window.
+3. Run **Section 0**. Its start cell downloads the course package `vclinic` from GitHub in a few seconds, and the data files of the week follow when a cell first needs them. Every later part of the notebook opens with a start cell of its own, so a part can also be started directly.
+4. Work through the three parts of each practice stop: **Python basics**, **Prompt and application** and **Ready application**. Gemini, the AI assistant of Colab, opens with its button at the top of the window.
 
 Colab sessions are temporary: Files created in a session disappear when it ends, while the notebook saved in Drive stays. Colab already includes most packages of the course, PyTorch among them. The two ECG packages `wfdb` and `neurokit2` are installed by Section 0 of the Week 1 notebook.
 
@@ -55,7 +55,7 @@ Open `en/start-here/NB00_start_here.ipynb` and run all its cells with **Run → 
 
 ### 5. Open the notebook of the week
 
-Open the Jupyter notebook in the folder of the week, for example `en/week-01/NB01_python_and_ecg_basics.ipynb`, and run Section 0 first. The first cell finds the course folder, and the second prints the version of the course package `vclinic`. **Kernel → Restart Kernel and Run All Cells** starts the notebook again from a clean state.
+Open the Jupyter notebook in the folder of the week, for example `en/week-01/NB01_python_and_ecg_basics.ipynb`, and run Section 0 first. Its start cell finds the course folder, loads the course package `vclinic` and the packages of the week and prints the version of the package. **Kernel → Restart Kernel and Run All Cells** starts the notebook again from a clean state.
 
 ### 6. Packages of later weeks
 
@@ -85,7 +85,7 @@ Week 8 needs no new package and downloads nothing: The course package draws all 
 
 Week 9 needs no new package. Its notebook uses the 300 patients of CAMUS of Week 4 and downloads them again, about 250 MB, only when they are missing. The optional package shap, installed with `pip install shap`, computes the Shapley values of the logistic regression a second way; without it, the notebook uses the closed form.
 
-Week 10 needs one new package, Streamlit, for the web interface of the prototype; `pip install streamlit` installs it. Section 8 of the notebook writes the interface as the file `app_af.py` in the folder of the week. The Anaconda Prompt, opened in that folder, starts it with `streamlit run app_af.py`, and the browser shows it at http://localhost:8501. On first use, the notebook downloads the header and annotation files of the 25 records of the MIT-BIH Atrial Fibrillation Database and the signal files of three of them, about 86 MB, from PhysioNet; no registration is needed. The notebook also runs in Colab, but the web interface needs a computer of one's own.
+Week 10 needs one new package, Streamlit, for the web interface of the prototype; `pip install streamlit` installs it. The ready application of practice stop 2 writes the interface as the file `app_af.py` in the folder of the week. The Anaconda Prompt, opened in that folder, starts it with `streamlit run app_af.py`, and the browser shows it at http://localhost:8501. On first use, the notebook downloads the header and annotation files of the 25 records of the MIT-BIH Atrial Fibrillation Database and the signal files of three of them, about 86 MB, from PhysioNet; no registration is needed. The notebook also runs in Colab, but the web interface needs a computer of one's own.
 
 Week 11 needs no new package and downloads nothing: The Cleveland data of its worked final project come with the course folder. The notebook writes the folder `final_project` next to itself, with the results, a figure and the toolbox of the final project, `final_project/code/project_tools.py`.
 
@@ -107,15 +107,15 @@ jupyter lab
 
 New weeks are added to the repository during the course. With git, `git pull` in the course folder brings the new files. Without git, download the ZIP file again. Keep your own copies of the notebooks in a separate folder, so that an update does not overwrite your work.
 
-## An AI assistant for the prompt path
+## An AI assistant for the prompts
 
-An AI assistant is optional. It is needed only on the [prompt path](PROMPT_PATH.md), and any assistant that writes Python can be used. In Anaconda, Anaconda Assistant comes with Anaconda Toolbox. Install it from the Anaconda Toolbox tile in Navigator or with the command below. Then open a notebook in JupyterLab and sign in with an Anaconda account. A free account has a limited number of requests.
+An AI assistant is optional. It is needed only for the [prompts](PROMPT_PATH.md) of the practice stops, and any assistant that writes Python can be used. In Anaconda, Anaconda Assistant comes with Anaconda Toolbox. Install it from the Anaconda Toolbox tile in Navigator or with the command below. Then open a notebook in JupyterLab and sign in with an Anaconda account. A free account has a limited number of requests.
 
 ```bash
 conda install anaconda-toolbox
 ```
 
-Jupyter AI is an open-source extension for JupyterLab that works with the application programming interface (API) key of a model provider or with a local model. In Google Colab, Gemini is built in. The section [AI assistants](PROMPT_PATH.md#which-assistant) of the prompt path compares the options. No patient data enter any of them.
+Jupyter AI is an open-source extension for JupyterLab that works with the application programming interface (API) key of a model provider or with a local model. In Google Colab, Gemini is built in. The section [AI assistants](PROMPT_PATH.md#which-assistant) of the guide to the prompts compares the options. No patient data enter any of them.
 
 Real patient data never go into Colab or any other cloud service. All data of the course notebooks are synthetic or public.
 
@@ -123,12 +123,12 @@ Real patient data never go into Colab or any other cloud service. All data of th
 
 | Problem | What to do |
 |---|---|
-| `No module named 'vclinic'` without an internet connection | Open the notebook from inside the course folder. The first cell then finds the folder and needs no download. |
+| `No module named 'vclinic'` without an internet connection | Open the notebook from inside the course folder. The start cell then finds the folder and needs no download. |
 | `No module named 'torch'` | Install PyTorch as step 6 describes, then restart the kernel. |
 | `No module named 'skimage'` | Install scikit-image with `pip install scikit-image`, then restart the kernel. |
 | `No module named 'transformers'` | Install it with `pip install transformers`, then restart the kernel. |
-| The notebook opened outside the course folder | The first cell downloads the course package and the data into a folder named `ai-cardiology-course` next to the notebook. This needs an internet connection once. |
-| An error after running cells out of order | Choose **Kernel → Restart Kernel and Run All Cells**, or run the *Catch-up* cell at the start of the section. |
+| The notebook opened outside the course folder | The start cell downloads the course package into a folder named `ai-cardiology-course` next to the notebook, and the data files are downloaded when they are first needed. This needs an internet connection once. |
+| An error after running cells out of order | Choose **Kernel → Restart Kernel and Run All Cells**, or run the start cell at the beginning of the part. |
 | A notebook on GitHub shows no output | GitHub only displays the notebook. Download it with the course folder and run it in Jupyter. |
 | Files locked or missing in a OneDrive folder | Move the course folder to a folder outside cloud synchronisation. |
 

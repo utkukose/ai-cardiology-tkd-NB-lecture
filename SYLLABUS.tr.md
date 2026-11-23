@@ -15,7 +15,7 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 | Biçim | 11 hafta, haftada bir 4 saatlik oturum, toplam 44 saat; sürenin yaklaşık yüzde 80'i uygulamaya ayrılır |
 | Malzemelerin dili | İngilizce ve Türkçe |
 | Ortam | Katılımcının tercihine göre kurulum gerektirmeyen Google Colab ya da katılımcının kendi bilgisayarında Anaconda içinde çalışan Jupyter |
-| Uygulamanın iki yolu | Kodu hazır prompt (istem) metinleriyle bir yapay zekâ (YZ) asistanının yazdığı prompt yolu ve kodu katılımcının yazdığı Python yolu; iki yol da aynı sonuçlara varır |
+| Jupyter Notebook'ta uygulama | Her uygulama durağının üç bölümü vardır: Kodu yazmayı öğreten Python temelleri, kodu hazır prompt (istem) metinleriyle bir yapay zekâ (YZ) asistanının yazdığı Prompt ile uygulama ve eksiksiz hazır uygulama |
 | Ön koşullar | Programlama deneyimi ve YZ konusunda ön bilgi gerekmez. Colab için bir Google hesabı ya da 1. haftadan önce kurulmuş bir Anaconda yeterlidir ([SETUP.tr.md](SETUP.tr.md)) |
 | İletişim | utkukose@sdu.edu.tr, utkukose@gmail.com |
 
@@ -111,7 +111,7 @@ Haftalık projeler, bir sonraki haftanın oturumundan önce utkukose@sdu.edu.tr 
 
 ## Üretken yapay zekâ kullanım kuralları
 
-Üretken YZ araçlarının kullanımına bu eğitimde izin verilir ve bu araçlar öğretimin bir parçasıdır. Dört kural geçerlidir. Birincisi, hiçbir prompta hasta verisi girmez: Gerçek hastaların adları, doğum tarihleri, protokol numaraları ya da kayıtları kullanılmaz. İkincisi, haftalık ya da final projesi için bir YZ aracının her kullanımı, araç, prompt, neyin kontrol edildiği ve neyin değiştirildiği bilgileriyle YZ kullanım günlüğüne kaydedilir. Üçüncüsü, katılımcı teslim ettiği kodun her satırından sorumludur ve onu açıklayabilmelidir. Bir asistanla yazılan kod, sonuçları kullanılmadan önce kod güvenlik kontrol listesiyle denetlenir. Dördüncüsü, raporlardaki yorum ve tartışma katılımcının kendisine aittir. Bir asistan dil konusunda yardımcı olabilir ve bu yardım da günlüğe kaydedilir. [Prompt yolu](PROMPT_PATH.tr.md) aynı kuralları her alıştırmaya uygular; bu yoldan gelen kod da elle yazılmış kod gibi değerlendirilir.
+Üretken YZ araçlarının kullanımına bu eğitimde izin verilir ve bu araçlar öğretimin bir parçasıdır. Dört kural geçerlidir. Birincisi, hiçbir prompta hasta verisi girmez: Gerçek hastaların adları, doğum tarihleri, protokol numaraları ya da kayıtları kullanılmaz. İkincisi, haftalık ya da final projesi için bir YZ aracının her kullanımı, araç, prompt, neyin kontrol edildiği ve neyin değiştirildiği bilgileriyle YZ kullanım günlüğüne kaydedilir. Üçüncüsü, katılımcı teslim ettiği kodun her satırından sorumludur ve onu açıklayabilmelidir. Bir asistanla yazılan kod, sonuçları kullanılmadan önce kod güvenlik kontrol listesiyle denetlenir. Dördüncüsü, raporlardaki yorum ve tartışma katılımcının kendisine aittir. Bir asistan dil konusunda yardımcı olabilir ve bu yardım da günlüğe kaydedilir. Jupyter Notebook'lardaki [promptlar](PROMPT_PATH.tr.md) da aynı kurallara uyar; bu promptlarla yazılan kod da elle yazılmış kod gibi değerlendirilir.
 
 ## Veri koruma ve etik
 
@@ -123,7 +123,7 @@ Sertifika için oturumların en az yüzde 80'ine, yani 11 oturumun en az 9'una k
 
 ## Malzemeler ve ortam
 
-Her hafta için ders sayfasına, etkileşimli laba, Jupyter Notebook'a, prompt kütüphanesine ve PDF ders notuna bağlantı veren bir hafta sayfası vardır. [SETUP.tr.md](SETUP.tr.md) Jupyter Notebook'ların çalıştığı iki ortamı, yani Google Colab'ı ve kişinin kendi bilgisayarındaki Jupyter'i anlatır; [başlangıç Jupyter Notebook'u](tr/baslangic/NB00_baslangic.ipynb) 1. haftadan önce iki yolun ilk adımlarını hazırlar. [DATASETS.tr.md](DATASETS.tr.md) veri setlerini lisanslarıyla, [PYTHON_PATH.tr.md](PYTHON_PATH.tr.md) ise haftaların Python adımlarını listeler. [PROMPT_PATH.tr.md](PROMPT_PATH.tr.md) prompt yolunu ve bu yolda kullanılabilecek YZ asistanlarını, [OWN_DATA.tr.md](OWN_DATA.tr.md) ise eğitimin yöntemlerinin kişinin kendi kliniğinin verilerine nasıl uygulanacağını anlatmaktadır.
+Her hafta için ders sayfasına, etkileşimli laba, Jupyter Notebook'a, prompt kütüphanesine ve PDF ders notuna bağlantı veren bir hafta sayfası vardır. [SETUP.tr.md](SETUP.tr.md) Jupyter Notebook'ların çalıştığı iki ortamı, yani Google Colab'ı ve kişinin kendi bilgisayarındaki Jupyter'i anlatır; [başlangıç Jupyter Notebook'u](tr/baslangic/NB00_baslangic.ipynb) 1. haftadan önce ilk promptla ve ilk Python satırlarıyla tanıştırır. [DATASETS.tr.md](DATASETS.tr.md) veri setlerini lisanslarıyla, [PYTHON_PATH.tr.md](PYTHON_PATH.tr.md) ise haftaların Python temellerini listeler. [PROMPT_PATH.tr.md](PROMPT_PATH.tr.md) promptlarla nasıl çalışılacağını ve kullanılabilecek YZ asistanlarını, [OWN_DATA.tr.md](OWN_DATA.tr.md) ise eğitimin yöntemlerinin kişinin kendi kliniğinin verilerine nasıl uygulanacağını anlatmaktadır.
 
 ## İletişim
 

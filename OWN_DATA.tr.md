@@ -58,7 +58,7 @@ Her durumda verilerin bir bölümü ilk modelden önce test kümesi olarak ayrı
 
 Gerçek hastaların verileri kurumun bir bilgisayarında, Jupyter'de (Anaconda) analiz edilir; Google Colab gibi bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine asla aktarılmaz. Böyle verileri taşıyan bir dizüstü bilgisayarın diski şifrelenmelidir.
 
-Kodu hazır bir prompt (istem) ile bir YZ asistanına yazdırmak, yani prompt yolu, kişinin kendi verileriyle de işe yarar. Bunun tek bir kuralı vardır: Prompt verinin yapısını, yani sütunların adlarını, birimlerini, kodlarını ve örnekleme frekansını tarif eder; hiçbir zaman bir hastanın satırını içermez. Kodu önce aynı sütunlara sahip sentetik bir tabloda denemek, gerçek veride ise ancak bu denemeden geçtikten sonra çalıştırmak iyi bir alışkanlıktır; `vclinic` ders paketi böyle tablolar üretebilir. 6. haftada kullanılan ve kişinin kendi bilgisayarında çalışan önceden eğitilmiş dil modelleri, raporların metnini o bilgisayarın içinde tutar.
+Kodu hazır bir prompt (istem) ile bir YZ asistanına yazdırmak kişinin kendi verileriyle de işe yarar. Bunun tek bir kuralı vardır: Prompt verinin yapısını, yani sütunların adlarını, birimlerini, kodlarını ve örnekleme frekansını tarif eder; hiçbir zaman bir hastanın satırını içermez. Kodu önce aynı sütunlara sahip sentetik bir tabloda denemek, gerçek veride ise ancak bu denemeden geçtikten sonra çalıştırmak iyi bir alışkanlıktır; `vclinic` ders paketi böyle tablolar üretebilir. 6. haftada kullanılan ve kişinin kendi bilgisayarında çalışan önceden eğitilmiş dil modelleri, raporların metnini o bilgisayarın içinde tutar.
 
 ## 6. Raporlama ve klinik kullanıma geçiş
 

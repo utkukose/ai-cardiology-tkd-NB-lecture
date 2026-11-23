@@ -58,7 +58,7 @@ In every case, a part of the data is set aside as a test set before the first mo
 
 The data of real patients are analysed on a computer of the institution, in Jupyter (Anaconda), and never in a cloud notebook such as Google Colab or in an AI chat. The disk of a laptop that holds such data should be encrypted.
 
-The prompt path works with one's own data as well, with one rule: The prompt describes the structure of the data, such as the names of the columns, their units, their codes and the sampling frequency, and never contains a row of a patient. A good habit is to test the code first on a synthetic table with the same columns, which the course package `vclinic` can produce, and to run it on the real data only after it passes. Pretrained language models that run on one's own computer, which Week 6 uses, keep the text of reports on that computer.
+The prompts of the course work with one's own data as well, with one rule: The prompt describes the structure of the data, such as the names of the columns, their units, their codes and the sampling frequency, and never contains a row of a patient. A good habit is to test the code first on a synthetic table with the same columns, which the course package `vclinic` can produce, and to run it on the real data only after it passes. Pretrained language models that run on one's own computer, which Week 6 uses, keep the text of reports on that computer.
 
 ## 6. Reporting, and the step towards the clinic
 

@@ -5,22 +5,22 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](SETUP.md)
 
-Eğitimin her Jupyter Notebook, aynı verilerle ve aynı sonuçlarla iki ortamda çalışır. Hangisini tercih ederseniz onu kullanın; haftadan haftaya değiştirmek de mümkündür. Jupyter Notebook'un 1. kısmında kodu, hazır bir prompt (istem) ile bir yapay zekâ (YZ) asistanı yazar; 2. kısmında ise kodu katılımcı Python ile yazar.
+Eğitimin her Jupyter Notebook'u aynı verilerle ve aynı sonuçlarla iki ortamda çalışır. Hangisini tercih ederseniz onu kullanın; haftadan haftaya değiştirmek de mümkündür. Jupyter Notebook'taki her uygulama durağında kodu, hazır bir prompt (istem) ile bir yapay zekâ (YZ) asistanı yazabilir. Durağın Python temelleri kodu yazmayı öğretir, hazır uygulaması ise eksiksiz programı verir.
 
 | | Google Colab | Kendi bilgisayarınızda Jupyter (Anaconda) |
 |---|---|---|
 | Neye ihtiyaç var? | Bir Google hesabı ve bir web tarayıcısı | Windows, macOS ya da Linux yüklü, yaklaşık 5 GB boş alanı olan bir bilgisayar |
 | Kurulum | Yok | 1. haftadan önce bir kez, yaklaşık 20 dakika |
 | Jupyter Notebook nasıl açılır? | Bir uygulama durağındaki, hafta sayfasındaki ya da eğitim sitesindeki **Colab'da aç** düğmesiyle | **Jupyter için indir** bağlantısıyla ya da ders klasörünün tamamıyla |
-| Prompt yolu için YZ asistanı | Gemini yerleşiktir | Tarayıcıdaki herhangi bir asistan; Jupyter içinde Anaconda Assistant ya da Jupyter AI |
+| Promptlar için YZ asistanı | Gemini yerleşiktir | Tarayıcıdaki herhangi bir asistan; Jupyter içinde Anaconda Assistant ya da Jupyter AI |
 | Gerçek hasta verileri | Asla kullanılmaz | Yalnızca kurumun bir bilgisayarında ve kurumun kurallarına uygun olarak kullanılır |
 
 ## A seçeneği: Google Colab
 
 1. Haftanın ders sayfasında bir uygulama durağındaki **Colab'da aç** düğmesine basın. Hafta sayfasında ve eğitim sitesinde de aynı düğme bulunur.
 2. Bir Google hesabıyla giriş yapın ve değişikliklerinizin kaybolmaması için **Dosya → Drive'a kopya kaydet** (**File → Save a copy in Drive**) komutuyla kendi kopyanızı kaydedin.
-3. **0. bölümü** çalıştırın. İlk hücresi `vclinic` ders paketini ve haftanın veri dosyalarını birkaç saniyede GitHub'dan indirir.
-4. **Kısım 1, prompt yolu** ya da **Kısım 2, Python yolu** ile devam edin. Colab'ın YZ asistanı Gemini, pencerenin üstündeki düğmesiyle açılır.
+3. **0. bölümü** çalıştırın. Bölümün başlangıç hücresi `vclinic` ders paketini birkaç saniyede GitHub'dan indirir; haftanın veri dosyaları da bir hücre onlara ilk kez ihtiyaç duyduğunda iner. Jupyter Notebook'un sonraki her bölümü kendi başlangıç hücresiyle açılır; bu yüzden bir bölüme doğrudan da başlanabilir.
+4. Her uygulama durağının üç bölümünü sırayla çalışın: **Python temelleri**, **Prompt ile uygulama** ve **Hazır uygulama**. Colab'ın YZ asistanı Gemini, pencerenin üstündeki düğmesiyle açılır.
 
 Colab oturumları geçicidir: Bir oturumda oluşturulan dosyalar oturum bitince silinir; Drive'a kaydedilen Jupyter Notebook ise kalır. Colab, PyTorch dâhil eğitimin paketlerinin çoğunu zaten içerir. İki EKG paketi, `wfdb` ve `neurokit2`, 1. haftanın Jupyter Notebook'unun 0. bölümünde kurulur.
 
@@ -55,7 +55,7 @@ jupyter lab
 
 ### 5. Haftanın Jupyter Notebook'unu açın
 
-Haftanın klasöründeki Jupyter Notebook'u, örneğin `tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb` dosyasını açın ve önce 0. bölümü çalıştırın. İlk hücre ders klasörünü bulur, ikinci hücre `vclinic` ders paketinin sürümünü yazar. **Kernel → Restart Kernel and Run All Cells** komutu Jupyter Notebook'u temiz bir durumdan başlayarak yeniden çalıştırır.
+Haftanın klasöründeki Jupyter Notebook'u, örneğin `tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb` dosyasını açın ve önce 0. bölümü çalıştırın. Bölümün başlangıç hücresi ders klasörünü bulur, `vclinic` ders paketini ve haftanın paketlerini yükler ve paketin sürümünü yazar. **Kernel → Restart Kernel and Run All Cells** komutu Jupyter Notebook'u temiz bir durumdan başlayarak yeniden çalıştırır.
 
 ### 6. Sonraki haftaların paketleri
 
@@ -85,7 +85,7 @@ Jupyter Notebook'lar 6. haftadan itibaren önceden eğitilmiş dil modelleri iç
 
 9. hafta yeni bir paket gerektirmez. Haftanın Jupyter Notebook'u 4. haftanın 300 CAMUS hastasını kullanır ve yaklaşık 250 MB tutan bu verileri yalnızca bilgisayarda bulunmadıklarında yeniden indirir. İsteğe bağlı shap paketi (`pip install shap` komutuyla kurulur) lojistik regresyonun Shapley değerlerini ikinci bir yolla hesaplar; paket kurulu değilse Jupyter Notebook kapalı formu kullanır.
 
-10. hafta tek bir yeni paket gerektirir: Prototipin web arayüzü için Streamlit. Paket `pip install streamlit` komutuyla kurulur. Jupyter Notebook'un 8. bölümü arayüzü haftanın klasörüne `app_af.py` dosyası olarak yazar. Bu klasörde açılan Anaconda Prompt arayüzü `streamlit run app_af.py` komutuyla başlatır; tarayıcı da arayüzü http://localhost:8501 adresinde gösterir. Jupyter Notebook ilk kullanımda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 25 kaydının başlık ve işaretleme dosyalarını ve bunlardan üçünün sinyal dosyalarını, yaklaşık 86 MB'lık bir indirmeyle PhysioNet'ten alır; üyelik gerekmez. Jupyter Notebook Colab'da da çalışır, ancak web arayüzü için katılımcının kendi bilgisayarı gerekir.
+10. hafta tek bir yeni paket gerektirir: Prototipin web arayüzü için Streamlit. Paket `pip install streamlit` komutuyla kurulur. 2. uygulama durağının hazır uygulaması arayüzü haftanın klasörüne `app_af.py` dosyası olarak yazar. Bu klasörde açılan Anaconda Prompt arayüzü `streamlit run app_af.py` komutuyla başlatır; tarayıcı da arayüzü http://localhost:8501 adresinde gösterir. Jupyter Notebook ilk kullanımda MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın 25 kaydının başlık ve işaretleme dosyalarını ve bunlardan üçünün sinyal dosyalarını, yaklaşık 86 MB'lık bir indirmeyle PhysioNet'ten alır; üyelik gerekmez. Jupyter Notebook Colab'da da çalışır, ancak web arayüzü için katılımcının kendi bilgisayarı gerekir.
 
 11. hafta yeni bir paket gerektirmez ve hiçbir şey indirmez: Haftanın çözümlü final projesinin Cleveland verisi ders klasörüyle birlikte gelir. Jupyter Notebook kendi yanına sonuçları, bir grafiği ve final projesinin araç takımını (`final_project/code/project_tools.py`) içeren `final_project` klasörünü yazar.
 
@@ -109,7 +109,7 @@ Eğitim süresince depoya yeni haftalar eklenmektedir. git kullanılıyorsa ders
 
 ## Yapay zekâ asistanı (isteğe bağlı)
 
-YZ asistanı yalnızca alıştırmaları asistana prompt yazarak çözenler, yani [prompt yolunu](PROMPT_PATH.tr.md) izleyenler için gereklidir; Python kodu yazabilen her asistan kullanılabilir. Anaconda'da Anaconda Assistant, Anaconda Toolbox ile birlikte gelir. Anaconda Toolbox'ı Navigator'daki kutucuğundan ya da aşağıdaki komutla kurun. Ardından JupyterLab'de bir Jupyter Notebook açın ve bir Anaconda hesabıyla oturum açın. Ücretsiz hesapta istek sayısı sınırlıdır.
+YZ asistanı yalnızca uygulama duraklarının [promptlarıyla](PROMPT_PATH.tr.md) çalışanlar için gereklidir; Python kodu yazabilen her asistan kullanılabilir. Anaconda'da Anaconda Assistant, Anaconda Toolbox ile birlikte gelir. Anaconda Toolbox'ı Navigator'daki kutucuğundan ya da aşağıdaki komutla kurun. Ardından JupyterLab'de bir Jupyter Notebook açın ve bir Anaconda hesabıyla oturum açın. Ücretsiz hesapta istek sayısı sınırlıdır.
 
 ```bash
 conda install anaconda-toolbox
@@ -123,12 +123,12 @@ Gerçek hasta verisi hiçbir zaman Colab'a ya da başka bir bulut hizmetine yük
 
 | Sorun | Yapılacak |
 |---|---|
-| İnternet bağlantısı yokken `No module named 'vclinic'` hatası | Jupyter Notebook'u ders klasörünün içinden açın. İlk hücre klasörü bulur ve indirme gerekmez. |
+| İnternet bağlantısı yokken `No module named 'vclinic'` hatası | Jupyter Notebook'u ders klasörünün içinden açın. Başlangıç hücresi klasörü bulur ve indirme gerekmez. |
 | `No module named 'torch'` hatası | PyTorch'u 6. adımda anlatıldığı gibi kurun, ardından çekirdeği yeniden başlatın. |
 | `No module named 'skimage'` hatası | scikit-image paketini `pip install scikit-image` komutuyla kurun, ardından çekirdeği yeniden başlatın. |
 | `No module named 'transformers'` hatası | transformers paketini `pip install transformers` komutuyla kurun, ardından çekirdeği yeniden başlatın. |
-| Jupyter Notebook ders klasörünün dışında açıldı | İlk hücre ders paketini ve verileri Jupyter Notebook'un yanındaki `ai-cardiology-course` klasörüne indirir. Bunun için bir kez internet bağlantısı gerekir. |
-| Hücreler sırasız çalıştırıldıktan sonra hata | **Kernel → Restart Kernel and Run All Cells** seçeneğini seçin ya da bölümün başındaki *Telafi* hücresini çalıştırın. |
+| Jupyter Notebook ders klasörünün dışında açıldı | Başlangıç hücresi ders paketini Jupyter Notebook'un yanındaki `ai-cardiology-course` klasörüne indirir; veri dosyaları da ilk gerektiklerinde iner. Bunun için bir kez internet bağlantısı gerekir. |
+| Hücreler sırasız çalıştırıldıktan sonra hata | **Kernel → Restart Kernel and Run All Cells** seçeneğini seçin ya da bölümün başındaki başlangıç hücresini çalıştırın. |
 | GitHub'daki Jupyter Notebook'ta çıktı görünmüyor | GitHub, Jupyter Notebook'u yalnızca görüntüler, çalıştırmaz. Jupyter Notebook'u ders klasörüyle birlikte indirin ve Jupyter'de çalıştırın. |
 | OneDrive klasöründe dosyalar kilitli ya da eksik | Ders klasörünü bulutla eşitlenmeyen bir klasöre taşıyın. |
 
