@@ -23,7 +23,7 @@ Seven options are open. Options A to F use synthetic or public data, and Option 
 | F. Decision support | A prototype of a clinical decision support system with explanations and a user test | Any of the above | Weeks 9 and 10 |
 | G. Own question | A question from the participant's clinic | Institutional data, with the permission of the institution and, where required, ethics committee approval | Any week |
 
-Institutional data are processed only on the participant's own computer, in line with the Turkish Law on the Protection of Personal Data (KVKK). They never enter a cloud notebook or an AI chat, and the report shows only aggregated results.
+Institutional data are processed only on a computer of the institution, in line with the Turkish Law on the Protection of Personal Data (KVKK). They never enter a cloud notebook or an AI chat, and the report shows only aggregated results.
 
 ## What to submit
 

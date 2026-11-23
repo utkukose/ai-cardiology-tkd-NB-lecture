@@ -5,40 +5,40 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [Python temelleri](PYTHON_PATH.tr.md) · [Kendi verileriniz](OWN_DATA.tr.md) · [English](PROMPT_PATH.md)
 
-Eğitimin tek bir ana rotası vardır: Her haftanın ders sayfası. Sayfadaki uygulama duraklarında çalışma haftanın Jupyter Notebook'unda sürer. Orada kodu, hazır bir prompt (istem), yani yazılı bir talimat ile bir yapay zekâ (YZ) asistanı yazabilir; katılımcı kodu çalıştırır ve sonucu denetler. Bu rehber, kod yazmayan, belki de hiç YZ asistanı kullanmamış katılımcılar için hazırlanan bu çalışmayı anlatmaktadır. Jupyter Notebook'ta her durak **Python temelleri**, **Prompt ile uygulama** ve **Hazır uygulama** olmak üzere üç bölümden oluşur ve promptlar «Prompt ile uygulama» bölümünde yer alır. Aynı durağın Python temelleri böyle bir kodun nasıl yazılacağını öğretir ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)), hazır uygulaması ise durağın eksiksiz programını gösterir.
+Eğitimin tek bir ana rotası bulunmaktadır: Her haftanın ders sayfası. Sayfadaki uygulama duraklarında çalışma, haftanın Jupyter Notebook'unda sürdürülür. Burada kodu, hazır bir prompt (istem), yani yazılı bir talimat yardımıyla bir yapay zekâ (YZ) asistanı yazabilir; katılımcının görevi bu kodu çalıştırmak ve sonucu denetlemektir. Bu rehber, kod yazmayan ve belki de daha önce hiç YZ asistanı kullanmamış katılımcılar için hazırlanan bu çalışma biçimini anlatmaktadır. Jupyter Notebook'ta her durak **Python temelleri**, **Prompt ile uygulama** ve **Hazır uygulama** olmak üzere üç bölümden oluşur; promptlar «Prompt ile uygulama» bölümünde yer almaktadır. Aynı durağın Python temelleri bölümünde böyle bir kodun nasıl yazılacağı öğretilir ([PYTHON_PATH.tr.md](PYTHON_PATH.tr.md)); hazır uygulama bölümünde ise durağın eksiksiz programı gösterilir.
 
 ## Bir uygulama durağında ne olur?
 
-Ders sayfasında her hafta iki ya da üç uygulama durağı bulunur. Durağın **2 · Prompt ile uygulama** düğmesi Jupyter Notebook'u Google Colab'da bu bölümün başında açar. Kendi bilgisayarınızdaki Jupyter'de ise «Durak N · Prompt ile uygulama» başlığı içindekiler panelinde bulunur. Bir durakta üç ile beş prompt bulunur ve her promptla aynı biçimde çalışılır.
+Ders sayfasında her hafta iki ya da üç uygulama durağı bulunmaktadır. Durağın **2 · Prompt ile uygulama** düğmesi, Jupyter Notebook'u Google Colab'da bu bölümün başından açar. Kendi bilgisayarınızdaki Jupyter'de ise «Durak N · Prompt ile uygulama» başlığını içindekiler panelinde bulabilirsiniz. Bir durakta üç ile beş arasında prompt yer alır ve her promptla aynı biçimde çalışılır.
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
-| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
-| 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
-| 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
-| 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
-| 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
+| 1. Okuyunuz | Jupyter Notebook'ta promptun amacını okuyunuz. |
+| 2. Veriyi hazırlayınız | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırınız. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlayıp göstermektedir. |
+| 3. Kopyalayınız ve gönderiniz | Promptu kopyalayınız ve bir YZ asistanına gönderiniz: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
+| 4. Çalıştırınız | Asistanın verdiği kodu veri hücresinin altındaki hücreye yapıştırınız ve çalıştırınız. |
+| 5. Denetleyiniz | Kontrol hücresini çalıştırınız. Hücre sonucu *doğru* ya da *henüz değil* biçiminde bildirmekte ve "cevap" sonucunun değerini göstermektedir. |
+| 6. Onarınız | Kontrol hücresi *henüz değil* sonucunu verirse onarım promptunu kodla birlikte gönderiniz. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırınız. |
+| 7. Açıklatınız ve kaydediniz | Asistandan kodu sade bir dille açıklamasını isteyiniz; kullandığınız aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazınız. |
 
-Bölüm, kullandığı kurulumu ve veri çağrılarını yineleyen bir başlangıç hücresiyle açılır; böylece bölüme başka bir gün de başlanabilir. Her promptun da, promptun tarif ettiği "veri" tablosunu hazırlayıp gösteren kendi veri hücresi vardır. Her promptun *Hazır kod* hücresi her zaman doğru sonucu verir; böylece hiçbir katılımcı takılıp kalmaz ve sonraki prompta her zaman geçilebilir. Ardından gelen «Hazır uygulama» bölümü durağın eksiksiz programını içerir.
+Bölüm, kullandığı kurulumu ve veri çağrılarını yineleyen bir başlangıç hücresiyle açılır; bu sayede bölüme başka bir gün de başlanabilmektedir. Her promptun ayrıca, promptun tarif ettiği "veri" tablosunu hazırlayıp gösteren kendi veri hücresi bulunur. Her promptun *Hazır kod* hücresi her zaman doğru sonucu vermektedir; böylece hiçbir katılımcı takılıp kalmadan sonraki prompta geçebilir. Ardından gelen «Hazır uygulama» bölümünde ise durağın eksiksiz programı yer alır.
 
 ## Hangi asistan?
 
-Python kodu yazabilen her asistan kullanılabilir; eğitimin promptları hepsiyle çalışır.
+Python kodu yazabilen her asistan kullanılabilir; eğitimin promptları bu asistanların hepsiyle çalışacak biçimde hazırlanmıştır.
 
 | Asistan | Nerede çalışır? | Bilinmesi gerekenler |
 |---|---|---|
-| [Colab'da Gemini](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab | Colab'ın içinde bulunur ve pencerenin üstündeki düğmesiyle açılır. Bir açıklamadan yola çıkarak kod yazar ve hataları açıklar. Özellikler hesaba ve bölgeye göre farklılık gösterebilir. |
-| ChatGPT, Claude, Copilot ya da Gemini gibi bir sohbet asistanı | Web tarayıcısının ikinci bir sekmesi | Prompt sohbete yapıştırılır, kod da Jupyter Notebook'a geri kopyalanır. |
-| [Anaconda Assistant](https://docs.anaconda.com/anaconda-notebooks/local-assistant) | Anaconda Toolbox aracılığıyla Anaconda'daki JupyterLab (`conda install anaconda-toolbox`) | Bir Anaconda hesabı gerektirir. Ücretsiz hesapta istek sayısı sınırlıdır. |
+| [Colab'da Gemini](https://developers.googleblog.com/en/new-ai-first-google-colab-now-available-to-everyone/) | Google Colab | Colab'ın içinde bulunur ve pencerenin üstündeki düğmesiyle açılır. Bir açıklamadan yola çıkarak kod yazabilir ve hataları açıklayabilir. Özellikler hesaba ve bölgeye göre farklılık gösterebilir. |
+| ChatGPT, Claude, Copilot ya da Gemini gibi bir sohbet asistanı | Web tarayıcısının ikinci bir sekmesi | Prompt sohbete yapıştırılır; asistanın verdiği kod da Jupyter Notebook'a geri kopyalanır. |
+| [Anaconda Assistant](https://docs.anaconda.com/anaconda-notebooks/local-assistant) | Anaconda Toolbox aracılığıyla Anaconda'daki JupyterLab (`conda install anaconda-toolbox`) | Bir Anaconda hesabı gerektirmektedir. Ücretsiz hesapta istek sayısı sınırlıdır. |
 | [Jupyter AI](https://jupyter-ai.readthedocs.io/en/latest/) | Anaconda'daki JupyterLab | Sohbet paneli olan açık kaynaklı bir eklentidir. Bir model sağlayıcısının uygulama programlama arayüzü (API) anahtarını ya da yerel bir modeli gerektirir. Sağlayıcılar kullanım için ücret alabilir. |
 
-Eğitim bu araçların hiçbirine bağlı değildir. Asistanlar sık değiştiği için her aracın kurulumu kendi belgelerini izler.
+Eğitim bu araçların hiçbirine bağlı değildir. Asistanlar sık değiştiği için her aracın kurulumunda o aracın kendi belgeleri izlenmelidir.
 
 ## Prompt kartı
 
-Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asistana iyi bir istek yazmayı öğretir. Promptlar klinik bir dille yazılır. Bir promptta koddan yalnızca iki ad geçer: Her promptun veri hücresinin hazırlayıp gösterdiği "veri" tablosu ve sonucun kontrol için saklandığı "cevap" adı. Kodun hiçbir paketinin, fonksiyonunun ya da ayarının adı geçmez.
+Eğitimdeki her prompt aynı yedi alandan oluşmaktadır; bu alanları incelemek, bir asistana iyi bir istek yazmayı da öğretir. Promptlar klinik bir dille yazılmıştır. Bir promptta koddan yalnızca iki ad geçer: Her promptun veri hücresinde hazırlanıp gösterilen "veri" tablosu ve sonucun kontrol için saklandığı "cevap" adı. Promptlarda kodun hiçbir paketinin, fonksiyonunun ya da ayarının adı geçmemektedir.
 
 | Alan | Ne belirtilir? |
 |---|---|
@@ -50,7 +50,7 @@ Eğitimdeki her prompt aynı yedi alandan oluşur; bu alanları okumak, bir asis
 | Çıktı | Neyin yazdırılacağı ya da çizileceği; sonucun "cevap" adıyla saklanması |
 | Test | Sonucun denetlenebilmesi için cevabı bilinen bir durum ya da makul bir aralık |
 
-Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabilir. Bu yüzden promptlarla çalışmanın en önemli parçası her promptun kontrolüdür.
+Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabilir. Bu nedenle promptlarla çalışmanın en önemli parçası, her promptun sonucunun denetlenmesidir.
 
 ## Promptlar nerede?
 
@@ -68,15 +68,15 @@ Bir asistan, hata vermeden çalışan ama yanlış bir sayı üreten kod yazabil
 | 10 | [PROMPTLAR.md](tr/hafta-10/PROMPTLAR.md) | 3 durakta 10 prompt | F bölümü, prompt atölyesi |
 | 11 | [PROMPTLAR.md](tr/hafta-11/PROMPTLAR.md) | 3 durakta 9 prompt | F bölümü, prompt atölyesi |
 
-Haftanın prompt kütüphanesi, uygulama duraklarının bütün promptlarını GitHub'da birer kopyalama düğmesiyle, kodu onarmak için promptları ve haftalık projenin promptlarını içerir. Etkileşimli labın F bölümünde prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimiyle çalışılır.
+Haftanın prompt kütüphanesinde uygulama duraklarının bütün promptları, GitHub'da her birinin yanında bir kopyalama düğmesiyle birlikte yer almaktadır. Kütüphanede ayrıca kodu onarmaya yönelik promptlar ve haftalık projenin promptları bulunur. Etkileşimli labın F bölümünde ise prompt kartı, bir kalite göstergesi ve bir mahremiyet denetimiyle birlikte çalışılır.
 
 ## Mahremiyet
 
-Hiçbir prompta hasta verisi girmez. Buna adlar, doğum tarihleri, T.C. kimlik numaraları, hastane ve protokol numaraları, yatış tarihleri, hasta dosyalarından alınan serbest metinler ve kimlik bilgisi taşıyan görüntüler dâhildir. Eğitimin promptları verinin yapısını, yani sütun adlarını, birimleri ve örnekleme frekansını tarif eder; hiçbir zaman gerçek bir hastayı tarif etmez. Gerçek hasta verileri kurumun bir bilgisayarında, kurumun kurallarına ve Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak kalır [1]. [OWN_DATA.tr.md](OWN_DATA.tr.md), promptların kişinin kendi verileriyle nasıl kullanılacağını anlatır: Prompt sütunları tarif eder, veriler bilgisayardan hiç çıkmaz.
+Hiçbir prompta hasta verisi konmamalıdır. Buna adlar, doğum tarihleri, T.C. kimlik numaraları, hastane ve protokol numaraları, yatış tarihleri, hasta dosyalarından alınan serbest metinler ve kimlik bilgisi taşıyan görüntüler dâhildir. Eğitimin promptlarında verinin yapısı, yani sütun adları, birimler ve örnekleme frekansı tarif edilmektedir; promptlar hiçbir zaman gerçek bir hastayı tarif etmez. Gerçek hasta verileri, kurumun bir bilgisayarında, kurumun kurallarına ve Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak işlenmelidir [1]. Promptların kişinin kendi verileriyle nasıl kullanılabileceği [OWN_DATA.tr.md](OWN_DATA.tr.md) belgesinde anlatılmaktadır: Prompt yalnızca sütunları tarif eder, veriler ise bilgisayardan hiç çıkmaz.
 
 ## YZ kullanım günlüğü ve değerlendirme
 
-Promptlarla yazılan kod, elle yazılmış kodla aynı biçimde değerlendirilir. Haftalık proje, [izlencede](SYLLABUS.tr.md#değerlendirme-ve-sertifika) anlatıldığı gibi sonuçları, yöntemleri ve bunların açıklaması, tartışması ve kayıtları üzerinden puanlanır. Her haftalık projeye, bir asistanın her kullanımı için bir satır içeren bir YZ kullanım günlüğü eklenir. Her satırda araç, prompt, neyin denetlendiği ve neyin değiştirildiği yazılır.
+Promptlarla yazılan kod, elle yazılmış kodla aynı biçimde değerlendirilmektedir. Haftalık proje, [izlencede](SYLLABUS.tr.md#değerlendirme-ve-sertifika) anlatıldığı gibi sonuçları, yöntemleri ve bunların açıklaması, tartışması ve kayıtları üzerinden puanlanır. Her haftalık projeye, bir asistanın her kullanımı için bir satır içeren bir YZ kullanım günlüğü eklenir. Her satırda araç, prompt, neyin denetlendiği ve neyin değiştirildiği yazılır.
 
 ## Kaynaklar
 

@@ -1,4 +1,4 @@
-> **Türkçe:** Bu eğitim Türkçe yürütülmektedir. **[Başlangıç sayfasının Türkçesine geçin](../../tr/baslangic/README.md)**
+> **Türkçe:** Bu eğitim Türkçe yürütülmektedir. **[Başlangıç sayfasının Türkçesine geçiniz](../../tr/baslangic/README.md)**
 
 # Start here
 

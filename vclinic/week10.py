@@ -128,7 +128,7 @@ _TABLES = {
     g = globals()
     k = anahtar
     need = lambda *names: [g[n] for n in names] if all(n in g for n in names) else (_ for _ in ()).throw(
-        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırın."))
+        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırınız."))
     sets = {"training": "eğitim", "validation": "doğrulama", "test": "test"}
     if k == "A":
         hours, = need("hours")

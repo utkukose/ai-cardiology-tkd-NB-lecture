@@ -115,7 +115,7 @@ Generative AI tools are allowed in this course and are part of its teaching. Fou
 
 ## Data protection and ethics
 
-The course uses synthetic data and public research data only. Real patient data from the participant's institution may be used in the final project only with the permission of the institution and, where required, the approval of an ethics committee. Such data are processed on the participant's own computer in line with the Turkish Law on the Protection of Personal Data (KVKK) [1]. They never enter a cloud service or an AI chat. The synthetic patients of the virtual clinic are teaching material and are not for clinical use.
+The course uses synthetic data and public research data only. Real patient data from the participant's institution may be used in the final project only with the permission of the institution and, where required, the approval of an ethics committee. Such data are processed on a computer of the institution in line with the Turkish Law on the Protection of Personal Data (KVKK) [1]. They never enter a cloud service or an AI chat. The synthetic patients of the virtual clinic are teaching material and are not for clinical use.
 
 ## Attendance
 

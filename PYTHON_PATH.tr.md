@@ -5,11 +5,11 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](PYTHON_PATH.md)
 
-Jupyter Notebook'taki her uygulama durağı, kodu kendisi yazmayı öğrenmek isteyen katılımcılar için Python temelleriyle açılır. Eğitim programlama deneyimi gerektirmez. Bir durağın Python temelleri, durağın hazır uygulamasının gerektirdiği dil bilgisini klinikten örneklerle ve cevabı hemen kontrol edilen alıştırmalarla öğretir; *Python notu* hücreleri de her yeni yapıyı ilk geçtiği yerde açıklar. Aşağıdaki tablo bütün haftaların uygulama duraklarındaki Python temellerini, konularıyla ve ait oldukları ders sayfası bölümüyle birlikte göstermektedir.
+Jupyter Notebook'taki her uygulama durağı, kodu kendisi yazmayı öğrenmek isteyen katılımcılar için Python temelleri bölümüyle açılır. Eğitim programlama deneyimi gerektirmemektedir. Bir durağın Python temelleri bölümünde, durağın hazır uygulamasının gerektirdiği dil bilgisi klinikten örneklerle ve cevabı hemen kontrol edilen alıştırmalarla öğretilir; *Python notu* hücrelerinde de her yeni yapı ilk geçtiği yerde açıklanır. Aşağıdaki tabloda, bütün haftaların uygulama duraklarındaki Python temelleri, konuları ve ait oldukları ders sayfası bölümüyle birlikte gösterilmektedir.
 
-1. haftadan önce [başlangıç Jupyter Notebook'u](tr/baslangic/NB00_baslangic.ipynb) bilgisayarı denetler; hücreleri, değerleri, yazdırmayı ve ilk grafiği tanıtır.
+1. haftadan önce çalışılan [başlangıç Jupyter Notebook'unda](tr/baslangic/NB00_baslangic.ipynb) bilgisayar denetlenir; ardından hücreler, değerler, yazdırma ve ilk grafik tanıtılır.
 
-Aynı durakta kodu, hazır bir [prompt (istem)](PROMPT_PATH.tr.md) ile bir yapay zekâ (YZ) asistanı da yazabilir: Bu çalışma durağın «Prompt ile uygulama» bölümünde yapılır. «Hazır uygulama» bölümü ise durağın eksiksiz programını içerir. Her bölüm bir başlangıç hücresiyle açıldığı için tek başına da çalışır.
+Aynı durakta kodu, hazır bir [prompt (istem)](PROMPT_PATH.tr.md) yardımıyla bir yapay zekâ (YZ) asistanı da yazabilir: Bu çalışma durağın «Prompt ile uygulama» bölümünde yapılmaktadır. «Hazır uygulama» bölümünde ise durağın eksiksiz programı yer alır. Her bölüm bir başlangıç hücresiyle açıldığı için tek başına da çalışabilir.
 
 | Hafta | Jupyter Notebook | Uygulama durağı ve Python temelleri | Konular |
 |---|---|---|---|

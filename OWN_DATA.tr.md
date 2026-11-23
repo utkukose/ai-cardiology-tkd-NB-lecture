@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](OWN_DATA.md)
 
-Eğitimde sentetik hastalar ve açık araştırma verileri kullanılır; böylece her Jupyter Notebook herkes için çalışır ve gerçek cevaplar bilinir. Eğitimin asıl hedefi ise katılımcının kendi kliniğinin verileridir. Bu rehber, ders sayfalarındaki "Kendi verinizle" bölümlerinin hafta hafta anlattıklarını bir araya getirmektedir. Rehberde hangi sorunun hangi yönteme uyduğu, verilerin hastane sistemlerinden nasıl alındığı, yasanın ve etik kurulun neyi gerektirdiği ve analizin nerede yapılacağı anlatılır.
+Eğitimde sentetik hastalar ve açık araştırma verileri kullanılmaktadır; bu sayede her Jupyter Notebook herkes için çalışabilmekte ve gerçek cevaplar bilinmektedir. Eğitimin asıl hedefi ise katılımcının kendi kliniğinin verileridir. Bu rehber, ders sayfalarındaki "Kendi verinizle" bölümlerinin hafta hafta anlattıklarını bir araya getirmektedir. Rehberde hangi sorunun hangi yönteme uyduğu, verilerin hastane sistemlerinden nasıl alındığı, yasanın ve etik kurulun neyi gerektirdiği ve analizin nerede yapılacağı anlatılır.
 
-Rehber yol gösterir; hukuki görüş değildir. Her çalışmada son söz kurumun etik kuruluna, veri koruma sorumlusuna ve hukuk birimine aittir.
+Bu rehber yol göstermek amacıyla hazırlanmıştır ve hukuki görüş niteliği taşımaz. Her çalışmada son söz kurumun etik kuruluna, veri koruma sorumlusuna ve hukuk birimine aittir.
 
 ## 1. Veriden önce: Soru ve izinler
 
@@ -50,19 +50,19 @@ Rehber yol gösterir; hukuki görüş değildir. Her çalışmada son söz kurum
 
 ## 4. Ne kadar veri?
 
-Tablolardan kurulan öngörü modellerinde olay sayısı hasta sayısından daha önemlidir; yayımlanmış yöntemler en küçük örneklem büyüklüğünü beklenen olay sayısından ve değişken sayısından hesaplar [1]. Görüntüler için sabit bir sayı yoktur. Bir ağı sıfırdan eğitmek çok sayıda etiketli görüntü gerektirir; önceden eğitilmiş ağlar ve 4. haftanın konusu olan transfer öğrenme bu ihtiyacı azaltır. Bir ön çalışmada başarımın eğitim görüntüsü sayısına karşı çizildiği öğrenme eğrisi, daha fazla verinin işe yarayıp yaramayacağını gösterir.
+Tablolardan kurulan öngörü modellerinde olay sayısı, hasta sayısından daha önemlidir; yayımlanmış yöntemlerde en küçük örneklem büyüklüğü, beklenen olay sayısından ve değişken sayısından hesaplanmaktadır [1]. Görüntüler için sabit bir sayı yoktur. Bir ağı sıfırdan eğitmek çok sayıda etiketli görüntü gerektirir; önceden eğitilmiş ağlar ve 4. haftanın konusu olan transfer öğrenme bu ihtiyacı azaltmaktadır. Bir ön çalışmada başarımın eğitim görüntüsü sayısına karşı çizildiği öğrenme eğrisi, daha fazla verinin işe yarayıp yaramayacağını gösterebilir.
 
-Her durumda verilerin bir bölümü ilk modelden önce test kümesi olarak ayrılır ve en sonda yalnızca bir kez kullanılır. Hasta bakımında kullanılması düşünülen bir model, başka bir hastanenin ya da başka bir cihazın verileriyle yeniden sınanır; buna dış doğrulama denir.
+Her durumda verilerin bir bölümü ilk modelden önce test kümesi olarak ayrılır ve en sonda yalnızca bir kez kullanılır. Hasta bakımında kullanılması düşünülen bir model, başka bir hastanenin ya da başka bir cihazın verileriyle yeniden sınanmalıdır; bu işleme dış doğrulama denir.
 
 ## 5. Hesap nerede yapılır ve YZ asistanları nasıl kullanılır?
 
 Gerçek hastaların verileri kurumun bir bilgisayarında, Jupyter'de (Anaconda) analiz edilir; Google Colab gibi bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine asla aktarılmaz. Böyle verileri taşıyan bir dizüstü bilgisayarın diski şifrelenmelidir.
 
-Kodu hazır bir prompt (istem) ile bir YZ asistanına yazdırmak kişinin kendi verileriyle de işe yarar. Bunun tek bir kuralı vardır: Prompt verinin yapısını, yani sütunların adlarını, birimlerini, kodlarını ve örnekleme frekansını tarif eder; hiçbir zaman bir hastanın satırını içermez. Kodu önce aynı sütunlara sahip sentetik bir tabloda denemek, gerçek veride ise ancak bu denemeden geçtikten sonra çalıştırmak iyi bir alışkanlıktır; `vclinic` ders paketi böyle tablolar üretebilir. 6. haftada kullanılan ve kişinin kendi bilgisayarında çalışan önceden eğitilmiş dil modelleri, raporların metnini o bilgisayarın içinde tutar.
+Kodu hazır bir prompt (istem) yardımıyla bir YZ asistanına yazdırmak, kişinin kendi verileriyle de işe yaramaktadır. Bunun tek bir kuralı vardır: Prompt verinin yapısını, yani sütunların adlarını, birimlerini, kodlarını ve örnekleme frekansını tarif eder; hiçbir zaman bir hastanın satırını içermez. Kodu önce aynı sütunlara sahip sentetik bir tabloda denemek, gerçek veride ise ancak bu denemeden geçtikten sonra çalıştırmak iyi bir alışkanlıktır; `vclinic` ders paketi böyle tablolar üretebilir. 6. haftada kullanılan önceden eğitilmiş dil modelleri bilgisayarda yerel olarak çalıştığı için raporların metni o bilgisayarın dışına çıkmaz.
 
 ## 6. Raporlama ve klinik kullanıma geçiş
 
-Bir öngörü modeli geliştiren ya da sınayan çalışma, modeli TRIPOD+AI kontrol listesiyle raporlar [3]. Hasta bakımında kullanılacak bir model ise bir çalışmadan farklı bir konudur. Hastaların tanısı ya da tedavisi için tasarlanan bir yazılım, Avrupa Birliği mevzuatıyla uyumlu Tıbbi Cihaz Yönetmeliği kapsamında bir tıbbi cihaz olabilir [4]. Böyle bir yazılım, kullanıma sunulmadan önce yönetmeliğin öngördüğü uygunluk değerlendirmesinden geçmelidir. Bu yüzden eğitimin ya da bir çalışmanın modeli, bu süreçten geçmeden hastalara ilişkin kararlarda asla kullanılmaz.
+Bir öngörü modeli geliştiren ya da sınayan bir çalışmada model, TRIPOD+AI kontrol listesine uygun olarak raporlanmalıdır [3]. Hasta bakımında kullanılacak bir model ise bir çalışmadan farklı bir konudur. Hastaların tanısı ya da tedavisi için tasarlanan bir yazılım, Avrupa Birliği mevzuatıyla uyumlu Tıbbi Cihaz Yönetmeliği kapsamında bir tıbbi cihaz olabilir [4]. Böyle bir yazılım, kullanıma sunulmadan önce yönetmeliğin öngördüğü uygunluk değerlendirmesinden geçmelidir. Bu yüzden eğitimin ya da bir çalışmanın modeli, bu süreçten geçmeden hastalara ilişkin kararlarda asla kullanılmaz.
 
 ## 7. Kimden yardım alınır?
 

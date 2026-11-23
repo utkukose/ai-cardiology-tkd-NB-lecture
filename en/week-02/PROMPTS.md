@@ -5,7 +5,7 @@ Turkish Society of Cardiology · First version: November 2026
 
 [Week 2](README.md) · [Türkçe](../../tr/hafta-02/PROMPTLAR.md)
 
-This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
+This library holds every prompt of the practice stops of Week 2, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 

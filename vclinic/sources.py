@@ -32,10 +32,10 @@ _TEXT = {
         "install_failed": "{0} could not be installed (no internet?)",
     },
     "tr": {
-        "unknown": "Bilinmeyen veri kaynağı {0!r}: \"kütüphane\", \"web\" ya da \"bilgisayar\" yazın.",
-        "upload": "Aşağıdaki pencerede bilgisayarınızdaki {0} dosyasını (dosyalarını) seçin.",
+        "unknown": "Bilinmeyen veri kaynağı {0!r}: \"kütüphane\", \"web\" ya da \"bilgisayar\" yazınız.",
+        "upload": "Aşağıdaki pencerede bilgisayarınızdaki {0} dosyasını (dosyalarını) seçiniz.",
         "missing": ("{0} dosyası (dosyaları) bu Jupyter Notebook'un klasöründe ({1}) yok. "
-                    "Dosyayı önce indirin, bu klasöre koyun ve hücreyi yeniden çalıştırın."),
+                    "Dosyayı önce indiriniz, bu klasöre koyunuz ve hücreyi yeniden çalıştırınız."),
         "installed": "{0}: şimdi kuruldu",
         "install_failed": "{0} kurulamadı (internet yok mu?)",
     },

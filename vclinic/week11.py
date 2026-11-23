@@ -120,7 +120,7 @@ _TABLES = {
     g = globals()
     k = anahtar
     need = lambda *names: [g[n] for n in names] if all(n in g for n in names) else (_ for _ in ()).throw(
-        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırın."))
+        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırınız."))
     cp = {1.0: "tipik anjina", 2.0: "atipik anjina", 3.0: "anjina dışı ağrı", 4.0: "ağrı yok"}
     if k == "A":
         heart, = need("heart")

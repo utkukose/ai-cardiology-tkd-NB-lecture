@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [1. hafta](README.md) · [English](../../en/week-01/PROMPTS.md)
 
-Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır. Her prompt, eğitimin prompt kartına göre yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub'da her kutunun köşesinde bir kopyalama düğmesi bulunmaktadır. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılıp orada çalıştırılır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi bulunmamaktadır ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir koşulda bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine konmamalıdır.
 
 1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Mini proje: Kaggle Heart Disease veri seti](#durak-1-mini-proje-kaggle-heart-disease-veri-seti)
@@ -20,17 +20,17 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
-| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
-| 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
-| 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
-| 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
-| 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
+| 1. Okuyunuz | Jupyter Notebook'ta promptun amacını okuyunuz. |
+| 2. Veriyi hazırlayınız | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırınız. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlayıp göstermektedir. |
+| 3. Kopyalayınız ve gönderiniz | Promptu kopyalayınız ve bir YZ asistanına gönderiniz: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
+| 4. Çalıştırınız | Asistanın verdiği kodu veri hücresinin altındaki hücreye yapıştırınız ve çalıştırınız. |
+| 5. Denetleyiniz | Kontrol hücresini çalıştırınız. Hücre sonucu *doğru* ya da *henüz değil* biçiminde bildirmekte ve "cevap" sonucunun değerini göstermektedir. |
+| 6. Onarınız | Kontrol hücresi *henüz değil* sonucunu verirse onarım promptunu kodla birlikte gönderiniz. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırınız. |
+| 7. Açıklatınız ve kaydediniz | Asistandan kodu sade bir dille açıklamasını isteyiniz; kullandığınız aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazınız. |
 
 ## Durak 1: Mini proje: Kaggle Heart Disease veri seti
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-1-prompt)*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açınız](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-1-prompt)*
 
 Bu durak oturumun mini projesidir: UCI Heart Disease koleksiyonunun Cleveland verisi olan Kaggle Heart Disease veri seti yüklenir, istatistiksel olarak özetlenir ve görselleştirilir. Bir kliniğin hasta kaydı bir tablo olarak düşünülebilir: Her hasta bir satırda, her değişken bir sütunda yer alır. Bu durakta veri setindeki 303 hasta ile sanal kliniğin ilk 500 hastası bir ortalama, bir oran ve bir sayıyla özetlenmektedir. Bu sayıların her birinin ardında klinik bir soru vardır.
 
@@ -106,7 +106,7 @@ ejeksiyon fraksiyonu yüzde 40'ı geçmemeli.
 
 ## Durak 2: Veri olarak EKG
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-2-prompt)*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açınız](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-2-prompt)*
 
 Dijital bir EKG de bir sayı tablosudur: Her derivasyon bir sütunda, her örnek bir satırda yer alır. Bu durakta haftanın vakası olan VC-0317 numaralı hastanın EKG'sinden D2 derivasyonu çizilir ve ölçülür; başka bir hastanın QT aralığı da iki formülle kalp hızına göre düzeltilir.
 
@@ -183,7 +183,7 @@ Test: Kalp hızı dakikada 60 atım olduğunda iki formül de QT'nin kendisini v
 
 ## Durak 3: Gerçek kayıtlar ve özensiz bir prompt
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-3-prompt)*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-01/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açınız](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-01/NB01_python_ve_ekg_temelleri.ipynb#scrollTo=stop-3-prompt)*
 
 Gerçek kayıtlar kendi gürültüsü, işaretlemeleri ve birimleriyle gelir. Bu durakta MIT-BIH Aritmi Veri Tabanı'ndaki 100 numaralı kayıt, kardiyologların verdiği atım etiketleriyle birlikte okunur ve normal atımlardan kalp hızı değişkenliği hesaplanır. Ardından PTB veri tabanındaki gerçek bir 12 derivasyonlu EKG çizilir. Son olarak, bir YZ asistanının kısa ve özensiz bir prompttan yazdığı QTc hesabı prompt kartıyla yeniden istenir ve sonucu denetlenir.
 
@@ -288,16 +288,16 @@ aralığı tam 1 saniyedir.
 
 ## Kodu onarmak, açıklatmak ve denetlemek için promptlar
 
-Bu promptlar her adımın koduyla kullanılabilir. Köşeli parantez içindeki yerler, prompt gönderilmeden önce doldurulur.
+Bu promptlar her adımın koduyla kullanılabilir. Köşeli parantez içindeki yerler, prompt gönderilmeden önce doldurulmalıdır.
 
 ### Çalışan ama kontrolden geçmeyen kodu onarmak
 
 ```text
-Aşağıdaki kod şu görev için yazıldı: [promptun Görev satırını yapıştırın]. Kod çalışıyor, ancak
+Aşağıdaki kod şu görev için yazıldı: [promptun Görev satırını yapıştırınız]. Kod çalışıyor, ancak
 dersin kontrolü "henüz değil" yazıyor. Hatayı bul, iki cümleyle açıkla ve düzeltilmiş kodu ver.
 Sonuç yine "cevap" adıyla saklanmalı.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 ```
 
 ### Bir hata mesajını anlamak
@@ -306,9 +306,9 @@ Sonuç yine "cevap" adıyla saklanmalı.
 Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 
-[hata mesajını buraya yapıştırın]
+[hata mesajını buraya yapıştırınız]
 ```
 
 ### Kodu açıklatmak
@@ -317,7 +317,7 @@ nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 Aşağıdaki kodu, kod yazmayan bir hekim için satır satır açıkla. Ardından kodun hata mesajı vermeden
 yanlış sonuç verebileceği iki durumu belirt.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 ```
 
 ### Test yazdırmak
@@ -327,12 +327,12 @@ Aşağıdaki kod için, doğru sonucu elle hesaplanabilen girdilerle üç kısa 
 60 atımlık kalp hızında RR aralığı tam olarak 1 saniyedir. Her test, sonuç yanlışsa kodu açık bir
 mesajla durdurmalı. Her testin hangi hatayı yakaladığını bir cümleyle açıkla.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 ```
 
 ## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Her promptun tablosu, Jupyter Notebook'un sonundaki *Haftalık proje* bölümünde hazırlanmaktadır ve bu bölüm tek başına da açılabilir. Sonuçlar rapora gireceği için projede kontrol hücresi ve hazır kod bulunmamaktadır. Bir adımın testi sağlanmadan sonraki prompt gönderilmemeli ve raporun YZ kullanım günlüğünde dört promptun hepsine yer verilmelidir.
 
 ### Proje adımı 1: Vakanın frontal ekseni
 

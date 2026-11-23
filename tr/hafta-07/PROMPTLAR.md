@@ -5,9 +5,9 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [7. hafta](README.md) · [English](../../en/week-07/PROMPTS.md)
 
-Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
+Bu kütüphanede, 7. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır. Her prompt, eğitimin prompt kartına göre yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub'da her kutunun köşesinde bir kopyalama düğmesi bulunmaktadır. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılıp orada çalıştırılır.
 
-Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
+Eğitimin hiçbir promptunda hasta verisi bulunmamaktadır ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir koşulda bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine konmamalıdır.
 
 1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje](#durak-1-ekokardiyografiye-aktarım-kalite-kapısı-ve-mini-proje)
@@ -20,17 +20,17 @@ Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi ekle
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
-| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
-| 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
-| 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
-| 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
-| 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
+| 1. Okuyunuz | Jupyter Notebook'ta promptun amacını okuyunuz. |
+| 2. Veriyi hazırlayınız | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırınız. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlayıp göstermektedir. |
+| 3. Kopyalayınız ve gönderiniz | Promptu kopyalayınız ve bir YZ asistanına gönderiniz: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
+| 4. Çalıştırınız | Asistanın verdiği kodu veri hücresinin altındaki hücreye yapıştırınız ve çalıştırınız. |
+| 5. Denetleyiniz | Kontrol hücresini çalıştırınız. Hücre sonucu *doğru* ya da *henüz değil* biçiminde bildirmekte ve "cevap" sonucunun değerini göstermektedir. |
+| 6. Onarınız | Kontrol hücresi *henüz değil* sonucunu verirse onarım promptunu kodla birlikte gönderiniz. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırınız. |
+| 7. Açıklatınız ve kaydediniz | Asistandan kodu sade bir dille açıklamasını isteyiniz; kullandığınız aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazınız. |
 
 ## Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-1-prompt)*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açınız](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-1-prompt)*
 
 Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur; Prompt 1.4, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar. Prompt 1.5 oturumun mini projesidir: Küçük bir Vision Transformer önce CIFAR-10 fotoğraflarını, ardından EchoNet-Dynamic ya da CAMUS ekokardiyografi kare çiftlerinden düşük ejeksiyon fraksiyonunu öğrenir.
 
@@ -224,7 +224,7 @@ Test: CIFAR-10 doğruluğu, on sınıftan birinin şans eseri verdiği 0,1 değe
 
 ## Durak 2: Sentetik ve gerçek anjiyogramlarda darlıklar
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-2-prompt)*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açınız](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-2-prompt)*
 
 Küçük bir evrişimli ağ, merkezi anlamlı bir darlıkta olan 64 × 64 piksellik yamaları tanımayı önce sanal kliniğin sentetik anjiyogramlarında öğrenir. Aynı ağ daha sonra hiçbir değişiklik yapılmadan ARCADE'in gerçek anjiyogramlarında sınanır ve son olarak ARCADE'in eğitim anjiyogramlarıyla yeniden eğitilir.
 
@@ -334,7 +334,7 @@ kullanılmamalı.
 
 ## Durak 3: Evrişimli ağ, Vision Transformer ve hibrit model
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-3-prompt)*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açınız](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-3-prompt)*
 
 Küçük bir Vision Transformer ve evrişimle dikkati birleştiren hibrit bir model, ARCADE'in yamalarını 2. duraktaki evrişimli ağla aynı biçimde öğrenir; böylece üç model aynı test anjiyogramlarında karşılaştırılabilir. Son adım Vision Transformer'ın nereye baktığını sorar: Sınıf token'ının dikkatinin ne kadarı, darlığın bulunduğu yama merkezine düşmektedir?
 
@@ -459,16 +459,16 @@ Test: Her pay 0 ile 1 arasında olmalı.
 
 ## Kodu onarmak, açıklatmak ve denetlemek için promptlar
 
-Bu promptlar her adımın koduyla kullanılabilir. Köşeli parantez içindeki yerler, prompt gönderilmeden önce doldurulur.
+Bu promptlar her adımın koduyla kullanılabilir. Köşeli parantez içindeki yerler, prompt gönderilmeden önce doldurulmalıdır.
 
 ### Çalışan ama kontrolden geçmeyen kodu onarmak
 
 ```text
-Aşağıdaki kod şu görev için yazıldı: [promptun Görev satırını yapıştırın]. Kod çalışıyor, ancak
+Aşağıdaki kod şu görev için yazıldı: [promptun Görev satırını yapıştırınız]. Kod çalışıyor, ancak
 dersin kontrolü "henüz değil" yazıyor. Hatayı bul, iki cümleyle açıkla ve düzeltilmiş kodu ver.
 Sonuç yine "cevap" adıyla saklanmalı.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 ```
 
 ### Bir hata mesajını anlamak
@@ -477,9 +477,9 @@ Sonuç yine "cevap" adıyla saklanmalı.
 Aşağıdaki kod bir Jupyter Notebook'ta çalıştırıldığında altta verilen hata mesajını veriyor. Hatanın
 nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 
-[hata mesajını buraya yapıştırın]
+[hata mesajını buraya yapıştırınız]
 ```
 
 ### Kodu açıklatmak
@@ -488,7 +488,7 @@ nedenini sade bir dille açıkla ve düzeltilmiş kodu ver.
 Aşağıdaki kodu, kod yazmayan bir hekim için satır satır açıkla. Ardından kodun hata mesajı vermeden
 yanlış sonuç verebileceği iki durumu belirt.
 
-[kodu buraya yapıştırın]
+[kodu buraya yapıştırınız]
 ```
 
 ### Bir görüntü işlem hattını denetletmek
@@ -509,7 +509,7 @@ ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse
 
 ## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Her promptun tablosu, Jupyter Notebook'un sonundaki *Haftalık proje* bölümünde hazırlanmaktadır ve bu bölüm tek başına da açılabilir. Sonuçlar rapora gireceği için projede kontrol hücresi ve hazır kod bulunmamaktadır. Bir adımın testi sağlanmadan sonraki prompt gönderilmemeli ve raporun YZ kullanım günlüğünde dört promptun hepsine yer verilmelidir.
 
 ### Proje adımı 1: Üç ağ, tek bir test
 

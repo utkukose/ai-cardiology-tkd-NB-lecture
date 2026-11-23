@@ -5,7 +5,7 @@ Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
 [Eğitimin ana sayfası](README.tr.md) · [English](DATASETS.md)
 
-Eğitimdeki her veri seti ya sentetiktir ya da açık veridir. 1. haftanın dosyaları [data](data) klasöründe yer alır; böylece Jupyter Notebook'lar üyelik gerektirmeden çalışır. Her veri seti kendi lisansını korur ve künyesi aşağıda verilmiştir.
+Eğitimdeki her veri seti ya sentetiktir ya da açık veridir. 1. haftanın dosyaları [data](data) klasöründe yer aldığı için Jupyter Notebook'lar üyelik gerektirmeden çalışır. Her veri seti kendi lisansına tabidir ve künyesi aşağıda verilmiştir.
 
 ## 1. haftanın veri setleri
 
@@ -20,11 +20,11 @@ PTB veri tabanındaki kayıt, başlık dosyasında belirtildiği gibi, akut infe
 
 ## Sanal klinik
 
-`vclinic` ders paketi sanal kliniğin hastalarını çalışma anında oluşturur. `vclinic.make_cohort(500)` fonksiyonu 500 sentetik hastadan oluşan bir kayıt döndürür. Kayıtta her hastanın demografik verileri, risk faktörleri, laboratuvar değerleri, ejeksiyon fraksiyonu, ana tanısı ve elektrokardiyogram (EKG) parametreleri bulunur. `vclinic.patient_ecg` bir hastanın 12 derivasyonlu EKG'sini aralıklarının ve atım zamanlarının gerçek değerleriyle birlikte döndürür. Aynı seed değeri her zaman aynı hastaları verir; böylece her katılımcı aynı kliniği görür. Değişkenler arasındaki ilişkiler genel klinik örüntüleri izler ve etki büyüklükleri `vclinic.TRUE_EFFECTS` içinde belgelenmiştir. 2. haftadan itibaren `vclinic.add_followup` fonksiyonu kayda ekokardiyografik değişkenleri, kalp yetersizliği fenogrubunu ve en fazla beş yıllık izlem verisini ekler; izlemde olay, ölüm ya da kalp yetersizliği nedeniyle hastaneye yatıştır. Veriler öğretim malzemesidir ve klinik kullanım için değildir. 3. haftadan itibaren paket, aşağıda anlatılan `vclinic.acdc` ve `vclinic.echonet` modülleriyle açık arşivlerden gerçek görüntüler de okur.
+`vclinic` ders paketi, sanal kliniğin hastalarını çalışma anında oluşturmaktadır. `vclinic.make_cohort(500)` fonksiyonu 500 sentetik hastadan oluşan bir kayıt döndürür. Kayıtta her hastanın demografik verileri, risk faktörleri, laboratuvar değerleri, ejeksiyon fraksiyonu, ana tanısı ve elektrokardiyogram (EKG) parametreleri bulunur. `vclinic.patient_ecg` bir hastanın 12 derivasyonlu EKG'sini aralıklarının ve atım zamanlarının gerçek değerleriyle birlikte döndürür. Aynı seed değeri her zaman aynı hastaları ürettiği için bütün katılımcılar aynı kliniği görür. Değişkenler arasındaki ilişkiler genel klinik örüntüleri izlemektedir ve etki büyüklükleri `vclinic.TRUE_EFFECTS` içinde belgelenmiştir. 2. haftadan itibaren `vclinic.add_followup` fonksiyonu kayda ekokardiyografik değişkenleri, kalp yetersizliği fenogrubunu ve en fazla beş yıllık izlem verisini ekler; izlemde olay, ölüm ya da kalp yetersizliği nedeniyle hastaneye yatış olarak tanımlanmıştır. Veriler yalnızca öğretim malzemesi olarak hazırlanmıştır ve klinik kullanıma yönelik değildir. 3. haftadan itibaren paket, aşağıda anlatılan `vclinic.acdc` ve `vclinic.echonet` modülleriyle açık arşivlerden gerçek görüntüler de okur.
 
 ## 3. haftanın veri setleri
 
-3. haftanın hiçbir dosyası depoda saklanmaz. Her katılımcı görüntüleri kaynağından edinir ve kullanım koşullarını kabul eder; ders paketi de görüntüleri kaydedildikleri yerden okur.
+3. haftanın hiçbir dosyası depoda saklanmaz. Her katılımcı görüntüleri kaynağından kendisi edinir ve kullanım koşullarını kabul eder; ders paketi ise görüntüleri kaydedildikleri yerden okumaktadır.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -33,7 +33,7 @@ PTB veri tabanındaki kayıt, başlık dosyasında belirtildiği gibi, akut infe
 
 ## 4. haftanın veri setleri
 
-4. haftanın dosyaları da depoda saklanmaz. Her katılımcı görüntüleri ve ağırlıkları kaynağından indirir; ders paketi de bunları kaydedildikleri yerden okur.
+4. haftanın dosyaları da depoda saklanmaz. Her katılımcı görüntüleri ve ağırlıkları kaynağından kendisi indirir; ders paketi ise bunları kaydedildikleri yerden okumaktadır.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -42,7 +42,7 @@ PTB veri tabanındaki kayıt, başlık dosyasında belirtildiği gibi, akut infe
 
 ## 5. haftanın veri setleri
 
-PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNet'ten indirir; ders paketi de kayıtları kaydedildikleri yerden okur.
+PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNet'ten kendisi indirir; ders paketi ise kayıtları kaydedildikleri yerden okumaktadır.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -51,7 +51,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## 6. haftanın veri setleri
 
-6. haftanın hiçbir verisi depoda saklanmaz. Rapor arşivini ders paketi katılımcının bilgisayarında üretir; önceden eğitilmiş modelin tokenizer'ı ve ağırlıkları ise Hugging Face Hub'dan gelir.
+6. haftanın hiçbir verisi depoda saklanmaz. Rapor arşivi, ders paketi tarafından katılımcının bilgisayarında üretilmektedir; önceden eğitilmiş modelin tokenizer'ı ve ağırlıkları ise Hugging Face Hub'dan indirilir.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -60,7 +60,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## 7. haftanın veri setleri
 
-7. haftanın hiçbir verisi depoda saklanmaz. Sanal kliniğin anjiyogramlarını ders paketi katılımcının bilgisayarında çizer; ARCADE Zenodo'dan indirilir, ViT-B/16'nın ağırlıkları ise torchvision aracılığıyla gelir. CAMUS ekokardiyogramları ve EfficientNet-B0'ın ağırlıkları 4. haftadakilerle aynıdır.
+7. haftanın hiçbir verisi depoda saklanmaz. Sanal kliniğin anjiyogramları, ders paketi tarafından katılımcının bilgisayarında çizilmektedir. ARCADE Zenodo'dan, ViT-B/16'nın ağırlıkları ise torchvision aracılığıyla indirilir. CAMUS ekokardiyogramları ve EfficientNet-B0'ın ağırlıkları 4. haftadakilerle aynıdır.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -70,7 +70,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## 8. haftanın veri setleri
 
-8. haftanın hiçbir verisi depoda saklanmaz. Sanal kliniğin hasta kaydını ve göğüs ağrısı ünitesini ders paketi katılımcının bilgisayarında oluşturur; hiçbir şey indirilmez.
+8. haftanın hiçbir verisi depoda saklanmaz. Sanal kliniğin hasta kaydı ve göğüs ağrısı ünitesi, ders paketi tarafından katılımcının bilgisayarında oluşturulmaktadır; bu hafta hiçbir şey indirilmez.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -79,7 +79,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## 9. haftanın veri setleri
 
-9. hafta depoya yeni bir veri eklemez. Hafta, yukarıda anlatılan üç veri setine geri döner.
+9. haftada depoya yeni bir veri eklenmemektedir. Bu haftada yukarıda anlatılan üç veri seti yeniden kullanılır.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -89,7 +89,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## 10. haftanın veri setleri
 
-10. hafta depoda hiçbir kayıt saklamaz. Her katılımcı MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın dosyalarını PhysioNet'ten indirir; sanal kliniğin telemetri servisini ise ders paketi bilgisayarda oluşturur.
+10. haftanın hiçbir kaydı depoda saklanmaz. Her katılımcı MIT-BIH Atriyal Fibrilasyon Veri Tabanı'nın dosyalarını PhysioNet'ten kendisi indirir; sanal kliniğin telemetri servisi ise ders paketi tarafından bilgisayarda oluşturulmaktadır.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -98,7 +98,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## 11. haftanın veri setleri
 
-11. hafta depoya yeni bir veri eklemez. Haftanın çözümlü final projesi Cleveland verisine döner; katılımcıların final projelerinin verileri ise hiçbir zaman depoya girmez.
+11. haftada depoya yeni bir veri eklenmemektedir. Haftanın çözümlü final projesinde yeniden Cleveland verisi kullanılır; katılımcıların final projelerinin verileri ise hiçbir zaman depoya konmaz.
 
 | Veri seti | Erişim | Kaynak ve lisans | Kullanıldığı yer |
 |---|---|---|---|
@@ -106,7 +106,7 @@ PTB-XL'in hiçbir kaydı depoda saklanmaz. Her katılımcı kayıtları PhysioNe
 
 ## Final projelerinin veri setleri
 
-Final projeleri başka açık veri setlerini de kullanabilir; örneğin A seçeneği için PhysioNet/Computing in Cardiology Challenge 2020 verileri ya da C seçeneği için ekokardiyografi ve kardiyak manyetik rezonans alanlarındaki açık veri setleri. Bu veriler depoda yer almaz: Her katılımcı onları kaynağından indirir ve lisanslarına uyar. EchoNet-Dynamic gibi kişisel kayıt gerektiren bir veri setinde kayıt katılımcının kendisine aittir. Kişinin kendi kurumunun verileri (G seçeneği) yalnızca kurumun bir bilgisayarında, kurumun izniyle ve bir çalışma söz konusuysa etik kurul onayıyla analiz edilir.
+Final projelerinde başka açık veri setleri de kullanılabilir; örneğin A seçeneği için PhysioNet/Computing in Cardiology Challenge 2020 verileri ya da C seçeneği için ekokardiyografi ve kardiyak manyetik rezonans alanlarındaki açık veri setleri. Bu veriler depoda yer almaz: Her katılımcı bu verileri kaynağından kendisi indirir ve lisanslarına uyar. EchoNet-Dynamic gibi kişisel kayıt gerektiren bir veri setinde kayıt katılımcının kendisine aittir. Kişinin kendi kurumunun verileri (G seçeneği) yalnızca kurumun bir bilgisayarında, kurumun izniyle ve bir çalışma söz konusuysa etik kurul onayıyla analiz edilir.
 
 ## Kaynaklar
 

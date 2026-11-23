@@ -236,7 +236,7 @@ pre.pout,pre.pre-wrap{white-space:pre-wrap;word-break:break-word}
 @media (max-width:720px){.part table{font-size:.78rem}.part th,.part td{padding:4px 5px}.part input.num{width:4.2em}}
 </style><script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},svg:{fontCache:'global'}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body><div class="trbanner"><span>Bu eğitim Türkçe yürütülmektedir.</span> <a href="../../tr/hafta-03/lab.html">Bu sayfanın Türkçesine geçin →</a></div><div class="wrap">
+<body><div class="trbanner"><span>Bu eğitim Türkçe yürütülmektedir.</span> <a href="../../tr/hafta-03/lab.html">Bu sayfanın Türkçesine geçiniz →</a></div><div class="wrap">
 <header class="top"><a class="lang" href="../../tr/hafta-03/lab.html">Türkçe</a>
 <p class="course">Artificial Intelligence with Python · A Hands-on Training Program for Cardiologists · Turkish Society of Cardiology</p><h1>Week 3 · Interactive lab: Deep learning and CNN fundamentals</h1>
 <p class="who">Prof. Dr. Utku Kose</p>
@@ -305,7 +305,7 @@ window.LABX = (function(){
   const f = (x, d) => { let s = Number(x).toFixed(d); if(/^-0[.,]?0*$/.test(s)) s = s.slice(1); s = s.replace('-', '−'); return L === 'tr' ? s.replace('.', ',') : s; };
   const S = {
     en:{right:'Correct.', wrong:'Not yet.', score:(a,n)=>`${a} of ${n} correct`, pick:'Choose an answer first.', dl:`learning_log_week${week}.md`},
-    tr:{right:'Doğru.', wrong:'Henüz değil.', score:(a,n)=>`${n} sorudan ${a} doğru`, pick:'Önce bir cevap seçin.', dl:`ogrenme_gunlugu_hafta${week}.md`}
+    tr:{right:'Doğru.', wrong:'Henüz değil.', score:(a,n)=>`${n} sorudan ${a} doğru`, pick:'Önce bir cevap seçiniz.', dl:`ogrenme_gunlugu_hafta${week}.md`}
   }[L];
   const store = { get(k, d){ try { const v = localStorage.getItem(`tkd-w${week}-` + k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
                   set(k, v){ try { localStorage.setItem(`tkd-w${week}-` + k, JSON.stringify(v)); } catch(e){} } };

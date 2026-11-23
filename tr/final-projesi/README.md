@@ -7,11 +7,11 @@ Türk Kardiyoloji Derneği · Hafta 11
 
 ## Amaç
 
-Final projesi, eğitimin yöntemlerini katılımcının kendi klinik çalışmasından gelen bir soruya uygular. Katılımcı uçtan uca bir işlem hattı kurar: Bu hat bir klinik sorudan, verilerden, bir model ya da analizden, modelin kararlarının açıklamasından ve klinik değerlendirme için bir plandan oluşur. Proje 11. haftanın oturumunda 5-7 dakikada sunulur ve değerlendirmenin yüzde 40'ını oluşturur. Proje tek başına ya da iki üç katılımcılık bir grupla yapılabilir.
+Final projesinde, eğitimin yöntemleri katılımcının kendi klinik çalışmasından gelen bir soruya uygulanmaktadır. Katılımcı uçtan uca bir işlem hattı kurar: Bu hat bir klinik sorudan, verilerden, bir model ya da analizden, modelin kararlarının açıklamasından ve klinik değerlendirme için bir plandan oluşur. Proje, 11. haftanın oturumunda 5-7 dakikada sunulur ve değerlendirmenin yüzde 40'ını oluşturur. Proje tek başına ya da iki üç katılımcılık bir grupla yapılabilir.
 
 ## Seçenekler
 
-Yedi seçenek vardır. A-F seçeneklerinde sentetik ya da açık veriler, G seçeneğinde ise katılımcının kurumuna ait veriler kullanılır. Son sütun, başlangıç kodunu veren Jupyter Notebook'ların haftalarını gösterir.
+Final projesi için yedi seçenek bulunmaktadır. A-F seçeneklerinde sentetik ya da açık veriler, G seçeneğinde ise katılımcının kurumuna ait veriler kullanılır. Tablonun son sütununda, başlangıç kodunu veren Jupyter Notebook'ların haftaları gösterilmiştir.
 
 | Seçenek | Soru | Veriler | Başlangıç noktası |
 |---|---|---|---|
@@ -23,11 +23,11 @@ Yedi seçenek vardır. A-F seçeneklerinde sentetik ya da açık veriler, G seç
 | F. Karar desteği | Açıklamalar ve bir kullanıcı testi içeren bir klinik karar destek sistemi prototipi | Yukarıdakilerden herhangi biri | 9. ve 10. haftalar |
 | G. Kendi sorusu | Katılımcının kliniğinden bir soru | Kurumun izniyle ve gerektiğinde etik kurul onayıyla kurum verileri | Herhangi bir hafta |
 
-Kurum verileri yalnızca katılımcının kendi bilgisayarında, Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak işlenir. Bu veriler hiçbir zaman bulut tabanlı bir Jupyter Notebook'a ya da bir yapay zekâ (YZ) sohbetine aktarılmaz; raporda yalnızca toplu sonuçlar gösterilir.
+Kurum verileri yalnızca kurumun bir bilgisayarında, Kişisel Verilerin Korunması Kanunu'na (KVKK) uygun olarak işlenir. Bu veriler hiçbir zaman bulut tabanlı bir Jupyter Notebook'a ya da bir yapay zekâ (YZ) sohbetine aktarılmaz; raporda yalnızca toplu sonuçlar gösterilir.
 
 ## Ne teslim edilecek?
 
-Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılır. Raporda klinik soru, veriler ve kaynakları, yöntemler, belirsizlik ölçüsüyle birlikte sonuçlar, modelin açıklaması, sınırlılıklar ve klinik değerlendirme için bir plan yer alır. Rapor, "Klinik pratiğimde yapay zekâyı nasıl kullanacağım?" başlıklı yarım sayfalık kişisel bir eylem planıyla biter. Jupyter Notebook ya da betikler, rapordaki her sonucu yeniden üretir. YZ kullanım günlüğü, bir YZ asistanının her kullanımını kaydeder. Sunumun slaytları teslimi tamamlar.
+Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılır. Raporda klinik soru, veriler ve kaynakları, yöntemler, belirsizlik ölçüsüyle birlikte sonuçlar, modelin açıklaması, sınırlılıklar ve klinik değerlendirme için bir plan yer alır. Rapor, "Klinik pratiğimde yapay zekâyı nasıl kullanacağım?" başlıklı yarım sayfalık kişisel bir eylem planıyla sona erer. Teslim edilen Jupyter Notebook ya da betikler, rapordaki her sonucu yeniden üretebilmelidir. YZ kullanım günlüğünde bir YZ asistanının her kullanımı kaydedilir. Teslimin son öğesi ise sunumun slaytlarıdır.
 
 ## Önerilen ara aşamalar
 
@@ -40,7 +40,7 @@ Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rap
 
 ## Değerlendirme ölçütleri
 
-Jüri projeyi aşağıdaki ölçütlerle 100 puan üzerinden değerlendirir. Katılımcılar da sunumları değerlendirir ve jüri bu değerlendirmeyi dikkate alır.
+Jüri, projeyi aşağıdaki ölçütlerle 100 puan üzerinden değerlendirmektedir. Katılımcılar da sunumları değerlendirir ve jüri bu değerlendirmeyi de dikkate alır.
 
 | Ölçüt | Puan |
 |---|---|
@@ -53,7 +53,7 @@ Jüri projeyi aşağıdaki ölçütlerle 100 puan üzerinden değerlendirir. Kat
 
 ## Başlangıç kodu
 
-Her seçenek, seçenekler tablosunda adı geçen haftaların Jupyter Notebook'lar üzerine kurulur. [11. haftanın Jupyter Notebook'u](../hafta-11/NB11_final_projesi_atolyesi.ipynb), B seçeneğine ait bir final projesini Cleveland verisi üzerinde verilerin denetiminden raporun sonuç tablosuna kadar götürür. Jupyter Notebook'un son bölümü final projesinin araç takımını, yani `final_project/code/project_tools.py` modülünü yazar. Bu modül 11. haftanın denetimlerini her seçeneğin modeli için yapar: Bir referansa göre kazancın bootstrap aralığı, kalibrasyon, eğitim verilerinde seçilen bir dışlama eşiği ve bütün hastalarda ve gruplarda Wilson aralıkları. Aynı bölümdeki tablo her seçenek için başlanacak Jupyter Notebook'ları, sonucu, referansı ve modeli adlandırır. [11. haftanın ders sayfası](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html) aynı projeyi adım adım izler; etkileşimli labında da sorunun formu, klinik değerlendirmenin planlayıcısı ve sunum için süre ölçerli değerlendirme ölçütleri yer alır.
+Her seçenek, seçenekler tablosunda adı geçen haftaların Jupyter Notebook'ları üzerine kurulur. [11. haftanın Jupyter Notebook'unda](../hafta-11/NB11_final_projesi_atolyesi.ipynb), B seçeneğine ait bir final projesi Cleveland verisi üzerinde, verilerin denetiminden raporun sonuç tablosuna kadar adım adım yürütülmektedir. Jupyter Notebook'un son bölümü, final projesinin araç takımını, yani `final_project/code/project_tools.py` modülünü yazar. Bu modülle 11. haftanın denetimleri her seçeneğin modeli için yapılabilir: Bir referansa göre kazancın bootstrap aralığı, kalibrasyon, eğitim verilerinde seçilen bir dışlama eşiği ve bütün hastalarda ve gruplarda Wilson aralıkları. Aynı bölümdeki tabloda ise her seçenek için başlanacak Jupyter Notebook'lar, sonuç, referans ve model belirtilmiştir. [11. haftanın ders sayfasında](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html) aynı proje adım adım izlenir; haftanın etkileşimli labında da sorunun formu, klinik değerlendirmenin planlayıcısı ve sunum için süre ölçerli değerlendirme ölçütleri yer alır.
 
 ---
 

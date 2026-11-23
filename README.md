@@ -1,4 +1,4 @@
-> **Türkçe:** Bu eğitim Türkçe yürütülmektedir. **[Eğitimin Türkçe sayfasına geçin](README.tr.md)**
+> **Türkçe:** Bu eğitim Türkçe yürütülmektedir. **[Eğitimin Türkçe sayfasına geçiniz](README.tr.md)**
 
 <div align="center">
 
@@ -175,7 +175,7 @@ From the first week, participants write code together with an AI assistant, and 
 
 The **prompts** of the Jupyter notebooks turn these tools into a way of learning. The part «Prompt and application» of every practice stop holds its prompts. Each prompt comes with the prompt card, a cell for the code of the assistant, a check against a known answer and ready code for participants who get stuck. [PROMPT_PATH.md](PROMPT_PATH.md) describes how to work with the prompts, the assistants that work with them and the rules of privacy.
 
-Real patient data stay on the participant's own computer, under the rules of the institution and of the Turkish Law on the Protection of Personal Data (KVKK) [2]. They never enter a cloud notebook or an AI chat. All data sets of the course are synthetic or come from public research databases.
+Real patient data stay on a computer of the institution, under the rules of the institution and of the Turkish Law on the Protection of Personal Data (KVKK) [2]. They never enter a cloud notebook or an AI chat. All data sets of the course are synthetic or come from public research databases.
 
 ## With your own data
 

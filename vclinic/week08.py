@@ -281,7 +281,7 @@ _TABLES = {
     g = globals()
     k = anahtar
     need = lambda *names: [g[n] for n in names] if all(n in g for n in names) else (_ for _ in ()).throw(
-        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırın."))
+        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırınız."))
     if k in ("8.1", "8.2", "8.3"):
         u = triage.presentations("A")
         return pd.DataFrame({"başvuru": u["patient_id"], "bir saat sonra troponin": (u["troponin_1h"] / u["troponin_url"]).round(2),

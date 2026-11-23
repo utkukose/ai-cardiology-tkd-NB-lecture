@@ -88,7 +88,7 @@ _TABLES = {
     g = globals()
     k = anahtar
     need = lambda *names: [g[n] for n in names] if all(n in g for n in names) else (_ for _ in ()).throw(
-        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırın."))
+        RuntimeError("Önce bu alıştırmadan önceki bölümleri çalıştırınız."))
     sets = {"training": "eğitim", "validation": "doğrulama", "testing": "test", "test": "test"}
     if k == "9.2":
         rows = [(0, 0, 0, 0.552), (1, 0, 0, 0.660), (0, 1, 0, 0.617), (0, 0, 1, 0.456), (1, 1, 0, 0.799), (1, 0, 1, 0.584), (0, 1, 1, 0.533), (1, 1, 1, 0.727)]
