@@ -27,7 +27,7 @@ Kurum verileri yalnızca kurumun bir bilgisayarında, Kişisel Verilerin Korunma
 
 ## Ne teslim edilecek?
 
-Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılır. Raporda klinik soru, veriler ve kaynakları, yöntemler, belirsizlik ölçüsüyle birlikte sonuçlar, modelin açıklaması, sınırlılıklar ve klinik değerlendirme için bir plan yer alır. Rapor, "Klinik pratiğimde yapay zekâyı nasıl kullanacağım?" başlıklı yarım sayfalık kişisel bir eylem planıyla sona erer. Teslim edilen Jupyter Notebook ya da betikler, rapordaki her sonucu yeniden üretebilmelidir. YZ kullanım günlüğünde bir YZ asistanının her kullanımı kaydedilir. Teslimin son öğesi ise sunumun slaytlarıdır.
+Teslim dört öğeden oluşur. Rapor dört ile altı sayfa arasındadır ve [rapor şablonuyla](../sablonlar/Rapor_Sablonu.docx) yazılır. Raporda klinik soru, veriler ve kaynakları, yöntemler, belirsizlik ölçüsüyle birlikte sonuçlar, modelin açıklaması, sınırlılıklar ve klinik değerlendirme için bir plan yer alır. Rapor, "Klinik pratiğimde yapay zekâyı nasıl kullanacağım?" başlıklı yarım sayfalık kişisel bir eylem planıyla sona erer. Teslim edilen Jupyter Notebook ya da kod parçaları, rapordaki her sonucu yeniden üretebilmelidir. YZ kullanım günlüğünde bir YZ asistanının her kullanımı kaydedilir. Teslimin son öğesi ise sunumun slaytlarıdır.
 
 ## Önerilen ara aşamalar
 

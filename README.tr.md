@@ -117,7 +117,7 @@ Plan, Türk Kardiyoloji Derneği'nin programını izlemektedir. Her hafta bütü
 
 | Hafta | Konu | Sanal kliniğin aşaması | Haftalık proje |
 |---|---|---|---|
-| 1 | [Python ve kardiyoloji veri temelleri](tr/hafta-01/README.md) | Hasta kaydı ve EKG laboratuvarı | EKG görselleştirme ve temel ölçümleri (PR, QRS, QT) otomatik hesaplayan script |
+| 1 | [Python ve kardiyoloji veri temelleri](tr/hafta-01/README.md) | Hasta kaydı ve EKG laboratuvarı | EKG görselleştirme ve temel ölçümleri (PR, QRS, QT) otomatik hesaplayan kod parçası |
 | 2 | [Makine öğrenmesi temelleri](tr/hafta-02/README.md) | Risk polikliniği | HFpEF vs HFrEF hasta kümeleme + Kaplan-Meier sağkalım analizi |
 | 3 | [Derin öğrenme ve CNN temelleri](tr/hafta-03/README.md) | Görüntüleme laboratuvarı | Kardiyak MRI ACDC veri seti: Dilate/hipertrofik KMP otomatik sınıflandırma |
 | 4 | [Transfer learning: Hazır gücü kardiyolojiye uyarla](tr/hafta-04/README.md) | Eko ölçümü: Otomatik ejeksiyon fraksiyonu | CAMUS veri seti ile sol ventrikül segmentasyonu + EF otomatik hesaplama |
@@ -203,7 +203,7 @@ Eğitimde kullanılan bütün veri setleri, kaynakları, lisansları ve künyele
 
 ## Kaynakların doğruluğu
 
-Eğitimin her kaynağı, dijital nesne tanımlayıcısı (DOI) ya da yayıncı sayfası olan yayımlanmış bir çalışmadır ve künyesi yayıncının kaydıyla karşılaştırılarak doğrulanmıştır. Listenin tamamı, [references](references) klasöründe APA 7 biçiminde, BibTeX ve JSON olarak yer almaktadır. [tools/verify_references.py](tools/verify_references.py) betiği her kaydı Crossref, DataCite ve OpenAlex ile karşılaştırır. Bu betik, bir GitHub Actions iş akışıyla her ay ve kaynaklar her değiştiğinde yeniden çalıştırılır.
+Eğitimin her kaynağı, dijital nesne tanımlayıcısı (DOI) ya da yayıncı sayfası olan yayımlanmış bir çalışmadır ve künyesi yayıncının kaydıyla karşılaştırılarak doğrulanmıştır. Listenin tamamı, [references](references) klasöründe APA 7 biçiminde, BibTeX ve JSON olarak yer almaktadır. [tools/verify_references.py](tools/verify_references.py) kod parçası her kaydı Crossref, DataCite ve OpenAlex ile karşılaştırır. Bu kod parçası, bir GitHub Actions iş akışıyla her ay ve kaynaklar her değiştiğinde yeniden çalıştırılır.
 
 ## Bu eğitime atıf
 
