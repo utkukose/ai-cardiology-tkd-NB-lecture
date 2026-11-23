@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 8](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-08/PROMPTLAR.md)
+[Week 8](README.md) · [Türkçe](../../tr/hafta-08/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 8, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Heart failure events from the ECG, the echocardiogram and the laboratory](#stop-1-heart-failure-events-from-the-ecg-the-echocardiogram-and-the-laboratory)
 3. [Stop 2: Major adverse cardiac events in the chest pain unit: HEART, single modalities and fusion](#stop-2-major-adverse-cardiac-events-in-the-chest-pain-unit-heart-single-modalities-and-fusion)
 4. [Stop 3: Triage: another hospital, a threshold for discharge and net benefit](#stop-3-triage-another-hospital-a-threshold-for-discharge-and-net-benefit)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Heart failure events from the ECG, the echocardiogram and the laboratory
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html#stop-1) · The same result on the Python path: Python step 8, Sections 1 to 3*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-08/NB08_multimodal_ai_and_data_fusion.ipynb#scrollTo=stop-1-prompt)*
 
 This stop is the mini project of the session. The patients of the registry of the virtual clinic are described by three modalities: the ECG, the echocardiogram and the laboratory values. A model is built for each modality alone and for all three together, early and late fusion are compared, and the last step asks how sure the difference between fusion and the best single modality is.
 
-### Step 1.1: The laboratory values alone
+### Prompt 1.1: The laboratory values alone
 
 **Goal.** Build a first model for heart failure events from the three laboratory values.
 
@@ -67,7 +67,7 @@ Test: The AUC must lie between 0 and 1, and no test patient may be used before t
 
 **Expected result:** "answer" = 0.849
 
-### Step 1.2: Early fusion of three modalities
+### Prompt 1.2: Early fusion of three modalities
 
 **Goal.** Put the 14 values of the three modalities side by side and fit one model on them.
 
@@ -103,7 +103,7 @@ Test: The model must use 14 features, and the AUC must lie between 0 and 1.
 
 **Expected result:** "answer" = 0.83
 
-### Step 1.3: Late fusion by the mean of the logits
+### Prompt 1.3: Late fusion by the mean of the logits
 
 **Goal.** Fit one model for each modality and combine their predictions by the mean of their logits.
 
@@ -140,7 +140,7 @@ Test: There must be three models, one for each modality, and the AUC must lie be
 
 **Expected result:** "answer" = 0.833
 
-### Step 1.4: How sure is the difference?
+### Prompt 1.4: How sure is the difference?
 
 **Goal.** Draw the test patients again and again with replacement and see how often early fusion beats the laboratory alone.
 
@@ -184,11 +184,11 @@ every sample.
 
 ## Stop 2: Major adverse cardiac events in the chest pain unit: HEART, single modalities and fusion
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html#stop-2) · The same result on the Python path: Sections 4 to 8*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-08/NB08_multimodal_ai_and_data_fusion.ipynb#scrollTo=stop-2-prompt)*
 
 The chest pain unit of the virtual clinic predicts MACE within 30 days. The HEART score sets the bar. A model fuses the clinical table, the troponins and the echocardiogram, a second model stacks five single models, and the last step asks whether the probabilities of two kinds of late fusion can be trusted.
 
-### Step 2.1: The HEART score
+### Prompt 2.1: The HEART score
 
 **Goal.** Add up the five items of the HEART score and see how well the total separates the presentations with and without a MACE.
 
@@ -215,7 +215,7 @@ Test: Every score must lie between 0 and 10, and the three groups must hold all 
 
 **Expected result:** "answer" = 0.903
 
-### Step 2.2: Early fusion of the clinical table, the troponins and the echocardiogram
+### Prompt 2.2: Early fusion of the clinical table, the troponins and the echocardiogram
 
 **Goal.** Put the clinical values, the troponins and the echocardiogram of every presentation in one row, fill the gaps with a marker, and fit one model.
 
@@ -256,7 +256,7 @@ not be among them.
 
 **Expected result:** "answer" = 0.9
 
-### Step 2.3: Stacking five single models
+### Prompt 2.3: Stacking five single models
 
 **Goal.** Learn on the validation presentations how much each of five single models should count, and test the combination.
 
@@ -286,7 +286,7 @@ Test: Stacking must learn on the validation presentations only, and every weight
 
 **Expected result:** "answer" = 0.922
 
-### Step 2.4: Can the probabilities be trusted?
+### Prompt 2.4: Can the probabilities be trusted?
 
 **Goal.** Judge the calibration of two models with almost the same AUC: early fusion and the mean of the logits.
 
@@ -321,11 +321,11 @@ Test: The two curves must have ten points each, and the Brier scores must lie be
 
 ## Stop 3: Triage: another hospital, a threshold for discharge and net benefit
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html#stop-3) · The same result on the Python path: Sections 9 and 10*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-08/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-08/NB08_multimodal_ai_and_data_fusion.ipynb#scrollTo=stop-3-prompt)*
 
 A model that leaves its hospital must be checked where it is used. The first step updates the model at hospital B with its first patients. The second chooses a threshold for discharge on the validation presentations and compares it with HEART 0 to 3 on the test presentations. The last asks for the net benefit of the model and of HEART for the decision to admit.
 
-### Step 3.1: An update for another hospital
+### Prompt 3.1: An update for another hospital
 
 **Goal.** Shift the logits of the model so that its mean risk matches the share of events of the first 300 patients of hospital B, and check the next 700.
 
@@ -354,7 +354,7 @@ Test: Only the first 300 presentations may be used to find the shift, and the AU
 
 **Expected result:** "answer" = 0.37
 
-### Step 3.2: A threshold for discharge
+### Prompt 3.2: A threshold for discharge
 
 **Goal.** Choose on the validation presentations a threshold of the model that sends home as many patients as HEART 0 to 3, and count the MACE among the test patients it sends home.
 
@@ -384,7 +384,7 @@ the model must be close to that of HEART.
 
 **Expected result:** "answer" = 9
 
-### Step 3.3: Net benefit for the decision to admit
+### Prompt 3.3: Net benefit for the decision to admit
 
 **Goal.** Compute the net benefit of admitting by the risk of the model and by HEART 4 or more, at a threshold probability of 20 percent.
 
@@ -463,11 +463,11 @@ assay? Could any record or free text of a real patient leave the institution? Fo
 the line concerned, say whether it is right, and give the corrected code where it is not.
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Single modalities, fusion and HEART
+### Project step 1: Single modalities, fusion and HEART
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -512,7 +512,7 @@ Test: No test presentation may be used for a choice, and the HEART score must no
 any model.
 ```
 
-### Step 2: Calibration at two hospitals
+### Project step 2: Calibration at two hospitals
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -543,7 +543,7 @@ curves; keep the calibration intercept at B after the update, with two decimals,
 Test: Only the presentations of B with order 1 to 300 may be used to find the shift.
 ```
 
-### Step 3: Two thresholds for discharge
+### Project step 3: Two thresholds for discharge
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -571,7 +571,7 @@ the test presentations of A sent home at the first threshold under the name "ans
 Test: Both thresholds must come from the validation presentations of A only.
 ```
 
-### Step 4: A decision curve for the heart team
+### Project step 4: A decision curve for the heart team
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

@@ -127,11 +127,13 @@ def train_ecg(model, X, y, Xv, yv, epochs=12, seed=2026, verbose=True):
     return best
 
 
+@torch.no_grad()
 def ecg_predict(model, X, batch=256):
     model.eval()
     return torch.cat([torch.sigmoid(model(torch.as_tensor(X[i:i + batch]))) for i in range(0, len(X), batch)]).numpy()
 
 
+@torch.no_grad()
 def ecg_embed(model, X, batch=256):
     model.eval()
     return torch.cat([model.embed(torch.as_tensor(X[i:i + batch])) for i in range(0, len(X), batch)]).numpy()
@@ -230,6 +232,7 @@ def train_fusion(model, xs, keep, y, xs_v, keep_v, yv, epochs=40, seed=2026, dro
     return best
 
 
+@torch.no_grad()
 def fusion_predict(model, xs, keep):
     model.eval()
     xs = [torch.as_tensor(x, dtype=torch.float32) for x in xs]

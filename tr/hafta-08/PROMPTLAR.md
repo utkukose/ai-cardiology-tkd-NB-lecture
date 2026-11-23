@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[8. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-08/PROMPTS.md)
+[8. hafta](README.md) · [English](../../en/week-08/PROMPTS.md)
 
-Bu kütüphanede, 8. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: EKG, ekokardiyogram ve laboratuvarla kalp yetersizliği olayları](#durak-1-ekg-ekokardiyogram-ve-laboratuvarla-kalp-yetersizliği-olayları)
 3. [Durak 2: Göğüs ağrısı ünitesinde majör olumsuz kardiyak olaylar: HEART, tek modaliteler ve füzyon](#durak-2-göğüs-ağrısı-ünitesinde-majör-olumsuz-kardiyak-olaylar-heart-tek-modaliteler-ve-füzyon)
 4. [Durak 3: Triyaj: Başka bir hastane, bir taburculuk eşiği ve net yarar](#durak-3-triyaj-başka-bir-hastane-bir-taburculuk-eşiği-ve-net-yarar)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: EKG, ekokardiyogram ve laboratuvarla kalp yetersizliği olayları
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 8, 1-3. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb#scrollTo=stop-1-prompt)*
 
 Bu durak oturumun mini projesidir. Sanal kliniğin kayıt sistemindeki hastalar üç modaliteyle tarif edilir: EKG, ekokardiyogram ve laboratuvar değerleri. Her modalite için tek başına ve üçü için birlikte bir model kurulur, erken ve geç füzyon karşılaştırılır; son adım ise füzyon ile en iyi tek modalite arasındaki farktan ne kadar emin olunabileceğini sorar.
 
-### Adım 1.1: Tek başına laboratuvar değerleri
+### Prompt 1.1: Tek başına laboratuvar değerleri
 
-**Amaç.** Bu adımda üç laboratuvar değeriyle kalp yetersizliği olayları için ilk model kurulur.
+**Amaç.** Bu promptla üç laboratuvar değeriyle kalp yetersizliği olayları için ilk model kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -67,9 +67,9 @@ Test: AUC 0 ile 1 arasında olmalı ve hiçbir test hastası son adımdan önce 
 
 **Beklenen sonuç:** "cevap" = 0,849
 
-### Adım 1.2: Üç modalitenin erken füzyonu
+### Prompt 1.2: Üç modalitenin erken füzyonu
 
-**Amaç.** Bu adımda üç modalitenin 14 değeri yan yana konur ve bunlar üzerinde tek bir model kurulur.
+**Amaç.** Bu promptla üç modalitenin 14 değeri yan yana konur ve bunlar üzerinde tek bir model kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -103,9 +103,9 @@ Test: Model 14 öznitelik kullanmalı ve AUC 0 ile 1 arasında olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,83
 
-### Adım 1.3: Logitlerin ortalamasıyla geç füzyon
+### Prompt 1.3: Logitlerin ortalamasıyla geç füzyon
 
-**Amaç.** Bu adımda her modalite için bir model kurulur ve tahminleri logitlerinin ortalamasıyla birleştirilir.
+**Amaç.** Bu promptla her modalite için bir model kurulur ve tahminleri logitlerinin ortalamasıyla birleştirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -139,9 +139,9 @@ Test: Her modalite için bir tane olmak üzere üç model olmalı ve AUC 0 ile 1
 
 **Beklenen sonuç:** "cevap" = 0,833
 
-### Adım 1.4: Farktan ne kadar emin olabiliriz?
+### Prompt 1.4: Farktan ne kadar emin olabiliriz?
 
-**Amaç.** Bu adımda test hastaları yerine koyarak tekrar tekrar çekilir ve erken füzyonun tek başına laboratuvarı ne sıklıkla geçtiği görülür.
+**Amaç.** Bu promptla test hastaları yerine koyarak tekrar tekrar çekilir ve erken füzyonun tek başına laboratuvarı ne sıklıkla geçtiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -182,13 +182,13 @@ karşılaştırılmalı.
 
 ## Durak 2: Göğüs ağrısı ünitesinde majör olumsuz kardiyak olaylar: HEART, tek modaliteler ve füzyon
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-2) · Python yolunda aynı sonuç: 4-8. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb#scrollTo=stop-2-prompt)*
 
 Sanal kliniğin göğüs ağrısı ünitesi 30 gün içindeki MACE'i öngörür. Çıtayı HEART skoru belirler. Bir model klinik tabloyu, troponinleri ve ekokardiyogramı birleştirir; ikinci bir model beş tek modaliteli modeli istifler; son adım ise iki tür geç füzyonun olasılıklarına güvenilip güvenilemeyeceğini sorar.
 
-### Adım 2.1: HEART skoru
+### Prompt 2.1: HEART skoru
 
-**Amaç.** Bu adımda HEART skorunun beş öğesi toplanır ve toplamın MACE görülen ve görülmeyen başvuruları ne kadar iyi ayırdığı görülür.
+**Amaç.** Bu promptla HEART skorunun beş öğesi toplanır ve toplamın MACE görülen ve görülmeyen başvuruları ne kadar iyi ayırdığı görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -212,9 +212,9 @@ Test: Her skor 0 ile 10 arasında olmalı ve üç grup 800 başvurunun tamamın�
 
 **Beklenen sonuç:** "cevap" = 0,903
 
-### Adım 2.2: Klinik tablonun, troponinlerin ve ekokardiyogramın erken füzyonu
+### Prompt 2.2: Klinik tablonun, troponinlerin ve ekokardiyogramın erken füzyonu
 
-**Amaç.** Bu adımda her başvurunun klinik değerleri, troponinleri ve ekokardiyogramı tek bir satıra konur, boşluklar bir işaretle doldurulur ve tek bir model kurulur.
+**Amaç.** Bu promptla her başvurunun klinik değerleri, troponinleri ve ekokardiyogramı tek bir satıra konur, boşluklar bir işaretle doldurulur ve tek bir model kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -253,9 +253,9 @@ arasında olmamalı.
 
 **Beklenen sonuç:** "cevap" = 0,9
 
-### Adım 2.3: Beş tek modaliteli modelin istiflenmesi
+### Prompt 2.3: Beş tek modaliteli modelin istiflenmesi
 
-**Amaç.** Bu adımda beş tek modaliteli modelin her birinin ne kadar sayılması gerektiği doğrulama başvurularında öğrenilir ve birleşim sınanır.
+**Amaç.** Bu promptla beş tek modaliteli modelin her birinin ne kadar sayılması gerektiği doğrulama başvurularında öğrenilir ve birleşim sınanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -283,9 +283,9 @@ Test: İstifleme yalnızca doğrulama başvurularında öğrenmeli ve her ağır
 
 **Beklenen sonuç:** "cevap" = 0,922
 
-### Adım 2.4: Olasılıklara güvenilebilir mi?
+### Prompt 2.4: Olasılıklara güvenilebilir mi?
 
-**Amaç.** Bu adımda AUC değerleri neredeyse aynı olan iki modelin, erken füzyonun ve logitlerin ortalamasının, kalibrasyonu değerlendirilir.
+**Amaç.** Bu promptla AUC değerleri neredeyse aynı olan iki modelin, erken füzyonun ve logitlerin ortalamasının, kalibrasyonu değerlendirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -317,13 +317,13 @@ Test: İki eğrinin her biri on noktadan oluşmalı ve Brier skorları 0 ile 1 a
 
 ## Durak 3: Triyaj: Başka bir hastane, bir taburculuk eşiği ve net yarar
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-3) · Python yolunda aynı sonuç: 9. ve 10. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-08/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-08/NB08_cok_modlu_yapay_zeka_ve_veri_fuzyonu.ipynb#scrollTo=stop-3-prompt)*
 
 Hastanesinden çıkan bir model, kullanıldığı yerde denetlenmelidir. İlk adım modeli B hastanesinde ilk hastalarıyla günceller. İkinci adım doğrulama başvurularında bir taburculuk eşiği seçer ve bunu test başvurularında HEART 0-3 ile karşılaştırır. Son adım, yatırma kararı için modelin ve HEART skorunun net yararını sorar.
 
-### Adım 3.1: Başka bir hastane için bir güncelleme
+### Prompt 3.1: Başka bir hastane için bir güncelleme
 
-**Amaç.** Bu adımda modelin logitleri, ortalama riski B hastanesinin ilk 300 hastasındaki olay oranına uyacak biçimde kaydırılır ve sonraki 700 hasta denetlenir.
+**Amaç.** Bu promptla modelin logitleri, ortalama riski B hastanesinin ilk 300 hastasındaki olay oranına uyacak biçimde kaydırılır ve sonraki 700 hasta denetlenir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -350,9 +350,9 @@ Test: Kaymayı bulmak için yalnızca ilk 300 başvuru kullanılmalı ve AUC de�
 
 **Beklenen sonuç:** "cevap" = 0,37
 
-### Adım 3.2: Bir taburculuk eşiği
+### Prompt 3.2: Bir taburculuk eşiği
 
-**Amaç.** Bu adımda doğrulama başvurularında modelin HEART 0-3 kadar hastayı eve gönderen bir eşiği seçilir ve bu eşiğin eve gönderdiği test hastalarındaki MACE sayılır.
+**Amaç.** Bu promptla doğrulama başvurularında modelin HEART 0-3 kadar hastayı eve gönderen bir eşiği seçilir ve bu eşiğin eve gönderdiği test hastalarındaki MACE sayılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -380,9 +380,9 @@ skorununkine yakın olmalı.
 
 **Beklenen sonuç:** "cevap" = 9
 
-### Adım 3.3: Yatırma kararı için net yarar
+### Prompt 3.3: Yatırma kararı için net yarar
 
-**Amaç.** Bu adımda modelin riskine göre ve HEART 4 ya da üstüne göre yatırmanın net yararı yüzde 20 eşik olasılığında hesaplanır.
+**Amaç.** Bu promptla modelin riskine göre ve HEART 4 ya da üstüne göre yatırmanın net yararı yüzde 20 eşik olasılığında hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -460,11 +460,11 @@ nokta için ilgili satırı alıntıla, doğru olup olmadığını söyle ve do�
 ver.
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Tek modaliteler, füzyon ve HEART
+### Proje adımı 1: Tek modaliteler, füzyon ve HEART
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -507,7 +507,7 @@ Test: Hiçbir seçim için test başvurusu kullanılmamalı ve HEART skoru hiçb
 olmamalı.
 ```
 
-### Adım 2: İki hastanede kalibrasyon
+### Proje adımı 2: İki hastanede kalibrasyon
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -537,7 +537,7 @@ güncellemeden sonra B'deki kalibrasyon sabitini iki ondalık basamakla "cevap" 
 Test: Kaymayı bulmak için B'nin yalnızca sırası 1-300 olan başvuruları kullanılmalı.
 ```
 
-### Adım 3: İki taburculuk eşiği
+### Proje adımı 3: İki taburculuk eşiği
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -565,7 +565,7 @@ gönderilen A test başvurularındaki MACE sayısını "cevap" adıyla sakla.
 Test: İki eşik de yalnızca A'nın doğrulama başvurularından gelmeli.
 ```
 
-### Adım 4: Kalp ekibi için bir karar eğrisi
+### Proje adımı 4: Kalp ekibi için bir karar eğrisi
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
