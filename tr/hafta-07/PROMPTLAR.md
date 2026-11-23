@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[7. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-07/PROMPTS.md)
+[7. hafta](README.md) · [English](../../en/week-07/PROMPTS.md)
 
-Bu kütüphanede, 7. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje](#durak-1-ekokardiyografiye-aktarım-kalite-kapısı-ve-mini-proje)
 3. [Durak 2: Sentetik ve gerçek anjiyogramlarda darlıklar](#durak-2-sentetik-ve-gerçek-anjiyogramlarda-darlıklar)
 4. [Durak 3: Evrişimli ağ, Vision Transformer ve hibrit model](#durak-3-evrişimli-ağ-vision-transformer-ve-hibrit-model)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Ekokardiyografiye aktarım: Kalite kapısı ve mini proje
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 7, 1-4. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-1-prompt)*
 
-Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur; 1.4. adım, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar. 1.5. adım oturumun mini projesidir: Küçük bir Vision Transformer önce CIFAR-10 fotoğraflarını, ardından EchoNet-Dynamic ya da CAMUS ekokardiyografi kare çiftlerinden düşük ejeksiyon fraksiyonunu öğrenir.
+Fotoğraflarla önceden eğitilmiş bir Vision Transformer olan ViT-B/16, CAMUS'un her ekokardiyografi karesini 768 sayıya dönüştürür; bir lojistik regresyon da bu sayılardan uzmanların hangi kareleri kötü bulduğunu öğrenir. Aynı kapı dört basit görüntü istatistiğiyle ve 4. haftanın evrişimli ağı EfficientNet-B0 ile de kurulur; Prompt 1.4, iki ağ arasındaki farktan 50 test hastasıyla ne kadar emin olunabileceğini sorar. Prompt 1.5 oturumun mini projesidir: Küçük bir Vision Transformer önce CIFAR-10 fotoğraflarını, ardından EchoNet-Dynamic ya da CAMUS ekokardiyografi kare çiftlerinden düşük ejeksiyon fraksiyonunu öğrenir.
 
-### Adım 1.1: Dört görüntü istatistiğinden bir kapı
+### Prompt 1.1: Dört görüntü istatistiğinden bir kapı
 
-**Amaç.** Bu adımda bir karenin parlaklığını, karşıtlığını ve keskinliğini anlatan dört sayıdan ilk kalite kapısı kurulur.
+**Amaç.** Bu promptla bir karenin parlaklığını, karşıtlığını ve keskinliğini anlatan dört sayıdan ilk kalite kapısı kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -65,9 +65,9 @@ Test: AUC 0 ile 1 arasında olmalı ve test kareleri son adımdan önce kullanı
 
 **Beklenen sonuç:** "cevap" = 0,704
 
-### Adım 1.2: Bir Vision Transformer'ın sınıf token'ı
+### Prompt 1.2: Bir Vision Transformer'ın sınıf token'ı
 
-**Amaç.** Bu adımda her kare, ImageNet ile önceden eğitilmiş ViT-B/16'nın sınıf token'ındaki 768 sayıyla tarif edilir ve kapı bu sayılarla kurulur.
+**Amaç.** Bu promptla her kare, ImageNet ile önceden eğitilmiş ViT-B/16'nın sınıf token'ındaki 768 sayıyla tarif edilir ve kapı bu sayılarla kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -101,9 +101,9 @@ Test: Her kare 768 sayı vermeli ve AUC 0 ile 1 arasında olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,862
 
-### Adım 1.3: Evrişimli bir ağın öznitelikleri
+### Prompt 1.3: Evrişimli bir ağın öznitelikleri
 
-**Amaç.** Bu adımda aynı kapı, 4. haftanın ağı EfficientNet-B0'ın 1.280 özniteliğiyle kurulur.
+**Amaç.** Bu promptla aynı kapı, 4. haftanın ağı EfficientNet-B0'ın 1.280 özniteliğiyle kurulur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -137,9 +137,9 @@ Test: Her kare 1.280 sayı vermeli ve AUC 0 ile 1 arasında olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,782
 
-### Adım 1.4: Farktan ne kadar emin olabiliriz?
+### Prompt 1.4: Farktan ne kadar emin olabiliriz?
 
-**Amaç.** Bu adımda 50 test hastası yerine koyarak tekrar tekrar çekilir ve Vision Transformer'ın ne sıklıkla daha iyi olduğu görülür.
+**Amaç.** Bu promptla 50 test hastası yerine koyarak tekrar tekrar çekilir ve Vision Transformer'ın ne sıklıkla daha iyi olduğu görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -168,9 +168,9 @@ Test: Oran 0 ile 1 arasında olmalı ve bir hastanın iki karesi her zaman birli
 
 **Beklenen sonuç:** "cevap" = 0,925
 
-### Adım 1.5: Mini proje: CIFAR-10'dan ekokardiyografiye küçük bir Vision Transformer
+### Prompt 1.5: Mini proje: CIFAR-10'dan ekokardiyografiye küçük bir Vision Transformer
 
-**Amaç.** Bu adımda küçük bir Vision Transformer önce CIFAR-10 fotoğraflarıyla eğitilir, ardından düşük ejeksiyon fraksiyonunu tanımak için ekokardiyografi kare çiftleriyle ince ayar yapılır ve yalnızca ekokardiyogramlarla eğitilen aynı ağla karşılaştırılır.
+**Amaç.** Bu promptla küçük bir Vision Transformer önce CIFAR-10 fotoğraflarıyla eğitilir, ardından düşük ejeksiyon fraksiyonunu tanımak için ekokardiyografi kare çiftleriyle ince ayar yapılır ve yalnızca ekokardiyogramlarla eğitilen aynı ağla karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -224,13 +224,13 @@ Test: CIFAR-10 doğruluğu, on sınıftan birinin şans eseri verdiği 0,1 değe
 
 ## Durak 2: Sentetik ve gerçek anjiyogramlarda darlıklar
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-2) · Python yolunda aynı sonuç: 5. ve 6. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-2-prompt)*
 
 Küçük bir evrişimli ağ, merkezi anlamlı bir darlıkta olan 64 × 64 piksellik yamaları tanımayı önce sanal kliniğin sentetik anjiyogramlarında öğrenir. Aynı ağ daha sonra hiçbir değişiklik yapılmadan ARCADE'in gerçek anjiyogramlarında sınanır ve son olarak ARCADE'in eğitim anjiyogramlarıyla yeniden eğitilir.
 
-### Adım 2.1: Sentetik anjiyogramlarda küçük bir evrişimli ağ
+### Prompt 2.1: Sentetik anjiyogramlarda küçük bir evrişimli ağ
 
-**Amaç.** Bu adımda sentetik anjiyogramların yamalarıyla küçük bir evrişimli ağ eğitilir ve ağ test hastalarının yamalarında ölçülür.
+**Amaç.** Bu promptla sentetik anjiyogramların yamalarıyla küçük bir evrişimli ağ eğitilir ve ağ test hastalarının yamalarında ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -266,9 +266,9 @@ Test: Ağın 60.641 eğitilebilir ağırlığı olmalı ve test yamaları son ad
 
 **Beklenen sonuç:** "cevap" = 0,965
 
-### Adım 2.2: Aynı ağ gerçek anjiyogramlarda
+### Prompt 2.2: Aynı ağ gerçek anjiyogramlarda
 
-**Amaç.** Bu adımda yalnızca sentetik anjiyogramlardan öğrenen bir ağ, ARCADE'in gerçek anjiyogramlarında sınanır.
+**Amaç.** Bu promptla yalnızca sentetik anjiyogramlardan öğrenen bir ağ, ARCADE'in gerçek anjiyogramlarında sınanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -293,9 +293,9 @@ Test: Her AUC yalnızca kendi kaynağının yamalarından hesaplanmalı.
 
 **Beklenen sonuç:** "cevap" = 0,538
 
-### Adım 2.3: Gerçek anjiyogramlarla eğitim
+### Prompt 2.3: Gerçek anjiyogramlarla eğitim
 
-**Amaç.** Bu adımda aynı küçük ağ, ARCADE'in eğitim anjiyogramlarının yamalarıyla eğitilir.
+**Amaç.** Bu promptla aynı küçük ağ, ARCADE'in eğitim anjiyogramlarının yamalarıyla eğitilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -334,13 +334,13 @@ kullanılmamalı.
 
 ## Durak 3: Evrişimli ağ, Vision Transformer ve hibrit model
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-3) · Python yolunda aynı sonuç: 7-9. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-07/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-07/NB07_vision_transformer.ipynb#scrollTo=stop-3-prompt)*
 
 Küçük bir Vision Transformer ve evrişimle dikkati birleştiren hibrit bir model, ARCADE'in yamalarını 2. duraktaki evrişimli ağla aynı biçimde öğrenir; böylece üç model aynı test anjiyogramlarında karşılaştırılabilir. Son adım Vision Transformer'ın nereye baktığını sorar: Sınıf token'ının dikkatinin ne kadarı, darlığın bulunduğu yama merkezine düşmektedir?
 
-### Adım 3.1: Küçük bir Vision Transformer
+### Prompt 3.1: Küçük bir Vision Transformer
 
-**Amaç.** Bu adımda her yamayı 64 kareye bölen ve bu karelerin birbirine dikkat etmesini sağlayan küçük bir Vision Transformer ARCADE'in yamalarıyla eğitilir.
+**Amaç.** Bu promptla her yamayı 64 kareye bölen ve bu karelerin birbirine dikkat etmesini sağlayan küçük bir Vision Transformer ARCADE'in yamalarıyla eğitilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -382,9 +382,9 @@ kullanılmamalı.
 
 **Beklenen sonuç:** "cevap" = 0,93
 
-### Adım 3.2: Evrişim ve dikkatten oluşan hibrit bir model
+### Prompt 3.2: Evrişim ve dikkatten oluşan hibrit bir model
 
-**Amaç.** Bu adımda hibrit bir model eğitilir: Önce üç evrişim bloğu, ardından bunların çıktısındaki konumlar üzerinde iki Transformer bloğu.
+**Amaç.** Bu promptla hibrit bir model eğitilir: Önce üç evrişim bloğu, ardından bunların çıktısındaki konumlar üzerinde iki Transformer bloğu.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -428,9 +428,9 @@ kullanılmamalı.
 
 **Beklenen sonuç:** "cevap" = 0,934
 
-### Adım 3.3: Vision Transformer nereye bakıyor?
+### Prompt 3.3: Vision Transformer nereye bakıyor?
 
-**Amaç.** Bu adımda Vision Transformer'ın sınıf token'ının dikkatinin ne kadarının, darlığın bulunduğu yama merkezine düştüğü ölçülür.
+**Amaç.** Bu promptla Vision Transformer'ın sınıf token'ının dikkatinin ne kadarının, darlığın bulunduğu yama merkezine düştüğü ölçülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -507,11 +507,11 @@ Gerçek bir hastanın herhangi bir görüntüsü ya da başlığı kurum dışı
 ilgili satırı alıntıla, doğru olup olmadığını söyle ve doğru değilse düzeltilmiş kodu ver.
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Üç ağ, tek bir test
+### Proje adımı 1: Üç ağ, tek bir test
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -571,7 +571,7 @@ Test: Üç ağın eğitilebilir ağırlık sayıları 60.641, 142.465 ve 94.881 
 değil anjiyogramlardan hesaplanmalı.
 ```
 
-### Adım 2: Laboratuvar için bir eşik
+### Proje adımı 2: Laboratuvar için bir eşik
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -598,7 +598,7 @@ modelin yüzde 2 prevalanstaki pozitif öngörü değerini üç ondalık basamak
 Test: Eşikler yalnızca doğrulama yamalarında seçilmeli ve her değer 0 ile 1 arasında olmalı.
 ```
 
-### Adım 3: Bütün anjiyogramlar için bir tespit modeli
+### Proje adımı 3: Bütün anjiyogramlar için bir tespit modeli
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -651,7 +651,7 @@ Test: Eşik yalnızca doğrulama anjiyogramlarında seçilmeli ve test anjiyogra
 bulunmalı.
 ```
 
-### Adım 4: Bir kardiyoloğun okuduğu hatalar
+### Proje adımı 4: Bir kardiyoloğun okuduğu hatalar
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp

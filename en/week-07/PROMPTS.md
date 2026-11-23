@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 7](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-07/PROMPTLAR.md)
+[Week 7](README.md) · [Türkçe](../../tr/hafta-07/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 7, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: Transfer to echocardiography: A quality gate and the mini project](#stop-1-transfer-to-echocardiography-a-quality-gate-and-the-mini-project)
 3. [Stop 2: Stenoses on synthetic and on real angiograms](#stop-2-stenoses-on-synthetic-and-on-real-angiograms)
 4. [Stop 3: A convolutional network, a vision transformer and a hybrid](#stop-3-a-convolutional-network-a-vision-transformer-and-a-hybrid)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: Transfer to echocardiography: A quality gate and the mini project
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-1) · The same result on the Python path: Python step 7, Sections 1 to 4*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-07/NB07_vision_transformers.ipynb#scrollTo=stop-1-prompt)*
 
-A vision transformer pretrained on photographs, ViT-B/16, turns every echocardiography frame of CAMUS into 768 numbers, and a logistic regression learns from them which frames the experts rated as poor. The same gate is built from four simple image statistics and from the convolutional network of Week 4, EfficientNet-B0, and step 1.4 asks how sure the difference between the two networks is with 50 test patients. Step 1.5 is the mini project of the session: A mini vision transformer learns the photographs of CIFAR-10 and then a reduced ejection fraction from pairs of echocardiography frames of EchoNet-Dynamic or CAMUS.
+A vision transformer pretrained on photographs, ViT-B/16, turns every echocardiography frame of CAMUS into 768 numbers, and a logistic regression learns from them which frames the experts rated as poor. The same gate is built from four simple image statistics and from the convolutional network of Week 4, EfficientNet-B0, and Prompt 1.4 asks how sure the difference between the two networks is with 50 test patients. Prompt 1.5 is the mini project of the session: A mini vision transformer learns the photographs of CIFAR-10 and then a reduced ejection fraction from pairs of echocardiography frames of EchoNet-Dynamic or CAMUS.
 
-### Step 1.1: A gate from four image statistics
+### Prompt 1.1: A gate from four image statistics
 
 **Goal.** Build a first quality gate from four numbers that describe the brightness, the contrast and the sharpness of a frame.
 
@@ -66,7 +66,7 @@ Test: The AUC must lie between 0 and 1, and the test frames must not be used bef
 
 **Expected result:** "answer" = 0.704
 
-### Step 1.2: The class token of a vision transformer
+### Prompt 1.2: The class token of a vision transformer
 
 **Goal.** Describe every frame by the 768 numbers of the class token of ViT-B/16, pretrained on ImageNet, and build the gate on them.
 
@@ -102,7 +102,7 @@ Test: Every frame must give 768 numbers, and the AUC must lie between 0 and 1.
 
 **Expected result:** "answer" = 0.862
 
-### Step 1.3: The features of a convolutional network
+### Prompt 1.3: The features of a convolutional network
 
 **Goal.** Build the same gate on the 1,280 features of EfficientNet-B0, the network of Week 4.
 
@@ -138,7 +138,7 @@ Test: Every frame must give 1,280 numbers, and the AUC must lie between 0 and 1.
 
 **Expected result:** "answer" = 0.782
 
-### Step 1.4: How sure is the difference?
+### Prompt 1.4: How sure is the difference?
 
 **Goal.** Draw the 50 test patients again and again with replacement and see how often the vision transformer wins.
 
@@ -170,7 +170,7 @@ together.
 
 **Expected result:** "answer" = 0.925
 
-### Step 1.5: Mini project: A mini vision transformer from CIFAR-10 to echocardiography
+### Prompt 1.5: Mini project: A mini vision transformer from CIFAR-10 to echocardiography
 
 **Goal.** Train a small vision transformer on the photographs of CIFAR-10, then fine-tune it on pairs of echocardiography frames to recognise a reduced ejection fraction, and compare it with the same network trained on the echocardiograms alone.
 
@@ -226,11 +226,11 @@ the test rows must not be used before the end.
 
 ## Stop 2: Stenoses on synthetic and on real angiograms
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-2) · The same result on the Python path: Sections 5 and 6*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-07/NB07_vision_transformers.ipynb#scrollTo=stop-2-prompt)*
 
 A small convolutional network learns to recognise patches of 64 × 64 pixels centred on a significant stenosis, first on the synthetic angiograms of the virtual clinic. The same network is then tested on the real angiograms of ARCADE, without any change, and finally trained again on the training angiograms of ARCADE.
 
-### Step 2.1: A small convolutional network on synthetic angiograms
+### Prompt 2.1: A small convolutional network on synthetic angiograms
 
 **Goal.** Train a small convolutional network on patches of the synthetic angiograms and measure it on the patches of the test patients.
 
@@ -268,7 +268,7 @@ the last step.
 
 **Expected result:** "answer" = 0.965
 
-### Step 2.2: The same network on real angiograms
+### Prompt 2.2: The same network on real angiograms
 
 **Goal.** Test a network that learned only from synthetic angiograms on the real angiograms of ARCADE.
 
@@ -294,7 +294,7 @@ Test: Each AUC must be computed from the patches of its own source only.
 
 **Expected result:** "answer" = 0.538
 
-### Step 2.3: Training on real angiograms
+### Prompt 2.3: Training on real angiograms
 
 **Goal.** Train the same small network on the patches of the training angiograms of ARCADE.
 
@@ -334,11 +334,11 @@ for training.
 
 ## Stop 3: A convolutional network, a vision transformer and a hybrid
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-3) · The same result on the Python path: Sections 7 to 9*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-07/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-07/NB07_vision_transformers.ipynb#scrollTo=stop-3-prompt)*
 
 A small vision transformer and a hybrid of convolutions and attention learn the patches of ARCADE in the same way as the convolutional network of Stop 2, so that the three can be compared on the same test angiograms. The last step asks where the vision transformer looks: how much of the attention of its class token falls on the centre of the patch, where the stenosis is.
 
-### Step 3.1: A small vision transformer
+### Prompt 3.1: A small vision transformer
 
 **Goal.** Train a small vision transformer, which cuts every patch into 64 squares and lets them attend to each other, on the patches of ARCADE.
 
@@ -381,7 +381,7 @@ for training.
 
 **Expected result:** "answer" = 0.93
 
-### Step 3.2: A hybrid of convolutions and attention
+### Prompt 3.2: A hybrid of convolutions and attention
 
 **Goal.** Train a hybrid model: three convolution blocks first, then two transformer blocks on the positions of their output.
 
@@ -426,7 +426,7 @@ for training.
 
 **Expected result:** "answer" = 0.934
 
-### Step 3.3: Where does the vision transformer look?
+### Prompt 3.3: Where does the vision transformer look?
 
 **Goal.** Measure how much of the attention of the class token of the vision transformer falls on the centre of the patch, where a stenosis lies.
 
@@ -506,11 +506,11 @@ point, quote the line concerned, say whether it is right, and give the corrected
 not.
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: Three networks, one test
+### Project step 1: Three networks, one test
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -570,7 +570,7 @@ Test: The three networks must have 60,641, 142,465 and 94,881 trainable weights,
 must come from angiograms, not from patches.
 ```
 
-### Step 2: A threshold for the laboratory
+### Project step 2: A threshold for the laboratory
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -599,7 +599,7 @@ Test: The thresholds must be chosen on the validation patches only, and every va
 0 and 1.
 ```
 
-### Step 3: A detector for whole angiograms
+### Project step 3: A detector for whole angiograms
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -651,7 +651,7 @@ Test: The threshold must be chosen on the validation angiograms only, and the te
 hold 386 stenoses.
 ```
 
-### Step 4: The errors read by a cardiologist
+### Project step 4: The errors read by a cardiologist
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

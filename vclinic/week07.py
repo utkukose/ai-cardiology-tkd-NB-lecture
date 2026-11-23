@@ -130,6 +130,7 @@ class Hybrid(SmallViT):
         self.embed = nn.Sequential(conv_block(1, 16), conv_block(16, 32), conv_block(32, dim))
 
 
+@torch.no_grad()
 def predict(model, X, batch=256):
     """The probability of a stenosis for every patch."""
     model.eval()
