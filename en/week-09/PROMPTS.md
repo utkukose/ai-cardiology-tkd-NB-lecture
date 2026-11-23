@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 9](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-09/PROMPTLAR.md)
+[Week 9](README.md) · [Türkçe](../../tr/hafta-09/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 9, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: The clinical factors behind the model for coronary artery disease](#stop-1-the-clinical-factors-behind-the-model-for-coronary-artery-disease)
 3. [Stop 2: LIME for one patient, and where the echo network looks](#stop-2-lime-for-one-patient-and-where-the-echo-network-looks)
 4. [Stop 3: Shift, monitoring and subgroups](#stop-3-shift-monitoring-and-subgroups)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: The clinical factors behind the model for coronary artery disease
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-1) · The same result on the Python path: Python step 9, Sections 1 to 3*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-09/NB09_reliability_and_explainable_ai.ipynb#scrollTo=stop-1-prompt)*
 
-This stop is the mini project of the session. The two models of Week 2 for coronary artery disease, a random forest and a logistic regression, learn on the training patients of the Cleveland data. Their predictions for patient 172, a 59-year-old woman, are shared among her eight clinical variables with exact Shapley values; for the logistic regression, a closed form gives the same values on the scale of the log-odds. Step 1.4 turns the values of every test patient into a global explanation, and step 1.5 asks which of nine factors, among them LDL, age and the ejection fraction, moves a model of the registry of the virtual clinic most.
+This stop is the mini project of the session. The two models of Week 2 for coronary artery disease, a random forest and a logistic regression, learn on the training patients of the Cleveland data. Their predictions for patient 172, a 59-year-old woman, are shared among her eight clinical variables with exact Shapley values; for the logistic regression, a closed form gives the same values on the scale of the log-odds. Prompt 1.4 turns the values of every test patient into a global explanation, and Prompt 1.5 asks which of nine factors, among them LDL, age and the ejection fraction, moves a model of the registry of the virtual clinic most.
 
-### Step 1.1: The two models of Week 2
+### Prompt 1.1: The two models of Week 2
 
 **Goal.** Fit the two models of Week 2 again on the training patients and judge them on the test patients.
 
@@ -69,7 +69,7 @@ Test: No test patient may be used to fit either model, and the AUC must lie betw
 
 **Expected result:** "answer" = 0.904
 
-### Step 1.2: Shapley values of patient 172
+### Prompt 1.2: Shapley values of patient 172
 
 **Goal.** Share the probability that the forest gives patient 172 among her eight clinical variables.
 
@@ -111,7 +111,7 @@ sixth decimal.
 
 **Expected result:** "answer" = 0.155
 
-### Step 1.3: The closed form of the logistic regression
+### Prompt 1.3: The closed form of the logistic regression
 
 **Goal.** Compute the Shapley values of the logistic regression for patient 172 on the scale of the log-odds with a closed form.
 
@@ -149,7 +149,7 @@ training patients.
 
 **Expected result:** "answer" = −1.175
 
-### Step 1.4: From one patient to all patients
+### Prompt 1.4: From one patient to all patients
 
 **Goal.** Compute the Shapley values of the forest for every test patient and rank the variables.
 
@@ -191,7 +191,7 @@ Test: The counts must add up to the number of test patients.
 
 **Expected result:** "answer" = 0.138
 
-### Step 1.5: Mini project: LDL, age, EF and the model of the registry
+### Prompt 1.5: Mini project: LDL, age, EF and the model of the registry
 
 **Goal.** Find out which of nine clinical factors moves a model for coronary artery disease most, with exact Shapley values.
 
@@ -230,11 +230,11 @@ patient minus the value of the empty group.
 
 ## Stop 2: LIME for one patient, and where the echo network looks
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-2) · The same result on the Python path: Sections 4 to 7*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-09/NB09_reliability_and_explainable_ai.ipynb#scrollTo=stop-2-prompt)*
 
 This stop explains predictions in two more ways. LIME imitates the forest of Stop 1 around patient 172 with a weighted linear model, and a repetition with twenty seeds shows how stable its answer is. A small convolutional network then learns to flag an ejection fraction below 45 percent on echocardiograms of CAMUS, and its Grad-CAM maps are compared with the expert outlines of the left ventricle.
 
-### Step 2.1: LIME for patient 172
+### Prompt 2.1: LIME for patient 172
 
 **Goal.** Explain the probability that the forest gives patient 172 with a weighted linear model fitted around her.
 
@@ -276,7 +276,7 @@ Test: The weight of a neighbour that keeps all eight values of the patient must 
 
 **Expected result:** "answer" = 0.145
 
-### Step 2.2: How stable is LIME?
+### Prompt 2.2: How stable is LIME?
 
 **Goal.** Repeat LIME with few neighbours and twenty seeds, and see how often the leading variable changes.
 
@@ -320,7 +320,7 @@ Test: The counts of the players must add up to 20.
 
 **Expected result:** "answer" = 0.7
 
-### Step 2.3: A network for a low ejection fraction
+### Prompt 2.3: A network for a low ejection fraction
 
 **Goal.** Train a small convolutional network that flags an ejection fraction below 45 percent on one view.
 
@@ -359,7 +359,7 @@ set.
 
 **Expected result:** "answer" = 0.796
 
-### Step 2.4: Grad-CAM maps against the expert outline
+### Prompt 2.4: Grad-CAM maps against the expert outline
 
 **Goal.** Compute the Grad-CAM map of every test view and the share of the map inside the expert outline.
 
@@ -405,11 +405,11 @@ mode.
 
 ## Stop 3: Shift, monitoring and subgroups
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-3) · The same result on the Python path: Sections 8 to 10*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-09/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-09/NB09_reliability_and_explainable_ai.ipynb#scrollTo=stop-3-prompt)*
 
 This stop asks whether a model stays reliable. A classifier learns to tell the presentations of hospital B from those of hospital A in the chest pain unit of Week 8, before any outcome is known. The observed and expected events at B are then followed in the order of arrival. The risk model is judged in groups of sex and age at a threshold for discharge, and the model for coronary artery disease is fitted with and without sex.
 
-### Step 3.1: Can the two hospitals be told apart?
+### Prompt 3.1: Can the two hospitals be told apart?
 
 **Goal.** Train a classifier that tells the presentations of hospital B from those of hospital A by their inputs, without any outcome.
 
@@ -453,7 +453,7 @@ Test: No outcome may be used, and the note model may learn from the training not
 
 **Expected result:** "answer" = 0.988
 
-### Step 3.2: Observed against expected events at hospital B
+### Prompt 3.2: Observed against expected events at hospital B
 
 **Goal.** Follow observed minus expected events at hospital B in the order of arrival and find the first alarm.
 
@@ -481,7 +481,7 @@ Test: The band must start near 0 and widen with the number of presentations.
 
 **Expected result:** "answer" = 253
 
-### Step 3.3: Subgroups at a threshold for discharge
+### Prompt 3.3: Subgroups at a threshold for discharge
 
 **Goal.** Choose a threshold for discharge on the validation presentations and judge it on the test presentations by sex and age.
 
@@ -511,7 +511,7 @@ Test: The threshold must come from the validation presentations only.
 
 **Expected result:** "answer" = 0.956
 
-### Step 3.4: A model without sex
+### Prompt 3.4: A model without sex
 
 **Goal.** Fit the logistic regression of Week 2 with and without sex and compare its calibration and its errors in women and men.
 
@@ -595,11 +595,11 @@ of a real patient leave the institution? For each point, quote the line concerne
 right, and give the corrected code where it is not.
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: The accuracy of the echo network
+### Project step 1: The accuracy of the echo network
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -637,7 +637,7 @@ Test: No test view may be used to choose the epoch, and the bootstrap of the pat
 patients, not views.
 ```
 
-### Step 2: The maps against the expert outline
+### Project step 2: The maps against the expert outline
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -669,7 +669,7 @@ Test: Every share must lie between 0 and 1, and the groups of each comparison mu
 views.
 ```
 
-### Step 3: Sanity checks of the maps
+### Project step 3: Sanity checks of the maps
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -720,7 +720,7 @@ Test: Every rank correlation must lie between −1 and 1, and the trained networ
 maps before and after the copies are made.
 ```
 
-### Step 4: Six views for the committee
+### Project step 4: Six views for the committee
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter

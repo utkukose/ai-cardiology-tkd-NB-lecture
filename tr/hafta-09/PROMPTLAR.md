@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[9. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-09/PROMPTS.md)
+[9. hafta](README.md) · [English](../../en/week-09/PROMPTS.md)
 
-Bu kütüphanede, 9. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Koroner arter hastalığı modelinin ardındaki klinik etkenler](#durak-1-koroner-arter-hastalığı-modelinin-ardındaki-klinik-etkenler)
 3. [Durak 2: Tek bir hasta için LIME ve eko ağının baktığı yer](#durak-2-tek-bir-hasta-için-lime-ve-eko-ağının-baktığı-yer)
 4. [Durak 3: Kayma, izlem ve alt gruplar](#durak-3-kayma-izlem-ve-alt-gruplar)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Koroner arter hastalığı modelinin ardındaki klinik etkenler
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 9, 1-3. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb#scrollTo=stop-1-prompt)*
 
-Bu durak oturumun mini projesidir. 2. haftanın koroner arter hastalığı için kurduğu iki model, yani bir rastgele orman ve bir lojistik regresyon, Cleveland verisinin eğitim hastalarıyla öğrenir. Modellerin 59 yaşındaki bir kadın olan 172 numaralı hasta için verdiği tahminler, kesin Shapley değerleriyle hastanın sekiz klinik değişkeni arasında paylaştırılır; lojistik regresyon için kapalı bir form, log-odds ölçeğinde aynı değerleri verir. 1.4. adım her test hastasının değerlerini genel bir açıklamaya dönüştürür; 1.5. adım ise LDL, yaş ve ejeksiyon fraksiyonunun da aralarında bulunduğu dokuz faktörden hangisinin sanal kliniğin kayıt sistemi üzerindeki bir modeli en çok etkilediğini sorar.
+Bu durak oturumun mini projesidir. 2. haftanın koroner arter hastalığı için kurduğu iki model, yani bir rastgele orman ve bir lojistik regresyon, Cleveland verisinin eğitim hastalarıyla öğrenir. Modellerin 59 yaşındaki bir kadın olan 172 numaralı hasta için verdiği tahminler, kesin Shapley değerleriyle hastanın sekiz klinik değişkeni arasında paylaştırılır; lojistik regresyon için kapalı bir form, log-odds ölçeğinde aynı değerleri verir. Prompt 1.4 her test hastasının değerlerini genel bir açıklamaya dönüştürür; Prompt 1.5 ise LDL, yaş ve ejeksiyon fraksiyonunun da aralarında bulunduğu dokuz faktörden hangisinin sanal kliniğin kayıt sistemi üzerindeki bir modeli en çok etkilediğini sorar.
 
-### Adım 1.1: 2. haftanın iki modeli
+### Prompt 1.1: 2. haftanın iki modeli
 
-**Amaç.** Bu adımda 2. haftanın iki modeli eğitim hastalarında yeniden kurulur ve test hastalarında değerlendirilir.
+**Amaç.** Bu promptla 2. haftanın iki modeli eğitim hastalarında yeniden kurulur ve test hastalarında değerlendirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -70,9 +70,9 @@ olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,904
 
-### Adım 1.2: 172 numaralı hastanın Shapley değerleri
+### Prompt 1.2: 172 numaralı hastanın Shapley değerleri
 
-**Amaç.** Bu adımda ormanın 172 numaralı hastaya verdiği olasılık, hastanın sekiz klinik değişkeni arasında paylaştırılır.
+**Amaç.** Bu promptla ormanın 172 numaralı hastaya verdiği olasılık, hastanın sekiz klinik değişkeni arasında paylaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -112,9 +112,9 @@ olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,155
 
-### Adım 1.3: Lojistik regresyonun kapalı formu
+### Prompt 1.3: Lojistik regresyonun kapalı formu
 
-**Amaç.** Bu adımda lojistik regresyonun 172 numaralı hasta için log-odds ölçeğindeki Shapley değerleri kapalı bir formla hesaplanır.
+**Amaç.** Bu promptla lojistik regresyonun 172 numaralı hasta için log-odds ölçeğindeki Shapley değerleri kapalı bir formla hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -149,9 +149,9 @@ değerine eşit olmalı.
 
 **Beklenen sonuç:** "cevap" = −1,175
 
-### Adım 1.4: Tek bir hastadan bütün hastalara
+### Prompt 1.4: Tek bir hastadan bütün hastalara
 
-**Amaç.** Bu adımda ormanın her test hastası için Shapley değerleri hesaplanır ve değişkenler sıralanır.
+**Amaç.** Bu promptla ormanın her test hastası için Shapley değerleri hesaplanır ve değişkenler sıralanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -192,9 +192,9 @@ Test: Sayıların toplamı test hastalarının sayısına eşit olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,138
 
-### Adım 1.5: Mini proje: LDL, yaş, EF ve kayıt sistemi modeli
+### Prompt 1.5: Mini proje: LDL, yaş, EF ve kayıt sistemi modeli
 
-**Amaç.** Bu adımda dokuz klinik faktörden hangisinin koroner arter hastalığı modelini en çok etkilediği kesin Shapley değerleriyle bulunur.
+**Amaç.** Bu promptla dokuz klinik faktörden hangisinin koroner arter hastalığı modelini en çok etkilediği kesin Shapley değerleriyle bulunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -231,13 +231,13 @@ boş grubun değerine eşit olmalı.
 
 ## Durak 2: Tek bir hasta için LIME ve eko ağının baktığı yer
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-2) · Python yolunda aynı sonuç: 4-7. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb#scrollTo=stop-2-prompt)*
 
 Bu durak tahminleri iki yolla daha açıklar. LIME, 1. duraktaki ormanı 172 numaralı hastanın çevresinde ağırlıklı doğrusal bir modelle taklit eder; yirmi seed değeriyle yapılan bir tekrar da cevabının ne kadar kararlı olduğunu gösterir. Ardından küçük bir evrişimli ağ, CAMUS ekokardiyogramlarında yüzde 45'in altındaki ejeksiyon fraksiyonunu işaretlemeyi öğrenir ve ağın Grad-CAM haritaları sol ventrikülün uzman sınırlarıyla karşılaştırılır.
 
-### Adım 2.1: 172 numaralı hasta için LIME
+### Prompt 2.1: 172 numaralı hasta için LIME
 
-**Amaç.** Bu adımda ormanın 172 numaralı hastaya verdiği olasılık, hastanın çevresine uydurulan ağırlıklı doğrusal bir modelle açıklanır.
+**Amaç.** Bu promptla ormanın 172 numaralı hastaya verdiği olasılık, hastanın çevresine uydurulan ağırlıklı doğrusal bir modelle açıklanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -277,9 +277,9 @@ Test: Hastanın sekiz değerinin hepsini koruyan bir komşunun ağırlığı 1 o
 
 **Beklenen sonuç:** "cevap" = 0,145
 
-### Adım 2.2: LIME ne kadar kararlı?
+### Prompt 2.2: LIME ne kadar kararlı?
 
-**Amaç.** Bu adımda LIME az sayıda komşu ve yirmi seed değeriyle tekrarlanır ve başı çeken değişkenin ne sıklıkla değiştiği görülür.
+**Amaç.** Bu promptla LIME az sayıda komşu ve yirmi seed değeriyle tekrarlanır ve başı çeken değişkenin ne sıklıkla değiştiği görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -321,9 +321,9 @@ Test: Oyuncuların sayılarının toplamı 20 olmalı.
 
 **Beklenen sonuç:** "cevap" = 0,7
 
-### Adım 2.3: Düşük ejeksiyon fraksiyonu için bir ağ
+### Prompt 2.3: Düşük ejeksiyon fraksiyonu için bir ağ
 
-**Amaç.** Bu adımda tek bir görüntüde yüzde 45'in altındaki ejeksiyon fraksiyonunu işaretleyen küçük bir evrişimli ağ eğitilir.
+**Amaç.** Bu promptla tek bir görüntüde yüzde 45'in altındaki ejeksiyon fraksiyonunu işaretleyen küçük bir evrişimli ağ eğitilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -360,9 +360,9 @@ kümede kalmalı.
 
 **Beklenen sonuç:** "cevap" = 0,796
 
-### Adım 2.4: Uzman sınırına karşı Grad-CAM haritaları
+### Prompt 2.4: Uzman sınırına karşı Grad-CAM haritaları
 
-**Amaç.** Bu adımda her test görüntüsünün Grad-CAM haritası ve haritanın uzman sınırı içindeki payı hesaplanır.
+**Amaç.** Bu promptla her test görüntüsünün Grad-CAM haritası ve haritanın uzman sınırı içindeki payı hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -405,13 +405,13 @@ Test: Her pay 0 ile 1 arasında olmalı ve hiçbir harita eğitim kipindeki bir 
 
 ## Durak 3: Kayma, izlem ve alt gruplar
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-3) · Python yolunda aynı sonuç: 8-10. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-09/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-09/NB09_guvenilirlik_ve_aciklanabilir_yapay_zeka.ipynb#scrollTo=stop-3-prompt)*
 
 Bu durak bir modelin güvenilir kalıp kalmadığını sorar. 8. haftanın göğüs ağrısı ünitesinde bir sınıflandırıcı, henüz hiçbir sonuç bilinmeden, B hastanesinin başvurularını A hastanesininkilerden ayırmayı öğrenir. Ardından B'de gözlenen ve beklenen olaylar geliş sırasıyla izlenir. Risk modeli bir taburculuk eşiğinde cinsiyet ve yaş gruplarında değerlendirilir; koroner arter hastalığı modeli de cinsiyetle ve cinsiyet olmadan kurulur.
 
-### Adım 3.1: İki hastane birbirinden ayrılabiliyor mu?
+### Prompt 3.1: İki hastane birbirinden ayrılabiliyor mu?
 
-**Amaç.** Bu adımda B hastanesinin başvurularını A hastanesininkilerden, hiçbir sonuç kullanmadan, girdilerine bakarak ayıran bir sınıflandırıcı eğitilir.
+**Amaç.** Bu promptla B hastanesinin başvurularını A hastanesininkilerden, hiçbir sonuç kullanmadan, girdilerine bakarak ayıran bir sınıflandırıcı eğitilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -451,9 +451,9 @@ Test: Hiçbir sonuç kullanılmamalı ve not modeli yalnızca A'nın eğitim not
 
 **Beklenen sonuç:** "cevap" = 0,988
 
-### Adım 3.2: B hastanesinde gözlenen ve beklenen olaylar
+### Prompt 3.2: B hastanesinde gözlenen ve beklenen olaylar
 
-**Amaç.** Bu adımda B hastanesinde gözlenen eksi beklenen olaylar geliş sırasıyla izlenir ve ilk alarm bulunur.
+**Amaç.** Bu promptla B hastanesinde gözlenen eksi beklenen olaylar geliş sırasıyla izlenir ve ilk alarm bulunur.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -478,9 +478,9 @@ Test: Bant 0'a yakın başlamalı ve başvuru sayısıyla genişlemeli.
 
 **Beklenen sonuç:** "cevap" = 253
 
-### Adım 3.3: Bir taburculuk eşiğinde alt gruplar
+### Prompt 3.3: Bir taburculuk eşiğinde alt gruplar
 
-**Amaç.** Bu adımda doğrulama başvurularında bir taburculuk eşiği seçilir ve eşik test başvurularında cinsiyete ve yaşa göre değerlendirilir.
+**Amaç.** Bu promptla doğrulama başvurularında bir taburculuk eşiği seçilir ve eşik test başvurularında cinsiyete ve yaşa göre değerlendirilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -508,9 +508,9 @@ Test: Eşik yalnızca doğrulama başvurularından gelmeli.
 
 **Beklenen sonuç:** "cevap" = 0,956
 
-### Adım 3.4: Cinsiyet içermeyen bir model
+### Prompt 3.4: Cinsiyet içermeyen bir model
 
-**Amaç.** Bu adımda 2. haftanın lojistik regresyonu cinsiyetle ve cinsiyet olmadan kurulur ve kalibrasyonu ile hataları kadınlarda ve erkeklerde karşılaştırılır.
+**Amaç.** Bu promptla 2. haftanın lojistik regresyonu cinsiyetle ve cinsiyet olmadan kurulur ve kalibrasyonu ile hataları kadınlarda ve erkeklerde karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -593,11 +593,11 @@ ayrıca bildiriliyor mu? Gerçek bir hastanın herhangi bir görüntüsü ya da 
 düzeltilmiş kodu ver.
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Eko ağının doğruluğu
+### Proje adımı 1: Eko ağının doğruluğu
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -636,7 +636,7 @@ Test: Epoch'u seçmek için hiçbir test görüntüsü kullanılmamalı ve hasta
 görüntüleri değil, hastaları çekmeli.
 ```
 
-### Adım 2: Uzman sınırına karşı haritalar
+### Proje adımı 2: Uzman sınırına karşı haritalar
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -668,7 +668,7 @@ basamakla "cevap" adıyla sakla.
 Test: Her pay 0 ile 1 arasında olmalı ve her karşılaştırmadaki grupların toplamı 100 görüntü etmeli.
 ```
 
-### Adım 3: Haritaların sağlamlık testleri
+### Proje adımı 3: Haritaların sağlamlık testleri
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -719,7 +719,7 @@ Test: Her sıra korelasyonu −1 ile 1 arasında olmalı ve eğitilmiş ağ, kop
 sonra aynı haritaları vermeli.
 ```
 
-### Adım 4: Kurul için altı görüntü
+### Proje adımı 4: Kurul için altı görüntü
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
