@@ -3,40 +3,40 @@
 **Python ile Yapay Zekâ Eğitimi: Kardiyologlar için Uygulamalı Eğitim Programı**<br>
 Türk Kardiyoloji Derneği · İlk sürüm: Kasım 2026
 
-[11. hafta](README.md) · [Prompt yolu](../../PROMPT_PATH.tr.md) · [English](../../en/week-11/PROMPTS.md)
+[11. hafta](README.md) · [English](../../en/week-11/PROMPTS.md)
 
-Bu kütüphanede, 11. haftanın prompt (istem) yolundaki, yani Jupyter Notebook'un 1. kısmındaki bütün promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı adımın boş hücresine yapıştırılır ve orada çalıştırılır. Yolun bütününü [prompt yolu rehberi](../../PROMPT_PATH.tr.md) anlatmaktadır.
+Bu kütüphanede, 1. haftanın uygulama duraklarındaki bütün prompt (istem) metinleri, yani Jupyter Notebook'un *Prompt ile uygulama* bölümlerindeki promptlar yer almaktadır; her prompt, eğitimin prompt kartıyla yazılmıştır. Promptlar olduğu gibi bir yapay zekâ (YZ) asistanına kopyalanabilir; GitHub her kutunun köşesinde bir kopyalama düğmesi gösterir. Asistanın yazdığı kod, Jupyter Notebook'ta aynı numaralı promptun altındaki boş hücreye yapıştırılır ve orada çalıştırılır.
 
 Eğitimin hiçbir promptunda hasta verisi yoktur ve promptlara hasta verisi eklenmemelidir. Gerçek hasta verileri hiçbir zaman bir prompta, bulut tabanlı bir Jupyter Notebook'a ya da bir YZ sohbetine girmez.
 
-1. [Bir adım nasıl ilerler?](#bir-adım-nasıl-ilerler)
+1. [Bir promptla çalışmak](#bir-promptla-çalışmak)
 2. [Durak 1: Soru, veriler ve bir referans](#durak-1-soru-veriler-ve-bir-referans)
 3. [Durak 2: Belirsizlik ve kalibrasyon](#durak-2-belirsizlik-ve-kalibrasyon)
 4. [Durak 3: Dışlama ve sınırları](#durak-3-dışlama-ve-sınırları)
 5. [Kodu onarmak, açıklatmak ve denetlemek için promptlar](#kodu-onarmak-açıklatmak-ve-denetlemek-için-promptlar)
-6. [Haftalık projenin prompt yolu](#haftalık-projenin-prompt-yolu)
+6. [Haftalık projenin promptları](#haftalık-projenin-promptları)
 
-## Bir adım nasıl ilerler?
+## Bir promptla çalışmak
 
 | Adım | Ne yapılır? |
 |---|---|
-| 1. Okuyun | Jupyter Notebook'ta adımın amacını okuyun. |
-| 2. Veriyi hazırlayın | Promptun altındaki veri hücresini çalıştırın. Hücre, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
+| 1. Okuyun | Jupyter Notebook'ta promptun amacını okuyun. |
+| 2. Veriyi hazırlayın | Bölümün başlangıç hücresini bir kez, ardından promptun altındaki veri hücresini çalıştırın. Veri hücresi, promptun tarif ettiği "veri" tablosunu hazırlar ve gösterir. |
 | 3. Kopyalayın ve gönderin | Promptu kopyalayın ve bir YZ asistanına gönderin: Google Colab'daki Gemini ya da başka bir tarayıcı sekmesindeki ChatGPT, Claude, Copilot veya Gemini. |
 | 4. Çalıştırın | Asistanın kodunu veri hücresinin altındaki hücreye yapıştırın ve çalıştırın. |
 | 5. Denetleyin | Kontrol hücresini çalıştırın. Hücre *doğru* ya da *henüz değil* yazar ve "cevap" sonucunun değerini gösterir. |
-| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
+| 6. Onarın | Kontrol *henüz değil* yazarsa onarım promptunu kodla birlikte gönderin. Sonuç yine yanlışsa, doğru sonucu veren *Hazır kod* hücresini çalıştırın. |
 | 7. Açıklatın ve kaydedin | Asistandan kodu sade bir dille açıklamasını isteyin; aracı, promptu ve neyin denetlendiğini YZ kullanım günlüğüne yazın. |
 
 ## Durak 1: Soru, veriler ve bir referans
 
-*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html#stop-1) · Python yolunda aynı sonuç: Python adımı 11, 1-4. bölümler*
+*[Ders sayfası, uygulama durağı 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html#stop-1) · Jupyter Notebook: «Durak 1 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-11/NB11_final_projesi_atolyesi.ipynb#scrollTo=stop-1-prompt)*
 
 Bu durak, haftanın çözümlü projesi üzerinde final projeleri atölyesinin ilk yarısıdır. Cleveland hastalarının verileri denetlenir, on parametreli bir modelin ihtiyaç duyduğu büyüklük eğitim hastalarıyla karşılaştırılır ve yaş, cinsiyet ve göğüs ağrısı tipinden oluşan referans test hastalarında bir kez sınanır. Duraktan sonra aynı üç adım kendi final projenizin verileriyle tekrarlanır.
 
-### Adım 1.1: Verilerin denetimi
+### Prompt 1.1: Verilerin denetimi
 
-**Amaç.** Bu adımda verilerin eksik değerleri sütun sütun sayılır ve projenin hangi sütunları kullandığı görülür.
+**Amaç.** Bu promptla verilerin eksik değerleri sütun sütun sayılır ve projenin hangi sütunları kullandığı görülür.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -74,9 +74,9 @@ Test: Projenin kullandığı dokuz sütunda hiç eksik değer olmamalı ve tablo
 
 **Beklenen sonuç:** "cevap" = 6
 
-### Adım 1.2: Modelin ihtiyaç duyduğu veri
+### Prompt 1.2: Modelin ihtiyaç duyduğu veri
 
-**Amaç.** Bu adımda Riley ve arkadaşlarının ölçütlerine göre on parametreli bir modelin ihtiyaç duyduğu üç en küçük büyüklük hesaplanır ve eğitim hastalarının sayısıyla karşılaştırılır.
+**Amaç.** Bu promptla Riley ve arkadaşlarının ölçütlerine göre on parametreli bir modelin ihtiyaç duyduğu üç en küçük büyüklük hesaplanır ve eğitim hastalarının sayısıyla karşılaştırılır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -112,9 +112,9 @@ Test: R kare 0 ile en büyük R kare arasında olmalı ve (iii) büyüklüğü o
 
 **Beklenen sonuç:** "cevap" = 241
 
-### Adım 1.3: Test hastalarında referans
+### Prompt 1.3: Test hastalarında referans
 
-**Amaç.** Bu adımda yaş, cinsiyet ve göğüs ağrısı tipinden oluşan referans model eğitim hastalarında kurulur ve test hastalarında bir kez sınanır.
+**Amaç.** Bu promptla yaş, cinsiyet ve göğüs ağrısı tipinden oluşan referans model eğitim hastalarında kurulur ve test hastalarında bir kez sınanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -149,13 +149,13 @@ Test: Model yalnızca 227 eğitim hastasında kurulmalı ve AUC 0,5 ile 1 arası
 
 ## Durak 2: Belirsizlik ve kalibrasyon
 
-*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html#stop-2) · Python yolunda aynı sonuç: 5. ve 6. bölümler*
+*[Ders sayfası, uygulama durağı 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html#stop-2) · Jupyter Notebook: «Durak 2 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-11/NB11_final_projesi_atolyesi.ipynb#scrollTo=stop-2-prompt)*
 
 Bu durak sonuçlardan ne kadar emin olunabileceğini sorar. Bootstrap yöntemi, referansın ve tam modelin AUC değerlerinin ve aynı yeniden örneklemlerdeki farklarının aralıklarını verir; kalibrasyon eğimi ise tam modelin olasılıklarının test hastalarında tutup tutmadığını sorar.
 
-### Adım 2.1: İki AUC değerinin aralıkları
+### Prompt 2.1: İki AUC değerinin aralıkları
 
-**Amaç.** Bu adımda referansın ve tam modelin test AUC değerleri bootstrap aralıklarıyla birlikte verilir.
+**Amaç.** Bu promptla referansın ve tam modelin test AUC değerleri bootstrap aralıklarıyla birlikte verilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -189,9 +189,9 @@ model için de kullanılmalı.
 
 **Beklenen sonuç:** "cevap" = 0,872
 
-### Adım 2.2: Kazancın aralığı
+### Prompt 2.2: Kazancın aralığı
 
-**Amaç.** Bu adımda tam model ile referans arasındaki fark, aynı yeniden örneklemlerde hesaplanan bootstrap aralığıyla birlikte verilir.
+**Amaç.** Bu promptla tam model ile referans arasındaki fark, aynı yeniden örneklemlerde hesaplanan bootstrap aralığıyla birlikte verilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -224,9 +224,9 @@ yeniden örneklem kümesinden hesaplanmamalı.
 
 **Beklenen sonuç:** "cevap" = −0,02
 
-### Adım 2.3: Test hastalarında kalibrasyon
+### Prompt 2.3: Test hastalarında kalibrasyon
 
-**Amaç.** Bu adımda tam modelin test hastalarındaki kalibrasyon sabiti ve eğimi hesaplanır.
+**Amaç.** Bu promptla tam modelin test hastalarındaki kalibrasyon sabiti ve eğimi hesaplanır.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -257,13 +257,13 @@ eksi ortalama olasılık farkının işaretiyle aynı olmalı.
 
 ## Durak 3: Dışlama ve sınırları
 
-*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html#stop-3) · Python yolunda aynı sonuç: 7-10. bölümler*
+*[Ders sayfası, uygulama durağı 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/tr/hafta-11/ders.html#stop-3) · Jupyter Notebook: «Durak 3 · Prompt ile uygulama», [Colab'da açın](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/tr/hafta-11/NB11_final_projesi_atolyesi.ipynb#scrollTo=stop-3-prompt)*
 
 Bu durak olasılıkları bir karara dönüştürür. Dışlama eşiği eğitim hastalarının çapraz doğrulama olasılıklarında seçilir; test hastaları bu eşiğin kaç sevki önleyeceğini, test kümesindeki kadınlar ve erkekler de dışlamanın iki grupta da güvenli sayılıp sayılamayacağını gösterir.
 
-### Adım 3.1: Dışlama eşiği
+### Prompt 3.1: Dışlama eşiği
 
-**Amaç.** Bu adımda dışlama eşiği eğitim hastalarının çapraz doğrulama olasılıklarında seçilir.
+**Amaç.** Bu promptla dışlama eşiği eğitim hastalarının çapraz doğrulama olasılıklarında seçilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -292,9 +292,9 @@ düşmeli.
 
 **Beklenen sonuç:** "cevap" = 0,18
 
-### Adım 3.2: Test hastalarında dışlama
+### Prompt 3.2: Test hastalarında dışlama
 
-**Amaç.** Bu adımda eşik test hastalarına bir kez uygulanır ve duyarlılık, özgüllük ve negatif öngörü değeri Wilson aralıklarıyla birlikte verilir.
+**Amaç.** Bu promptla eşik test hastalarına bir kez uygulanır ve duyarlılık, özgüllük ve negatif öngörü değeri Wilson aralıklarıyla birlikte verilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -324,9 +324,9 @@ Test: Dört sayının toplamı 76 olmalı ve her aralık 0 ile 1 arasında kalı
 
 **Beklenen sonuç:** "cevap" = 27
 
-### Adım 3.3: Kadınlar ve erkekler
+### Prompt 3.3: Kadınlar ve erkekler
 
-**Amaç.** Bu adımda dışlamanın kadınlardaki ve erkeklerdeki duyarlılığı Wilson aralıklarının alt sınırlarıyla birlikte verilir.
+**Amaç.** Bu promptla dışlamanın kadınlardaki ve erkeklerdeki duyarlılığı Wilson aralıklarının alt sınırlarıyla birlikte verilir.
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -405,11 +405,11 @@ satırla birlikte evet, hayır ya da belirsiz diye cevap ver.
 [kodu buraya yapıştırın]
 ```
 
-## Haftalık projenin prompt yolu
+## Haftalık projenin promptları
 
-[Haftalık proje](README.md#haftal%C4%B1k-proje), prompt yolunda her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un 1. kısmının sonundaki *Prompt yolunda haftalık proje* bölümü, her promptun tablosunu hazırlar. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
+[Haftalık proje](README.md#haftal%C4%B1k-proje), her adım için bir prompt olmak üzere dört promptla yapılabilir. Jupyter Notebook'un sonundaki *Haftalık proje* bölümü her promptun tablosunu hazırlar ve tek başına açılır. Projede kontrol ve hazır kod yoktur, çünkü sonuçlar rapora girer. Bir adımın testi sağlanmadan sonraki prompt gönderilmez ve raporun YZ kullanım günlüğünde dört promptun hepsi yer alır.
 
-### Adım 1: Verilerin denetimi ve ayırma
+### Proje adımı 1: Verilerin denetimi ve ayırma
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -445,7 +445,7 @@ sayısını "cevap" adıyla sakla.
 Test: İki küme bütün hastaları kapsamalı ve hiçbir hasta iki kümede birden bulunmamalı.
 ```
 
-### Adım 2: Bir referans, model ve kazancın aralığı
+### Proje adımı 2: Bir referans, model ve kazancın aralığı
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -483,7 +483,7 @@ Test: Hiçbir test hastası iki modelden birini kurmak için kullanılmamalı ve
 örneklemlerde değerlendirilmeli.
 ```
 
-### Adım 3: Kalibrasyon ve karar eşiği
+### Proje adımı 3: Kalibrasyon ve karar eşiği
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp
@@ -515,7 +515,7 @@ Test: Eşik herhangi bir test hastası kullanılmadan seçilmeli ve eşikteki e�
 0,95 olmalı.
 ```
 
-### Adım 4: Rapor için sonuç tablosu
+### Proje adımı 4: Rapor için sonuç tablosu
 
 ```text
 Rol: Kod yazmayan bir kardiyoloğa yardım ediyorsun. Yazacağın kodu Jupyter Notebook'uma yapıştırıp

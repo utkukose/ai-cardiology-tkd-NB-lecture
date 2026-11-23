@@ -3,25 +3,25 @@
 **Artificial Intelligence with Python: A Hands-on Training Program for Cardiologists**<br>
 Turkish Society of Cardiology · First version: November 2026
 
-[Week 11](README.md) · [Prompt path](../../PROMPT_PATH.md) · [Türkçe](../../tr/hafta-11/PROMPTLAR.md)
+[Week 11](README.md) · [Türkçe](../../tr/hafta-11/PROMPTLAR.md)
 
-This library holds every prompt of the prompt path of Week 11, Part 1 of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the notebook, into the empty cell of the step of the same number, and runs there. The [guide to the prompt path](../../PROMPT_PATH.md) explains the route as a whole.
+This library holds every prompt of the practice stops of Week 1, from the parts *Prompt and application* of the Jupyter notebook, written on the prompt card of the course. Each prompt can be copied as it stands into an artificial intelligence (AI) assistant; GitHub shows a copy button in the corner of each box. The code that comes back goes into the Jupyter notebook, into the empty cell under the prompt of the same number, and runs there.
 
 No prompt of the course contains patient data, and none should be added. Real patient data never enter a prompt, a cloud notebook or an AI chat.
 
-1. [How a step works](#how-a-step-works)
+1. [Working with a prompt](#working-with-a-prompt)
 2. [Stop 1: The question, the data and a reference](#stop-1-the-question-the-data-and-a-reference)
 3. [Stop 2: Uncertainty and calibration](#stop-2-uncertainty-and-calibration)
 4. [Stop 3: The rule-out and its limits](#stop-3-the-rule-out-and-its-limits)
 5. [Prompts for repairing, explaining and reviewing code](#prompts-for-repairing-explaining-and-reviewing-code)
-6. [Prompt path of the weekly project](#prompt-path-of-the-weekly-project)
+6. [Prompts of the weekly project](#prompts-of-the-weekly-project)
 
-## How a step works
+## Working with a prompt
 
 | Step | What to do |
 |---|---|
-| 1. Read | Read the goal of the step in the notebook. |
-| 2. Prepare the data | Run the data cell under the prompt. It prepares the table "data" that the prompt describes and shows it. |
+| 1. Read | Read the goal of the prompt in the Jupyter notebook. |
+| 2. Prepare the data | Run the start cell of the part once, then the data cell under the prompt. The data cell prepares the table "data" that the prompt describes and shows it. |
 | 3. Copy and send | Copy the prompt and send it to an AI assistant: Gemini in Google Colab, or ChatGPT, Claude, Copilot or Gemini in another browser tab. |
 | 4. Run | Paste the code of the assistant into the cell below the data cell and run it. |
 | 5. Check | Run the check cell. It prints *correct* or *not yet* and the value of the result "answer". |
@@ -30,11 +30,11 @@ No prompt of the course contains patient data, and none should be added. Real pa
 
 ## Stop 1: The question, the data and a reference
 
-*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html#stop-1) · The same result on the Python path: Python step 11, Sections 1 to 4*
+*[Lecture page: practice stop 1](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html#stop-1) · Jupyter notebook: «Stop 1 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-11/NB11_final_project_workshop.ipynb#scrollTo=stop-1-prompt)*
 
 This stop is the first half of the workshop on the final projects, on the worked project of the week. The data of the Cleveland patients are audited, the size that a model of ten parameters needs is compared with the training patients, and the reference of age, sex and chest pain type is tested once on the test patients. After the stop, the same three steps are repeated on the data of your own final project.
 
-### Step 1.1: The audit of the data
+### Prompt 1.1: The audit of the data
 
 **Goal.** Count the missing values of the data, column by column, and see which columns the project uses.
 
@@ -75,7 +75,7 @@ patients.
 
 **Expected result:** "answer" = 6
 
-### Step 1.2: How much data the model needs
+### Prompt 1.2: How much data the model needs
 
 **Goal.** Compute the three minimum sizes of Riley and colleagues for a model of ten parameters and compare them with the training patients.
 
@@ -114,7 +114,7 @@ the probabilities.
 
 **Expected result:** "answer" = 241
 
-### Step 1.3: The reference on the test patients
+### Prompt 1.3: The reference on the test patients
 
 **Goal.** Fit the reference model of age, sex and chest pain type on the training patients and test it once on the test patients.
 
@@ -152,11 +152,11 @@ Test: The model must be fitted on 227 training patients only, and the AUC must l
 
 ## Stop 2: Uncertainty and calibration
 
-*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html#stop-2) · The same result on the Python path: Sections 5 and 6*
+*[Lecture page: practice stop 2](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html#stop-2) · Jupyter notebook: «Stop 2 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-11/NB11_final_project_workshop.ipynb#scrollTo=stop-2-prompt)*
 
 This stop asks how sure the results are. The bootstrap gives the intervals of the AUCs of the reference and of the full model, and of their difference in the same resamples; the calibration slope asks whether the probabilities of the full model hold on the test patients.
 
-### Step 2.1: The intervals of the two AUCs
+### Prompt 2.1: The intervals of the two AUCs
 
 **Goal.** Give the test AUCs of the reference and of the full model with their bootstrap intervals.
 
@@ -192,7 +192,7 @@ both models.
 
 **Expected result:** "answer" = 0.872
 
-### Step 2.2: The interval of the gain
+### Prompt 2.2: The interval of the gain
 
 **Goal.** Give the difference between the full model and the reference with its bootstrap interval, computed on the same resamples.
 
@@ -229,7 +229,7 @@ two separate sets of resamples.
 
 **Expected result:** "answer" = −0.02
 
-### Step 2.3: Calibration on the test patients
+### Prompt 2.3: Calibration on the test patients
 
 **Goal.** Compute the calibration intercept and slope of the full model on the test patients.
 
@@ -262,11 +262,11 @@ intercept must have the sign of the observed share minus the mean probability.
 
 ## Stop 3: The rule-out and its limits
 
-*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html#stop-3) · The same result on the Python path: Sections 7 to 10*
+*[Lecture page: practice stop 3](https://utkukose.github.io/ai-cardiology-tkd-NB-lecture/en/week-11/lecture.html#stop-3) · Jupyter notebook: «Stop 3 · Prompt and application», [open in Colab](https://colab.research.google.com/github/utkukose/ai-cardiology-tkd-NB-lecture/blob/main/en/week-11/NB11_final_project_workshop.ipynb#scrollTo=stop-3-prompt)*
 
 This stop turns the probabilities into a decision. The rule-out threshold is chosen on the cross-validated probabilities of the training patients, the test patients show how many referrals it would spare, and the women and men of the test set show whether the rule-out can be called safe in both groups.
 
-### Step 3.1: The rule-out threshold
+### Prompt 3.1: The rule-out threshold
 
 **Goal.** Choose the rule-out threshold on the cross-validated probabilities of the training patients.
 
@@ -298,7 +298,7 @@ it must be below 0.95.
 
 **Expected result:** "answer" = 0.18
 
-### Step 3.2: The rule-out on the test patients
+### Prompt 3.2: The rule-out on the test patients
 
 **Goal.** Apply the threshold to the test patients once and give the sensitivity, the specificity and the negative predictive value with their Wilson intervals.
 
@@ -332,7 +332,7 @@ proportion.
 
 **Expected result:** "answer" = 27
 
-### Step 3.3: Women and men
+### Prompt 3.3: Women and men
 
 **Goal.** Give the sensitivity of the rule-out in women and in men with the lower bounds of their Wilson intervals.
 
@@ -415,11 +415,11 @@ answer yes, no or not clear, with the line of the code that shows it.
 [paste the code here]
 ```
 
-## Prompt path of the weekly project
+## Prompts of the weekly project
 
-The [weekly project](README.md#weekly-project) can be built on the prompt path with four prompts, one for each step. The section *Weekly project on the prompt path* at the end of Part 1 of the Jupyter notebook prepares the table of each prompt. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
+The [weekly project](README.md#weekly-project) can be built with four prompts, one for each step. The section *Weekly project* at the end of the Jupyter notebook prepares the table of each prompt and opens on its own. The project has no check and no ready code, because its results go into the report. The test of a step must hold before the next prompt is sent, and the report lists all four prompts in the AI usage log.
 
-### Step 1: The audit of the data and the split
+### Project step 1: The audit of the data and the split
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -454,7 +454,7 @@ test patients with disease under the name "answer".
 Test: The two sets must add up to all patients, and no patient may be in both.
 ```
 
-### Step 2: A reference, the model and the interval of the gain
+### Project step 2: A reference, the model and the interval of the gain
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -492,7 +492,7 @@ Test: No test patient may be used to fit either model, and both models must be j
 resamples.
 ```
 
-### Step 3: Calibration and the decision threshold
+### Project step 3: Calibration and the decision threshold
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
@@ -524,7 +524,7 @@ Test: The threshold must be chosen before any test patient is used, and the sens
 training patients at the threshold must be at least 0.95.
 ```
 
-### Step 4: The table of results for the report
+### Project step 4: The table of results for the report
 
 ```text
 Role: You are helping a cardiologist who does not write code. The code will be pasted into a Jupyter
